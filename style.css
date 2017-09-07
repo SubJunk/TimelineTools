@@ -1,0 +1,89 @@
+:root {
+  --month-width: 200px;
+  --common-padding: 20px;
+}
+
+* {
+  z-index: 0;
+}
+
+html, body {
+  background: #1E2023;
+  color: #ccc;
+  overflow: auto;
+  width: 100000px;
+}
+
+.years {
+  padding: var(--common-padding);
+}
+
+.year {
+  display: inline-block;
+}
+
+.month {
+  display: inline-block;
+  width: var(--month-width);
+  margin-right: 10px;
+}
+
+.comic {
+  position: absolute;
+  display: block;
+  width: var(--month-width);
+  background: #1A1C1C;
+}
+
+.comic > div {
+  padding: 5px;
+}
+
+.comic .series {
+  background: #444;
+  color: #aaa;
+}
+
+.comic .series,
+.comic .title-issue,
+.comic .official-link {
+  display: none;
+}
+
+.comic.expanded {
+  z-index: 1;
+}
+
+.comic > div,
+.comic > a {
+  position: relative;
+  top: 0;
+  transition: top 0.5s ease-in-out;
+}
+
+.comic.expanded > div,
+.comic.expanded > a {
+  top: -50px;
+  transition: top 0.5s ease-in-out;
+}
+
+.comic.expanded div {
+  display: block;
+}
+
+.cover-thumbnail {
+  display: block;
+}
+
+.cover-thumbnail img {
+  max-height: 140px;
+  margin: 0 auto;
+  display: block;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.comic.expanded .cover-thumbnail img {
+  max-height: 300px;
+  transition: max-height 0.5s ease-in-out;
+}
