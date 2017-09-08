@@ -150,48 +150,48 @@ angular.module('app', [])
       seriesVolumeId: 'XMenManifestDestinyVol1'
     }
   ];
-  $scope.series = {
-    'Cable': {
+  $scope.series = [
+    {
       id: 'Cable',
       title: 'Cable'
     },
-    'UncannyXMen': {
+    {
       id: 'UncannyXMen',
       title: 'Uncanny X-Men'
     },
-    'XMenManifestDestiny': {
+    {
       id:'XMenManifestDestiny',
       title: 'X-Men Manifest Destiny'
     },
-    'XMenFreeComicBookDay': {
+    {
       id: 'XMenFreeComicBookDay',
       title: 'X-Men Free Comic Book Day'
     }
-  };
-  $scope.seriesVolume = {
-    'CableVol2': {
+  ];
+  $scope.seriesVolume = [
+    {
       id: 'CableVol2',
       seriesId: 'Cable',
       volume: 2
     },
-    'UncannyXMenVol1': {
+    {
       id: 'UncannyXMenVol1',
       seriesId: 'UncannyXMen',
       volume: 1
     },
-    'XMenManifestDestinyVol1': {
+    {
       id: 'XMenManifestDestinyVol1',
       seriesId: 'XMenManifestDestiny',
       volume: 1
     },
-    'XMenFreeComicBookDay2008': {
+    {
       id: 'XMenFreeComicBookDay2008',
       seriesId: 'XMenFreeComicBookDay',
       volume: 2008
     }
-  };
-  $scope.collections = {
-    'CableVol1MessiahWar': {
+  ];
+  $scope.collections = [
+    {
       id: 'CableVol1MessiahWar',
       title: 'Cable Vol. 1: Messiah War',
       yearPublished: 2008,
@@ -201,7 +201,7 @@ angular.module('app', [])
       ],
       officialLink: 'https://comicstore.marvel.com/Cable-Vol-1-Messiah-War/digital-comic/27342'
     },
-    'XMenMessiahComplex': {
+    {
       id: 'XMenMessiahComplex',
       title: ['X-Men: Messiah Complex'],
       yearPublished: 2008,
@@ -212,7 +212,7 @@ angular.module('app', [])
         'UncannyXMenVol1494'
       ]
     },
-    'UncannyXMenDividedWeStand': {
+    {
       id: 'UncannyXMenDividedWeStand',
       title: ['Uncanny X-Men: Divided We Stand'],
       yearPublished: 2008,
@@ -222,7 +222,7 @@ angular.module('app', [])
         'UncannyXMenVol1496'
       ]
     },
-    'UncannyXMenManifestDestiny': {
+    {
       id: 'UncannyXMenManifestDestiny',
       title: ['Uncanny X-Men: Manifest Destiny'],
       yearPublished: 2009,
@@ -240,7 +240,7 @@ angular.module('app', [])
         'XMenManifestDestinyVol15'
       ]
     }
-  };
+  ];
 
   var datePublished;
   var year;
@@ -273,6 +273,9 @@ angular.module('app', [])
   $scope.comics = _.sortBy($scope.comics, ['yearPublished', 'monthPublished']);
 
   _.each($scope.comics, function(comic, key) {
+    var currentSeriesVolume = $scope.seriesVolume[_.findKey($scope.seriesVolume, { 'id': comic.seriesVolumeId })];
+    var currentSeries = $scope.series[_.findKey($scope.series, { 'id': currentSeriesVolume.seriesId })];
+
     // Build the relevant dates
     $scope.dates = $scope.dates || {};
     $scope.dates[comic.yearPublished] = $scope.dates[comic.yearPublished] || {};
@@ -293,20 +296,20 @@ angular.module('app', [])
     }
 
     // Vertical positioning
-    if ($scope.seriesVolume[comic.seriesVolumeId].verticalPosition) {
-      comic.styles.top = $scope.seriesVolume[comic.seriesVolumeId].verticalPosition * verticalIncrement;
+    if (currentSeriesVolume.verticalPosition) {
+      comic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
       globalVerticalPositionCounter++;
-      $scope.seriesVolume[comic.seriesVolumeId].verticalPosition = globalVerticalPositionCounter;
+      currentSeriesVolume.verticalPosition = globalVerticalPositionCounter;
       comic.styles.top = globalVerticalPositionCounter * verticalIncrement;
     }
 
     // Metadata
-    comic.series = $scope.series[$scope.seriesVolume[comic.seriesVolumeId].seriesId].title;
-    comic.image = comic.series.replace(/ /g, '_') + '_Vol_' + $scope.seriesVolume[comic.seriesVolumeId].volume + '_' + comic.issue;
+    comic.series = currentSeries.title;
+    comic.image = comic.series.replace(/ /g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
 
-    if ($scope.seriesVolume[comic.seriesVolumeId].volume > 1) {
-      comic.series += ' Vol. ' + $scope.seriesVolume[comic.seriesVolumeId].volume;
+    if (currentSeriesVolume.volume > 1) {
+      comic.series += ' Vol. ' + currentSeriesVolume.volume;
     }
   });
 

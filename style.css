@@ -37,16 +37,16 @@ html, body {
 }
 
 .comic > div {
-  padding: 5px;
+  padding: 8px;
+  margin: 0 3px;
 }
 
 .comic .series {
-  background: #444;
-  color: #aaa;
+  background: rgba(27, 27, 27, 0.5);
 }
 
 .comic .series,
-.comic .title-issue,
+.comic .title,
 .comic .official-link {
   display: none;
 }

@@ -16,7 +16,7 @@
           <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
         </a>
         <div class="series">{{comic.series}} #{{comic.issue}}</div>
-        <div class="title-issue" ng-repeat="title in ::comic.title">{{title}}</div>
+        <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
         <div class="official-link" ng-if="comic.officialLink"><a ng-href="{{comic.officialLink}}">Read online</a></div>
       </li>
     </ul>
