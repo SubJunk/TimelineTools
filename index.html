@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
     <title>TimelineTools</title>
   </head>
-  <body ng-controller="dataController">
+  <body ng-controller="dataController" ng-style='bodyStyle'>
     <ul class="collections">
       <li ng-repeat="collection in ::collections" class="comic-collection" ng-style="collection.styles" ng-class="{expandedCollection: collection.id === expandedCollection}">
       </li>

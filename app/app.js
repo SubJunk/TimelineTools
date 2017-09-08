@@ -6,6 +6,7 @@ angular.module('app', [])
 .controller('dataController', ['$scope', '$http', function($scope, $http) {
   // Date data
   $scope.incrementBy = 'month';
+  var bodyStyle = {};
 
   // Pixel counts
   var verticalIncrement = 180;
@@ -20,6 +21,78 @@ angular.module('app', [])
       monthPublished: 5,
       seriesVolumeId: 'CableVol2',
       officialLink: 'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
+    },
+    {
+      id: 'UncannyXMenVol1129',
+      title: ['God Spare the Child...'],
+      issue: 129,
+      yearPublished: 1980,
+      monthPublished: 1,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1130',
+      title: ['Dazzler'],
+      issue: 130,
+      yearPublished: 1980,
+      monthPublished: 2,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1131',
+      title: ['Run for Your Life!'],
+      issue: 131,
+      yearPublished: 1980,
+      monthPublished: 3,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1132',
+      title: ['And Hellfire is Their Name!'],
+      issue: 132,
+      yearPublished: 1980,
+      monthPublished: 4,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1133',
+      title: ['Wolverine: Alone!'],
+      issue: 133,
+      yearPublished: 1980,
+      monthPublished: 5,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1134',
+      title: ['Too Late, the Heroes!'],
+      issue: 134,
+      yearPublished: 1980,
+      monthPublished: 6,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1135',
+      title: ['Dark Phoenix'],
+      issue: 135,
+      yearPublished: 1980,
+      monthPublished: 7,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1136',
+      title: ['Child of Light and Darkness!'],
+      issue: 136,
+      yearPublished: 1980,
+      monthPublished: 8,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1137',
+      title: ['The Fate of the Phoenix!'],
+      issue: 137,
+      yearPublished: 1980,
+      monthPublished: 9,
+      seriesVolumeId: 'UncannyXMenVol1'
     },
     {
       id: 'UncannyXMenVol1492',
@@ -213,6 +286,23 @@ angular.module('app', [])
       ]
     },
     {
+      id: 'XMenTheDarkPhoenixSaga',
+      title: ['X-Men: The Dark Phoenix Saga'],
+      yearPublished: 2006,
+      monthPublished: 4,
+      comicIds: [
+        'UncannyXMenVol1129',
+        'UncannyXMenVol1130',
+        'UncannyXMenVol1131',
+        'UncannyXMenVol1132',
+        'UncannyXMenVol1133',
+        'UncannyXMenVol1134',
+        'UncannyXMenVol1135',
+        'UncannyXMenVol1136',
+        'UncannyXMenVol1137'
+      ]
+    },
+    {
       id: 'UncannyXMenDividedWeStand',
       title: ['Uncanny X-Men: Divided We Stand'],
       yearPublished: 2008,
@@ -247,6 +337,8 @@ angular.module('app', [])
   var month;
   var firstYear;
   var firstMonth;
+  var lastYear;
+  var lastMonth;
   var monthsSinceFirst;
 
   var globalVerticalPositionCounter = 0;
@@ -276,12 +368,6 @@ angular.module('app', [])
     var currentSeriesVolume = $scope.seriesVolume[_.findKey($scope.seriesVolume, { 'id': comic.seriesVolumeId })];
     var currentSeries = $scope.series[_.findKey($scope.series, { 'id': currentSeriesVolume.seriesId })];
 
-    // Build the relevant dates
-    $scope.dates = $scope.dates || {};
-    $scope.dates[comic.yearPublished] = $scope.dates[comic.yearPublished] || {};
-    $scope.dates[comic.yearPublished][comic.monthPublished] = comic.monthPublished;
-    // TODO: Fill in blanks
-
     // Horizontal positioning
     comic.styles = {};
     if (!firstYear) {
@@ -293,6 +379,9 @@ angular.module('app', [])
       monthsSinceFirst -= firstMonth;
       monthsSinceFirst += comic.monthPublished;
       comic.styles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
+
+      // Match the width of the page to the width of the content
+      bodyStyle.width = comic.styles.left + horizontalIncrement;
     }
 
     // Vertical positioning
@@ -312,6 +401,25 @@ angular.module('app', [])
       comic.series += ' Vol. ' + currentSeriesVolume.volume;
     }
   });
+
+  var lastComic = _.last($scope.comics);
+  lastYear = lastComic.yearPublished;
+  lastMonth = lastComic.monthPublished;
+  var totalYearsSpan = lastYear - firstYear;
+  var dates = {};
+  for (i = firstYear; i <= lastYear; i++) {
+    dates[i] = {};
+
+    if (i === lastYear) {
+      for (i2 = 1; i2 < lastMonth; i2++) {
+        dates[i][i2] = i2;
+      }
+    } else {
+      for (i2 = 1; i2 < 13; i2++) {
+        dates[i][i2] = i2;
+      }
+    }
+  }
 
   var globalColorIndex = 0;
   var colors = [
@@ -337,4 +445,7 @@ angular.module('app', [])
       globalColorIndex = 0;
     }
   });
+
+  $scope.dates = dates;
+  $scope.bodyStyle = bodyStyle;
 }]);
