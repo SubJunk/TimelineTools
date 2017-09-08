@@ -26,6 +26,7 @@ html, body {
   display: inline-block;
   width: var(--month-width);
   margin-right: 10px;
+  text-align: center;
 }
 
 .comic {

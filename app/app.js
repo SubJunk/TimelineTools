@@ -251,14 +251,6 @@ angular.module('app', [])
 
   var globalVerticalPositionCounter = 0;
 
-  var globalColorIndex = 0;
-  $scope.colors = [
-    'red',
-    'blue',
-    'green',
-    'yellow'
-  ];
-
   $scope.expandedComic = '';
   $scope.toggleExpandComic = function(comicId) {
     if ($scope.expandedComic === comicId) {
@@ -315,6 +307,31 @@ angular.module('app', [])
 
     if ($scope.seriesVolume[comic.seriesVolumeId].volume > 1) {
       comic.series += ' Vol. ' + $scope.seriesVolume[comic.seriesVolumeId].volume;
+    }
+  });
+
+  var globalColorIndex = 0;
+  var colors = [
+    'rgba(11,  61,  167, 0.2)', // #0b3da7
+    'rgba(17,  167, 11,  0.2)', // #11a70b
+    'rgba(167, 161, 11,  0.2)', // #a7a10b
+    'rgba(111, 167, 11,  0.2)', // #6fa70b
+    'rgba(11,  167, 142  0.2)', // #0ba78e
+    'rgba(168, 11,  11   0.2)', // #a70b0b
+    'rgba(57,  222, 236  0.2)', // #39deec
+  ];
+
+  // Render collections as groups of comics
+  var comicIndex;
+  _.each($scope.collections, function(collection, key) {
+    _.each(collection.comicIds, function(comicId) {
+      comicIndex = _.findKey($scope.comics, { 'id': comicId });
+      $scope.comics[comicIndex].styles.background = colors[globalColorIndex];
+    });
+
+    globalColorIndex++;
+    if (globalColorIndex > colors.length) {
+      globalColorIndex = 0;
     }
   });
 }]);
