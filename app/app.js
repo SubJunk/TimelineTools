@@ -340,7 +340,6 @@ angular.module('app', [])
   var lastYear;
   var lastMonth;
   var monthsSinceFirst;
-
   var globalVerticalPositionCounter = 0;
 
   $scope.expandedComic = '';
@@ -385,12 +384,12 @@ angular.module('app', [])
     }
 
     // Vertical positioning
-    if (currentSeriesVolume.verticalPosition) {
+    if (typeof currentSeriesVolume.verticalPosition !== 'undefined') {
       comic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
-      globalVerticalPositionCounter++;
       currentSeriesVolume.verticalPosition = globalVerticalPositionCounter;
       comic.styles.top = globalVerticalPositionCounter * verticalIncrement;
+      globalVerticalPositionCounter++;
     }
 
     // Metadata
@@ -421,15 +420,16 @@ angular.module('app', [])
     }
   }
 
+  var collectionOpacity = '0.5';
   var globalColorIndex = 0;
   var colors = [
-    'rgba(11,  61,  167, 0.2)', // #0b3da7
-    'rgba(17,  167, 11,  0.2)', // #11a70b
-    'rgba(167, 161, 11,  0.2)', // #a7a10b
-    'rgba(111, 167, 11,  0.2)', // #6fa70b
-    'rgba(11,  167, 142  0.2)', // #0ba78e
-    'rgba(168, 11,  11   0.2)', // #a70b0b
-    'rgba(57,  222, 236  0.2)', // #39deec
+    'rgba(11,  61,  167, ' + collectionOpacity + ')', // #0b3da7
+    'rgba(17,  167, 11,  ' + collectionOpacity + ')', // #11a70b
+    'rgba(167, 161, 11,  ' + collectionOpacity + ')', // #a7a10b
+    'rgba(111, 167, 11,  ' + collectionOpacity + ')', // #6fa70b
+    'rgba(11,  167, 142  ' + collectionOpacity + ')', // #0ba78e
+    'rgba(168, 11,  11   ' + collectionOpacity + ')', // #a70b0b
+    'rgba(57,  222, 236  ' + collectionOpacity + ')', // #39deec
   ];
 
   // Render collections as groups of comics
