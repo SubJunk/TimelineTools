@@ -38,11 +38,16 @@ body {
   display: block;
   width: var(--month-width);
   background: #1A1C1C;
+  transition: top 0.5s ease-in-out;
 }
 
 .comic > div {
   padding: 8px;
-  margin: 0 3px;
+  margin: 0 5px;
+}
+
+.comic a {
+  margin: 5px;
 }
 
 .comic .series {
@@ -68,8 +73,7 @@ body {
 
 .comic.expanded > div,
 .comic.expanded > a {
-  top: -50px;
-  transition: top 0.5s ease-in-out;
+  /* top: -50px; */
 }
 
 .comic.expanded div {
@@ -89,6 +93,6 @@ body {
 }
 
 .comic.expanded .cover-thumbnail img {
-  max-height: 300px;
+  max-height: 350px;
   transition: max-height 0.5s ease-in-out;
 }

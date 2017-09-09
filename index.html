@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="style.css">
     <title>TimelineTools</title>
   </head>
-  <body ng-controller="dataController" ng-style='bodyStyle'>
+  <body ng-controller="DataController as main" ng-style='main.bodyStyle'>
     <ul class="years">
-      <li ng-repeat="(year, months) in ::dates track by year" class="year">
+      <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
         {{year}}
         <ul>
           <li ng-repeat="month in ::months track by month" class="month">{{month}}</li>
@@ -15,12 +15,12 @@
       </li>
     </ul>
     <ul class="collections">
-      <li ng-repeat="collection in ::collections track by collection.id" class="comic-collection" ng-style="collection.styles" ng-class="{expandedCollection: collection.id === expandedCollection}">
+      <li ng-repeat="collection in ::main.collections track by collection.id" class="comic-collection" ng-style="collection.styles" ng-class="{expandedCollection: collection.id === main.expandedCollection}">
       </li>
     </ul>
     <ul class="comics">
-      <li ng-repeat="comic in ::comics track by comic.id" class="comic" ng-style="comic.styles" ng-class="{expanded: comic.id === expandedComic}">
-        <a title="{{comic.series}} #{{comic.issue}}" ng-click="toggleExpandComic(comic.id)" class="waves-effect cover-thumbnail">
+      <li ng-repeat="comic in ::main.comics track by comic.id" class="comic" ng-style="comic.styles" ng-class="{expanded: comic.id === main.expandedComic}">
+        <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic.id)" class="waves-effect cover-thumbnail">
           <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
         </a>
         <div class="series">{{comic.series}} #{{comic.issue}}</div>

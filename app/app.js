@@ -3,16 +3,18 @@ angular.module('app', [])
 .run(function ($rootScope) {
   $rootScope._ = window._;
 })
-.controller('dataController', ['$scope', '$http', function($scope, $http) {
+.controller('DataController', function() {
+  var vm = this;
+
   // Date data
-  $scope.incrementBy = 'month';
+  vm.incrementBy = 'month';
   var bodyStyle = {};
 
   // Pixel counts
   var verticalIncrement = 180;
   var horizontalIncrement = 210;
 
-  $scope.comics = [
+  vm.comics = [
     {
       id: 'CableVol21',
       title: ['War Baby (Chapter 1)'],
@@ -21,6 +23,14 @@ angular.module('app', [])
       monthPublished: 5,
       seriesVolumeId: 'CableVol2',
       officialLink: 'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
+    },
+    {
+      id: 'GiantSizeXMenVol11',
+      title: ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
+      issue: 1,
+      yearPublished: 1975,
+      monthPublished: 5,
+      seriesVolumeId: 'GiantSizeXMenVol1'
     },
     {
       id: 'UncannyXMenVol1129',
@@ -179,7 +189,7 @@ angular.module('app', [])
       title: ['X-Men: Pixies & Demons'],
       issue: 1,
       yearPublished: 2008,
-      monthPublished: 05,
+      monthPublished: 5,
       seriesVolumeId: 'XMenFreeComicBookDay2008'
     },
     {
@@ -203,7 +213,7 @@ angular.module('app', [])
       title: ['Kill or Cure (Part 3)','Abomination','Uncheerable'],
       issue: 3,
       yearPublished: 2009,
-      monthPublished: 01,
+      monthPublished: 1,
       seriesVolumeId: 'XMenManifestDestinyVol1'
     },
     {
@@ -211,7 +221,7 @@ angular.module('app', [])
       title: ['Kill or Cure (Part 4)','Mercury','Work It Out'],
       issue: 4,
       yearPublished: 2009,
-      monthPublished: 02,
+      monthPublished: 2,
       seriesVolumeId: 'XMenManifestDestinyVol1'
     },
     {
@@ -219,14 +229,18 @@ angular.module('app', [])
       title: ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo'],
       issue: 5,
       yearPublished: 2009,
-      monthPublished: 03,
+      monthPublished: 3,
       seriesVolumeId: 'XMenManifestDestinyVol1'
     }
   ];
-  $scope.series = [
+  vm.series = [
     {
       id: 'Cable',
       title: 'Cable'
+    },
+    {
+      id: 'GiantSizeXMen',
+      title: 'Giant-Size X-Men'
     },
     {
       id: 'UncannyXMen',
@@ -241,11 +255,16 @@ angular.module('app', [])
       title: 'X-Men Free Comic Book Day'
     }
   ];
-  $scope.seriesVolume = [
+  vm.seriesVolume = [
     {
       id: 'CableVol2',
       seriesId: 'Cable',
       volume: 2
+    },
+    {
+      id: 'GiantSizeXMenVol1',
+      seriesId: 'GiantSizeXMen',
+      volume: 1
     },
     {
       id: 'UncannyXMenVol1',
@@ -263,7 +282,7 @@ angular.module('app', [])
       volume: 2008
     }
   ];
-  $scope.collections = [
+  vm.collections = [
     {
       id: 'CableVol1MessiahWar',
       title: 'Cable Vol. 1: Messiah War',
@@ -332,9 +351,6 @@ angular.module('app', [])
     }
   ];
 
-  var datePublished;
-  var year;
-  var month;
   var firstYear;
   var firstMonth;
   var lastYear;
@@ -342,30 +358,40 @@ angular.module('app', [])
   var monthsSinceFirst;
   var globalVerticalPositionCounter = 0;
 
-  $scope.expandedComic = '';
-  $scope.toggleExpandComic = function(comicId) {
-    if ($scope.expandedComic === comicId) {
-      $scope.expandedComic = '';
+  vm.expandedComic;
+  vm.toggleExpandComic = function(comicId) {
+    var currentComic = vm.comics[_.findKey(vm.comics, { 'id': comicId })];
+    var currentSeriesVolume = vm.seriesVolume[_.findKey(vm.seriesVolume, { 'id': currentComic.seriesVolumeId })];
+
+    if (vm.expandedComic === comicId) {
+      vm.expandedComic = undefined;
+      currentComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
-      $scope.expandedComic = comicId;
+      if (angular.isDefined(vm.expandedComic)) {
+        var previousComic = vm.comics[_.findKey(vm.comics, { 'id': vm.expandedComic })];
+        previousComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
+      }
+
+      vm.expandedComic = comicId;
+      currentComic.styles.top = (currentSeriesVolume.verticalPosition * verticalIncrement) - 50;
     }
   };
   
-  $scope.expandedCollection = '';
-  $scope.toggleExpandCollection = function(collectionId) {
-    if ($scope.expandedCollection === collectionId) {
-      $scope.expandedCollection = '';
+  vm.expandedCollection = '';
+  vm.toggleExpandCollection = function(collectionId) {
+    if (vm.expandedCollection === collectionId) {
+      vm.expandedCollection = '';
     } else {
-      $scope.expandedCollection = collectionId;
+      vm.expandedCollection = collectionId;
     }
   };
 
   // Sort the data by date
-  $scope.comics = _.sortBy($scope.comics, ['yearPublished', 'monthPublished']);
+  vm.comics = _.sortBy(vm.comics, ['yearPublished', 'monthPublished']);
 
-  _.each($scope.comics, function(comic, key) {
-    var currentSeriesVolume = $scope.seriesVolume[_.findKey($scope.seriesVolume, { 'id': comic.seriesVolumeId })];
-    var currentSeries = $scope.series[_.findKey($scope.series, { 'id': currentSeriesVolume.seriesId })];
+  _.each(vm.comics, function(comic) {
+    var currentSeriesVolume = vm.seriesVolume[_.findKey(vm.seriesVolume, { 'id': comic.seriesVolumeId })];
+    var currentSeries = vm.series[_.findKey(vm.series, { 'id': currentSeriesVolume.seriesId })];
 
     // Horizontal positioning
     comic.styles = {};
@@ -380,11 +406,12 @@ angular.module('app', [])
       comic.styles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
 
       // Match the width of the page to the width of the content
-      bodyStyle.width = comic.styles.left + horizontalIncrement;
+      // TODO: Replace magic number
+      bodyStyle.width = comic.styles.left + horizontalIncrement + 60;
     }
 
     // Vertical positioning
-    if (typeof currentSeriesVolume.verticalPosition !== 'undefined') {
+    if (angular.isDefined(currentSeriesVolume.verticalPosition)) {
       comic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
       currentSeriesVolume.verticalPosition = globalVerticalPositionCounter;
@@ -401,20 +428,26 @@ angular.module('app', [])
     }
   });
 
-  var lastComic = _.last($scope.comics);
+  // Calculate the years and months spanned
+  var lastComic = _.last(vm.comics);
   lastYear = lastComic.yearPublished;
   lastMonth = lastComic.monthPublished;
-  var totalYearsSpan = lastYear - firstYear;
   var dates = {};
+  var i;
+  var i2;
   for (i = firstYear; i <= lastYear; i++) {
     dates[i] = {};
 
     if (i === lastYear) {
-      for (i2 = 1; i2 < lastMonth; i2++) {
+      for (i2 = 1; i2 <= lastMonth; i2++) {
+        dates[i][i2] = i2;
+      }
+    } else if (i === firstYear) {
+      for (i2 = firstMonth; i2 <= 12; i2++) {
         dates[i][i2] = i2;
       }
     } else {
-      for (i2 = 1; i2 < 13; i2++) {
+      for (i2 = 1; i2 <= 12; i2++) {
         dates[i][i2] = i2;
       }
     }
@@ -427,17 +460,17 @@ angular.module('app', [])
     'rgba(17,  167, 11,  ' + collectionOpacity + ')', // #11a70b
     'rgba(167, 161, 11,  ' + collectionOpacity + ')', // #a7a10b
     'rgba(111, 167, 11,  ' + collectionOpacity + ')', // #6fa70b
-    'rgba(11,  167, 142  ' + collectionOpacity + ')', // #0ba78e
-    'rgba(168, 11,  11   ' + collectionOpacity + ')', // #a70b0b
-    'rgba(57,  222, 236  ' + collectionOpacity + ')', // #39deec
+    'rgba(11,  167, 142, ' + collectionOpacity + ')', // #0ba78e
+    'rgba(168, 11,  11,  ' + collectionOpacity + ')', // #a70b0b
+    'rgba(57,  222, 236, ' + collectionOpacity + ')', // #39deec
   ];
 
   // Render collections as groups of comics
   var comicIndex;
-  _.each($scope.collections, function(collection, key) {
+  _.each(vm.collections, function(collection) {
     _.each(collection.comicIds, function(comicId) {
-      comicIndex = _.findKey($scope.comics, { 'id': comicId });
-      $scope.comics[comicIndex].styles.background = colors[globalColorIndex];
+      comicIndex = _.findKey(vm.comics, { 'id': comicId });
+      vm.comics[comicIndex].styles.background = colors[globalColorIndex];
     });
 
     globalColorIndex++;
@@ -446,6 +479,6 @@ angular.module('app', [])
     }
   });
 
-  $scope.dates = dates;
-  $scope.bodyStyle = bodyStyle;
-}]);
+  vm.dates = dates;
+  vm.bodyStyle = bodyStyle;
+});
