@@ -247,14 +247,16 @@ angular.module('app', [])
       yearPublished: 2011,
       monthPublished: 9,
       seriesVolumeId: 'UncannyXMenVol1'
-    },{
+    },
+    {
       id: 'UncannyXMenVol1542',
       title: ['Uncanny X-Men Vol 1 #542'],
       issue: 542,
       yearPublished: 2011,
       monthPublished: 10,
       seriesVolumeId: 'UncannyXMenVol1'
-    },{
+    },
+    {
       id: 'UncannyXMenVol1543',
       title: ['Uncanny X-Men Vol 1 #543'],
       issue: 543,
@@ -270,6 +272,54 @@ angular.module('app', [])
       monthPublished: 12,
       seriesVolumeId: 'UncannyXMenVol1'
     },
+    {
+      id: 'UncannyXMenVol1534.1',
+      title: ['Uncanny X-Men Vol 1 #534.1'],
+      issue: 534.1,
+      yearPublished: 2011,
+      monthPublished: 6,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1535',
+      title: ['Breaking Point (Part One)'],
+      issue: 535,
+      yearPublished: 2011,
+      monthPublished: 06,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1536',
+      title: ['Breaking Point: Part Two'],
+      issue: 536,
+      yearPublished: 2011,
+      monthPublished: 06,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1537',
+      title: ['Breaking Point (Part 3)'],
+      issue: 537,
+      yearPublished: 2011,
+      monthPublished: 07,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1538',
+      title: ['Breaking Point (Conclusion)'],
+      issue: 538,
+      yearPublished: 2011,
+      monthPublished: 08,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1539',
+      title: ['Losing Hope'],
+      issue: 539,
+      yearPublished: 2011,
+      monthPublished: 08,
+      seriesVolumeId: 'UncannyXMenVol1'
+    }
   ];
   vm.series = [
     {
@@ -398,6 +448,20 @@ angular.module('app', [])
         'UncannyXMenVol1542',
         'UncannyXMenVol1543',
         'UncannyXMenVol1544'
+      ]
+    },
+    {
+      id: 'UncannyXMenBreakingPoint',
+      title: ['Uncanny X-Men: Breaking Point'],
+      yearPublished: 2011,
+      monthPublished: 09,
+      comicIds: [
+        'UncannyXMenVol1534.1',
+        'UncannyXMenVol1535',
+        'UncannyXMenVol1536',
+        'UncannyXMenVol1537',
+        'UncannyXMenVol1538',
+        'UncannyXMenVol1539'
       ]
     }
   ];
