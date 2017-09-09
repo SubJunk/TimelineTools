@@ -231,7 +231,45 @@ angular.module('app', [])
       yearPublished: 2009,
       monthPublished: 3,
       seriesVolumeId: 'XMenManifestDestinyVol1'
-    }
+    },
+    {
+      id: 'UncannyXMenVol1540',
+      title: ['Uncanny X-Men Vol 1 #540'],
+      issue: 540,
+      yearPublished: 2011,
+      monthPublished: 9,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1541',
+      title: ['Uncanny X-Men Vol 1 #541'],
+      issue: 541,
+      yearPublished: 2011,
+      monthPublished: 9,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },{
+      id: 'UncannyXMenVol1542',
+      title: ['Uncanny X-Men Vol 1 #542'],
+      issue: 542,
+      yearPublished: 2011,
+      monthPublished: 10,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },{
+      id: 'UncannyXMenVol1543',
+      title: ['Uncanny X-Men Vol 1 #543'],
+      issue: 543,
+      yearPublished: 2011,
+      monthPublished: 11,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1544',
+      title: ['Uncanny'],
+      issue: 544,
+      yearPublished: 2011,
+      monthPublished: 12,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
   ];
   vm.series = [
     {
@@ -347,6 +385,19 @@ angular.module('app', [])
         'XMenManifestDestinyVol13',
         'XMenManifestDestinyVol14',
         'XMenManifestDestinyVol15'
+      ]
+    },
+    {
+      id: 'UncannyXMenFearItself',
+      title: ['Uncanny X-Men: Fear Itself'],
+      yearPublished: 2012,
+      monthPublished: 03,
+      comicIds: [
+        'UncannyXMenVol1540',
+        'UncannyXMenVol1541',
+        'UncannyXMenVol1542',
+        'UncannyXMenVol1543',
+        'UncannyXMenVol1544'
       ]
     }
   ];
