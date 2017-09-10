@@ -830,7 +830,6 @@ angular.module('app', [])
     }
 
     // Metadata
-    console.log(comic);
     comic.series = currentSeries.title;
     comic.image = comic.series.replace(/ /g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
 
