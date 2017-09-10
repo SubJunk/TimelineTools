@@ -1,5 +1,5 @@
 :root {
-  --month-width: 200px;
+  --month-width: 100px;
   --common-padding: 20px;
 }
 
@@ -25,7 +25,6 @@ body {
 .month {
   display: inline-block;
   width: var(--month-width);
-  margin-right: 10px;
   text-align: center;
 }
 
@@ -37,8 +36,10 @@ body {
   position: absolute;
   display: block;
   width: var(--month-width);
+  min-height: 150px;
   background: #1A1C1C;
   transition: top 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
 }
 
 .comic > div {
@@ -62,6 +63,7 @@ body {
 
 .comic.expanded {
   z-index: 1;
+  width: 200px;
 }
 
 .comic > div,

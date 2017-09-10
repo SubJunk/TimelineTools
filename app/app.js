@@ -12,7 +12,7 @@ angular.module('app', [])
 
   // Pixel counts
   var verticalIncrement = 180;
-  var horizontalIncrement = 210;
+  var horizontalIncrement = 95;
 
   vm.comics = [
     {
@@ -25,12 +25,212 @@ angular.module('app', [])
       officialLink: 'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
     },
     {
+      id: 'FOOMVol110',
+      title: [
+        'Mutation of the Species',
+        'X-Men! X-Men! Read All About \'Em!',
+        'Doctor Foom',
+        'Fan Art',
+        'Marvel at the Con!',
+        'Eggsmen',
+        'Dept. of Infoomation'
+      ],
+      issue: 10,
+      yearPublished: 1975,
+      monthPublished: 6,
+      seriesVolumeId: 'FOOMVol1'
+    },
+    {
       id: 'GiantSizeXMenVol11',
       title: ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
       issue: 1,
       yearPublished: 1975,
       monthPublished: 5,
       seriesVolumeId: 'GiantSizeXMenVol1'
+    },
+    {
+      id: 'IronFistVol114',
+      title: ['Snowfire'],
+      issue: 14,
+      yearPublished: 1977,
+      monthPublished: 8,
+      seriesVolumeId: 'IronFistVol1'
+    },
+    {
+      id: 'IronFistVol115',
+      title: ['Enter, the X-Men'],
+      issue: 15,
+      yearPublished: 1977,
+      monthPublished: 9,
+      seriesVolumeId: 'IronFistVol1'
+    },
+    {
+      id: 'MarvelTeamUpVol11976',
+      title: ['The Lords of Light and Darkness!'],
+      issue: 1976,
+      yearPublished: 1976,
+      monthPublished: 12,
+      seriesVolumeId: 'MarvelTeamUpVol1'
+    },
+    {
+      id: 'MarvelTeamUpVol153',
+      title: ['Nightmare in New Mexico!'],
+      issue: 53,
+      yearPublished: 1977,
+      monthPublished: 1,
+      seriesVolumeId: 'MarvelTeamUpVol1'
+    },
+    {
+      id: 'MarvelTeamUpVol169',
+      title: ['Night of the Living God!'],
+      issue: 69,
+      yearPublished: 1978,
+      monthPublished: 5,
+      seriesVolumeId: 'MarvelTeamUpVol1'
+    },
+    {
+      id: 'MarvelTeamUpVol170',
+      title: ['Whom Gods Destroy!'],
+      issue: 70,
+      yearPublished: 1978,
+      monthPublished: 6,
+      seriesVolumeId: 'MarvelTeamUpVol1'
+    },
+    {
+      id: 'XMenVol194',
+      title: ['The Doomsmith Scenario!'],
+      issue: 94,
+      yearPublished: 1975,
+      monthPublished: 8,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol195',
+      title: ['Warhunt!'],
+      issue: 95,
+      yearPublished: 1975,
+      monthPublished: 10,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol196',
+      title: ['Night of the Demon!'],
+      issue: 96,
+      yearPublished: 1975,
+      monthPublished: 12,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol197',
+      title: ['My Brother, My Enemy!'],
+      issue: 97,
+      yearPublished: 1976,
+      monthPublished: 2,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol198',
+      title: ['Merry Christmas, X-Men — The Sentinels Have Returned!'],
+      issue: 98,
+      yearPublished: 1976,
+      monthPublished: 4,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol199',
+      title: ['Deathstar, Rising!'],
+      issue: 99,
+      yearPublished: 1976,
+      monthPublished: 6,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1100',
+      title: ['Greater Love Hath No X-Man...'],
+      issue: 100,
+      yearPublished: 1976,
+      monthPublished: 8,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1101',
+      title: ['Like a Phoenix, from the Ashes'],
+      issue: 101,
+      yearPublished: 1976,
+      monthPublished: 10,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1102',
+      title: ['Who Will Stop the Juggernaut?'],
+      issue: 102,
+      yearPublished: 1976,
+      monthPublished: 12,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1103',
+      title: ['The Fall of the Tower'],
+      issue: 103,
+      yearPublished: 1977,
+      monthPublished: 2,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1104',
+      title: ['The Gentleman\'s Name is Magneto'],
+      issue: 104,
+      yearPublished: 1977,
+      monthPublished: 4,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1105',
+      title: ['Phoenix Unleashed!'],
+      issue: 105,
+      yearPublished: 1977,
+      monthPublished: 6,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1106',
+      title: ['Dark Shroud of the Past!'],
+      issue: 106,
+      yearPublished: 1977,
+      monthPublished: 8,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1107',
+      title: ['Where No X-Man Has Gone Before!'],
+      issue: 107,
+      yearPublished: 1977,
+      monthPublished: 10,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1108',
+      title: ['Armageddon Now'],
+      issue: 108,
+      yearPublished: 1977,
+      monthPublished: 12,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1109',
+      title: ['Home are the Heroes!'],
+      issue: 109,
+      yearPublished: 1978,
+      monthPublished: 2,
+      seriesVolumeId: 'XMenVol1'
+    },
+    {
+      id: 'XMenVol1110',
+      title: ['The \'X\'-Sanction'],
+      issue: 110,
+      yearPublished: 1978,
+      monthPublished: 4,
+      seriesVolumeId: 'XMenVol1'
     },
     {
       id: 'UncannyXMenVol1129',
@@ -285,7 +485,7 @@ angular.module('app', [])
       title: ['Breaking Point (Part One)'],
       issue: 535,
       yearPublished: 2011,
-      monthPublished: 06,
+      monthPublished: 6,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -293,7 +493,7 @@ angular.module('app', [])
       title: ['Breaking Point: Part Two'],
       issue: 536,
       yearPublished: 2011,
-      monthPublished: 06,
+      monthPublished: 6,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -301,7 +501,7 @@ angular.module('app', [])
       title: ['Breaking Point (Part 3)'],
       issue: 537,
       yearPublished: 2011,
-      monthPublished: 07,
+      monthPublished: 7,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -309,7 +509,7 @@ angular.module('app', [])
       title: ['Breaking Point (Conclusion)'],
       issue: 538,
       yearPublished: 2011,
-      monthPublished: 08,
+      monthPublished: 8,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -317,25 +517,42 @@ angular.module('app', [])
       title: ['Losing Hope'],
       issue: 539,
       yearPublished: 2011,
-      monthPublished: 08,
+      monthPublished: 8,
       seriesVolumeId: 'UncannyXMenVol1'
     }
   ];
+
   vm.series = [
     {
       id: 'Cable',
       title: 'Cable'
     },
     {
+      id: 'FOOM',
+      title: 'FOOM'
+    },
+    {
       id: 'GiantSizeXMen',
       title: 'Giant-Size X-Men'
+    },
+    {
+      id: 'IronFist',
+      title: 'Iron Fist'
+    },
+    {
+      id: 'MarvelTeamUp',
+      title: 'Marvel Team-Up'
     },
     {
       id: 'UncannyXMen',
       title: 'Uncanny X-Men'
     },
     {
-      id:'XMenManifestDestiny',
+      id: 'XMen',
+      title: 'X-Men'
+    },
+    {
+      id: 'XMenManifestDestiny',
       title: 'X-Men Manifest Destiny'
     },
     {
@@ -343,6 +560,7 @@ angular.module('app', [])
       title: 'X-Men Free Comic Book Day'
     }
   ];
+
   vm.seriesVolume = [
     {
       id: 'CableVol2',
@@ -350,8 +568,23 @@ angular.module('app', [])
       volume: 2
     },
     {
+      id: 'FOOMVol1',
+      seriesId: 'FOOM',
+      volume: 1
+    },
+    {
       id: 'GiantSizeXMenVol1',
       seriesId: 'GiantSizeXMen',
+      volume: 1
+    },
+    {
+      id: 'IronFistVol1',
+      seriesId: 'IronFist',
+      volume: 1
+    },
+    {
+      id: 'MarvelTeamUpVol1',
+      seriesId: 'MarvelTeamUp',
       volume: 1
     },
     {
@@ -362,6 +595,11 @@ angular.module('app', [])
     {
       id: 'XMenManifestDestinyVol1',
       seriesId: 'XMenManifestDestiny',
+      volume: 1
+    },
+    {
+      id: 'XMenVol1',
+      seriesId: 'XMen',
       volume: 1
     },
     {
@@ -382,8 +620,41 @@ angular.module('app', [])
       officialLink: 'https://comicstore.marvel.com/Cable-Vol-1-Messiah-War/digital-comic/27342'
     },
     {
+      id: 'XMenEpicCollectionVol5SecondGenesis',
+      title: 'X-Men Epic Collection Vol. 5: Second Genesis',
+      yearPublished: 2017,
+      monthPublished: 4,
+      comicIds: [
+        'FOOMVol110',
+        'GiantSizeXMenVol11',
+        'IronFistVol114',
+        'IronFistVol115',
+        'MarvelTeamUpVol11976',
+        'MarvelTeamUpVol153',
+        'MarvelTeamUpVol169',
+        'MarvelTeamUpVol170',
+        'XMenVol194',
+        'XMenVol195',
+        'XMenVol196',
+        'XMenVol197',
+        'XMenVol198',
+        'XMenVol199',
+        'XMenVol1100',
+        'XMenVol1101',
+        'XMenVol1102',
+        'XMenVol1103',
+        'XMenVol1104',
+        'XMenVol1105',
+        'XMenVol1106',
+        'XMenVol1107',
+        'XMenVol1108',
+        'XMenVol1109',
+        'XMenVol1110'
+      ]
+    },
+    {
       id: 'XMenMessiahComplex',
-      title: ['X-Men: Messiah Complex'],
+      title: 'X-Men: Messiah Complex',
       yearPublished: 2008,
       monthPublished: 11,
       comicIds: [
@@ -394,7 +665,7 @@ angular.module('app', [])
     },
     {
       id: 'XMenTheDarkPhoenixSaga',
-      title: ['X-Men: The Dark Phoenix Saga'],
+      title: 'X-Men: The Dark Phoenix Saga',
       yearPublished: 2006,
       monthPublished: 4,
       comicIds: [
@@ -411,7 +682,7 @@ angular.module('app', [])
     },
     {
       id: 'UncannyXMenDividedWeStand',
-      title: ['Uncanny X-Men: Divided We Stand'],
+      title: 'Uncanny X-Men: Divided We Stand',
       yearPublished: 2008,
       monthPublished: 10,
       comicIds: [
@@ -421,7 +692,7 @@ angular.module('app', [])
     },
     {
       id: 'UncannyXMenManifestDestiny',
-      title: ['Uncanny X-Men: Manifest Destiny'],
+      title: 'Uncanny X-Men: Manifest Destiny',
       yearPublished: 2009,
       monthPublished: 10,
       comicIds: [
@@ -441,7 +712,7 @@ angular.module('app', [])
       id: 'UncannyXMenFearItself',
       title: ['Uncanny X-Men: Fear Itself'],
       yearPublished: 2012,
-      monthPublished: 03,
+      monthPublished: 3,
       comicIds: [
         'UncannyXMenVol1540',
         'UncannyXMenVol1541',
@@ -454,7 +725,7 @@ angular.module('app', [])
       id: 'UncannyXMenBreakingPoint',
       title: ['Uncanny X-Men: Breaking Point'],
       yearPublished: 2011,
-      monthPublished: 09,
+      monthPublished: 9,
       comicIds: [
         'UncannyXMenVol1534.1',
         'UncannyXMenVol1535',
@@ -522,7 +793,7 @@ angular.module('app', [])
 
       // Match the width of the page to the width of the content
       // TODO: Replace magic number
-      bodyStyle.width = comic.styles.left + horizontalIncrement + 60;
+      bodyStyle.width = comic.styles.left + horizontalIncrement + 3000;
     }
 
     // Vertical positioning
@@ -568,7 +839,7 @@ angular.module('app', [])
     }
   }
 
-  var collectionOpacity = '0.5';
+  var collectionOpacity = '1';
   var globalColorIndex = 0;
   var colors = [
     'rgba(11,  61,  167, ' + collectionOpacity + ')', // #0b3da7
