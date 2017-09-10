@@ -313,12 +313,204 @@ angular.module('app', [])
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
-      id: 'UncannyXMenVol1539',
-      title: ['Losing Hope'],
-      issue: 539,
+      id: 'UncannyXMenVol1530',
+      title: ['Quarantine: Part 1'],
+      issue: 530,
       yearPublished: 2011,
+      monthPublished: 01,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1531',
+      title: ['"Quarantine (Part Two)'],
+      issue: 531,
+      yearPublished: 2011,
+      monthPublished: 02,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1532',
+      title: ['Quarantine (Part Three)'],
+      issue: 532,
+      yearPublished: 2011,
+      monthPublished: 03,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1533',
+      title: ['Quarantine (Part Four)'],
+      issue: 533,
+      yearPublished: 2011,
+      monthPublished: 04,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1534',
+      title: ['Quarantine (Part Five)'],
+      issue: 534,
+      yearPublished: 2011,
+      monthPublished: 05,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1526',
+      title: ['The Five Lights (Part 1): Freak Like Me', 'Rebuilding'],
+      issue: 526,
+      yearPublished: 2010,
+      monthPublished: 09,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1527',
+      title: ['The Five Lights (Part 2) - Velocidad'],
+      issue: 527,
+      yearPublished: 2010,
+      monthPublished: 10,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1528',
+      title: ['The Five Lights (Part 3)'],
+      issue: 528,
+      yearPublished: 2010,
+      monthPublished: 11,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1529',
+      title: ['The Five Lights (Part Four)'],
+      issue: 529,
+      yearPublished: 2010,
+      monthPublished: 12,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'HeroicAgeXMenVol11',
+      title: ['Heroic Age: X-Men Vol 1 #1'],
+      issue: 1,
+      yearPublished: 2011,
+      monthPublished: 02,
+      seriesVolumeId: 'HeroicAgeXMenVol1'
+    },
+    {
+      id: 'SecondComingPrepareVol11',
+      title: ['Where Were You?'],
+      issue: 1,
+      yearPublished: 2010,
+      monthPublished: 04,
+      seriesVolumeId: 'SecondComingPrepareVol1'
+    },
+    {
+      id: 'XMenSecondComingVol12',
+      title: ['Second Coming Chapter XIV'],
+      issue: 2,
+      yearPublished: 2010,
+      monthPublished: 09,
+      seriesVolumeId: 'XMenSecondComingVol1'
+    },
+    {
+      id: 'XMenSecondComingVol11',
+      title: ['Second Coming, Chapter One'],
+      issue: 1,
+      yearPublished: 2010,
+      monthPublished: 05,
+      seriesVolumeId: 'XMenSecondComingVol1'
+    },
+    {
+      id: 'UncannyXMenVol1525',
+      title: ['Second Coming (Chapter Ten)'],
+      issue: 525,
+      yearPublished: 2010,
       monthPublished: 08,
       seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1524',
+      title: ['Second Coming (Chapter Six)'],
+      issue: 524,
+      yearPublished: 2010,
+      monthPublished: 07,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'UncannyXMenVol1523',
+      title: ['Second Coming (Chapter Two)'],
+      issue: 523,
+      yearPublished: 2010,
+      monthPublished: 06,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
+      id: 'NewMutantsVol314',
+      title: ['Second Coming (Chapter Eleven)'],
+      issue: 14,
+      yearPublished: 2010,
+      monthPublished: 08,
+      seriesVolumeId: 'NewMutantsVol3'
+    },
+    {
+      id: 'NewMutantsVol313',
+      title: ['Second Coming (Chapter Seven)'],
+      issue: 13,
+      yearPublished: 2010,
+      monthPublished: 07,
+      seriesVolumeId: 'NewMutantsVol3'
+    },
+    {
+      id: 'NewMutantsVol312',
+      title: ['Second Coming (Chapter Three)'],
+      issue: 12,
+      yearPublished: 2010,
+      monthPublished: 06,
+      seriesVolumeId: 'NewMutantsVol3'
+    },
+    {
+      id: 'MenLegacyVol1237',
+      title: ['Second Coming (Chapter Twelve)'],
+      issue: 237,
+      yearPublished: 2010,
+      monthPublished: 08,
+      seriesVolumeId: 'XMenLegacyVol1'
+    },
+    {
+      id: 'XMenLegacyVol1236',
+      title: ['Second Coming (Chapter Eight)'],
+      issue: 236,
+      yearPublished: 2010,
+      monthPublished: 07,
+      seriesVolumeId: 'XMenLegacyVol1'
+    },
+    {
+      id: 'XMenLegacyVol1235',
+      title: ['Second Coming (Chapter Four)'],
+      issue: 235,
+      yearPublished: 2010,
+      monthPublished: 06,
+      seriesVolumeId: 'XMenLegacyVol1'
+    },
+    {
+      id: 'XForceVol326',
+      title: ['"Second Coming (Chapter Five)'],
+      issue: 26,
+      yearPublished: 2010,
+      monthPublished: 06,
+      seriesVolumeId: 'XForceVol3'
+    },
+    {
+      id: 'XForceVol327',
+      title: ['Second Coming (Chapter Nine)'],
+      issue: 27,
+      yearPublished: 2010,
+      monthPublished: 07,
+      seriesVolumeId: 'XForceVol3'
+    },
+    {
+      id: 'XForceVol328',
+      title: ['Second Coming, Chapter 13'],
+      issue: 28,
+      yearPublished: 2010,
+      monthPublished: 09,
+      seriesVolumeId: 'XForceVol3'
     }
   ];
   vm.series = [
@@ -341,6 +533,30 @@ angular.module('app', [])
     {
       id: 'XMenFreeComicBookDay',
       title: 'X-Men Free Comic Book Day'
+    },
+    {
+      id: 'HeroicAgeXMen',
+      title: 'Heroic Age: X-Men'
+    },
+    {
+      id: 'SecondComingPrepare',
+      title: 'Second Coming: Prepare',
+    },
+    {
+      id: 'XMenSecondComing',
+      title: 'X-Men: Second Coming',
+    },
+    {
+      id: 'XForce',
+      tite: 'X-Force'
+    },
+    {
+      id: 'XMenLegacy',
+      title: 'X-Men: Legacy'
+    },
+    {
+      id: 'NewMutants',
+      title: 'New Mutants'
     }
   ];
   vm.seriesVolume = [
@@ -368,6 +584,36 @@ angular.module('app', [])
       id: 'XMenFreeComicBookDay2008',
       seriesId: 'XMenFreeComicBookDay',
       volume: 2008
+    },
+    {
+      id: 'HeroicAgeXMenVol1',
+      seriesId: 'HeroicAgeXmen',
+      volume: 1
+    },
+    {
+      id: 'SecondComingPrepareVol1',
+      seriesId: 'SecondComingPrepare',
+      volume: 1
+    },
+    {
+      id: 'XMenSecondComingVol1',
+      seriesId: 'XMenSecondComing',
+      volume: 1
+    },
+    {
+      id: 'XForceVol3',
+      seriesId: 'XForce',
+      volume: 3
+    },
+    {
+      id: 'XMenLegacyVol1',
+      seriesId: 'XMenLegacy',
+      volume: 1
+    },
+    {
+      id: 'NewMutantsVol3',
+      seriesId: 'NewMutants',
+      volume: 3
     }
   ];
   vm.collections = [
@@ -462,6 +708,55 @@ angular.module('app', [])
         'UncannyXMenVol1537',
         'UncannyXMenVol1538',
         'UncannyXMenVol1539'
+      ]
+    },
+    {
+      id: 'UncannyXMenQuarantine',
+      title: ['Uncanny X-Men: Quarantine'],
+      yearPublished: 2011,
+      monthPublished: 06,
+      comicIds: [
+        'UncannyXMenVol1530',
+        'UncannyXMenVol1531',
+        'UncannyXMenVol1532',
+        'UncannyXMenVol1533',
+        'UncannyXMenVol1534'
+      ]
+    },
+    {
+      id: 'UncannyXMenTheFiveLights',
+      title: ['Uncanny X-Men: The Five Lights (aka Uncanny X-Men: The Birth of Generation Hope)'],
+      yearPublished: 2010,
+      monthPublished: 12,
+      comicIds: [
+        'UncannyXMenVol1526',
+        'UncannyXMenVol1527',
+        'UncannyXMenVol1528',
+        'UncannyXMenVol1529',
+        'UncannyXMenVol1534'
+      ]
+    },
+    {
+      id: 'UncannyXMenSecondComing',
+      title: ['X-Men: Second Coming'],
+      yearPublished: 2011,
+      monthPublished: 06,
+      comicIds: [
+        'SecondComingPrepareVol11',
+        'XMenSecondComingVol11',
+        'XMenSecondComingVol12',
+        'UncannyXMenVol1523',
+        'UncannyXMenVol1524',
+        'UncannyXMenVol1525',
+        'NewMutantsVol312',
+        'NewMutantsVol313',
+        'NewMutantsVol314',
+        'XMenLegacyVol1235',
+        'XMenLegacyVol1236',
+        'XMenLegacyVol1237',
+        'XForceVol326',
+        'XForceVol327',
+        'XForceVol328'
       ]
     }
   ];
