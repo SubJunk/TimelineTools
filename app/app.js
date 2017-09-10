@@ -544,15 +544,15 @@ angular.module('app', [])
     },
     {
       id: 'HeroicAgeXMen',
-      title: 'Heroic Age: X-Men'
+      title: 'Heroic Age X-Men'
     },
     {
       id: 'SecondComingPrepare',
-      title: 'Second Coming: Prepare',
+      title: 'Second Coming Prepare',
     },
     {
       id: 'XMenSecondComing',
-      title: 'X-Men: Second Coming',
+      title: 'X-Men Second Coming',
     },
     {
       id: 'XForce',
@@ -560,7 +560,7 @@ angular.module('app', [])
     },
     {
       id: 'XMenLegacy',
-      title: 'X-Men: Legacy'
+      title: 'X-Men Legacy'
     },
     {
       id: 'NewMutants',
