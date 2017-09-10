@@ -285,7 +285,7 @@ angular.module('app', [])
       title: ['Breaking Point (Part One)'],
       issue: 535,
       yearPublished: 2011,
-      monthPublished: 06,
+      monthPublished: 6,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -293,7 +293,7 @@ angular.module('app', [])
       title: ['Breaking Point: Part Two'],
       issue: 536,
       yearPublished: 2011,
-      monthPublished: 06,
+      monthPublished: 6,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -301,7 +301,7 @@ angular.module('app', [])
       title: ['Breaking Point (Part 3)'],
       issue: 537,
       yearPublished: 2011,
-      monthPublished: 07,
+      monthPublished: 7,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -309,7 +309,7 @@ angular.module('app', [])
       title: ['Breaking Point (Conclusion)'],
       issue: 538,
       yearPublished: 2011,
-      monthPublished: 08,
+      monthPublished: 8,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -317,15 +317,15 @@ angular.module('app', [])
       title: ['Quarantine: Part 1'],
       issue: 530,
       yearPublished: 2011,
-      monthPublished: 01,
+      monthPublished: 1,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
       id: 'UncannyXMenVol1531',
-      title: ['"Quarantine (Part Two)'],
+      title: ['Quarantine (Part Two)'],
       issue: 531,
       yearPublished: 2011,
-      monthPublished: 02,
+      monthPublished: 2,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -333,7 +333,7 @@ angular.module('app', [])
       title: ['Quarantine (Part Three)'],
       issue: 532,
       yearPublished: 2011,
-      monthPublished: 03,
+      monthPublished: 3,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -341,7 +341,7 @@ angular.module('app', [])
       title: ['Quarantine (Part Four)'],
       issue: 533,
       yearPublished: 2011,
-      monthPublished: 04,
+      monthPublished: 4,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -349,7 +349,7 @@ angular.module('app', [])
       title: ['Quarantine (Part Five)'],
       issue: 534,
       yearPublished: 2011,
-      monthPublished: 05,
+      monthPublished: 5,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -357,7 +357,7 @@ angular.module('app', [])
       title: ['The Five Lights (Part 1): Freak Like Me', 'Rebuilding'],
       issue: 526,
       yearPublished: 2010,
-      monthPublished: 09,
+      monthPublished: 9,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -389,7 +389,7 @@ angular.module('app', [])
       title: ['Heroic Age: X-Men Vol 1 #1'],
       issue: 1,
       yearPublished: 2011,
-      monthPublished: 02,
+      monthPublished: 2,
       seriesVolumeId: 'HeroicAgeXMenVol1'
     },
     {
@@ -397,7 +397,7 @@ angular.module('app', [])
       title: ['Where Were You?'],
       issue: 1,
       yearPublished: 2010,
-      monthPublished: 04,
+      monthPublished: 4,
       seriesVolumeId: 'SecondComingPrepareVol1'
     },
     {
@@ -405,7 +405,7 @@ angular.module('app', [])
       title: ['Second Coming Chapter XIV'],
       issue: 2,
       yearPublished: 2010,
-      monthPublished: 09,
+      monthPublished: 9,
       seriesVolumeId: 'XMenSecondComingVol1'
     },
     {
@@ -413,7 +413,7 @@ angular.module('app', [])
       title: ['Second Coming, Chapter One'],
       issue: 1,
       yearPublished: 2010,
-      monthPublished: 05,
+      monthPublished: 5,
       seriesVolumeId: 'XMenSecondComingVol1'
     },
     {
@@ -421,7 +421,7 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Ten)'],
       issue: 525,
       yearPublished: 2010,
-      monthPublished: 08,
+      monthPublished: 8,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -429,7 +429,7 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Six)'],
       issue: 524,
       yearPublished: 2010,
-      monthPublished: 07,
+      monthPublished: 7,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -437,7 +437,7 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Two)'],
       issue: 523,
       yearPublished: 2010,
-      monthPublished: 06,
+      monthPublished: 6,
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
@@ -445,7 +445,7 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Eleven)'],
       issue: 14,
       yearPublished: 2010,
-      monthPublished: 08,
+      monthPublished: 8,
       seriesVolumeId: 'NewMutantsVol3'
     },
     {
@@ -453,7 +453,7 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Seven)'],
       issue: 13,
       yearPublished: 2010,
-      monthPublished: 07,
+      monthPublished: 7,
       seriesVolumeId: 'NewMutantsVol3'
     },
     {
@@ -461,7 +461,7 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Three)'],
       issue: 12,
       yearPublished: 2010,
-      monthPublished: 06,
+      monthPublished: 6,
       seriesVolumeId: 'NewMutantsVol3'
     },
     {
@@ -469,7 +469,7 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Twelve)'],
       issue: 237,
       yearPublished: 2010,
-      monthPublished: 08,
+      monthPublished: 8,
       seriesVolumeId: 'XMenLegacyVol1'
     },
     {
@@ -477,7 +477,7 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Eight)'],
       issue: 236,
       yearPublished: 2010,
-      monthPublished: 07,
+      monthPublished: 7,
       seriesVolumeId: 'XMenLegacyVol1'
     },
     {
@@ -485,15 +485,15 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Four)'],
       issue: 235,
       yearPublished: 2010,
-      monthPublished: 06,
+      monthPublished: 6,
       seriesVolumeId: 'XMenLegacyVol1'
     },
     {
       id: 'XForceVol326',
-      title: ['"Second Coming (Chapter Five)'],
+      title: ['Second Coming (Chapter Five)'],
       issue: 26,
       yearPublished: 2010,
-      monthPublished: 06,
+      monthPublished: 6,
       seriesVolumeId: 'XForceVol3'
     },
     {
@@ -501,7 +501,7 @@ angular.module('app', [])
       title: ['Second Coming (Chapter Nine)'],
       issue: 27,
       yearPublished: 2010,
-      monthPublished: 07,
+      monthPublished: 7,
       seriesVolumeId: 'XForceVol3'
     },
     {
@@ -509,7 +509,7 @@ angular.module('app', [])
       title: ['Second Coming, Chapter 13'],
       issue: 28,
       yearPublished: 2010,
-      monthPublished: 09,
+      monthPublished: 9,
       seriesVolumeId: 'XForceVol3'
     }
   ];
@@ -548,7 +548,7 @@ angular.module('app', [])
     },
     {
       id: 'XForce',
-      tite: 'X-Force'
+      title: 'X-Force'
     },
     {
       id: 'XMenLegacy',
@@ -687,7 +687,7 @@ angular.module('app', [])
       id: 'UncannyXMenFearItself',
       title: ['Uncanny X-Men: Fear Itself'],
       yearPublished: 2012,
-      monthPublished: 03,
+      monthPublished: 3,
       comicIds: [
         'UncannyXMenVol1540',
         'UncannyXMenVol1541',
@@ -700,7 +700,7 @@ angular.module('app', [])
       id: 'UncannyXMenBreakingPoint',
       title: ['Uncanny X-Men: Breaking Point'],
       yearPublished: 2011,
-      monthPublished: 09,
+      monthPublished: 9,
       comicIds: [
         'UncannyXMenVol1534.1',
         'UncannyXMenVol1535',
@@ -714,7 +714,7 @@ angular.module('app', [])
       id: 'UncannyXMenQuarantine',
       title: ['Uncanny X-Men: Quarantine'],
       yearPublished: 2011,
-      monthPublished: 06,
+      monthPublished: 6,
       comicIds: [
         'UncannyXMenVol1530',
         'UncannyXMenVol1531',
@@ -740,7 +740,7 @@ angular.module('app', [])
       id: 'UncannyXMenSecondComing',
       title: ['X-Men: Second Coming'],
       yearPublished: 2011,
-      monthPublished: 06,
+      monthPublished: 6,
       comicIds: [
         'SecondComingPrepareVol11',
         'XMenSecondComingVol11',
@@ -831,6 +831,7 @@ angular.module('app', [])
 
     // Metadata
     comic.series = currentSeries.title;
+    console.log(comic);
     comic.image = comic.series.replace(/ /g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
 
     if (currentSeriesVolume.volume > 1) {
