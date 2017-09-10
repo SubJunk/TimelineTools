@@ -313,6 +313,14 @@ angular.module('app', [])
       seriesVolumeId: 'UncannyXMenVol1'
     },
     {
+      id: 'UncannyXMenVol1539',
+      title: ['Losing Hope'],
+      issue: 539,
+      yearPublished: 2011,
+      monthPublished: 8,
+      seriesVolumeId: 'UncannyXMenVol1'
+    },
+    {
       id: 'UncannyXMenVol1530',
       title: ['Quarantine: Part 1'],
       issue: 530,
@@ -465,7 +473,7 @@ angular.module('app', [])
       seriesVolumeId: 'NewMutantsVol3'
     },
     {
-      id: 'MenLegacyVol1237',
+      id: 'XMenLegacyVol1237',
       title: ['Second Coming (Chapter Twelve)'],
       issue: 237,
       yearPublished: 2010,
@@ -878,7 +886,8 @@ angular.module('app', [])
   // Render collections as groups of comics
   var comicIndex;
   _.each(vm.collections, function(collection) {
-    _.each(collection.comicIds, function(comicId) {
+    _.each(collection.comicIds, function(comicId) 
+    {
       comicIndex = _.findKey(vm.comics, { 'id': comicId });
       vm.comics[comicIndex].styles.background = colors[globalColorIndex];
     });
