@@ -587,7 +587,7 @@ angular.module('app', [])
     },
     {
       id: 'HeroicAgeXMenVol1',
-      seriesId: 'HeroicAgeXmen',
+      seriesId: 'HeroicAgeXMen',
       volume: 1
     },
     {
@@ -830,8 +830,8 @@ angular.module('app', [])
     }
 
     // Metadata
-    comic.series = currentSeries.title;
     console.log(comic);
+    comic.series = currentSeries.title;
     comic.image = comic.series.replace(/ /g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
 
     if (currentSeriesVolume.volume > 1) {
