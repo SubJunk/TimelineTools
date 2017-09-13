@@ -1,6 +1,7 @@
 :root {
-  --month-width: 100px;
+  --month-width: 55px;
   --common-padding: 20px;
+  --expanded-width: 200px;
 }
 
 * {
@@ -24,7 +25,7 @@ body {
 
 .month {
   display: inline-block;
-  width: var(--month-width);
+  width: 60px;
   text-align: center;
 }
 
@@ -36,10 +37,8 @@ body {
   position: absolute;
   display: block;
   width: var(--month-width);
-  min-height: 150px;
   background: #1A1C1C;
-  transition: top 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
+  transition: top 0.5s, width 0.5s;
 }
 
 .comic > div {
@@ -47,12 +46,9 @@ body {
   margin: 0 5px;
 }
 
-.comic a {
-  margin: 5px;
-}
-
 .comic .series {
   background: rgba(27, 27, 27, 0.5);
+  margin-top: 5px;
 }
 
 .comic .series,
@@ -70,12 +66,7 @@ body {
 .comic > a {
   position: relative;
   top: 0;
-  transition: top 0.5s ease-in-out;
-}
-
-.comic.expanded > div,
-.comic.expanded > a {
-  /* top: -50px; */
+  transition: top 0.5s;
 }
 
 .comic.expanded div {
@@ -84,17 +75,25 @@ body {
 
 .cover-thumbnail {
   display: block;
+  border-radius: 50%;
+  transition: border-radius 0.5s;
 }
 
 .cover-thumbnail img {
-  max-height: 140px;
+  width: var(--month-width);
+  height: var(--month-width);
   margin: 0 auto;
   display: block;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s, max-width 0.5s, height 0.5s, width 0.5s;
   overflow: hidden;
+  object-fit: fill;
+}
+
+.comic.expanded .cover-thumbnail {
+  border-radius: 0%;
 }
 
 .comic.expanded .cover-thumbnail img {
-  max-height: 350px;
-  transition: max-height 0.5s ease-in-out;
+  height: 300px;
+  width: var(--expanded-width);
 }

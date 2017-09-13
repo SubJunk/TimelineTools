@@ -6,14 +6,6 @@ angular.module('app', [])
 .controller('DataController', function() {
   var vm = this;
 
-  // Date data
-  vm.incrementBy = 'month';
-  var bodyStyle = {};
-
-  // Pixel counts
-  var verticalIncrement = 180;
-  var horizontalIncrement = 95;
-
   vm.comics = [
     {
       id: 'CableVol21',
@@ -1047,6 +1039,14 @@ angular.module('app', [])
   var monthsSinceFirst;
   var globalVerticalPositionCounter = 0;
 
+  // Date data
+  vm.incrementBy = 'month';
+  var bodyStyle = {};
+
+  // Pixel counts
+  var verticalIncrement = 60;
+  var horizontalIncrement = 60;
+
   vm.expandedComic;
   vm.toggleExpandComic = function(comicId) {
     var currentComic = vm.comics[_.findKey(vm.comics, { 'id': comicId })];
@@ -1062,7 +1062,7 @@ angular.module('app', [])
       }
 
       vm.expandedComic = comicId;
-      currentComic.styles.top = (currentSeriesVolume.verticalPosition * verticalIncrement) - 50;
+      currentComic.styles.top = (currentSeriesVolume.verticalPosition * verticalIncrement) - 175;
     }
   };
   

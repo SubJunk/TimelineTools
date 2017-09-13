@@ -7,7 +7,7 @@
   "license": "MIT",
   "eslintConfig": {
     "env": {
-        "browser": true
+      "browser": true
     },
     "extends": [
       "angular",
