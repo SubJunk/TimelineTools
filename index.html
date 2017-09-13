@@ -26,6 +26,14 @@
         <div class="series">{{comic.series}} #{{comic.issue}}</div>
         <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
         <div class="official-link" ng-if="comic.officialLink"><a ng-href="{{comic.officialLink}}">Read online</a></div>
+        <div class="slide">
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>  
+              <div class="collapsible-header">See Collections</div>
+              <div class="collapsible-body"><span>Collection info goes here</span></div>
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>

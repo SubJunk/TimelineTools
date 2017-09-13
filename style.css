@@ -51,6 +51,15 @@ body {
   margin-top: 5px;
 }
 
+.slide, 
+.collapsible-body{
+  display: none;
+}
+
+.collapsible-header{
+  background: rgba(27, 27, 27, 0.5);
+}
+
 .comic .series,
 .comic .title,
 .comic .official-link {
