@@ -1046,13 +1046,11 @@ angular.module('app', [])
   // Pixel counts
   var verticalIncrement = 60;
   var horizontalIncrement = 60;
-
   vm.expandedComic;
-  vm.toggleExpandComic = function(comicId) {
-    var currentComic = vm.comics[_.findKey(vm.comics, { 'id': comicId })];
+  vm.toggleExpandComic = function(currentComic) {
     var currentSeriesVolume = vm.seriesVolume[_.findKey(vm.seriesVolume, { 'id': currentComic.seriesVolumeId })];
 
-    if (vm.expandedComic === comicId) {
+    if (vm.expandedComic === currentComic.id) {
       vm.expandedComic = undefined;
       currentComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
@@ -1061,7 +1059,7 @@ angular.module('app', [])
         previousComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
       }
 
-      vm.expandedComic = comicId;
+      vm.expandedComic = currentComic.id;
       currentComic.styles.top = (currentSeriesVolume.verticalPosition * verticalIncrement) - 175;
     }
   };
@@ -1157,8 +1155,7 @@ angular.module('app', [])
   // Render collections as groups of comics
   var comicIndex;
   _.each(vm.collections, function(collection) {
-    _.each(collection.comicIds, function(comicId) 
-    {
+    _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(vm.comics, { 'id': comicId });
       vm.comics[comicIndex].styles.background = colors[globalColorIndex];
     });
