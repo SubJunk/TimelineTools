@@ -1,7 +1,7 @@
 :root {
   --month-width: 55px;
   --common-padding: 20px;
-  --expanded-width: 200px;
+  --expanded-height: 200px;
 }
 
 * {
@@ -41,9 +41,8 @@ body {
   transition: top 0.5s, width 0.5s;
 }
 
-.comic > div {
-  padding: 8px;
-  margin: 0 5px;
+.comic.expanded {
+  z-index: 1;
 }
 
 .comic .series {
@@ -51,26 +50,10 @@ body {
   margin-top: 5px;
 }
 
-.comic .series,
-.comic .title,
-.comic .official-link {
-  display: none;
-}
-
-.comic.expanded {
-  z-index: 1;
-  width: 200px;
-}
-
-.comic > div,
 .comic > a {
   position: relative;
   top: 0;
   transition: top 0.5s;
-}
-
-.comic.expanded div {
-  display: block;
 }
 
 .cover-thumbnail {
@@ -84,16 +67,22 @@ body {
   height: var(--month-width);
   margin: 0 auto;
   display: block;
-  transition: max-height 0.5s, max-width 0.5s, height 0.5s, width 0.5s;
   overflow: hidden;
   object-fit: fill;
 }
 
-.comic.expanded .cover-thumbnail {
-  border-radius: 0%;
+.expanded-panel {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  transition: max-height 0.5s, max-width 0.5s, height 0.5s, width 0.5s;
+  background: inherit;
 }
 
-.comic.expanded .cover-thumbnail img {
-  height: 300px;
-  width: var(--expanded-width);
+.expanded-panel .row {
+  margin-bottom: 0;
+}
+
+.expanded-panel img {
+  max-width: 100%;
 }

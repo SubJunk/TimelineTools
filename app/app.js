@@ -871,14 +871,7 @@ angular.module('app', [])
       yearPublished: 2017,
       monthPublished: 4,
       comicIds: [
-        'FOOMVol110',
         'GiantSizeXMenVol11',
-        'IronFistVol114',
-        'IronFistVol115',
-        'MarvelTeamUpVol11976',
-        'MarvelTeamUpVol153',
-        'MarvelTeamUpVol169',
-        'MarvelTeamUpVol170',
         'XMenVol194',
         'XMenVol195',
         'XMenVol196',
@@ -895,7 +888,14 @@ angular.module('app', [])
         'XMenVol1107',
         'XMenVol1108',
         'XMenVol1109',
-        'XMenVol1110'
+        'XMenVol1110',
+        'FOOMVol110',
+        'IronFistVol114',
+        'IronFistVol115',
+        'MarvelTeamUpVol11976',
+        'MarvelTeamUpVol153',
+        'MarvelTeamUpVol169',
+        'MarvelTeamUpVol170',
       ]
     },
     {
