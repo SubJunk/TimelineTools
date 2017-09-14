@@ -19,21 +19,13 @@
       </li>
     </ul>
     <ul class="comics">
-      <li ng-repeat="comic in ::main.comics track by comic.id" class="comic" ng-style="comic.styles" ng-class="{expanded: comic.id === main.expandedComic}">
+      <li ng-repeat="comic in ::main.comics track by comic.id" class="comic z-depth-5" ng-style="comic.styles" ng-class="{expanded: comic.id === main.expandedComic}">
         <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail">
           <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
         </a>
         <div class="series">{{comic.series}} #{{comic.issue}}</div>
         <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
         <div class="official-link" ng-if="comic.officialLink"><a ng-href="{{comic.officialLink}}">Read online</a></div>
-        <div class="slide">
-          <ul class="collapsible" data-collapsible="accordion">
-            <li>  
-              <div class="collapsible-header">See Collections</div>
-              <div class="collapsible-body"><span>Collection info goes here</span></div>
-            </li>
-          </ul>
-        </div>
       </li>
     </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>

@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #1E2023;
+  background: hsl(216, 8%, 25%);
   color: #ccc;
   overflow: auto;
   padding: 20px;
@@ -49,15 +49,6 @@ body {
 .comic .series {
   background: rgba(27, 27, 27, 0.5);
   margin-top: 5px;
-}
-
-.slide, 
-.collapsible-body{
-  display: none;
-}
-
-.collapsible-header{
-  background: rgba(27, 27, 27, 0.5);
 }
 
 .comic .series,
