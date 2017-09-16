@@ -7,7 +7,7 @@ angular.module('app', [])
   var vm = this;
   vm.comics = [];
 
-  function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, officialLink) {
+  function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, officialLink, references) {
     this.id = seriesVolumeId + issue;
     this.title = title;
     this.issue = issue;
@@ -15,685 +15,9 @@ angular.module('app', [])
     this.monthPublished = monthPublished;
     this.seriesVolumeId = seriesVolumeId;
     this.officialLink = officialLink;
+    this.references = references;
   }
 
-  vm.comics = [
-    {
-      id: 'IronFistVol114',
-      title: ['Snowfire'],
-      issue: 14,
-      yearPublished: 1977,
-      monthPublished: 8,
-      seriesVolumeId: 'IronFistVol1'
-    },
-    {
-      id: 'IronFistVol115',
-      title: ['Enter, the X-Men'],
-      issue: 15,
-      yearPublished: 1977,
-      monthPublished: 9,
-      seriesVolumeId: 'IronFistVol1'
-    },
-    {
-      id: 'MarvelTeamUpVol11976',
-      title: ['The Lords of Light and Darkness!'],
-      issue: 1976,
-      yearPublished: 1976,
-      monthPublished: 12,
-      seriesVolumeId: 'MarvelTeamUpVol1'
-    },
-    {
-      id: 'MarvelTeamUpVol153',
-      title: ['Nightmare in New Mexico!'],
-      issue: 53,
-      yearPublished: 1977,
-      monthPublished: 1,
-      seriesVolumeId: 'MarvelTeamUpVol1'
-    },
-    {
-      id: 'MarvelTeamUpVol169',
-      title: ['Night of the Living God!'],
-      issue: 69,
-      yearPublished: 1978,
-      monthPublished: 5,
-      seriesVolumeId: 'MarvelTeamUpVol1'
-    },
-    {
-      id: 'MarvelTeamUpVol170',
-      title: ['Whom Gods Destroy!'],
-      issue: 70,
-      yearPublished: 1978,
-      monthPublished: 6,
-      seriesVolumeId: 'MarvelTeamUpVol1'
-    },
-    {
-      id: 'XMenVol194',
-      title: ['The Doomsmith Scenario!'],
-      issue: 94,
-      yearPublished: 1975,
-      monthPublished: 8,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol195',
-      title: ['Warhunt!'],
-      issue: 95,
-      yearPublished: 1975,
-      monthPublished: 10,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol196',
-      title: ['Night of the Demon!'],
-      issue: 96,
-      yearPublished: 1975,
-      monthPublished: 12,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol197',
-      title: ['My Brother, My Enemy!'],
-      issue: 97,
-      yearPublished: 1976,
-      monthPublished: 2,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol198',
-      title: ['Merry Christmas, X-Men — The Sentinels Have Returned!'],
-      issue: 98,
-      yearPublished: 1976,
-      monthPublished: 4,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol199',
-      title: ['Deathstar, Rising!'],
-      issue: 99,
-      yearPublished: 1976,
-      monthPublished: 6,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1100',
-      title: ['Greater Love Hath No X-Man...'],
-      issue: 100,
-      yearPublished: 1976,
-      monthPublished: 8,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1101',
-      title: ['Like a Phoenix, from the Ashes'],
-      issue: 101,
-      yearPublished: 1976,
-      monthPublished: 10,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1102',
-      title: ['Who Will Stop the Juggernaut?'],
-      issue: 102,
-      yearPublished: 1976,
-      monthPublished: 12,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1103',
-      title: ['The Fall of the Tower'],
-      issue: 103,
-      yearPublished: 1977,
-      monthPublished: 2,
-      seriesVolumeId: 'XMenVol1',
-      references: [
-        'XMenVol1102'
-      ]
-    },
-    {
-      id: 'XMenVol1104',
-      title: ['The Gentleman\'s Name is Magneto'],
-      issue: 104,
-      yearPublished: 1977,
-      monthPublished: 4,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1105',
-      title: ['Phoenix Unleashed!'],
-      issue: 105,
-      yearPublished: 1977,
-      monthPublished: 6,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1106',
-      title: ['Dark Shroud of the Past!'],
-      issue: 106,
-      yearPublished: 1977,
-      monthPublished: 8,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1107',
-      title: ['Where No X-Man Has Gone Before!'],
-      issue: 107,
-      yearPublished: 1977,
-      monthPublished: 10,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1108',
-      title: ['Armageddon Now'],
-      issue: 108,
-      yearPublished: 1977,
-      monthPublished: 12,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1109',
-      title: ['Home are the Heroes!'],
-      issue: 109,
-      yearPublished: 1978,
-      monthPublished: 2,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'XMenVol1110',
-      title: ['The \'X\'-Sanction'],
-      issue: 110,
-      yearPublished: 1978,
-      monthPublished: 4,
-      seriesVolumeId: 'XMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1129',
-      title: ['God Spare the Child...'],
-      issue: 129,
-      yearPublished: 1980,
-      monthPublished: 1,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1130',
-      title: ['Dazzler'],
-      issue: 130,
-      yearPublished: 1980,
-      monthPublished: 2,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1131',
-      title: ['Run for Your Life!'],
-      issue: 131,
-      yearPublished: 1980,
-      monthPublished: 3,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1132',
-      title: ['And Hellfire is Their Name!'],
-      issue: 132,
-      yearPublished: 1980,
-      monthPublished: 4,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1133',
-      title: ['Wolverine: Alone!'],
-      issue: 133,
-      yearPublished: 1980,
-      monthPublished: 5,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1134',
-      title: ['Too Late, the Heroes!'],
-      issue: 134,
-      yearPublished: 1980,
-      monthPublished: 6,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1135',
-      title: ['Dark Phoenix'],
-      issue: 135,
-      yearPublished: 1980,
-      monthPublished: 7,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1136',
-      title: ['Child of Light and Darkness!'],
-      issue: 136,
-      yearPublished: 1980,
-      monthPublished: 8,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1137',
-      title: ['The Fate of the Phoenix!'],
-      issue: 137,
-      yearPublished: 1980,
-      monthPublished: 9,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1492',
-      title: ['Messiah Complex: Chapter Two'],
-      issue: 492,
-      yearPublished: 2008,
-      monthPublished: 1,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1493',
-      title: ['Messiah Complex: Chapter Six'],
-      issue: 493,
-      yearPublished: 2008,
-      monthPublished: 2,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1494',
-      title: ['Messiah Complex: Chapter Ten'],
-      issue: 494,
-      yearPublished: 2008,
-      monthPublished: 3,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1495',
-      title: ['X-Men: Divided (Part 1)'],
-      issue: 495,
-      yearPublished: 2008,
-      monthPublished: 4,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1496',
-      title: ['X-Men: Divided (Part 2)'],
-      issue: 496,
-      yearPublished: 2008,
-      monthPublished: 5,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1497',
-      title: ['X-Men: Divided (Part 3)'],
-      issue: 497,
-      yearPublished: 2008,
-      monthPublished: 6,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1500',
-      title: ['SFX (1 of 3)'],
-      issue: 500,
-      yearPublished: 2008,
-      monthPublished: 9,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1501',
-      title: ['SFX (2 of 3): All Tomorrow\'s Parties'],
-      issue: 501,
-      yearPublished: 2008,
-      monthPublished: 10,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1502',
-      title: ['SFX (3 of 3) - Beginning to See the Light'],
-      issue: 502,
-      yearPublished: 2008,
-      monthPublished: 11,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1503',
-      title: ['Beginning To See The Light'],
-      issue: 503,
-      yearPublished: 2008,
-      monthPublished: 12,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'XMenFreeComicBookDay2008',
-      title: ['X-Men: Pixies & Demons'],
-      issue: 1,
-      yearPublished: 2008,
-      monthPublished: 5,
-      seriesVolumeId: 'XMenFreeComicBookDay2008'
-    },
-    {
-      id: 'XMenManifestDestinyVol11',
-      title: ['Untitled'],
-      issue: 1,
-      yearPublished: 2008,
-      monthPublished: 11,
-      seriesVolumeId: 'XMenManifestDestinyVol1'
-    },
-    {
-      id: 'XMenManifestDestinyVol12',
-      title: ['Kill or Cure (Part 2)','Good With the Bad','Flaw'],
-      issue: 2,
-      yearPublished: 2008,
-      monthPublished: 12,
-      seriesVolumeId: 'XMenManifestDestinyVol1'
-    },
-    {
-      id: 'XMenManifestDestinyVol13',
-      title: ['Kill or Cure (Part 3)','Abomination','Uncheerable'],
-      issue: 3,
-      yearPublished: 2009,
-      monthPublished: 1,
-      seriesVolumeId: 'XMenManifestDestinyVol1'
-    },
-    {
-      id: 'XMenManifestDestinyVol14',
-      title: ['Kill or Cure (Part 4)','Mercury','Work It Out'],
-      issue: 4,
-      yearPublished: 2009,
-      monthPublished: 2,
-      seriesVolumeId: 'XMenManifestDestinyVol1'
-    },
-    {
-      id: 'XMenManifestDestinyVol15',
-      title: ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo'],
-      issue: 5,
-      yearPublished: 2009,
-      monthPublished: 3,
-      seriesVolumeId: 'XMenManifestDestinyVol1'
-    },
-    {
-      id: 'UncannyXMenVol1540',
-      title: ['Uncanny X-Men Vol 1 #540'],
-      issue: 540,
-      yearPublished: 2011,
-      monthPublished: 9,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1541',
-      title: ['Uncanny X-Men Vol 1 #541'],
-      issue: 541,
-      yearPublished: 2011,
-      monthPublished: 9,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1542',
-      title: ['Uncanny X-Men Vol 1 #542'],
-      issue: 542,
-      yearPublished: 2011,
-      monthPublished: 10,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1543',
-      title: ['Uncanny X-Men Vol 1 #543'],
-      issue: 543,
-      yearPublished: 2011,
-      monthPublished: 11,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1544',
-      title: ['Uncanny'],
-      issue: 544,
-      yearPublished: 2011,
-      monthPublished: 12,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1534.1',
-      title: ['Uncanny X-Men Vol 1 #534.1'],
-      issue: 534.1,
-      yearPublished: 2011,
-      monthPublished: 6,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1535',
-      title: ['Breaking Point (Part One)'],
-      issue: 535,
-      yearPublished: 2011,
-      monthPublished: 6,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1536',
-      title: ['Breaking Point: Part Two'],
-      issue: 536,
-      yearPublished: 2011,
-      monthPublished: 6,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1537',
-      title: ['Breaking Point (Part 3)'],
-      issue: 537,
-      yearPublished: 2011,
-      monthPublished: 7,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1538',
-      title: ['Breaking Point (Conclusion)'],
-      issue: 538,
-      yearPublished: 2011,
-      monthPublished: 8,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1539',
-      title: ['Losing Hope'],
-      issue: 539,
-      yearPublished: 2011,
-      monthPublished: 8,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1530',
-      title: ['Quarantine: Part 1'],
-      issue: 530,
-      yearPublished: 2011,
-      monthPublished: 1,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1531',
-      title: ['Quarantine (Part Two)'],
-      issue: 531,
-      yearPublished: 2011,
-      monthPublished: 2,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1532',
-      title: ['Quarantine (Part Three)'],
-      issue: 532,
-      yearPublished: 2011,
-      monthPublished: 3,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1533',
-      title: ['Quarantine (Part Four)'],
-      issue: 533,
-      yearPublished: 2011,
-      monthPublished: 4,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1534',
-      title: ['Quarantine (Part Five)'],
-      issue: 534,
-      yearPublished: 2011,
-      monthPublished: 5,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1526',
-      title: ['The Five Lights (Part 1): Freak Like Me', 'Rebuilding'],
-      issue: 526,
-      yearPublished: 2010,
-      monthPublished: 9,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1527',
-      title: ['The Five Lights (Part 2) - Velocidad'],
-      issue: 527,
-      yearPublished: 2010,
-      monthPublished: 10,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1528',
-      title: ['The Five Lights (Part 3)'],
-      issue: 528,
-      yearPublished: 2010,
-      monthPublished: 11,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1529',
-      title: ['The Five Lights (Part Four)'],
-      issue: 529,
-      yearPublished: 2010,
-      monthPublished: 12,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'HeroicAgeXMenVol11',
-      title: ['Heroic Age: X-Men Vol 1 #1'],
-      issue: 1,
-      yearPublished: 2011,
-      monthPublished: 2,
-      seriesVolumeId: 'HeroicAgeXMenVol1'
-    },
-    {
-      id: 'SecondComingPrepareVol11',
-      title: ['Where Were You?'],
-      issue: 1,
-      yearPublished: 2010,
-      monthPublished: 4,
-      seriesVolumeId: 'SecondComingPrepareVol1'
-    },
-    {
-      id: 'XMenSecondComingVol12',
-      title: ['Second Coming Chapter XIV'],
-      issue: 2,
-      yearPublished: 2010,
-      monthPublished: 9,
-      seriesVolumeId: 'XMenSecondComingVol1'
-    },
-    {
-      id: 'XMenSecondComingVol11',
-      title: ['Second Coming, Chapter One'],
-      issue: 1,
-      yearPublished: 2010,
-      monthPublished: 5,
-      seriesVolumeId: 'XMenSecondComingVol1'
-    },
-    {
-      id: 'UncannyXMenVol1525',
-      title: ['Second Coming (Chapter Ten)'],
-      issue: 525,
-      yearPublished: 2010,
-      monthPublished: 8,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1524',
-      title: ['Second Coming (Chapter Six)'],
-      issue: 524,
-      yearPublished: 2010,
-      monthPublished: 7,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'UncannyXMenVol1523',
-      title: ['Second Coming (Chapter Two)'],
-      issue: 523,
-      yearPublished: 2010,
-      monthPublished: 6,
-      seriesVolumeId: 'UncannyXMenVol1'
-    },
-    {
-      id: 'NewMutantsVol314',
-      title: ['Second Coming (Chapter Eleven)'],
-      issue: 14,
-      yearPublished: 2010,
-      monthPublished: 8,
-      seriesVolumeId: 'NewMutantsVol3'
-    },
-    {
-      id: 'NewMutantsVol313',
-      title: ['Second Coming (Chapter Seven)'],
-      issue: 13,
-      yearPublished: 2010,
-      monthPublished: 7,
-      seriesVolumeId: 'NewMutantsVol3'
-    },
-    {
-      id: 'NewMutantsVol312',
-      title: ['Second Coming (Chapter Three)'],
-      issue: 12,
-      yearPublished: 2010,
-      monthPublished: 6,
-      seriesVolumeId: 'NewMutantsVol3'
-    },
-    {
-      id: 'XMenLegacyVol1237',
-      title: ['Second Coming (Chapter Twelve)'],
-      issue: 237,
-      yearPublished: 2010,
-      monthPublished: 8,
-      seriesVolumeId: 'XMenLegacyVol1'
-    },
-    {
-      id: 'XMenLegacyVol1236',
-      title: ['Second Coming (Chapter Eight)'],
-      issue: 236,
-      yearPublished: 2010,
-      monthPublished: 7,
-      seriesVolumeId: 'XMenLegacyVol1'
-    },
-    {
-      id: 'XMenLegacyVol1235',
-      title: ['Second Coming (Chapter Four)'],
-      issue: 235,
-      yearPublished: 2010,
-      monthPublished: 6,
-      seriesVolumeId: 'XMenLegacyVol1'
-    },
-    {
-      id: 'XForceVol326',
-      title: ['Second Coming (Chapter Five)'],
-      issue: 26,
-      yearPublished: 2010,
-      monthPublished: 6,
-      seriesVolumeId: 'XForceVol3'
-    },
-    {
-      id: 'XForceVol327',
-      title: ['Second Coming (Chapter Nine)'],
-      issue: 27,
-      yearPublished: 2010,
-      monthPublished: 7,
-      seriesVolumeId: 'XForceVol3'
-    },
-    {
-      id: 'XForceVol328',
-      title: ['Second Coming, Chapter 13'],
-      issue: 28,
-      yearPublished: 2010,
-      monthPublished: 9,
-      seriesVolumeId: 'XForceVol3'
-    }
-  ];
   vm.comics.push(new Comic(
     ['War Baby (Chapter 1)'],
     1,
@@ -723,6 +47,597 @@ angular.module('app', [])
     1975,
     5,
     'GiantSizeXMenVol1'
+  ));
+
+  vm.comics.push(new Comic(
+    ['Snowfire'],
+    14,
+    1977,
+    8,
+    'IronFistVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Enter, the X-Men'],
+    15,
+    1977,
+    9,
+    'IronFistVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['The Lords of Light and Darkness!'],
+    1976,
+    1976,
+    12,
+    'MarvelTeamUpVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Nightmare in New Mexico!'],
+    53,
+    1977,
+    1,
+    'MarvelTeamUpVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Night of the Living God!'],
+    69,
+    1978,
+    5,
+    'MarvelTeamUpVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Whom Gods Destroy!'],
+    70,
+    1978,
+    6,
+    'MarvelTeamUpVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['The Doomsmith Scenario!'],
+    94,
+    1975,
+    8,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Warhunt!'],
+    95,
+    1975,
+    10,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Night of the Demon!'],
+    96,
+    1975,
+    12,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['My Brother, My Enemy!'],
+    97,
+    1976,
+    2,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Merry Christmas, X-Men — The Sentinels Have Returned!'],
+    98,
+    1976,
+    4,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Deathstar, Rising!'],
+    99,
+    1976,
+    6,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Greater Love Hath No X-Man...'],
+    100,
+    1976,
+    8,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Like a Phoenix, from the Ashes'],
+    101,
+    1976,
+    10,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Who Will Stop the Juggernaut?'],
+    102,
+    1976,
+    12,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['The Fall of the Tower'],
+    103,
+    1977,
+    2,
+    'XMenVol1',
+    undefined,
+    ['XMenVol1102']
+  ));
+  vm.comics.push(new Comic(
+    ['The Gentleman\'s Name is Magneto'],
+    104,
+    1977,
+    4,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Phoenix Unleashed!'],
+    105,
+    1977,
+    6,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Dark Shroud of the Past!'],
+    106,
+    1977,
+    8,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Where No X-Man Has Gone Before!'],
+    107,
+    1977,
+    10,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Armageddon Now'],
+    108,
+    1977,
+    12,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Home are the Heroes!'],
+    109,
+    1978,
+    2,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['The \'X\'-Sanction'],
+    110,
+    1978,
+    4,
+    'XMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['God Spare the Child...'],
+    129,
+    1980,
+    1,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Dazzler'],
+    130,
+    1980,
+    2,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Run for Your Life!'],
+    131,
+    1980,
+    3,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['And Hellfire is Their Name!'],
+    132,
+    1980,
+    4,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Wolverine: Alone!'],
+    133,
+    1980,
+    5,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Too Late, the Heroes!'],
+    134,
+    1980,
+    6,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Dark Phoenix'],
+    135,
+    1980,
+    7,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Child of Light and Darkness!'],
+    136,
+    1980,
+    8,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['The Fate of the Phoenix!'],
+    137,
+    1980,
+    9,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Messiah Complex: Chapter Two'],
+    492,
+    2008,
+    1,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Messiah Complex: Chapter Six'],
+    493,
+    2008,
+    2,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Messiah Complex: Chapter Ten'],
+    494,
+    2008,
+    3,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['X-Men: Divided (Part 1)'],
+    495,
+    2008,
+    4,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['X-Men: Divided (Part 2)'],
+    496,
+    2008,
+    5,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['X-Men: Divided (Part 3)'],
+    497,
+    2008,
+    6,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['SFX (1 of 3)'],
+    500,
+    2008,
+    9,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['SFX (2 of 3): All Tomorrow\'s Parties'],
+    501,
+    2008,
+    10,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['SFX (3 of 3) - Beginning to See the Light'],
+    502,
+    2008,
+    11,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Beginning To See The Light'],
+    503,
+    2008,
+    12,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['X-Men: Pixies & Demons'],
+    1,
+    2008,
+    5,
+    'XMenFreeComicBookDay2008'
+  ));
+  vm.comics.push(new Comic(
+    ['Untitled'],
+    1,
+    2008,
+    11,
+    'XMenManifestDestinyVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Kill or Cure (Part 2)','Good With the Bad','Flaw'],
+    2,
+    2008,
+    12,
+    'XMenManifestDestinyVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Kill or Cure (Part 3)','Abomination','Uncheerable'],
+    3,
+    2009,
+    1,
+    'XMenManifestDestinyVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Kill or Cure (Part 4)','Mercury','Work It Out'],
+    4,
+    2009,
+    2,
+    'XMenManifestDestinyVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo'],
+    5,
+    2009,
+    3,
+    'XMenManifestDestinyVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Uncanny X-Men Vol 1 #540'],
+    540,
+    2011,
+    9,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Uncanny X-Men Vol 1 #541'],
+    541,
+    2011,
+    9,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Uncanny X-Men Vol 1 #542'],
+    542,
+    2011,
+    10,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Uncanny X-Men Vol 1 #543'],
+    543,
+    2011,
+    11,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Uncanny'],
+    544,
+    2011,
+    12,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Uncanny X-Men Vol 1 #534.1'],
+    534.1,
+    2011,
+    6,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Breaking Point (Part One)'],
+    535,
+    2011,
+    6,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Breaking Point: Part Two'],
+    536,
+    2011,
+    6,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Breaking Point (Part 3)'],
+    537,
+    2011,
+    7,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Breaking Point (Conclusion)'],
+    538,
+    2011,
+    8,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Losing Hope'],
+    539,
+    2011,
+    8,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Quarantine: Part 1'],
+    530,
+    2011,
+    1,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Quarantine (Part Two)'],
+    531,
+    2011,
+    2,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Quarantine (Part Three)'],
+    532,
+    2011,
+    3,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Quarantine (Part Four)'],
+    533,
+    2011,
+    4,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Quarantine (Part Five)'],
+    534,
+    2011,
+    5,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['The Five Lights (Part 1): Freak Like Me', 'Rebuilding'],
+    526,
+    2010,
+    9,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['The Five Lights (Part 2) - Velocidad'],
+    527,
+    2010,
+    10,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['The Five Lights (Part 3)'],
+    528,
+    2010,
+    11,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['The Five Lights (Part Four)'],
+    529,
+    2010,
+    12,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Heroic Age: X-Men Vol 1 #1'],
+    1,
+    2011,
+    2,
+    'HeroicAgeXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Where Were You?'],
+    1,
+    2010,
+    4,
+    'SecondComingPrepareVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming Chapter XIV'],
+    2,
+    2010,
+    9,
+    'XMenSecondComingVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming, Chapter One'],
+    1,
+    2010,
+    5,
+    'XMenSecondComingVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Ten)'],
+    525,
+    2010,
+    8,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Six)'],
+    524,
+    2010,
+    7,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Two)'],
+    523,
+    2010,
+    6,
+    'UncannyXMenVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Eleven)'],
+    14,
+    2010,
+    8,
+    'NewMutantsVol3'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Seven)'],
+    13,
+    2010,
+    7,
+    'NewMutantsVol3'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Three)'],
+    12,
+    2010,
+    6,
+    'NewMutantsVol3'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Twelve)'],
+    237,
+    2010,
+    8,
+    'XMenLegacyVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Eight)'],
+    236,
+    2010,
+    7,
+    'XMenLegacyVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Four)'],
+    235,
+    2010,
+    6,
+    'XMenLegacyVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Five)'],
+    26,
+    2010,
+    6,
+    'XForceVol3'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming (Chapter Nine)'],
+    27,
+    2010,
+    7,
+    'XForceVol3'
+  ));
+  vm.comics.push(new Comic(
+    ['Second Coming, Chapter 13'],
+    28,
+    2010,
+    9,
+    'XForceVol3'
   ));
 
   vm.series = [
@@ -957,7 +872,7 @@ angular.module('app', [])
         'UncannyXMenVol1501',
         'UncannyXMenVol1502',
         'UncannyXMenVol1503',
-        'XMenFreeComicBookDay2008',
+        'XMenFreeComicBookDay20081',
         'XMenManifestDestinyVol11',
         'XMenManifestDestinyVol12',
         'XMenManifestDestinyVol13',
