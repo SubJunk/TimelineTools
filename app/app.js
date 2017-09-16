@@ -5,41 +5,19 @@ angular.module('app', [])
 })
 .controller('DataController', function() {
   var vm = this;
+  vm.comics = [];
+
+  function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, officialLink) {
+    this.id = seriesVolumeId + issue;
+    this.title = title;
+    this.issue = issue;
+    this.yearPublished = yearPublished;
+    this.monthPublished = monthPublished;
+    this.seriesVolumeId = seriesVolumeId;
+    this.officialLink = officialLink;
+  }
 
   vm.comics = [
-    {
-      id: 'CableVol21',
-      title: ['War Baby (Chapter 1)'],
-      issue: 1,
-      yearPublished: 2008,
-      monthPublished: 5,
-      seriesVolumeId: 'CableVol2',
-      officialLink: 'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
-    },
-    {
-      id: 'FOOMVol110',
-      title: [
-        'Mutation of the Species',
-        'X-Men! X-Men! Read All About \'Em!',
-        'Doctor Foom',
-        'Fan Art',
-        'Marvel at the Con!',
-        'Eggsmen',
-        'Dept. of Infoomation'
-      ],
-      issue: 10,
-      yearPublished: 1975,
-      monthPublished: 6,
-      seriesVolumeId: 'FOOMVol1'
-    },
-    {
-      id: 'GiantSizeXMenVol11',
-      title: ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
-      issue: 1,
-      yearPublished: 1975,
-      monthPublished: 5,
-      seriesVolumeId: 'GiantSizeXMenVol1'
-    },
     {
       id: 'IronFistVol114',
       title: ['Snowfire'],
@@ -716,6 +694,36 @@ angular.module('app', [])
       seriesVolumeId: 'XForceVol3'
     }
   ];
+  vm.comics.push(new Comic(
+    ['War Baby (Chapter 1)'],
+    1,
+    2008,
+    5,
+    'CableVol2',
+    'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
+  ));
+  vm.comics.push(new Comic(
+    [
+      'Mutation of the Species',
+      'X-Men! X-Men! Read All About \'Em!',
+      'Doctor Foom',
+      'Fan Art',
+      'Marvel at the Con!',
+      'Eggsmen',
+      'Dept. of Infoomation'
+    ],
+    10,
+    1975,
+    6,
+    'FOOMVol1'
+  ));
+  vm.comics.push(new Comic(
+    ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
+    1,
+    1975,
+    5,
+    'GiantSizeXMenVol1'
+  ));
 
   vm.series = [
     {
