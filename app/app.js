@@ -166,7 +166,10 @@ angular.module('app', [])
       issue: 103,
       yearPublished: 1977,
       monthPublished: 2,
-      seriesVolumeId: 'XMenVol1'
+      seriesVolumeId: 'XMenVol1',
+      references: [
+        'XMenVol1102'
+      ]
     },
     {
       id: 'XMenVol1104',
