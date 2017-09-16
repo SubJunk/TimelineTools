@@ -29,627 +29,628 @@ angular.module('app', [])
     this.references = references;
   }
 
-  vm.comics.push(new Comic(
-    ['War Baby (Chapter 1)'],
-    1,
-    2008,
-    5,
-    'CableVol2',
-    'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
-  ));
-  vm.comics.push(new Comic(
-    [
-      'Mutation of the Species',
-      'X-Men! X-Men! Read All About \'Em!',
-      'Doctor Foom',
-      'Fan Art',
-      'Marvel at the Con!',
-      'Eggsmen',
-      'Dept. of Infoomation'
-    ],
-    10,
-    1975,
-    6,
-    'FOOMVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
-    1,
-    1975,
-    5,
-    'GiantSizeXMenVol1'
-  ));
-
-  vm.comics.push(new Comic(
-    ['Snowfire'],
-    14,
-    1977,
-    8,
-    'IronFistVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Enter, the X-Men'],
-    15,
-    1977,
-    9,
-    'IronFistVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['The Lords of Light and Darkness!'],
-    1976,
-    1976,
-    12,
-    'MarvelTeamUpVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Nightmare in New Mexico!'],
-    53,
-    1977,
-    1,
-    'MarvelTeamUpVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Night of the Living God!'],
-    69,
-    1978,
-    5,
-    'MarvelTeamUpVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Whom Gods Destroy!'],
-    70,
-    1978,
-    6,
-    'MarvelTeamUpVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['The Doomsmith Scenario!'],
-    94,
-    1975,
-    8,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Warhunt!'],
-    95,
-    1975,
-    10,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Night of the Demon!'],
-    96,
-    1975,
-    12,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['My Brother, My Enemy!'],
-    97,
-    1976,
-    2,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Merry Christmas, X-Men — The Sentinels Have Returned!'],
-    98,
-    1976,
-    4,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Deathstar, Rising!'],
-    99,
-    1976,
-    6,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Greater Love Hath No X-Man...'],
-    100,
-    1976,
-    8,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Like a Phoenix, from the Ashes'],
-    101,
-    1976,
-    10,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Who Will Stop the Juggernaut?'],
-    102,
-    1976,
-    12,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['The Fall of the Tower'],
-    103,
-    1977,
-    2,
-    'XMenVol1',
-    undefined,
-    ['XMenVol1102']
-  ));
-  vm.comics.push(new Comic(
-    ['The Gentleman\'s Name is Magneto'],
-    104,
-    1977,
-    4,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Phoenix Unleashed!'],
-    105,
-    1977,
-    6,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Dark Shroud of the Past!'],
-    106,
-    1977,
-    8,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Where No X-Man Has Gone Before!'],
-    107,
-    1977,
-    10,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Armageddon Now'],
-    108,
-    1977,
-    12,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Home are the Heroes!'],
-    109,
-    1978,
-    2,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['The \'X\'-Sanction'],
-    110,
-    1978,
-    4,
-    'XMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['God Spare the Child...'],
-    129,
-    1980,
-    1,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Dazzler'],
-    130,
-    1980,
-    2,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Run for Your Life!'],
-    131,
-    1980,
-    3,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['And Hellfire is Their Name!'],
-    132,
-    1980,
-    4,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Wolverine: Alone!'],
-    133,
-    1980,
-    5,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Too Late, the Heroes!'],
-    134,
-    1980,
-    6,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Dark Phoenix'],
-    135,
-    1980,
-    7,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Child of Light and Darkness!'],
-    136,
-    1980,
-    8,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['The Fate of the Phoenix!'],
-    137,
-    1980,
-    9,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Messiah Complex: Chapter Two'],
-    492,
-    2008,
-    1,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Messiah Complex: Chapter Six'],
-    493,
-    2008,
-    2,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Messiah Complex: Chapter Ten'],
-    494,
-    2008,
-    3,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['X-Men: Divided (Part 1)'],
-    495,
-    2008,
-    4,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['X-Men: Divided (Part 2)'],
-    496,
-    2008,
-    5,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['X-Men: Divided (Part 3)'],
-    497,
-    2008,
-    6,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['SFX (1 of 3)'],
-    500,
-    2008,
-    9,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['SFX (2 of 3): All Tomorrow\'s Parties'],
-    501,
-    2008,
-    10,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['SFX (3 of 3) - Beginning to See the Light'],
-    502,
-    2008,
-    11,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Beginning To See The Light'],
-    503,
-    2008,
-    12,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['X-Men: Pixies & Demons'],
-    1,
-    2008,
-    5,
-    'XMenFreeComicBookDay2008'
-  ));
-  vm.comics.push(new Comic(
-    ['Untitled'],
-    1,
-    2008,
-    11,
-    'XMenManifestDestinyVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Kill or Cure (Part 2)','Good With the Bad','Flaw'],
-    2,
-    2008,
-    12,
-    'XMenManifestDestinyVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Kill or Cure (Part 3)','Abomination','Uncheerable'],
-    3,
-    2009,
-    1,
-    'XMenManifestDestinyVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Kill or Cure (Part 4)','Mercury','Work It Out'],
-    4,
-    2009,
-    2,
-    'XMenManifestDestinyVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo'],
-    5,
-    2009,
-    3,
-    'XMenManifestDestinyVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Uncanny X-Men Vol 1 #540'],
-    540,
-    2011,
-    9,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Uncanny X-Men Vol 1 #541'],
-    541,
-    2011,
-    9,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Uncanny X-Men Vol 1 #542'],
-    542,
-    2011,
-    10,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Uncanny X-Men Vol 1 #543'],
-    543,
-    2011,
-    11,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Uncanny'],
-    544,
-    2011,
-    12,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Uncanny X-Men Vol 1 #534.1'],
-    534.1,
-    2011,
-    6,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Breaking Point (Part One)'],
-    535,
-    2011,
-    6,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Breaking Point: Part Two'],
-    536,
-    2011,
-    6,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Breaking Point (Part 3)'],
-    537,
-    2011,
-    7,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Breaking Point (Conclusion)'],
-    538,
-    2011,
-    8,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Losing Hope'],
-    539,
-    2011,
-    8,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Quarantine: Part 1'],
-    530,
-    2011,
-    1,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Quarantine (Part Two)'],
-    531,
-    2011,
-    2,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Quarantine (Part Three)'],
-    532,
-    2011,
-    3,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Quarantine (Part Four)'],
-    533,
-    2011,
-    4,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Quarantine (Part Five)'],
-    534,
-    2011,
-    5,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['The Five Lights (Part 1): Freak Like Me', 'Rebuilding'],
-    526,
-    2010,
-    9,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['The Five Lights (Part 2) - Velocidad'],
-    527,
-    2010,
-    10,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['The Five Lights (Part 3)'],
-    528,
-    2010,
-    11,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['The Five Lights (Part Four)'],
-    529,
-    2010,
-    12,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Heroic Age: X-Men Vol 1 #1'],
-    1,
-    2011,
-    2,
-    'HeroicAgeXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Where Were You?'],
-    1,
-    2010,
-    4,
-    'SecondComingPrepareVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming Chapter XIV'],
-    2,
-    2010,
-    9,
-    'XMenSecondComingVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming, Chapter One'],
-    1,
-    2010,
-    5,
-    'XMenSecondComingVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Ten)'],
-    525,
-    2010,
-    8,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Six)'],
-    524,
-    2010,
-    7,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Two)'],
-    523,
-    2010,
-    6,
-    'UncannyXMenVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Eleven)'],
-    14,
-    2010,
-    8,
-    'NewMutantsVol3'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Seven)'],
-    13,
-    2010,
-    7,
-    'NewMutantsVol3'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Three)'],
-    12,
-    2010,
-    6,
-    'NewMutantsVol3'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Twelve)'],
-    237,
-    2010,
-    8,
-    'XMenLegacyVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Eight)'],
-    236,
-    2010,
-    7,
-    'XMenLegacyVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Four)'],
-    235,
-    2010,
-    6,
-    'XMenLegacyVol1'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Five)'],
-    26,
-    2010,
-    6,
-    'XForceVol3'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming (Chapter Nine)'],
-    27,
-    2010,
-    7,
-    'XForceVol3'
-  ));
-  vm.comics.push(new Comic(
-    ['Second Coming, Chapter 13'],
-    28,
-    2010,
-    9,
-    'XForceVol3'
-  ));
+  vm.comics.push(
+    new Comic(
+      ['War Baby (Chapter 1)'],
+      1,
+      2008,
+      5,
+      'CableVol2',
+      'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
+    ),
+    new Comic(
+      [
+        'Mutation of the Species',
+        'X-Men! X-Men! Read All About \'Em!',
+        'Doctor Foom',
+        'Fan Art',
+        'Marvel at the Con!',
+        'Eggsmen',
+        'Dept. of Infoomation'
+      ],
+      10,
+      1975,
+      6,
+      'FOOMVol1'
+    ),
+    new Comic(
+      ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
+      1,
+      1975,
+      5,
+      'GiantSizeXMenVol1'
+    ),
+    new Comic(
+      ['Snowfire'],
+      14,
+      1977,
+      8,
+      'IronFistVol1'
+    ),
+    new Comic(
+      ['Enter, the X-Men'],
+      15,
+      1977,
+      9,
+      'IronFistVol1'
+    ),
+    new Comic(
+      ['The Lords of Light and Darkness!'],
+      1976,
+      1976,
+      12,
+      'MarvelTeamUpVol1'
+    ),
+    new Comic(
+      ['Nightmare in New Mexico!'],
+      53,
+      1977,
+      1,
+      'MarvelTeamUpVol1'
+    ),
+    new Comic(
+      ['Night of the Living God!'],
+      69,
+      1978,
+      5,
+      'MarvelTeamUpVol1'
+    ),
+    new Comic(
+      ['Whom Gods Destroy!'],
+      70,
+      1978,
+      6,
+      'MarvelTeamUpVol1'
+    ),
+    new Comic(
+      ['The Doomsmith Scenario!'],
+      94,
+      1975,
+      8,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Warhunt!'],
+      95,
+      1975,
+      10,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Night of the Demon!'],
+      96,
+      1975,
+      12,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['My Brother, My Enemy!'],
+      97,
+      1976,
+      2,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Merry Christmas, X-Men — The Sentinels Have Returned!'],
+      98,
+      1976,
+      4,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Deathstar, Rising!'],
+      99,
+      1976,
+      6,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Greater Love Hath No X-Man...'],
+      100,
+      1976,
+      8,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Like a Phoenix, from the Ashes'],
+      101,
+      1976,
+      10,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Who Will Stop the Juggernaut?'],
+      102,
+      1976,
+      12,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['The Fall of the Tower'],
+      103,
+      1977,
+      2,
+      'XMenVol1',
+      undefined,
+      ['XMenVol1102']
+    ),
+    new Comic(
+      ['The Gentleman\'s Name is Magneto'],
+      104,
+      1977,
+      4,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Phoenix Unleashed!'],
+      105,
+      1977,
+      6,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Dark Shroud of the Past!'],
+      106,
+      1977,
+      8,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Where No X-Man Has Gone Before!'],
+      107,
+      1977,
+      10,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Armageddon Now'],
+      108,
+      1977,
+      12,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['Home are the Heroes!'],
+      109,
+      1978,
+      2,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['The \'X\'-Sanction'],
+      110,
+      1978,
+      4,
+      'XMenVol1'
+    ),
+    new Comic(
+      ['God Spare the Child...'],
+      129,
+      1980,
+      1,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Dazzler'],
+      130,
+      1980,
+      2,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Run for Your Life!'],
+      131,
+      1980,
+      3,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['And Hellfire is Their Name!'],
+      132,
+      1980,
+      4,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Wolverine: Alone!'],
+      133,
+      1980,
+      5,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Too Late, the Heroes!'],
+      134,
+      1980,
+      6,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Dark Phoenix'],
+      135,
+      1980,
+      7,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Child of Light and Darkness!'],
+      136,
+      1980,
+      8,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['The Fate of the Phoenix!'],
+      137,
+      1980,
+      9,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Messiah Complex: Chapter Two'],
+      492,
+      2008,
+      1,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Messiah Complex: Chapter Six'],
+      493,
+      2008,
+      2,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Messiah Complex: Chapter Ten'],
+      494,
+      2008,
+      3,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['X-Men: Divided (Part 1)'],
+      495,
+      2008,
+      4,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['X-Men: Divided (Part 2)'],
+      496,
+      2008,
+      5,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['X-Men: Divided (Part 3)'],
+      497,
+      2008,
+      6,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['SFX (1 of 3)'],
+      500,
+      2008,
+      9,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['SFX (2 of 3): All Tomorrow\'s Parties'],
+      501,
+      2008,
+      10,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['SFX (3 of 3) - Beginning to See the Light'],
+      502,
+      2008,
+      11,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Beginning To See The Light'],
+      503,
+      2008,
+      12,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['X-Men: Pixies & Demons'],
+      1,
+      2008,
+      5,
+      'XMenFreeComicBookDay2008'
+    ),
+    new Comic(
+      ['Untitled'],
+      1,
+      2008,
+      11,
+      'XMenManifestDestinyVol1'
+    ),
+    new Comic(
+      ['Kill or Cure (Part 2)','Good With the Bad','Flaw'],
+      2,
+      2008,
+      12,
+      'XMenManifestDestinyVol1'
+    ),
+    new Comic(
+      ['Kill or Cure (Part 3)','Abomination','Uncheerable'],
+      3,
+      2009,
+      1,
+      'XMenManifestDestinyVol1'
+    ),
+    new Comic(
+      ['Kill or Cure (Part 4)','Mercury','Work It Out'],
+      4,
+      2009,
+      2,
+      'XMenManifestDestinyVol1'
+    ),
+    new Comic(
+      ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo'],
+      5,
+      2009,
+      3,
+      'XMenManifestDestinyVol1'
+    ),
+    new Comic(
+      ['Uncanny X-Men Vol 1 #540'],
+      540,
+      2011,
+      9,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Uncanny X-Men Vol 1 #541'],
+      541,
+      2011,
+      9,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Uncanny X-Men Vol 1 #542'],
+      542,
+      2011,
+      10,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Uncanny X-Men Vol 1 #543'],
+      543,
+      2011,
+      11,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Uncanny'],
+      544,
+      2011,
+      12,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Uncanny X-Men Vol 1 #534.1'],
+      534.1,
+      2011,
+      6,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Breaking Point (Part One)'],
+      535,
+      2011,
+      6,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Breaking Point: Part Two'],
+      536,
+      2011,
+      6,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Breaking Point (Part 3)'],
+      537,
+      2011,
+      7,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Breaking Point (Conclusion)'],
+      538,
+      2011,
+      8,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Losing Hope'],
+      539,
+      2011,
+      8,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Quarantine: Part 1'],
+      530,
+      2011,
+      1,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Quarantine (Part Two)'],
+      531,
+      2011,
+      2,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Quarantine (Part Three)'],
+      532,
+      2011,
+      3,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Quarantine (Part Four)'],
+      533,
+      2011,
+      4,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Quarantine (Part Five)'],
+      534,
+      2011,
+      5,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['The Five Lights (Part 1): Freak Like Me', 'Rebuilding'],
+      526,
+      2010,
+      9,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['The Five Lights (Part 2) - Velocidad'],
+      527,
+      2010,
+      10,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['The Five Lights (Part 3)'],
+      528,
+      2010,
+      11,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['The Five Lights (Part Four)'],
+      529,
+      2010,
+      12,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Heroic Age: X-Men Vol 1 #1'],
+      1,
+      2011,
+      2,
+      'HeroicAgeXMenVol1'
+    ),
+    new Comic(
+      ['Where Were You?'],
+      1,
+      2010,
+      4,
+      'SecondComingPrepareVol1'
+    ),
+    new Comic(
+      ['Second Coming Chapter XIV'],
+      2,
+      2010,
+      9,
+      'XMenSecondComingVol1'
+    ),
+    new Comic(
+      ['Second Coming, Chapter One'],
+      1,
+      2010,
+      5,
+      'XMenSecondComingVol1'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Ten)'],
+      525,
+      2010,
+      8,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Six)'],
+      524,
+      2010,
+      7,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Two)'],
+      523,
+      2010,
+      6,
+      'UncannyXMenVol1'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Eleven)'],
+      14,
+      2010,
+      8,
+      'NewMutantsVol3'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Seven)'],
+      13,
+      2010,
+      7,
+      'NewMutantsVol3'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Three)'],
+      12,
+      2010,
+      6,
+      'NewMutantsVol3'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Twelve)'],
+      237,
+      2010,
+      8,
+      'XMenLegacyVol1'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Eight)'],
+      236,
+      2010,
+      7,
+      'XMenLegacyVol1'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Four)'],
+      235,
+      2010,
+      6,
+      'XMenLegacyVol1'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Five)'],
+      26,
+      2010,
+      6,
+      'XForceVol3'
+    ),
+    new Comic(
+      ['Second Coming (Chapter Nine)'],
+      27,
+      2010,
+      7,
+      'XForceVol3'
+    ),
+    new Comic(
+      ['Second Coming, Chapter 13'],
+      28,
+      2010,
+      9,
+      'XForceVol3'
+    )
+  );
 
   vm.series = [
     {
