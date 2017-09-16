@@ -7,6 +7,17 @@ angular.module('app', [])
   var vm = this;
   vm.comics = [];
 
+  /**
+   * The prototype for individual comics.
+   *
+   * @param {string[]} title
+   * @param {number}   issue
+   * @param {number}   yearPublished
+   * @param {number}   monthPublished
+   * @param {string}   seriesVolumeId
+   * @param {string}   [officialLink]
+   * @param {string[]} [references]
+   */
   function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, officialLink, references) {
     this.id = seriesVolumeId + issue;
     this.title = title;
