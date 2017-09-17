@@ -810,7 +810,7 @@ angular.module('app', [])
     this.yearPublished = yearPublished;
     this.monthPublished = monthPublished;
     this.officialLink = officialLink;
-    this.references = comicIds;
+    this.comicIds = comicIds;
   }
   vm.collections.push(
     new Collection(
