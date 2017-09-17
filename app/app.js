@@ -70,6 +70,13 @@ angular.module('app', [])
       'FOOMVol1'
     ),
     new Comic(
+      ['Madrox the Multiple Man', 'We Have to Fight the X-Men!', 'Gallery of FF\'s Most Famous Foes'],
+      4,
+      1975,
+      2,
+      'GiantSizeFantasticFourVol1'
+    ),
+    new Comic(
       ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
       1,
       1975,
@@ -195,7 +202,9 @@ angular.module('app', [])
       104,
       1977,
       4,
-      'XMenVol1'
+      'XMenVol1',
+      undefined,
+      ['GiantSizeFantasticFourVol14']
     ),
     new Comic(
       ['Phoenix Unleashed!'],
@@ -678,6 +687,10 @@ angular.module('app', [])
       title: 'FOOM'
     },
     {
+      id: 'GiantSizeFantasticFour',
+      title: 'Giant-Size Fantastic Four'
+    },
+    {
       id: 'GiantSizeXMen',
       title: 'Giant-Size X-Men'
     },
@@ -740,6 +753,11 @@ angular.module('app', [])
     {
       id: 'FOOMVol1',
       seriesId: 'FOOM',
+      volume: 1
+    },
+    {
+      id: 'GiantSizeFantasticFourVol1',
+      seriesId: 'GiantSizeFantasticFour',
       volume: 1
     },
     {
