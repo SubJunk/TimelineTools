@@ -6,6 +6,7 @@ angular.module('app', [])
 .controller('DataController', function() {
   var vm = this;
   vm.comics = [];
+  vm.collections =[];
 
   /**
    * The prototype for individual comics.
@@ -792,7 +793,69 @@ angular.module('app', [])
       volume: 3
     }
   ];
-  vm.collections = [
+/**
+   * The prototype for collections.
+   * 
+   * @param {string}   id
+   * @param {string}   title
+   * @param {number}   yearPublished
+   * @param {number}   monthPublished
+   * @param {string}   [officialLink]
+   * @param {string[]} [comicIds]
+   */
+  function Collection(id, title, issue, yearPublished, monthPublished, officialLink, comicIds) {
+    this.id = id;
+    this.title = title;
+    this.issue = issue;
+    this.yearPublished = yearPublished;
+    this.monthPublished = monthPublished;
+    this.officialLink = officialLink;
+    this.references = comicIds;
+  }
+  vm.collections.push(
+    new Collection(
+      'CableVol1MessiahWar',
+      'Cable Vol. 1: Messiah War',
+      2008,
+      12,
+      'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350',
+      ['CableVol2']
+    ),
+    new Collection(
+      'XMenEpicCollectionVol5SecondGenesis',
+      'X-Men Epic Collection Vol. 5: Second Genesis',
+      2017,
+      4,
+      [
+        'GiantSizeXMenVol11',
+        'XMenVol194',
+        'XMenVol195',
+        'XMenVol196',
+        'XMenVol197',
+        'XMenVol198',
+        'XMenVol199',
+        'XMenVol1100',
+        'XMenVol1101',
+        'XMenVol1102',
+        'XMenVol1103',
+        'XMenVol1104',
+        'XMenVol1105',
+        'XMenVol1106',
+        'XMenVol1107',
+        'XMenVol1108',
+        'XMenVol1109',
+        'XMenVol1110',
+        'FOOMVol110',
+        'IronFistVol114',
+        'IronFistVol115',
+        'MarvelTeamUpVol11976',
+        'MarvelTeamUpVol153',
+        'MarvelTeamUpVol169',
+        'MarvelTeamUpVol170',
+      ]
+    )
+  );
+ /* vm.collections = [
     {
       id: 'CableVol1MessiahWar',
       title: 'Cable Vol. 1: Messiah War',
@@ -968,7 +1031,7 @@ angular.module('app', [])
         'XForceVol328'
       ]
     }
-  ];
+  ];*/
 
   var firstYear;
   var firstMonth;
