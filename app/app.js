@@ -800,13 +800,12 @@ angular.module('app', [])
    * @param {string}   title
    * @param {number}   yearPublished
    * @param {number}   monthPublished
-   * @param {string}   [officialLink]
+   * @param {string}   officialLink
    * @param {string[]} [comicIds]
    */
-  function Collection(id, title, issue, yearPublished, monthPublished, officialLink, comicIds) {
+  function Collection(id, title, yearPublished, monthPublished, officialLink, comicIds) {
     this.id = id;
     this.title = title;
-    this.issue = issue;
     this.yearPublished = yearPublished;
     this.monthPublished = monthPublished;
     this.officialLink = officialLink;
