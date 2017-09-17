@@ -29,7 +29,22 @@ angular.module('app', [])
     this.officialLink = officialLink;
     this.references = references;
   }
-
+/**
+   * The prototype for collections.
+   * 
+   * @param {string}   id
+   * @param {string}   singleTitle
+   * @param {string}   singleOfficialLink
+   * @param {string[]} [comicIds]
+   */
+  function Collection(id, singleTitle, yearPublished, monthPublished, singleOfficialLink, comicIds) {
+    this.id = id;
+    this.title = singleTitle;
+    this.yearPublished = yearPublished;
+    this.monthPublished = monthPublished;
+    this.singleOfficialLink = singleOfficialLink;
+    this.comicIds = comicIds;
+  }
   vm.comics.push(
     new Comic(
       ['War Baby (Chapter 1)'],
@@ -793,24 +808,6 @@ angular.module('app', [])
       volume: 3
     }
   ];
-/**
-   * The prototype for collections.
-   * 
-   * @param {string}   id
-   * @param {string}   title
-   * @param {number}   yearPublished
-   * @param {number}   monthPublished
-   * @param {string}   officialLink
-   * @param {string[]} [comicIds]
-   */
-  function Collection(id, title, yearPublished, monthPublished, officialLink, comicIds) {
-    this.id = id;
-    this.title = title;
-    this.yearPublished = yearPublished;
-    this.monthPublished = monthPublished;
-    this.officialLink = officialLink;
-    this.comicIds = comicIds;
-  }
   vm.collections.push(
     new Collection(
       'CableVol1MessiahWar',
