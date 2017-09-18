@@ -194,7 +194,9 @@ angular.module('app', [])
       101,
       1976,
       10,
-      'XMenVol1'
+      'XMenVol1',
+      undefined,
+      ['XMenVol1104']
     ),
     new Comic(
       ['Who Will Stop the Juggernaut?'],
@@ -203,14 +205,16 @@ angular.module('app', [])
       12,
       'XMenVol1',
       undefined,
-      ['XMenVol1103']
+      ['XMenVol1103', 'XMenVol1104']
     ),
     new Comic(
       ['The Fall of the Tower'],
       103,
       1977,
       2,
-      'XMenVol1'
+      'XMenVol1',
+      undefined,
+      ['XMenVol1104']
     ),
     new Comic(
       ['The Gentleman\'s Name is Magneto'],
