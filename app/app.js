@@ -157,7 +157,9 @@ angular.module('app', [])
       96,
       1975,
       12,
-      'XMenVol1'
+      'XMenVol1',
+      undefined,
+      ['XMenVol1104']
     ),
     new Comic(
       ['My Brother, My Enemy!'],
