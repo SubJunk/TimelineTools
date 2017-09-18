@@ -17,9 +17,10 @@ angular.module('app', [])
    * @param {number}   monthPublished
    * @param {string}   seriesVolumeId
    * @param {string}   [officialLink]
-   * @param {string[]} [references]
+   * @param {string[]} [referencedBy] The comic/s that reference this comic.
+   *                                  Used only for comics that are not in the main collections.
    */
-  function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, officialLink, references) {
+  function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, officialLink, referencedBy) {
     this.id = seriesVolumeId + issue;
     this.title = title;
     this.issue = issue;
@@ -27,7 +28,7 @@ angular.module('app', [])
     this.monthPublished = monthPublished;
     this.seriesVolumeId = seriesVolumeId;
     this.officialLink = officialLink;
-    this.references = references;
+    this.referencedBy = referencedBy;
   }
 /**
    * The prototype for collections.
@@ -74,7 +75,9 @@ angular.module('app', [])
       4,
       1975,
       2,
-      'GiantSizeFantasticFourVol1'
+      'GiantSizeFantasticFourVol1',
+      undefined,
+      ['XMenVol1104']
     ),
     new Comic(
       ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
@@ -186,25 +189,23 @@ angular.module('app', [])
       102,
       1976,
       12,
-      'XMenVol1'
+      'XMenVol1',
+      undefined,
+      ['XMenVol1103']
     ),
     new Comic(
       ['The Fall of the Tower'],
       103,
       1977,
       2,
-      'XMenVol1',
-      undefined,
-      ['XMenVol1102']
+      'XMenVol1'
     ),
     new Comic(
       ['The Gentleman\'s Name is Magneto'],
       104,
       1977,
       4,
-      'XMenVol1',
-      undefined,
-      ['GiantSizeFantasticFourVol14']
+      'XMenVol1'
     ),
     new Comic(
       ['Phoenix Unleashed!'],
@@ -1172,6 +1173,9 @@ angular.module('app', [])
   _.each(vm.collections, function(collection) {
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(vm.comics, { 'id': comicId });
+      if (!comicIndex) {
+        throw new Error(comicId + ' not found in the comics db');
+      }
       vm.comics[comicIndex].styles.background = colors[globalColorIndex];
     });
 
