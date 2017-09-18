@@ -57,6 +57,15 @@ angular.module('app', [])
       'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
     ),
     new Comic(
+      ['Alpha, the Ultimate Mutant!'],
+      16,
+      1974,
+      10,
+      'DefendersVol1',
+      undefined,
+      ['XMenVol1104']
+    ),
+    new Comic(
       [
         'Mutation of the Species',
         'X-Men! X-Men! Read All About \'Em!',
@@ -685,6 +694,10 @@ angular.module('app', [])
       title: 'Cable'
     },
     {
+      id: 'Defenders',
+      title: 'Defenders'
+    },
+    {
       id: 'FOOM',
       title: 'FOOM'
     },
@@ -751,6 +764,11 @@ angular.module('app', [])
       id: 'CableVol2',
       seriesId: 'Cable',
       volume: 2
+    },
+    {
+      id: 'DefendersVol1',
+      seriesId: 'Defenders',
+      volume: 1
     },
     {
       id: 'FOOMVol1',
