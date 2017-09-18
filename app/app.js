@@ -1068,15 +1068,15 @@ angular.module('app', [])
 
     if (vm.expandedComic === currentComic.id) {
       vm.expandedComic = undefined;
-      currentComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
+      // currentComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
       if (angular.isDefined(vm.expandedComic)) {
         var previousComic = vm.comics[_.findKey(vm.comics, { 'id': vm.expandedComic })];
-        previousComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
+        // previousComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
       }
 
       vm.expandedComic = currentComic.id;
-      currentComic.styles.top = (currentSeriesVolume.verticalPosition * verticalIncrement) - 175;
+      // currentComic.styles.top = (currentSeriesVolume.verticalPosition * verticalIncrement) - 175;
     }
   };
   
@@ -1093,6 +1093,10 @@ angular.module('app', [])
   vm.comics = _.sortBy(vm.comics, ['yearPublished', 'monthPublished']);
 
   _.each(vm.comics, function(comic) {
+    if (comic.referencedBy && comic.referencedBy.length) {
+      return;
+    }
+
     var currentSeriesVolume = vm.seriesVolume[_.findKey(vm.seriesVolume, { 'id': comic.seriesVolumeId })];
     var currentSeries = vm.series[_.findKey(vm.series, { 'id': currentSeriesVolume.seriesId })];
 
