@@ -17,9 +17,10 @@ angular.module('app', [])
    * @param {number}   monthPublished
    * @param {string}   seriesVolumeId
    * @param {string}   [officialLink]
-   * @param {string[]} [references]
+   * @param {string[]} [referencedBy] The comic/s that reference this comic.
+   *                                  Used only for comics that are not in the main collections.
    */
-  function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, officialLink, references) {
+  function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, officialLink, referencedBy) {
     this.id = seriesVolumeId + issue;
     this.title = title;
     this.issue = issue;
@@ -27,7 +28,7 @@ angular.module('app', [])
     this.monthPublished = monthPublished;
     this.seriesVolumeId = seriesVolumeId;
     this.officialLink = officialLink;
-    this.references = references;
+    this.referencedBy = referencedBy;
   }
   /**
    * The prototype for collections.
@@ -69,6 +70,15 @@ angular.module('app', [])
       1975,
       6,
       'FOOMVol1'
+    ),
+    new Comic(
+      ['Madrox the Multiple Man', 'We Have to Fight the X-Men!', 'Gallery of FF\'s Most Famous Foes'],
+      4,
+      1975,
+      2,
+      'GiantSizeFantasticFourVol1',
+      undefined,
+      ['XMenVol1104']
     ),
     new Comic(
       ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
@@ -180,16 +190,16 @@ angular.module('app', [])
       102,
       1976,
       12,
-      'XMenVol1'
+      'XMenVol1',
+      undefined,
+      ['XMenVol1103']
     ),
     new Comic(
       ['The Fall of the Tower'],
       103,
       1977,
       2,
-      'XMenVol1',
-      undefined,
-      ['XMenVol1102']
+      'XMenVol1'
     ),
     new Comic(
       ['The Gentleman\'s Name is Magneto'],
@@ -679,6 +689,10 @@ angular.module('app', [])
       title: 'FOOM'
     },
     {
+      id: 'GiantSizeFantasticFour',
+      title: 'Giant-Size Fantastic Four'
+    },
+    {
       id: 'GiantSizeXMen',
       title: 'Giant-Size X-Men'
     },
@@ -741,6 +755,11 @@ angular.module('app', [])
     {
       id: 'FOOMVol1',
       seriesId: 'FOOM',
+      volume: 1
+    },
+    {
+      id: 'GiantSizeFantasticFourVol1',
+      seriesId: 'GiantSizeFantasticFour',
       volume: 1
     },
     {
@@ -1049,15 +1068,15 @@ angular.module('app', [])
 
     if (vm.expandedComic === currentComic.id) {
       vm.expandedComic = undefined;
-      currentComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
+      // currentComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
       if (angular.isDefined(vm.expandedComic)) {
         var previousComic = vm.comics[_.findKey(vm.comics, { 'id': vm.expandedComic })];
-        previousComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
+        // previousComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
       }
 
       vm.expandedComic = currentComic.id;
-      currentComic.styles.top = (currentSeriesVolume.verticalPosition * verticalIncrement) - 175;
+      // currentComic.styles.top = (currentSeriesVolume.verticalPosition * verticalIncrement) - 175;
     }
   };
   
@@ -1074,6 +1093,10 @@ angular.module('app', [])
   vm.comics = _.sortBy(vm.comics, ['yearPublished', 'monthPublished']);
 
   _.each(vm.comics, function(comic) {
+    if (comic.referencedBy && comic.referencedBy.length) {
+      return;
+    }
+
     var currentSeriesVolume = vm.seriesVolume[_.findKey(vm.seriesVolume, { 'id': comic.seriesVolumeId })];
     var currentSeries = vm.series[_.findKey(vm.series, { 'id': currentSeriesVolume.seriesId })];
 
@@ -1154,6 +1177,9 @@ angular.module('app', [])
   _.each(vm.collections, function(collection) {
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(vm.comics, { 'id': comicId });
+      if (!comicIndex) {
+        throw new Error(comicId + ' not found in the comics db');
+      }
       vm.comics[comicIndex].styles.background = colors[globalColorIndex];
     });
 
