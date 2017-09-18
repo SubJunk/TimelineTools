@@ -164,7 +164,9 @@ angular.module('app', [])
       97,
       1976,
       2,
-      'XMenVol1'
+      'XMenVol1',
+      undefined,
+      ['XMenVol1104']
     ),
     new Comic(
       ['Merry Christmas, X-Men — The Sentinels Have Returned!'],
@@ -1111,10 +1113,6 @@ angular.module('app', [])
   vm.comics = _.sortBy(vm.comics, ['yearPublished', 'monthPublished']);
 
   _.each(vm.comics, function(comic) {
-    if (comic.referencedBy && comic.referencedBy.length) {
-      return;
-    }
-
     var currentSeriesVolume = vm.seriesVolume[_.findKey(vm.seriesVolume, { 'id': comic.seriesVolumeId })];
     var currentSeries = vm.series[_.findKey(vm.series, { 'id': currentSeriesVolume.seriesId })];
 

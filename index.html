@@ -19,7 +19,7 @@
       </li>
     </ul>
     <ul class="comics">
-      <li ng-repeat="comic in ::main.comics | filter: { referencedBy: '!' } track by comic.id" class="comic z-depth-5" ng-style="comic.styles" ng-class="{expanded: comic.id === main.expandedComic}">
+      <li ng-repeat="comic in ::main.comics track by comic.id" class="comic z-depth-5" ng-style="comic.styles" ng-class="{expanded: comic.id === main.expandedComic}">
         <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail">
           <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
         </a>
