@@ -834,7 +834,7 @@ angular.module('app', [])
       2008,
       12,
       'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350',
-      ['CableVol2']
+      ['CableVol21']
     ),
     new Collection(
       'XMenEpicCollectionVol5SecondGenesis',
