@@ -895,49 +895,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'CableVol1MessiahWar',
-    'Cable Vol. 1: Messiah War',
-    2008,
-    12,
-    [
-      'CableVol21'
-    ],
-    'https://comicstore.marvel.com/Cable-Vol-1-Messiah-War/digital-comic/27342'
-  ),
-  new Collection(
-    'XMenEpicCollectionVol5SecondGenesis',
-    'X-Men Epic Collection Vol. 5: Second Genesis',
-    2017,
-    4,
-    [
-      'GiantSizeXMenVol11',
-      'XMenVol194',
-      'XMenVol195',
-      'XMenVol196',
-      'XMenVol197',
-      'XMenVol198',
-      'XMenVol199',
-      'XMenVol1100',
-      'XMenVol1101',
-      'XMenVol1102',
-      'XMenVol1103',
-      'XMenVol1104',
-      'XMenVol1105',
-      'XMenVol1106',
-      'XMenVol1107',
-      'XMenVol1108',
-      'XMenVol1109',
-      'XMenVol1110',
-      'FOOMVol110',
-      'IronFistVol114',
-      'IronFistVol115',
-      'MarvelTeamUpVol11976',
-      'MarvelTeamUpVol153',
-      'MarvelTeamUpVol169',
-      'MarvelTeamUpVol170',
-    ]
-  ),
-  new Collection(
     'XMenMessiahComplex',
     'X-Men: Messiah Complex',
     2008,
