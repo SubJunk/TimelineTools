@@ -893,25 +893,23 @@ collections.push(
       'MarvelTeamUpVol169',
       'MarvelTeamUpVol170',
     ]
-  )
-);
-/* collections = [
-  {
-    id: 'CableVol1MessiahWar',
-    title: 'Cable Vol. 1: Messiah War',
-    yearPublished: 2008,
-    monthPublished: 12,
-    comicIds: [
+  ),
+  new Collection(
+    'CableVol1MessiahWar',
+    'Cable Vol. 1: Messiah War',
+    2008,
+    12,
+    [
       'CableVol21'
     ],
-    officialLink: 'https://comicstore.marvel.com/Cable-Vol-1-Messiah-War/digital-comic/27342'
-  },
-  {
-    id: 'XMenEpicCollectionVol5SecondGenesis',
-    title: 'X-Men Epic Collection Vol. 5: Second Genesis',
-    yearPublished: 2017,
-    monthPublished: 4,
-    comicIds: [
+    'https://comicstore.marvel.com/Cable-Vol-1-Messiah-War/digital-comic/27342'
+  ),
+  new Collection(
+    'XMenEpicCollectionVol5SecondGenesis',
+    'X-Men Epic Collection Vol. 5: Second Genesis',
+    2017,
+    4,
+    [
       'GiantSizeXMenVol11',
       'XMenVol194',
       'XMenVol195',
@@ -938,24 +936,24 @@ collections.push(
       'MarvelTeamUpVol169',
       'MarvelTeamUpVol170',
     ]
-  },
-  {
-    id: 'XMenMessiahComplex',
-    title: 'X-Men: Messiah Complex',
-    yearPublished: 2008,
-    monthPublished: 11,
-    comicIds: [
+  ),
+  new Collection(
+    'XMenMessiahComplex',
+    'X-Men: Messiah Complex',
+    2008,
+    11,
+    [
       'UncannyXMenVol1492',
       'UncannyXMenVol1493',
       'UncannyXMenVol1494'
-    ]
-  },
-  {
-    id: 'XMenTheDarkPhoenixSaga',
-    title: 'X-Men: The Dark Phoenix Saga',
-    yearPublished: 2006,
-    monthPublished: 4,
-    comicIds: [
+   ]
+  ),
+  new Collection(
+    'XMenTheDarkPhoenixSaga',
+    'X-Men: The Dark Phoenix Saga',
+    2006,
+    4,
+    [
       'UncannyXMenVol1129',
       'UncannyXMenVol1130',
       'UncannyXMenVol1131',
@@ -966,23 +964,23 @@ collections.push(
       'UncannyXMenVol1136',
       'UncannyXMenVol1137'
     ]
-  },
-  {
-    id: 'UncannyXMenDividedWeStand',
-    title: 'Uncanny X-Men: Divided We Stand',
-    yearPublished: 2008,
-    monthPublished: 10,
-    comicIds: [
+  ),
+  new Collection(
+    'UncannyXMenDividedWeStand',
+     'Uncanny X-Men: Divided We Stand',
+    2008,
+    10,
+    [
       'UncannyXMenVol1495',
       'UncannyXMenVol1496'
     ]
-  },
-  {
-    id: 'UncannyXMenManifestDestiny',
-    title: 'Uncanny X-Men: Manifest Destiny',
-    yearPublished: 2009,
-    monthPublished: 10,
-    comicIds: [
+  ),
+  new Collection(
+    'UncannyXMenManifestDestiny',
+    'Uncanny X-Men: Manifest Destiny',
+    2009,
+    10,
+    [
       'UncannyXMenVol1500',
       'UncannyXMenVol1501',
       'UncannyXMenVol1502',
@@ -994,26 +992,26 @@ collections.push(
       'XMenManifestDestinyVol14',
       'XMenManifestDestinyVol15'
     ]
-  },
-  {
-    id: 'UncannyXMenFearItself',
-    title: ['Uncanny X-Men: Fear Itself'],
-    yearPublished: 2012,
-    monthPublished: 3,
-    comicIds: [
+  ),
+  new Collection(
+    'UncannyXMenFearItself',
+    'Uncanny X-Men: Fear Itself',
+    2012,
+    3,
+    [
       'UncannyXMenVol1540',
       'UncannyXMenVol1541',
       'UncannyXMenVol1542',
       'UncannyXMenVol1543',
       'UncannyXMenVol1544'
     ]
-  },
-  {
-    id: 'UncannyXMenBreakingPoint',
-    title: ['Uncanny X-Men: Breaking Point'],
-    yearPublished: 2011,
-    monthPublished: 9,
-    comicIds: [
+  ),
+  new Collection(
+    'UncannyXMenBreakingPoint',
+    'Uncanny X-Men: Breaking Point',
+    2011,
+    9,
+    [
       'UncannyXMenVol1534.1',
       'UncannyXMenVol1535',
       'UncannyXMenVol1536',
@@ -1021,39 +1019,39 @@ collections.push(
       'UncannyXMenVol1538',
       'UncannyXMenVol1539'
     ]
-  },
-  {
-    id: 'UncannyXMenQuarantine',
-    title: ['Uncanny X-Men: Quarantine'],
-    yearPublished: 2011,
-    monthPublished: 6,
-    comicIds: [
+  ),
+  new Collection(
+    'UncannyXMenQuarantine',
+    'Uncanny X-Men: Quarantine',
+    2011,
+    6,
+     [
       'UncannyXMenVol1530',
       'UncannyXMenVol1531',
       'UncannyXMenVol1532',
       'UncannyXMenVol1533',
       'UncannyXMenVol1534'
     ]
-  },
-  {
-    id: 'UncannyXMenTheFiveLights',
-    title: ['Uncanny X-Men: The Five Lights (aka Uncanny X-Men: The Birth of Generation Hope)'],
-    yearPublished: 2010,
-    monthPublished: 12,
-    comicIds: [
+  ),
+  new Collection(
+    'UncannyXMenTheFiveLights',
+    'Uncanny X-Men: The Five Lights (aka Uncanny X-Men: The Birth of Generation Hope)',
+    2010,
+    12,
+    [
       'UncannyXMenVol1526',
       'UncannyXMenVol1527',
       'UncannyXMenVol1528',
       'UncannyXMenVol1529',
       'UncannyXMenVol1534'
     ]
-  },
-  {
-    id: 'UncannyXMenSecondComing',
-    title: ['X-Men: Second Coming'],
-    yearPublished: 2011,
-    monthPublished: 6,
-    comicIds: [
+  ),
+  new Collection(
+    'UncannyXMenSecondComing',
+    'X-Men: Second Coming',
+    2011,
+    6,
+    [
       'SecondComingPrepareVol11',
       'XMenSecondComingVol11',
       'XMenSecondComingVol12',
@@ -1070,5 +1068,5 @@ collections.push(
       'XForceVol327',
       'XForceVol328'
     ]
-  }
-];*/
+  )
+);
