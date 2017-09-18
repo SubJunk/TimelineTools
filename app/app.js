@@ -29,21 +29,22 @@ angular.module('app', [])
     this.officialLink = officialLink;
     this.references = references;
   }
-/**
+  /**
    * The prototype for collections.
    * 
-   * @param {string}   id
-   * @param {string}   singleTitle
-   * @param {string}   singleOfficialLink
-   * @param {string[]} [comicIds]
+   * @param {string}   title
+   * @param {number}   yearPublished
+   * @param {number}   monthPublished
+   * @param {string[]} comicIds
+   * @param {string}   [officialLink]
    */
-  function Collection(id, singleTitle, yearPublished, monthPublished, singleOfficialLink, comicIds) {
-    this.id = id;
-    this.title = singleTitle;
+  function Collection(title, yearPublished, monthPublished, comicIds, officialLink) {
+    this.id = title.replace(/[\W+]/g, '');
+    this.title = title;
     this.yearPublished = yearPublished;
     this.monthPublished = monthPublished;
-    this.singleOfficialLink = singleOfficialLink;
     this.comicIds = comicIds;
+    this.officialLink = officialLink;    
   }
   vm.comics.push(
     new Comic(
@@ -815,7 +816,7 @@ angular.module('app', [])
       2008,
       12,
       'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350',
-      ['CableVol2']
+      ['CableVol21']
     ),
     new Collection(
       'XMenEpicCollectionVol5SecondGenesis',
@@ -1039,7 +1040,6 @@ angular.module('app', [])
   // Date data
   vm.incrementBy = 'month';
   var bodyStyle = {};
-
   // Pixel counts
   var verticalIncrement = 60;
   var horizontalIncrement = 60;
