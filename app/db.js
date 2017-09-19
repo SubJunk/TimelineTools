@@ -63,21 +63,6 @@ comics.push(
     ['XMenVol1104']
   ),
   new Comic(
-    [
-      'Mutation of the Species',
-      'X-Men! X-Men! Read All About \'Em!',
-      'Doctor Foom',
-      'Fan Art',
-      'Marvel at the Con!',
-      'Eggsmen',
-      'Dept. of Infoomation'
-    ],
-    10,
-    1975,
-    6,
-    'FOOMVol1'
-  ),
-  new Comic(
     ['Madrox the Multiple Man', 'We Have to Fight the X-Men!', 'Gallery of FF\'s Most Famous Foes'],
     4,
     1975,
@@ -703,10 +688,6 @@ series = [
     title: 'Defenders'
   },
   {
-    id: 'FOOM',
-    title: 'FOOM'
-  },
-  {
     id: 'GiantSizeFantasticFour',
     title: 'Giant-Size Fantastic Four'
   },
@@ -773,11 +754,6 @@ seriesVolume = [
   {
     id: 'DefendersVol1',
     seriesId: 'Defenders',
-    volume: 1
-  },
-  {
-    id: 'FOOMVol1',
-    seriesId: 'FOOM',
     volume: 1
   },
   {
@@ -883,13 +859,12 @@ collections.push(
       'XMenVol1106',
       'XMenVol1107',
       'XMenVol1108',
-      'XMenVol1109',
-      'XMenVol1110',
-      'FOOMVol110',
       'IronFistVol114',
       'IronFistVol115',
+      'XMenVol1109',
       'MarvelTeamUpVol11976',
       'MarvelTeamUpVol153',
+      'XMenVol1110',
       'MarvelTeamUpVol169',
       'MarvelTeamUpVol170',
     ]
