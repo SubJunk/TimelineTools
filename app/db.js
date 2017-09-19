@@ -830,15 +830,13 @@ seriesVolume = [
 
 collections.push(
   new Collection(
-    'CableVol1MessiahWar',
     'Cable Vol. 1: Messiah War',
     2008,
     12,
-    'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350',
-    ['CableVol21']
+    ['CableVol21'],
+    'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
   ),
   new Collection(
-    'XMenEpicCollectionVol5SecondGenesis',
     'X-Men Epic Collection Vol. 5: Second Genesis',
     2017,
     4,
@@ -870,7 +868,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'XMenMessiahComplex',
     'X-Men: Messiah Complex',
     2008,
     11,
@@ -881,7 +878,6 @@ collections.push(
    ]
   ),
   new Collection(
-    'XMenTheDarkPhoenixSaga',
     'X-Men: The Dark Phoenix Saga',
     2006,
     4,
@@ -898,7 +894,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'UncannyXMenDividedWeStand',
      'Uncanny X-Men: Divided We Stand',
     2008,
     10,
@@ -908,7 +903,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'UncannyXMenManifestDestiny',
     'Uncanny X-Men: Manifest Destiny',
     2009,
     10,
@@ -926,7 +920,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'UncannyXMenFearItself',
     'Uncanny X-Men: Fear Itself',
     2012,
     3,
@@ -939,7 +932,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'UncannyXMenBreakingPoint',
     'Uncanny X-Men: Breaking Point',
     2011,
     9,
@@ -953,7 +945,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'UncannyXMenQuarantine',
     'Uncanny X-Men: Quarantine',
     2011,
     6,
@@ -966,7 +957,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'UncannyXMenTheFiveLights',
     'Uncanny X-Men: The Five Lights (aka Uncanny X-Men: The Birth of Generation Hope)',
     2010,
     12,
@@ -979,7 +969,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'UncannyXMenSecondComing',
     'X-Men: Second Coming',
     2011,
     6,
