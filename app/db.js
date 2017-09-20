@@ -11,18 +11,16 @@ var seriesVolume = [];
  * @param {number}   yearPublished
  * @param {number}   monthPublished
  * @param {string}   seriesVolumeId
- * @param {string}   [officialLink]
  * @param {string[]} [referencedBy] The comic/s that reference this comic.
  *                                  Used only for comics that are not in the main collections.
  */
-function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, officialLink, referencedBy) {
+function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, referencedBy) {
   this.id = seriesVolumeId + issue;
   this.title = title;
   this.issue = issue;
   this.yearPublished = yearPublished;
   this.monthPublished = monthPublished;
   this.seriesVolumeId = seriesVolumeId;
-  this.officialLink = officialLink;
   this.referencedBy = referencedBy;
 }
 
@@ -33,15 +31,13 @@ function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, offi
  * @param {number}   yearPublished
  * @param {number}   monthPublished
  * @param {string[]} comicIds
- * @param {string}   [officialLink]
  */
-function Collection(title, yearPublished, monthPublished, comicIds, officialLink) {
+function Collection(title, yearPublished, monthPublished, comicIds) {
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
   this.yearPublished = yearPublished;
   this.monthPublished = monthPublished;
   this.comicIds = comicIds;
-  this.officialLink = officialLink;    
 }
 
 comics.push(
@@ -50,8 +46,7 @@ comics.push(
     1,
     2008,
     5,
-    'CableVol2',
-    'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
+    'CableVol2'
   ),
   new Comic(
     ['Alpha, the Ultimate Mutant!'],
@@ -833,8 +828,7 @@ collections.push(
     'Cable Vol. 1: Messiah War',
     2008,
     12,
-    ['CableVol21'],
-    'https://comicstore.marvel.com/Cable-2008-2010-1/digital-comic/10350'
+    ['CableVol21']
   ),
   new Collection(
     'X-Men Epic Collection Vol. 5: Second Genesis',
