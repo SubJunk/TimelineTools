@@ -24,21 +24,24 @@ angular.module('app', [])
   // Pixel counts
   var verticalIncrement = 60;
   var horizontalIncrement = 60;
+
   vm.expandedComic;
   vm.toggleExpandComic = function(currentComic) {
-    var currentSeriesVolume = vm.seriesVolume[_.findKey(vm.seriesVolume, { 'id': currentComic.seriesVolumeId })];
+    // Unset the sticky styles if they exist
+    var $expandedComic = $('.expanded .comic');
+    $expandedComic.removeClass('sticky-top');
+    $expandedComic.removeClass('sticky-left');
+    $expandedComic.removeClass('sticky-right');
+    $expandedComic.removeClass('sticky-bottom');
+    $expandedComic.css('marginLeft',   '');
+    $expandedComic.css('marginTop',    '');
+    $expandedComic.css('marginRight',  '');
+    $expandedComic.css('marginBottom', '');
 
     if (vm.expandedComic === currentComic.id) {
       vm.expandedComic = undefined;
-      // currentComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
-      if (angular.isDefined(vm.expandedComic)) {
-        var previousComic = vm.comics[_.findKey(vm.comics, { 'id': vm.expandedComic })];
-        // previousComic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
-      }
-
       vm.expandedComic = currentComic.id;
-      // currentComic.styles.top = (currentSeriesVolume.verticalPosition * verticalIncrement) - 175;
     }
   };
   
@@ -59,28 +62,29 @@ angular.module('app', [])
     var currentSeries = vm.series[_.findKey(vm.series, { 'id': currentSeriesVolume.seriesId })];
 
     // Horizontal positioning
+    comic.containerStyles = {};
     comic.styles = {};
     if (!firstYear) {
       firstYear = comic.yearPublished;
       firstMonth = comic.monthPublished;
-      comic.styles.left = 0;
+      comic.containerStyles.left = 0;
     } else {
       monthsSinceFirst = (comic.yearPublished - firstYear) * 12;
       monthsSinceFirst -= firstMonth;
       monthsSinceFirst += comic.monthPublished;
-      comic.styles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
+      comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
 
       // Match the width of the page to the width of the content
       // TODO: Replace magic number
-      bodyStyle.width = comic.styles.left + horizontalIncrement + 3000;
+      bodyStyle.width = comic.containerStyles.left + horizontalIncrement + 3000;
     }
 
     // Vertical positioning
     if (angular.isDefined(currentSeriesVolume.verticalPosition)) {
-      comic.styles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
+      comic.containerStyles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
       currentSeriesVolume.verticalPosition = globalVerticalPositionCounter;
-      comic.styles.top = globalVerticalPositionCounter * verticalIncrement;
+      comic.containerStyles.top = globalVerticalPositionCounter * verticalIncrement;
       globalVerticalPositionCounter++;
     }
 
@@ -149,4 +153,45 @@ angular.module('app', [])
 
   vm.dates = dates;
   vm.bodyStyle = bodyStyle;
+
+  /**
+   * Use jQuery to manipulate classes and styles to make the expanded
+   * panels always fit in the viewport.
+   */
+  var $jqWindow = $(window);
+  $jqWindow.scroll(function() {
+    var $expandedComic = $('.expanded .comic');
+    var $stickyAnchor = $('.expanded .scroll-anchor');
+    if ($expandedComic.length) {
+      var anchorTopPosition    = $stickyAnchor.offset().top;
+      var anchorLeftPosition   = $stickyAnchor.offset().left;
+      var anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
+      var anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
+
+      var scrollRight  = $jqWindow.scrollLeft() + $jqWindow.innerWidth();
+      var scrollBottom = $jqWindow.scrollTop() + $jqWindow.innerHeight();
+
+      var isStickyTop    = Boolean($jqWindow.scrollTop()  > anchorTopPosition);
+      var isStickyLeft   = Boolean($jqWindow.scrollLeft() > anchorLeftPosition);
+      var isStickyRight  = Boolean(scrollRight  > anchorRightPosition);
+      var isStickyBottom = Boolean(scrollBottom > anchorBottomPosition);
+      console.log(isStickyTop, isStickyLeft, isStickyRight, isStickyBottom);
+
+      $expandedComic.toggleClass('sticky-top', isStickyTop);
+      $expandedComic.toggleClass('sticky-left', isStickyLeft);
+      // $expandedComic.toggleClass('sticky-right', isStickyRight);
+      // $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
+
+      if (isStickyTop && !isStickyLeft) {
+        $expandedComic.css('marginLeft', '-' + $jqWindow.scrollLeft());
+        $expandedComic.css('marginTop', '');
+      } else if (isStickyLeft && !isStickyTop) {
+        $expandedComic.css('marginTop', '-' + $jqWindow.scrollTop());
+        $expandedComic.css('marginLeft', '');
+      } else {
+        $expandedComic.css('marginLeft', '');
+        $expandedComic.css('marginTop', '');
+      }
+    }
+  });
 });

@@ -33,43 +33,46 @@ body {
   position: relative;
 }
 
-.comic {
+.comic-container {
   position: absolute;
   display: block;
+}
+
+.comics .comic-container.expanded {
+  z-index: 1;
+}
+
+.comic {
   width: var(--month-width);
   height: var(--month-width);
   background: #1A1C1C;
-  transition: top 0.5s, width 0.5s, height 0.5s;
   border-radius: 50%;
 }
 
-.comic.expanded {
+.expanded .comic {
   z-index: 1;
   width: auto;
   border-radius: initial;
   height: auto;
 }
 
-.comic .series {
+.comic-container .series {
   background: rgba(27, 27, 27, 0.5);
   margin-top: 5px;
 }
 
-.comic > a {
+.comic-container > a {
   position: relative;
   top: 0;
-  transition: top 0.5s;
 }
 
 .cover-thumbnail {
   display: block;
-  transition: border-radius 0.5s;
 }
 
 .cover-thumbnail img {
-  display: block;
   overflow: hidden;
-  object-fit: fill;
+  object-fit: cover;
   transition: height 0.5s, width 0.5s, border-radius 0.5s;
   border-radius: 50%;
 
@@ -78,22 +81,26 @@ body {
   margin: calc(var(--month-width) * 0.05);
 }
 
-.comic.expanded .cover-thumbnail {
+.expanded .comic .cover-thumbnail {
   display: inline-block;
 }
 
-.comic.expanded .cover-thumbnail img {
+.expanded .comic .cover-thumbnail img {
   border-radius: initial;
   width: 200px;
   height: auto;
 }
 
 .expanded-panel {
-  display: inline-block;
+  display: none;
   left: 0;
-  width: 800px;
+  width: 600px;
   transition: max-height 0.5s, max-width 0.5s, height 0.5s, width 0.5s;
   background: inherit;
+}
+
+.expanded .expanded-panel {
+  display: inline-block;
 }
 
 .expanded-panel .row {
@@ -102,4 +109,24 @@ body {
 
 .expanded-panel img {
   max-width: 100%;
+}
+
+.sticky-top {
+  position: fixed;
+  top: 0;
+}
+
+.sticky-left {
+  position: fixed;
+  left: 0;
+}
+
+.sticky-right {
+  position: fixed;
+  right: 0;
+}
+
+.sticky-bottom {
+  position: fixed;
+  bottom: 0;
 }

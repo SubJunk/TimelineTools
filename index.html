@@ -19,13 +19,16 @@
       </li>
     </ul>
     <ul class="comics">
-      <li ng-repeat="comic in ::main.comics track by comic.id" class="comic z-depth-5" ng-style="comic.styles" ng-class="{expanded: comic.id === main.expandedComic}">
-        <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail">
-          <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
-        </a>
-        <div class="expanded-panel" ng-if="comic.id === main.expandedComic">
-          <div class="series">{{comic.series}} #{{comic.issue}}</div>
-          <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
+      <li ng-repeat="comic in ::main.comics track by comic.id" class="comic-container", ng-class="{expanded: comic.id === main.expandedComic}" ng-style="comic.containerStyles">
+        <div class="scroll-anchor"></div>
+        <div class="comic z-depth-5" ng-style="comic.styles">
+          <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail">
+            <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
+          </a>
+          <div class="expanded-panel">
+            <div class="series">{{comic.series}} #{{comic.issue}}</div>
+            <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
+          </div>
         </div>
       </li>
     </ul>
