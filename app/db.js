@@ -54,7 +54,6 @@ comics.push(
     1974,
     10,
     'DefendersVol1',
-    undefined,
     ['XMenVol1104']
   ),
   new Comic(
@@ -63,7 +62,6 @@ comics.push(
     1975,
     2,
     'GiantSizeFantasticFourVol1',
-    undefined,
     ['XMenVol1104']
   ),
   new Comic(
@@ -135,7 +133,6 @@ comics.push(
     1975,
     12,
     'XMenVol1',
-    undefined,
     ['XMenVol1104']
   ),
   new Comic(
@@ -144,7 +141,6 @@ comics.push(
     1976,
     2,
     'XMenVol1',
-    undefined,
     ['XMenVol1104']
   ),
   new Comic(
@@ -174,7 +170,6 @@ comics.push(
     1976,
     10,
     'XMenVol1',
-    undefined,
     ['XMenVol1104']
   ),
   new Comic(
@@ -183,7 +178,6 @@ comics.push(
     1976,
     12,
     'XMenVol1',
-    undefined,
     ['XMenVol1103', 'XMenVol1104']
   ),
   new Comic(
@@ -192,7 +186,6 @@ comics.push(
     1977,
     2,
     'XMenVol1',
-    undefined,
     ['XMenVol1104']
   ),
   new Comic(
@@ -200,7 +193,8 @@ comics.push(
     104,
     1977,
     4,
-    'XMenVol1'
+    'XMenVol1',
+    ['XMenVol1105']
   ),
   new Comic(
     ['Phoenix Unleashed!'],
