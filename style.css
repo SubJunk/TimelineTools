@@ -37,12 +37,17 @@ body {
   position: absolute;
   display: block;
   width: var(--month-width);
+  height: var(--month-width);
   background: #1A1C1C;
-  transition: top 0.5s, width 0.5s;
+  transition: top 0.5s, width 0.5s, height 0.5s;
+  border-radius: 50%;
 }
 
 .comic.expanded {
   z-index: 1;
+  width: auto;
+  border-radius: initial;
+  height: auto;
 }
 
 .comic .series {
@@ -58,23 +63,35 @@ body {
 
 .cover-thumbnail {
   display: block;
-  border-radius: 50%;
   transition: border-radius 0.5s;
 }
 
 .cover-thumbnail img {
-  width: var(--month-width);
-  height: var(--month-width);
-  margin: 0 auto;
   display: block;
   overflow: hidden;
   object-fit: fill;
+  transition: height 0.5s, width 0.5s, border-radius 0.5s;
+  border-radius: 50%;
+
+  width: calc(var(--month-width) * 0.9);
+  height: calc(var(--month-width) * 0.9);
+  margin: calc(var(--month-width) * 0.05);
+}
+
+.comic.expanded .cover-thumbnail {
+  display: inline-block;
+}
+
+.comic.expanded .cover-thumbnail img {
+  border-radius: initial;
+  width: 200px;
+  height: auto;
 }
 
 .expanded-panel {
-  position: fixed;
+  display: inline-block;
   left: 0;
-  width: 100%;
+  width: 800px;
   transition: max-height 0.5s, max-width 0.5s, height 0.5s, width 0.5s;
   background: inherit;
 }

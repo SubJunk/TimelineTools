@@ -24,16 +24,8 @@
           <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
         </a>
         <div class="expanded-panel" ng-if="comic.id === main.expandedComic">
-          <div class="row">
-            <div class="col s2">
-              <img ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
-            </div>
-            <div class="col s10">
-              <div class="series">{{comic.series}} #{{comic.issue}}</div>
-              <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
-              <div class="official-link" ng-if="comic.officialLink"><a ng-href="{{comic.officialLink}}">Read online</a></div>
-            </div>
-          </div>
+          <div class="series">{{comic.series}} #{{comic.issue}}</div>
+          <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
         </div>
       </li>
     </ul>
