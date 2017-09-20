@@ -133,7 +133,7 @@ comics.push(
     1975,
     12,
     'XMenVol1',
-    ['XMenVol1104']
+    ['XMenVol1104', 'XMenVol1106']
   ),
   new Comic(
     ['My Brother, My Enemy!'],
@@ -201,7 +201,8 @@ comics.push(
     105,
     1977,
     6,
-    'XMenVol1'
+    'XMenVol1',
+    ['XMenVol1106']
   ),
   new Comic(
     ['Dark Shroud of the Past!'],
