@@ -114,18 +114,28 @@ comics.push(
     'MarvelTeamUpVol1'
   ),
   new Comic(
+    ['"Before I\'d Be Slave..."'],
+    65,
+    1970,
+    2,
+    'XMenVol1',
+    ['XMenVol1107']
+  ),
+  new Comic(
     ['The Doomsmith Scenario!'],
     94,
     1975,
     8,
-    'XMenVol1'
+    'XMenVol1',
+    ['XMenVol1106']
   ),
   new Comic(
     ['Warhunt!'],
     95,
     1975,
     10,
-    'XMenVol1'
+    'XMenVol1',
+    ['XMenVol1106']
   ),
   new Comic(
     ['Night of the Demon!'],
@@ -194,7 +204,7 @@ comics.push(
     1977,
     4,
     'XMenVol1',
-    ['XMenVol1105']
+    ['XMenVol1105', 'XMenVol1107']
   ),
   new Comic(
     ['Phoenix Unleashed!'],
@@ -202,7 +212,7 @@ comics.push(
     1977,
     6,
     'XMenVol1',
-    ['XMenVol1106']
+    ['XMenVol1106', 'XMenVol1107']
   ),
   new Comic(
     ['Dark Shroud of the Past!'],
