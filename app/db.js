@@ -250,6 +250,83 @@ comics.push(
     'XMenVol1'
   ),
   new Comic(
+    ['Mindgames!'],
+    111,
+    1978,
+    6,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Magneto Triumphant!'],
+    112,
+    1978,
+    8,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Showdown!'],
+    113,
+    1978,
+    9,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Desolation'],
+    114,
+    1978,
+    10,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Visions of Death!'],
+    115,
+    1978,
+    11,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['To Save the Savage Land'],
+    116,
+    1978,
+    12,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Psi War!'],
+    117,
+    1979,
+    1,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['The Submergence of Japan'],
+    118,
+    1979,
+    2,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['\'Twas the Night Before Christmas...'],
+    119,
+    1979,
+    3,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Wanted: Wolverine! Dead or Alive!'],
+    120,
+    1979,
+    4,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Shoot-Out at the Stampede!'],
+    121,
+    1979,
+    5,
+    'XMenVol1'
+  ),
+  new Comic(
     ['God Spare the Child...'],
     129,
     1980,
@@ -834,6 +911,24 @@ collections.push(
     2008,
     12,
     ['CableVol21']
+  ),
+  new Collection(
+    'Marvel Masterworks: The Uncanny X-Men Vol. 3',
+    2011,
+    1,
+    [
+      'XMenVol1111',
+      'XMenVol1112',
+      'XMenVol1113',
+      'XMenVol1114',
+      'XMenVol1115',
+      'XMenVol1116',
+      'XMenVol1117',
+      'XMenVol1118',
+      'XMenVol1119',
+      'XMenVol1120',
+      'XMenVol1121',
+    ]
   ),
   new Collection(
     'X-Men Epic Collection Vol. 5: Second Genesis',
