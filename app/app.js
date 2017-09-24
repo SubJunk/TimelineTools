@@ -167,19 +167,18 @@ angular.module('app', [])
 
       var isStickyTop    = Boolean($jqWindow.scrollTop()  > anchorTopPosition);
       var isStickyLeft   = Boolean($jqWindow.scrollLeft() > anchorLeftPosition);
-      var isStickyRight  = Boolean(scrollRight  > anchorRightPosition);
-      var isStickyBottom = Boolean(scrollBottom > anchorBottomPosition);
-      console.log(isStickyTop, isStickyLeft, isStickyRight, isStickyBottom);
+      var isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
+      var isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
 
       $expandedComic.toggleClass('sticky-top', isStickyTop);
       $expandedComic.toggleClass('sticky-left', isStickyLeft);
-      // $expandedComic.toggleClass('sticky-right', isStickyRight);
-      // $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
+      $expandedComic.toggleClass('sticky-right', isStickyRight);
+      $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
 
-      if (isStickyTop && !isStickyLeft) {
+      if (isStickyTop && !isStickyLeft && !isStickyRight || isStickyBottom && !isStickyRight && !isStickyLeft) {
         $expandedComic.css('marginLeft', '-' + $jqWindow.scrollLeft());
         $expandedComic.css('marginTop', '');
-      } else if (isStickyLeft && !isStickyTop) {
+      } else if (isStickyLeft && !isStickyTop && !isStickyBottom|| isStickyRight && !isStickyBottom && !isStickyTop) {
         $expandedComic.css('marginTop', '-' + $jqWindow.scrollTop());
         $expandedComic.css('marginLeft', '');
       } else {
