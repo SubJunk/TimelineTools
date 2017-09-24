@@ -123,6 +123,7 @@ angular.module('app', [])
     }
   }
 
+  
   // Render collections as groups of comics
   var comicIndex;
   _.each(vm.collections, function(collection) {
@@ -136,16 +137,18 @@ angular.module('app', [])
     });
   });
 
-  //generate random colors for collections
-  function getRandomColor(){
+
+  //  generate random colors for collections   
+   function getRandomColor(){
     var collectionOpacity = 1;
-    var rgbColors = 'rgba(';
-    for(i=0; i<3; i++){
-      rgbColors += (Math.floor(Math.random() * 255)) + ', ';
-    }
-    rgbColors += collectionOpacity + ')';
-    return rgbColors;
+    var hslColors = 'hsla(';
+    hslColors += (Math.floor(Math.random() * 360)) + ', ';
+    hslColors += (Math.floor(Math.random() * 100)) + '%, ';
+    hslColors += (Math.floor(Math.random() * 100)) + '%, ';
+    hslColors += collectionOpacity + ')';
+    return hslColors;
   }
+
   vm.dates = dates;
   vm.bodyStyle = bodyStyle;
 
