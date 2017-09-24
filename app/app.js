@@ -122,18 +122,6 @@ angular.module('app', [])
     }
   }
 
-  // var collectionOpacity = '1';
-  // var globalColorIndex = 0;
-  // var colors = [
-  //   'rgba(11,  61,  167, ' + collectionOpacity + ')', // #0b3da7
-  //   'rgba(17,  167, 11,  ' + collectionOpacity + ')', // #11a70b
-  //   'rgba(167, 161, 11,  ' + collectionOpacity + ')', // #a7a10b
-  //   'rgba(111, 167, 11,  ' + collectionOpacity + ')', // #6fa70b
-  //   'rgba(11,  167, 142, ' + collectionOpacity + ')', // #0ba78e
-  //   'rgba(168, 11,  11,  ' + collectionOpacity + ')', // #a70b0b
-    // 'rgba(57,  222, 236, ' + collectionOpacity + ')', // #39deec
-  // ];
-
   // Render collections as groups of comics
   var comicIndex;
   _.each(vm.collections, function(collection) {
@@ -143,14 +131,8 @@ angular.module('app', [])
       if (!comicIndex) {
         throw new Error(comicId + ' not found in the comics db');
       }
-      // vm.comics[comicIndex].styles.background = colors[globalColorIndex];
       vm.comics[comicIndex].styles.background = collectionColor;
     });
-
-    // globalColorIndex++;
-    // if (globalColorIndex > colors.length) {
-    //   globalColorIndex = 0;
-    // }
   });
 
   //generate random colors for collections
