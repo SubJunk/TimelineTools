@@ -3,7 +3,7 @@ angular.module('app', [])
 .run(function ($rootScope) {
   $rootScope._ = window._;
 })
-.controller('DataController', function($window) {
+.controller('DataController', function($timeout, $window) {
   var vm = this;
 
   vm.comics       = $window.comics;
@@ -42,6 +42,7 @@ angular.module('app', [])
       vm.expandedComic = undefined;
     } else {
       vm.expandedComic = currentComic.id;
+      repositionExpandedPanel();
     }
   };
   
@@ -148,43 +149,48 @@ angular.module('app', [])
   vm.dates = dates;
   vm.bodyStyle = bodyStyle;
 
+  var $jqWindow = $(window);
+
   /**
    * Use jQuery to manipulate classes and styles to make the expanded
    * panels always fit in the viewport.
    */
-  var $jqWindow = $(window);
-  $jqWindow.scroll(function() {
-    var $expandedComic = $('.expanded .comic');
-    var $stickyAnchor = $('.expanded .scroll-anchor');
-    if ($expandedComic.length) {
-      var anchorTopPosition    = $stickyAnchor.offset().top;
-      var anchorLeftPosition   = $stickyAnchor.offset().left;
-      var anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
-      var anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
+  var repositionExpandedPanel = function() {
+    $timeout(function() {
+      var $expandedComic = $('.expanded .comic');
+      var $stickyAnchor = $('.expanded .scroll-anchor');
+      if ($expandedComic.length) {
+        var anchorTopPosition    = $stickyAnchor.offset().top;
+        var anchorLeftPosition   = $stickyAnchor.offset().left;
+        var anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
+        var anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
 
-      var scrollRight  = $jqWindow.scrollLeft() + $jqWindow.innerWidth();
-      var scrollBottom = $jqWindow.scrollTop() + $jqWindow.innerHeight();
+        var scrollRight  = $jqWindow.scrollLeft() + $jqWindow.innerWidth();
+        var scrollBottom = $jqWindow.scrollTop() + $jqWindow.innerHeight();
 
-      var isStickyTop    = Boolean($jqWindow.scrollTop()  > anchorTopPosition);
-      var isStickyLeft   = Boolean($jqWindow.scrollLeft() > anchorLeftPosition);
-      var isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
-      var isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
+        var isStickyTop    = Boolean($jqWindow.scrollTop()  > anchorTopPosition);
+        var isStickyLeft   = Boolean($jqWindow.scrollLeft() > anchorLeftPosition);
+        var isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
+        var isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
 
-      $expandedComic.toggleClass('sticky-top', isStickyTop);
-      $expandedComic.toggleClass('sticky-left', isStickyLeft);
-      $expandedComic.toggleClass('sticky-right', isStickyRight);
-      $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
+        $expandedComic.toggleClass('sticky-top', isStickyTop);
+        $expandedComic.toggleClass('sticky-left', isStickyLeft);
+        $expandedComic.toggleClass('sticky-right', isStickyRight);
+        $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
 
-      if (isStickyTop && !isStickyLeft && !isStickyRight || isStickyBottom && !isStickyRight && !isStickyLeft) {
-        $expandedComic.css('marginLeft', '-' + $jqWindow.scrollLeft());
-        $expandedComic.css('marginTop', '');
-      } else if (isStickyLeft && !isStickyTop && !isStickyBottom|| isStickyRight && !isStickyBottom && !isStickyTop) {
-        $expandedComic.css('marginTop', '-' + $jqWindow.scrollTop());
-        $expandedComic.css('marginLeft', '');
-      } else {
-        $expandedComic.css('marginLeft', '');
-        $expandedComic.css('marginTop', '');
+        if (isStickyTop && !isStickyLeft && !isStickyRight || isStickyBottom && !isStickyRight && !isStickyLeft) {
+          $expandedComic.css('marginLeft', '-' + $jqWindow.scrollLeft());
+          $expandedComic.css('marginTop', '');
+        } else if (isStickyLeft && !isStickyTop && !isStickyBottom|| isStickyRight && !isStickyBottom && !isStickyTop) {
+          $expandedComic.css('marginTop', '-' + $jqWindow.scrollTop());
+          $expandedComic.css('marginLeft', '');
+        } else {
+          $expandedComic.css('marginLeft', '');
+          $expandedComic.css('marginTop', '');
+        }
       }
-    }
-  });
+    });
+  }
+
+  $jqWindow.scroll(repositionExpandedPanel);
 });
