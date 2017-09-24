@@ -178,7 +178,7 @@ angular.module('app', [])
       if (isStickyTop && !isStickyLeft &&!isStickyRight || isStickyBottom && !isStickyRight && !isStickyLeft) {
         $expandedComic.css('marginLeft', '-' + $jqWindow.scrollLeft());
         $expandedComic.css('marginTop', '');
-      } else if (isStickyLeft && !isStickyTop &&! isStickyBottom|| isStickyRight && !isStickyBottom && !isStickyTop) {
+      } else if (isStickyLeft && !isStickyTop && !isStickyBottom|| isStickyRight && !isStickyBottom && !isStickyTop) {
         $expandedComic.css('marginTop', '-' + $jqWindow.scrollTop());
         $expandedComic.css('marginLeft', '');
       } else {
