@@ -169,7 +169,6 @@ angular.module('app', [])
       var isStickyLeft   = Boolean($jqWindow.scrollLeft() > anchorLeftPosition);
       var isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
       var isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
-      console.log("left: " + isStickyLeft + " bottom: " +isStickyBottom);
 
       $expandedComic.toggleClass('sticky-top', isStickyTop);
       $expandedComic.toggleClass('sticky-left', isStickyLeft);
