@@ -137,16 +137,31 @@ angular.module('app', [])
     });
   });
 
+  /**
+   * Generates random color.
+   *
+   * @returns hslColor
+   */
+  var startColor;  
+  function getRandomColor() {
+    var opacity = 1;
+    var stepChange = 30;
+    var hslColor = 'hsla(';
+    if (typeof startColor !== 'undefined') {
+      if ((startColor + stepChange) > 360) {
+        startColor -= 360;
+      }
+      startColor += stepChange;
+    } else {
+      startColor = Math.floor(Math.random() * 360);
+    }
 
-  //  generate random colors for collections   
-   function getRandomColor(){
-    var collectionOpacity = 1;
-    var hslColors = 'hsla(';
-    hslColors += (Math.floor(Math.random() * 360)) + ', ';
-    hslColors += (Math.floor(Math.random() * 100)) + '%, ';
-    hslColors += (Math.floor(Math.random() * 100)) + '%, ';
-    hslColors += collectionOpacity + ')';
-    return hslColors;
+    hslColor += startColor + ', ';
+    hslColor += Math.floor(Math.random() * ((75-35) + 1) + 35) + '%, ';
+    hslColor += Math.floor(Math.random() * ((75-35) + 1) + 35) + '%, ';
+    hslColor += opacity + ')';
+
+    return hslColor;
   }
 
   vm.dates = dates;
