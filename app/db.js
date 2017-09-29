@@ -15,6 +15,11 @@ var seriesVolume = [];
  *                                  Used only for comics that are not in the main collections.
  */
 function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, referencedBy) {
+  // Sanitize strings like annuals
+  if (typeof issue === 'string') {
+    issue = issue.replace(/[\W+]/g, '');
+  }
+
   this.id = seriesVolumeId + issue;
   this.title = title;
   this.issue = issue;
@@ -47,22 +52,6 @@ comics.push(
     2008,
     5,
     'CableVol2'
-  ),
-  new Comic(
-    ['Alpha, the Ultimate Mutant!'],
-    16,
-    1974,
-    10,
-    'DefendersVol1',
-    ['XMenVol1104']
-  ),
-  new Comic(
-    ['Madrox the Multiple Man', 'We Have to Fight the X-Men!', 'Gallery of FF\'s Most Famous Foes'],
-    4,
-    1975,
-    2,
-    'GiantSizeFantasticFourVol1',
-    ['XMenVol1104']
   ),
   new Comic(
     ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
@@ -112,14 +101,6 @@ comics.push(
     1978,
     6,
     'MarvelTeamUpVol1'
-  ),
-  new Comic(
-    ['"Before I\'d Be Slave..."'],
-    65,
-    1970,
-    2,
-    'XMenVol1',
-    ['XMenVol1107']
   ),
   new Comic(
     ['The Doomsmith Scenario!'],
@@ -327,67 +308,123 @@ comics.push(
     'XMenVol1'
   ),
   new Comic(
+    ['Cry for the Children!'],
+    122,
+    1979,
+    6,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Listen -- Stop Me if You\'ve Heard It -- But This One Will Kill You!'],
+    123,
+    1979,
+    7,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['He Only Laughs When I Hurt!'],
+    124,
+    1979,
+    8,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['A Fire in the Sky!'],
+    'Annual #3',
+    1979,
+    8,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['There\'s Something Awful on Muir Island!'],
+    125,
+    1979,
+    9,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['How Sharper Than a Serpent\'s Tooth...!'],
+    126,
+    1979,
+    10,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['The Quality of Hatred!'],
+    127,
+    1979,
+    11,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['The Action of the Tiger!'],
+    128,
+    1979,
+    12,
+    'XMenVol1'
+  ),
+  new Comic(
     ['God Spare the Child...'],
     129,
     1980,
     1,
-    'UncannyXMenVol1'
+    'XMenVol1'
   ),
   new Comic(
     ['Dazzler'],
     130,
     1980,
     2,
-    'UncannyXMenVol1'
+    'XMenVol1'
   ),
   new Comic(
     ['Run for Your Life!'],
     131,
     1980,
     3,
-    'UncannyXMenVol1'
+    'XMenVol1'
   ),
   new Comic(
     ['And Hellfire is Their Name!'],
     132,
     1980,
     4,
-    'UncannyXMenVol1'
+    'XMenVol1'
   ),
   new Comic(
     ['Wolverine: Alone!'],
     133,
     1980,
     5,
-    'UncannyXMenVol1'
+    'XMenVol1'
   ),
   new Comic(
     ['Too Late, the Heroes!'],
     134,
     1980,
     6,
-    'UncannyXMenVol1'
+    'XMenVol1'
   ),
   new Comic(
     ['Dark Phoenix'],
     135,
     1980,
     7,
-    'UncannyXMenVol1'
+    'XMenVol1'
   ),
   new Comic(
     ['Child of Light and Darkness!'],
     136,
     1980,
     8,
-    'UncannyXMenVol1'
+    'XMenVol1'
   ),
   new Comic(
     ['The Fate of the Phoenix!'],
     137,
     1980,
     9,
-    'UncannyXMenVol1'
+    'XMenVol1'
   ),
   new Comic(
     ['Messiah Complex: Chapter Two'],
@@ -931,6 +968,24 @@ collections.push(
     ]
   ),
   new Collection(
+    'Marvel Masterworks: The Uncanny X-Men Vol. 4',
+    2012,
+    2,
+    [
+      'XMenVol1122',
+      'XMenVol1123',
+      'XMenVol1124',
+      'XMenVol1125',
+      'XMenVol1126',
+      'XMenVol1127',
+      'XMenVol1128',
+      'XMenVol1129',
+      'XMenVol1130',
+      'XMenVol1131',
+      'XMenVol1Annual3',
+    ]
+  ),
+  new Collection(
     'X-Men Epic Collection Vol. 5: Second Genesis',
     2017,
     4,
@@ -972,23 +1027,7 @@ collections.push(
    ]
   ),
   new Collection(
-    'X-Men: The Dark Phoenix Saga',
-    2006,
-    4,
-    [
-      'UncannyXMenVol1129',
-      'UncannyXMenVol1130',
-      'UncannyXMenVol1131',
-      'UncannyXMenVol1132',
-      'UncannyXMenVol1133',
-      'UncannyXMenVol1134',
-      'UncannyXMenVol1135',
-      'UncannyXMenVol1136',
-      'UncannyXMenVol1137'
-    ]
-  ),
-  new Collection(
-     'Uncanny X-Men: Divided We Stand',
+    'Uncanny X-Men: Divided We Stand',
     2008,
     10,
     [
