@@ -45,6 +45,32 @@ function Collection(title, yearPublished, monthPublished, comicIds) {
   this.comicIds = comicIds;
 }
 
+/**
+ * The prototype for comic series.
+ * A series always contains at least one SeriesVolume.
+ *
+ * @param {string} title
+ * @see SeriesVolume
+ */
+function Series(title) {
+  this.id = title.replace(/[\W+]/g, '');
+  this.title = title;
+}
+
+/**
+ * The prototype for comic series volume.
+ * A SeriesVolume always matches a Series.
+ *
+ * @param {string} seriesId
+ * @param {number} volume 
+ * @see Series
+ */
+function SeriesVolume(seriesId, volume) {
+  this.id = seriesId + 'Vol' + volume;
+  this.seriesId = seriesId;
+  this.volume = volume;
+}
+
 comics.push(
   new Comic(
     ['War Baby (Chapter 1)'],
@@ -501,7 +527,7 @@ comics.push(
     1,
     2008,
     5,
-    'XMenFreeComicBookDay2008'
+    'XMenFreeComicBookDayVol2008'
   ),
   new Comic(
     ['Untitled'],
@@ -792,155 +818,43 @@ comics.push(
   )
 );
 
-series = [
-  {
-    id: 'Cable',
-    title: 'Cable'
-  },
-  {
-    id: 'Defenders',
-    title: 'Defenders'
-  },
-  {
-    id: 'GiantSizeFantasticFour',
-    title: 'Giant-Size Fantastic Four'
-  },
-  {
-    id: 'GiantSizeXMen',
-    title: 'Giant-Size X-Men'
-  },
-  {
-    id: 'IronFist',
-    title: 'Iron Fist'
-  },
-  {
-    id: 'MarvelTeamUp',
-    title: 'Marvel Team-Up'
-  },
-  {
-    id: 'UncannyXMen',
-    title: 'Uncanny X-Men'
-  },
-  {
-    id: 'XMen',
-    title: 'X-Men'
-  },
-  {
-    id: 'XMenManifestDestiny',
-    title: 'X-Men Manifest Destiny'
-  },
-  {
-    id: 'XMenFreeComicBookDay',
-    title: 'X-Men Free Comic Book Day'
-  },
-  {
-    id: 'HeroicAgeXMen',
-    title: 'Heroic Age X-Men'
-  },
-  {
-    id: 'SecondComingPrepare',
-    title: 'Second Coming Prepare',
-  },
-  {
-    id: 'XMenSecondComing',
-    title: 'X-Men Second Coming',
-  },
-  {
-    id: 'XForce',
-    title: 'X-Force'
-  },
-  {
-    id: 'XMenLegacy',
-    title: 'X-Men Legacy'
-  },
-  {
-    id: 'NewMutants',
-    title: 'New Mutants'
-  }
-];
+series.push(
+  new Series('Cable'),
+  new Series('Defenders'),
+  new Series('Giant-Size Fantastic Four'),
+  new Series('Giant-Size X-Men'),
+  new Series('Iron Fist'),
+  new Series('Marvel Team-Up'),
+  new Series('Uncanny X-Men'),
+  new Series('X-Men'),
+  new Series('X-Men Manifest Destiny'),
+  new Series('X-Men Free Comic Book Day'),
+  new Series('Heroic Age X-Men'),
+  new Series('Second Coming Prepare'),
+  new Series('X-Men Second Coming'),
+  new Series('X-Force'),
+  new Series('X-Men Legacy'),
+  new Series('New Mutants')
+);
 
-seriesVolume = [
-  {
-    id: 'CableVol2',
-    seriesId: 'Cable',
-    volume: 2
-  },
-  {
-    id: 'DefendersVol1',
-    seriesId: 'Defenders',
-    volume: 1
-  },
-  {
-    id: 'GiantSizeFantasticFourVol1',
-    seriesId: 'GiantSizeFantasticFour',
-    volume: 1
-  },
-  {
-    id: 'GiantSizeXMenVol1',
-    seriesId: 'GiantSizeXMen',
-    volume: 1
-  },
-  {
-    id: 'IronFistVol1',
-    seriesId: 'IronFist',
-    volume: 1
-  },
-  {
-    id: 'MarvelTeamUpVol1',
-    seriesId: 'MarvelTeamUp',
-    volume: 1
-  },
-  {
-    id: 'UncannyXMenVol1',
-    seriesId: 'UncannyXMen',
-    volume: 1
-  },
-  {
-    id: 'XMenManifestDestinyVol1',
-    seriesId: 'XMenManifestDestiny',
-    volume: 1
-  },
-  {
-    id: 'XMenVol1',
-    seriesId: 'XMen',
-    volume: 1
-  },
-  {
-    id: 'XMenFreeComicBookDay2008',
-    seriesId: 'XMenFreeComicBookDay',
-    volume: 2008
-  },
-  {
-    id: 'HeroicAgeXMenVol1',
-    seriesId: 'HeroicAgeXMen',
-    volume: 1
-  },
-  {
-    id: 'SecondComingPrepareVol1',
-    seriesId: 'SecondComingPrepare',
-    volume: 1
-  },
-  {
-    id: 'XMenSecondComingVol1',
-    seriesId: 'XMenSecondComing',
-    volume: 1
-  },
-  {
-    id: 'XForceVol3',
-    seriesId: 'XForce',
-    volume: 3
-  },
-  {
-    id: 'XMenLegacyVol1',
-    seriesId: 'XMenLegacy',
-    volume: 1
-  },
-  {
-    id: 'NewMutantsVol3',
-    seriesId: 'NewMutants',
-    volume: 3
-  }
-];
+seriesVolume.push(
+  new SeriesVolume('Cable', 2),
+  new SeriesVolume('Defenders', 1),
+  new SeriesVolume('GiantSizeFantasticFour', 1),
+  new SeriesVolume('GiantSizeXMen', 1),
+  new SeriesVolume('IronFist', 1),
+  new SeriesVolume('MarvelTeamUp', 1),
+  new SeriesVolume('UncannyXMen', 1),
+  new SeriesVolume('XMenManifestDestiny', 1),
+  new SeriesVolume('XMen', 1),
+  new SeriesVolume('XMenFreeComicBookDay', 2008),
+  new SeriesVolume('HeroicAgeXMen', 1),
+  new SeriesVolume('SecondComingPrepare', 1),
+  new SeriesVolume('XMenSecondComing', 1),
+  new SeriesVolume('XForce', 3),
+  new SeriesVolume('XMenLegacy', 1),
+  new SeriesVolume('NewMutants', 3)
+);
 
 collections.push(
   new Collection(
@@ -1044,7 +958,7 @@ collections.push(
       'UncannyXMenVol1501',
       'UncannyXMenVol1502',
       'UncannyXMenVol1503',
-      'XMenFreeComicBookDay20081',
+      'XMenFreeComicBookDayVol20081',
       'XMenManifestDestinyVol11',
       'XMenManifestDestinyVol12',
       'XMenManifestDestinyVol13',
