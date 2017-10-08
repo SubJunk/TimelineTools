@@ -25,8 +25,7 @@ body {
 
 .month {
   display: inline-block;
-  width: 60px;
-  text-align: center;
+  text-indent: 22px;
 }
 
 .comics {

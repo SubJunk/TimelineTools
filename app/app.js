@@ -56,8 +56,38 @@ angular.module('app', [])
   };
 
   // Sort the data by date
-  vm.comics = _.sortBy(vm.comics, ['yearPublished', 'monthPublished']);
+  vm.comics = _.sortBy(vm.comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
 
+  // Calculate the years and months spanned
+  var lastComic = _.last(vm.comics);
+  var firstComic = _.first(vm.comics);
+  lastYear = lastComic.yearPublished;
+  lastMonth = lastComic.monthPublished;
+  firstYear = firstComic.yearPublished;
+  firstMonth = firstComic.monthPublished;
+  var dates = {};
+  var i;
+  var i2;
+  for (i = firstYear; i <= lastYear; i++) {
+    dates[i] = {};
+
+    if (i === lastYear) {
+      for (i2 = 1; i2 <= lastMonth; i2++) {
+        dates[i][i2] = { number: i2, styles: { width: horizontalIncrement } };
+      }
+    } else if (i === firstYear) {
+      for (i2 = firstMonth; i2 <= 12; i2++) {
+        dates[i][i2] = { number: i2, styles: { width: horizontalIncrement } };
+      }
+    } else {
+      for (i2 = 1; i2 <= 12; i2++) {
+        dates[i][i2] = { number: i2, styles: { width: horizontalIncrement } };
+      }
+    }
+  }
+
+  var previousYearMonthVolume;
+  var globalHorizontalOffset = 0;
   _.each(vm.comics, function(comic) {
     var currentSeriesVolume = vm.seriesVolume[_.findKey(vm.seriesVolume, { 'id': comic.seriesVolumeId })];
     var currentSeries = vm.series[_.findKey(vm.series, { 'id': currentSeriesVolume.seriesId })];
@@ -80,6 +110,15 @@ angular.module('app', [])
       bodyStyle.width = comic.containerStyles.left + horizontalIncrement + 3000;
     }
 
+    // Manage multiple releases of the same series in the same month
+    if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
+      dates[comic.yearPublished][comic.monthPublished].styles.width += horizontalIncrement;
+      comic.containerStyles.left += horizontalIncrement + globalHorizontalOffset;
+      globalHorizontalOffset += horizontalIncrement;
+    } else {
+      comic.containerStyles.left += globalHorizontalOffset;
+    }
+
     // Vertical positioning
     if (angular.isDefined(currentSeriesVolume.verticalPosition)) {
       comic.containerStyles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
@@ -96,34 +135,10 @@ angular.module('app', [])
     if (currentSeriesVolume.volume > 1) {
       comic.series += ' Vol. ' + currentSeriesVolume.volume;
     }
+
+    previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
   });
 
-  // Calculate the years and months spanned
-  var lastComic = _.last(vm.comics);
-  lastYear = lastComic.yearPublished;
-  lastMonth = lastComic.monthPublished;
-  var dates = {};
-  var i;
-  var i2;
-  for (i = firstYear; i <= lastYear; i++) {
-    dates[i] = {};
-
-    if (i === lastYear) {
-      for (i2 = 1; i2 <= lastMonth; i2++) {
-        dates[i][i2] = i2;
-      }
-    } else if (i === firstYear) {
-      for (i2 = firstMonth; i2 <= 12; i2++) {
-        dates[i][i2] = i2;
-      }
-    } else {
-      for (i2 = 1; i2 <= 12; i2++) {
-        dates[i][i2] = i2;
-      }
-    }
-  }
-
-  
   // Render collections as groups of comics
   var comicIndex;
   _.each(vm.collections, function(collection) {

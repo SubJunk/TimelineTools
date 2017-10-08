@@ -10,7 +10,7 @@
       <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
         {{year}}
         <ul>
-          <li ng-repeat="month in ::months track by month" class="month">{{month}}</li>
+          <li ng-repeat="month in ::months track by month.number" class="month" ng-style='month.styles'>{{month.number}}</li>
         </ul>
       </li>
     </ul>
@@ -28,6 +28,7 @@
           <div class="expanded-panel">
             <div class="series">{{comic.series}} #{{comic.issue}}</div>
             <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
+            <div class="datePublished">{{comic.yearPublished}} / {{comic.monthPublished}}</div>
           </div>
         </div>
       </li>
