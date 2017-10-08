@@ -453,6 +453,34 @@ comics.push(
     'XMenVol1'
   ),
   new Comic(
+    ['Elegy'],
+    138,
+    1980,
+    10,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Nightcrawler\'s Inferno'],
+    'Annual #4',
+    1980,
+    11,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['...Something Wicked This Way Comes!'],
+    139,
+    1980,
+    11,
+    'XMenVol1'
+  ),
+  new Comic(
+    ['Rage!'],
+    140,
+    1980,
+    12,
+    'XMenVol1'
+  ),
+  new Comic(
     ['Messiah Complex: Chapter Two'],
     492,
     2008,
@@ -889,14 +917,31 @@ collections.push(
       'XMenVol1122',
       'XMenVol1123',
       'XMenVol1124',
+      'XMenVol1Annual3',
       'XMenVol1125',
       'XMenVol1126',
       'XMenVol1127',
       'XMenVol1128',
       'XMenVol1129',
       'XMenVol1130',
-      'XMenVol1131',
-      'XMenVol1Annual3',
+      'XMenVol1131'
+    ]
+  ),
+  new Collection(
+    'Marvel Masterworks: The Uncanny X-Men Vol. 5',
+    2012,
+    7,
+    [
+      'XMenVol1132',
+      'XMenVol1133',
+      'XMenVol1134',
+      'XMenVol1135',
+      'XMenVol1136',
+      'XMenVol1137',
+      'XMenVol1138',
+      'XMenVol1Annual4',
+      'XMenVol1139',
+      'XMenVol1140'
     ]
   ),
   new Collection(
