@@ -1,15 +1,17 @@
+import _ from 'lodash';
+import $ from 'jquery';
+import angular from 'angular';
+import '../node_modules/materialize-css/dist/js/materialize.min.js';
+import * as db from './db.js';
+
 angular.module('app', [])
-.constant('_', window._)
-.run(function ($rootScope) {
-  $rootScope._ = window._;
-})
-.controller('DataController', function($timeout, $window) {
+.controller('DataController', ['$timeout', function($timeout) {
   var vm = this;
 
-  vm.comics       = $window.comics;
-  vm.collections  = $window.collections;
-  vm.series       = $window.series;
-  vm.seriesVolume = $window.seriesVolume;
+  vm.comics       = db.comics;
+  vm.collections  = db.collections;
+  vm.series       = db.series;
+  vm.seriesVolume = db.seriesVolume;
 
   var firstYear;
   var firstMonth;
@@ -162,7 +164,7 @@ angular.module('app', [])
     var opacity = 1;
     var stepChange = 30;
     var hslColor = 'hsla(';
-    if (typeof startColor !== 'undefined') {
+    if (angular.isDefined(startColor)) {
       if ((startColor + stepChange) > 360) {
         startColor -= 360;
       }
@@ -226,4 +228,4 @@ angular.module('app', [])
   }
 
   $jqWindow.scroll(repositionExpandedPanel);
-});
+}]);
