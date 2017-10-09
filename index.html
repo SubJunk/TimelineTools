@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
     <title>TimelineTools</title>
   </head>
-  <body ng-controller="DataController as main" ng-style='main.bodyStyle'>
+  <body ng-controller="DataController as main" ng-style='main.bodyStyle' class="ng-cloak">
     <ul class="years">
       <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
         {{year}}
