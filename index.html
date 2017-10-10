@@ -14,10 +14,6 @@
         </ul>
       </li>
     </ul>
-    <ul class="collections">
-      <li ng-repeat="collection in ::main.collections track by collection.id" class="comic-collection" ng-style="collection.styles" ng-class="{expandedCollection: collection.id === main.expandedCollection}">
-      </li>
-    </ul>
     <ul class="comics">
       <li ng-repeat="comic in ::main.comics track by comic.id" class="comic-container", ng-class="{expanded: comic.id === main.expandedComic}" ng-style="comic.containerStyles">
         <div class="scroll-anchor"></div>
@@ -29,6 +25,13 @@
             <div class="series">{{comic.series}} #{{comic.issue}}</div>
             <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
             <div class="datePublished">{{comic.yearPublished}} / {{comic.monthPublished}}</div>
+            <ul class="collection-comics">
+              <li ng-repeat="comic in main.expandedCollection.comics track by comic.id">
+                <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="z-depth-5 waves-effect">
+                  <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </li>

@@ -65,6 +65,15 @@ body {
   top: 0;
 }
 
+.collection-comics li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.collection-comics img {
+  height: 100px;
+}
+
 .cover-thumbnail {
   display: block;
 }
@@ -82,6 +91,7 @@ body {
 
 .expanded .comic .cover-thumbnail {
   display: inline-block;
+  vertical-align: top;
 }
 
 .expanded .comic .cover-thumbnail img {
