@@ -28,6 +28,7 @@ angular.module('app', [])
   var horizontalIncrement = 60;
 
   vm.expandedComic;
+  vm.expandedCollection;
   vm.toggleExpandComic = function(currentComic) {
     // Unset the sticky styles if they exist
     var $expandedComic = $('.expanded .comic');
@@ -41,19 +42,24 @@ angular.module('app', [])
     $expandedComic.css('marginBottom', '');
 
     if (vm.expandedComic === currentComic.id) {
-      vm.expandedComic = undefined;
+      vm.expandedComic      = undefined;
+      vm.expandedCollection = undefined;
     } else {
       vm.expandedComic = currentComic.id;
       repositionExpandedPanel();
-    }
-  };
-  
-  vm.expandedCollection = '';
-  vm.toggleExpandCollection = function(collectionId) {
-    if (vm.expandedCollection === collectionId) {
-      vm.expandedCollection = '';
-    } else {
-      vm.expandedCollection = collectionId;
+
+      // Get the collection containing this comic
+      vm.expandedCollection = _.find(vm.collections, function(collection) {
+        return collection.comicIds.indexOf(currentComic.id) > -1;
+      });
+
+      // Copy the comics into the expandedCollection object to make them easier to use
+      vm.expandedCollection.comics = [];
+      _.each(vm.expandedCollection.comicIds, function(comicId) {
+        vm.expandedCollection.comics.push(
+          _.find(vm.comics, ['id', comicId])
+        );
+      });
     }
   };
 
