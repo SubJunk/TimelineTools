@@ -65,13 +65,28 @@ body {
   top: 0;
 }
 
+.collection-comics {
+  margin: 5px 5px 5px 0;
+  padding: 5px;
+  background: hsla(0, 0%, 100%, 0.1)
+}
+
 .collection-comics li {
   display: inline-block;
-  padding: 5px;
+  padding: 5px 10px 5px 0;
 }
 
 .collection-comics img {
   height: 100px;
+}
+
+.collection-comics img.current {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 3px #1A1C1C solid;
 }
 
 .cover-thumbnail {
