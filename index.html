@@ -16,7 +16,7 @@
       </li>
     </ul>
     <ul class="comics">
-      <li ng-repeat="comic in ::main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComic}" ng-style="comic.containerStyles">
+      <li ng-repeat="comic in ::main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
         <div class="scroll-anchor"></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles">
           <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail">
@@ -43,7 +43,7 @@
               <ul>
                 <li ng-repeat="comic in main.expandedCollection.comics track by comic.id">
                   <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="z-depth-5 waves-effect hoverable">
-                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg" ng-class="{current: comic.id === main.expandedComic}"></img>
+                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg" ng-class="{current: comic.id === main.expandedComicId}"></img>
                   </a>
                 </li>
               </ul>

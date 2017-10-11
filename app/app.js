@@ -8,10 +8,10 @@ angular.module('app', [])
 .controller('DataController', ['$timeout', function($timeout) {
   var vm = this;
 
-  vm.comics       = db.comics;
-  vm.collections  = db.collections;
-  vm.series       = db.series;
-  vm.seriesVolume = db.seriesVolume;
+  var comics        = db.comics;
+  var collections   = db.collections;
+  var series        = db.series;
+  var seriesVolumes = db.seriesVolumes;
 
   var firstYear;
   var firstMonth;
@@ -29,7 +29,7 @@ angular.module('app', [])
 
   var $jqWindow = $(window);
 
-  vm.expandedComic;
+  vm.expandedComicId;
   vm.expandedCollection;
   vm.prevComic;
   vm.nextComic;
@@ -53,12 +53,12 @@ angular.module('app', [])
     vm.prevComic = undefined;
     vm.nextComic = undefined;
 
-    if (vm.expandedComic === currentComic.id) {
-      vm.expandedComic      = undefined;
+    if (vm.expandedComicId === currentComic.id) {
+      vm.expandedComicId    = undefined;
       vm.expandedCollection = undefined;
     } else {
-      if (vm.expandedComic) {
-        var expandedComic = _.find(vm.comics, ['id', vm.expandedComic]);
+      if (vm.expandedComicId) {
+        var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
         var positionDifference = {};
         positionDifference.left = expandedComic.containerStyles.left - currentComic.containerStyles.left;
         positionDifference.top  = expandedComic.containerStyles.top  - currentComic.containerStyles.top;
@@ -68,11 +68,11 @@ angular.module('app', [])
         });
       }
 
-      vm.expandedComic = currentComic.id;
+      vm.expandedComicId = currentComic.id;
       repositionExpandedPanel();
 
       // Get the collection containing this comic
-      vm.expandedCollection = _.find(vm.collections, function(collection) {
+      vm.expandedCollection = _.find(collections, function(collection) {
         return collection.comicIds.indexOf(currentComic.id) > -1;
       });
 
@@ -80,7 +80,7 @@ angular.module('app', [])
       vm.expandedCollection.comics = [];
       _.each(vm.expandedCollection.comicIds, function(comicId) {
         vm.expandedCollection.comics.push(
-          _.find(vm.comics, ['id', comicId])
+          _.find(comics, ['id', comicId])
         );
       });
 
@@ -95,11 +95,11 @@ angular.module('app', [])
   };
 
   // Sort the data by date
-  vm.comics = _.sortBy(vm.comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
+  comics = _.sortBy(comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
 
   // Calculate the years and months spanned
-  var lastComic = _.last(vm.comics);
-  var firstComic = _.first(vm.comics);
+  var lastComic = _.last(comics);
+  var firstComic = _.first(comics);
   lastYear = lastComic.yearPublished;
   lastMonth = lastComic.monthPublished;
   firstYear = firstComic.yearPublished;
@@ -127,9 +127,9 @@ angular.module('app', [])
 
   var previousYearMonthVolume;
   var globalHorizontalOffset = 0;
-  _.each(vm.comics, function(comic) {
-    var currentSeriesVolume = vm.seriesVolume[_.findKey(vm.seriesVolume, { 'id': comic.seriesVolumeId })];
-    var currentSeries = vm.series[_.findKey(vm.series, { 'id': currentSeriesVolume.seriesId })];
+  _.each(comics, function(comic) {
+    var currentSeriesVolume = seriesVolumes[_.findKey(seriesVolumes, { 'id': comic.seriesVolumeId })];
+    var currentSeries = series[_.findKey(series, { 'id': currentSeriesVolume.seriesId })];
 
     // Horizontal positioning
     comic.containerStyles = {};
@@ -178,16 +178,19 @@ angular.module('app', [])
     previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
   });
 
+  vm.dates = dates;
+  vm.bodyStyle = bodyStyle;
+
   // Render collections as groups of comics
   var comicIndex;
-  _.each(vm.collections, function(collection) {
+  _.each(collections, function(collection) {
     var collectionColor = getRandomColor();
     _.each(collection.comicIds, function(comicId) {
-      comicIndex = _.findKey(vm.comics, { 'id': comicId });
+      comicIndex = _.findKey(comics, { 'id': comicId });
       if (!comicIndex) {
         throw new Error(comicId + ' not found in the comics db');
       }
-      vm.comics[comicIndex].styles.background = collectionColor;
+      comics[comicIndex].styles.background = collectionColor;
     });
   });
 
@@ -217,9 +220,6 @@ angular.module('app', [])
 
     return hslColor;
   }
-
-  vm.dates = dates;
-  vm.bodyStyle = bodyStyle;
 
   /**
    * Use jQuery to manipulate classes and styles to make the expanded
@@ -263,4 +263,10 @@ angular.module('app', [])
   }
 
   $jqWindow.scroll(repositionExpandedPanel);
+
+  // Pass our transformed db objects to the view
+  vm.comics        = comics;
+  vm.collections   = collections;
+  vm.series        = series;
+  vm.seriesVolumes = seriesVolumes;
 }]);

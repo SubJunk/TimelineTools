@@ -1,7 +1,7 @@
-var comics       = [];
-var collections  = [];
-var series       = [];
-var seriesVolume = [];
+var comics        = [];
+var collections   = [];
+var series        = [];
+var seriesVolumes = [];
 
 /**
  * The prototype for individual comics.
@@ -16,7 +16,7 @@ var seriesVolume = [];
  */
 function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, referencedBy) {
   // Sanitize strings like annuals
-  if (typeof issue === 'string') {
+  if (angular.isString(issue)) {
     issue = issue.replace(/[\W+]/g, '');
   }
 
@@ -865,7 +865,7 @@ series.push(
   new Series('New Mutants')
 );
 
-seriesVolume.push(
+seriesVolumes.push(
   new SeriesVolume('Cable', 2),
   new SeriesVolume('Defenders', 1),
   new SeriesVolume('GiantSizeFantasticFour', 1),
@@ -1084,4 +1084,4 @@ collections.push(
   )
 );
 
-export { collections, comics, series, seriesVolume };
+export { collections, comics, series, seriesVolumes };
