@@ -248,10 +248,10 @@ angular.module('app', [])
         $expandedComic.toggleClass('sticky-right', isStickyRight);
         $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
 
-        if (isStickyTop && !isStickyLeft && !isStickyRight || isStickyBottom && !isStickyRight && !isStickyLeft) {
+        if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
           $expandedComic.css('marginLeft', '-' + $jqWindow.scrollLeft());
           $expandedComic.css('marginTop', '');
-        } else if (isStickyLeft && !isStickyTop && !isStickyBottom|| isStickyRight && !isStickyBottom && !isStickyTop) {
+        } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
           $expandedComic.css('marginTop', '-' + $jqWindow.scrollTop());
           $expandedComic.css('marginLeft', '');
         } else {
