@@ -1,7 +1,8 @@
 <html ng-app="app">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
     <title>TimelineTools</title>
   </head>
@@ -22,6 +23,18 @@
             <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
           </a>
           <div class="expanded-panel">
+            <ul class="pagination">
+              <li class="waves-effect" ng-class="{disabled: !main.prevComic}">
+                <a ng-click="main.toggleExpandComic(main.prevComic)">
+                  <i class="material-icons">chevron_left</i>
+                </a>
+              </li>
+              <li class="waves-effect" ng-class="{disabled: !main.nextComic }">
+                <a ng-click="main.toggleExpandComic(main.nextComic)">
+                  <i class="material-icons">chevron_right</i>
+                </a>
+              </li>
+            </ul>
             <div class="series">{{comic.series}} #{{comic.issue}}</div>
             <div class="title" ng-repeat="title in ::comic.title">{{title}}</div>
             <div class="datePublished">{{comic.yearPublished}} / {{comic.monthPublished}}</div>

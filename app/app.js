@@ -27,9 +27,18 @@ angular.module('app', [])
   var verticalIncrement = 60;
   var horizontalIncrement = 60;
 
+  var $jqWindow = $(window);
+
   vm.expandedComic;
   vm.expandedCollection;
+  vm.prevComic;
+  vm.nextComic;
+  var currentComicIndexInCollection;
   vm.toggleExpandComic = function(currentComic) {
+    if (!angular.isObject(currentComic)) {
+      return;
+    }
+
     // Unset the sticky styles if they exist
     var $expandedComic = $('.expanded .comic');
     $expandedComic.removeClass('sticky-top');
@@ -41,10 +50,24 @@ angular.module('app', [])
     $expandedComic.css('marginRight',  '');
     $expandedComic.css('marginBottom', '');
 
+    vm.prevComic = undefined;
+    vm.nextComic = undefined;
+
     if (vm.expandedComic === currentComic.id) {
       vm.expandedComic      = undefined;
       vm.expandedCollection = undefined;
     } else {
+      if (vm.expandedComic) {
+        var expandedComic = _.find(vm.comics, ['id', vm.expandedComic]);
+        var positionDifference = {};
+        positionDifference.left = expandedComic.containerStyles.left - currentComic.containerStyles.left;
+        positionDifference.top  = expandedComic.containerStyles.top  - currentComic.containerStyles.top;
+        $('html, body').animate({
+          scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
+          scrollTop:  $jqWindow.scrollTop()  - positionDifference.top
+        });
+      }
+
       vm.expandedComic = currentComic.id;
       repositionExpandedPanel();
 
@@ -60,6 +83,14 @@ angular.module('app', [])
           _.find(vm.comics, ['id', comicId])
         );
       });
+
+      currentComicIndexInCollection = vm.expandedCollection.comicIds.indexOf(currentComic.id);
+      if (currentComicIndexInCollection > 0) {
+        vm.prevComic = vm.expandedCollection.comics[currentComicIndexInCollection - 1];
+      }
+      if (vm.expandedCollection.comics[currentComicIndexInCollection + 1]) {
+        vm.nextComic = vm.expandedCollection.comics[currentComicIndexInCollection + 1];
+      }
     }
   };
 
@@ -189,8 +220,6 @@ angular.module('app', [])
 
   vm.dates = dates;
   vm.bodyStyle = bodyStyle;
-
-  var $jqWindow = $(window);
 
   /**
    * Use jQuery to manipulate classes and styles to make the expanded
