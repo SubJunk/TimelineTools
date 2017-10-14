@@ -6,7 +6,7 @@ var seriesVolumes = [];
 /**
  * The prototype for individual comics.
  *
- * @param {string[]} title
+ * @param {string[]} [titles]
  * @param {number}   issue
  * @param {number}   yearPublished
  * @param {number}   monthPublished
@@ -14,14 +14,14 @@ var seriesVolumes = [];
  * @param {string[]} [referencedBy] The comic/s that reference this comic.
  *                                  Used only for comics that are not in the main collections.
  */
-function Comic(title, issue, yearPublished, monthPublished, seriesVolumeId, referencedBy) {
+function Comic(titles, issue, yearPublished, monthPublished, seriesVolumeId, referencedBy) {
   // Sanitize strings like annuals
   if (angular.isString(issue)) {
     issue = issue.replace(/[\W+]/g, '');
   }
 
   this.id = seriesVolumeId + issue;
-  this.title = title;
+  this.titles = titles;
   this.issue = issue;
   this.yearPublished = yearPublished;
   this.monthPublished = monthPublished;
@@ -72,6 +72,13 @@ function SeriesVolume(seriesId, volume) {
 }
 
 comics.push(
+  new Comic(
+    null,
+    'Annual #10',
+    1981,
+    10,
+    'AvengersVol1'
+  ),
   new Comic(
     ['War Baby (Chapter 1)'],
     1,
@@ -481,6 +488,146 @@ comics.push(
     'XMenVol1'
   ),
   new Comic(
+    null,
+    141,
+    1981,
+    1,
+    'XMenVol1'
+  ),
+  new Comic(
+    null,
+    142,
+    1981,
+    2,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    143,
+    1981,
+    3,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    144,
+    1981,
+    4,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    145,
+    1981,
+    5,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    146,
+    1981,
+    6,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    147,
+    1981,
+    7,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    148,
+    1981,
+    8,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    149,
+    1981,
+    9,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    150,
+    1981,
+    10,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    'Annual #5',
+    1981,
+    11,
+    'XMenVol1'
+  ),
+  new Comic(
+    null,
+    151,
+    1981,
+    11,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    152,
+    1981,
+    12,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    153,
+    1982,
+    1,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    154,
+    1982,
+    2,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    155,
+    1982,
+    3,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    156,
+    1982,
+    4,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    157,
+    1982,
+    5,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    158,
+    1982,
+    6,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    159,
+    1982,
+    7,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
     ['Messiah Complex: Chapter Two'],
     492,
     2008,
@@ -847,6 +994,7 @@ comics.push(
 );
 
 series.push(
+  new Series('Avengers'),
   new Series('Cable'),
   new Series('Defenders'),
   new Series('Giant-Size Fantastic Four'),
@@ -866,6 +1014,7 @@ series.push(
 );
 
 seriesVolumes.push(
+  new SeriesVolume('Avengers', 1),
   new SeriesVolume('Cable', 2),
   new SeriesVolume('Defenders', 1),
   new SeriesVolume('GiantSizeFantasticFour', 1),
@@ -942,6 +1091,41 @@ collections.push(
       'XMenVol1Annual4',
       'XMenVol1139',
       'XMenVol1140'
+    ]
+  ),
+  new Collection(
+    'Marvel Masterworks: The Uncanny X-Men Vol. 6',
+    2008,
+    2,
+    [
+      'XMenVol1141',
+      'UncannyXMenVol1142',
+      'UncannyXMenVol1143',
+      'UncannyXMenVol1144',
+      'UncannyXMenVol1145',
+      'UncannyXMenVol1146',
+      'UncannyXMenVol1147',
+      'UncannyXMenVol1148',
+      'UncannyXMenVol1149',
+      'UncannyXMenVol1150',
+    ]
+  ),
+  new Collection(
+    'Marvel Masterworks: The Uncanny X-Men Vol. 7',
+    2011,
+    1,
+    [
+      'AvengersVol1Annual10',
+      'XMenVol1Annual5',
+      'UncannyXMenVol1151',
+      'UncannyXMenVol1152',
+      'UncannyXMenVol1153',
+      'UncannyXMenVol1154',
+      'UncannyXMenVol1155',
+      'UncannyXMenVol1156',
+      'UncannyXMenVol1157',
+      'UncannyXMenVol1158',
+      'UncannyXMenVol1159'
     ]
   ),
   new Collection(
