@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './app/app.js',
+  entry: './src/app.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -11,5 +11,14 @@ module.exports = {
   devServer: {
     contentBase: './',
     compress: true
+  },
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx']
+  },
+  module: {
+    loaders: [
+      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+      { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
+    ]
   }
 };
