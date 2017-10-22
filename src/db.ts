@@ -1,3 +1,5 @@
+import * as angular from 'angular';
+
 var comics        = [];
 var collections   = [];
 var series        = [];
@@ -6,15 +8,22 @@ var seriesVolumes = [];
 /**
  * The prototype for individual comics.
  *
- * @param {string[]} [titles]
- * @param {number}   issue
- * @param {number}   yearPublished
- * @param {number}   monthPublished
- * @param {string}   seriesVolumeId
- * @param {string[]} [referencedBy] The comic/s that reference this comic.
- *                                  Used only for comics that are not in the main collections.
+ * @param {string[]}        [titles]
+ * @param {number | string} issue
+ * @param {number}          yearPublished
+ * @param {number}          monthPublished
+ * @param {string}          seriesVolumeId
+ * @param {string[]}        [referencedBy] The comic/s that reference this comic.
+ *                                         Used only for comics that are not in the main collections.
  */
-function Comic(titles, issue, yearPublished, monthPublished, seriesVolumeId, referencedBy) {
+function Comic(
+  titles: string[],
+  issue: number | string,
+  yearPublished: number,
+  monthPublished: number,
+  seriesVolumeId: string,
+  referencedBy?: string[]
+) {
   // Sanitize strings like annuals
   if (angular.isString(issue)) {
     issue = issue.replace(/[\W+]/g, '');
@@ -37,7 +46,7 @@ function Comic(titles, issue, yearPublished, monthPublished, seriesVolumeId, ref
  * @param {number}   monthPublished
  * @param {string[]} comicIds
  */
-function Collection(title, yearPublished, monthPublished, comicIds) {
+function Collection(title: string, yearPublished: number, monthPublished: number, comicIds: string[]) {
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
   this.yearPublished = yearPublished;
@@ -52,7 +61,7 @@ function Collection(title, yearPublished, monthPublished, comicIds) {
  * @param {string} title
  * @see SeriesVolume
  */
-function Series(title) {
+function Series(title: string) {
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
 }
@@ -65,7 +74,7 @@ function Series(title) {
  * @param {number} volume 
  * @see Series
  */
-function SeriesVolume(seriesId, volume) {
+function SeriesVolume(seriesId: string, volume: number) {
   this.id = seriesId + 'Vol' + volume;
   this.seriesId = seriesId;
   this.volume = volume;

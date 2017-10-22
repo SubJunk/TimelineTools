@@ -2,7 +2,7 @@ import * as _ from 'lodash';
 import * as $ from 'jquery';
 import * as angular from 'angular';
 import '../node_modules/materialize-css/dist/js/materialize.min.js';
-import * as db from './db.js';
+import * as db from './db';
 
 angular.module('app', [])
 .controller('DataController', ['$timeout', function($timeout) {
