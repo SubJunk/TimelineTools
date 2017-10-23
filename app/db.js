@@ -1267,5 +1267,3 @@ collections.push(
     ]
   )
 );
-
-export { collections, comics, series, seriesVolumes };

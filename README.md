@@ -1,12 +1,11 @@
 # TimelineTools
 
-## Developer notes:
+## General
 
-Get set up by running `yarn install`. If you don't have `yarn`, install that.
+This is a web page for displaying the order of comics in the Uncanny X-Men series including some tie-ins and spin-offs, mostly ones from collections.
 
-We use webpack to bundle our files.
-During development there are some useful scripts to use depending on the level of automation you prefer.
+## Developer notes
 
-- `yarn run watch` will ensure that the webpack bundle automatically updates to reflect your code changes.
-- `yarn start` will go a step further and automatically open the page in your browser.
-- `yarn build` will build a production-ready bundle.js file.
+There's no build/compile step and no development packages are needed.
+
+Optionally you can run `yarn install` to install ESLint and related plugins to help with development. 

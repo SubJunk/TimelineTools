@@ -1,17 +1,15 @@
-import _ from 'lodash';
-import $ from 'jquery';
-import angular from 'angular';
-import '../node_modules/materialize-css/dist/js/materialize.min.js';
-import * as db from './db.js';
-
 angular.module('app', [])
-.controller('DataController', ['$timeout', function($timeout) {
+.constant('_', window._)
+.run(function ($rootScope) {
+  $rootScope._ = window._;
+})
+.controller('DataController', function($timeout, $window) {
   var vm = this;
 
-  var comics        = db.comics;
-  var collections   = db.collections;
-  var series        = db.series;
-  var seriesVolumes = db.seriesVolumes;
+  var comics        = $window.comics;
+  var collections   = $window.collections;
+  var series        = $window.series;
+  var seriesVolumes = $window.seriesVolumes;
 
   var firstYear;
   var firstMonth;
@@ -269,4 +267,4 @@ angular.module('app', [])
   vm.collections   = collections;
   vm.series        = series;
   vm.seriesVolumes = seriesVolumes;
-}]);
+});
