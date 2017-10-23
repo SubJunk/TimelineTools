@@ -1,6 +1,5 @@
 :root {
   --month-width: 55px;
-  --common-padding: 20px;
   --expanded-height: 200px;
 }
 
@@ -13,10 +12,6 @@ body {
   color: #ccc;
   overflow: auto;
   padding: 20px;
-}
-
-.years {
-  padding: var(--common-padding);
 }
 
 .year {

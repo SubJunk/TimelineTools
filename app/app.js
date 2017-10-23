@@ -17,10 +17,11 @@ angular.module('app', [])
   var lastMonth;
   var monthsSinceFirst;
   var globalVerticalPositionCounter = 0;
+  var bodyStyle = {
+    width: null,
+    padding: 20
+  };
 
-  // Date data
-  vm.incrementBy = 'month';
-  var bodyStyle = {};
   // Pixel counts
   var verticalIncrement = 60;
   var horizontalIncrement = 60;
@@ -57,7 +58,11 @@ angular.module('app', [])
     } else {
       if (vm.expandedComicId) {
         var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
-        var positionDifference = {};
+        var positionDifference = {
+          left: null,
+          top: null
+        };
+
         positionDifference.left = expandedComic.containerStyles.left - currentComic.containerStyles.left;
         positionDifference.top  = expandedComic.containerStyles.top  - currentComic.containerStyles.top;
         $('html, body').animate({
@@ -141,10 +146,6 @@ angular.module('app', [])
       monthsSinceFirst -= firstMonth;
       monthsSinceFirst += comic.monthPublished;
       comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
-
-      // Match the width of the page to the width of the content
-      // TODO: Replace magic number
-      bodyStyle.width = comic.containerStyles.left + horizontalIncrement + 3000;
     }
 
     // Manage multiple releases of the same series in the same month
@@ -174,6 +175,9 @@ angular.module('app', [])
     }
 
     previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
+
+    // Match the width of the page to the width of the content
+    bodyStyle.width = comic.containerStyles.left + horizontalIncrement + (bodyStyle.padding * 2);
   });
 
   vm.dates = dates;
