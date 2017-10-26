@@ -11,10 +11,8 @@ var seriesVolumes = [];
  * @param {number}   yearPublished
  * @param {number}   monthPublished
  * @param {string}   seriesVolumeId
- * @param {string[]} [referencedBy] The comic/s that reference this comic.
- *                                  Used only for comics that are not in the main collections.
  */
-function Comic(titles, issue, yearPublished, monthPublished, seriesVolumeId, referencedBy) {
+function Comic(titles, issue, yearPublished, monthPublished, seriesVolumeId) {
   // Sanitize strings like annuals
   if (angular.isString(issue)) {
     issue = issue.replace(/[\W+]/g, '');
@@ -26,7 +24,6 @@ function Comic(titles, issue, yearPublished, monthPublished, seriesVolumeId, ref
   this.yearPublished = yearPublished;
   this.monthPublished = monthPublished;
   this.seriesVolumeId = seriesVolumeId;
-  this.referencedBy = referencedBy;
 }
 
 /**
@@ -140,32 +137,28 @@ comics.push(
     94,
     1975,
     8,
-    'XMenVol1',
-    ['XMenVol1106']
+    'XMenVol1'
   ),
   new Comic(
     ['Warhunt!'],
     95,
     1975,
     10,
-    'XMenVol1',
-    ['XMenVol1106']
+    'XMenVol1'
   ),
   new Comic(
     ['Night of the Demon!'],
     96,
     1975,
     12,
-    'XMenVol1',
-    ['XMenVol1104', 'XMenVol1106']
+    'XMenVol1'
   ),
   new Comic(
     ['My Brother, My Enemy!'],
     97,
     1976,
     2,
-    'XMenVol1',
-    ['XMenVol1104']
+    'XMenVol1'
   ),
   new Comic(
     ['Merry Christmas, X-Men — The Sentinels Have Returned!'],
@@ -193,40 +186,35 @@ comics.push(
     101,
     1976,
     10,
-    'XMenVol1',
-    ['XMenVol1104']
+    'XMenVol1'
   ),
   new Comic(
     ['Who Will Stop the Juggernaut?'],
     102,
     1976,
     12,
-    'XMenVol1',
-    ['XMenVol1103', 'XMenVol1104']
+    'XMenVol1'
   ),
   new Comic(
     ['The Fall of the Tower'],
     103,
     1977,
     2,
-    'XMenVol1',
-    ['XMenVol1104']
+    'XMenVol1'
   ),
   new Comic(
     ['The Gentleman\'s Name is Magneto'],
     104,
     1977,
     4,
-    'XMenVol1',
-    ['XMenVol1105', 'XMenVol1107']
+    'XMenVol1'
   ),
   new Comic(
     ['Phoenix Unleashed!'],
     105,
     1977,
     6,
-    'XMenVol1',
-    ['XMenVol1106', 'XMenVol1107']
+    'XMenVol1'
   ),
   new Comic(
     ['Dark Shroud of the Past!'],
