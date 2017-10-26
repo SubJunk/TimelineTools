@@ -199,7 +199,7 @@ angular.module('app', [])
 
     // Metadata
     comic.series = currentSeries.title;
-    comic.image = comic.series.replace(/ /g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
+    comic.image = comic.series.replace(/ /g, '_').replace(/[()]/g, '') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
 
     if (currentSeriesVolume.volume > 1) {
       comic.series += ' Vol. ' + currentSeriesVolume.volume;
