@@ -105,6 +105,41 @@ comics.push(
     'IronFistVol1'
   ),
   new Comic(
+    null,
+    1,
+    1983,
+    12,
+    'MagikLimitedSeriesVol1'
+  ),
+  new Comic(
+    null,
+    2,
+    1984,
+    1,
+    'MagikLimitedSeriesVol1'
+  ),
+  new Comic(
+    null,
+    3,
+    1984,
+    2,
+    'MagikLimitedSeriesVol1'
+  ),
+  new Comic(
+    null,
+    4,
+    1984,
+    3,
+    'MagikLimitedSeriesVol1'
+  ),
+  new Comic(
+    null,
+    5,
+    1983,
+    1,
+    'MarvelGraphicNovelVol1'
+  ),
+  new Comic(
     ['The Lords of Light and Darkness!'],
     1976,
     1976,
@@ -616,6 +651,223 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
+    null,
+    160,
+    1982,
+    8,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    161,
+    1982,
+    9,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    162,
+    1982,
+    10,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    163,
+    1982,
+    11,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    'Annual #6',
+    1982,
+    11,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    164,
+    1982,
+    12,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    165,
+    1983,
+    1,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    166,
+    1983,
+    2,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    167,
+    1983,
+    3,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    168,
+    1983,
+    4,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    169,
+    1983,
+    5,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    170,
+    1983,
+    6,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    171,
+    1983,
+    7,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    172,
+    1983,
+    8,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    173,
+    1983,
+    9,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    174,
+    1983,
+    10,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    175,
+    1983,
+    11,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    176,
+    1983,
+    12,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    'Annual #7',
+    1983,
+    12,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    177,
+    1984,
+    1,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    178,
+    1984,
+    2,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    179,
+    1984,
+    3,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    180,
+    1984,
+    4,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    181,
+    1984,
+    5,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    182,
+    1984,
+    6,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    183,
+    1984,
+    7,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    184,
+    1984,
+    8,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    185,
+    1984,
+    9,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    186,
+    1984,
+    10,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    187,
+    1984,
+    11,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    null,
+    188,
+    1984,
+    12,
+    'UncannyXMenVol1'
+  ),
+  new Comic(
     ['Messiah Complex: Chapter Two'],
     492,
     2008,
@@ -868,6 +1120,34 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
+    null,
+    1,
+    1982,
+    9,
+    'WolverineVol1'
+  ),
+  new Comic(
+    null,
+    2,
+    1982,
+    10,
+    'WolverineVol1'
+  ),
+  new Comic(
+    null,
+    3,
+    1982,
+    11,
+    'WolverineVol1'
+  ),
+  new Comic(
+    null,
+    4,
+    1982,
+    12,
+    'WolverineVol1'
+  ),
+  new Comic(
     ['Heroic Age: X-Men Vol 1 #1'],
     1,
     2011,
@@ -987,8 +1267,11 @@ series.push(
   new Series('Defenders'),
   new Series('Giant-Size Fantastic Four'),
   new Series('Iron Fist'),
+  new Series('Magik (Limited Series)'),
+  new Series('Marvel Graphic Novel'),
   new Series('Marvel Team-Up'),
   new Series('Uncanny X-Men'),
+  new Series('Wolverine'),
   new Series('X-Men Manifest Destiny'),
   new Series('X-Men Free Comic Book Day'),
   new Series('Heroic Age X-Men'),
@@ -1005,8 +1288,11 @@ seriesVolumes.push(
   new SeriesVolume('Defenders', 1),
   new SeriesVolume('GiantSizeFantasticFour', 1),
   new SeriesVolume('IronFist', 1),
+  new SeriesVolume('MagikLimitedSeries', 1),
+  new SeriesVolume('MarvelGraphicNovel', 1),
   new SeriesVolume('MarvelTeamUp', 1),
   new SeriesVolume('UncannyXMen', 1),
+  new SeriesVolume('Wolverine', 1),
   new SeriesVolume('XMenManifestDestiny', 1),
   new SeriesVolume('XMenFreeComicBookDay', 2008),
   new SeriesVolume('HeroicAgeXMen', 1),
@@ -1136,6 +1422,67 @@ collections.push(
       'UncannyXMenVol1157',
       'UncannyXMenVol1158',
       'UncannyXMenVol1159'
+    ]
+  ),
+  new Collection(
+    'Marvel Masterworks: The Uncanny X-Men Vol. 8',
+    2012,
+    2,
+    [
+      'UncannyXMenVol1160',
+      'UncannyXMenVol1161',
+      'UncannyXMenVol1162',
+      'UncannyXMenVol1163',
+      'UncannyXMenVol1164',
+      'UncannyXMenVol1165',
+      'UncannyXMenVol1166',
+      'UncannyXMenVol1167',
+      'UncannyXMenVol1Annual6'
+    ]
+  ),
+  new Collection(
+    'Marvel Masterworks: The Uncanny X-Men Vol. 9',
+    2015,
+    1,
+    [
+      'MarvelGraphicNovelVol15',
+      'UncannyXMenVol1168',
+      'UncannyXMenVol1169',
+      'UncannyXMenVol1170',
+      'UncannyXMenVol1171',
+      'WolverineVol11',
+      'WolverineVol12',
+      'WolverineVol13',
+      'WolverineVol14',
+      'UncannyXMenVol1172',
+      'UncannyXMenVol1173',
+      'UncannyXMenVol1174',
+      'UncannyXMenVol1175',
+      'UncannyXMenVol1Annual7'
+    ]
+  ),
+  new Collection(
+    'Marvel Masterworks: The Uncanny X-Men Vol. 10',
+    2017,
+    2,
+    [
+      'MagikLimitedSeriesVol11',
+      'MagikLimitedSeriesVol12',
+      'MagikLimitedSeriesVol13',
+      'MagikLimitedSeriesVol14',
+      'UncannyXMenVol1176',
+      'UncannyXMenVol1177',
+      'UncannyXMenVol1178',
+      'UncannyXMenVol1179',
+      'UncannyXMenVol1180',
+      'UncannyXMenVol1181',
+      'UncannyXMenVol1182',
+      'UncannyXMenVol1183',
+      'UncannyXMenVol1184',
+      'UncannyXMenVol1185',
+      'UncannyXMenVol1186',
+      'UncannyXMenVol1187',
+      'UncannyXMenVol1188'
     ]
   ),
   new Collection(
