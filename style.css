@@ -113,7 +113,6 @@ body {
 .expanded-panel {
   display: none;
   left: 0;
-  width: 600px;
   transition: max-height 0.5s, max-width 0.5s, height 0.5s, width 0.5s;
   background: inherit;
 }

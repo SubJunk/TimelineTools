@@ -25,6 +25,7 @@ angular.module('app', [])
   // Pixel counts
   var verticalIncrement = 60;
   var horizontalIncrement = 60;
+  var expandedComicWidth = 620;
 
   var $jqWindow = $(window);
 
@@ -49,6 +50,8 @@ angular.module('app', [])
     $expandedComic.css('marginTop',    '');
     $expandedComic.css('marginRight',  '');
     $expandedComic.css('marginBottom', '');
+    //set the expanded width
+    $expandedComic.css('width', expandedComicWidth + 'px');
 
     vm.prevComic = undefined;
     vm.nextComic = undefined;
@@ -205,7 +208,7 @@ angular.module('app', [])
     previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
     // Match the width of the page to the width of the content
-    bodyStyle.width = comic.containerStyles.left + horizontalIncrement + (bodyStyle.padding * 2);
+    bodyStyle.width = comic.containerStyles.left + horizontalIncrement + expandedComicWidth + (bodyStyle.padding * 2);
   });
 
   vm.dates = dates;
