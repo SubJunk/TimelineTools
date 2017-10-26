@@ -85,10 +85,10 @@ comics.push(
   ),
   new Comic(
     ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
-    1,
+    'GiantSize',
     1975,
     5,
-    'GiantSizeXMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Snowfire'],
@@ -137,350 +137,350 @@ comics.push(
     94,
     1975,
     8,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Warhunt!'],
     95,
     1975,
     10,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Night of the Demon!'],
     96,
     1975,
     12,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['My Brother, My Enemy!'],
     97,
     1976,
     2,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Merry Christmas, X-Men — The Sentinels Have Returned!'],
     98,
     1976,
     4,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Deathstar, Rising!'],
     99,
     1976,
     6,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Greater Love Hath No X-Man...'],
     100,
     1976,
     8,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Like a Phoenix, from the Ashes'],
     101,
     1976,
     10,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Who Will Stop the Juggernaut?'],
     102,
     1976,
     12,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['The Fall of the Tower'],
     103,
     1977,
     2,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['The Gentleman\'s Name is Magneto'],
     104,
     1977,
     4,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Phoenix Unleashed!'],
     105,
     1977,
     6,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Dark Shroud of the Past!'],
     106,
     1977,
     8,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Where No X-Man Has Gone Before!'],
     107,
     1977,
     10,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Armageddon Now'],
     108,
     1977,
     12,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Home are the Heroes!'],
     109,
     1978,
     2,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['The \'X\'-Sanction'],
     110,
     1978,
     4,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Mindgames!'],
     111,
     1978,
     6,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Magneto Triumphant!'],
     112,
     1978,
     8,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Showdown!'],
     113,
     1978,
     9,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Desolation'],
     114,
     1978,
     10,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Visions of Death!'],
     115,
     1978,
     11,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['To Save the Savage Land'],
     116,
     1978,
     12,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Psi War!'],
     117,
     1979,
     1,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['The Submergence of Japan'],
     118,
     1979,
     2,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['\'Twas the Night Before Christmas...'],
     119,
     1979,
     3,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Wanted: Wolverine! Dead or Alive!'],
     120,
     1979,
     4,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Shoot-Out at the Stampede!'],
     121,
     1979,
     5,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Cry for the Children!'],
     122,
     1979,
     6,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Listen -- Stop Me if You\'ve Heard It -- But This One Will Kill You!'],
     123,
     1979,
     7,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['He Only Laughs When I Hurt!'],
     124,
     1979,
     8,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['A Fire in the Sky!'],
     'Annual #3',
     1979,
     8,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['There\'s Something Awful on Muir Island!'],
     125,
     1979,
     9,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['How Sharper Than a Serpent\'s Tooth...!'],
     126,
     1979,
     10,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['The Quality of Hatred!'],
     127,
     1979,
     11,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['The Action of the Tiger!'],
     128,
     1979,
     12,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['God Spare the Child...'],
     129,
     1980,
     1,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Dazzler'],
     130,
     1980,
     2,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Run for Your Life!'],
     131,
     1980,
     3,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['And Hellfire is Their Name!'],
     132,
     1980,
     4,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Wolverine: Alone!'],
     133,
     1980,
     5,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Too Late, the Heroes!'],
     134,
     1980,
     6,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Dark Phoenix'],
     135,
     1980,
     7,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Child of Light and Darkness!'],
     136,
     1980,
     8,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['The Fate of the Phoenix!'],
     137,
     1980,
     9,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Elegy'],
     138,
     1980,
     10,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Nightcrawler\'s Inferno'],
     'Annual #4',
     1980,
     11,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['...Something Wicked This Way Comes!'],
     139,
     1980,
     11,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     ['Rage!'],
     140,
     1980,
     12,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     null,
     141,
     1981,
     1,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     null,
@@ -550,7 +550,7 @@ comics.push(
     'Annual #5',
     1981,
     11,
-    'XMenVol1'
+    'UncannyXMenVol1'
   ),
   new Comic(
     null,
@@ -986,11 +986,9 @@ series.push(
   new Series('Cable'),
   new Series('Defenders'),
   new Series('Giant-Size Fantastic Four'),
-  new Series('Giant-Size X-Men'),
   new Series('Iron Fist'),
   new Series('Marvel Team-Up'),
   new Series('Uncanny X-Men'),
-  new Series('X-Men'),
   new Series('X-Men Manifest Destiny'),
   new Series('X-Men Free Comic Book Day'),
   new Series('Heroic Age X-Men'),
@@ -1006,12 +1004,10 @@ seriesVolumes.push(
   new SeriesVolume('Cable', 2),
   new SeriesVolume('Defenders', 1),
   new SeriesVolume('GiantSizeFantasticFour', 1),
-  new SeriesVolume('GiantSizeXMen', 1),
   new SeriesVolume('IronFist', 1),
   new SeriesVolume('MarvelTeamUp', 1),
   new SeriesVolume('UncannyXMen', 1),
   new SeriesVolume('XMenManifestDestiny', 1),
-  new SeriesVolume('XMen', 1),
   new SeriesVolume('XMenFreeComicBookDay', 2008),
   new SeriesVolume('HeroicAgeXMen', 1),
   new SeriesVolume('SecondComingPrepare', 1),
@@ -1028,28 +1024,28 @@ collections.push(
     2017,
     4,
     [
-      'GiantSizeXMenVol11',
-      'XMenVol194',
-      'XMenVol195',
-      'XMenVol196',
-      'XMenVol197',
-      'XMenVol198',
-      'XMenVol199',
-      'XMenVol1100',
-      'XMenVol1101',
-      'XMenVol1102',
-      'XMenVol1103',
-      'XMenVol1104',
-      'XMenVol1105',
-      'XMenVol1106',
-      'XMenVol1107',
-      'XMenVol1108',
+      'UncannyXMenVol1GiantSize',
+      'UncannyXMenVol194',
+      'UncannyXMenVol195',
+      'UncannyXMenVol196',
+      'UncannyXMenVol197',
+      'UncannyXMenVol198',
+      'UncannyXMenVol199',
+      'UncannyXMenVol1100',
+      'UncannyXMenVol1101',
+      'UncannyXMenVol1102',
+      'UncannyXMenVol1103',
+      'UncannyXMenVol1104',
+      'UncannyXMenVol1105',
+      'UncannyXMenVol1106',
+      'UncannyXMenVol1107',
+      'UncannyXMenVol1108',
       'IronFistVol114',
       'IronFistVol115',
-      'XMenVol1109',
+      'UncannyXMenVol1109',
       'MarvelTeamUpVol11976',
       'MarvelTeamUpVol153',
-      'XMenVol1110',
+      'UncannyXMenVol1110',
       'MarvelTeamUpVol169',
       'MarvelTeamUpVol170',
     ]
@@ -1059,17 +1055,17 @@ collections.push(
     2011,
     1,
     [
-      'XMenVol1111',
-      'XMenVol1112',
-      'XMenVol1113',
-      'XMenVol1114',
-      'XMenVol1115',
-      'XMenVol1116',
-      'XMenVol1117',
-      'XMenVol1118',
-      'XMenVol1119',
-      'XMenVol1120',
-      'XMenVol1121',
+      'UncannyXMenVol1111',
+      'UncannyXMenVol1112',
+      'UncannyXMenVol1113',
+      'UncannyXMenVol1114',
+      'UncannyXMenVol1115',
+      'UncannyXMenVol1116',
+      'UncannyXMenVol1117',
+      'UncannyXMenVol1118',
+      'UncannyXMenVol1119',
+      'UncannyXMenVol1120',
+      'UncannyXMenVol1121',
     ]
   ),
   new Collection(
@@ -1077,17 +1073,17 @@ collections.push(
     2012,
     2,
     [
-      'XMenVol1122',
-      'XMenVol1123',
-      'XMenVol1124',
-      'XMenVol1Annual3',
-      'XMenVol1125',
-      'XMenVol1126',
-      'XMenVol1127',
-      'XMenVol1128',
-      'XMenVol1129',
-      'XMenVol1130',
-      'XMenVol1131'
+      'UncannyXMenVol1122',
+      'UncannyXMenVol1123',
+      'UncannyXMenVol1124',
+      'UncannyXMenVol1Annual3',
+      'UncannyXMenVol1125',
+      'UncannyXMenVol1126',
+      'UncannyXMenVol1127',
+      'UncannyXMenVol1128',
+      'UncannyXMenVol1129',
+      'UncannyXMenVol1130',
+      'UncannyXMenVol1131'
     ]
   ),
   new Collection(
@@ -1095,16 +1091,16 @@ collections.push(
     2012,
     7,
     [
-      'XMenVol1132',
-      'XMenVol1133',
-      'XMenVol1134',
-      'XMenVol1135',
-      'XMenVol1136',
-      'XMenVol1137',
-      'XMenVol1138',
-      'XMenVol1Annual4',
-      'XMenVol1139',
-      'XMenVol1140'
+      'UncannyXMenVol1132',
+      'UncannyXMenVol1133',
+      'UncannyXMenVol1134',
+      'UncannyXMenVol1135',
+      'UncannyXMenVol1136',
+      'UncannyXMenVol1137',
+      'UncannyXMenVol1138',
+      'UncannyXMenVol1Annual4',
+      'UncannyXMenVol1139',
+      'UncannyXMenVol1140'
     ]
   ),
   new Collection(
@@ -1112,7 +1108,7 @@ collections.push(
     2008,
     2,
     [
-      'XMenVol1141',
+      'UncannyXMenVol1141',
       'UncannyXMenVol1142',
       'UncannyXMenVol1143',
       'UncannyXMenVol1144',
@@ -1130,7 +1126,7 @@ collections.push(
     1,
     [
       'AvengersVol1Annual10',
-      'XMenVol1Annual5',
+      'UncannyXMenVol1Annual5',
       'UncannyXMenVol1151',
       'UncannyXMenVol1152',
       'UncannyXMenVol1153',
