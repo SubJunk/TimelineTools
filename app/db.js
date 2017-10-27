@@ -525,7 +525,7 @@ comics.push(
   ),
   new Comic(
     156,
-    '1982-4',
+    '1982-4-10',
     'UncannyXMenVol1'
   ),
   new Comic(
