@@ -7,21 +7,23 @@ var seriesVolumes = [];
  * The prototype for individual comics.
  *
  * @param {number}   issue
- * @param {number}   yearPublished
- * @param {number}   monthPublished
+ * @param {string}   datePublished
  * @param {string}   seriesVolumeId
  * @param {string[]} [titles]
  */
-function Comic(issue, yearPublished, monthPublished, seriesVolumeId, titles) {
+function Comic(issue, datePublished, seriesVolumeId, titles) {
   // Sanitize strings like annuals
   if (angular.isString(issue)) {
     issue = issue.replace(/[\W+]/g, '');
   }
 
+  // Create a Date object from the datePublished string
+  this.date = new Date(datePublished);
+
   this.id = seriesVolumeId + issue;
   this.issue = issue;
-  this.yearPublished = yearPublished;
-  this.monthPublished = monthPublished;
+  this.yearPublished = this.date.getFullYear();
+  this.monthPublished = this.date.getMonth() + 1;
   this.seriesVolumeId = seriesVolumeId;
   this.titles = titles;
 }
@@ -71,1130 +73,960 @@ function SeriesVolume(seriesId, volume) {
 comics.push(
   new Comic(
     'Annual #10',
-    1981,
-    10,
+    '1981-10',
     'AvengersVol1'
   ),
   new Comic(
     1,
-    2008,
-    5,
+    '2008-5',
     'CableVol2',
     ['War Baby (Chapter 1)']
   ),
   new Comic(
     'GiantSize',
-    1975,
-    5,
+    '1975-5',
     'UncannyXMenVol1',
     ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']
   ),
   new Comic(
     14,
-    1977,
-    8,
+    '1977-8',
     'IronFistVol1',
     ['Snowfire']
   ),
   new Comic(
     15,
-    1977,
-    9,
+    '1977-9',
     'IronFistVol1',
     ['Enter, the X-Men']
   ),
   new Comic(
     1,
-    1983,
-    12,
+    '1983-12',
     'MagikLimitedSeriesVol1'
   ),
   new Comic(
     2,
-    1984,
-    1,
+    '1984-1',
     'MagikLimitedSeriesVol1'
   ),
   new Comic(
     3,
-    1984,
-    2,
+    '1984-2',
     'MagikLimitedSeriesVol1'
   ),
   new Comic(
     4,
-    1984,
-    3,
+    '1984-3',
     'MagikLimitedSeriesVol1'
   ),
   new Comic(
     5,
-    1983,
-    1,
+    '1983-1',
     'MarvelGraphicNovelVol1'
   ),
   new Comic(
     1976,
-    1976,
-    12,
+    '1976-12',
     'MarvelTeamUpVol1',
     ['The Lords of Light and Darkness!']
   ),
   new Comic(
     53,
-    1977,
-    1,
+    '1977-1',
     'MarvelTeamUpVol1',
     ['Nightmare in New Mexico!']
   ),
   new Comic(
     69,
-    1978,
-    5,
+    '1978-5',
     'MarvelTeamUpVol1',
     ['Night of the Living God!']
   ),
   new Comic(
     70,
-    1978,
-    6,
+    '1978-6',
     'MarvelTeamUpVol1',
     ['Whom Gods Destroy!']
   ),
   new Comic(
     94,
-    1975,
-    8,
+    '1975-8',
     'UncannyXMenVol1',
     ['The Doomsmith Scenario!']
   ),
   new Comic(
     95,
-    1975,
-    10,
+    '1975-10',
     'UncannyXMenVol1',
     ['Warhunt!']
   ),
   new Comic(
     96,
-    1975,
-    12,
+    '1975-12',
     'UncannyXMenVol1',
     ['Night of the Demon!']
   ),
   new Comic(
     97,
-    1976,
-    2,
+    '1976-2',
     'UncannyXMenVol1',
     ['My Brother, My Enemy!']
   ),
   new Comic(
     98,
-    1976,
-    4,
+    '1976-4',
     'UncannyXMenVol1',
     ['Merry Christmas, X-Men — The Sentinels Have Returned!']
   ),
   new Comic(
     99,
-    1976,
-    6,
+    '1976-6',
     'UncannyXMenVol1',
     ['Deathstar, Rising!']
   ),
   new Comic(
     100,
-    1976,
-    8,
+    '1976-8',
     'UncannyXMenVol1',
     ['Greater Love Hath No X-Man...']
   ),
   new Comic(
     101,
-    1976,
-    10,
+    '1976-10',
     'UncannyXMenVol1',
     ['Like a Phoenix, from the Ashes']
   ),
   new Comic(
     102,
-    1976,
-    12,
+    '1976-12',
     'UncannyXMenVol1',
     ['Who Will Stop the Juggernaut?']
   ),
   new Comic(
     103,
-    1977,
-    2,
+    '1977-2',
     'UncannyXMenVol1',
     ['The Fall of the Tower']
   ),
   new Comic(
     104,
-    1977,
-    4,
+    '1977-4',
     'UncannyXMenVol1',
     ['The Gentleman\'s Name is Magneto']
   ),
   new Comic(
     105,
-    1977,
-    6,
+    '1977-6',
     'UncannyXMenVol1',
     ['Phoenix Unleashed!']
   ),
   new Comic(
     106,
-    1977,
-    8,
+    '1977-8',
     'UncannyXMenVol1',
     ['Dark Shroud of the Past!']
   ),
   new Comic(
     107,
-    1977,
-    10,
+    '1977-10',
     'UncannyXMenVol1',
     ['Where No X-Man Has Gone Before!']
   ),
   new Comic(
     108,
-    1977,
-    12,
+    '1977-12',
     'UncannyXMenVol1',
     ['Armageddon Now']
   ),
   new Comic(
     109,
-    1978,
-    2,
+    '1978-2',
     'UncannyXMenVol1',
     ['Home are the Heroes!']
   ),
   new Comic(
     110,
-    1978,
-    4,
+    '1978-4',
     'UncannyXMenVol1',
     ['The \'X\'-Sanction']
   ),
   new Comic(
     111,
-    1978,
-    6,
+    '1978-6',
     'UncannyXMenVol1',
     ['Mindgames!']
   ),
   new Comic(
     112,
-    1978,
-    8,
+    '1978-8',
     'UncannyXMenVol1',
     ['Magneto Triumphant!']
   ),
   new Comic(
     113,
-    1978,
-    9,
+    '1978-9',
     'UncannyXMenVol1',
     ['Showdown!']
   ),
   new Comic(
     114,
-    1978,
-    10,
+    '1978-10',
     'UncannyXMenVol1',
     ['Desolation']
   ),
   new Comic(
     115,
-    1978,
-    11,
+    '1978-11',
     'UncannyXMenVol1',
     ['Visions of Death!']
   ),
   new Comic(
     116,
-    1978,
-    12,
+    '1978-12',
     'UncannyXMenVol1',
     ['To Save the Savage Land']
   ),
   new Comic(
     117,
-    1979,
-    1,
+    '1979-1',
     'UncannyXMenVol1',
     ['Psi War!']
   ),
   new Comic(
     118,
-    1979,
-    2,
+    '1979-2',
     'UncannyXMenVol1',
     ['The Submergence of Japan']
   ),
   new Comic(
     119,
-    1979,
-    3,
+    '1979-3',
     'UncannyXMenVol1',
     ['\'Twas the Night Before Christmas...']
   ),
   new Comic(
     120,
-    1979,
-    4,
+    '1979-4',
     'UncannyXMenVol1',
     ['Wanted: Wolverine! Dead or Alive!']
   ),
   new Comic(
     121,
-    1979,
-    5,
+    '1979-5',
     'UncannyXMenVol1',
     ['Shoot-Out at the Stampede!']
   ),
   new Comic(
     122,
-    1979,
-    6,
+    '1979-6',
     'UncannyXMenVol1',
     ['Cry for the Children!']
   ),
   new Comic(
     123,
-    1979,
-    7,
+    '1979-7',
     'UncannyXMenVol1',
     ['Listen -- Stop Me if You\'ve Heard It -- But This One Will Kill You!']
   ),
   new Comic(
     124,
-    1979,
-    8,
+    '1979-8',
     'UncannyXMenVol1',
     ['He Only Laughs When I Hurt!']
   ),
   new Comic(
     'Annual #3',
-    1979,
-    8,
+    '1979-8',
     'UncannyXMenVol1',
     ['A Fire in the Sky!']
   ),
   new Comic(
     125,
-    1979,
-    9,
+    '1979-9',
     'UncannyXMenVol1',
     ['There\'s Something Awful on Muir Island!']
   ),
   new Comic(
     126,
-    1979,
-    10,
+    '1979-10',
     'UncannyXMenVol1',
     ['How Sharper Than a Serpent\'s Tooth...!']
   ),
   new Comic(
     127,
-    1979,
-    11,
+    '1979-11',
     'UncannyXMenVol1',
     ['The Quality of Hatred!']
   ),
   new Comic(
     128,
-    1979,
-    12,
+    '1979-12',
     'UncannyXMenVol1',
     ['The Action of the Tiger!']
   ),
   new Comic(
     129,
-    1980,
-    1,
+    '1980-1',
     'UncannyXMenVol1',
     ['God Spare the Child...']
   ),
   new Comic(
     130,
-    1980,
-    2,
+    '1980-2',
     'UncannyXMenVol1',
     ['Dazzler']
   ),
   new Comic(
     131,
-    1980,
-    3,
+    '1980-3',
     'UncannyXMenVol1',
     ['Run for Your Life!']
   ),
   new Comic(
     132,
-    1980,
-    4,
+    '1980-4',
     'UncannyXMenVol1',
     ['And Hellfire is Their Name!']
   ),
   new Comic(
     133,
-    1980,
-    5,
+    '1980-5',
     'UncannyXMenVol1',
     ['Wolverine: Alone!']
   ),
   new Comic(
     134,
-    1980,
-    6,
+    '1980-6',
     'UncannyXMenVol1',
     ['Too Late, the Heroes!']
   ),
   new Comic(
     135,
-    1980,
-    7,
+    '1980-7',
     'UncannyXMenVol1',
     ['Dark Phoenix']
   ),
   new Comic(
     136,
-    1980,
-    8,
+    '1980-8',
     'UncannyXMenVol1',
     ['Child of Light and Darkness!']
   ),
   new Comic(
     137,
-    1980,
-    9,
+    '1980-9',
     'UncannyXMenVol1',
     ['The Fate of the Phoenix!']
   ),
   new Comic(
     138,
-    1980,
-    10,
+    '1980-10',
     'UncannyXMenVol1',
     ['Elegy']
   ),
   new Comic(
     'Annual #4',
-    1980,
-    11,
+    '1980-11',
     'UncannyXMenVol1',
     ['Nightcrawler\'s Inferno']
   ),
   new Comic(
     139,
-    1980,
-    11,
+    '1980-11',
     'UncannyXMenVol1',
     ['...Something Wicked This Way Comes!']
   ),
   new Comic(
     140,
-    1980,
-    12,
+    '1980-12',
     'UncannyXMenVol1',
     ['Rage!']
   ),
   new Comic(
     141,
-    1981,
-    1,
+    '1981-1',
     'UncannyXMenVol1'
   ),
   new Comic(
     142,
-    1981,
-    2,
+    '1981-2',
     'UncannyXMenVol1'
   ),
   new Comic(
     143,
-    1981,
-    3,
+    '1981-3',
     'UncannyXMenVol1'
   ),
   new Comic(
     144,
-    1981,
-    4,
+    '1981-4',
     'UncannyXMenVol1'
   ),
   new Comic(
     145,
-    1981,
-    5,
+    '1981-5',
     'UncannyXMenVol1'
   ),
   new Comic(
     146,
-    1981,
-    6,
+    '1981-6',
     'UncannyXMenVol1'
   ),
   new Comic(
     147,
-    1981,
-    7,
+    '1981-7',
     'UncannyXMenVol1'
   ),
   new Comic(
     148,
-    1981,
-    8,
+    '1981-8',
     'UncannyXMenVol1'
   ),
   new Comic(
     149,
-    1981,
-    9,
+    '1981-9',
     'UncannyXMenVol1'
   ),
   new Comic(
     150,
-    1981,
-    10,
+    '1981-10',
     'UncannyXMenVol1'
   ),
   new Comic(
     'Annual #5',
-    1981,
-    11,
+    '1981-11',
     'UncannyXMenVol1'
   ),
   new Comic(
     151,
-    1981,
-    11,
+    '1981-11',
     'UncannyXMenVol1'
   ),
   new Comic(
     152,
-    1981,
-    12,
+    '1981-12',
     'UncannyXMenVol1'
   ),
   new Comic(
     153,
-    1982,
-    1,
+    '1982-1',
     'UncannyXMenVol1'
   ),
   new Comic(
     154,
-    1982,
-    2,
+    '1982-2',
     'UncannyXMenVol1'
   ),
   new Comic(
     155,
-    1982,
-    3,
+    '1982-3',
     'UncannyXMenVol1'
   ),
   new Comic(
     156,
-    1982,
-    4,
+    '1982-4',
     'UncannyXMenVol1'
   ),
   new Comic(
     157,
-    1982,
-    5,
+    '1982-5',
     'UncannyXMenVol1'
   ),
   new Comic(
     158,
-    1982,
-    6,
+    '1982-6',
     'UncannyXMenVol1'
   ),
   new Comic(
     159,
-    1982,
-    7,
+    '1982-7',
     'UncannyXMenVol1'
   ),
   new Comic(
     160,
-    1982,
-    8,
+    '1982-8',
     'UncannyXMenVol1'
   ),
   new Comic(
     161,
-    1982,
-    9,
+    '1982-9',
     'UncannyXMenVol1'
   ),
   new Comic(
     162,
-    1982,
-    10,
+    '1982-10',
     'UncannyXMenVol1'
   ),
   new Comic(
     163,
-    1982,
-    11,
+    '1982-11',
     'UncannyXMenVol1'
   ),
   new Comic(
     'Annual #6',
-    1982,
-    11,
+    '1982-11',
     'UncannyXMenVol1'
   ),
   new Comic(
     164,
-    1982,
-    12,
+    '1982-12',
     'UncannyXMenVol1'
   ),
   new Comic(
     165,
-    1983,
-    1,
+    '1983-1',
     'UncannyXMenVol1'
   ),
   new Comic(
     166,
-    1983,
-    2,
+    '1983-2',
     'UncannyXMenVol1'
   ),
   new Comic(
     167,
-    1983,
-    3,
+    '1983-3',
     'UncannyXMenVol1'
   ),
   new Comic(
     168,
-    1983,
-    4,
+    '1983-4',
     'UncannyXMenVol1'
   ),
   new Comic(
     169,
-    1983,
-    5,
+    '1983-5',
     'UncannyXMenVol1'
   ),
   new Comic(
     170,
-    1983,
-    6,
+    '1983-6',
     'UncannyXMenVol1'
   ),
   new Comic(
     171,
-    1983,
-    7,
+    '1983-7',
     'UncannyXMenVol1'
   ),
   new Comic(
     172,
-    1983,
-    8,
+    '1983-8',
     'UncannyXMenVol1'
   ),
   new Comic(
     173,
-    1983,
-    9,
+    '1983-9',
     'UncannyXMenVol1'
   ),
   new Comic(
     174,
-    1983,
-    10,
+    '1983-10',
     'UncannyXMenVol1'
   ),
   new Comic(
     175,
-    1983,
-    11,
+    '1983-11',
     'UncannyXMenVol1'
   ),
   new Comic(
     176,
-    1983,
-    12,
+    '1983-12',
     'UncannyXMenVol1'
   ),
   new Comic(
     'Annual #7',
-    1983,
-    12,
+    '1983-12',
     'UncannyXMenVol1'
   ),
   new Comic(
     177,
-    1984,
-    1,
+    '1984-1',
     'UncannyXMenVol1'
   ),
   new Comic(
     178,
-    1984,
-    2,
+    '1984-2',
     'UncannyXMenVol1'
   ),
   new Comic(
     179,
-    1984,
-    3,
+    '1984-3',
     'UncannyXMenVol1'
   ),
   new Comic(
     180,
-    1984,
-    4,
+    '1984-4',
     'UncannyXMenVol1'
   ),
   new Comic(
     181,
-    1984,
-    5,
+    '1984-5',
     'UncannyXMenVol1'
   ),
   new Comic(
     182,
-    1984,
-    6,
+    '1984-6',
     'UncannyXMenVol1'
   ),
   new Comic(
     183,
-    1984,
-    7,
+    '1984-7',
     'UncannyXMenVol1'
   ),
   new Comic(
     184,
-    1984,
-    8,
+    '1984-8',
     'UncannyXMenVol1'
   ),
   new Comic(
     185,
-    1984,
-    9,
+    '1984-9',
     'UncannyXMenVol1'
   ),
   new Comic(
     186,
-    1984,
-    10,
+    '1984-10',
     'UncannyXMenVol1'
   ),
   new Comic(
     187,
-    1984,
-    11,
+    '1984-11',
     'UncannyXMenVol1'
   ),
   new Comic(
     188,
-    1984,
-    12,
+    '1984-12',
     'UncannyXMenVol1'
   ),
   new Comic(
     492,
-    2008,
-    1,
+    '2008-1',
     'UncannyXMenVol1',
     ['Messiah Complex: Chapter Two']
   ),
   new Comic(
     493,
-    2008,
-    2,
+    '2008-2',
     'UncannyXMenVol1',
     ['Messiah Complex: Chapter Six']
   ),
   new Comic(
     494,
-    2008,
-    3,
+    '2008-3',
     'UncannyXMenVol1',
     ['Messiah Complex: Chapter Ten']
   ),
   new Comic(
     495,
-    2008,
-    4,
+    '2008-4',
     'UncannyXMenVol1',
     ['X-Men: Divided (Part 1)']
   ),
   new Comic(
     496,
-    2008,
-    5,
+    '2008-5',
     'UncannyXMenVol1',
     ['X-Men: Divided (Part 2)']
   ),
   new Comic(
     497,
-    2008,
-    6,
+    '2008-6',
     'UncannyXMenVol1',
     ['X-Men: Divided (Part 3)']
   ),
   new Comic(
     500,
-    2008,
-    9,
+    '2008-9',
     'UncannyXMenVol1',
     ['SFX (1 of 3)']
   ),
   new Comic(
     501,
-    2008,
-    10,
+    '2008-10',
     'UncannyXMenVol1',
     ['SFX (2 of 3): All Tomorrow\'s Parties']
   ),
   new Comic(
     502,
-    2008,
-    11,
+    '2008-11',
     'UncannyXMenVol1',
     ['SFX (3 of 3) - Beginning to See the Light']
   ),
   new Comic(
     503,
-    2008,
-    12,
+    '2008-12',
     'UncannyXMenVol1',
     ['Beginning To See The Light']
   ),
   new Comic(
     1,
-    2008,
-    5,
+    '2008-5',
     'XMenFreeComicBookDayVol2008',
     ['X-Men: Pixies & Demons']
   ),
   new Comic(
     1,
-    2008,
-    11,
+    '2008-11',
     'XMenManifestDestinyVol1',
     ['Untitled']
   ),
   new Comic(
     2,
-    2008,
-    12,
+    '2008-12',
     'XMenManifestDestinyVol1',
     ['Kill or Cure (Part 2)','Good With the Bad','Flaw']
   ),
   new Comic(
     3,
-    2009,
-    1,
+    '2009-1',
     'XMenManifestDestinyVol1',
     ['Kill or Cure (Part 3)','Abomination','Uncheerable']
   ),
   new Comic(
     4,
-    2009,
-    2,
+    '2009-2',
     'XMenManifestDestinyVol1',
     ['Kill or Cure (Part 4)','Mercury','Work It Out']
   ),
   new Comic(
     5,
-    2009,
-    3,
+    '2009-3',
     'XMenManifestDestinyVol1',
     ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo']
   ),
   new Comic(
     540,
-    2011,
-    9,
+    '2011-9',
     'UncannyXMenVol1',
     ['Uncanny X-Men Vol 1 #540']
   ),
   new Comic(
     541,
-    2011,
-    9,
+    '2011-9',
     'UncannyXMenVol1',
     ['Uncanny X-Men Vol 1 #541']
   ),
   new Comic(
     542,
-    2011,
-    10,
+    '2011-10',
     'UncannyXMenVol1',
     ['Uncanny X-Men Vol 1 #542']
   ),
   new Comic(
     543,
-    2011,
-    11,
+    '2011-11',
     'UncannyXMenVol1',
     ['Uncanny X-Men Vol 1 #543']
   ),
   new Comic(
     544,
-    2011,
-    12,
+    '2011-12',
     'UncannyXMenVol1',
     ['Uncanny']
   ),
   new Comic(
     534.1,
-    2011,
-    6,
+    '2011-6',
     'UncannyXMenVol1',
     ['Uncanny X-Men Vol 1 #534.1']
   ),
   new Comic(
     535,
-    2011,
-    6,
+    '2011-6',
     'UncannyXMenVol1',
     ['Breaking Point (Part One)']
   ),
   new Comic(
     536,
-    2011,
-    6,
+    '2011-6',
     'UncannyXMenVol1',
     ['Breaking Point: Part Two']
   ),
   new Comic(
     537,
-    2011,
-    7,
+    '2011-7',
     'UncannyXMenVol1',
     ['Breaking Point (Part 3)']
   ),
   new Comic(
     538,
-    2011,
-    8,
+    '2011-8',
     'UncannyXMenVol1',
     ['Breaking Point (Conclusion)']
   ),
   new Comic(
     539,
-    2011,
-    8,
+    '2011-8',
     'UncannyXMenVol1',
     ['Losing Hope']
   ),
   new Comic(
     530,
-    2011,
-    1,
+    '2011-1',
     'UncannyXMenVol1',
     ['Quarantine: Part 1']
   ),
   new Comic(
     531,
-    2011,
-    2,
+    '2011-2',
     'UncannyXMenVol1',
     ['Quarantine (Part Two)']
   ),
   new Comic(
     532,
-    2011,
-    3,
+    '2011-3',
     'UncannyXMenVol1',
     ['Quarantine (Part Three)']
   ),
   new Comic(
     533,
-    2011,
-    4,
+    '2011-4',
     'UncannyXMenVol1',
     ['Quarantine (Part Four)']
   ),
   new Comic(
     534,
-    2011,
-    5,
+    '2011-5',
     'UncannyXMenVol1',
     ['Quarantine (Part Five)']
   ),
   new Comic(
     526,
-    2010,
-    9,
+    '2010-9',
     'UncannyXMenVol1',
     ['The Five Lights (Part 1): Freak Like Me', 'Rebuilding']
   ),
   new Comic(
     527,
-    2010,
-    10,
+    '2010-10',
     'UncannyXMenVol1',
     ['The Five Lights (Part 2) - Velocidad']
   ),
   new Comic(
     528,
-    2010,
-    11,
+    '2010-11',
     'UncannyXMenVol1',
     ['The Five Lights (Part 3)']
   ),
   new Comic(
     529,
-    2010,
-    12,
+    '2010-12',
     'UncannyXMenVol1',
     ['The Five Lights (Part Four)']
   ),
   new Comic(
     1,
-    1982,
-    9,
+    '1982-9',
     'WolverineVol1'
   ),
   new Comic(
     2,
-    1982,
-    10,
+    '1982-10',
     'WolverineVol1'
   ),
   new Comic(
     3,
-    1982,
-    11,
+    '1982-11',
     'WolverineVol1'
   ),
   new Comic(
     4,
-    1982,
-    12,
+    '1982-12',
     'WolverineVol1'
   ),
   new Comic(
     1,
-    2011,
-    2,
+    '2011-2',
     'HeroicAgeXMenVol1',
     ['Heroic Age: X-Men Vol 1 #1']
   ),
   new Comic(
     1,
-    2010,
-    4,
+    '2010-4',
     'SecondComingPrepareVol1',
     ['Where Were You?']
   ),
   new Comic(
     2,
-    2010,
-    9,
+    '2010-9',
     'XMenSecondComingVol1',
     ['Second Coming Chapter XIV']
   ),
   new Comic(
     1,
-    2010,
-    5,
+    '2010-5',
     'XMenSecondComingVol1',
     ['Second Coming, Chapter One']
   ),
   new Comic(
     525,
-    2010,
-    8,
+    '2010-8',
     'UncannyXMenVol1',
     ['Second Coming (Chapter Ten)']
   ),
   new Comic(
     524,
-    2010,
-    7,
+    '2010-7',
     'UncannyXMenVol1',
     ['Second Coming (Chapter Six)']
   ),
   new Comic(
     523,
-    2010,
-    6,
+    '2010-6',
     'UncannyXMenVol1',
     ['Second Coming (Chapter Two)']
   ),
   new Comic(
     14,
-    2010,
-    8,
+    '2010-8',
     'NewMutantsVol3',
     ['Second Coming (Chapter Eleven)']
   ),
   new Comic(
     13,
-    2010,
-    7,
+    '2010-7',
     'NewMutantsVol3',
     ['Second Coming (Chapter Seven)']
   ),
   new Comic(
     12,
-    2010,
-    6,
+    '2010-6',
     'NewMutantsVol3',
     ['Second Coming (Chapter Three)']
   ),
   new Comic(
     237,
-    2010,
-    8,
+    '2010-8',
     'XMenLegacyVol1',
     ['Second Coming (Chapter Twelve)']
   ),
   new Comic(
     236,
-    2010,
-    7,
+    '2010-7',
     'XMenLegacyVol1',
     ['Second Coming (Chapter Eight)']
   ),
   new Comic(
     235,
-    2010,
-    6,
+    '2010-6',
     'XMenLegacyVol1',
     ['Second Coming (Chapter Four)']
   ),
   new Comic(
     26,
-    2010,
-    6,
+    '2010-6',
     'XForceVol3',
     ['Second Coming (Chapter Five)']
   ),
   new Comic(
     27,
-    2010,
-    7,
+    '2010-7',
     'XForceVol3',
     ['Second Coming (Chapter Nine)']
   ),
   new Comic(
     28,
-    2010,
-    9,
+    '2010-9',
     'XForceVol3',
     ['Second Coming, Chapter 13']
   )
