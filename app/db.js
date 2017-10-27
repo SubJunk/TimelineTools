@@ -48,12 +48,23 @@ function Collection(title, yearPublished, monthPublished, comicIds) {
  * The prototype for comic series.
  * A series always contains at least one SeriesVolume.
  *
- * @param {string} title
+ * @param {string}   title
+ * @param {number[]} volumes
  * @see SeriesVolume
  */
-function Series(title) {
-  this.id = title.replace(/[\W+]/g, '');
-  this.title = title;
+function Series(title, volumes) {
+  var self = this;
+  self.id = title.replace(/[\W+]/g, '');
+  self.title = title;
+
+  volumes.forEach(function(volume) {
+    seriesVolumes.push(
+      new SeriesVolume(
+        self.id,
+        volume
+      )
+    );
+  });
 }
 
 /**
@@ -1033,45 +1044,24 @@ comics.push(
 );
 
 series.push(
-  new Series('Avengers'),
-  new Series('Cable'),
-  new Series('Defenders'),
-  new Series('Giant-Size Fantastic Four'),
-  new Series('Iron Fist'),
-  new Series('Magik (Limited Series)'),
-  new Series('Marvel Graphic Novel'),
-  new Series('Marvel Team-Up'),
-  new Series('Uncanny X-Men'),
-  new Series('Wolverine'),
-  new Series('X-Men Manifest Destiny'),
-  new Series('X-Men Free Comic Book Day'),
-  new Series('Heroic Age X-Men'),
-  new Series('Second Coming Prepare'),
-  new Series('X-Men Second Coming'),
-  new Series('X-Force'),
-  new Series('X-Men Legacy'),
-  new Series('New Mutants')
-);
-
-seriesVolumes.push(
-  new SeriesVolume('Avengers', 1),
-  new SeriesVolume('Cable', 2),
-  new SeriesVolume('Defenders', 1),
-  new SeriesVolume('GiantSizeFantasticFour', 1),
-  new SeriesVolume('IronFist', 1),
-  new SeriesVolume('MagikLimitedSeries', 1),
-  new SeriesVolume('MarvelGraphicNovel', 1),
-  new SeriesVolume('MarvelTeamUp', 1),
-  new SeriesVolume('UncannyXMen', 1),
-  new SeriesVolume('Wolverine', 1),
-  new SeriesVolume('XMenManifestDestiny', 1),
-  new SeriesVolume('XMenFreeComicBookDay', 2008),
-  new SeriesVolume('HeroicAgeXMen', 1),
-  new SeriesVolume('SecondComingPrepare', 1),
-  new SeriesVolume('XMenSecondComing', 1),
-  new SeriesVolume('XForce', 3),
-  new SeriesVolume('XMenLegacy', 1),
-  new SeriesVolume('NewMutants', 3)
+  new Series('Avengers', [1]),
+  new Series('Cable', [2]),
+  new Series('Defenders', [1]),
+  new Series('Giant-Size Fantastic Four', [1]),
+  new Series('Iron Fist', [1]),
+  new Series('Magik (Limited Series)', [1]),
+  new Series('Marvel Graphic Novel', [1]),
+  new Series('Marvel Team-Up', [1]),
+  new Series('Uncanny X-Men', [1]),
+  new Series('Wolverine', [1]),
+  new Series('X-Men Manifest Destiny', [1]),
+  new Series('X-Men Free Comic Book Day', [2008]),
+  new Series('Heroic Age X-Men', [1]),
+  new Series('Second Coming Prepare', [1]),
+  new Series('X-Men Second Coming', [1]),
+  new Series('X-Force', [3]),
+  new Series('X-Men Legacy', [1]),
+  new Series('New Mutants', [3])
 );
 
 // These should be in reading order
