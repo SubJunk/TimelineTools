@@ -205,7 +205,11 @@ angular.module('app', [])
     previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
     // Match the width of the page to the width of the content
-    bodyStyle.width = comic.containerStyles.left + horizontalIncrement + (bodyStyle.padding * 2);
+    bodyStyle.width = comic.containerStyles.left + horizontalIncrement - bodyStyle.padding;
+  });
+
+  $timeout(function() {
+    bodyStyle.width += $('.scroll-anchor').width();
   });
 
   vm.dates = dates;

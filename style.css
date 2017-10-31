@@ -1,5 +1,6 @@
 :root {
   --month-width: 55px;
+  --expanded-width: 800px;
   --expanded-height: 200px;
 }
 
@@ -102,6 +103,7 @@ body {
 .expanded .comic .cover-thumbnail {
   display: inline-block;
   vertical-align: top;
+  width: calc(var(--expanded-width) * 0.24);
 }
 
 .expanded .comic .cover-thumbnail img {
@@ -113,7 +115,7 @@ body {
 .expanded-panel {
   display: none;
   left: 0;
-  width: 600px;
+  width: calc(var(--expanded-width) * 0.75);
   transition: max-height 0.5s, max-width 0.5s, height 0.5s, width 0.5s;
   background: inherit;
 }
@@ -148,4 +150,8 @@ body {
 .sticky-bottom {
   position: fixed;
   bottom: 0;
+}
+
+.scroll-anchor {
+  width: var(--expanded-width);
 }
