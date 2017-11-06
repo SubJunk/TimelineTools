@@ -229,9 +229,9 @@ angular.module('app', [])
   });
 
   /**
-   * Generates random color.
+   * Generates a color in HSLA format, e.g. hsla(1, 2, 3, 4).
    *
-   * @returns hslColor
+   * @return {string} HSLA color
    */
   var startColor;  
   function getRandomColor() {
