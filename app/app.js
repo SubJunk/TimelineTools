@@ -160,12 +160,14 @@ angular.module('app', [])
   var globalHorizontalOffset = 0;
   _.each(comics, function(comic) {
     var currentSeriesVolume = seriesVolumes[_.findKey(seriesVolumes, { 'id': comic.seriesVolumeId })];
-
     if (!currentSeriesVolume) {
       throw new Error(comic.seriesVolumeId + " not found");
     }
 
     var currentSeries = series[_.findKey(series, { 'id': currentSeriesVolume.seriesId })];
+    if (!currentSeries) {
+      throw new Error(comic.seriesId + " not found");
+    }
 
     // Horizontal positioning
     comic.containerStyles = {};
@@ -301,6 +303,7 @@ angular.module('app', [])
     });
   }
 
+  // Reposition the expanded panel when the user scrolls the viewport
   $jqWindow.scroll(repositionExpandedPanel);
 
   // Pass our transformed db objects to the view
