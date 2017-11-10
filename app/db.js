@@ -94,12 +94,6 @@ comics.push(
     ['War Baby (Chapter 1)']
   ),
   new Comic(
-    'GiantSize',
-    '1975-5',
-    'UncannyXMenVol1',
-    ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']
-  ),
-  new Comic(
     14,
     '1977-8',
     'IronFistVol1',
@@ -179,6 +173,12 @@ comics.push(
     4,
     '1986-2',
     'NightcrawlerVol1'
+  ),
+  new Comic(
+    'GiantSize',
+    '1975-5',
+    'UncannyXMenVol1',
+    ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']
   ),
   new Comic(
     94,
@@ -1133,22 +1133,22 @@ series.push(
   new Series('Cable', [2]),
   new Series('Defenders', [1]),
   new Series('Giant-Size Fantastic Four', [1]),
+  new Series('Heroic Age X-Men', [1]),
   new Series('Iron Fist', [1]),
   new Series('Magik (Limited Series)', [1]),
   new Series('Marvel Graphic Novel', [1]),
   new Series('Marvel Team-Up', [1]),
+  new Series('New Mutants', [3]),
   new Series('Nightcrawler', [1]),
+  new Series('Second Coming Prepare', [1]),
   new Series('Uncanny X-Men', [1]),
   new Series('Wolverine', [1]),
-  new Series('X-Men Manifest Destiny', [1]),
-  new Series('X-Men Free Comic Book Day', [2008]),
-  new Series('Heroic Age X-Men', [1]),
-  new Series('Second Coming Prepare', [1]),
-  new Series('X-Men Second Coming', [1]),
   new Series('X-Force', [3]),
-  new Series('X-Men Legacy', [1]),
   new Series('X-Men and Alpha Flight', [1]),
-  new Series('New Mutants', [3])
+  new Series('X-Men Free Comic Book Day', [2008]),
+  new Series('X-Men Legacy', [1]),
+  new Series('X-Men Manifest Destiny', [1]),
+  new Series('X-Men Second Coming', [1])
 );
 
 // These should be in reading order
