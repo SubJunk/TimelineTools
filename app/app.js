@@ -160,6 +160,11 @@ angular.module('app', [])
   var globalHorizontalOffset = 0;
   _.each(comics, function(comic) {
     var currentSeriesVolume = seriesVolumes[_.findKey(seriesVolumes, { 'id': comic.seriesVolumeId })];
+
+    if (!currentSeriesVolume) {
+      throw new Error(comic.seriesVolumeId + " not found");
+    }
+
     var currentSeries = series[_.findKey(series, { 'id': currentSeriesVolume.seriesId })];
 
     // Horizontal positioning
