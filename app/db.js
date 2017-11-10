@@ -161,6 +161,26 @@ comics.push(
     ['Whom Gods Destroy!']
   ),
   new Comic(
+    1,
+    '1985-11',
+    'NightcrawlerVol1'
+  ),
+  new Comic(
+    2,
+    '1985-12',
+    'NightcrawlerVol1'
+  ),
+  new Comic(
+    3,
+    '1986-1',
+    'NightcrawlerVol1'
+  ),
+  new Comic(
+    4,
+    '1986-2',
+    'NightcrawlerVol1'
+  ),
+  new Comic(
     94,
     '1975-8',
     'UncannyXMenVol1',
@@ -695,6 +715,11 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
+    'Annual #8',
+    '1984-9',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
     186,
     '1984-10',
     'UncannyXMenVol1'
@@ -707,6 +732,56 @@ comics.push(
   new Comic(
     188,
     '1984-12',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    189,
+    '1985-1',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    190,
+    '1985-2',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    191,
+    '1985-3',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    192,
+    '1985-4',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    193,
+    '1985-5',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    194,
+    '1985-6',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    195,
+    '1985-7',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    196,
+    '1985-8',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    197,
+    '1985-9',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    198,
+    '1985-10',
     'UncannyXMenVol1'
   ),
   new Comic(
@@ -947,6 +1022,16 @@ comics.push(
   ),
   new Comic(
     1,
+    '1985-12',
+    'XMenandAlphaFlightVol1'
+  ),
+  new Comic(
+    2,
+    '1986-1',
+    'XMenandAlphaFlightVol1'
+  ),
+  new Comic(
+    1,
     '2011-2',
     'HeroicAgeXMenVol1',
     ['Heroic Age: X-Men Vol 1 #1']
@@ -1052,6 +1137,7 @@ series.push(
   new Series('Magik (Limited Series)', [1]),
   new Series('Marvel Graphic Novel', [1]),
   new Series('Marvel Team-Up', [1]),
+  new Series('Nightcrawler', [1]),
   new Series('Uncanny X-Men', [1]),
   new Series('Wolverine', [1]),
   new Series('X-Men Manifest Destiny', [1]),
@@ -1061,6 +1147,7 @@ series.push(
   new Series('X-Men Second Coming', [1]),
   new Series('X-Force', [3]),
   new Series('X-Men Legacy', [1]),
+  new Series('X-Men and Alpha Flight', [1]),
   new Series('New Mutants', [3])
 );
 
@@ -1244,6 +1331,30 @@ collections.push(
       'UncannyXMenVol1186',
       'UncannyXMenVol1187',
       'UncannyXMenVol1188'
+    ]
+  ),
+  new Collection(
+    'X-Men Epic Collection Vol. 12: The Gift',
+    2016,
+    1,
+    [
+      'UncannyXMenVol1189',
+      'UncannyXMenVol1190',
+      'UncannyXMenVol1191',
+      'UncannyXMenVol1192',
+      'UncannyXMenVol1Annual8',
+      'XMenandAlphaFlightVol11',
+      'XMenandAlphaFlightVol12',
+      'UncannyXMenVol1193',
+      'UncannyXMenVol1194',
+      'UncannyXMenVol1195',
+      'UncannyXMenVol1196',
+      'UncannyXMenVol1197',
+      'UncannyXMenVol1198',
+      'NightcrawlerVol11',
+      'NightcrawlerVol12',
+      'NightcrawlerVol13',
+      'NightcrawlerVol14'
     ]
   ),
   new Collection(
