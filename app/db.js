@@ -32,15 +32,18 @@ function Comic(issue, datePublished, seriesVolumeId, titles) {
  * The prototype for collections.
  * 
  * @param {string}   title
- * @param {number}   yearPublished
- * @param {number}   monthPublished
+ * @param {number}   datePublished
  * @param {string[]} comicIds
  */
-function Collection(title, yearPublished, monthPublished, comicIds) {
+function Collection(title, datePublished, comicIds) {
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
-  this.yearPublished = yearPublished;
-  this.monthPublished = monthPublished;
+
+  // Create a Date object from the datePublished string
+  this.date = new Date(datePublished);
+
+  this.yearPublished = this.date.getFullYear();
+  this.monthPublished = this.date.getMonth() + 1;
   this.comicIds = comicIds;
 }
 
@@ -1155,8 +1158,7 @@ series.push(
 collections.push(
   new Collection(
     'X-Men Epic Collection Vol. 5: Second Genesis',
-    2017,
-    4,
+    '2017-4',
     [
       'UncannyXMenVol1GiantSize',
       'UncannyXMenVol194',
@@ -1186,8 +1188,7 @@ collections.push(
   ),
   new Collection(
     'Marvel Masterworks: The Uncanny X-Men Vol. 3',
-    2011,
-    1,
+    '2011-1',
     [
       'UncannyXMenVol1111',
       'UncannyXMenVol1112',
@@ -1204,8 +1205,7 @@ collections.push(
   ),
   new Collection(
     'Marvel Masterworks: The Uncanny X-Men Vol. 4',
-    2012,
-    2,
+    '2012-2',
     [
       'UncannyXMenVol1122',
       'UncannyXMenVol1123',
@@ -1222,8 +1222,7 @@ collections.push(
   ),
   new Collection(
     'Marvel Masterworks: The Uncanny X-Men Vol. 5',
-    2012,
-    7,
+    '2012-7',
     [
       'UncannyXMenVol1132',
       'UncannyXMenVol1133',
@@ -1239,8 +1238,7 @@ collections.push(
   ),
   new Collection(
     'Marvel Masterworks: The Uncanny X-Men Vol. 6',
-    2008,
-    2,
+    '2008-2',
     [
       'UncannyXMenVol1141',
       'UncannyXMenVol1142',
@@ -1256,8 +1254,7 @@ collections.push(
   ),
   new Collection(
     'Marvel Masterworks: The Uncanny X-Men Vol. 7',
-    2011,
-    1,
+    '2011-1',
     [
       'AvengersVol1Annual10',
       'UncannyXMenVol1Annual5',
@@ -1274,8 +1271,7 @@ collections.push(
   ),
   new Collection(
     'Marvel Masterworks: The Uncanny X-Men Vol. 8',
-    2012,
-    2,
+    '2012-2',
     [
       'UncannyXMenVol1160',
       'UncannyXMenVol1161',
@@ -1290,8 +1286,7 @@ collections.push(
   ),
   new Collection(
     'Marvel Masterworks: The Uncanny X-Men Vol. 9',
-    2015,
-    1,
+    '2015-1',
     [
       'MarvelGraphicNovelVol15',
       'UncannyXMenVol1168',
@@ -1311,8 +1306,7 @@ collections.push(
   ),
   new Collection(
     'Marvel Masterworks: The Uncanny X-Men Vol. 10',
-    2017,
-    2,
+    '2017-2',
     [
       'MagikLimitedSeriesVol11',
       'MagikLimitedSeriesVol12',
@@ -1335,8 +1329,7 @@ collections.push(
   ),
   new Collection(
     'X-Men Epic Collection Vol. 12: The Gift',
-    2016,
-    1,
+    '2016-1',
     [
       'UncannyXMenVol1189',
       'UncannyXMenVol1190',
@@ -1359,14 +1352,12 @@ collections.push(
   ),
   new Collection(
     'Cable Vol. 1: Messiah War',
-    2008,
-    12,
+    '2008-12',
     ['CableVol21']
   ),
   new Collection(
     'X-Men: Messiah Complex',
-    2008,
-    11,
+    '2008-11',
     [
       'UncannyXMenVol1492',
       'UncannyXMenVol1493',
@@ -1375,8 +1366,7 @@ collections.push(
   ),
   new Collection(
     'Uncanny X-Men: Divided We Stand',
-    2008,
-    10,
+    '2008-10',
     [
       'UncannyXMenVol1495',
       'UncannyXMenVol1496'
@@ -1384,8 +1374,7 @@ collections.push(
   ),
   new Collection(
     'Uncanny X-Men: Manifest Destiny',
-    2009,
-    10,
+    '2009-10',
     [
       'UncannyXMenVol1500',
       'UncannyXMenVol1501',
@@ -1401,8 +1390,7 @@ collections.push(
   ),
   new Collection(
     'Uncanny X-Men: Fear Itself',
-    2012,
-    3,
+    '2012-3',
     [
       'UncannyXMenVol1540',
       'UncannyXMenVol1541',
@@ -1413,8 +1401,7 @@ collections.push(
   ),
   new Collection(
     'Uncanny X-Men: Breaking Point',
-    2011,
-    9,
+    '2011-9',
     [
       'UncannyXMenVol1534.1',
       'UncannyXMenVol1535',
@@ -1426,9 +1413,8 @@ collections.push(
   ),
   new Collection(
     'Uncanny X-Men: Quarantine',
-    2011,
-    6,
-     [
+    '2011-6',
+    [
       'UncannyXMenVol1530',
       'UncannyXMenVol1531',
       'UncannyXMenVol1532',
@@ -1438,8 +1424,7 @@ collections.push(
   ),
   new Collection(
     'Uncanny X-Men: The Five Lights (aka Uncanny X-Men: The Birth of Generation Hope)',
-    2010,
-    12,
+    '2010-12',
     [
       'UncannyXMenVol1526',
       'UncannyXMenVol1527',
@@ -1450,8 +1435,7 @@ collections.push(
   ),
   new Collection(
     'X-Men: Second Coming',
-    2011,
-    6,
+    '2011-6',
     [
       'SecondComingPrepareVol11',
       'XMenSecondComingVol11',
