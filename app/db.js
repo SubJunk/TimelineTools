@@ -159,6 +159,66 @@ comics.push(
   ),
   new Comic(
     1,
+    '1984-5',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    2,
+    '1984-6',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    3,
+    '1984-7',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    4,
+    '1984-8',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    5,
+    '1984-9',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    6,
+    '1984-10',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    7,
+    '1984-11',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    8,
+    '1984-12',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    9,
+    '1985-1',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    10,
+    '1985-2',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    11,
+    '1985-3',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    12,
+    '1985-4',
+    'MarvelSuperHeroesSecretWarsVol1'
+  ),
+  new Comic(
+    1,
     '1985-11',
     'NightcrawlerVol1'
   ),
@@ -1140,6 +1200,7 @@ series.push(
   new Series('Iron Fist', [1]),
   new Series('Magik (Limited Series)', [1]),
   new Series('Marvel Graphic Novel', [1]),
+  new Series('Marvel Super Heroes: Secret Wars', [1]),
   new Series('Marvel Team-Up', [1]),
   new Series('New Mutants', [3]),
   new Series('Nightcrawler', [1]),
@@ -1305,7 +1366,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Marvel Masterworks: The Uncanny X-Men Vol. 10',
+    'Marvel Masterworks: The Uncanny X-Men Vol. 10 (Part 1)',
     '2017-2',
     [
       'MagikLimitedSeriesVol11',
@@ -1316,7 +1377,31 @@ collections.push(
       'UncannyXMenVol1177',
       'UncannyXMenVol1178',
       'UncannyXMenVol1179',
-      'UncannyXMenVol1180',
+      'UncannyXMenVol1180'
+    ]
+  ),
+  new Collection(
+    'Secret Wars',
+    '2011-12-28',
+    [
+      'MarvelSuperHeroesSecretWarsVol11',
+      'MarvelSuperHeroesSecretWarsVol12',
+      'MarvelSuperHeroesSecretWarsVol13',
+      'MarvelSuperHeroesSecretWarsVol14',
+      'MarvelSuperHeroesSecretWarsVol15',
+      'MarvelSuperHeroesSecretWarsVol16',
+      'MarvelSuperHeroesSecretWarsVol17',
+      'MarvelSuperHeroesSecretWarsVol18',
+      'MarvelSuperHeroesSecretWarsVol19',
+      'MarvelSuperHeroesSecretWarsVol110',
+      'MarvelSuperHeroesSecretWarsVol111',
+      'MarvelSuperHeroesSecretWarsVol112'
+    ]
+  ),
+  new Collection(
+    'Marvel Masterworks: The Uncanny X-Men Vol. 10 (Part 2)',
+    '2017-2',
+    [
       'UncannyXMenVol1181',
       'UncannyXMenVol1182',
       'UncannyXMenVol1183',
