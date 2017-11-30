@@ -97,6 +97,11 @@ comics.push(
     ['War Baby (Chapter 1)']
   ),
   new Comic(
+    238,
+    '1987-01',
+    'DaredevilVol1'
+  ),
+  new Comic(
     14,
     '1977-8',
     'IronFistVol1',
@@ -218,6 +223,29 @@ comics.push(
     'MarvelSuperHeroesSecretWarsVol1'
   ),
   new Comic(
+    46,
+    '1986-12',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    12,
+    '2010-6',
+    'NewMutantsVol3',
+    ['Second Coming (Chapter Three)']
+  ),
+  new Comic(
+    13,
+    '2010-7',
+    'NewMutantsVol3',
+    ['Second Coming (Chapter Seven)']
+  ),
+  new Comic(
+    14,
+    '2010-8',
+    'NewMutantsVol3',
+    ['Second Coming (Chapter Eleven)']
+  ),
+  new Comic(
     1,
     '1985-11',
     'NightcrawlerVol1'
@@ -236,6 +264,21 @@ comics.push(
     4,
     '1986-2',
     'NightcrawlerVol1'
+  ),
+  new Comic(
+    27,
+    '1986-12',
+    'PowerPackVol1'
+  ),
+  new Comic(
+    373,
+    '1986-11',
+    'ThorVol1'
+  ),
+  new Comic(
+    374,
+    '1986-12',
+    'ThorVol1'
   ),
   new Comic(
     'GiantSize',
@@ -848,6 +891,91 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
+    199,
+    '1985-11',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    200,
+    '1985-12',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    201,
+    '1986-01',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    202,
+    '1986-02',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    203,
+    '1986-03',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    204,
+    '1986-04',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    205,
+    '1986-05',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    206,
+    '1986-06',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    207,
+    '1986-07',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    208,
+    '1986-08',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    209,
+    '1986-09',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    'Annual #10',
+    '1987-01',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    210,
+    '1986-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    211,
+    '1986-11',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    212,
+    '1986-12',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    213,
+    '1987-01',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    214,
+    '1987-02',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
     492,
     '2008-1',
     'UncannyXMenVol1',
@@ -1136,40 +1264,19 @@ comics.push(
     ['Second Coming (Chapter Two)']
   ),
   new Comic(
-    14,
-    '2010-8',
-    'NewMutantsVol3',
-    ['Second Coming (Chapter Eleven)']
+    9,
+    '1986-10',
+    'XFactorVol1'
   ),
   new Comic(
-    13,
-    '2010-7',
-    'NewMutantsVol3',
-    ['Second Coming (Chapter Seven)']
+    10,
+    '1986-11',
+    'XFactorVol1'
   ),
   new Comic(
-    12,
-    '2010-6',
-    'NewMutantsVol3',
-    ['Second Coming (Chapter Three)']
-  ),
-  new Comic(
-    237,
-    '2010-8',
-    'XMenLegacyVol1',
-    ['Second Coming (Chapter Twelve)']
-  ),
-  new Comic(
-    236,
-    '2010-7',
-    'XMenLegacyVol1',
-    ['Second Coming (Chapter Eight)']
-  ),
-  new Comic(
-    235,
-    '2010-6',
-    'XMenLegacyVol1',
-    ['Second Coming (Chapter Four)']
+    11,
+    '1986-12',
+    'XFactorVol1'
   ),
   new Comic(
     26,
@@ -1188,12 +1295,31 @@ comics.push(
     '2010-9',
     'XForceVol3',
     ['Second Coming, Chapter 13']
+  ),
+  new Comic(
+    237,
+    '2010-8',
+    'XMenLegacyVol1',
+    ['Second Coming (Chapter Twelve)']
+  ),
+  new Comic(
+    236,
+    '2010-7',
+    'XMenLegacyVol1',
+    ['Second Coming (Chapter Eight)']
+  ),
+  new Comic(
+    235,
+    '2010-6',
+    'XMenLegacyVol1',
+    ['Second Coming (Chapter Four)']
   )
 );
 
 series.push(
   new Series('Avengers', [1]),
   new Series('Cable', [2]),
+  new Series('Daredevil', [1]),
   new Series('Defenders', [1]),
   new Series('Giant-Size Fantastic Four', [1]),
   new Series('Heroic Age X-Men', [1]),
@@ -1202,11 +1328,14 @@ series.push(
   new Series('Marvel Graphic Novel', [1]),
   new Series('Marvel Super Heroes: Secret Wars', [1]),
   new Series('Marvel Team-Up', [1]),
-  new Series('New Mutants', [3]),
+  new Series('New Mutants', [1, 3]),
   new Series('Nightcrawler', [1]),
+  new Series('Power Pack', [1]),
   new Series('Second Coming Prepare', [1]),
+  new Series('Thor', [1]),
   new Series('Uncanny X-Men', [1]),
   new Series('Wolverine', [1]),
+  new Series('X-Factor', [1]),
   new Series('X-Force', [3]),
   new Series('X-Men and Alpha Flight', [1]),
   new Series('X-Men Free Comic Book Day', [2008]),
@@ -1433,6 +1562,43 @@ collections.push(
       'NightcrawlerVol12',
       'NightcrawlerVol13',
       'NightcrawlerVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men: Ghosts',
+    '2013-05',
+    [
+      'UncannyXMenVol1199',
+      'UncannyXMenVol1200',
+      'UncannyXMenVol1201',
+      'UncannyXMenVol1202',
+      'UncannyXMenVol1203',
+      'UncannyXMenVol1204',
+      'UncannyXMenVol1205',
+      'UncannyXMenVol1206',
+      'UncannyXMenVol1207',
+      'UncannyXMenVol1208',
+      'UncannyXMenVol1209',
+      'UncannyXMenVol1Annual10',
+    ]
+  ),
+  new Collection(
+    'X-Men: Mutant Massacre',
+    '2013-02-12',
+    [
+      'UncannyXMenVol1210',
+      'XFactorVol19',
+      'UncannyXMenVol1211',
+      'XFactorVol110',
+      'NewMutantsVol146',
+      'ThorVol1373',
+      'PowerPackVol127',
+      'ThorVol1374',
+      'UncannyXMenVol1212',
+      'XFactorVol111',
+      'DaredevilVol1238',
+      'UncannyXMenVol1213',
+      'UncannyXMenVol1214'
     ]
   ),
   new Collection(
