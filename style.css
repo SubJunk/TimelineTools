@@ -155,3 +155,20 @@ body {
 .scroll-anchor {
   width: var(--expanded-width);
 }
+
+/**
+ * Remove Bootstrap pagination styles
+ */
+.pagination {
+  margin: 5px 0 0 0;
+}
+
+.pagination > li > a,
+.pagination > li > a:hover {
+  background-color: unset;
+  border: none;
+}
+
+.pagination > li > a:hover {
+  color: #000;
+}

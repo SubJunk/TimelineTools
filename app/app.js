@@ -217,6 +217,7 @@ angular.module('app', [])
 
   $timeout(function() {
     bodyStyle.width += $('.scroll-anchor').width();
+    $('[data-toggle="tooltip"]').tooltip()
   });
 
   vm.dates = dates;
