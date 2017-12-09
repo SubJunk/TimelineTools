@@ -304,6 +304,31 @@ angular.module('app', [])
     });
   }
 
+  /**
+   * Handle arrow keys.
+   *
+   * @link https://stackoverflow.com/questions/1402698/binding-arrow-keys-in-js-jquery
+   */
+  $(document).keydown(function(e) {
+    switch(e.which) {
+      case 37: // left
+        if (vm.prevComic) {
+          vm.toggleExpandComic(vm.prevComic);
+        }
+        break;
+
+      case 39: // right
+        if (vm.nextComic) {
+          vm.toggleExpandComic(vm.nextComic);
+        }
+        break;
+
+      default:
+        return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
   // Reposition the expanded panel when the user scrolls the viewport
   $jqWindow.scroll(repositionExpandedPanel);
 
