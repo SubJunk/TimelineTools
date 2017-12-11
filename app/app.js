@@ -326,7 +326,6 @@ angular.module('app', [])
       default:
         return; // exit this handler for other keys
     }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
 });
 
   // Reposition the expanded panel when the user scrolls the viewport
