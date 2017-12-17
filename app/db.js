@@ -97,9 +97,29 @@ comics.push(
     ['War Baby (Chapter 1)']
   ),
   new Comic(
+    339,
+    '1988-03',
+    'CaptainAmericaVol1'
+  ),
+  new Comic(
     238,
     '1987-01',
     'DaredevilVol1'
+  ),
+  new Comic(
+    252,
+    '1988-03',
+    'DaredevilVol1'
+  ),
+  new Comic(
+    312,
+    '1988-03',
+    'FantasticFourVol1'
+  ),
+  new Comic(
+    340,
+    '1988-02',
+    'IncredibleHulkVol1'
   ),
   new Comic(
     14,
@@ -228,6 +248,41 @@ comics.push(
     'NewMutantsVol1'
   ),
   new Comic(
+    55,
+    '1987-9',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    56,
+    '1987-10',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    57,
+    '1987-11',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    58,
+    '1987-12',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    59,
+    '1988-1',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    60,
+    '1988-2',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    61,
+    '1988-2',
+    'NewMutantsVol1'
+  ),
+  new Comic(
     12,
     '2010-6',
     'NewMutantsVol3',
@@ -268,6 +323,11 @@ comics.push(
   new Comic(
     27,
     '1986-12',
+    'PowerPackVol1'
+  ),
+  new Comic(
+    35,
+    '1988-2',
     'PowerPackVol1'
   ),
   new Comic(
@@ -967,12 +1027,77 @@ comics.push(
   ),
   new Comic(
     213,
-    '1987-01',
+    '1987-1',
     'UncannyXMenVol1'
   ),
   new Comic(
     214,
-    '1987-02',
+    '1987-2',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    215,
+    '1987-3',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    216,
+    '1987-4',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    217,
+    '1987-5',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    218,
+    '1987-6',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    219,
+    '1987-7',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    220,
+    '1987-8',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    221,
+    '1987-9',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    222,
+    '1987-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    223,
+    '1987-11',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    224,
+    '1987-12',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    225,
+    '1988-1',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    226,
+    '1988-2',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    227,
+    '1988-3',
     'UncannyXMenVol1'
   ),
   new Comic(
@@ -1279,6 +1404,46 @@ comics.push(
     'XFactorVol1'
   ),
   new Comic(
+    19,
+    '1987-8',
+    'XFactorVol1'
+  ),
+  new Comic(
+    20,
+    '1987-9',
+    'XFactorVol1'
+  ),
+  new Comic(
+    21,
+    '1987-10',
+    'XFactorVol1'
+  ),
+  new Comic(
+    22,
+    '1987-11',
+    'XFactorVol1'
+  ),
+  new Comic(
+    23,
+    '1987-12',
+    'XFactorVol1'
+  ),
+  new Comic(
+    24,
+    '1988-1',
+    'XFactorVol1'
+  ),
+  new Comic(
+    25,
+    '1988-2',
+    'XFactorVol1'
+  ),
+  new Comic(
+    26,
+    '1988-3',
+    'XFactorVol1'
+  ),
+  new Comic(
     26,
     '2010-6',
     'XForceVol3',
@@ -1319,10 +1484,13 @@ comics.push(
 series.push(
   new Series('Avengers', [1]),
   new Series('Cable', [2]),
+  new Series('Captain America', [1]),
   new Series('Daredevil', [1]),
   new Series('Defenders', [1]),
+  new Series('Fantastic Four', [1]),
   new Series('Giant-Size Fantastic Four', [1]),
   new Series('Heroic Age X-Men', [1]),
+  new Series('Incredible Hulk', [1]),
   new Series('Iron Fist', [1]),
   new Series('Magik (Limited Series)', [1]),
   new Series('Marvel Graphic Novel', [1]),
@@ -1599,6 +1767,57 @@ collections.push(
       'DaredevilVol1238',
       'UncannyXMenVol1213',
       'UncannyXMenVol1214'
+    ]
+  ),
+  new Collection(
+    'X-Men: Old Soldiers (Partial)',
+    '2004-7',
+    [
+      'UncannyXMenVol1215'
+    ]
+  ),
+  new Collection(
+    'Essential X-Men: Vol. 7 (Partial)',
+    '2006-4-12',
+    [
+      'UncannyXMenVol1216',
+      'UncannyXMenVol1217',
+      'UncannyXMenVol1218',
+      'UncannyXMenVol1219'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Fall of the Mutants',
+    '2011-5-18',
+    [
+      'XFactorVol119',
+      'XFactorVol120',
+      'XFactorVol121',
+      'XFactorVol122',
+      'XFactorVol123',
+      'XFactorVol124',
+      'XFactorVol125',
+      'PowerPackVol135',
+      'DaredevilVol1252',
+      'CaptainAmericaVol1339',
+      'XFactorVol126',
+      'FantasticFourVol1312',
+      'UncannyXMenVol1220',
+      'UncannyXMenVol1221',
+      'UncannyXMenVol1222',
+      'UncannyXMenVol1223',
+      'UncannyXMenVol1224',
+      'IncredibleHulkVol1340',
+      'UncannyXMenVol1225',
+      'UncannyXMenVol1226',
+      'UncannyXMenVol1227',
+      'NewMutantsVol155',
+      'NewMutantsVol156',
+      'NewMutantsVol157',
+      'NewMutantsVol158',
+      'NewMutantsVol159',
+      'NewMutantsVol160',
+      'NewMutantsVol161'
     ]
   ),
   new Collection(
