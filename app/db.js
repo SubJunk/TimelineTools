@@ -91,6 +91,11 @@ comics.push(
     'AvengersVol1'
   ),
   new Comic(
+    263,
+    '1986-1-10',
+    'AvengersVol1'
+  ),
+  new Comic(
     1,
     '2008-5',
     'CableVol2',
@@ -110,6 +115,11 @@ comics.push(
     252,
     '1988-03',
     'DaredevilVol1'
+  ),
+  new Comic(
+    286,
+    '1986-1-10',
+    'FantasticFourVol1'
   ),
   new Comic(
     312,
@@ -1389,6 +1399,11 @@ comics.push(
     ['Second Coming (Chapter Two)']
   ),
   new Comic(
+    1,
+    '1986-2-10',
+    'XFactorVol1'
+  ),
+  new Comic(
     9,
     '1986-10',
     'XFactorVol1'
@@ -1730,6 +1745,15 @@ collections.push(
       'NightcrawlerVol12',
       'NightcrawlerVol13',
       'NightcrawlerVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men: Phoenix Rising',
+    '2011-9-14',
+    [
+      'AvengersVol1263',
+      'FantasticFourVol1286',
+      'XFactorVol11'
     ]
   ),
   new Collection(
