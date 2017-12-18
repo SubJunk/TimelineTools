@@ -1748,6 +1748,15 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Ghosts (Part 1)',
+    '2013-5',
+    [
+      'UncannyXMenVol1199',
+      'UncannyXMenVol1200',
+      'UncannyXMenVol1201'
+    ]
+  ),
+  new Collection(
     'X-Men: Phoenix Rising',
     '2011-9-14',
     [
@@ -1757,12 +1766,9 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Ghosts',
-    '2013-05',
+    'X-Men: Ghosts (Part 2)',
+    '2013-5',
     [
-      'UncannyXMenVol1199',
-      'UncannyXMenVol1200',
-      'UncannyXMenVol1201',
       'UncannyXMenVol1202',
       'UncannyXMenVol1203',
       'UncannyXMenVol1204',
@@ -1771,7 +1777,7 @@ collections.push(
       'UncannyXMenVol1207',
       'UncannyXMenVol1208',
       'UncannyXMenVol1209',
-      'UncannyXMenVol1Annual10',
+      'UncannyXMenVol1Annual10'
     ]
   ),
   new Collection(

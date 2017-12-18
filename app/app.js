@@ -333,8 +333,14 @@ angular.module('app', [])
   // Reposition the expanded panel when the user scrolls the viewport
   $jqWindow.scroll(repositionExpandedPanel);
 
+  // Pass our transformed db objects to the view
+  vm.comics        = comics;
+  vm.collections   = collections;
+  vm.series        = series;
+  vm.seriesVolumes = seriesVolumes;
+
   // Expand the comic from the URL on load
-  if ($location.url()) {
+  if ($location.url() && $location.url().length > 1) {
     var comicFromUrl = comics[_.findKey(comics, { 'id': $location.url().substr(1) })];
     vm.toggleExpandComic(comicFromUrl);
     $timeout(function() {
@@ -344,10 +350,4 @@ angular.module('app', [])
       });
     });
   }
-
-  // Pass our transformed db objects to the view
-  vm.comics        = comics;
-  vm.collections   = collections;
-  vm.series        = series;
-  vm.seriesVolumes = seriesVolumes;
 });
