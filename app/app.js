@@ -3,7 +3,7 @@ angular.module('app', [])
 .run(function ($rootScope) {
   $rootScope._ = window._;
 })
-.controller('DataController', function($timeout, $window) {
+.controller('DataController', function($location, $timeout, $window) {
   var vm = this;
 
   var comics        = $window.comics;
@@ -56,6 +56,7 @@ angular.module('app', [])
     if (vm.expandedComicId === currentComic.id) {
       vm.expandedComicId    = undefined;
       vm.expandedCollection = undefined;
+      $location.url('');
     } else {
       if (vm.expandedComicId) {
         var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
@@ -122,6 +123,7 @@ angular.module('app', [])
           vm.nextComic = _.find(comics, ['id', nextComicId]);
         }
       }
+      $location.url(vm.expandedComicId);
     }
   };
 
@@ -326,10 +328,22 @@ angular.module('app', [])
       default:
         return; // exit this handler for other keys
     }
-});
+  });
 
   // Reposition the expanded panel when the user scrolls the viewport
   $jqWindow.scroll(repositionExpandedPanel);
+
+  // Expand the comic from the URL on load
+  if ($location.url()) {
+    var comicFromUrl = comics[_.findKey(comics, { 'id': $location.url().substr(1) })];
+    vm.toggleExpandComic(comicFromUrl);
+    $timeout(function() {
+      $('html, body').animate({
+        scrollLeft: comicFromUrl.containerStyles.left - 200,
+        scrollTop:  comicFromUrl.containerStyles.top
+      });
+    });
+  }
 
   // Pass our transformed db objects to the view
   vm.comics        = comics;
