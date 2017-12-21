@@ -160,6 +160,7 @@ angular.module('app', [])
 
   var previousYearMonthVolume;
   var globalHorizontalOffset = 0;
+  var latestVerticalHorizontalOffsets = {};
   _.each(comics, function(comic) {
     var currentSeriesVolume = seriesVolumes[_.findKey(seriesVolumes, { 'id': comic.seriesVolumeId })];
     if (!currentSeriesVolume) {
@@ -202,6 +203,33 @@ angular.module('app', [])
       comic.containerStyles.top = globalVerticalPositionCounter * verticalIncrement;
       globalVerticalPositionCounter++;
     }
+
+    /**
+     * The maximum horizontal offset allowed until we recycle the
+     * vertical position.
+     */
+    var horizontalClearanceLimit = comic.containerStyles.left - $jqWindow.innerWidth();
+    if (!latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] || latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] < horizontalClearanceLimit) {
+      /**
+       * It has been a while since the last issue of this comic
+       * appeared in the timeline so let's put this occurrence on
+       * a higher line if possible
+       */
+
+      for (i = 0; i < globalVerticalPositionCounter; i++) {
+        if (!latestVerticalHorizontalOffsets[i] || latestVerticalHorizontalOffsets[i] < horizontalClearanceLimit) {
+          currentSeriesVolume.verticalPosition = i;
+          comic.containerStyles.top = i * verticalIncrement;
+          break;
+        }
+      }
+    }
+
+    /**
+     * Store a reference to the last horizontal position used
+     * by the vertical position currently used by this series volume.
+     */
+    latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] = comic.containerStyles.left;
 
     // Metadata
     comic.series = currentSeries.title;
