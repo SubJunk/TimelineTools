@@ -51,8 +51,8 @@ function Collection(title, datePublished, comicIds) {
  * The prototype for comic series.
  * A series always contains at least one SeriesVolume.
  *
- * @param {string}   title
- * @param {number[]} volumes
+ * @param {string} title
+ * @param {object} volumes
  * @see SeriesVolume
  */
 function Series(title, volumes) {
@@ -60,13 +60,27 @@ function Series(title, volumes) {
   self.id = title.replace(/[\W+]/g, '');
   self.title = title;
 
-  volumes.forEach(function(volume) {
-    seriesVolumes.push(
-      new SeriesVolume(
-        self.id,
-        volume
-      )
-    );
+  _.each(volumes, function(startYear, volume) {
+    if (volume > 0) {
+      // This happens when a start year is specified
+      seriesVolumes.push(
+        new SeriesVolume(
+          self.id,
+          volume,
+          startYear
+        )
+      );
+    } else {
+      // For old data
+      // TODO: Remove when the start years are all specified
+      volume = startYear;
+      seriesVolumes.push(
+        new SeriesVolume(
+          self.id,
+          volume
+        )
+      );
+    }
   });
 }
 
@@ -75,13 +89,15 @@ function Series(title, volumes) {
  * A SeriesVolume always matches a Series.
  *
  * @param {string} seriesId
- * @param {number} volume 
+ * @param {number} volume
+ * @param {number} startYear needed for Marvel API
  * @see Series
  */
-function SeriesVolume(seriesId, volume) {
+function SeriesVolume(seriesId, volume, startYear) {
   this.id = seriesId + 'Vol' + volume;
   this.seriesId = seriesId;
   this.volume = volume;
+  this.startYear = startYear;
 }
 
 comics.push(
@@ -1497,28 +1513,28 @@ comics.push(
 );
 
 series.push(
-  new Series('Avengers', [1]),
+  new Series('Avengers', {1: 1963}),
   new Series('Cable', [2]),
-  new Series('Captain America', [1]),
-  new Series('Daredevil', [1]),
+  new Series('Captain America', {1: 1968}),
+  new Series('Daredevil', {1: 1964}),
   new Series('Defenders', [1]),
-  new Series('Fantastic Four', [1]),
+  new Series('Fantastic Four', {1: 1961}),
   new Series('Giant-Size Fantastic Four', [1]),
   new Series('Heroic Age X-Men', [1]),
-  new Series('Incredible Hulk', [1]),
+  new Series('Incredible Hulk', {1: 1962}),
   new Series('Iron Fist', [1]),
   new Series('Magik (Limited Series)', [1]),
   new Series('Marvel Graphic Novel', [1]),
   new Series('Marvel Super Heroes: Secret Wars', [1]),
   new Series('Marvel Team-Up', [1]),
-  new Series('New Mutants', [1, 3]),
+  new Series('New Mutants', {1: 1983, 3: 2009}),
   new Series('Nightcrawler', [1]),
-  new Series('Power Pack', [1]),
+  new Series('Power Pack', {1: 1984}),
   new Series('Second Coming Prepare', [1]),
-  new Series('Thor', [1]),
-  new Series('Uncanny X-Men', [1]),
+  new Series('Thor', {1: 1966}),
+  new Series('Uncanny X-Men', {1: 1963}),
   new Series('Wolverine', [1]),
-  new Series('X-Factor', [1]),
+  new Series('X-Factor', {1: 1986}),
   new Series('X-Force', [3]),
   new Series('X-Men and Alpha Flight', [1]),
   new Series('X-Men Free Comic Book Day', [2008]),
