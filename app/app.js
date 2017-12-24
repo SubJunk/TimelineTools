@@ -42,6 +42,36 @@ angular.module('app', ['angular-md5'])
   var timestamp;
   var apiHash;
 
+  var setAPIComicData = function(comic, seriesVolumeMarvelID) {
+    $http({
+      method: 'GET',
+      url: apiBaseUrl + 'comics' + getExtraAPIParamsString(),
+      params: {
+        issueNumber: comic.issue,
+        series: seriesVolumeMarvelID,
+        apikey: apiKeyPublic
+      }
+    }).then(function successCallback(response) {
+      try {
+        comic.link = 'https://read.marvel.com/#book/' + response.data.data.results[0].digitalId;
+      } catch(err) {
+        throw new Error('Failed to parse Marvel API response', err);
+      }
+    }, function errorCallback(err) {
+      throw new Error(err);
+    });
+  }
+
+  var getExtraAPIParamsString = function() {
+    if (apiKeyPrivate && $location.protocol() === 'file') {
+      timestamp = Date.now() /1000 |0;
+      apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
+      return '?ts=' + timestamp + '&hash=' + apiHash;
+    }
+
+    return '';
+  }
+
   vm.toggleExpandComic = function(currentComic) {
     if (!angular.isObject(currentComic)) {
       return;
@@ -135,83 +165,33 @@ angular.module('app', ['angular-md5'])
       }
       $location.url(vm.expandedComicId);
 
-      if (apiKeyPrivate) {
-        // Get the series volume containing this comic
-        var currentSeriesVolume = _.find(vm.seriesVolumes, function(seriesVolume) {
-          return seriesVolume.id === currentComic.seriesVolumeId;
+      // Get the series volume containing this comic
+      var currentSeriesVolume = _.find(vm.seriesVolumes, function(seriesVolume) {
+        return seriesVolume.id === currentComic.seriesVolumeId;
+      });
+
+      var currentSeries = series[_.findKey(series, { 'id': currentSeriesVolume.seriesId })];
+      if (!currentSeries) {
+        throw new Error(currentSeriesVolume.seriesId + " not found");
+      }
+
+      if (currentSeriesVolume.marvelId) {
+        setAPIComicData(expandedComic, currentSeriesVolume.marvelId);
+      } else {
+        $http({
+          method: 'GET',
+          url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
+          params: {
+            title: currentSeries.title,
+            startYear: currentSeriesVolume.startYear,
+            apikey: apiKeyPublic
+          }
+        }).then(function successCallback(response) {
+          currentSeriesVolume.marvelId = response.data.data.results[0].id;
+          setAPIComicData(expandedComic, currentSeriesVolume.marvelId);
+        }, function errorCallback(err) {
+          throw new Error(err);
         });
-
-        var currentSeries = series[_.findKey(series, { 'id': currentSeriesVolume.seriesId })];
-        if (!currentSeries) {
-          throw new Error(currentSeriesVolume.seriesId + " not found");
-        }
-
-        // These need to be run before each API request
-        // TODO: Make function
-        timestamp = Date.now() /1000 |0;
-        apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
-
-        if (currentSeriesVolume.marvelId) {
-          $http({
-            method: 'GET',
-            url: apiBaseUrl + 'comics',
-            params: {
-              issueNumber: expandedComic.issue,
-              series: currentSeriesVolume.marvelId,
-              apikey: apiKeyPublic,
-              ts: timestamp,
-              hash: apiHash
-            }
-          }).then(function successCallback(response) {
-            try {
-              expandedComic.link = 'https://read.marvel.com/#book/' + response.data.data.results[0].digitalId;
-            } catch(err) {
-              throw new Error('Failed to parse Marvel API response', err);
-            }
-          }, function errorCallback(err) {
-            throw new Error(err);
-          });
-        } else {
-          $http({
-            method: 'GET',
-            url: apiBaseUrl + 'series',
-            params: {
-              title: currentSeries.title,
-              startYear: currentSeriesVolume.startYear,
-              apikey: apiKeyPublic,
-              ts: timestamp,
-              hash: apiHash
-            }
-          }).then(function successCallback(response) {
-            currentSeriesVolume.marvelId = response.data.data.results[0].id;
-
-            try {
-              $http({
-                method: 'GET',
-                url: apiBaseUrl + 'comics',
-                params: {
-                  issueNumber: expandedComic.issue,
-                  series: currentSeriesVolume.marvelId,
-                  apikey: apiKeyPublic,
-                  ts: timestamp,
-                  hash: apiHash
-                }
-              }).then(function successCallback(response) {
-                try {
-                  expandedComic.link = 'https://read.marvel.com/#book/' + response.data.data.results[0].digitalId;
-                } catch(err) {
-                  throw new Error('Failed to parse Marvel API response', err);
-                }
-              }, function errorCallback(err) {
-                throw new Error(err);
-              });
-            } catch(err) {
-              throw new Error('Failed to parse Marvel API response', err);
-            }
-          }, function errorCallback(err) {
-            throw new Error(err);
-          });
-        }
       }
     }
   };
