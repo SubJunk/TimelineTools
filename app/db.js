@@ -61,26 +61,13 @@ function Series(title, volumes) {
   self.title = title;
 
   _.each(volumes, function(startYear, volume) {
-    if (volume > 0) {
-      // This happens when a start year is specified
-      seriesVolumes.push(
-        new SeriesVolume(
-          self.id,
-          volume,
-          startYear
-        )
-      );
-    } else {
-      // For old data
-      // TODO: Remove when the start years are all specified
-      volume = startYear;
-      seriesVolumes.push(
-        new SeriesVolume(
-          self.id,
-          volume
-        )
-      );
-    }
+    seriesVolumes.push(
+      new SeriesVolume(
+        self.id,
+        volume,
+        startYear
+      )
+    );
   });
 }
 
@@ -211,62 +198,62 @@ comics.push(
   new Comic(
     1,
     '1984-5',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     2,
     '1984-6',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     3,
     '1984-7',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     4,
     '1984-8',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     5,
     '1984-9',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     6,
     '1984-10',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     7,
     '1984-11',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     8,
     '1984-12',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     9,
     '1985-1',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     10,
     '1985-2',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     11,
     '1985-3',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     12,
     '1985-4',
-    'MarvelSuperHeroesSecretWarsVol1'
+    'SecretWarsVol1'
   ),
   new Comic(
     46,
@@ -1365,12 +1352,12 @@ comics.push(
   new Comic(
     1,
     '1985-12',
-    'XMenandAlphaFlightVol1'
+    'XMenAlphaFlightVol1'
   ),
   new Comic(
     2,
     '1986-1',
-    'XMenandAlphaFlightVol1'
+    'XMenAlphaFlightVol1'
   ),
   new Comic(
     1,
@@ -1524,22 +1511,22 @@ series.push(
   new Series('Iron Fist', {1: 1975}),
   new Series('Magik', {1: 1983}),
   new Series('Marvel Graphic Novel', {1: 1982}),
-  new Series('Marvel Team-Up', [1]),
+  new Series('Marvel Team-Up', {1: 1972}),
   new Series('New Mutants', {1: 1983, 3: 2009}),
-  new Series('Nightcrawler', [1]),
+  new Series('Nightcrawler', {1: 1985}),
   new Series('Power Pack', {1: 1984}),
-  new Series('Second Coming Prepare', [1]),
+  new Series('Second Coming: Prepare', {1: 2010}),
   new Series('Secret Wars', {1: 1984}),
   new Series('Thor', {1: 1966}),
   new Series('Uncanny X-Men', {1: 1963}),
   new Series('Wolverine', {1: 1982}),
   new Series('X-Factor', {1: 1986}),
-  new Series('X-Force', [3]),
-  new Series('X-Men and Alpha Flight', [1]),
-  new Series('X-Men Free Comic Book Day', [2008]),
-  new Series('X-Men Legacy', [1]),
-  new Series('X-Men Manifest Destiny', [1]),
-  new Series('X-Men Second Coming', [1])
+  new Series('X-Force', {3: 2008}),
+  new Series('X-Men/Alpha Flight', {1: 1985}),
+  new Series('X-Men Free Comic Book Day', {2008: 2008}),
+  new Series('X-Men Legacy', {1: 2008}),
+  new Series('X-Men: Manifest Destiny', {1: 2008}),
+  new Series('X-Men: Second Coming', {1: 2010})
 );
 
 // These should be in reading order
@@ -1711,18 +1698,18 @@ collections.push(
     'Secret Wars',
     '2011-12-28',
     [
-      'MarvelSuperHeroesSecretWarsVol11',
-      'MarvelSuperHeroesSecretWarsVol12',
-      'MarvelSuperHeroesSecretWarsVol13',
-      'MarvelSuperHeroesSecretWarsVol14',
-      'MarvelSuperHeroesSecretWarsVol15',
-      'MarvelSuperHeroesSecretWarsVol16',
-      'MarvelSuperHeroesSecretWarsVol17',
-      'MarvelSuperHeroesSecretWarsVol18',
-      'MarvelSuperHeroesSecretWarsVol19',
-      'MarvelSuperHeroesSecretWarsVol110',
-      'MarvelSuperHeroesSecretWarsVol111',
-      'MarvelSuperHeroesSecretWarsVol112'
+      'SecretWarsVol11',
+      'SecretWarsVol12',
+      'SecretWarsVol13',
+      'SecretWarsVol14',
+      'SecretWarsVol15',
+      'SecretWarsVol16',
+      'SecretWarsVol17',
+      'SecretWarsVol18',
+      'SecretWarsVol19',
+      'SecretWarsVol110',
+      'SecretWarsVol111',
+      'SecretWarsVol112'
     ]
   ),
   new Collection(
@@ -1748,8 +1735,8 @@ collections.push(
       'UncannyXMenVol1191',
       'UncannyXMenVol1192',
       'UncannyXMenVol1Annual8',
-      'XMenandAlphaFlightVol11',
-      'XMenandAlphaFlightVol12',
+      'XMenAlphaFlightVol11',
+      'XMenAlphaFlightVol12',
       'UncannyXMenVol1193',
       'UncannyXMenVol1194',
       'UncannyXMenVol1195',
