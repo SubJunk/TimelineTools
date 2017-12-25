@@ -25,7 +25,7 @@ function Comic(issue, datePublished, seriesVolumeId, titles) {
   this.yearPublished = this.date.getFullYear();
   this.monthPublished = this.date.getMonth() + 1;
   this.seriesVolumeId = seriesVolumeId;
-  this.titles = titles;
+  this.titles = titles ? titles : [];
 }
 
 /**
@@ -162,22 +162,22 @@ comics.push(
   new Comic(
     1,
     '1983-12',
-    'MagikLimitedSeriesVol1'
+    'MagikVol1'
   ),
   new Comic(
     2,
     '1984-1',
-    'MagikLimitedSeriesVol1'
+    'MagikVol1'
   ),
   new Comic(
     3,
     '1984-2',
-    'MagikLimitedSeriesVol1'
+    'MagikVol1'
   ),
   new Comic(
     4,
     '1984-3',
-    'MagikLimitedSeriesVol1'
+    'MagikVol1'
   ),
   new Comic(
     5,
@@ -1514,26 +1514,25 @@ comics.push(
 
 series.push(
   new Series('Avengers', {1: 1963}),
-  new Series('Cable', [2]),
+  new Series('Cable', {2: 2008}),
   new Series('Captain America', {1: 1968}),
   new Series('Daredevil', {1: 1964}),
-  new Series('Defenders', [1]),
+  new Series('Defenders', {1: 1972}),
   new Series('Fantastic Four', {1: 1961}),
-  new Series('Giant-Size Fantastic Four', [1]),
-  new Series('Heroic Age X-Men', [1]),
+  new Series('Heroic Age: X-Men', {1: 2010}),
   new Series('Incredible Hulk', {1: 1962}),
-  new Series('Iron Fist', [1]),
-  new Series('Magik (Limited Series)', [1]),
-  new Series('Marvel Graphic Novel', [1]),
-  new Series('Marvel Super Heroes: Secret Wars', [1]),
+  new Series('Iron Fist', {1: 1975}),
+  new Series('Magik', {1: 1983}),
+  new Series('Marvel Graphic Novel', {1: 1982}),
   new Series('Marvel Team-Up', [1]),
   new Series('New Mutants', {1: 1983, 3: 2009}),
   new Series('Nightcrawler', [1]),
   new Series('Power Pack', {1: 1984}),
   new Series('Second Coming Prepare', [1]),
+  new Series('Secret Wars', {1: 1984}),
   new Series('Thor', {1: 1966}),
   new Series('Uncanny X-Men', {1: 1963}),
-  new Series('Wolverine', [1]),
+  new Series('Wolverine', {1: 1982}),
   new Series('X-Factor', {1: 1986}),
   new Series('X-Force', [3]),
   new Series('X-Men and Alpha Flight', [1]),
@@ -1697,10 +1696,10 @@ collections.push(
     'Marvel Masterworks: The Uncanny X-Men Vol. 10 (Part 1)',
     '2017-2',
     [
-      'MagikLimitedSeriesVol11',
-      'MagikLimitedSeriesVol12',
-      'MagikLimitedSeriesVol13',
-      'MagikLimitedSeriesVol14',
+      'MagikVol11',
+      'MagikVol12',
+      'MagikVol13',
+      'MagikVol14',
       'UncannyXMenVol1176',
       'UncannyXMenVol1177',
       'UncannyXMenVol1178',

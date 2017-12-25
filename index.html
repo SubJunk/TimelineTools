@@ -39,7 +39,7 @@
             <div class="series">{{comic.series}} #{{comic.issue}}
               <span ng-if="comic.link"> - <a ng-href="{{comic.link}}">Read online</a></span>
             </div>
-            <div class="title" ng-repeat="title in ::comic.titles">{{title}}</div>
+            <div class="title" ng-repeat="title in comic.titles">{{title}}</div>
             <div class="date">{{comic.yearPublished}} / {{comic.monthPublished}}</div>
             <div class="collection-comics">
               <div class="collection-title">{{main.expandedCollection.title}}:</div>

@@ -30,6 +30,8 @@ angular.module('app', ['angular-md5'])
 
   vm.expandedComicId;
   vm.expandedCollection;
+  var expandedSeriesVolume;
+  var expandedSeries;
   vm.prevComic;
   vm.nextComic;
   var currentComicIndexInCollection;
@@ -52,10 +54,17 @@ angular.module('app', ['angular-md5'])
         apikey: apiKeyPublic
       }
     }).then(function successCallback(response) {
-      try {
-        comic.link = 'https://read.marvel.com/#book/' + response.data.data.results[0].digitalId;
-      } catch(err) {
-        throw new Error('Failed to parse Marvel API response', err);
+      if (response.data.data.results.length === 0) {
+        return;
+      }
+
+      var firstAPIResult = response.data.data.results[0];
+
+      comic.link = firstAPIResult.digitalId ? 'https://read.marvel.com/#book/' + firstAPIResult.digitalId : null;
+
+      // Set the title unless it is a generic placeholder from the API.
+      if (firstAPIResult.title.indexOf(expandedSeries.title) !== 0) {
+        comic.titles.push(firstAPIResult.title);
       }
     }, function errorCallback(err) {
       throw new Error(err);
@@ -166,29 +175,29 @@ angular.module('app', ['angular-md5'])
       $location.url(vm.expandedComicId);
 
       // Get the series volume containing this comic
-      var currentSeriesVolume = _.find(vm.seriesVolumes, function(seriesVolume) {
+      expandedSeriesVolume = _.find(vm.seriesVolumes, function(seriesVolume) {
         return seriesVolume.id === currentComic.seriesVolumeId;
       });
 
-      var currentSeries = series[_.findKey(series, { 'id': currentSeriesVolume.seriesId })];
-      if (!currentSeries) {
-        throw new Error(currentSeriesVolume.seriesId + " not found");
+      expandedSeries = series[_.findKey(series, { 'id': expandedSeriesVolume.seriesId })];
+      if (!expandedSeries) {
+        throw new Error(expandedSeriesVolume.seriesId + " not found");
       }
 
-      if (currentSeriesVolume.marvelId) {
-        setAPIComicData(expandedComic, currentSeriesVolume.marvelId);
+      if (expandedSeriesVolume.marvelId) {
+        setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
       } else {
         $http({
           method: 'GET',
           url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
           params: {
-            title: currentSeries.title,
-            startYear: currentSeriesVolume.startYear,
+            title: expandedSeries.title,
+            startYear: expandedSeriesVolume.startYear,
             apikey: apiKeyPublic
           }
         }).then(function successCallback(response) {
-          currentSeriesVolume.marvelId = response.data.data.results[0].id;
-          setAPIComicData(expandedComic, currentSeriesVolume.marvelId);
+          expandedSeriesVolume.marvelId = response.data.data.results[0].id;
+          setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
         }, function errorCallback(err) {
           throw new Error(err);
         });
@@ -316,6 +325,7 @@ angular.module('app', ['angular-md5'])
 
   $timeout(function() {
     bodyStyle.width += $('.scroll-anchor').width();
+    bodyStyle.height = (globalVerticalPositionCounter * verticalIncrement);
     $('[data-toggle="tooltip"]').tooltip()
   });
 
