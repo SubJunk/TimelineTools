@@ -156,6 +156,10 @@ body {
   width: var(--expanded-width);
 }
 
+.tooltip > .tooltip-inner {
+  min-width: 140;
+}
+
 /**
  * Remove Bootstrap pagination styles
  */
