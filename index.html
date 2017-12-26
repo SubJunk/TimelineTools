@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-css@0.100.2/dist/css/materialize.min.css">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-css@0.100.2/dist/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
     <title>TimelineTools</title>
   </head>
@@ -20,7 +20,7 @@
       <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
         <div class="scroll-anchor"></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles">
-          <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip" data-placement="bottom">
+          <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip" data-container="body" data-placement="bottom">
             <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
           </a>
           <div class="expanded-panel">
