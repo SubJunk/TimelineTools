@@ -514,7 +514,8 @@ comics.push(
     107,
     '1977-10',
     'UncannyXMenVol1',
-    ['Where No X-Man Has Gone Before!']
+    ['Where No X-Man Has Gone Before!'],
+    true
   ),
   new Comic(
     108,
@@ -544,7 +545,8 @@ comics.push(
     112,
     '1978-8',
     'UncannyXMenVol1',
-    ['Magneto Triumphant!']
+    ['Magneto Triumphant!'],
+    true
   ),
   new Comic(
     113,
@@ -574,13 +576,15 @@ comics.push(
     117,
     '1979-1',
     'UncannyXMenVol1',
-    ['Psi War!']
+    ['Psi War!'],
+    true
   ),
   new Comic(
     118,
     '1979-2',
     'UncannyXMenVol1',
-    ['The Submergence of Japan']
+    ['The Submergence of Japan'],
+    true
   ),
   new Comic(
     119,
@@ -604,7 +608,8 @@ comics.push(
     122,
     '1979-6',
     'UncannyXMenVol1',
-    ['Cry for the Children!']
+    ['Cry for the Children!'],
+    true
   ),
   new Comic(
     123,
@@ -653,7 +658,8 @@ comics.push(
     129,
     '1980-1',
     'UncannyXMenVol1',
-    ['God Spare the Child...']
+    ['God Spare the Child...'],
+    true
   ),
   new Comic(
     130,
