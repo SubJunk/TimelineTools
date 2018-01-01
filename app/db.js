@@ -11,9 +11,9 @@ var seriesVolumes = [];
  * @param {string}   seriesVolumeId
  * @param {string[]} [titles]
  * @param {boolean}  [important] completely subjective measure of whether the issue
- *                               has an event that is important to read. Usually the
- *                               introduction, death, or major event of a long-term
- *                               character.
+ *                               starts an event that is important to read. Usually
+ *                               the introduction, death, or major event of a
+ *                               long-term character.
  */
 function Comic(issue, datePublished, seriesVolumeId, titles, important) {
   // Sanitize strings like annuals
@@ -127,7 +127,9 @@ comics.push(
   new Comic(
     286,
     '1986-1-10',
-    'FantasticFourVol1'
+    'FantasticFourVol1',
+    null,
+    true
   ),
   new Comic(
     312,
@@ -475,7 +477,8 @@ comics.push(
     101,
     '1976-10',
     'UncannyXMenVol1',
-    ['Like a Phoenix, from the Ashes']
+    ['Like a Phoenix, from the Ashes'],
+    true
   ),
   new Comic(
     102,
@@ -625,7 +628,8 @@ comics.push(
     125,
     '1979-9',
     'UncannyXMenVol1',
-    ['There\'s Something Awful on Muir Island!']
+    ['There\'s Something Awful on Muir Island!'],
+    true
   ),
   new Comic(
     126,
@@ -697,7 +701,8 @@ comics.push(
     137,
     '1980-9',
     'UncannyXMenVol1',
-    ['The Fate of the Phoenix!']
+    ['The Fate of the Phoenix!'],
+    true
   ),
   new Comic(
     138,

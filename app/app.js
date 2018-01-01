@@ -96,7 +96,6 @@ angular.module('app', ['angular-md5'])
 
     // If these match, close the expanded box
     if (_.isEmpty(currentComic) || vm.expandedComicId === currentComic.id) {
-      $location.hash('');
       return $timeout(function() {
         vm.expandedComicId    = undefined;
         vm.expandedCollection = undefined;
