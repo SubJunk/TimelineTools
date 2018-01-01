@@ -10,8 +10,12 @@ var seriesVolumes = [];
  * @param {string}   datePublished
  * @param {string}   seriesVolumeId
  * @param {string[]} [titles]
+ * @param {boolean}  [important] completely subjective measure of whether the issue
+ *                               has an event that is important to read. Usually the
+ *                               introduction, death, or major event of a long-term
+ *                               character.
  */
-function Comic(issue, datePublished, seriesVolumeId, titles) {
+function Comic(issue, datePublished, seriesVolumeId, titles, important) {
   // Sanitize strings like annuals
   if (angular.isString(issue)) {
     issue = issue.replace(/[\W+]/g, '');
@@ -26,6 +30,7 @@ function Comic(issue, datePublished, seriesVolumeId, titles) {
   this.monthPublished = this.date.getMonth() + 1;
   this.seriesVolumeId = seriesVolumeId;
   this.titles = titles ? titles : [];
+  this.important = Boolean(important);
 }
 
 /**
@@ -1216,7 +1221,9 @@ comics.push(
   new Comic(
     235,
     '1988-10-10',
-    'UncannyXMenVol1'
+    'UncannyXMenVol1',
+    null,
+    true
   ),
   new Comic(
     236,

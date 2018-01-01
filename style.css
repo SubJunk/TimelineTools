@@ -48,9 +48,14 @@ body {
   border-radius: 50%;
 }
 
+.comic.important {
+  box-shadow: 0 16px 24px 2px rgba(255, 255, 255, 0.14), 0 6px 30px 5px rgba(255, 255, 255, 0.12), 0 8px 10px -5px rgba(255, 255, 255, 0.3);
+}
+
 .expanded .comic {
   z-index: 1;
   width: auto;
+  border: none;
   border-radius: initial;
   height: auto;
 }

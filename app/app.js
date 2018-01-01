@@ -96,7 +96,7 @@ angular.module('app', ['angular-md5'])
 
     // If these match, close the expanded box
     if (_.isEmpty(currentComic) || vm.expandedComicId === currentComic.id) {
-      $location.url('');
+      $location.hash('');
       return $timeout(function() {
         vm.expandedComicId    = undefined;
         vm.expandedCollection = undefined;
@@ -172,7 +172,7 @@ angular.module('app', ['angular-md5'])
         vm.nextComic = _.find(comics, ['id', nextComicId]);
       }
     }
-    $location.url(vm.expandedComicId);
+    $location.hash(vm.expandedComicId);
 
     // Get the series volume containing this comic
     expandedSeriesVolume = _.find(vm.seriesVolumes, function(seriesVolume) {
@@ -454,8 +454,8 @@ angular.module('app', ['angular-md5'])
   vm.seriesVolumes = seriesVolumes;
 
   // Expand the comic from the URL on load
-  if ($location.url() && $location.url().length > 1) {
-    var comicFromUrl = comics[_.findKey(comics, { 'id': $location.url().substr(1) })];
+  if ($location.hash() && $location.hash().length > 1) {
+    var comicFromUrl = comics[_.findKey(comics, { 'id': $location.hash() })];
     vm.toggleExpandComic(comicFromUrl);
     $timeout(function() {
       $('html, body').animate({
@@ -463,5 +463,11 @@ angular.module('app', ['angular-md5'])
         scrollTop:  comicFromUrl.containerStyles.top
       });
     });
+  }
+
+  // Special sauce
+  var searchParams = $location.search();
+  if (searchParams.highlight) {
+    vm.enableHighlighting = Boolean(searchParams.highlight);
   }
 });
