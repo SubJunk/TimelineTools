@@ -40,7 +40,7 @@ angular.module('app', ['angular-md5'])
   // API variables
   var apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
   var apiKeyPublic = '46a863fa31f601aacb87dae9cb8f7c45';
-  var apiKeyPrivate;
+  var apiKeyPrivate = '';
   var timestamp;
   var apiHash;
 
@@ -72,7 +72,7 @@ angular.module('app', ['angular-md5'])
   }
 
   var getExtraAPIParamsString = function() {
-    if (apiKeyPrivate && $location.protocol() === 'file') {
+    if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
       timestamp = Date.now() /1000 |0;
       apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
       return '?ts=' + timestamp + '&hash=' + apiHash;
