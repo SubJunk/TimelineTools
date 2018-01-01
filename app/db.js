@@ -281,6 +281,21 @@ comics.push(
     'NewMutantsVol1'
   ),
   new Comic(
+    71,
+    '1989-1',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    72,
+    '1989-2',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    73,
+    '1989-3',
+    'NewMutantsVol1'
+  ),
+  new Comic(
     12,
     '2010-6',
     'NewMutantsVol3',
@@ -1219,6 +1234,31 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
+    239,
+    '1988-12',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    240,
+    '1989-1',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    241,
+    '1989-2',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    242,
+    '1989-3',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    243,
+    '1989-4',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
     492,
     '2008-1',
     'UncannyXMenVol1',
@@ -1597,8 +1637,53 @@ comics.push(
     'XFactorVol1'
   ),
   new Comic(
+    33,
+    '1988-10',
+    'XFactorVol1'
+  ),
+  new Comic(
+    34,
+    '1988-11',
+    'XFactorVol1'
+  ),
+  new Comic(
+    35,
+    '1988-12',
+    'XFactorVol1'
+  ),
+  new Comic(
+    36,
+    '1989-1',
+    'XFactorVol1'
+  ),
+  new Comic(
+    37,
+    '1989-2',
+    'XFactorVol1'
+  ),
+  new Comic(
+    38,
+    '1989-3',
+    'XFactorVol1'
+  ),
+  new Comic(
+    39,
+    '1989-4',
+    'XFactorVol1'
+  ),
+  new Comic(
+    40,
+    '1989-5',
+    'XFactorVol1'
+  ),
+  new Comic(
     3,
     '1988-8',
+    'XFactorAnnualVol1'
+  ),
+  new Comic(
+    4,
+    '1989-10',
     'XFactorAnnualVol1'
   ),
   new Comic(
@@ -1620,15 +1705,15 @@ comics.push(
     ['Second Coming, Chapter 13']
   ),
   new Comic(
-    237,
-    '2010-8',
-    'XMenLegacyVol1',
-    ['Second Coming (Chapter Twelve)']
-  ),
-  new Comic(
     12,
     '1988-10',
     'XMenAnnualVol1'
+  ),
+  new Comic(
+    235,
+    '2010-6',
+    'XMenLegacyVol1',
+    ['Second Coming (Chapter Four)']
   ),
   new Comic(
     236,
@@ -1637,10 +1722,30 @@ comics.push(
     ['Second Coming (Chapter Eight)']
   ),
   new Comic(
-    235,
-    '2010-6',
+    237,
+    '2010-8',
     'XMenLegacyVol1',
-    ['Second Coming (Chapter Four)']
+    ['Second Coming (Chapter Twelve)']
+  ),
+  new Comic(
+    1,
+    '1988-10',
+    'XTerminatorsVol1'
+  ),
+  new Comic(
+    2,
+    '1988-11',
+    'XTerminatorsVol1'
+  ),
+  new Comic(
+    3,
+    '1988-12',
+    'XTerminatorsVol1'
+  ),
+  new Comic(
+    4,
+    '1989-1',
+    'XTerminatorsVol1'
   )
 );
 
@@ -1674,7 +1779,8 @@ series.push(
   new Series('X-Men Free Comic Book Day', {2008: 2008}),
   new Series('X-Men Legacy', {1: 2008}),
   new Series('X-Men: Manifest Destiny', {1: 2008}),
-  new Series('X-Men: Second Coming', {1: 2010})
+  new Series('X-Men: Second Coming', {1: 2010}),
+  new Series('X-Terminators', {1: 1988})
 );
 
 // These should be in reading order
@@ -2033,6 +2139,33 @@ collections.push(
       'NewMutantsVol168',
       'NewMutantsVol169',
       'NewMutantsVol170'
+    ]
+  ),
+  new Collection(
+    'X-Men: Inferno',
+    '2009-05-28',
+    [
+      'XFactorVol133',
+      'XTerminatorsVol11',
+      'XFactorVol134',
+      'XTerminatorsVol12',
+      'UncannyXMenVol1239',
+      'XFactorVol135',
+      'XFactorVol136',
+      'UncannyXMenVol1240',
+      'XTerminatorsVol13',
+      'NewMutantsVol171',
+      'XTerminatorsVol14',
+      'NewMutantsVol172',
+      'UncannyXMenVol1241',
+      'XFactorVol137',
+      'NewMutantsVol173',
+      'UncannyXMenVol1242',
+      'XFactorVol138',
+      'UncannyXMenVol1243',
+      'XFactorVol139',
+      'XFactorAnnualVol14',
+      'XFactorVol140'
     ]
   ),
   new Collection(
