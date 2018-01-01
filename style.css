@@ -30,11 +30,15 @@ body {
 
 .comic-container {
   position: absolute;
-  display: block;
+  width: var(--month-width);
+  height: var(--month-width);
 }
 
-.comics .comic-container.expanded {
+.comic-container.expanded {
+  display: block;
   z-index: 1;
+  width: unset;
+  height: unset;
 }
 
 .comic {

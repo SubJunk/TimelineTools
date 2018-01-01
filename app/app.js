@@ -95,11 +95,12 @@ angular.module('app', ['angular-md5'])
     vm.nextComic = undefined;
 
     // If these match, close the expanded box
-    if (vm.expandedComicId === currentComic.id) {
-      vm.expandedComicId    = undefined;
-      vm.expandedCollection = undefined;
+    if (_.isEmpty(currentComic) || vm.expandedComicId === currentComic.id) {
       $location.url('');
-      return;
+      return $timeout(function() {
+        vm.expandedComicId    = undefined;
+        vm.expandedCollection = undefined;
+      });
     }
 
     /**
@@ -437,6 +438,14 @@ angular.module('app', ['angular-md5'])
 
   // Reposition the expanded panel when the user scrolls the viewport
   $jqWindow.scroll(repositionExpandedPanel);
+
+  // Catch clicks
+  $jqWindow.on('click', function(data) {
+    // Close the expanded comic if the click happened on a blank area
+    if (data.target.localName === 'body' && vm.expandedComicId) {
+      vm.toggleExpandComic({});
+    }
+  });
 
   // Pass our transformed db objects to the view
   vm.comics        = comics;
