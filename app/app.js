@@ -87,121 +87,119 @@ angular.module('app', ['angular-md5'])
     }
 
     // Unset the sticky styles if they exist
-    var $expandedComic = $('.expanded .comic');
-    $expandedComic.removeClass('sticky-top');
-    $expandedComic.removeClass('sticky-left');
-    $expandedComic.removeClass('sticky-right');
-    $expandedComic.removeClass('sticky-bottom');
-    $expandedComic.css('marginLeft',   '');
-    $expandedComic.css('marginTop',    '');
-    $expandedComic.css('marginRight',  '');
-    $expandedComic.css('marginBottom', '');
+    $('.comic')
+        .removeClass('sticky-top sticky-left sticky-right sticky-bottom')
+        .css({marginLeft: '', marginTop: '', marginRight: '', marginBottom: '' });
 
     vm.prevComic = undefined;
     vm.nextComic = undefined;
 
+    // If these match, close the expanded box
     if (vm.expandedComicId === currentComic.id) {
       vm.expandedComicId    = undefined;
       vm.expandedCollection = undefined;
       $location.url('');
+      return;
+    }
+
+    /**
+     * If there is already a comic expanded, and we have already confirmed
+     * above that we want to expand a different one, this block maintains
+     * the expanded box's position on the page by scrolling the viewport.
+     */
+    if (vm.expandedComicId) {
+      var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
+      var positionDifference = {
+        left: previouslyExpandedComic.containerStyles.left - currentComic.containerStyles.left,
+        top: previouslyExpandedComic.containerStyles.top  - currentComic.containerStyles.top
+      };
+
+      $('html, body').animate({
+        scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
+        scrollTop:  $jqWindow.scrollTop()  - positionDifference.top
+      });
+    }
+
+    vm.expandedComicId = currentComic.id;
+    var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
+    repositionExpandedPanel();
+
+    // Get the collection containing this comic
+    vm.expandedCollection = _.find(collections, function(collection) {
+      return collection.comicIds.indexOf(currentComic.id) > -1;
+    });
+
+    // Copy the comics into the expandedCollection object to make them easier to use
+    vm.expandedCollection.comics = [];
+    _.each(vm.expandedCollection.comicIds, function(comicId) {
+      vm.expandedCollection.comics.push(
+        _.find(comics, ['id', comicId])
+      );
+    });
+
+    currentComicIndexInCollection = vm.expandedCollection.comicIds.indexOf(currentComic.id);
+    currentCollectionIndexInCollections = collections.indexOf(vm.expandedCollection);
+
+    // Find the previous comic
+    if (currentComicIndexInCollection > 0) {
+      vm.prevComic = vm.expandedCollection.comics[currentComicIndexInCollection - 1];
     } else {
-      var expandedComic;
-      if (vm.expandedComicId) {
-        expandedComic = _.find(comics, ['id', vm.expandedComicId]);
-        var positionDifference = {
-          left: null,
-          top: null
-        };
-
-        positionDifference.left = expandedComic.containerStyles.left - currentComic.containerStyles.left;
-        positionDifference.top  = expandedComic.containerStyles.top  - currentComic.containerStyles.top;
-        $('html, body').animate({
-          scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
-          scrollTop:  $jqWindow.scrollTop()  - positionDifference.top
-        });
+      /**
+       * The expanded comic is the first one in a collection, so we need to find out
+       * the last comic in the previous collection.
+       */
+      if (currentCollectionIndexInCollections > 0) {
+        // There is a previous collection
+        var previousCollection = collections[currentCollectionIndexInCollections - 1];
+        var prevComicId = previousCollection.comicIds[previousCollection.comicIds.length - 1];
+        vm.prevComic = _.find(comics, ['id', prevComicId]);
       }
+    }
 
-      vm.expandedComicId = currentComic.id;
-      expandedComic = _.find(comics, ['id', vm.expandedComicId]);
-      repositionExpandedPanel();
+    // Find the next comic
+    if (vm.expandedCollection.comics[currentComicIndexInCollection + 1]) {
+      vm.nextComic = vm.expandedCollection.comics[currentComicIndexInCollection + 1];
+    } else {
+      /**
+       * The expanded comic is the last one in a collection, so we need to find out
+       * the first comic in the next collection.
+       */
+      if (vm.collections[currentCollectionIndexInCollections + 1]) {
+        // There is a next collection
+        var nextCollection = collections[currentCollectionIndexInCollections + 1];
+        var nextComicId = nextCollection.comicIds[0];
+        vm.nextComic = _.find(comics, ['id', nextComicId]);
+      }
+    }
+    $location.url(vm.expandedComicId);
 
-      // Get the collection containing this comic
-      vm.expandedCollection = _.find(collections, function(collection) {
-        return collection.comicIds.indexOf(currentComic.id) > -1;
-      });
+    // Get the series volume containing this comic
+    expandedSeriesVolume = _.find(vm.seriesVolumes, function(seriesVolume) {
+      return seriesVolume.id === currentComic.seriesVolumeId;
+    });
 
-      // Copy the comics into the expandedCollection object to make them easier to use
-      vm.expandedCollection.comics = [];
-      _.each(vm.expandedCollection.comicIds, function(comicId) {
-        vm.expandedCollection.comics.push(
-          _.find(comics, ['id', comicId])
-        );
-      });
+    expandedSeries = series[_.findKey(series, { 'id': expandedSeriesVolume.seriesId })];
+    if (!expandedSeries) {
+      throw new Error(expandedSeriesVolume.seriesId + " not found");
+    }
 
-      currentComicIndexInCollection = vm.expandedCollection.comicIds.indexOf(currentComic.id);
-      currentCollectionIndexInCollections = collections.indexOf(vm.expandedCollection);
-
-      // Find the previous comic
-      if (currentComicIndexInCollection > 0) {
-        vm.prevComic = vm.expandedCollection.comics[currentComicIndexInCollection - 1];
-      } else {
-        /**
-         * The expanded comic is the first one in a collection, so we need to find out
-         * the last comic in the previous collection.
-         */
-        if (currentCollectionIndexInCollections > 0) {
-          // There is a previous collection
-          var previousCollection = collections[currentCollectionIndexInCollections - 1];
-          var prevComicId = previousCollection.comicIds[previousCollection.comicIds.length - 1];
-          vm.prevComic = _.find(comics, ['id', prevComicId]);
+    if (expandedSeriesVolume.marvelId) {
+      setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+    } else {
+      $http({
+        method: 'GET',
+        url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
+        params: {
+          title: expandedSeries.title,
+          startYear: expandedSeriesVolume.startYear,
+          apikey: apiKeyPublic
         }
-      }
-
-      // Find the next comic
-      if (vm.expandedCollection.comics[currentComicIndexInCollection + 1]) {
-        vm.nextComic = vm.expandedCollection.comics[currentComicIndexInCollection + 1];
-      } else {
-        /**
-         * The expanded comic is the last one in a collection, so we need to find out
-         * the first comic in the next collection.
-         */
-        if (vm.collections[currentCollectionIndexInCollections + 1]) {
-          // There is a next collection
-          var nextCollection = collections[currentCollectionIndexInCollections + 1];
-          var nextComicId = nextCollection.comicIds[0];
-          vm.nextComic = _.find(comics, ['id', nextComicId]);
-        }
-      }
-      $location.url(vm.expandedComicId);
-
-      // Get the series volume containing this comic
-      expandedSeriesVolume = _.find(vm.seriesVolumes, function(seriesVolume) {
-        return seriesVolume.id === currentComic.seriesVolumeId;
-      });
-
-      expandedSeries = series[_.findKey(series, { 'id': expandedSeriesVolume.seriesId })];
-      if (!expandedSeries) {
-        throw new Error(expandedSeriesVolume.seriesId + " not found");
-      }
-
-      if (expandedSeriesVolume.marvelId) {
+      }).then(function successCallback(response) {
+        expandedSeriesVolume.marvelId = response.data.data.results[0].id;
         setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
-      } else {
-        $http({
-          method: 'GET',
-          url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
-          params: {
-            title: expandedSeries.title,
-            startYear: expandedSeriesVolume.startYear,
-            apikey: apiKeyPublic
-          }
-        }).then(function successCallback(response) {
-          expandedSeriesVolume.marvelId = response.data.data.results[0].id;
-          setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
-        }, function errorCallback(err) {
-          throw new Error(err);
-        });
-      }
+      }, function errorCallback(err) {
+        throw new Error(err);
+      });
     }
   };
 
