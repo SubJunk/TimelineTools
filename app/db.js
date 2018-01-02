@@ -35,10 +35,10 @@ function Comic(issue, datePublished, seriesVolumeId, titles, important) {
 
 /**
  * The prototype for collections.
- * 
- * @param {string}   title
- * @param {number}   datePublished
- * @param {string[]} comicIds
+ *
+ * @param {string}   title         the title of the collection
+ * @param {string}   datePublished a string to be converted to a date object
+ * @param {string[]} comicIds      the comics in the collection, in order
  */
 function Collection(title, datePublished, comicIds) {
   this.id = title.replace(/[\W+]/g, '');
@@ -56,8 +56,9 @@ function Collection(title, datePublished, comicIds) {
  * The prototype for comic series.
  * A series always contains at least one SeriesVolume.
  *
- * @param {string} title
- * @param {object} volumes
+ * @param {string} title   the title of the series
+ * @param {object} volumes an object that maps volumes to start years
+ *                         e.g. { 1: 1978, 3: 2010 }
  * @see SeriesVolume
  */
 function Series(title, volumes) {
@@ -1667,7 +1668,9 @@ comics.push(
   new Comic(
     35,
     '1988-12',
-    'XFactorVol1'
+    'XFactorVol1',
+    null,
+    true
   ),
   new Comic(
     36,
@@ -1772,7 +1775,6 @@ series.push(
   new Series('Cable', {2: 2008}),
   new Series('Captain America', {1: 1968}),
   new Series('Daredevil', {1: 1964}),
-  new Series('Defenders', {1: 1972}),
   new Series('Fantastic Four', {1: 1961}),
   new Series('Heroic Age: X-Men', {1: 2010}),
   new Series('Incredible Hulk', {1: 1962}),
