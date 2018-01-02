@@ -63,9 +63,10 @@ angular.module('app', ['angular-md5'])
       comic.link = firstAPIResult.digitalId ? 'https://read.marvel.com/#book/' + firstAPIResult.digitalId : null;
 
       // Set the title unless it is a generic placeholder from the API.
-      if (firstAPIResult.title.indexOf(expandedSeries.title) !== 0) {
-        comic.titles.push(firstAPIResult.title);
-      }
+      // TODO: Is this ever not a generic placeholder?
+      // if (firstAPIResult.title.indexOf(expandedSeries.title) !== 0) {
+      //   comic.titles.push(firstAPIResult.title);
+      // }
     }, function errorCallback(err) {
       throw new Error(err);
     });

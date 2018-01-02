@@ -1255,7 +1255,9 @@ comics.push(
   new Comic(
     239,
     '1988-12',
-    'UncannyXMenVol1'
+    'UncannyXMenVol1',
+    null,
+    true
   ),
   new Comic(
     240,
