@@ -102,7 +102,9 @@ comics.push(
   new Comic(
     263,
     '1986-1-10',
-    'AvengersVol1'
+    'AvengersVol1',
+    null,
+    true
   ),
   new Comic(
     1,
@@ -128,9 +130,7 @@ comics.push(
   new Comic(
     286,
     '1986-1-10',
-    'FantasticFourVol1',
-    null,
-    true
+    'FantasticFourVol1'
   ),
   new Comic(
     312,
@@ -430,7 +430,8 @@ comics.push(
     'GiantSize',
     '1975-5',
     'UncannyXMenVol1',
-    ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']
+    ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
+    true
   ),
   new Comic(
     94,
@@ -478,8 +479,7 @@ comics.push(
     101,
     '1976-10',
     'UncannyXMenVol1',
-    ['Like a Phoenix, from the Ashes'],
-    true
+    ['Like a Phoenix, from the Ashes']
   ),
   new Comic(
     102,
@@ -515,8 +515,7 @@ comics.push(
     107,
     '1977-10',
     'UncannyXMenVol1',
-    ['Where No X-Man Has Gone Before!'],
-    true
+    ['Where No X-Man Has Gone Before!']
   ),
   new Comic(
     108,
@@ -577,15 +576,13 @@ comics.push(
     117,
     '1979-1',
     'UncannyXMenVol1',
-    ['Psi War!'],
-    true
+    ['Psi War!']
   ),
   new Comic(
     118,
     '1979-2',
     'UncannyXMenVol1',
-    ['The Submergence of Japan'],
-    true
+    ['The Submergence of Japan']
   ),
   new Comic(
     119,
@@ -625,17 +622,10 @@ comics.push(
     ['He Only Laughs When I Hurt!']
   ),
   new Comic(
-    'Annual #3',
-    '1979-8',
-    'UncannyXMenVol1',
-    ['A Fire in the Sky!']
-  ),
-  new Comic(
     125,
     '1979-9',
     'UncannyXMenVol1',
-    ['There\'s Something Awful on Muir Island!'],
-    true
+    ['There\'s Something Awful on Muir Island!']
   ),
   new Comic(
     126,
@@ -659,8 +649,7 @@ comics.push(
     129,
     '1980-1',
     'UncannyXMenVol1',
-    ['God Spare the Child...'],
-    true
+    ['God Spare the Child...']
   ),
   new Comic(
     130,
@@ -678,7 +667,8 @@ comics.push(
     132,
     '1980-4',
     'UncannyXMenVol1',
-    ['And Hellfire is Their Name!']
+    ['And Hellfire is Their Name!'],
+    true
   ),
   new Comic(
     133,
@@ -708,8 +698,7 @@ comics.push(
     137,
     '1980-9',
     'UncannyXMenVol1',
-    ['The Fate of the Phoenix!'],
-    true
+    ['The Fate of the Phoenix!']
   ),
   new Comic(
     138,
@@ -1203,7 +1192,9 @@ comics.push(
   new Comic(
     229,
     '1988-5',
-    'UncannyXMenVol1'
+    'UncannyXMenVol1',
+    null,
+    true
   ),
   new Comic(
     230,
@@ -1233,9 +1224,7 @@ comics.push(
   new Comic(
     235,
     '1988-10-10',
-    'UncannyXMenVol1',
-    null,
-    true
+    'UncannyXMenVol1'
   ),
   new Comic(
     236,
@@ -1255,9 +1244,7 @@ comics.push(
   new Comic(
     239,
     '1988-12',
-    'UncannyXMenVol1',
-    null,
-    true
+    'UncannyXMenVol1'
   ),
   new Comic(
     240,
@@ -1660,7 +1647,9 @@ comics.push(
   new Comic(
     33,
     '1988-10',
-    'XFactorVol1'
+    'XFactorVol1',
+    null,
+    true
   ),
   new Comic(
     34,
@@ -1670,9 +1659,7 @@ comics.push(
   new Comic(
     35,
     '1988-12',
-    'XFactorVol1',
-    null,
-    true
+    'XFactorVol1'
   ),
   new Comic(
     36,
@@ -1726,6 +1713,12 @@ comics.push(
     '2010-9',
     'XForceVol3',
     ['Second Coming, Chapter 13']
+  ),
+  new Comic(
+    3,
+    '1979-8',
+    'XMenAnnualVol1',
+    ['A Fire in the Sky!']
   ),
   new Comic(
     12,
@@ -1861,7 +1854,7 @@ collections.push(
       'UncannyXMenVol1122',
       'UncannyXMenVol1123',
       'UncannyXMenVol1124',
-      'UncannyXMenVol1Annual3',
+      'XMenAnnualVol13',
       'UncannyXMenVol1125',
       'UncannyXMenVol1126',
       'UncannyXMenVol1127',
