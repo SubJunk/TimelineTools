@@ -1037,7 +1037,9 @@ comics.push(
   new Comic(
     199,
     '1985-11',
-    'UncannyXMenVol1'
+    'UncannyXMenVol1',
+    null,
+    true
   ),
   new Comic(
     200,
@@ -1264,6 +1266,136 @@ comics.push(
   new Comic(
     243,
     '1989-4',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    244,
+    '1989-5',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    245,
+    '1989-6',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    246,
+    '1989-7',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    247,
+    '1989-8',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    248,
+    '1989-9',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    249,
+    '1989-10-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    250,
+    '1989-10-20',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    251,
+    '1989-11-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    252,
+    '1989-11-20',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    253,
+    '1989-11-30',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    254,
+    '1989-12-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    255,
+    '1989-12-20',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    256,
+    '1989-12-30',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    257,
+    '1990-1',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    258,
+    '1990-2',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    259,
+    '1990-3',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    260,
+    '1990-4',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    261,
+    '1990-5',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    262,
+    '1990-6',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    263,
+    '1990-7-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    264,
+    '1990-7-20',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    265,
+    '1990-8-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    266,
+    '1990-8-20',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    267,
+    '1990-9-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    268,
+    '1990-9-20',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    269,
+    '1990-10',
     'UncannyXMenVol1'
   ),
   new Comic(
@@ -1726,6 +1858,11 @@ comics.push(
     'XMenAnnualVol1'
   ),
   new Comic(
+    13,
+    '1989-8',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
     235,
     '2010-6',
     'XMenLegacyVol1',
@@ -2181,6 +2318,39 @@ collections.push(
       'XFactorVol139',
       'XFactorAnnualVol14',
       'XFactorVol140'
+    ]
+  ),
+  new Collection(
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 1',
+    '2011-10-19',
+    [
+      'UncannyXMenVol1244',
+      'UncannyXMenVol1245',
+      'XMenAnnualVol113',
+      'UncannyXMenVol1246',
+      'UncannyXMenVol1247',
+      'UncannyXMenVol1248',
+      'UncannyXMenVol1249',
+      'UncannyXMenVol1250',
+      'UncannyXMenVol1251',
+      'UncannyXMenVol1252',
+      'UncannyXMenVol1253',
+      'UncannyXMenVol1254',
+      'UncannyXMenVol1255',
+      'UncannyXMenVol1256',
+      'UncannyXMenVol1257',
+      'UncannyXMenVol1258',
+      'UncannyXMenVol1259',
+      'UncannyXMenVol1260',
+      'UncannyXMenVol1261',
+      'UncannyXMenVol1262',
+      'UncannyXMenVol1263',
+      'UncannyXMenVol1264',
+      'UncannyXMenVol1265',
+      'UncannyXMenVol1266',
+      'UncannyXMenVol1267',
+      'UncannyXMenVol1268',
+      'UncannyXMenVol1269'
     ]
   ),
   new Collection(
