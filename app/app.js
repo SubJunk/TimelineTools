@@ -347,7 +347,7 @@ angular.module('app', ['angular-md5'])
         throw new Error(comicId + ' not found in the comics db');
       }
       comics[comicIndex].styles.background = collectionColor;
-      comics[comicIndex].styles.color= textColor;
+      // comics[comicIndex].styles.color= textColor;
     });
   });
 
