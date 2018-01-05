@@ -335,12 +335,14 @@ angular.module('app', ['angular-md5'])
   var comicIndex;
   _.each(collections, function(collection) {
     var collectionColor = getRandomColor();
+    var textColor = getContrastColor(collectionColor);
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(comics, { 'id': comicId });
       if (!comicIndex) {
         throw new Error(comicId + ' not found in the comics db');
       }
       comics[comicIndex].styles.background = collectionColor;
+      comics[comicIndex].styles.color= textColor;
     });
   });
 
@@ -349,7 +351,7 @@ angular.module('app', ['angular-md5'])
    *
    * @return {string} HSLA color
    */
-  var startColor;  
+  var startColor;
   function getRandomColor() {
     var opacity = 1;
     var stepChange = 30;
@@ -365,12 +367,46 @@ angular.module('app', ['angular-md5'])
 
     hslColor += startColor + ', ';
     hslColor += Math.floor(Math.random() * ((75-35) + 1) + 35) + '%, ';
-    hslColor += Math.floor(Math.random() * ((75-35) + 1) + 35) + '%, ';
+    hslColor += Math.floor(Math.random() * ((75-60) + 1) + 60) + '%, ';
     hslColor += opacity + ')';
-
+  //  console.log(hslColor);
     return hslColor;
   }
 
+  /**
+   * Given a color in HSLA format, generates a contrasting color in HSLA format, e.g. hsla(1, 2, 3, 4).
+   *
+   * @return {string} HSLA color
+   */
+  var startColor;
+  function getContrastColor(backgroundColor) {
+    console.log(backgroundColor);
+    var opacity = 1;
+    var stepChange = 30;
+    var h = a;
+    var n = backgroundColor.search(/h/) | console.log(n);;
+    var s = "";
+    var l = "";
+    var a = "1";
+
+
+    var hslColor = 'hsla(';
+    if (angular.isDefined(startColor)) {
+      if ((startColor + stepChange) > 360) {
+        startColor -= 360;
+      }
+      startColor += stepChange;
+    } else {
+      startColor = Math.floor(Math.random() * 360);
+    }
+
+    hslColor += startColor + ', ';
+    hslColor += Math.floor(Math.random() * ((75-35) + 1) + 35) + '%, ';
+    hslColor += Math.floor(Math.random() * ((75-60) + 1) + 60) + '%, ';
+    hslColor += opacity + ')';
+  //  console.log(hslColor);
+    return hslColor;
+  }
   /**
    * Use jQuery to manipulate classes and styles to make the expanded
    * panels always fit in the viewport.
