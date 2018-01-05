@@ -114,17 +114,17 @@ comics.push(
   ),
   new Comic(
     339,
-    '1988-03',
+    '1988-3',
     'CaptainAmericaVol1'
   ),
   new Comic(
     238,
-    '1987-01',
+    '1987-1',
     'DaredevilVol1'
   ),
   new Comic(
     252,
-    '1988-03',
+    '1988-3',
     'DaredevilVol1'
   ),
   new Comic(
@@ -134,12 +134,32 @@ comics.push(
   ),
   new Comic(
     312,
-    '1988-03',
+    '1988-3',
     'FantasticFourVol1'
   ),
   new Comic(
+    1,
+    '1993-12',
+    'GambitVol1'
+  ),
+  new Comic(
+    2,
+    '1994-1',
+    'GambitVol1'
+  ),
+  new Comic(
+    3,
+    '1994-2',
+    'GambitVol1'
+  ),
+  new Comic(
+    4,
+    '1994-3',
+    'GambitVol1'
+  ),
+  new Comic(
     340,
-    '1988-02',
+    '1988-2',
     'IncredibleHulkVol1'
   ),
   new Comic(
@@ -1048,52 +1068,52 @@ comics.push(
   ),
   new Comic(
     201,
-    '1986-01',
+    '1986-1',
     'UncannyXMenVol1'
   ),
   new Comic(
     202,
-    '1986-02',
+    '1986-2',
     'UncannyXMenVol1'
   ),
   new Comic(
     203,
-    '1986-03',
+    '1986-3',
     'UncannyXMenVol1'
   ),
   new Comic(
     204,
-    '1986-04',
+    '1986-4',
     'UncannyXMenVol1'
   ),
   new Comic(
     205,
-    '1986-05',
+    '1986-5',
     'UncannyXMenVol1'
   ),
   new Comic(
     206,
-    '1986-06',
+    '1986-6',
     'UncannyXMenVol1'
   ),
   new Comic(
     207,
-    '1986-07',
+    '1986-7',
     'UncannyXMenVol1'
   ),
   new Comic(
     208,
-    '1986-08',
+    '1986-8',
     'UncannyXMenVol1'
   ),
   new Comic(
     209,
-    '1986-09',
+    '1986-9',
     'UncannyXMenVol1'
   ),
   new Comic(
     'Annual #10',
-    '1987-01',
+    '1987-1',
     'UncannyXMenVol1'
   ),
   new Comic(
@@ -1908,6 +1928,7 @@ series.push(
   new Series('Captain America', {1: 1968}),
   new Series('Daredevil', {1: 1964}),
   new Series('Fantastic Four', {1: 1961}),
+  new Series('Gambit', {1: 1993}),
   new Series('Heroic Age: X-Men', {1: 2010}),
   new Series('Incredible Hulk', {1: 1962}),
   new Series('Iron Fist', {1: 1975}),
@@ -2190,7 +2211,7 @@ collections.push(
   ),
   new Collection(
     'X-Men: Mutant Massacre',
-    '2013-02-12',
+    '2013-2-12',
     [
       'UncannyXMenVol1210',
       'XFactorVol19',
@@ -2295,7 +2316,7 @@ collections.push(
   ),
   new Collection(
     'X-Men: Inferno',
-    '2009-05-28',
+    '2009-5-28',
     [
       'XFactorVol133',
       'XTerminatorsVol11',
@@ -2321,7 +2342,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 1',
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 1 (Part 1)',
     '2011-10-19',
     [
       'UncannyXMenVol1244',
@@ -2345,10 +2366,26 @@ collections.push(
       'UncannyXMenVol1261',
       'UncannyXMenVol1262',
       'UncannyXMenVol1263',
-      'UncannyXMenVol1264',
+      'UncannyXMenVol1264'
+    ]
+  ),
+  new Collection(
+    'X-Men: Gambit Classic, Vol. 1',
+    '2009-5',
+    [
       'UncannyXMenVol1265',
       'UncannyXMenVol1266',
       'UncannyXMenVol1267',
+      'GambitVol11',
+      'GambitVol12',
+      'GambitVol13',
+      'GambitVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 1 (Part 2)',
+    '2011-10-19',
+    [
       'UncannyXMenVol1268',
       'UncannyXMenVol1269'
     ]
