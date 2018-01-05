@@ -335,7 +335,9 @@ angular.module('app', ['angular-md5'])
   var comicIndex;
   _.each(collections, function(collection) {
     var collectionColor = getRandomColor();
+    console.log('1',collectionColor);
     var textColor = getContrastColor(collectionColor);
+    console.log('3',textColor);
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(comics, { 'id': comicId });
       if (!comicIndex) {
@@ -380,11 +382,11 @@ angular.module('app', ['angular-md5'])
    */
   var startColor;
   function getContrastColor(backgroundColor) {
-    console.log(backgroundColor);
+    console.log('2',backgroundColor);
     var opacity = 1;
     var stepChange = 30;
     var h = a;
-    var n = backgroundColor.search(/h/) | console.log(n);;
+    var n = backgroundColor.search(/h/);
     var s = "";
     var l = "";
     var a = "1";
