@@ -108,6 +108,36 @@ comics.push(
   ),
   new Comic(
     1,
+    '1992-10',
+    'CableBloodMetalVol1'
+  ),
+  new Comic(
+    2,
+    '1992-11',
+    'CableBloodMetalVol1'
+  ),
+  new Comic(
+    1,
+    '1993-5',
+    'CableVol1'
+  ),
+  new Comic(
+    2,
+    '1993-6',
+    'CableVol1'
+  ),
+  new Comic(
+    3,
+    '1993-7',
+    'CableVol1'
+  ),
+  new Comic(
+    4,
+    '1993-8',
+    'CableVol1'
+  ),
+  new Comic(
+    1,
     '2008-5',
     'CableVol2',
     ['War Baby (Chapter 1)']
@@ -321,6 +351,11 @@ comics.push(
   new Comic(
     73,
     '1989-3',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    87,
+    '1990-3',
     'NewMutantsVol1'
   ),
   new Comic(
@@ -1926,7 +1961,8 @@ comics.push(
 
 series.push(
   new Series('Avengers', {1: 1963}),
-  new Series('Cable', {2: 2008}),
+  new Series('Cable', {1: 1993, 2: 2008}),
+  new Series('Cable: Blood & Metal', {1: 1992}),
   new Series('Captain America', {1: 1968}),
   new Series('Daredevil', {1: 1964}),
   new Series('Fantastic Four', {1: 1961}),
@@ -2390,6 +2426,19 @@ collections.push(
     [
       'UncannyXMenVol1268',
       'UncannyXMenVol1269'
+    ]
+  ),
+  new Collection(
+    'Cable Classic, Volume 1',
+    '2008-3',
+    [
+      'NewMutantsVol187',
+      'CableBloodMetalVol11',
+      'CableBloodMetalVol12',
+      'CableVol11',
+      'CableVol12',
+      'CableVol13',
+      'CableVol14'
     ]
   ),
   new Collection(
