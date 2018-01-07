@@ -13,8 +13,8 @@ angular.module('app', ['angular-md5'])
 
   var firstYear;
   var firstMonth;
-  var lastYear;
-  var lastMonth;
+  var finalYear;
+  var finalMonth;
   var monthsSinceFirst;
   var globalVerticalPositionCounter = 0;
   var bodyStyle = {
@@ -213,27 +213,42 @@ angular.module('app', ['angular-md5'])
   // Calculate the years and months spanned
   var lastComic = _.last(comics);
   var firstComic = _.first(comics);
-  lastYear = lastComic.yearPublished;
-  lastMonth = lastComic.monthPublished;
+  finalYear = lastComic.yearPublished;
+  finalMonth = lastComic.monthPublished;
   firstYear = firstComic.yearPublished;
   firstMonth = firstComic.monthPublished;
   var dates = {};
-  var i;
-  var i2;
-  for (i = firstYear; i <= lastYear; i++) {
-    dates[i] = {};
+  var yearIncrement;
+  var monthIncrement;
 
-    if (i === lastYear) {
-      for (i2 = 1; i2 <= lastMonth; i2++) {
-        dates[i][i2] = { number: i2, styles: { width: horizontalIncrement } };
+  /**
+   * This loop populates the dates object with an array of years
+   * which contains arrays of months, represented as numbers.
+   *
+   * This is to ensure that if there are no comics in our db for
+   * a month, we still have that month displaying for consistency.
+   *
+   * While we are at it, we set the width of each month here, since
+   * that lets us reuse our magic number instead of having a duplicate
+   * in the CSS.
+   */
+  for (yearIncrement = firstYear; yearIncrement <= finalYear; yearIncrement++) {
+    dates[yearIncrement] = {};
+
+    if (yearIncrement === finalYear) {
+      // In this final year we stop the counter at the final month
+      for (monthIncrement = 1; monthIncrement <= finalMonth; monthIncrement++) {
+        dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: horizontalIncrement } };
       }
-    } else if (i === firstYear) {
-      for (i2 = firstMonth; i2 <= 12; i2++) {
-        dates[i][i2] = { number: i2, styles: { width: horizontalIncrement } };
+    } else if (yearIncrement === firstYear) {
+      // In this first year we start the counter at the first month
+      for (monthIncrement = firstMonth; monthIncrement <= 12; monthIncrement++) {
+        dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: horizontalIncrement } };
       }
     } else {
-      for (i2 = 1; i2 <= 12; i2++) {
-        dates[i][i2] = { number: i2, styles: { width: horizontalIncrement } };
+      // In this in-between year we always add 12 months
+      for (monthIncrement = 1; monthIncrement <= 12; monthIncrement++) {
+        dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: horizontalIncrement } };
       }
     }
   }
@@ -242,6 +257,10 @@ angular.module('app', ['angular-md5'])
   var globalHorizontalOffset = 0;
   var latestVerticalHorizontalOffsets = {};
   _.each(comics, function(comic) {
+    /**
+     * Look up the volume and series for this comic and
+     * throw errors for obvious problems before proceeding.
+     */
     var currentSeriesVolume = seriesVolumes[_.findKey(seriesVolumes, { 'id': comic.seriesVolumeId })];
     if (!currentSeriesVolume) {
       throw new Error(comic.seriesVolumeId + " not found");
@@ -252,19 +271,14 @@ angular.module('app', ['angular-md5'])
       throw new Error(comic.seriesId + " not found");
     }
 
-    // Horizontal positioning
     comic.containerStyles = {};
     comic.styles = {};
-    if (!firstYear) {
-      firstYear = comic.yearPublished;
-      firstMonth = comic.monthPublished;
-      comic.containerStyles.left = 0;
-    } else {
-      monthsSinceFirst = (comic.yearPublished - firstYear) * 12;
-      monthsSinceFirst -= firstMonth;
-      monthsSinceFirst += comic.monthPublished;
-      comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
-    }
+
+    // Horizontal positioning
+    monthsSinceFirst = (comic.yearPublished - firstYear) * 12;
+    monthsSinceFirst -= firstMonth;
+    monthsSinceFirst += comic.monthPublished;
+    comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
 
     // Manage multiple releases of the same series in the same month
     if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
@@ -296,7 +310,7 @@ angular.module('app', ['angular-md5'])
        * a higher line if possible
        */
 
-      for (i = 0; i < globalVerticalPositionCounter; i++) {
+      for (var i = 0; i < globalVerticalPositionCounter; i++) {
         if (!latestVerticalHorizontalOffsets[i] || latestVerticalHorizontalOffsets[i] < horizontalClearanceLimit) {
           currentSeriesVolume.verticalPosition = i;
           comic.containerStyles.top = i * verticalIncrement;
@@ -311,9 +325,22 @@ angular.module('app', ['angular-md5'])
      */
     latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] = comic.containerStyles.left;
 
-    // Metadata
+    // Store the name of the series in the comic object
     comic.series = currentSeries.title;
-    comic.image = comic.series.replace(/[ /]/g, '_').replace(/[():]/g, '') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
+
+    /**
+     * Figure out what the name of the image on the server will be
+     * based on the series, volume and issue.
+     *
+     * Notes:
+     * This uses two regular expressions to sanitize/standardize the
+     * series name:
+     * 1) Remove all occurrences of the characters ():&
+     * 2) Replace all occurrences of whitespace (including multiple
+     *    in a row) and forward slashes with underscores.
+     * Finally it appends the volume and issue.
+     */
+    comic.image = comic.series.replace(/[():&]/g, '').replace(/\s+|\//g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
 
     if (currentSeriesVolume.volume > 1) {
       comic.series += ' Vol. ' + currentSeriesVolume.volume;
@@ -325,6 +352,7 @@ angular.module('app', ['angular-md5'])
     bodyStyle.width = comic.containerStyles.left + horizontalIncrement - bodyStyle.padding;
   });
 
+  // Using $timeout lets Angular play nicer with jQuery
   $timeout(function() {
     bodyStyle.width += $('.scroll-anchor').width();
     bodyStyle.height = (globalVerticalPositionCounter * verticalIncrement);
@@ -338,9 +366,9 @@ angular.module('app', ['angular-md5'])
   var comicIndex;
   _.each(collections, function(collection) {
     var collectionColor = getRandomColor();
-    console.log('1',collectionColor);
+    // console.log('1',collectionColor);
     var textColor = getContrastColor(collectionColor);
-    console.log('3',textColor);
+    // console.log('3',textColor);
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(comics, { 'id': comicId });
       if (!comicIndex) {
@@ -385,7 +413,7 @@ angular.module('app', ['angular-md5'])
    */
   var startColor;
   function getContrastColor(backgroundColor) {
-    console.log('2',backgroundColor);
+    // console.log('2',backgroundColor);
     var opacity = 1;
     var stepChange = 30;
     var h = a;
@@ -412,6 +440,7 @@ angular.module('app', ['angular-md5'])
   //  console.log(hslColor);
     return hslColor;
   }
+
   /**
    * Use jQuery to manipulate classes and styles to make the expanded
    * panels always fit in the viewport.
@@ -420,6 +449,7 @@ angular.module('app', ['angular-md5'])
     $timeout(function() {
       var $expandedComic = $('.expanded .comic');
       var $stickyAnchor = $('.expanded .scroll-anchor');
+
       if ($expandedComic.length) {
         var anchorTopPosition    = $stickyAnchor.offset().top;
         var anchorLeftPosition   = $stickyAnchor.offset().left;
@@ -497,9 +527,11 @@ angular.module('app', ['angular-md5'])
   // Expand the comic from the URL on load
   if ($location.search()) {
     var searchParams = $location.search();
+
     if (searchParams.id) {
       var comicFromUrl = comics[_.findKey(comics, { 'id': searchParams.id })];
       vm.toggleExpandComic(comicFromUrl);
+
       $timeout(function() {
         $('html, body').animate({
           scrollLeft: comicFromUrl.containerStyles.left - 200,
