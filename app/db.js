@@ -188,6 +188,21 @@ comics.push(
     'GambitVol1'
   ),
   new Comic(
+    26,
+    '1992-6',
+    'GhostRiderVol3'
+  ),
+  new Comic(
+    27,
+    '1992-7',
+    'GhostRiderVol3'
+  ),
+  new Comic(
+    1,
+    '2011-2',
+    'HeroicAgeXMenVol1'
+  ),
+  new Comic(
     340,
     '1988-2',
     'IncredibleHulkVol1'
@@ -359,6 +374,21 @@ comics.push(
     'NewMutantsVol1'
   ),
   new Comic(
+    95,
+    '1990-11',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    96,
+    '1990-12',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    97,
+    '1991-1',
+    'NewMutantsVol1'
+  ),
+  new Comic(
     12,
     '2010-6',
     'NewMutantsVol3',
@@ -410,6 +440,12 @@ comics.push(
     35,
     '1988-2',
     'PowerPackVol1'
+  ),
+  new Comic(
+    1,
+    '2010-4',
+    'SecondComingPrepareVol1',
+    ['Where Were You?']
   ),
   new Comic(
     1,
@@ -1456,6 +1492,126 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
+    270,
+    '1990-11',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    271,
+    '1990-12',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    272,
+    '1991-1',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    273,
+    '1991-2',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    274,
+    '1991-3',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    275,
+    '1991-4',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    276,
+    '1991-5',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    277,
+    '1991-6',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    278,
+    '1991-7',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    279,
+    '1991-8',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    280,
+    '1991-9',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    281,
+    '1991-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    282,
+    '1991-11',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    283,
+    '1991-12',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    284,
+    '1992-1',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    285,
+    '1992-2',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    286,
+    '1992-3',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    287,
+    '1992-4',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    288,
+    '1992-5',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    289,
+    '1992-6',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    290,
+    '1992-7',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    291,
+    '1992-8',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    292,
+    '1992-9',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    293,
+    '1992-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
     492,
     '2008-1',
     'UncannyXMenVol1',
@@ -1516,40 +1672,22 @@ comics.push(
     ['Beginning To See The Light']
   ),
   new Comic(
-    1,
-    '2008-5',
-    'XMenFreeComicBookDayVol2008',
-    ['X-Men: Pixies & Demons']
+    523,
+    '2010-6',
+    'UncannyXMenVol1',
+    ['Second Coming (Chapter Two)']
   ),
   new Comic(
-    1,
-    '2008-11',
-    'XMenManifestDestinyVol1',
-    ['Untitled']
+    524,
+    '2010-7',
+    'UncannyXMenVol1',
+    ['Second Coming (Chapter Six)']
   ),
   new Comic(
-    2,
-    '2008-12',
-    'XMenManifestDestinyVol1',
-    ['Kill or Cure (Part 2)','Good With the Bad','Flaw']
-  ),
-  new Comic(
-    3,
-    '2009-1',
-    'XMenManifestDestinyVol1',
-    ['Kill or Cure (Part 3)','Abomination','Uncheerable']
-  ),
-  new Comic(
-    4,
-    '2009-2',
-    'XMenManifestDestinyVol1',
-    ['Kill or Cure (Part 4)','Mercury','Work It Out']
-  ),
-  new Comic(
-    5,
-    '2009-3',
-    'XMenManifestDestinyVol1',
-    ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo']
+    525,
+    '2010-8',
+    'UncannyXMenVol1',
+    ['Second Coming (Chapter Ten)']
   ),
   new Comic(
     540,
@@ -1693,58 +1831,6 @@ comics.push(
   ),
   new Comic(
     1,
-    '1985-12',
-    'XMenAlphaFlightVol1'
-  ),
-  new Comic(
-    2,
-    '1986-1',
-    'XMenAlphaFlightVol1'
-  ),
-  new Comic(
-    1,
-    '2011-2',
-    'HeroicAgeXMenVol1',
-    ['Heroic Age: X-Men Vol 1 #1']
-  ),
-  new Comic(
-    1,
-    '2010-4',
-    'SecondComingPrepareVol1',
-    ['Where Were You?']
-  ),
-  new Comic(
-    2,
-    '2010-9',
-    'XMenSecondComingVol1',
-    ['Second Coming Chapter XIV']
-  ),
-  new Comic(
-    1,
-    '2010-5',
-    'XMenSecondComingVol1',
-    ['Second Coming, Chapter One']
-  ),
-  new Comic(
-    525,
-    '2010-8',
-    'UncannyXMenVol1',
-    ['Second Coming (Chapter Ten)']
-  ),
-  new Comic(
-    524,
-    '2010-7',
-    'UncannyXMenVol1',
-    ['Second Coming (Chapter Six)']
-  ),
-  new Comic(
-    523,
-    '2010-6',
-    'UncannyXMenVol1',
-    ['Second Coming (Chapter Two)']
-  ),
-  new Comic(
-    1,
     '1986-2-10',
     'XFactorVol1'
   ),
@@ -1876,6 +1962,61 @@ comics.push(
     'XFactorVol1'
   ),
   new Comic(
+    60,
+    '1990-11',
+    'XFactorVol1'
+  ),
+  new Comic(
+    61,
+    '1990-12',
+    'XFactorVol1'
+  ),
+  new Comic(
+    62,
+    '1991-1',
+    'XFactorVol1'
+  ),
+  new Comic(
+    63,
+    '1991-2',
+    'XFactorVol1'
+  ),
+  new Comic(
+    64,
+    '1991-3',
+    'XFactorVol1'
+  ),
+  new Comic(
+    65,
+    '1991-4',
+    'XFactorVol1'
+  ),
+  new Comic(
+    66,
+    '1991-5',
+    'XFactorVol1'
+  ),
+  new Comic(
+    67,
+    '1991-6',
+    'XFactorVol1'
+  ),
+  new Comic(
+    68,
+    '1991-7',
+    'XFactorVol1'
+  ),
+  new Comic(
+    69,
+    '1991-8',
+    'XFactorVol1'
+  ),
+  new Comic(
+    70,
+    '1991-9',
+    'XFactorVol1'
+  ),
+  new Comic(
     3,
     '1988-8',
     'XFactorAnnualVol1'
@@ -1904,6 +2045,71 @@ comics.push(
     ['Second Coming, Chapter 13']
   ),
   new Comic(
+    1,
+    '1991-10',
+    'XMenVol2'
+  ),
+  new Comic(
+    2,
+    '1991-11',
+    'XMenVol2'
+  ),
+  new Comic(
+    3,
+    '1991-12',
+    'XMenVol2'
+  ),
+  new Comic(
+    4,
+    '1992-1',
+    'XMenVol2'
+  ),
+  new Comic(
+    5,
+    '1992-2',
+    'XMenVol2'
+  ),
+  new Comic(
+    6,
+    '1992-3',
+    'XMenVol2'
+  ),
+  new Comic(
+    7,
+    '1992-4',
+    'XMenVol2'
+  ),
+  new Comic(
+    8,
+    '1992-5',
+    'XMenVol2'
+  ),
+  new Comic(
+    9,
+    '1992-6',
+    'XMenVol2'
+  ),
+  new Comic(
+    10,
+    '1992-7',
+    'XMenVol2'
+  ),
+  new Comic(
+    11,
+    '1992-8',
+    'XMenVol2'
+  ),
+  new Comic(
+    12,
+    '1992-9',
+    'XMenVol2'
+  ),
+  new Comic(
+    13,
+    '1992-10',
+    'XMenVol2'
+  ),
+  new Comic(
     3,
     '1979-8',
     'XMenAnnualVol1',
@@ -1918,6 +2124,22 @@ comics.push(
     13,
     '1989-8',
     'XMenAnnualVol1'
+  ),
+  new Comic(
+    1,
+    '1985-12',
+    'XMenAlphaFlightVol1'
+  ),
+  new Comic(
+    2,
+    '1986-1',
+    'XMenAlphaFlightVol1'
+  ),
+  new Comic(
+    1,
+    '2008-5',
+    'XMenFreeComicBookDayVol2008',
+    ['X-Men: Pixies & Demons']
   ),
   new Comic(
     235,
@@ -1936,6 +2158,48 @@ comics.push(
     '2010-8',
     'XMenLegacyVol1',
     ['Second Coming (Chapter Twelve)']
+  ),
+  new Comic(
+    1,
+    '2008-11',
+    'XMenManifestDestinyVol1',
+    ['Untitled']
+  ),
+  new Comic(
+    2,
+    '2008-12',
+    'XMenManifestDestinyVol1',
+    ['Kill or Cure (Part 2)','Good With the Bad','Flaw']
+  ),
+  new Comic(
+    3,
+    '2009-1',
+    'XMenManifestDestinyVol1',
+    ['Kill or Cure (Part 3)','Abomination','Uncheerable']
+  ),
+  new Comic(
+    4,
+    '2009-2',
+    'XMenManifestDestinyVol1',
+    ['Kill or Cure (Part 4)','Mercury','Work It Out']
+  ),
+  new Comic(
+    5,
+    '2009-3',
+    'XMenManifestDestinyVol1',
+    ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo']
+  ),
+  new Comic(
+    1,
+    '2010-5',
+    'XMenSecondComingVol1',
+    ['Second Coming, Chapter One']
+  ),
+  new Comic(
+    2,
+    '2010-9',
+    'XMenSecondComingVol1',
+    ['Second Coming Chapter XIV']
   ),
   new Comic(
     1,
@@ -1967,6 +2231,7 @@ series.push(
   new Series('Daredevil', {1: 1964}),
   new Series('Fantastic Four', {1: 1961}),
   new Series('Gambit', {1: 1993}),
+  new Series('Ghost Rider', {3: 1990}),
   new Series('Heroic Age: X-Men', {1: 2010}),
   new Series('Incredible Hulk', {1: 1962}),
   new Series('Iron Fist', {1: 1975}),
@@ -1983,6 +2248,7 @@ series.push(
   new Series('Uncanny X-Men', {1: 1963}),
   new Series('Wolverine', {1: 1982}),
   new Series('X-Factor', {1: 1986}),
+  new Series('X-Men', {2: 1991}),
   new Series('X-Factor Annual', {1: 1986}),
   new Series('X-Force', {3: 2008}),
   new Series('X-Men/Alpha Flight', {1: 1985}),
@@ -2439,6 +2705,77 @@ collections.push(
       'CableVol12',
       'CableVol13',
       'CableVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men: X-Tinction Agenda',
+    '1998-12',
+    [
+      'UncannyXMenVol1270',
+      'NewMutantsVol195',
+      'XFactorVol160',
+      'UncannyXMenVol1271',
+      'NewMutantsVol196',
+      'XFactorVol161',
+      'UncannyXMenVol1272',
+      'NewMutantsVol197',
+      'XFactorVol162'
+    ]
+  ),
+  new Collection(
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
+    '2012-1-25',
+    [
+      'XFactorVol163',
+      'XFactorVol164',
+      'UncannyXMenVol1273',
+      'UncannyXMenVol1274',
+      'UncannyXMenVol1275',
+      'UncannyXMenVol1276',
+      'UncannyXMenVol1277',
+      'XFactorVol165',
+      'XFactorVol166',
+      'XFactorVol167',
+      'XFactorVol168',
+      'UncannyXMenVol1278',
+      'UncannyXMenVol1279',
+      'XFactorVol169',
+      'UncannyXMenVol1280',
+      'XFactorVol170',
+      'XMenVol21',
+      'XMenVol22',
+      'XMenVol23',
+      'XMenVol24',
+      'XMenVol25',
+      'XMenVol26',
+      'XMenVol27',
+      'XMenVol28',
+      'GhostRiderVol326',
+      'XMenVol29',
+      'GhostRiderVol327',
+      'XMenVol210',
+      'XMenVol211'
+    ]
+  ),
+  new Collection(
+    'X-Men: Bishop\'s Crossing',
+    '2016-11-23',
+    [
+      'UncannyXMenVol1281',
+      'UncannyXMenVol1282',
+      'UncannyXMenVol1283',
+      'UncannyXMenVol1284',
+      'UncannyXMenVol1285',
+      'UncannyXMenVol1286',
+      'UncannyXMenVol1287',
+      'UncannyXMenVol1288',
+      'UncannyXMenVol1289',
+      'UncannyXMenVol1290',
+      'UncannyXMenVol1291',
+      'UncannyXMenVol1292',
+      'UncannyXMenVol1293',
+      'XMenVol212',
+      'XMenVol213'
     ]
   ),
   new Collection(
