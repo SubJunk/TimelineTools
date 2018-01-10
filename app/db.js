@@ -374,6 +374,41 @@ comics.push(
     'NewMutantsVol1'
   ),
   new Comic(
+    88,
+    '1990-4',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    89,
+    '1990-5',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    90,
+    '1990-6',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    91,
+    '1990-7',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    92,
+    '1990-8',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    93,
+    '1990-9',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    94,
+    '1990-10',
+    'NewMutantsVol1'
+  ),
+  new Comic(
     95,
     '1990-11',
     'NewMutantsVol1'
@@ -2646,7 +2681,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 1 (Part 1)',
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 1',
     '2011-10-19',
     [
       'UncannyXMenVol1244',
@@ -2670,41 +2705,26 @@ collections.push(
       'UncannyXMenVol1261',
       'UncannyXMenVol1262',
       'UncannyXMenVol1263',
-      'UncannyXMenVol1264'
-    ]
-  ),
-  new Collection(
-    'X-Men: Gambit Classic, Vol. 1',
-    '2009-5',
-    [
+      'UncannyXMenVol1264',
       'UncannyXMenVol1265',
       'UncannyXMenVol1266',
       'UncannyXMenVol1267',
-      'GambitVol11',
-      'GambitVol12',
-      'GambitVol13',
-      'GambitVol14'
-    ]
-  ),
-  new Collection(
-    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 1 (Part 2)',
-    '2011-10-19',
-    [
       'UncannyXMenVol1268',
       'UncannyXMenVol1269'
     ]
   ),
   new Collection(
-    'Cable Classic, Volume 1',
-    '2008-3',
+    'Cable and the New Mutants (Partial)',
+    '2011-1',
     [
       'NewMutantsVol187',
-      'CableBloodMetalVol11',
-      'CableBloodMetalVol12',
-      'CableVol11',
-      'CableVol12',
-      'CableVol13',
-      'CableVol14'
+      'NewMutantsVol188',
+      'NewMutantsVol189',
+      'NewMutantsVol190',
+      'NewMutantsVol191',
+      'NewMutantsVol192',
+      'NewMutantsVol193',
+      'NewMutantsVol194'
     ]
   ),
   new Collection(
@@ -2778,6 +2798,29 @@ collections.push(
       'XMenVol213'
     ]
   ),
+  // new Collection(
+  //   'X-Men: Gambit Classic, Vol. 1 (Partial)',
+  //   '2009-5',
+  //   [
+  //     'GambitVol11',
+  //     'GambitVol12',
+  //     'GambitVol13',
+  //     'GambitVol14'
+  //   ]
+  // ),
+  // new Collection(
+  //   'Cable Classic, Volume 1',
+  //   '2008-3',
+  //   [
+  //     'NewMutantsVol187',
+  //     'CableBloodMetalVol11',
+  //     'CableBloodMetalVol12',
+  //     'CableVol11',
+  //     'CableVol12',
+  //     'CableVol13',
+  //     'CableVol14'
+  //   ]
+  // ),
   new Collection(
     'Cable Vol. 1: Messiah War',
     '2008-12',
