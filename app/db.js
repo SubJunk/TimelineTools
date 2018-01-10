@@ -16,11 +16,6 @@ var seriesVolumes = [];
  *                               long-term character.
  */
 function Comic(issue, datePublished, seriesVolumeId, titles, important) {
-  // Sanitize strings like annuals
-  if (angular.isString(issue)) {
-    issue = issue.replace(/[\W+]/g, '');
-  }
-
   // Create a Date object from the datePublished string
   this.date = new Date(datePublished);
 
@@ -95,9 +90,9 @@ function SeriesVolume(seriesId, volume, startYear) {
 
 comics.push(
   new Comic(
-    'Annual #10',
+    10,
     '1981-10',
-    'AvengersVol1'
+    'AvengersAnnualVol1'
   ),
   new Comic(
     263,
@@ -553,9 +548,9 @@ comics.push(
     'ThorVol1'
   ),
   new Comic(
-    'GiantSize',
+    1,
     '1975-5',
-    'UncannyXMenVol1',
+    'GiantSizeXMenVol1',
     ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!'],
     true
   ),
@@ -833,12 +828,6 @@ comics.push(
     ['Elegy']
   ),
   new Comic(
-    'Annual #4',
-    '1980-11',
-    'UncannyXMenVol1',
-    ['Nightcrawler\'s Inferno']
-  ),
-  new Comic(
     139,
     '1980-11',
     'UncannyXMenVol1',
@@ -898,11 +887,6 @@ comics.push(
   new Comic(
     150,
     '1981-10',
-    'UncannyXMenVol1'
-  ),
-  new Comic(
-    'Annual #5',
-    '1981-11',
     'UncannyXMenVol1'
   ),
   new Comic(
@@ -967,11 +951,6 @@ comics.push(
   ),
   new Comic(
     163,
-    '1982-11',
-    'UncannyXMenVol1'
-  ),
-  new Comic(
-    'Annual #6',
     '1982-11',
     'UncannyXMenVol1'
   ),
@@ -1041,11 +1020,6 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
-    'Annual #7',
-    '1983-12',
-    'UncannyXMenVol1'
-  ),
-  new Comic(
     177,
     '1984-1',
     'UncannyXMenVol1'
@@ -1087,11 +1061,6 @@ comics.push(
   ),
   new Comic(
     185,
-    '1984-9',
-    'UncannyXMenVol1'
-  ),
-  new Comic(
-    'Annual #8',
     '1984-9',
     'UncannyXMenVol1'
   ),
@@ -1215,11 +1184,6 @@ comics.push(
   new Comic(
     209,
     '1986-9',
-    'UncannyXMenVol1'
-  ),
-  new Comic(
-    'Annual #10',
-    '1987-1',
     'UncannyXMenVol1'
   ),
   new Comic(
@@ -2151,6 +2115,37 @@ comics.push(
     ['A Fire in the Sky!']
   ),
   new Comic(
+    4,
+    '1980-11',
+    'XMenAnnualVol1',
+    ['Nightcrawler\'s Inferno']
+  ),
+  new Comic(
+    5,
+    '1981-11',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
+    6,
+    '1982-11',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
+    7,
+    '1983-12',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
+    8,
+    '1984-9',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
+    10,
+    '1987-1',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
     12,
     '1988-10',
     'XMenAnnualVol1'
@@ -2260,6 +2255,7 @@ comics.push(
 
 series.push(
   new Series('Avengers', {1: 1963}),
+  new Series('Avengers Annual', {1: 1967}),
   new Series('Cable', {1: 1993, 2: 2008}),
   new Series('Cable: Blood & Metal', {1: 1992}),
   new Series('Captain America', {1: 1968}),
@@ -2267,6 +2263,7 @@ series.push(
   new Series('Fantastic Four', {1: 1961}),
   new Series('Gambit', {1: 1993}),
   new Series('Ghost Rider', {3: 1990}),
+  new Series('Giant Size X-Men', {1: 1975}),
   new Series('Heroic Age: X-Men', {1: 2010}),
   new Series('Incredible Hulk', {1: 1962}),
   new Series('Iron Fist', {1: 1975}),
@@ -2301,7 +2298,7 @@ collections.push(
     'X-Men Epic Collection Vol. 5: Second Genesis',
     '2017-4',
     [
-      'UncannyXMenVol1GiantSize',
+      'GiantSizeXMenVol11',
       'UncannyXMenVol194',
       'UncannyXMenVol195',
       'UncannyXMenVol196',
@@ -2372,7 +2369,7 @@ collections.push(
       'UncannyXMenVol1136',
       'UncannyXMenVol1137',
       'UncannyXMenVol1138',
-      'UncannyXMenVol1Annual4',
+      'XMenAnnualVol14',
       'UncannyXMenVol1139',
       'UncannyXMenVol1140'
     ]
@@ -2397,8 +2394,8 @@ collections.push(
     'Marvel Masterworks: The Uncanny X-Men Vol. 7',
     '2011-1',
     [
-      'AvengersVol1Annual10',
-      'UncannyXMenVol1Annual5',
+      'AvengersAnnualVol110',
+      'XMenAnnualVol15',
       'UncannyXMenVol1151',
       'UncannyXMenVol1152',
       'UncannyXMenVol1153',
@@ -2422,7 +2419,7 @@ collections.push(
       'UncannyXMenVol1165',
       'UncannyXMenVol1166',
       'UncannyXMenVol1167',
-      'UncannyXMenVol1Annual6'
+      'XMenAnnualVol16'
     ]
   ),
   new Collection(
@@ -2442,7 +2439,7 @@ collections.push(
       'UncannyXMenVol1173',
       'UncannyXMenVol1174',
       'UncannyXMenVol1175',
-      'UncannyXMenVol1Annual7'
+      'XMenAnnualVol17'
     ]
   ),
   new Collection(
@@ -2500,7 +2497,7 @@ collections.push(
       'UncannyXMenVol1190',
       'UncannyXMenVol1191',
       'UncannyXMenVol1192',
-      'UncannyXMenVol1Annual8',
+      'XMenAnnualVol18',
       'XMenAlphaFlightVol11',
       'XMenAlphaFlightVol12',
       'UncannyXMenVol1193',
@@ -2545,7 +2542,7 @@ collections.push(
       'UncannyXMenVol1207',
       'UncannyXMenVol1208',
       'UncannyXMenVol1209',
-      'UncannyXMenVol1Annual10'
+      'XMenAnnualVol110'
     ]
   ),
   new Collection(
