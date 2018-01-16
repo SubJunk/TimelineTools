@@ -39,8 +39,8 @@ angular.module('app', ['angular-md5'])
 
   // API variables
   var apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
-  var apiKeyPublic = '46a863fa31f601aacb87dae9cb8f7c45';
-  var apiKeyPrivate = '';
+  var apiKeyPublic = _.isEmpty($window.apiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : $window.apiKeyPublic;
+  var apiKeyPrivate = $window.apiKeyPrivate;
   var timestamp;
   var apiHash;
 

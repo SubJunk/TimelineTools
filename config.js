@@ -1,0 +1,2 @@
+var apiKeyPublic  = '';
+var apiKeyPrivate = '';
