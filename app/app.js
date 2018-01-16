@@ -3,7 +3,7 @@ angular.module('app', ['angular-md5'])
 .run(function ($rootScope) {
   $rootScope._ = window._;
 })
-.controller('DataController', function($http, $location, $timeout, $window, md5) {
+.controller('DataController', function($http, $location, $log, $timeout, $window, md5) {
   var vm = this;
 
   var comics        = $window.comics;
@@ -542,6 +542,43 @@ angular.module('app', ['angular-md5'])
 
     if (searchParams.highlight) {
       vm.enableHighlighting = Boolean(searchParams.highlight);
+    }
+
+    /**
+     * The garbage collector.
+     *
+     * This picks up any orphaned comics and series that would
+     * not cause errors but just take up space.
+     *
+     * Note there is no need to check that the comicIds in 
+     * collections map to comics, because that would cause big
+     * errors that we already watch out for.
+     */
+    if (searchParams.gc) {
+      var foundComic;
+      var gcConsolePrepend = 'Garbage Collector: ';
+
+      // Check that each comic is referenced by a collection
+      _.each(comics, function(comic) {
+        foundComic = _.find(collections, function(collection) {
+          return collection.comicIds.indexOf(comic.id) > -1;
+        });
+
+        if (!foundComic) {
+          $log.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
+        }
+      });
+
+      // Check that each seriesVolume is referenced by a comic
+      _.each(seriesVolumes, function(seriesVolume) {
+        foundComic = _.find(comics, function(comic) {
+          return comic.seriesVolumeId === seriesVolume.id;
+        });
+
+        if (!foundComic) {
+          $log.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
+        }
+      });
     }
   }
 });

@@ -16,4 +16,6 @@ If you are viewing the project locally (URL starts with `file://`) you will need
 
 There's no build/compile step and no development packages are needed.
 
-Optionally you can run `yarn install` to install ESLint and related plugins to help with development. 
+Optionally you can run `yarn install` to install ESLint and related plugins to help with development.
+
+There is a garbage collection functionality built-in to check the database for orphans. It can be run by adding `gc` to the URL, e.g. `index.html#!?id=ThorVol1373&gc` and looking in the browser console.
