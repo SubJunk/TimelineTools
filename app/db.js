@@ -86,6 +86,11 @@ function SeriesVolume(seriesId, volume, startYear) {
   this.seriesId = seriesId;
   this.volume = volume;
   this.startYear = startYear;
+
+  // Ugly hack to make the Uncanny series sit on the top row
+  if (this.id === 'GiantSizeXMenVol1') {
+    this.verticalPosition = 1;
+  }
 }
 
 comics.push(

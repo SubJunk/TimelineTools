@@ -303,27 +303,53 @@ angular.module('app', ['angular-md5'])
      * vertical position.
      */
     var horizontalClearanceLimit = comic.containerStyles.left - $jqWindow.innerWidth();
-    if (!latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] || latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] < horizontalClearanceLimit) {
+    if (
+      !latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] ||
+      (
+        latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition].seriesVolumeId !== currentSeriesVolume.id &&
+        latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition].offset < horizontalClearanceLimit
+      )
+    ) {
       /**
-       * It has been a while since the last issue of this comic
+       * It has been a while since the last issue of this series
        * appeared in the timeline so let's put this occurrence on
-       * a higher line if possible
+       * a higher line if possible.
        */
-
       for (var i = 0; i < globalVerticalPositionCounter; i++) {
-        if (!latestVerticalHorizontalOffsets[i] || latestVerticalHorizontalOffsets[i] < horizontalClearanceLimit) {
+        if (
+          !latestVerticalHorizontalOffsets[i] ||
+          latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
+        ) {
           currentSeriesVolume.verticalPosition = i;
           comic.containerStyles.top = i * verticalIncrement;
+
+          /**
+           * If ww are about to insert this seriesVolume into a vertical position
+           * that has already been used before, so we remove the reference to
+           * that position in the previous seriesVolume. This allows a new vertical
+           * position to be generated if another occurrence of the previous
+           * seriesVolume pops up.
+           */
+          if (latestVerticalHorizontalOffsets[i]) {
+            var previousSeriesVolume = seriesVolumes[_.findKey(seriesVolumes, { 'id': latestVerticalHorizontalOffsets[i].seriesVolumeId })];
+            if (!previousSeriesVolume) {
+              throw new Error(comic.seriesVolumeId + " not found");
+            }
+            previousSeriesVolume.verticalPosition = null;
+          }
+
           break;
         }
       }
     }
-
     /**
      * Store a reference to the last horizontal position used
      * by the vertical position currently used by this series volume.
      */
-    latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] = comic.containerStyles.left;
+    latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] = {
+      offset: comic.containerStyles.left,
+      seriesVolumeId: currentSeriesVolume.id
+    };
 
     // Store the name of the series in the comic object
     comic.series = currentSeries.title;
