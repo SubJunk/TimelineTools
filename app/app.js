@@ -280,7 +280,10 @@ angular.module('app', ['angular-md5'])
     monthsSinceFirst += comic.monthPublished;
     comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
 
-    // Manage multiple releases of the same series in the same month
+    /**
+     * Manage multiple releases of the same series in the same month
+     * by making the month wider.
+     */
     if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
       dates[comic.yearPublished][comic.monthPublished].styles.width += horizontalIncrement;
       comic.containerStyles.left += horizontalIncrement + globalHorizontalOffset;
@@ -289,7 +292,18 @@ angular.module('app', ['angular-md5'])
       comic.containerStyles.left += globalHorizontalOffset;
     }
 
-    // Vertical positioning
+    /**
+     * Vertical positioning ensures that each seriesVolume gets
+     * its own row on the page. The exception is if a seriesVolume
+     * has not had any new issues for a whole page width, then we
+     * allow the next seriesVolume that is looking for a row to slot in.
+     *
+     * This is a two-step process.
+     * First, in this block, we either use the current position for the
+     * seriesVolume or we use the globalVerticalPositionCounter to go onto
+     * the last row.
+     * Step two documented below.
+     */
     if (angular.isDefined(currentSeriesVolume.verticalPosition)) {
       comic.containerStyles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
     } else {
@@ -297,6 +311,13 @@ angular.module('app', ['angular-md5'])
       comic.containerStyles.top = globalVerticalPositionCounter * verticalIncrement;
       globalVerticalPositionCounter++;
     }
+
+    /**
+     * Step two of vertical positioning:
+     * At this point, the seriesVolume has a row to use, but in this
+     * block we check if there is a row further up the page to slot into
+     * so we take up less vertical space.
+     */
 
     /**
      * The maximum horizontal offset allowed until we recycle the
@@ -311,9 +332,9 @@ angular.module('app', ['angular-md5'])
       )
     ) {
       /**
-       * It has been a while since the last issue of this series
-       * appeared in the timeline so let's put this occurrence on
-       * a higher line if possible.
+       * It has been a while (if ever) since the last issue of this
+       * series appeared in the timeline so let's put this one on a
+       * higher row if possible.
        */
       for (var i = 0; i < globalVerticalPositionCounter; i++) {
         if (
@@ -324,16 +345,15 @@ angular.module('app', ['angular-md5'])
           comic.containerStyles.top = i * verticalIncrement;
 
           /**
-           * If ww are about to insert this seriesVolume into a vertical position
+           * We are about to insert this seriesVolume into a vertical position
            * that has already been used before, so we remove the reference to
            * that position in the previous seriesVolume. This allows a new vertical
-           * position to be generated if another occurrence of the previous
-           * seriesVolume pops up.
+           * position to be generated for that previous seriesVolume if one appears.
            */
           if (latestVerticalHorizontalOffsets[i]) {
             var previousSeriesVolume = seriesVolumes[_.findKey(seriesVolumes, { 'id': latestVerticalHorizontalOffsets[i].seriesVolumeId })];
             if (!previousSeriesVolume) {
-              throw new Error(comic.seriesVolumeId + " not found");
+              throw new Error(comic.seriesVolumeId + ' not found');
             }
             previousSeriesVolume.verticalPosition = null;
           }
