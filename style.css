@@ -15,6 +15,12 @@ body {
   padding: 20px;
 }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .year {
   display: inline-block;
 }
@@ -24,26 +30,61 @@ body {
   text-indent: 22px;
 }
 
-.comics {
+.comics,
+.series-volume-labels {
   position: relative;
 }
 
-.comic-container {
+.comic-container,
+.series-volume-label-container {
   position: absolute;
-  width: var(--month-width);
+}
+
+.series-volume-label-container,
+.series-volume-label {
+  width: 130px;
+}
+
+.series-volume-label-container {
+  margin-top: calc(var(--month-width) * 0.29);
+  z-index: 2;
+}
+
+.series-volume-label {
+  background-color: #222;
+  display: inline-block;
+  color: #ccc;
+  padding: 3px 8px;
+  border-radius: 8px;
+  text-align: right;
+  font-size: 12px;
+}
+
+.series-volume-label.sticky-left {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  text-align: left;
+}
+
+.series-volume-label-container,
+.comic-container,
+.comic {
   height: var(--month-width);
+}
+
+.comic-container,
+.comic {
+  width: var(--month-width);
 }
 
 .comic-container.expanded {
   display: block;
-  z-index: 1;
+  z-index: 3;
   width: unset;
   height: unset;
 }
 
 .comic {
-  width: var(--month-width);
-  height: var(--month-width);
   background: #1A1C1C;
   border-radius: 50%;
 }
@@ -53,7 +94,6 @@ body {
 }
 
 .expanded .comic {
-  z-index: 1;
   width: auto;
   border: none;
   border-radius: initial;
@@ -163,10 +203,6 @@ body {
 
 .scroll-anchor {
   width: var(--expanded-width);
-}
-
-.tooltip > .tooltip-inner {
-  min-width: 140;
 }
 
 /**

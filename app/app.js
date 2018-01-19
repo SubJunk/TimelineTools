@@ -21,10 +21,11 @@ angular.module('app', ['angular-md5'])
     width: null,
     padding: 20
   };
+  var seriesVolumeLabels = [];
 
   // Pixel counts
   var verticalIncrement = 60;
-  var horizontalIncrement = 60;
+  var horizontalIncrement = verticalIncrement;
 
   var $jqWindow = $(window);
 
@@ -125,7 +126,7 @@ angular.module('app', ['angular-md5'])
 
     vm.expandedComicId = currentComic.id;
     var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
-    repositionExpandedPanel();
+    repositionStickyElements();
 
     // Get the collection containing this comic
     vm.expandedCollection = _.find(collections, function(collection) {
@@ -256,6 +257,8 @@ angular.module('app', ['angular-md5'])
   var previousYearMonthVolume;
   var globalHorizontalOffset = 0;
   var latestVerticalHorizontalOffsets = {};
+  var newLabelNeeded = false;
+
   _.each(comics, function(comic) {
     /**
      * Look up the volume and series for this comic and
@@ -296,7 +299,7 @@ angular.module('app', ['angular-md5'])
      * Vertical positioning ensures that each seriesVolume gets
      * its own row on the page. The exception is if a seriesVolume
      * has not had any new issues for a whole page width, then we
-     * allow the next seriesVolume that is looking for a row to slot in.
+     * allow the next seriesVolume that is looking for a row, to slot in.
      *
      * This is a two-step process.
      * First, in this block, we either use the current position for the
@@ -310,6 +313,7 @@ angular.module('app', ['angular-md5'])
       currentSeriesVolume.verticalPosition = globalVerticalPositionCounter;
       comic.containerStyles.top = globalVerticalPositionCounter * verticalIncrement;
       globalVerticalPositionCounter++;
+      newLabelNeeded = true;
     }
 
     /**
@@ -396,6 +400,18 @@ angular.module('app', ['angular-md5'])
 
     // Match the width of the page to the width of the content
     bodyStyle.width = comic.containerStyles.left + horizontalIncrement - bodyStyle.padding;
+
+    if (newLabelNeeded) {
+      seriesVolumeLabels.push({
+        text: currentSeries.title,
+        containerStyles: {
+          top: comic.containerStyles.top,
+          left: (comic.containerStyles.left - 150)
+        }
+      });
+
+      newLabelNeeded = false;
+    }
   });
 
   // Using $timeout lets Angular play nicer with jQuery
@@ -404,9 +420,6 @@ angular.module('app', ['angular-md5'])
     bodyStyle.height = (globalVerticalPositionCounter * verticalIncrement);
     $('[data-toggle="tooltip"]').tooltip()
   });
-
-  vm.dates = dates;
-  vm.bodyStyle = bodyStyle;
 
   // Render collections as groups of comics
   var comicIndex;
@@ -489,24 +502,46 @@ angular.module('app', ['angular-md5'])
 
   /**
    * Use jQuery to manipulate classes and styles to make the expanded
-   * panels always fit in the viewport.
+   * panels always fit in the viewport, and series volume labels stick
+   * to the left.
    */
-  var repositionExpandedPanel = function() {
+  var repositionStickyElements = function() {
     $timeout(function() {
       var $expandedComic = $('.expanded .comic');
       var $stickyAnchor = $('.expanded .scroll-anchor');
+      var scrollLeft = $jqWindow.scrollLeft();
+      var scrollTop  = $jqWindow.scrollTop();
 
+      /**
+       * Label positioning:
+       */
+      $('.series-volume-label-container').each(function() {
+        var $thisLabelContainer = $(this);
+        var $thisScrollAnchor = $thisLabelContainer.find('.scroll-anchor');
+        var $thisLabel = $thisLabelContainer.find('.series-volume-label');
+        var isScrolledPastLeft = Boolean(scrollLeft > $thisScrollAnchor.offset().left);
+
+        $thisLabel.toggleClass('sticky-left', isScrolledPastLeft);
+
+        if (isScrolledPastLeft) {
+          $thisLabel.css('marginTop', '-' + scrollTop);
+        } else {
+          $thisLabel.css('marginTop', '');
+        }
+      });
+
+      // Expanded panel positioning
       if ($expandedComic.length) {
         var anchorTopPosition    = $stickyAnchor.offset().top;
         var anchorLeftPosition   = $stickyAnchor.offset().left;
         var anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
         var anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
 
-        var scrollRight  = $jqWindow.scrollLeft() + $jqWindow.innerWidth();
-        var scrollBottom = $jqWindow.scrollTop() + $jqWindow.innerHeight();
+        var scrollRight  = scrollLeft + $jqWindow.innerWidth();
+        var scrollBottom = scrollTop  + $jqWindow.innerHeight();
 
-        var isStickyTop    = Boolean($jqWindow.scrollTop()  > anchorTopPosition);
-        var isStickyLeft   = Boolean($jqWindow.scrollLeft() > anchorLeftPosition);
+        var isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
+        var isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
         var isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
         var isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
 
@@ -516,10 +551,10 @@ angular.module('app', ['angular-md5'])
         $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
 
         if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-          $expandedComic.css('marginLeft', '-' + $jqWindow.scrollLeft());
+          $expandedComic.css('marginLeft', '-' + scrollLeft);
           $expandedComic.css('marginTop', '');
         } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
-          $expandedComic.css('marginTop', '-' + $jqWindow.scrollTop());
+          $expandedComic.css('marginTop', '-' + scrollTop);
           $expandedComic.css('marginLeft', '');
         } else {
           $expandedComic.css('marginLeft', '');
@@ -554,7 +589,7 @@ angular.module('app', ['angular-md5'])
   });
 
   // Reposition the expanded panel when the user scrolls the viewport
-  $jqWindow.scroll(repositionExpandedPanel);
+  $jqWindow.scroll(repositionStickyElements);
 
   // Catch clicks
   $jqWindow.on('click', function(data) {
@@ -569,6 +604,11 @@ angular.module('app', ['angular-md5'])
   vm.collections   = collections;
   vm.series        = series;
   vm.seriesVolumes = seriesVolumes;
+
+  // Pass the other things the view needs
+  vm.dates = dates;
+  vm.bodyStyle = bodyStyle;
+  vm.seriesVolumeLabels = seriesVolumeLabels;
 
   // Expand the comic from the URL on load
   if ($location.search()) {
