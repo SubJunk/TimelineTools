@@ -1,6 +1,6 @@
 :root {
   --month-width: 55px;
-  --expanded-width: 800px;
+  --expanded-width: 900px;
   --expanded-height: 200px;
 }
 
@@ -101,7 +101,7 @@ body {
 }
 
 .comic-container .series {
-  background: rgba(27, 27, 27, 0.5);
+  font-size: 120%;
   margin-top: 5px;
 }
 
