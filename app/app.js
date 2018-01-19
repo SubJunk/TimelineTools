@@ -327,7 +327,7 @@ angular.module('app', ['angular-md5'])
      * The maximum horizontal offset allowed until we recycle the
      * vertical position.
      */
-    var horizontalClearanceLimit = comic.containerStyles.left - $jqWindow.innerWidth();
+    var horizontalClearanceLimit = comic.containerStyles.left - ($jqWindow.innerWidth() * 1.2);
     if (
       !latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] ||
       (
