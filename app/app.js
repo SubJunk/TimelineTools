@@ -426,22 +426,21 @@ angular.module('app', ['angular-md5'])
   _.each(collections, function(collection) {
     var collectionColor = getRandomColor();
     // console.log('1',collectionColor);
-    var rgbCollectionColor = getHslToRgb(collectionColor);
-    // console.log('2',rgbCollectionColor);
-    var textColor = getContrastColor(rgbCollectionColor);
-    // console.log('3',textColor);
+
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(comics, { 'id': comicId });
       if (!comicIndex) {
         throw new Error(comicId + ' not found in the comics db');
       }
-      comics[comicIndex].styles.background = collectionColor;
-      comics[comicIndex].styles.color = textColor;
+
+      comics[comicIndex].styles.background = collectionColor.backgroundColor;
+      comics[comicIndex].styles.color = collectionColor.textColor;
     });
   });
 
   /**
-   * Generates a color in HSLA format, e.g. hsla(1, 2, 3, 4).
+   * Generates a color in HSLA format, e.g. hsla(1, 2, 3, 4)
+   * and a contrasting text color.
    *
    * @return {string} HSLA color
    */
@@ -463,8 +462,12 @@ angular.module('app', ['angular-md5'])
     hslColor += Math.floor(Math.random() * ((75-35) + 1) + 35) + '%, ';
     hslColor += Math.floor(Math.random() * ((85-30) + 1) + 30) + '%, ';
     hslColor += opacity + ')';
-  //  console.log(hslColor);
-    return hslColor;
+    // console.log(hslColor);
+
+    return {
+      backgroundColor: hslColor,
+      textColor:       getContrastColor(getHslToRgb(hslColor))
+    };
   }
 
   /**
@@ -536,6 +539,7 @@ angular.module('app', ['angular-md5'])
     if (L > 0.179) {
       return '#444';
     }
+
     return '#ccc';
   }
 
