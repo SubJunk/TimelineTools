@@ -424,6 +424,21 @@ comics.push(
     'NewMutantsVol1'
   ),
   new Comic(
+    98,
+    '1991-2',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    99,
+    '1991-3',
+    'NewMutantsVol1'
+  ),
+  new Comic(
+    100,
+    '1991-4',
+    'NewMutantsVol1'
+  ),
+  new Comic(
     12,
     '2010-6',
     'NewMutantsVol3',
@@ -541,6 +556,11 @@ comics.push(
     12,
     '1985-4',
     'SecretWarsVol1'
+  ),
+  new Comic(
+    16,
+    '1991-11',
+    'SpiderManVol1'
   ),
   new Comic(
     373,
@@ -2031,6 +2051,26 @@ comics.push(
     'XFactorAnnualVol1'
   ),
   new Comic(
+    1,
+    '1991-8',
+    'XForceVol1'
+  ),
+  new Comic(
+    2,
+    '1991-9',
+    'XForceVol1'
+  ),
+  new Comic(
+    3,
+    '1991-10',
+    'XForceVol1'
+  ),
+  new Comic(
+    4,
+    '1991-11',
+    'XForceVol1'
+  ),
+  new Comic(
     26,
     '2010-6',
     'XForceVol3',
@@ -2281,13 +2321,14 @@ series.push(
   new Series('Power Pack', {1: 1984}),
   new Series('Second Coming: Prepare', {1: 2010}),
   new Series('Secret Wars', {1: 1984}),
+  new Series('Spider-Man', {1: 1990}),
   new Series('Thor', {1: 1966}),
   new Series('Uncanny X-Men', {1: 1963}),
   new Series('Wolverine', {1: 1982}),
   new Series('X-Factor', {1: 1986}),
   new Series('X-Men', {2: 1991}),
   new Series('X-Factor Annual', {1: 1986}),
-  new Series('X-Force', {3: 2008}),
+  new Series('X-Force', {1: 1991, 3: 2008}),
   new Series('X-Men/Alpha Flight', {1: 1985}),
   new Series('X-Men Annual', {1: 1970}),
   new Series('X-Men Free Comic Book Day', {2008: 2008}),
@@ -2745,7 +2786,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 1)',
     '2012-1-25',
     [
       'XFactorVol163',
@@ -2764,6 +2805,26 @@ collections.push(
       'XFactorVol169',
       'UncannyXMenVol1280',
       'XFactorVol170',
+    ]
+  ),
+  new Collection(
+    'X-Force: A Force to be Reckoned With',
+    '2012-1-25',
+    [
+      'NewMutantsVol198',
+      'NewMutantsVol199',
+      'NewMutantsVol1100',
+      'XForceVol11',
+      'XForceVol12',
+      'XForceVol13',
+      'SpiderManVol116',
+      'XForceVol14',
+    ]
+  ),
+  new Collection(
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 2)',
+    '2012-1-25',
+    [
       'XMenVol21',
       'XMenVol22',
       'XMenVol23',
