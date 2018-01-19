@@ -19,6 +19,7 @@
     },
     "rules": {
       "angular/angularelement": "off",
+      "angular/controller-as-vm": "off",
       "angular/window-service": "off"
     }
   },

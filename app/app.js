@@ -426,7 +426,9 @@ angular.module('app', ['angular-md5'])
   _.each(collections, function(collection) {
     var collectionColor = getRandomColor();
     // console.log('1',collectionColor);
-    var textColor = getContrastColor(collectionColor);
+    var rgbCollectionColor = getHslToRgb(collectionColor);
+    // console.log('2',rgbCollectionColor);
+    var textColor = getContrastColor(rgbCollectionColor);
     // console.log('3',textColor);
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(comics, { 'id': comicId });
@@ -434,7 +436,7 @@ angular.module('app', ['angular-md5'])
         throw new Error(comicId + ' not found in the comics db');
       }
       comics[comicIndex].styles.background = collectionColor;
-      // comics[comicIndex].styles.color= textColor;
+      comics[comicIndex].styles.color = textColor;
     });
   });
 
@@ -459,45 +461,82 @@ angular.module('app', ['angular-md5'])
 
     hslColor += startColor + ', ';
     hslColor += Math.floor(Math.random() * ((75-35) + 1) + 35) + '%, ';
-    hslColor += Math.floor(Math.random() * ((75-60) + 1) + 60) + '%, ';
+    hslColor += Math.floor(Math.random() * ((85-30) + 1) + 30) + '%, ';
     hslColor += opacity + ')';
   //  console.log(hslColor);
     return hslColor;
   }
 
   /**
-   * Given a color in HSLA format, generates a contrasting color in HSLA format, e.g. hsla(1, 2, 3, 4).
+   * Converts an HSLA color value to RGB. Conversion formula
+   * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+   * Assumes h, s, and l are contained in the set [0, 1] and
+   * returns r, g, and b in the set [0, 255].
    *
-   * @return {string} HSLA color
+   * @see https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion
+   *
+   * @param   {string}  hsla    The string like hsla(1, 2, 3, 4)
+   * @return  {Array}           The RGB representation
    */
-  var startColor;
-  function getContrastColor(backgroundColor) {
-    // console.log('2',backgroundColor);
-    var opacity = 1;
-    var stepChange = 30;
-    var h = a;
-    var n = backgroundColor.search(/h/);
-    var s = "";
-    var l = "";
-    var a = "1";
+  function getHslToRgb(hsla) {
+    var hslArray = hsla.substr(5).split(', ');
+    var h = parseInt(hslArray[0]);
+    var s = parseInt(hslArray[1]);
+    var l = parseInt(hslArray[2]);
+    s = parseFloat('0.' + s);
+    l = parseFloat('0.' + l);
+    var r, g, b;
 
-
-    var hslColor = 'hsla(';
-    if (angular.isDefined(startColor)) {
-      if ((startColor + stepChange) > 360) {
-        startColor -= 360;
-      }
-      startColor += stepChange;
-    } else {
-      startColor = Math.floor(Math.random() * 360);
+    function hue2rgb(p, q, t) {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1/6) return p + (q - p) * 6 * t;
+      if (t < 1/2) return q;
+      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+      return p;
     }
 
-    hslColor += startColor + ', ';
-    hslColor += Math.floor(Math.random() * ((75-35) + 1) + 35) + '%, ';
-    hslColor += Math.floor(Math.random() * ((75-60) + 1) + 60) + '%, ';
-    hslColor += opacity + ')';
-  //  console.log(hslColor);
-    return hslColor;
+    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    var p = 2 * l - q;
+    r = hue2rgb(p, q, h + 1/3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1/3);
+
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  }
+
+  /**
+   * Given a color in RGB format, returns either a light
+   * or dark color.
+   *
+   * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
+   *
+   * @param  {array}  rgbColor
+   * @return {string} hex string
+   */
+  function getContrastColor(rgbColor) {
+    var C, L;
+
+    var R = rgbColor[0];
+    var G = rgbColor[1];
+    var B = rgbColor[2];
+
+    C = [ R/255, G/255, B/255 ];
+
+    for (var i = 0; i < C.length; ++i) {
+      if (C[i] <= 0.03928) {
+        C[i] = C[i] / 12.92;
+      } else {
+        C[i] = Math.pow( ( C[i] + 0.055 ) / 1.055, 2.4);
+      }
+    }
+
+    L = 0.2126 * C[0] + 0.7152 * C[1] + 0.0722 * C[2];
+
+    if (L > 0.179) {
+      return '#444';
+    }
+    return '#ccc';
   }
 
   /**
