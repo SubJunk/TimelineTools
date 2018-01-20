@@ -476,36 +476,64 @@ angular.module('app', ['angular-md5'])
    * Assumes h, s, and l are contained in the set [0, 1] and
    * returns r, g, and b in the set [0, 255].
    *
-   * @see https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion
+   * @see https://github.com/kayellpeee/hsl_rgb_converter
    *
    * @param   {string}  hsla    The string like hsla(1, 2, 3, 4)
    * @return  {Array}           The RGB representation
    */
   function getHslToRgb(hsla) {
     var hslArray = hsla.substr(5).split(', ');
-    var h = parseInt(hslArray[0]);
-    var s = parseInt(hslArray[1]);
-    var l = parseInt(hslArray[2]);
-    s = parseFloat('0.' + s);
-    l = parseFloat('0.' + l);
-    var r, g, b;
+    var hue = parseInt(hslArray[0]);
+    var saturation = parseInt(hslArray[1]);
+    var lightness = parseInt(hslArray[2]);
+    saturation = parseFloat('0.' + saturation);
+    lightness = parseFloat('0.' + lightness);
 
-    function hue2rgb(p, q, t) {
-      if (t < 0) t += 1;
-      if (t > 1) t -= 1;
-      if (t < 1/6) return p + (q - p) * 6 * t;
-      if (t < 1/2) return q;
-      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-      return p;
+    if( hue == undefined ){
+      return [0, 0, 0];
     }
-
-    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-    var p = 2 * l - q;
-    r = hue2rgb(p, q, h + 1/3);
-    g = hue2rgb(p, q, h);
-    b = hue2rgb(p, q, h - 1/3);
-
-    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  
+    var chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
+    var huePrime = hue / 60;
+    var secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
+  
+    huePrime = Math.floor(huePrime);
+    var red;
+    var green;
+    var blue;
+  
+    if( huePrime === 0 ){
+      red = chroma;
+      green = secondComponent;
+      blue = 0;
+    }else if( huePrime === 1 ){
+      red = secondComponent;
+      green = chroma;
+      blue = 0;
+    }else if( huePrime === 2 ){
+      red = 0;
+      green = chroma;
+      blue = secondComponent;
+    }else if( huePrime === 3 ){
+      red = 0;
+      green = secondComponent;
+      blue = chroma;
+    }else if( huePrime === 4 ){
+      red = secondComponent;
+      green = 0;
+      blue = chroma;
+    }else if( huePrime === 5 ){
+      red = chroma;
+      green = 0;
+      blue = secondComponent;
+    }
+  
+    var lightnessAdjustment = lightness - (chroma / 2);
+    red += lightnessAdjustment;
+    green += lightnessAdjustment;
+    blue += lightnessAdjustment;
+  
+    return [Math.round(red * 255), Math.round(green * 255), Math.round(blue * 255)];
   }
 
   /**
