@@ -106,36 +106,36 @@ comics.push(
     null,
     true
   ),
-  new Comic(
-    1,
-    '1992-10',
-    'CableBloodMetalVol1'
-  ),
-  new Comic(
-    2,
-    '1992-11',
-    'CableBloodMetalVol1'
-  ),
-  new Comic(
-    1,
-    '1993-5',
-    'CableVol1'
-  ),
-  new Comic(
-    2,
-    '1993-6',
-    'CableVol1'
-  ),
-  new Comic(
-    3,
-    '1993-7',
-    'CableVol1'
-  ),
-  new Comic(
-    4,
-    '1993-8',
-    'CableVol1'
-  ),
+  // new Comic(
+  //   1,
+  //   '1992-10',
+  //   'CableBloodMetalVol1'
+  // ),
+  // new Comic(
+  //   2,
+  //   '1992-11',
+  //   'CableBloodMetalVol1'
+  // ),
+  // new Comic(
+  //   1,
+  //   '1993-5',
+  //   'CableVol1'
+  // ),
+  // new Comic(
+  //   2,
+  //   '1993-6',
+  //   'CableVol1'
+  // ),
+  // new Comic(
+  //   3,
+  //   '1993-7',
+  //   'CableVol1'
+  // ),
+  // new Comic(
+  //   4,
+  //   '1993-8',
+  //   'CableVol1'
+  // ),
   new Comic(
     1,
     '2008-5',
@@ -158,6 +158,26 @@ comics.push(
     'DaredevilVol1'
   ),
   new Comic(
+    1,
+    '2014-7-2',
+    'DeadpoolvsXForceVol1'
+  ),
+  new Comic(
+    2,
+    '2014-7-23',
+    'DeadpoolvsXForceVol1'
+  ),
+  new Comic(
+    3,
+    '2014-8-20',
+    'DeadpoolvsXForceVol1'
+  ),
+  new Comic(
+    4,
+    '2014-9-3',
+    'DeadpoolvsXForceVol1'
+  ),
+  new Comic(
     286,
     '1986-1-10',
     'FantasticFourVol1'
@@ -167,26 +187,26 @@ comics.push(
     '1988-3',
     'FantasticFourVol1'
   ),
-  new Comic(
-    1,
-    '1993-12',
-    'GambitVol1'
-  ),
-  new Comic(
-    2,
-    '1994-1',
-    'GambitVol1'
-  ),
-  new Comic(
-    3,
-    '1994-2',
-    'GambitVol1'
-  ),
-  new Comic(
-    4,
-    '1994-3',
-    'GambitVol1'
-  ),
+  // new Comic(
+  //   1,
+  //   '1993-12',
+  //   'GambitVol1'
+  // ),
+  // new Comic(
+  //   2,
+  //   '1994-1',
+  //   'GambitVol1'
+  // ),
+  // new Comic(
+  //   3,
+  //   '1994-2',
+  //   'GambitVol1'
+  // ),
+  // new Comic(
+  //   4,
+  //   '1994-3',
+  //   'GambitVol1'
+  // ),
   new Comic(
     26,
     '1992-6',
@@ -2305,6 +2325,7 @@ series.push(
   new Series('Cable: Blood & Metal', {1: 1992}),
   new Series('Captain America', {1: 1968}),
   new Series('Daredevil', {1: 1964}),
+  new Series('Deadpool vs. X-Force', {1: 2014}),
   new Series('Fantastic Four', {1: 1961}),
   new Series('Gambit', {1: 1993}),
   new Series('Ghost Rider', {3: 1990}),
@@ -2804,12 +2825,22 @@ collections.push(
       'UncannyXMenVol1279',
       'XFactorVol169',
       'UncannyXMenVol1280',
-      'XFactorVol170',
+      'XFactorVol170'
+    ]
+  ),
+  new Collection(
+    'Deadpool vs. X-Force',
+    '2014-11-5',
+    [
+      'DeadpoolvsXForceVol11',
+      'DeadpoolvsXForceVol12',
+      'DeadpoolvsXForceVol13',
+      'DeadpoolvsXForceVol14'
     ]
   ),
   new Collection(
     'X-Force: A Force to be Reckoned With',
-    '2012-1-25',
+    '2011-1-5',
     [
       'NewMutantsVol198',
       'NewMutantsVol199',
@@ -2818,7 +2849,7 @@ collections.push(
       'XForceVol12',
       'XForceVol13',
       'SpiderManVol116',
-      'XForceVol14',
+      'XForceVol14'
     ]
   ),
   new Collection(
