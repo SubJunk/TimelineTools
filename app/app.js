@@ -586,11 +586,15 @@ angular.module('app', ['angular-md5'])
       /**
        * Label positioning:
        */
+      var $thisLabelContainer;
+      var $thisScrollAnchor;
+      var $thisLabel;
+      var isScrolledPastLeft;
       $('.series-volume-label-container').each(function() {
-        var $thisLabelContainer = $(this);
-        var $thisScrollAnchor = $thisLabelContainer.find('.scroll-anchor');
-        var $thisLabel = $thisLabelContainer.find('.series-volume-label');
-        var isScrolledPastLeft = Boolean(scrollLeft > $thisScrollAnchor.offset().left);
+        $thisLabelContainer = $(this);
+        $thisScrollAnchor = $thisLabelContainer.find('.scroll-anchor');
+        $thisLabel = $thisLabelContainer.find('.series-volume-label');
+        isScrolledPastLeft = Boolean(scrollLeft > $thisScrollAnchor.offset().left);
 
         $thisLabel.toggleClass('sticky-left', isScrolledPastLeft);
 
