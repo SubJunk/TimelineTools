@@ -106,16 +106,16 @@ comics.push(
     null,
     true
   ),
-  // new Comic(
-  //   1,
-  //   '1992-10',
-  //   'CableBloodMetalVol1'
-  // ),
-  // new Comic(
-  //   2,
-  //   '1992-11',
-  //   'CableBloodMetalVol1'
-  // ),
+  new Comic(
+    1,
+    '1992-10',
+    'CableBloodMetalVol1'
+  ),
+  new Comic(
+    2,
+    '1992-11',
+    'CableBloodMetalVol1'
+  ),
   // new Comic(
   //   1,
   //   '1993-5',
@@ -479,6 +479,11 @@ comics.push(
   new Comic(
     4,
     '1988-9',
+    'NewMutantsAnnualVol1'
+  ),
+  new Comic(
+    7,
+    '1991-8',
     'NewMutantsAnnualVol1'
   ),
   new Comic(
@@ -2071,6 +2076,11 @@ comics.push(
     'XFactorAnnualVol1'
   ),
   new Comic(
+    6,
+    '1991-8',
+    'XFactorAnnualVol1'
+  ),
+  new Comic(
     1,
     '1991-8',
     'XForceVol1'
@@ -2088,6 +2098,61 @@ comics.push(
   new Comic(
     4,
     '1991-11',
+    'XForceVol1'
+  ),
+  new Comic(
+    5,
+    '1991-12',
+    'XForceVol1'
+  ),
+  new Comic(
+    6,
+    '1992-1',
+    'XForceVol1'
+  ),
+  new Comic(
+    7,
+    '1992-2',
+    'XForceVol1'
+  ),
+  new Comic(
+    8,
+    '1992-3',
+    'XForceVol1'
+  ),
+  new Comic(
+    9,
+    '1992-4',
+    'XForceVol1'
+  ),
+  new Comic(
+    10,
+    '1992-5',
+    'XForceVol1'
+  ),
+  new Comic(
+    11,
+    '1992-6',
+    'XForceVol1'
+  ),
+  new Comic(
+    12,
+    '1992-7',
+    'XForceVol1'
+  ),
+  new Comic(
+    13,
+    '1992-8',
+    'XForceVol1'
+  ),
+  new Comic(
+    14,
+    '1992-9',
+    'XForceVol1'
+  ),
+  new Comic(
+    15,
+    '1992-10',
     'XForceVol1'
   ),
   new Comic(
@@ -2218,6 +2283,11 @@ comics.push(
   new Comic(
     13,
     '1989-8',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
+    15,
+    '1991-8',
     'XMenAnnualVol1'
   ),
   new Comic(
@@ -2839,17 +2909,33 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force: A Force to be Reckoned With',
-    '2011-1-5',
+    'X-Force Omnibus',
+    '2013-2-6',
     [
       'NewMutantsVol198',
       'NewMutantsVol199',
       'NewMutantsVol1100',
+      'NewMutantsAnnualVol17',
+      'XMenAnnualVol115',
+      'XFactorAnnualVol16',
       'XForceVol11',
       'XForceVol12',
       'XForceVol13',
       'SpiderManVol116',
-      'XForceVol14'
+      'XForceVol14',
+      'XForceVol15',
+      'XForceVol16',
+      'XForceVol17',
+      'XForceVol18',
+      'XForceVol19',
+      'XForceVol110',
+      'XForceVol111',
+      'XForceVol112',
+      'XForceVol113',
+      'XForceVol114',
+      'XForceVol115',
+      'CableBloodMetalVol11',
+      'CableBloodMetalVol12'
     ]
   ),
   new Collection(
@@ -2907,8 +2993,6 @@ collections.push(
   //   '2008-3',
   //   [
   //     'NewMutantsVol187',
-  //     'CableBloodMetalVol11',
-  //     'CableBloodMetalVol12',
   //     'CableVol11',
   //     'CableVol12',
   //     'CableVol13',
