@@ -2978,6 +2978,18 @@ collections.push(
       'XMenVol213'
     ]
   ),
+  // Note: Cable Classic happens before X-Men vol. 2 #20, and after X-Force #23, X-Men Annual 17, X-Factor Annual 8, X-Men Unlimited 1, Uncanny 300
+  // new Collection(
+  //   'Cable Classic, Volume 1 (Partial)',
+  //   '2008-3',
+  //   [
+  //     'CableVol11',
+  //     'CableVol12',
+  //     'CableVol13',
+  //     'CableVol14'
+  //   ]
+  // ),
+  // Note: Gambit Classic happens after Uncanny 306, X-Force 26, X-Factor 95, and before Cable 5 and X-Men vol. 2 #25
   // new Collection(
   //   'X-Men: Gambit Classic, Vol. 1 (Partial)',
   //   '2009-5',
@@ -2986,17 +2998,6 @@ collections.push(
   //     'GambitVol12',
   //     'GambitVol13',
   //     'GambitVol14'
-  //   ]
-  // ),
-  // new Collection(
-  //   'Cable Classic, Volume 1',
-  //   '2008-3',
-  //   [
-  //     'NewMutantsVol187',
-  //     'CableVol11',
-  //     'CableVol12',
-  //     'CableVol13',
-  //     'CableVol14'
   //   ]
   // ),
   new Collection(
