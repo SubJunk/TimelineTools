@@ -2948,7 +2948,26 @@ collections.push(
       'XMenVol24',
       'XMenVol25',
       'XMenVol26',
-      'XMenVol27',
+      'XMenVol27'
+    ]
+  ),
+  new Collection(
+    'X-Men: Bishop\'s Crossing (Part 1)',
+    '2016-11-23',
+    [
+      'UncannyXMenVol1281',
+      'UncannyXMenVol1282',
+      'UncannyXMenVol1283',
+      'UncannyXMenVol1284',
+      'UncannyXMenVol1285',
+      'UncannyXMenVol1286',
+      'UncannyXMenVol1287'
+    ]
+  ),
+  new Collection(
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 3)',
+    '2012-1-25',
+    [
       'XMenVol28',
       'GhostRiderVol326',
       'XMenVol29',
@@ -2958,16 +2977,9 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Bishop\'s Crossing',
+    'X-Men: Bishop\'s Crossing (Part 2)',
     '2016-11-23',
     [
-      'UncannyXMenVol1281',
-      'UncannyXMenVol1282',
-      'UncannyXMenVol1283',
-      'UncannyXMenVol1284',
-      'UncannyXMenVol1285',
-      'UncannyXMenVol1286',
-      'UncannyXMenVol1287',
       'UncannyXMenVol1288',
       'UncannyXMenVol1289',
       'UncannyXMenVol1290',
