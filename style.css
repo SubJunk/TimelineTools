@@ -216,6 +216,7 @@ body {
 .pagination > li > a:hover {
   background-color: unset;
   border: none;
+  max-width: 50px;
 }
 
 .pagination > li > a:hover {

@@ -30,6 +30,11 @@
           </a>
           <div class="expanded-panel">
             <ul class="pagination">
+              <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
+                <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
+                  <i class="material-icons">arrow_backward</i>
+                </a>
+              </li>
               <li class="waves-effect" ng-class="{disabled: !main.prevComic}">
                 <a ng-click="main.toggleExpandComic(main.prevComic)">
                   <i class="material-icons">chevron_left</i>
@@ -38,6 +43,11 @@
               <li class="waves-effect" ng-class="{disabled: !main.nextComic }">
                 <a ng-click="main.toggleExpandComic(main.nextComic)">
                   <i class="material-icons">chevron_right</i>
+                </a>
+              </li>
+              <li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic }">
+                <a ng-click="main.toggleExpandComic(main.nextCollectionFirstComic)">
+                  <i class="material-icons">arrow_forward</i>
                 </a>
               </li>
             </ul>
