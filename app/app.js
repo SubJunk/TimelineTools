@@ -448,21 +448,32 @@ angular.module('app', ['angular-md5'])
   });
 
   /**
-   * Generates a color in HSLA format, e.g. hsla(1, 2, 3, 4)
+   * Generates a color in HSL format, e.g. hsl(1, 2, 3)
    * converts it to RGB to find a light or dark contrasting color,
    * returns a background color and text color
    *
    * @return {string} HSLA color
    */
-  var startColor;
+  var backgroundLightness;
+  var textColor = '';
+  var hue;
+  var saturation;
+  var lightness;
+  var stepChange = 30;
+  var hslColor;
+  var chroma;
+  var huePrime;
+  var secondComponent;
+  var red = 0;
+  var green = 0;
+  var blue = 0;
+  var lightnessAdjustment;
+  var rgbColor;
+
   function getCollectionColors() {
-    var textColor = '';
-    var opacity = 1;
-    var hue = 0;
-    var saturation = 0;
-    var lightness = 0;
-    var stepChange = 30;
-    var hslColor = 'hsla(';
+    var startColor;
+
+    hslColor = 'hsl(';
     if (angular.isDefined(startColor)) {
       if ((startColor + stepChange) > 360) {
         startColor -= 360;
@@ -475,97 +486,86 @@ angular.module('app', ['angular-md5'])
     hslColor += startColor + ', ';
     saturation = parseFloat('0.' + Math.floor(Math.random() * ((75-35) + 1) + 35));
     hslColor += saturation * 100 + '%, ';
-    lightness += parseFloat('0.' + Math.floor(Math.random() * ((85-30) + 1) + 30));
-    hslColor += lightness * 100  + '%, ';
-    hslColor += opacity + ')';
+    lightness = parseFloat('0.' + Math.floor(Math.random() * ((85-30) + 1) + 30));
+    hslColor += lightness * 100  + '%)';
 
-
-    /*
-    Start the conversion of the HSLA color to RGB
-    Converts an HSLA color value to RGB. Conversion formula
-    adapted from http://en.wikipedia.org/wiki/HSL_color_space.
-    Assumes h, s, and l are contained in the set [0, 1] and
-    assigns r, g, and b in the set [0, 255].
-
-    @see https://github.com/kayellpeee/hsl_rgb_converter
+    /**
+    * Start the conversion of the HSL color to RGB
+    * Converts an HSLA color value to RGB. Conversion formula
+    * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+    * Assumes h, s, and l are contained in the set [0, 1] and
+    * assigns r, g, and b in the set [0, 255].
+    *
+    * @see https://github.com/kayellpeee/hsl_rgb_converter
     */
-    var chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
-    var huePrime = hue / 60;
-    var secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
+    chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
+    huePrime = hue / 60;
+    secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
 
     huePrime = Math.floor(huePrime);
-    var red;
-    var green;
-    var blue;
 
-    if( huePrime === 0 ){
-      red = chroma;
-      green = secondComponent;
-      blue = 0;
-    }else if( huePrime === 1 ){
-      red = secondComponent;
-      green = chroma;
-      blue = 0;
-    }else if( huePrime === 2 ){
-      red = 0;
-      green = chroma;
-      blue = secondComponent;
-    }else if( huePrime === 3 ){
-      red = 0;
-      green = secondComponent;
-      blue = chroma;
-    }else if( huePrime === 4 ){
-      red = secondComponent;
-      green = 0;
-      blue = chroma;
-    }else if( huePrime === 5 ){
-      red = chroma;
-      green = 0;
-      blue = secondComponent;
+    switch (huePrime){
+      case 0:
+        red = chroma;
+        green = secondComponent;
+        break;
+      case 1:
+        red = secondComponent;
+        green = chroma;
+        break;
+      case 2:
+        green = chroma;
+        blue = secondComponent;
+        break;
+      case 3:
+        green = secondComponent;
+        blue = chroma;
+        break;
+      case 4:
+        red = secondComponent;
+        blue = chroma;
+        break;
+      case 5:
+        red = chroma;
+        blue = secondComponent;
     }
 
-    var lightnessAdjustment = lightness - (chroma / 2);
+
+    lightnessAdjustment = lightness - (chroma / 2);
     red += lightnessAdjustment;
     green += lightnessAdjustment;
     blue += lightnessAdjustment;
 
-    var rgbColor = [Math.round(red * 255), Math.round(green * 255), Math.round(blue * 255)];
+    rgbColor = [Math.round(red), Math.round(green), Math.round(blue)];
 
-    /*
-     Given a color in RGB format, assign either a light
-     or dark color.
-
-     @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
+    /**
+     * Given a color in RGB format, assign either a light
+     * or dark color.
+     *
+     * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
      */
-      var C, L;
 
-      var R = rgbColor[0];
-      var G = rgbColor[1];
-      var B = rgbColor[2];
-
-      C = [ R/255, G/255, B/255 ];
-
-      for (var i = 0; i < C.length; ++i) {
-        if (C[i] <= 0.03928) {
-          C[i] = C[i] / 12.92;
-        } else {
-          C[i] = Math.pow( ( C[i] + 0.055 ) / 1.055, 2.4);
-        }
-      }
-
-      L = 0.2126 * C[0] + 0.7152 * C[1] + 0.0722 * C[2];
-
-      if (L > 0.179) {
-        textColor = '#444';
+    for (var i = 0; i < rgbColor.length; ++i) {
+      if (rgbColor[i] <= 0.03928) {
+        rgbColor[i] = rgbColor[i] / 12.92;
       } else {
-        textColor = '#ccc';
+        rgbColor[i] = Math.pow( ( rgbColor[i] + 0.055 ) / 1.055, 2.4);
       }
-
-      return {
-        backgroundColor: hslColor,
-        textColor: textColor
-      };
     }
+
+    backgroundLightness = 0.2126 * rgbColor[0] + 0.7152 * rgbColor[1] + 0.0722 * rgbColor[2];
+
+    if (backgroundLightness > 0.179) {
+      textColor = '#444';
+    } else {
+      textColor = '#ccc';
+    }
+
+    return {
+      backgroundColor: hslColor,
+      textColor: textColor
+    };
+  }
 
 
   /**
