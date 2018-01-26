@@ -153,6 +153,7 @@ angular.module('app', ['angular-md5'])
       vm.prevCollectionFirstComic = _.find(comics, ['id', prevCollection.comicIds[0]]);
     } else {
       prevCollection = undefined;
+      vm.prevCollectionFirstComic = undefined;
     }
 
     if (vm.collections[currentCollectionIndexInCollections + 1]) {
@@ -160,6 +161,7 @@ angular.module('app', ['angular-md5'])
       vm.nextCollectionFirstComic = _.find(comics, ['id', nextCollection.comicIds[0]]);
     } else {
       nextCollection = undefined;
+      vm.nextCollectionFirstComic = undefined;
     }
 
     // Find the previous comic

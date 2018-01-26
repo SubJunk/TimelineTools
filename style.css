@@ -2,6 +2,9 @@
   --month-width: 55px;
   --expanded-width: 900px;
   --expanded-width-panel-left: 200px;
+  --cover-aspect-ratio: 1.55;
+  --expanded-cover-height: 310px;
+  --collection-thumbnails-height: 97px;
 }
 
 * {
@@ -94,7 +97,7 @@ body {
 }
 
 .expanded .comic {
-  width: auto;
+  width: var(--expanded-width);
   border: none;
   border-radius: initial;
   height: auto;
@@ -122,7 +125,7 @@ body {
 
 .collection-comics {
   margin: 5px 5px 5px 0;
-  padding: 5px;
+  padding: 5px 5px 5px 10px;
   background: hsla(0, 0%, 100%, 0.1)
 }
 
@@ -132,7 +135,8 @@ body {
 }
 
 .collection-comics img {
-  height: 100px;
+  height: var(--collection-thumbnails-height);
+  width: calc(var(--collection-thumbnails-height) / var(--cover-aspect-ratio));
 }
 
 .collection-comics img.current {
@@ -167,8 +171,8 @@ body {
 
 .expanded .comic .cover-thumbnail img {
   border-radius: initial;
-  width: var(--expanded-width-panel-left);
-  height: 300px;
+  width: calc(var(--expanded-cover-height) / var(--cover-aspect-ratio));
+  height: var(--expanded-cover-height);
 }
 
 .expanded-panel {
@@ -239,4 +243,9 @@ body {
 
 .expanded .pagination {
   display: block;
+}
+
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover {
+  background-color: unset;
 }
