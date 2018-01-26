@@ -168,7 +168,7 @@ body {
 .expanded .comic .cover-thumbnail img {
   border-radius: initial;
   width: var(--expanded-width-panel-left);
-  height: auto;
+  height: 300px;
 }
 
 .expanded-panel {
@@ -220,7 +220,7 @@ body {
  * Remove Bootstrap pagination styles
  */
 .pagination {
-  margin: 8px 0 5px calc(var(--month-width) * 0.05);
+  margin: 5px 0 8px calc(var(--month-width) * 0.05);
   display: none;
   cursor: default;
   width: var(--expanded-width-panel-left);

@@ -26,6 +26,9 @@
         <div class="scroll-anchor"></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{important: comic.important && main.enableHighlighting}">
           <div class="panel-left">
+            <a title="#{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip" data-container="body" data-placement="bottom">
+              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
+            </a>
             <ul class="pagination">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
@@ -48,9 +51,6 @@
                 </a>
               </li>
             </ul>
-            <a title="#{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip" data-container="body" data-placement="bottom">
-              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
-            </a>
           </div>
           <div class="expanded-panel">
             <a ng-if="comic.link" class="marvel-unlimited-link" ng-href="{{comic.link}}" title="Open in Marvel Unlimited"></a>
