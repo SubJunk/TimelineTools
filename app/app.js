@@ -447,13 +447,13 @@ angular.module('app', ['angular-md5'])
     });
   });
 
-  /**
-   * Generates a color in HSL format, e.g. hsl(1, 2, 3)
-   * converts it to RGB to find a light or dark contrasting color,
-   * returns a background color and text color
-   *
-   * @return {string} HSLA color
-   */
+   /**
+    * Generates a color in HSL format, e.g. hsl(1, 2, 3)
+    * converts it to RGB to find a light or dark contrasting color,
+    * returns a background color and text color
+    *
+    * @return {string} HSLA color
+    */
   var backgroundLightness;
   var textColor = '';
   var hue;
@@ -490,14 +490,14 @@ angular.module('app', ['angular-md5'])
     hslColor += lightness * 100  + '%)';
 
     /**
-    * Start the conversion of the HSL color to RGB
-    * Converts an HSLA color value to RGB. Conversion formula
-    * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
-    * Assumes h, s, and l are contained in the set [0, 1] and
-    * assigns r, g, and b in the set [0, 255].
-    *
-    * @see https://github.com/kayellpeee/hsl_rgb_converter
-    */
+     * Start the conversion of the HSL color to RGB
+     * Converts an HSLA color value to RGB. Conversion formula
+     * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+     * Assumes h, s, and l are contained in the set [0, 1] and
+     * assigns r, g, and b in the set [0, 255].
+     *
+     * @see https://github.com/kayellpeee/hsl_rgb_converter
+     */
     chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
     huePrime = hue / 60;
     secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
@@ -545,11 +545,11 @@ angular.module('app', ['angular-md5'])
      * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
      */
 
-    for (var i = 0; i < rgbColor.length; ++i) {
+    for (var i = 0; i < 3; ++i) {
       if (rgbColor[i] <= 0.03928) {
         rgbColor[i] = rgbColor[i] / 12.92;
       } else {
-        rgbColor[i] = Math.pow( ( rgbColor[i] + 0.055 ) / 1.055, 2.4);
+        rgbColor[i] = Math.pow((rgbColor[i] + 0.055) / 1.055, 2.4);
       }
     }
 
