@@ -1,7 +1,7 @@
 :root {
   --month-width: 55px;
   --expanded-width: 900px;
-  --expanded-height: 200px;
+  --expanded-width-panel-left: 200px;
 }
 
 * {
@@ -101,8 +101,18 @@ body {
 }
 
 .comic-container .series {
-  font-size: 120%;
-  margin-top: 5px;
+  font-size: 130%;
+  margin-right: 50px;
+}
+
+.comic-container .marvel-unlimited-link {
+  background-image: url('icons/marvel-unlimited.png');
+  background-size: contain;
+  display: block;
+  width: 40px;
+  height: 40px;
+  float: right;
+  margin-right: 5px;
 }
 
 .comic-container > a {
@@ -149,7 +159,7 @@ body {
   margin: calc(var(--month-width) * 0.05);
 }
 
-.expanded .comic .cover-thumbnail {
+.expanded .comic .panel-left {
   display: inline-block;
   vertical-align: top;
   width: calc(var(--expanded-width) * 0.24);
@@ -157,7 +167,7 @@ body {
 
 .expanded .comic .cover-thumbnail img {
   border-radius: initial;
-  width: 200px;
+  width: var(--expanded-width-panel-left);
   height: auto;
 }
 
@@ -167,6 +177,7 @@ body {
   width: calc(var(--expanded-width) * 0.75);
   transition: max-height 0.5s, max-width 0.5s, height 0.5s, width 0.5s;
   background: inherit;
+  margin-top: 10px;
 }
 
 .expanded .expanded-panel {
@@ -209,16 +220,23 @@ body {
  * Remove Bootstrap pagination styles
  */
 .pagination {
-  margin: 5px 0 0 0;
+  margin: 8px 0 5px calc(var(--month-width) * 0.05);
+  display: none;
+  cursor: default;
+  width: var(--expanded-width-panel-left);
 }
 
 .pagination > li > a,
 .pagination > li > a:hover {
   background-color: unset;
   border: none;
-  max-width: 50px;
+  width: 47px;
 }
 
 .pagination > li > a:hover {
   color: #000;
+}
+
+.expanded .pagination {
+  display: block;
 }

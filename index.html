@@ -25,10 +25,7 @@
       <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
         <div class="scroll-anchor"></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{important: comic.important && main.enableHighlighting}">
-          <a title="#{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip" data-container="body" data-placement="bottom">
-            <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
-          </a>
-          <div class="expanded-panel">
+          <div class="panel-left">
             <ul class="pagination">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
@@ -51,9 +48,13 @@
                 </a>
               </li>
             </ul>
-            <div class="series">{{comic.series}} #{{comic.issue}}
-              <span ng-if="comic.link"> - <a ng-href="{{comic.link}}">Read online</a></span>
-            </div>
+            <a title="#{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip" data-container="body" data-placement="bottom">
+              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
+            </a>
+          </div>
+          <div class="expanded-panel">
+            <a ng-if="comic.link" class="marvel-unlimited-link" ng-href="{{comic.link}}" title="Open in Marvel Unlimited"></a>
+            <div class="series">{{comic.series}} #{{comic.issue}}</div>
             <div class="title" ng-repeat="title in comic.titles">{{title}}</div>
             <div class="date">{{comic.yearPublished}} / {{comic.monthPublished}}</div>
             <div class="collection-comics">
