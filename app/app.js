@@ -424,8 +424,7 @@ angular.module('app', ['angular-md5'])
   // Render collections as groups of comics
   var comicIndex;
   _.each(collections, function(collection) {
-    var collectionColor = getRandomColor();
-    // console.log('1',collectionColor);
+    var collectionColor = getCollectionColors();
 
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(comics, { 'id': comicId });
@@ -440,13 +439,18 @@ angular.module('app', ['angular-md5'])
 
   /**
    * Generates a color in HSLA format, e.g. hsla(1, 2, 3, 4)
-   * and a contrasting text color.
+   * converts it to RGB to find a light or dark contrasting color,
+   * returns a background color and text color
    *
    * @return {string} HSLA color
    */
   var startColor;
-  function getRandomColor() {
+  function getCollectionColors() {
+    var textColor = '';
     var opacity = 1;
+    var hue = 0;
+    var saturation = 0;
+    var lightness = 0;
     var stepChange = 30;
     var hslColor = 'hsla(';
     if (angular.isDefined(startColor)) {
@@ -457,51 +461,33 @@ angular.module('app', ['angular-md5'])
     } else {
       startColor = Math.floor(Math.random() * 360);
     }
-
+    hue = startColor;
     hslColor += startColor + ', ';
-    hslColor += Math.floor(Math.random() * ((75-35) + 1) + 35) + '%, ';
-    hslColor += Math.floor(Math.random() * ((85-30) + 1) + 30) + '%, ';
+    saturation = parseFloat('0.' + Math.floor(Math.random() * ((75-35) + 1) + 35));
+    hslColor += saturation * 100 + '%, ';
+    lightness += parseFloat('0.' + Math.floor(Math.random() * ((85-30) + 1) + 30));
+    hslColor += lightness * 100  + '%, ';
     hslColor += opacity + ')';
-    // console.log(hslColor);
 
-    return {
-      backgroundColor: hslColor,
-      textColor:       getContrastColor(getHslToRgb(hslColor))
-    };
-  }
 
-  /**
-   * Converts an HSLA color value to RGB. Conversion formula
-   * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
-   * Assumes h, s, and l are contained in the set [0, 1] and
-   * returns r, g, and b in the set [0, 255].
-   *
-   * @see https://github.com/kayellpeee/hsl_rgb_converter
-   *
-   * @param   {string}  hsla    The string like hsla(1, 2, 3, 4)
-   * @return  {Array}           The RGB representation
-   */
-  function getHslToRgb(hsla) {
-    var hslArray = hsla.substr(5).split(', ');
-    var hue = parseInt(hslArray[0]);
-    var saturation = parseInt(hslArray[1]);
-    var lightness = parseInt(hslArray[2]);
-    saturation = parseFloat('0.' + saturation);
-    lightness = parseFloat('0.' + lightness);
+    /*
+    Start the conversion of the HSLA color to RGB
+    Converts an HSLA color value to RGB. Conversion formula
+    adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+    Assumes h, s, and l are contained in the set [0, 1] and
+    assigns r, g, and b in the set [0, 255].
 
-    if( hue == undefined ){
-      return [0, 0, 0];
-    }
-  
+    @see https://github.com/kayellpeee/hsl_rgb_converter
+    */
     var chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
     var huePrime = hue / 60;
     var secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
-  
+
     huePrime = Math.floor(huePrime);
     var red;
     var green;
     var blue;
-  
+
     if( huePrime === 0 ){
       red = chroma;
       green = secondComponent;
@@ -527,49 +513,50 @@ angular.module('app', ['angular-md5'])
       green = 0;
       blue = secondComponent;
     }
-  
+
     var lightnessAdjustment = lightness - (chroma / 2);
     red += lightnessAdjustment;
     green += lightnessAdjustment;
     blue += lightnessAdjustment;
-  
-    return [Math.round(red * 255), Math.round(green * 255), Math.round(blue * 255)];
-  }
 
-  /**
-   * Given a color in RGB format, returns either a light
-   * or dark color.
-   *
-   * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
-   *
-   * @param  {array}  rgbColor
-   * @return {string} hex string
-   */
-  function getContrastColor(rgbColor) {
-    var C, L;
+    var rgbColor = [Math.round(red * 255), Math.round(green * 255), Math.round(blue * 255)];
 
-    var R = rgbColor[0];
-    var G = rgbColor[1];
-    var B = rgbColor[2];
+    /*
+     Given a color in RGB format, assign either a light
+     or dark color.
 
-    C = [ R/255, G/255, B/255 ];
+     @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
+     */
+      var C, L;
 
-    for (var i = 0; i < C.length; ++i) {
-      if (C[i] <= 0.03928) {
-        C[i] = C[i] / 12.92;
-      } else {
-        C[i] = Math.pow( ( C[i] + 0.055 ) / 1.055, 2.4);
+      var R = rgbColor[0];
+      var G = rgbColor[1];
+      var B = rgbColor[2];
+
+      C = [ R/255, G/255, B/255 ];
+
+      for (var i = 0; i < C.length; ++i) {
+        if (C[i] <= 0.03928) {
+          C[i] = C[i] / 12.92;
+        } else {
+          C[i] = Math.pow( ( C[i] + 0.055 ) / 1.055, 2.4);
+        }
       }
+
+      L = 0.2126 * C[0] + 0.7152 * C[1] + 0.0722 * C[2];
+
+      if (L > 0.179) {
+        textColor = '#444';
+      } else {
+        textColor = '#ccc';
+      }
+
+      return {
+        backgroundColor: hslColor,
+        textColor: textColor
+      };
     }
 
-    L = 0.2126 * C[0] + 0.7152 * C[1] + 0.0722 * C[2];
-
-    if (L > 0.179) {
-      return '#444';
-    }
-
-    return '#ccc';
-  }
 
   /**
    * Use jQuery to manipulate classes and styles to make the expanded
@@ -711,7 +698,7 @@ angular.module('app', ['angular-md5'])
      * This picks up any orphaned comics and series that would
      * not cause errors but just take up space.
      *
-     * Note there is no need to check that the comicIds in 
+     * Note there is no need to check that the comicIds in
      * collections map to comics, because that would cause big
      * errors that we already watch out for.
      */
