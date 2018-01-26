@@ -447,13 +447,13 @@ angular.module('app', ['angular-md5'])
     });
   });
 
-   /**
-    * Generates a color in HSL format, e.g. hsl(1, 2, 3)
-    * converts it to RGB to find a light or dark contrasting color,
-    * returns a background color and text color
-    *
-    * @return {string} HSLA color
-    */
+  /**
+   * Generates a color in HSL format, e.g. hsl(1, 2, 3)
+   * converts it to RGB to find a light or dark contrasting color,
+   * returns a background color and text color
+   *
+   * @return {string} HSLA color
+   */
   var backgroundLightness;
   var textColor = '';
   var hue;
