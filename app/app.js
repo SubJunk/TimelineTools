@@ -462,13 +462,18 @@ angular.module('app', ['angular-md5'])
   var saturation;
   var lightness;
   var stepChange = 30;
+
+  /**
+   * A string representation of a HSL color, usable by browsers.
+   */
   var hslColor;
+
   var chroma;
   var huePrime;
   var secondComponent;
-  var red = 0;
-  var green = 0;
-  var blue = 0;
+  var red;
+  var green;
+  var blue;
   var lightnessAdjustment;
   var rgbColor;
 
@@ -506,7 +511,12 @@ angular.module('app', ['angular-md5'])
 
     huePrime = Math.floor(huePrime);
 
-    switch (huePrime){
+    // Reset the values each time
+    red = 0;
+    green = 0;
+    blue = 0;
+
+    switch (huePrime) {
       case 0:
         red = chroma;
         green = secondComponent;
@@ -532,13 +542,12 @@ angular.module('app', ['angular-md5'])
         blue = secondComponent;
     }
 
-
     lightnessAdjustment = lightness - (chroma / 2);
     red += lightnessAdjustment;
     green += lightnessAdjustment;
     blue += lightnessAdjustment;
 
-    rgbColor = [Math.round(red), Math.round(green), Math.round(blue)];
+    rgbColor = [Math.round(red * 255), Math.round(green * 255), Math.round(blue * 255)];
 
     /**
      * Given a color in RGB format, assign either a light
@@ -546,8 +555,9 @@ angular.module('app', ['angular-md5'])
      *
      * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
      */
-
     for (var i = 0; i < 3; ++i) {
+      rgbColor[i] /= 255;
+
       if (rgbColor[i] <= 0.03928) {
         rgbColor[i] = rgbColor[i] / 12.92;
       } else {
