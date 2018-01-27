@@ -588,6 +588,11 @@ comics.push(
     'SpiderManVol1'
   ),
   new Comic(
+    1,
+    '1993-1-1',
+    'StryfesStrikeFileVol1'
+  ),
+  new Comic(
     373,
     '1986-11',
     'ThorVol1'
@@ -1661,6 +1666,26 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
+    294,
+    '1992-11',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    295,
+    '1992-12',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    296,
+    '1993-1',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    297,
+    '1993-2',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
     492,
     '2008-1',
     'UncannyXMenVol1',
@@ -2066,6 +2091,21 @@ comics.push(
     'XFactorVol1'
   ),
   new Comic(
+    84,
+    '1992-11',
+    'XFactorVol1'
+  ),
+  new Comic(
+    85,
+    '1992-12',
+    'XFactorVol1'
+  ),
+  new Comic(
+    86,
+    '1993-1',
+    'XFactorVol1'
+  ),
+  new Comic(
     3,
     '1988-8',
     'XFactorAnnualVol1'
@@ -2166,6 +2206,21 @@ comics.push(
     'XForceVol1'
   ),
   new Comic(
+    16,
+    '1992-11',
+    'XForceVol1'
+  ),
+  new Comic(
+    17,
+    '1992-12',
+    'XForceVol1'
+  ),
+  new Comic(
+    18,
+    '1993-1',
+    'XForceVol1'
+  ),
+  new Comic(
     26,
     '2010-6',
     'XForceVol3',
@@ -2246,6 +2301,61 @@ comics.push(
   new Comic(
     13,
     '1992-10',
+    'XMenVol2'
+  ),
+  new Comic(
+    14,
+    '1992-11',
+    'XMenVol2'
+  ),
+  new Comic(
+    15,
+    '1992-12',
+    'XMenVol2'
+  ),
+  new Comic(
+    16,
+    '1993-1',
+    'XMenVol2'
+  ),
+  new Comic(
+    17,
+    '1993-2',
+    'XMenVol2'
+  ),
+  new Comic(
+    18,
+    '1993-3',
+    'XMenVol2'
+  ),
+  new Comic(
+    19,
+    '1993-4',
+    'XMenVol2'
+  ),
+  new Comic(
+    20,
+    '1993-5',
+    'XMenVol2'
+  ),
+  new Comic(
+    21,
+    '1993-6',
+    'XMenVol2'
+  ),
+  new Comic(
+    22,
+    '1993-7',
+    'XMenVol2'
+  ),
+  new Comic(
+    23,
+    '1993-8',
+    'XMenVol2'
+  ),
+  new Comic(
+    24,
+    '1993-9',
     'XMenVol2'
   ),
   new Comic(
@@ -2433,6 +2543,7 @@ series.push(
   new Series('Second Coming: Prepare', {1: 2010}),
   new Series('Secret Wars', {1: 1984}),
   new Series('Spider-Man', {1: 1990}),
+  new Series('Stryfe\'s Strike File', {1: 1993}),
   new Series('Thor', {1: 1966}),
   new Series('Uncanny X-Men', {1: 1963}),
   new Series('Wolverine', {1: 1982}),
@@ -3039,7 +3150,44 @@ collections.push(
       'XMenVol213'
     ]
   ),
-  // Note: Cable Classic happens before X-Men vol. 2 #20, and after X-Force #23, X-Men Annual 17, X-Factor Annual 8, X-Men Unlimited 1, Uncanny 300
+  new Collection(
+    'X-Men: X-Cutioner\'s Song',
+    '2016-12-14',
+    [
+      'UncannyXMenVol1294',
+      'XFactorVol184',
+      'XMenVol214',
+      'XForceVol116',
+      'UncannyXMenVol1295',
+      'XFactorVol185',
+      'XMenVol215',
+      'XForceVol117',
+      'UncannyXMenVol1296',
+      'XFactorVol186',
+      'XMenVol216',
+      'XForceVol118',
+      'UncannyXMenVol1297',
+      'StryfesStrikeFileVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: A Skinning of Souls',
+    '2013-11-20',
+    [
+      'XMenVol217',
+      'XMenVol218',
+      'XMenVol219',
+      'XMenVol220',
+      'XMenVol221',
+      'XMenVol222',
+      'XMenVol223',
+      'XMenVol224'
+    ]
+  ),
+  /**
+   * Note: Cable Classic happens before X-Men vol. 2 #20, and after X-Force #23, X-Men Annual 17
+   * X-Factor Annual 8, X-Men Unlimited 1, Uncanny 300
+   */
   // new Collection(
   //   'Cable Classic, Volume 1 (Partial)',
   //   '2008-3',
@@ -3050,7 +3198,11 @@ collections.push(
   //     'CableVol14'
   //   ]
   // ),
-  // Note: Gambit Classic happens after Uncanny 306, X-Force 26, X-Factor 95, and before Cable 5 and X-Men vol. 2 #25
+
+  /**
+   * Note: Gambit Classic happens after Uncanny 306, X-Force 26, X-Factor 95, and before Cable 5
+   * and X-Men vol. 2 #25
+   */
   // new Collection(
   //   'X-Men: Gambit Classic, Vol. 1 (Partial)',
   //   '2009-5',
