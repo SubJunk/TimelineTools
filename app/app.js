@@ -150,6 +150,7 @@ angular.module('app', ['angular-md5'])
 
     if (currentCollectionIndexInCollections > 0) {
       prevCollection = collections[currentCollectionIndexInCollections - 1];
+      vm.prevCollection = prevCollection;
       vm.prevCollectionFirstComic = _.find(comics, ['id', prevCollection.comicIds[0]]);
     } else {
       prevCollection = undefined;
@@ -158,6 +159,7 @@ angular.module('app', ['angular-md5'])
 
     if (vm.collections[currentCollectionIndexInCollections + 1]) {
       nextCollection = collections[currentCollectionIndexInCollections + 1];
+      vm.nextCollection = nextCollection;
       vm.nextCollectionFirstComic = _.find(comics, ['id', nextCollection.comicIds[0]]);
     } else {
       nextCollection = undefined;
@@ -683,6 +685,7 @@ angular.module('app', ['angular-md5'])
   vm.dates = dates;
   vm.bodyStyle = bodyStyle;
   vm.seriesVolumeLabels = seriesVolumeLabels;
+
 
   // Expand the comic from the URL on load
   if ($location.search()) {
