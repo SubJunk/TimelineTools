@@ -83,8 +83,6 @@ angular.module('app', ['angular-md5'])
     return '';
   }
 
-  var prevCollection;
-  var nextCollection;
   var prevComicId;
   var nextComicId;
   vm.toggleExpandComic = function(currentComic) {
@@ -149,39 +147,37 @@ angular.module('app', ['angular-md5'])
     currentCollectionIndexInCollections = collections.indexOf(vm.expandedCollection);
 
     if (currentCollectionIndexInCollections > 0) {
-      prevCollection = collections[currentCollectionIndexInCollections - 1];
-      vm.prevCollection = prevCollection;
-      vm.prevCollectionFirstComic = _.find(comics, ['id', prevCollection.comicIds[0]]);
+      vm.prevCollection = collections[currentCollectionIndexInCollections - 1];
+      vm.prevCollectionFirstComic = _.find(comics, ['id', vm.prevCollection.comicIds[0]]);
     } else {
-      prevCollection = undefined;
+      vm.prevCollection = undefined;
       vm.prevCollectionFirstComic = undefined;
     }
 
     if (vm.collections[currentCollectionIndexInCollections + 1]) {
-      nextCollection = collections[currentCollectionIndexInCollections + 1];
-      vm.nextCollection = nextCollection;
-      vm.nextCollectionFirstComic = _.find(comics, ['id', nextCollection.comicIds[0]]);
+      vm.nextCollection = collections[currentCollectionIndexInCollections + 1];
+      vm.nextCollectionFirstComic = _.find(comics, ['id', vm.nextCollection.comicIds[0]]);
     } else {
-      nextCollection = undefined;
+      vm.nextCollection = undefined;
       vm.nextCollectionFirstComic = undefined;
     }
 
     // Find the previous comic
     if (currentComicIndexInCollection > 0) {
       vm.prevComic = vm.expandedCollection.comics[currentComicIndexInCollection - 1];
-    } else if (prevCollection) {
+    } else if (vm.prevCollection) {
       /**
        * The expanded comic is the first one in a collection, so we need to find out
        * the last comic in the previous collection.
        */
-      prevComicId = prevCollection.comicIds[prevCollection.comicIds.length - 1];
+      prevComicId = vm.prevCollection.comicIds[vm.prevCollection.comicIds.length - 1];
       vm.prevComic = _.find(comics, ['id', prevComicId]);
     }
 
     // Find the next comic
     if (vm.expandedCollection.comics[currentComicIndexInCollection + 1]) {
       vm.nextComic = vm.expandedCollection.comics[currentComicIndexInCollection + 1];
-    } else if (nextCollection) {
+    } else if (vm.nextCollection) {
       /**
        * The expanded comic is the last one in a collection, so we need to find out
        * the first comic in the next collection.
@@ -685,7 +681,6 @@ angular.module('app', ['angular-md5'])
   vm.dates = dates;
   vm.bodyStyle = bodyStyle;
   vm.seriesVolumeLabels = seriesVolumeLabels;
-
 
   // Expand the comic from the URL on load
   if ($location.search()) {
