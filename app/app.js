@@ -466,11 +466,11 @@ angular.module('app', ['angular-md5'])
   var chroma;
   var huePrime;
   var secondComponent;
-  var red = 0;
-  var green = 0;
-  var blue = 0;
   var lightnessAdjustment;
   var rgbColor;
+  var red;
+  var green;
+  var blue;
 
   function getCollectionColors() {
     var startColor;
@@ -500,6 +500,10 @@ angular.module('app', ['angular-md5'])
      *
      * @see https://github.com/kayellpeee/hsl_rgb_converter
      */
+    red = 0;
+    green = 0;
+    blue = 0;
+
     chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
     huePrime = hue / 60;
     secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
@@ -557,7 +561,7 @@ angular.module('app', ['angular-md5'])
 
     backgroundLightness = 0.2126 * rgbColor[0] + 0.7152 * rgbColor[1] + 0.0722 * rgbColor[2];
 
-    if (backgroundLightness > 0.179) {
+    if (backgroundLightness > 0.7179) {
       textColor = '#444';
     } else {
       textColor = '#ccc';
