@@ -212,8 +212,10 @@ angular.module('app', ['angular-md5'])
           apikey: apiKeyPublic
         }
       }).then(function successCallback(response) {
-        expandedSeriesVolume.marvelId = response.data.data.results[0].id;
-        setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+        if (response.data.data.results.length) {
+          expandedSeriesVolume.marvelId = response.data.data.results[0].id;
+          setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+        }
       }, function errorCallback(err) {
         throw new Error(err);
       });

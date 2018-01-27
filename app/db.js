@@ -2081,6 +2081,16 @@ comics.push(
     'XFactorAnnualVol1'
   ),
   new Comic(
+    7,
+    '1992-5',
+    'XFactorAnnualVol1'
+  ),
+  new Comic(
+    1,
+    '1992-5',
+    'XForceAnnualVol1'
+  ),
+  new Comic(
     1,
     '1991-8',
     'XForceVol1'
@@ -2291,6 +2301,16 @@ comics.push(
     'XMenAnnualVol1'
   ),
   new Comic(
+    16,
+    '1992-5',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
+    1,
+    '1992-5',
+    'XMenAnnualVol2'
+  ),
+  new Comic(
     1,
     '1985-12',
     'XMenAlphaFlightVol1'
@@ -2417,11 +2437,12 @@ series.push(
   new Series('Uncanny X-Men', {1: 1963}),
   new Series('Wolverine', {1: 1982}),
   new Series('X-Factor', {1: 1986}),
-  new Series('X-Men', {2: 1991}),
   new Series('X-Factor Annual', {1: 1986}),
   new Series('X-Force', {1: 1991, 3: 2008}),
+  new Series('X-Force Annual', {1: 1992}),
+  new Series('X-Men', {2: 1991}),
   new Series('X-Men/Alpha Flight', {1: 1985}),
-  new Series('X-Men Annual', {1: 1970}),
+  new Series('X-Men Annual', {1: 1970, 2: 1992}),
   new Series('X-Men Free Comic Book Day', {2008: 2008}),
   new Series('X-Men Legacy', {1: 2008}),
   new Series('X-Men: Manifest Destiny', {1: 2008}),
@@ -2909,7 +2930,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force Omnibus',
+    'X-Force Omnibus (Part 1)',
     '2013-2-6',
     [
       'NewMutantsVol198',
@@ -2922,20 +2943,7 @@ collections.push(
       'XForceVol12',
       'XForceVol13',
       'SpiderManVol116',
-      'XForceVol14',
-      'XForceVol15',
-      'XForceVol16',
-      'XForceVol17',
-      'XForceVol18',
-      'XForceVol19',
-      'XForceVol110',
-      'XForceVol111',
-      'XForceVol112',
-      'XForceVol113',
-      'XForceVol114',
-      'XForceVol115',
-      'CableBloodMetalVol11',
-      'CableBloodMetalVol12'
+      'XForceVol14'
     ]
   ),
   new Collection(
@@ -2971,7 +2979,23 @@ collections.push(
       'XMenVol28',
       'GhostRiderVol326',
       'XMenVol29',
-      'GhostRiderVol327',
+      'GhostRiderVol327'
+    ]
+  ),
+  new Collection(
+    'Shattershot (Uncollected)',
+    null,
+    [
+      'XMenAnnualVol21',
+      'XMenAnnualVol116',
+      'XFactorAnnualVol17',
+      'XForceAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 4)',
+    '2012-1-25',
+    [
       'XMenVol210',
       'XMenVol211'
     ]
@@ -2982,7 +3006,32 @@ collections.push(
     [
       'UncannyXMenVol1288',
       'UncannyXMenVol1289',
-      'UncannyXMenVol1290',
+      'UncannyXMenVol1290'
+    ]
+  ),
+  new Collection(
+    'X-Force Omnibus (Part 2)',
+    '2013-2-6',
+    [
+      'XForceVol15',
+      'XForceVol16',
+      'XForceVol17',
+      'XForceVol18',
+      'XForceVol19',
+      'XForceVol110',
+      'XForceVol111',
+      'XForceVol112',
+      'XForceVol113',
+      'XForceVol114',
+      'XForceVol115',
+      'CableBloodMetalVol11',
+      'CableBloodMetalVol12'
+    ]
+  ),
+  new Collection(
+    'X-Men: Bishop\'s Crossing (Part 3)',
+    '2016-11-23',
+    [
       'UncannyXMenVol1291',
       'UncannyXMenVol1292',
       'UncannyXMenVol1293',
