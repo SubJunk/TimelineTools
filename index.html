@@ -30,7 +30,7 @@
               <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
             </a>
             <ul class="pagination">
-              <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}" data-toggle="tooltip" data-original-title="{{main.prevCollection.?this is where I'm stuck}}" data-placement="bottom">
+              <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}" data-toggle="tooltip" data-original-title="{{vm.prevCollection.title}}" data-placement="bottom">
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
                   <i class="material-icons">arrow_backward</i>
                 </a>
