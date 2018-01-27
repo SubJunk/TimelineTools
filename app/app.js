@@ -182,7 +182,7 @@ angular.module('app', ['angular-md5'])
        * The expanded comic is the last one in a collection, so we need to find out
        * the first comic in the next collection.
        */
-      nextComicId = nextCollection.comicIds[0];
+      nextComicId = vm.nextCollection.comicIds[0];
       vm.nextComic = _.find(comics, ['id', nextComicId]);
     }
 
@@ -430,7 +430,7 @@ angular.module('app', ['angular-md5'])
   $timeout(function() {
     bodyStyle.width += $('.scroll-anchor').width();
     bodyStyle.height = (globalVerticalPositionCounter * verticalIncrement);
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
   });
 
   // Render collections as groups of comics
