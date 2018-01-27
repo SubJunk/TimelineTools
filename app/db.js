@@ -3094,24 +3094,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'Shattershot (Uncollected)',
-    null,
-    [
-      'XMenAnnualVol21',
-      'XMenAnnualVol116',
-      'XFactorAnnualVol17',
-      'XForceAnnualVol11'
-    ]
-  ),
-  new Collection(
-    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 4)',
-    '2012-1-25',
-    [
-      'XMenVol210',
-      'XMenVol211'
-    ]
-  ),
-  new Collection(
     'X-Men: Bishop\'s Crossing (Part 2)',
     '2016-11-23',
     [
@@ -3130,6 +3112,30 @@ collections.push(
       'XForceVol18',
       'XForceVol19',
       'XForceVol110',
+    ]
+  ),
+  new Collection(
+    'Shattershot (Uncollected)',
+    null,
+    [
+      'XMenAnnualVol21',
+      'XMenAnnualVol116',
+      'XFactorAnnualVol17',
+      'XForceAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 4)',
+    '2012-1-25',
+    [
+      'XMenVol210',
+      'XMenVol211'
+    ]
+  ),
+  new Collection(
+    'X-Force Omnibus (Part 3)',
+    '2013-2-6',
+    [
       'XForceVol111',
       'XForceVol112',
       'XForceVol113',
