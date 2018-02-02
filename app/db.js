@@ -116,26 +116,46 @@ comics.push(
     '1992-11',
     'CableBloodMetalVol1'
   ),
-  // new Comic(
-  //   1,
-  //   '1993-5',
-  //   'CableVol1'
-  // ),
-  // new Comic(
-  //   2,
-  //   '1993-6',
-  //   'CableVol1'
-  // ),
-  // new Comic(
-  //   3,
-  //   '1993-7',
-  //   'CableVol1'
-  // ),
-  // new Comic(
-  //   4,
-  //   '1993-8',
-  //   'CableVol1'
-  // ),
+  new Comic(
+    1,
+    '1993-5',
+    'CableVol1'
+  ),
+  new Comic(
+    2,
+    '1993-6',
+    'CableVol1'
+  ),
+  new Comic(
+    3,
+    '1993-7',
+    'CableVol1'
+  ),
+  new Comic(
+    4,
+    '1993-8',
+    'CableVol1'
+  ),
+  new Comic(
+    5,
+    '1993-11',
+    'CableVol1'
+  ),
+  new Comic(
+    6,
+    '1993-12',
+    'CableVol1'
+  ),
+  new Comic(
+    7,
+    '1994-1',
+    'CableVol1'
+  ),
+  new Comic(
+    8,
+    '1994-2',
+    'CableVol1'
+  ),
   new Comic(
     1,
     '2008-5',
@@ -159,6 +179,46 @@ comics.push(
   ),
   new Comic(
     1,
+    '1994-8',
+    'DeadpoolVol1'
+  ),
+  new Comic(
+    2,
+    '1994-9',
+    'DeadpoolVol1'
+  ),
+  new Comic(
+    3,
+    '1994-10',
+    'DeadpoolVol1'
+  ),
+  new Comic(
+    4,
+    '1994-11',
+    'DeadpoolVol1'
+  ),
+  new Comic(
+    1,
+    '1993-8',
+    'DeadpoolTheCircleChaseVol1'
+  ),
+  new Comic(
+    2,
+    '1993-9',
+    'DeadpoolTheCircleChaseVol1'
+  ),
+  new Comic(
+    3,
+    '1993-10',
+    'DeadpoolTheCircleChaseVol1'
+  ),
+  new Comic(
+    4,
+    '1993-11',
+    'DeadpoolTheCircleChaseVol1'
+  ),
+  new Comic(
+    1,
     '2014-7-2',
     'DeadpoolvsXForceVol1'
   ),
@@ -176,6 +236,11 @@ comics.push(
     4,
     '2014-9-3',
     'DeadpoolvsXForceVol1'
+  ),
+  new Comic(
+    71,
+    '1993-11',
+    'ExcaliburVol1'
   ),
   new Comic(
     286,
@@ -487,6 +552,11 @@ comics.push(
     'NewMutantsAnnualVol1'
   ),
   new Comic(
+    31,
+    '1993-1',
+    'NewWarriorsVol1'
+  ),
+  new Comic(
     1,
     '1985-11',
     'NightcrawlerVol1'
@@ -505,6 +575,11 @@ comics.push(
     4,
     '1986-2',
     'NightcrawlerVol1'
+  ),
+  new Comic(
+    20,
+    '1993-12',
+    'NomadVol2'
   ),
   new Comic(
     27,
@@ -1686,6 +1761,51 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
+    298,
+    '1993-3',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    299,
+    '1993-4',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    300,
+    '1993-5',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    301,
+    '1993-6',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    302,
+    '1993-7',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    303,
+    '1993-8',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    304,
+    '1993-9',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    305,
+    '1993-10',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    315,
+    '1994-8',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
     492,
     '2008-1',
     'UncannyXMenVol1',
@@ -1904,6 +2024,11 @@ comics.push(
     'WolverineVol1'
   ),
   new Comic(
+    75,
+    '1993-11',
+    'WolverineVol2'
+  ),
+  new Comic(
     1,
     '1986-2-10',
     'XFactorVol1'
@@ -2106,6 +2231,36 @@ comics.push(
     'XFactorVol1'
   ),
   new Comic(
+    87,
+    '1993-2',
+    'XFactorVol1'
+  ),
+  new Comic(
+    88,
+    '1993-3',
+    'XFactorVol1'
+  ),
+  new Comic(
+    89,
+    '1993-4',
+    'XFactorVol1'
+  ),
+  new Comic(
+    90,
+    '1993-5',
+    'XFactorVol1'
+  ),
+  new Comic(
+    91,
+    '1993-6',
+    'XFactorVol1'
+  ),
+  new Comic(
+    92,
+    '1993-7',
+    'XFactorVol1'
+  ),
+  new Comic(
     3,
     '1988-8',
     'XFactorAnnualVol1'
@@ -2128,6 +2283,11 @@ comics.push(
   new Comic(
     1,
     '1992-5',
+    'XForceAnnualVol1'
+  ),
+  new Comic(
+    2,
+    '1993-10',
     'XForceAnnualVol1'
   ),
   new Comic(
@@ -2218,6 +2378,71 @@ comics.push(
   new Comic(
     18,
     '1993-1',
+    'XForceVol1'
+  ),
+  new Comic(
+    19,
+    '1993-2',
+    'XForceVol1'
+  ),
+  new Comic(
+    20,
+    '1993-3',
+    'XForceVol1'
+  ),
+  new Comic(
+    21,
+    '1993-4',
+    'XForceVol1'
+  ),
+  new Comic(
+    22,
+    '1993-5',
+    'XForceVol1'
+  ),
+  new Comic(
+    23,
+    '1993-6',
+    'XForceVol1'
+  ),
+  new Comic(
+    24,
+    '1993-7',
+    'XForceVol1'
+  ),
+  new Comic(
+    25,
+    '1993-8',
+    'XForceVol1'
+  ),
+  new Comic(
+    26,
+    '1993-9',
+    'XForceVol1'
+  ),
+  new Comic(
+    27,
+    '1993-10',
+    'XForceVol1'
+  ),
+  new Comic(
+    28,
+    '1993-11',
+    'XForceVol1'
+  ),
+  new Comic(
+    29,
+    '1993-12',
+    'XForceVol1'
+  ),
+  new Comic(
+    30,
+    '1994-1',
+    'XForceVol1'
+  ),
+  new Comic(
+    31,
+    '1994-2',
     'XForceVol1'
   ),
   new Comic(
@@ -2359,6 +2584,11 @@ comics.push(
     'XMenVol2'
   ),
   new Comic(
+    25,
+    '1993-10',
+    'XMenVol2'
+  ),
+  new Comic(
     3,
     '1979-8',
     'XMenAnnualVol1',
@@ -2413,6 +2643,11 @@ comics.push(
   new Comic(
     16,
     '1992-5',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
+    17,
+    '1993-6',
     'XMenAnnualVol1'
   ),
   new Comic(
@@ -2498,6 +2733,16 @@ comics.push(
   ),
   new Comic(
     1,
+    '1993-6',
+    'XMenUnlimitedVol1'
+  ),
+  new Comic(
+    2,
+    '1993-9',
+    'XMenUnlimitedVol1'
+  ),
+  new Comic(
+    1,
     '1988-10',
     'XTerminatorsVol1'
   ),
@@ -2525,7 +2770,10 @@ series.push(
   new Series('Cable: Blood & Metal', {1: 1992}),
   new Series('Captain America', {1: 1968}),
   new Series('Daredevil', {1: 1964}),
+  new Series('Deadpool', {1: 1994}),
+  new Series('Deadpool: The Circle Chase', {1: 1993}),
   new Series('Deadpool vs. X-Force', {1: 2014}),
+  new Series('Excalibur', {1: 1988}),
   new Series('Fantastic Four', {1: 1961}),
   new Series('Gambit', {1: 1993}),
   new Series('Ghost Rider', {3: 1990}),
@@ -2538,7 +2786,9 @@ series.push(
   new Series('Marvel Team-Up', {1: 1972}),
   new Series('New Mutants', {1: 1983, 3: 2009}),
   new Series('New Mutants Annual', {1: 1984}),
+  new Series('New Warriors', {1: 1990}),
   new Series('Nightcrawler', {1: 1985}),
+  new Series('Nomad', {2: 1992}),
   new Series('Power Pack', {1: 1984}),
   new Series('Second Coming: Prepare', {1: 2010}),
   new Series('Secret Wars', {1: 1984}),
@@ -2546,7 +2796,7 @@ series.push(
   new Series('Stryfe\'s Strike File', {1: 1993}),
   new Series('Thor', {1: 1966}),
   new Series('Uncanny X-Men', {1: 1963}),
-  new Series('Wolverine', {1: 1982}),
+  new Series('Wolverine', {1: 1982, 2: 1993}),
   new Series('X-Factor', {1: 1986}),
   new Series('X-Factor Annual', {1: 1986}),
   new Series('X-Force', {1: 1991, 3: 2008}),
@@ -2556,6 +2806,7 @@ series.push(
   new Series('X-Men Annual', {1: 1970, 2: 1992}),
   new Series('X-Men Free Comic Book Day', {2008: 2008}),
   new Series('X-Men Legacy', {1: 2008}),
+  new Series('X-Men Unlimited', {1: 1993}),
   new Series('X-Men: Manifest Destiny', {1: 2008}),
   new Series('X-Men: Second Coming', {1: 2010}),
   new Series('X-Terminators', {1: 1988})
@@ -3188,6 +3439,72 @@ collections.push(
       'XMenVol222',
       'XMenVol223',
       'XMenVol224'
+    ]
+  ),
+  new Collection(
+    'Deadpool & X-Force Omnibus',
+    '2017-11-1',
+    [
+      'NewWarriorsVol131',
+      'XForceVol119',
+      'XForceVol120',
+      'XForceVol121',
+      'XForceVol122',
+      'XForceVol123',
+      'XForceVol124',
+      'CableVol11',
+      'CableVol12',
+      'CableVol13',
+      'CableVol14',
+      'DeadpoolTheCircleChaseVol11',
+      'DeadpoolTheCircleChaseVol12',
+      'DeadpoolTheCircleChaseVol13',
+      'DeadpoolTheCircleChaseVol14',
+      'XForceVol125',
+      'XForceVol126',
+      'XForceAnnualVol12',
+      'XForceVol127',
+      'XForceVol128',
+      'CableVol15',
+      'NomadVol220',
+      'XForceVol129',
+      'XForceVol130',
+      'CableVol16',
+      'CableVol17',
+      'CableVol18',
+      'XForceVol131',
+      'DeadpoolVol11',
+      'DeadpoolVol12',
+      'DeadpoolVol13',
+      'DeadpoolVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men: Fatal Attractions',
+    '2016-9-21',
+    [
+      'UncannyXMenVol1298',
+      'UncannyXMenVol1299',
+      'XFactorVol187',
+      'XFactorVol188',
+      'XFactorVol189',
+      'XFactorVol190',
+      'XFactorVol191',
+      'UncannyXMenVol1300',
+      'XMenAnnualVol117',
+      'XMenUnlimitedVol11',
+      'UncannyXMenVol1301',
+      'UncannyXMenVol1302',
+      'UncannyXMenVol1303',
+      'XFactorVol192',
+      'XForceVol125',
+      'UncannyXMenVol1304',
+      'XMenUnlimitedVol12',
+      'UncannyXMenVol1305',
+      'XMenVol225',
+      'WolverineVol275',
+      'ExcaliburVol171',
+      'UncannyXMenVol1315'
     ]
   ),
   /**
