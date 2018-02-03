@@ -3433,12 +3433,7 @@ collections.push(
     [
       'XMenVol217',
       'XMenVol218',
-      'XMenVol219',
-      'XMenVol220',
-      'XMenVol221',
-      'XMenVol222',
-      'XMenVol223',
-      'XMenVol224'
+      'XMenVol219'
     ]
   ),
   new Collection(
@@ -3446,22 +3441,116 @@ collections.push(
     '2017-11-1',
     [
       'NewWarriorsVol131',
-      'XForceVol119',
+      'XForceVol119'
+    ]
+  ),
+  new Collection(
+    'X-Men: Fatal Attractions',
+    '2016-9-21',
+    [
+      'UncannyXMenVol1298',
+      'UncannyXMenVol1299',
+      'XFactorVol187',
+      'XFactorVol188',
+      'XFactorVol189',
+      'XFactorVol190',
+      'XFactorVol191',
+      'UncannyXMenVol1300'
+    ]
+  ),
+  new Collection(
+    'Deadpool & X-Force Omnibus',
+    '2017-11-1',
+    [
       'XForceVol120',
       'XForceVol121',
       'XForceVol122',
-      'XForceVol123',
+      'XForceVol123'
+    ]
+  ),
+  new Collection(
+    'X-Men: Fatal Attractions',
+    '2016-9-21',
+    [
+      'XMenAnnualVol117',
+      'XMenUnlimitedVol11'
+    ]
+  ),
+  new Collection(
+    'Deadpool & X-Force Omnibus',
+    '2017-11-1',
+    [
       'XForceVol124',
       'CableVol11',
       'CableVol12',
       'CableVol13',
-      'CableVol14',
+      'CableVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men: A Skinning of Souls',
+    '2013-11-20',
+    [
+      'XMenVol220',
+      'XMenVol221',
+      'XMenVol222',
+      'XMenVol223'
+    ]
+  ),
+  new Collection(
+    'X-Men: Fatal Attractions',
+    '2016-9-21',
+    [
+      'UncannyXMenVol1301',
+      'UncannyXMenVol1302',
+      'UncannyXMenVol1303',
+      'XFactorVol192'
+    ]
+  ),
+  new Collection(
+    'Deadpool & X-Force Omnibus',
+    '2017-11-1',
+    [
       'DeadpoolTheCircleChaseVol11',
       'DeadpoolTheCircleChaseVol12',
       'DeadpoolTheCircleChaseVol13',
       'DeadpoolTheCircleChaseVol14',
       'XForceVol125',
-      'XForceVol126',
+    ]
+  ),
+  new Collection(
+    'X-Men: A Skinning of Souls',
+    '2013-11-20',
+    [
+      'XMenVol224'
+    ]
+  ),
+  new Collection(
+    'X-Men: Fatal Attractions',
+    '2016-9-21',
+    [
+      'UncannyXMenVol1304',
+      'XMenUnlimitedVol12'
+    ]
+  ),
+  new Collection(
+    'Deadpool & X-Force Omnibus',
+    '2017-11-1',
+    [
+      'XForceVol126'
+    ]
+  ),
+  new Collection(
+    'X-Men: Fatal Attractions',
+    '2016-9-21',
+    [
+      'UncannyXMenVol1305'
+    ]
+  ),
+  new Collection(
+    'Deadpool & X-Force Omnibus',
+    '2017-11-1',
+    [
       'XForceAnnualVol12',
       'XForceVol127',
       'XForceVol128',
@@ -3483,44 +3572,12 @@ collections.push(
     'X-Men: Fatal Attractions',
     '2016-9-21',
     [
-      'UncannyXMenVol1298',
-      'UncannyXMenVol1299',
-      'XFactorVol187',
-      'XFactorVol188',
-      'XFactorVol189',
-      'XFactorVol190',
-      'XFactorVol191',
-      'UncannyXMenVol1300',
-      'XMenAnnualVol117',
-      'XMenUnlimitedVol11',
-      'UncannyXMenVol1301',
-      'UncannyXMenVol1302',
-      'UncannyXMenVol1303',
-      'XFactorVol192',
-      'XForceVol125',
-      'UncannyXMenVol1304',
-      'XMenUnlimitedVol12',
-      'UncannyXMenVol1305',
       'XMenVol225',
       'WolverineVol275',
       'ExcaliburVol171',
       'UncannyXMenVol1315'
     ]
   ),
-  /**
-   * Note: Cable Classic happens before X-Men vol. 2 #20, and after X-Force #23, X-Men Annual 17
-   * X-Factor Annual 8, X-Men Unlimited 1, Uncanny 300
-   */
-  // new Collection(
-  //   'Cable Classic, Volume 1 (Partial)',
-  //   '2008-3',
-  //   [
-  //     'CableVol11',
-  //     'CableVol12',
-  //     'CableVol13',
-  //     'CableVol14'
-  //   ]
-  // ),
 
   /**
    * Note: Gambit Classic happens after Uncanny 306, X-Force 26, X-Factor 95, and before Cable 5
