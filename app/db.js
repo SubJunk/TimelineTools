@@ -107,6 +107,26 @@ comics.push(
     true
   ),
   new Comic(
+    368,
+    '1993-11',
+    'AvengersVol1'
+  ),
+  new Comic(
+    369,
+    '1993-12',
+    'AvengersVol1'
+  ),
+  new Comic(
+    101,
+    '1993-12',
+    'AvengersWestCoastVol2'
+  ),
+  new Comic(
+    1,
+    '1996-12',
+    'BlackKnightExodusVol1'
+  ),
+  new Comic(
     1,
     '1992-10',
     'CableBloodMetalVol1'
@@ -154,6 +174,46 @@ comics.push(
   new Comic(
     8,
     '1994-2',
+    'CableVol1'
+  ),
+  new Comic(
+    9,
+    '1994-3',
+    'CableVol1'
+  ),
+  new Comic(
+    10,
+    '1994-4',
+    'CableVol1'
+  ),
+  new Comic(
+    11,
+    '1994-5',
+    'CableVol1'
+  ),
+  new Comic(
+    12,
+    '1994-6',
+    'CableVol1'
+  ),
+  new Comic(
+    13,
+    '1994-7',
+    'CableVol1'
+  ),
+  new Comic(
+    14,
+    '1994-8',
+    'CableVol1'
+  ),
+  new Comic(
+    15,
+    '1994-9',
+    'CableVol1'
+  ),
+  new Comic(
+    16,
+    '1994-10',
     'CableVol1'
   ),
   new Comic(
@@ -243,6 +303,31 @@ comics.push(
     'ExcaliburVol1'
   ),
   new Comic(
+    78,
+    '1994-6',
+    'ExcaliburVol1'
+  ),
+  new Comic(
+    79,
+    '1994-7',
+    'ExcaliburVol1'
+  ),
+  new Comic(
+    80,
+    '1994-8',
+    'ExcaliburVol1'
+  ),
+  new Comic(
+    81,
+    '1994-9',
+    'ExcaliburVol1'
+  ),
+  new Comic(
+    82,
+    '1994-10',
+    'ExcaliburVol1'
+  ),
+  new Comic(
     286,
     '1986-1-10',
     'FantasticFourVol1'
@@ -252,26 +337,26 @@ comics.push(
     '1988-3',
     'FantasticFourVol1'
   ),
-  // new Comic(
-  //   1,
-  //   '1993-12',
-  //   'GambitVol1'
-  // ),
-  // new Comic(
-  //   2,
-  //   '1994-1',
-  //   'GambitVol1'
-  // ),
-  // new Comic(
-  //   3,
-  //   '1994-2',
-  //   'GambitVol1'
-  // ),
-  // new Comic(
-  //   4,
-  //   '1994-3',
-  //   'GambitVol1'
-  // ),
+  new Comic(
+    1,
+    '1993-12',
+    'GambitVol1'
+  ),
+  new Comic(
+    2,
+    '1994-1',
+    'GambitVol1'
+  ),
+  new Comic(
+    3,
+    '1994-2',
+    'GambitVol1'
+  ),
+  new Comic(
+    4,
+    '1994-3',
+    'GambitVol1'
+  ),
   new Comic(
     26,
     '1992-6',
@@ -554,6 +639,16 @@ comics.push(
   new Comic(
     31,
     '1993-1',
+    'NewWarriorsVol1'
+  ),
+  new Comic(
+    45,
+    '1994-3',
+    'NewWarriorsVol1'
+  ),
+  new Comic(
+    46,
+    '1994-4',
     'NewWarriorsVol1'
   ),
   new Comic(
@@ -1801,8 +1896,63 @@ comics.push(
     'UncannyXMenVol1'
   ),
   new Comic(
+    306,
+    '1993-11',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    307,
+    '1993-12',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    308,
+    '1994-1',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    309,
+    '1994-2',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    310,
+    '1994-3',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    311,
+    '1994-4',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    312,
+    '1994-5',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    313,
+    '1994-6',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    314,
+    '1994-7',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
     315,
     '1994-8',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    316,
+    '1994-9',
+    'UncannyXMenVol1'
+  ),
+  new Comic(
+    317,
+    '1994-10',
     'UncannyXMenVol1'
   ),
   new Comic(
@@ -2004,6 +2154,11 @@ comics.push(
     ['The Five Lights (Part Four)']
   ),
   new Comic(
+    60,
+    '1994-4',
+    'WhatIfVol2'
+  ),
+  new Comic(
     1,
     '1982-9',
     'WolverineVol1'
@@ -2026,6 +2181,11 @@ comics.push(
   new Comic(
     75,
     '1993-11',
+    'WolverineVol2'
+  ),
+  new Comic(
+    85,
+    '1994-9',
     'WolverineVol2'
   ),
   new Comic(
@@ -2261,6 +2421,11 @@ comics.push(
     'XFactorVol1'
   ),
   new Comic(
+    106,
+    '1994-9',
+    'XFactorVol1'
+  ),
+  new Comic(
     3,
     '1988-8',
     'XFactorAnnualVol1'
@@ -2288,6 +2453,11 @@ comics.push(
   new Comic(
     2,
     '1993-10',
+    'XForceAnnualVol1'
+  ),
+  new Comic(
+    3,
+    '1994-10',
     'XForceAnnualVol1'
   ),
   new Comic(
@@ -2446,6 +2616,41 @@ comics.push(
     'XForceVol1'
   ),
   new Comic(
+    32,
+    '1994-3',
+    'XForceVol1'
+  ),
+  new Comic(
+    33,
+    '1994-4',
+    'XForceVol1'
+  ),
+  new Comic(
+    34,
+    '1994-5',
+    'XForceVol1'
+  ),
+  new Comic(
+    35,
+    '1994-6',
+    'XForceVol1'
+  ),
+  new Comic(
+    36,
+    '1994-7',
+    'XForceVol1'
+  ),
+  new Comic(
+    37,
+    '1994-8',
+    'XForceVol1'
+  ),
+  new Comic(
+    38,
+    '1994-9',
+    'XForceVol1'
+  ),
+  new Comic(
     26,
     '2010-6',
     'XForceVol3',
@@ -2589,6 +2794,66 @@ comics.push(
     'XMenVol2'
   ),
   new Comic(
+    26,
+    '1993-11',
+    'XMenVol2'
+  ),
+  new Comic(
+    27,
+    '1993-12',
+    'XMenVol2'
+  ),
+  new Comic(
+    28,
+    '1994-1',
+    'XMenVol2'
+  ),
+  new Comic(
+    29,
+    '1994-2',
+    'XMenVol2'
+  ),
+  new Comic(
+    30,
+    '1994-3',
+    'XMenVol2'
+  ),
+  new Comic(
+    31,
+    '1994-4',
+    'XMenVol2'
+  ),
+  new Comic(
+    32,
+    '1994-5',
+    'XMenVol2'
+  ),
+  new Comic(
+    33,
+    '1994-6',
+    'XMenVol2'
+  ),
+  new Comic(
+    34,
+    '1994-7',
+    'XMenVol2'
+  ),
+  new Comic(
+    35,
+    '1994-8',
+    'XMenVol2'
+  ),
+  new Comic(
+    36,
+    '1994-9',
+    'XMenVol2'
+  ),
+  new Comic(
+    37,
+    '1994-10',
+    'XMenVol2'
+  ),
+  new Comic(
     3,
     '1979-8',
     'XMenAnnualVol1',
@@ -2651,8 +2916,18 @@ comics.push(
     'XMenAnnualVol1'
   ),
   new Comic(
+    18,
+    '1994-7',
+    'XMenAnnualVol1'
+  ),
+  new Comic(
     1,
     '1992-5',
+    'XMenAnnualVol2'
+  ),
+  new Comic(
+    2,
+    '1993-10',
     'XMenAnnualVol2'
   ),
   new Comic(
@@ -2733,12 +3008,22 @@ comics.push(
   ),
   new Comic(
     1,
+    '1994-1-1',
+    'XMenTheWeddingAlbumVol1'
+  ),
+  new Comic(
+    1,
     '1993-6',
     'XMenUnlimitedVol1'
   ),
   new Comic(
     2,
     '1993-9',
+    'XMenUnlimitedVol1'
+  ),
+  new Comic(
+    3,
+    '1993-12',
     'XMenUnlimitedVol1'
   ),
   new Comic(
@@ -2765,7 +3050,9 @@ comics.push(
 
 series.push(
   new Series('Avengers', {1: 1963}),
+  new Series('Avengers: West Coast', {2: 1985}),
   new Series('Avengers Annual', {1: 1967}),
+  new Series('Black Knight: Exodus', {1: 1996}),
   new Series('Cable', {1: 1993, 2: 2008}),
   new Series('Cable: Blood & Metal', {1: 1992}),
   new Series('Captain America', {1: 1968}),
@@ -2796,6 +3083,7 @@ series.push(
   new Series('Stryfe\'s Strike File', {1: 1993}),
   new Series('Thor', {1: 1966}),
   new Series('Uncanny X-Men', {1: 1963}),
+  new Series('What If?', {2: 1989}),
   new Series('Wolverine', {1: 1982, 2: 1993}),
   new Series('X-Factor', {1: 1986}),
   new Series('X-Factor Annual', {1: 1986}),
@@ -2809,6 +3097,7 @@ series.push(
   new Series('X-Men Unlimited', {1: 1993}),
   new Series('X-Men: Manifest Destiny', {1: 2008}),
   new Series('X-Men: Second Coming', {1: 2010}),
+  new Series('X-Men: The Wedding Album', {1: 1994}),
   new Series('X-Terminators', {1: 1988})
 );
 
@@ -3515,7 +3804,7 @@ collections.push(
       'DeadpoolTheCircleChaseVol12',
       'DeadpoolTheCircleChaseVol13',
       'DeadpoolTheCircleChaseVol14',
-      'XForceVol125',
+      'XForceVol125'
     ]
   ),
   new Collection(
@@ -3548,6 +3837,23 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Phalanx Covenant',
+    '2014-2-5',
+    [
+      'UncannyXMenVol1306'
+    ]
+  ),
+  new Collection(
+    'X-Men: Gambit Classic, Vol. 1 (Partial)',
+    '2009-5',
+    [
+      'GambitVol11',
+      'GambitVol12',
+      'GambitVol13',
+      'GambitVol14'
+    ]
+  ),
+  new Collection(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
@@ -3555,17 +3861,7 @@ collections.push(
       'XForceVol127',
       'XForceVol128',
       'CableVol15',
-      'NomadVol220',
-      'XForceVol129',
-      'XForceVol130',
-      'CableVol16',
-      'CableVol17',
-      'CableVol18',
-      'XForceVol131',
-      'DeadpoolVol11',
-      'DeadpoolVol12',
-      'DeadpoolVol13',
-      'DeadpoolVol14'
+      'NomadVol220'
     ]
   ),
   new Collection(
@@ -3574,25 +3870,161 @@ collections.push(
     [
       'XMenVol225',
       'WolverineVol275',
-      'ExcaliburVol171',
+      'ExcaliburVol171'
+    ]
+  ),
+  new Collection(
+    'Avengers/X-Men: Bloodties',
+    '2016-9-21',
+    [
+      'AvengersVol1368',
+      'XMenVol226',
+      'AvengersWestCoastVol2101',
+      'UncannyXMenVol1307',
+      'AvengersVol1369',
+      'BlackKnightExodusVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Wedding of Cyclops and Phoenix',
+    '2012-9-19',
+    [
+      'XMenAnnualVol22',
+      'XMenVol227',
+      'XMenUnlimitedVol13',
+
+    ]
+  ),
+  new Collection(
+    'Deadpool & X-Force Omnibus',
+    '2017-11-1',
+    [
+      'XForceVol129',
+      'XForceVol130',
+      'CableVol16',
+      'CableVol17',
+      'CableVol18'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Wedding of Cyclops and Phoenix',
+    '2012-9-19',
+    [
+      'UncannyXMenVol1308',
+      'XMenVol228'
+    ]
+  ),
+  new Collection(
+    'Deadpool & X-Force Omnibus',
+    '2017-11-1',
+    [
+      'XForceVol131',
+      'DeadpoolVol11',
+      'DeadpoolVol12',
+      'DeadpoolVol13',
+      'DeadpoolVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Wedding of Cyclops and Phoenix',
+    '2012-9-19',
+    [
+      'UncannyXMenVol1309',
+      'XMenVol229'
+    ]
+  ),
+  new Collection(
+    'X-Force: Child\'s Play',
+    '2016-5-12',
+    [
+      'XForceVol132',
+      'NewWarriorsVol145',
+      'XForceVol133',
+      'NewWarriorsVol146',
+      'XForceVol134'
+    ]
+  ),
+  new Collection(
+    'Cable Classic: Vol. 2',
+    '2009-7-22',
+    [
+      'CableVol19',
+      'CableVol110',
+      'CableVol111'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Wedding of Cyclops and Phoenix',
+    '2012-9-19',
+    [
+      'XMenAnnualVol118',
+      'XMenTheWeddingAlbumVol11',
+      'UncannyXMenVol1310',
+      'XMenVol230',
+      'WhatIfVol260'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Cable Classic: Vol. 2',
+    '2009-7-22',
+    [
+      'CableVol112',
+      'CableVol113',
+      'CableVol114',
+    ]
+  ),
+  new Collection(
+    'X-Force: Child\'s Play',
+    '2016-5-12',
+    [
+      'XForceVol135',
+      'XForceVol136',
+      'XForceVol137',
+      'XForceAnnualVol13',
+    ]
+  ),
+  new Collection(
+    'X-Men: Phalanx Covenant',
+    '2014-2-5',
+    [
+      'UncannyXMenVol1311',
+      'UncannyXMenVol1312',
+      'UncannyXMenVol1313',
+      'UncannyXMenVol1314'
+    ]
+  ),
+  new Collection(
+    'X-Men: Fatal Attractions',
+    '2016-9-21',
+    [
       'UncannyXMenVol1315'
     ]
   ),
-
+  new Collection(
+    'X-Men: Phalanx Covenant',
+    '2014-2-5',
+    [
+      'ExcaliburVol178',
+      'ExcaliburVol179',
+      'ExcaliburVol180',
+      'ExcaliburVol181',
+      'UncannyXMenVol1316',
+      'XMenVol236',
+      'UncannyXMenVol1317',
+      'XMenVol237',
+      'XFactorVol1106',
+      'XForceVol138',
+      'ExcaliburVol182',
+      'WolverineVol285',
+      'CableVol16',
+    ]
+  ),
   /**
-   * Note: Gambit Classic happens after Uncanny 306, X-Force 26, X-Factor 95, and before Cable 5
-   * and X-Men vol. 2 #25
+   * Big gap here, and in general the contents after here need to be reviewed.
    */
-  // new Collection(
-  //   'X-Men: Gambit Classic, Vol. 1 (Partial)',
-  //   '2009-5',
-  //   [
-  //     'GambitVol11',
-  //     'GambitVol12',
-  //     'GambitVol13',
-  //     'GambitVol14'
-  //   ]
-  // ),
   new Collection(
     'Cable Vol. 1: Messiah War',
     '2008-12',

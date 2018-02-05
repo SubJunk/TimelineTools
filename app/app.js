@@ -402,7 +402,7 @@ angular.module('app', ['angular-md5'])
      *    in a row) and forward slashes with underscores.
      * Finally it appends the volume and issue.
      */
-    comic.image = comic.series.replace(/[():&]/g, '').replace(/\s+|\//g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
+    comic.image = comic.series.replace(/[():&?]/g, '').replace(/\s+|\//g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
 
     if (currentSeriesVolume.volume > 1) {
       comic.series += ' Vol. ' + currentSeriesVolume.volume;
