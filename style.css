@@ -151,7 +151,6 @@ body {
 .cover-thumbnail img {
   overflow: hidden;
   object-fit: cover;
-  transition: height 0.5s, width 0.5s, border-radius 0.5s;
   border-radius: 50%;
 
   width: calc(var(--month-width) * 0.9);
@@ -175,7 +174,6 @@ body {
   display: none;
   left: 0;
   width: calc(var(--expanded-width) * 0.75);
-  transition: max-height 0.5s, max-width 0.5s, height 0.5s, width 0.5s;
   background: inherit;
   margin-top: 10px;
 }
