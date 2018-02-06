@@ -19,9 +19,31 @@ function Comic(issue, datePublished, seriesVolumeId, titles) {
 }
 
 var comics = [];
-comics.push(
-  new Comic(10, '1981-10', 'AvengersAnnualVol1'),
 
+/**
+ * Add multiple comics in a seriesVolume.
+ *
+ * @param {number}   issue
+ * @param {string}   datePublished
+ * @param {string}   seriesVolumeId
+ * @param {string[]} [titles]
+ */
+function addComicsInSeriesVolume(seriesVolumeId, comicsInSeriesVolume) {
+  _.each(comicsInSeriesVolume, function(comic) {
+    comics.push(
+      new Comic(
+        comic[0],
+        comic[1],
+        seriesVolumeId,
+        comic[2]
+      )
+    );
+  });
+}
+
+addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']]);
+
+comics.push(
   new Comic(263, '1986-1-10', 'AvengersVol1'),
   new Comic(368, '1993-11', 'AvengersVol1'),
   new Comic(369, '1993-12', 'AvengersVol1'),
