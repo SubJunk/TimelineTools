@@ -60,7 +60,7 @@
             <div class="collection-comics">
               <div class="collection-title">{{main.expandedCollection.title}}:</div>
               <ul>
-                <li ng-repeat="comic in main.expandedCollection.comics track by comic.id">
+                <li ng-repeat="comic in main.expandedCollection.allCollectionComics track by comic.id">
                   <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="z-depth-5 waves-effect hoverable">
                     <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg" ng-class="{current: comic.id === main.expandedComicId}"></img>
                   </a>

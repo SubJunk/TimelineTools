@@ -3225,7 +3225,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Marvel Masterworks: The Uncanny X-Men Vol. 10 (Part 1)',
+    'Marvel Masterworks: The Uncanny X-Men Vol. 10',
     '2017-2',
     [
       'MagikVol11',
@@ -3258,7 +3258,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Marvel Masterworks: The Uncanny X-Men Vol. 10 (Part 2)',
+    'Marvel Masterworks: The Uncanny X-Men Vol. 10',
     '2017-2',
     [
       'UncannyXMenVol1181',
@@ -3295,7 +3295,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Ghosts (Part 1)',
+    'X-Men: Ghosts',
     '2013-5',
     [
       'UncannyXMenVol1199',
@@ -3313,7 +3313,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Ghosts (Part 2)',
+    'X-Men: Ghosts',
     '2013-5',
     [
       'UncannyXMenVol1202',
@@ -3522,7 +3522,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 1)',
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
     '2012-1-25',
     [
       'XFactorVol163',
@@ -3554,7 +3554,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force Omnibus (Part 1)',
+    'X-Force Omnibus',
     '2013-2-6',
     [
       'NewMutantsVol198',
@@ -3571,7 +3571,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 2)',
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
     '2012-1-25',
     [
       'XMenVol21',
@@ -3584,7 +3584,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Bishop\'s Crossing (Part 1)',
+    'X-Men: Bishop\'s Crossing',
     '2016-11-23',
     [
       'UncannyXMenVol1281',
@@ -3597,7 +3597,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 3)',
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
     '2012-1-25',
     [
       'XMenVol28',
@@ -3607,7 +3607,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Bishop\'s Crossing (Part 2)',
+    'X-Men: Bishop\'s Crossing',
     '2016-11-23',
     [
       'UncannyXMenVol1288',
@@ -3616,7 +3616,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force Omnibus (Part 2)',
+    'X-Force Omnibus',
     '2013-2-6',
     [
       'XForceVol15',
@@ -3638,7 +3638,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2 (Part 4)',
+    'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
     '2012-1-25',
     [
       'XMenVol210',
@@ -3646,7 +3646,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force Omnibus (Part 3)',
+    'X-Force Omnibus',
     '2013-2-6',
     [
       'XForceVol111',
@@ -3659,7 +3659,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Bishop\'s Crossing (Part 3)',
+    'X-Men: Bishop\'s Crossing',
     '2016-11-23',
     [
       'UncannyXMenVol1291',
