@@ -10,12 +10,8 @@ var seriesVolumes = [];
  * @param {string}   datePublished
  * @param {string}   seriesVolumeId
  * @param {string[]} [titles]
- * @param {boolean}  [important] completely subjective measure of whether the issue
- *                               starts an event that is important to read. Usually
- *                               the introduction, death, or major event of a
- *                               long-term character.
  */
-function Comic(issue, datePublished, seriesVolumeId, titles, important) {
+function Comic(issue, datePublished, seriesVolumeId, titles) {
   // Create a Date object from the datePublished string
   this.date = new Date(datePublished);
 
@@ -25,7 +21,6 @@ function Comic(issue, datePublished, seriesVolumeId, titles, important) {
   this.monthPublished = this.date.getMonth() + 1;
   this.seriesVolumeId = seriesVolumeId;
   this.titles = titles ? titles : [];
-  this.important = Boolean(important);
 }
 
 /**
@@ -102,9 +97,7 @@ comics.push(
   new Comic(
     263,
     '1986-1-10',
-    'AvengersVol1',
-    null,
-    true
+    'AvengersVol1'
   ),
   new Comic(
     368,
@@ -206,16 +199,16 @@ comics.push(
     '1994-8',
     'CableVol1'
   ),
-  new Comic(
-    15,
-    '1994-9',
-    'CableVol1'
-  ),
-  new Comic(
-    16,
-    '1994-10',
-    'CableVol1'
-  ),
+  // new Comic(
+  //   15,
+  //   '1994-9',
+  //   'CableVol1'
+  // ),
+  // new Comic(
+  //   16,
+  //   '1994-10',
+  //   'CableVol1'
+  // ),
   new Comic(
     1,
     '2008-5',
@@ -366,11 +359,6 @@ comics.push(
     27,
     '1992-7',
     'GhostRiderVol3'
-  ),
-  new Comic(
-    1,
-    '2011-2',
-    'HeroicAgeXMenVol1'
   ),
   new Comic(
     340,
@@ -1357,9 +1345,7 @@ comics.push(
   new Comic(
     199,
     '1985-11',
-    'UncannyXMenVol1',
-    null,
-    true
+    'UncannyXMenVol1'
   ),
   new Comic(
     200,
@@ -1509,9 +1495,7 @@ comics.push(
   new Comic(
     229,
     '1988-5',
-    'UncannyXMenVol1',
-    null,
-    true
+    'UncannyXMenVol1'
   ),
   new Comic(
     230,
@@ -1586,9 +1570,7 @@ comics.push(
   new Comic(
     244,
     '1989-5',
-    'UncannyXMenVol1',
-    null,
-    true
+    'UncannyXMenVol1'
   ),
   new Comic(
     245,
@@ -1986,12 +1968,6 @@ comics.push(
     ['X-Men: Divided (Part 2)']
   ),
   new Comic(
-    497,
-    '2008-6',
-    'UncannyXMenVol1',
-    ['X-Men: Divided (Part 3)']
-  ),
-  new Comic(
     500,
     '2008-9',
     'UncannyXMenVol1',
@@ -2281,9 +2257,7 @@ comics.push(
   new Comic(
     33,
     '1988-10',
-    'XFactorVol1',
-    null,
-    true
+    'XFactorVol1'
   ),
   new Comic(
     34,
@@ -3065,7 +3039,6 @@ series.push(
   new Series('Gambit', {1: 1993}),
   new Series('Ghost Rider', {3: 1990}),
   new Series('Giant Size X-Men', {1: 1975}),
-  new Series('Heroic Age: X-Men', {1: 2010}),
   new Series('Incredible Hulk', {1: 1962}),
   new Series('Iron Fist', {1: 1975}),
   new Series('Magik', {1: 1983}),
@@ -3655,7 +3628,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Shattershot (Uncollected)',
+    'Uncollected (Shattershot event)',
     null,
     [
       'XMenAnnualVol21',
@@ -3964,9 +3937,36 @@ collections.push(
       'WhatIfVol260'
     ]
   ),
+  new Collection(
+    'Uncollected (Soul Possessions story arc)',
+    null,
+    [
+      'XMenVol231',
+      'XMenVol232'
+    ]
+  ),
+  new Collection(
+    'X-Men: Phalanx Covenant',
+    '2014-2-5',
+    [
+      'UncannyXMenVol1311',
+      'UncannyXMenVol1312',
+      'UncannyXMenVol1313',
+      'UncannyXMenVol1314'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Uncollected',
+    null,
+    [
+      'XMenVol233',
+      'XMenVol234',
+      'XMenVol235'
+    ]
+  ),
   new Collection(
     'Cable Classic: Vol. 2',
     '2009-7-22',
@@ -3984,16 +3984,6 @@ collections.push(
       'XForceVol136',
       'XForceVol137',
       'XForceAnnualVol13',
-    ]
-  ),
-  new Collection(
-    'X-Men: Phalanx Covenant',
-    '2014-2-5',
-    [
-      'UncannyXMenVol1311',
-      'UncannyXMenVol1312',
-      'UncannyXMenVol1313',
-      'UncannyXMenVol1314'
     ]
   ),
   new Collection(

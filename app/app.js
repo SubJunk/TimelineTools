@@ -710,10 +710,6 @@ angular.module('app', ['angular-md5'])
       });
     }
 
-    if (searchParams.highlight) {
-      vm.enableHighlighting = Boolean(searchParams.highlight);
-    }
-
     /**
      * The garbage collector.
      *
