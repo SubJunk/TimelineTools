@@ -42,36 +42,37 @@ function addComicsInSeriesVolume(seriesVolumeId, comicsInSeriesVolume) {
 }
 
 addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']]);
+addComicsInSeriesVolume('AvengersVol1', [
+  [263, '1986-1-10'],
+  [368, '1993-11'],
+  [369, '1993-12']
+]);
+addComicsInSeriesVolume('AvengersWestCoastVol2', [[101, '1993-12']]);
+addComicsInSeriesVolume('BlackKnightExodusVol1', [[1, '1996-12']]);
+addComicsInSeriesVolume('CableBloodMetalVol1', [
+  [1, '1992-10'],
+  [2, '1992-11']
+]);
+addComicsInSeriesVolume('CableVol1', [
+  [1,  '1993-5'],
+  [2,  '1993-6'],
+  [3,  '1993-7'],
+  [4,  '1993-8'],
+  [5,  '1993-11'],
+  [6,  '1993-12'],
+  [7,  '1994-1'],
+  [8,  '1994-2'],
+  [9,  '1994-3'],
+  [10, '1994-4'],
+  [11, '1994-5'],
+  [12, '1994-6'],
+  [13, '1994-7'],
+  [14, '1994-8'],
+  // [15, '1994-9'],
+  // [16, '1994-10']
+]);
 
 comics.push(
-  new Comic(263, '1986-1-10', 'AvengersVol1'),
-  new Comic(368, '1993-11', 'AvengersVol1'),
-  new Comic(369, '1993-12', 'AvengersVol1'),
-
-  new Comic(101, '1993-12', 'AvengersWestCoastVol2'),
-
-  new Comic(1, '1996-12', 'BlackKnightExodusVol1'),
-
-  new Comic(1, '1992-10', 'CableBloodMetalVol1'),
-  new Comic(2, '1992-11', 'CableBloodMetalVol1'),
-
-  new Comic(1, '1993-5', 'CableVol1'),
-  new Comic(2, '1993-6', 'CableVol1'),
-  new Comic(3, '1993-7', 'CableVol1'),
-  new Comic(4, '1993-8', 'CableVol1'),
-  new Comic(5, '1993-11', 'CableVol1'),
-  new Comic(6, '1993-12', 'CableVol1'),
-  new Comic(7, '1994-1', 'CableVol1'),
-  new Comic(8, '1994-2', 'CableVol1'),
-  new Comic(9, '1994-3', 'CableVol1'),
-  new Comic(10, '1994-4', 'CableVol1'),
-  new Comic(11, '1994-5', 'CableVol1'),
-  new Comic(12, '1994-6', 'CableVol1'),
-  new Comic(13, '1994-7', 'CableVol1'),
-  new Comic(14, '1994-8', 'CableVol1'),
-  // new Comic(15, '1994-9', 'CableVol1'),
-  // new Comic(16, '1994-10', 'CableVol1'),
-
   new Comic(1, '2008-5', 'CableVol2', ['War Baby (Chapter 1)']),
 
   new Comic(339, '1988-3', 'CaptainAmericaVol1'),
