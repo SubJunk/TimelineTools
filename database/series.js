@@ -47,6 +47,8 @@ function SeriesVolume(seriesId, volume, startYear) {
 var series        = [];
 var seriesVolumes = [];
 series.push(
+  new Series('Adventures of Cyclops & Phoenix', {1: 1994}),
+  new Series('Askani\'son', {1: 1996}),
   new Series('Avengers', {1: 1963}),
   new Series('Avengers: West Coast', {2: 1985}),
   new Series('Avengers Annual', {1: 1967}),
@@ -92,7 +94,9 @@ series.push(
   new Series('X-Men Free Comic Book Day', {2008: 2008}),
   new Series('X-Men Legacy', {1: 2008}),
   new Series('X-Men Unlimited', {1: 1993}),
+  new Series('X-Men: Books of Askani', {1: 1995}),
   new Series('X-Men: Manifest Destiny', {1: 2008}),
+  new Series('X-Men: Phoenix', {1: 1999}),
   new Series('X-Men: Second Coming', {1: 2010}),
   new Series('X-Men: The Wedding Album', {1: 1994}),
   new Series('X-Terminators', {1: 1988})

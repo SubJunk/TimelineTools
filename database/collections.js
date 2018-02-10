@@ -835,11 +835,7 @@ collections.push(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
-      'XForceVol131',
-      'DeadpoolVol11',
-      'DeadpoolVol12',
-      'DeadpoolVol13',
-      'DeadpoolVol14'
+      'XForceVol131'
     ]
   ),
   new Collection(
@@ -899,16 +895,13 @@ collections.push(
       'UncannyXMenVol1314'
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
     'Uncollected',
     null,
     [
-      'XMenVol233',
-      'XMenVol234',
-      'XMenVol235'
+      'XMenUnlimitedVol14',
+      'XMenUnlimitedVol15',
+      'XMenVol233'
     ]
   ),
   new Collection(
@@ -917,7 +910,23 @@ collections.push(
     [
       'CableVol112',
       'CableVol113',
-      'CableVol114',
+      'CableVol114'
+    ]
+  ),
+  new Collection(
+    'X-Men: Phalanx Covenant',
+    '2014-2-5',
+    [
+      'ExcaliburVol178',
+      'ExcaliburVol179',
+      'ExcaliburVol180'
+    ]
+  ),
+  new Collection(
+    'Uncollected',
+    null,
+    [
+      'XMenVol234'
     ]
   ),
   new Collection(
@@ -926,8 +935,24 @@ collections.push(
     [
       'XForceVol135',
       'XForceVol136',
-      'XForceVol137',
-      'XForceAnnualVol13',
+      'XForceVol137'
+    ]
+  ),
+  new Collection(
+    'X-Men: Phalanx Covenant',
+    '2014-2-5',
+    [
+      'ExcaliburVol181'
+    ]
+  ),
+  new Collection(
+    'Deadpool & X-Force Omnibus',
+    '2017-11-1',
+    [
+      'DeadpoolVol11',
+      'DeadpoolVol12',
+      'DeadpoolVol13',
+      'DeadpoolVol14'
     ]
   ),
   new Collection(
@@ -938,13 +963,33 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable Classic: Vol. 3',
+    '2016-9-8',
+    [
+      'CableVol115'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Adventures of Cyclops & Phoenix',
+    '2014-9-17',
+    [
+      'AdventuresofCyclopsPhoenixVol11',
+      'AdventuresofCyclopsPhoenixVol12',
+      'AdventuresofCyclopsPhoenixVol13',
+      'AdventuresofCyclopsPhoenixVol14'
+    ]
+  ),
+  new Collection(
+    'Uncollected',
+    null,
+    [
+      'XMenVol235'
+    ]
+  ),
+  new Collection(
     'X-Men: Phalanx Covenant',
     '2014-2-5',
     [
-      'ExcaliburVol178',
-      'ExcaliburVol179',
-      'ExcaliburVol180',
-      'ExcaliburVol181',
       'UncannyXMenVol1316',
       'XMenVol236',
       'UncannyXMenVol1317',
@@ -953,7 +998,41 @@ collections.push(
       'XForceVol138',
       'ExcaliburVol182',
       'WolverineVol285',
-      'CableVol16',
+      'CableVol116'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Force: Child\'s Play',
+    '2016-5-12',
+    [
+      'XForceAnnualVol13'
+    ]
+  ),
+  new Collection(
+    'Cable Classic: Vol. 3',
+    '2016-9-8',
+    [
+      'CableVol117',
+      'CableVol118',
+      'CableVol119',
+      'CableVol120',
+    ]
+  ),
+  new Collection(
+    'X-Men: The Adventures of Cyclops & Phoenix',
+    '2014-9-17',
+    [
+      'XMenBooksofAskaniVol11',
+      'AskanisonVol11',
+      'AskanisonVol12',
+      'AskanisonVol13',
+      'AskanisonVol14',
+      'XMenPhoenixVol11',
+      'XMenPhoenixVol12',
+      'XMenPhoenixVol13'
     ]
   ),
   /**

@@ -41,6 +41,18 @@ function addComicsInSeriesVolume(seriesVolumeId, comicsInSeriesVolume) {
   });
 }
 
+addComicsInSeriesVolume('AdventuresofCyclopsPhoenixVol1', [
+  [1, '1994-5'],
+  [2, '1994-6'],
+  [3, '1994-7'],
+  [4, '1994-8']
+]);
+addComicsInSeriesVolume('AskanisonVol1', [
+  [1, '1996-1'],
+  [2, '1996-4'],
+  [3, '1996-5'],
+  [4, '1996-6']
+]);
 addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']]);
 addComicsInSeriesVolume('AvengersVol1', [
   [263, '1986-1-10'],
@@ -68,8 +80,25 @@ addComicsInSeriesVolume('CableVol1', [
   [12, '1994-6'],
   [13, '1994-7'],
   [14, '1994-8'],
-  // [15, '1994-9'],
-  // [16, '1994-10']
+  [15, '1994-9'],
+  [16, '1994-10'],
+  [17, '1994-11'],
+  [18, '1994-12'],
+  [19, '1995-1'],
+  [20, '1995-2']
+]);
+addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']]);
+addComicsInSeriesVolume('XMenPhoenixVol1', [
+  [1, '1999-12'],
+  [2, '2000-1'],
+  [3, '2000-3']
+]);
+addComicsInSeriesVolume('XMenUnlimitedVol1', [
+  [1, '1993-6'],
+  [2, '1993-9'],
+  [3, '1993-12'],
+  [4, '1994-3'],
+  [5, '1994-6']
 ]);
 
 comics.push(
@@ -650,10 +679,6 @@ comics.push(
   new Comic(2, '2010-9', 'XMenSecondComingVol1', ['Second Coming Chapter XIV']),
 
   new Comic(1, '1994-1-1', 'XMenTheWeddingAlbumVol1'),
-
-  new Comic(1, '1993-6', 'XMenUnlimitedVol1'),
-  new Comic(2, '1993-9', 'XMenUnlimitedVol1'),
-  new Comic(3, '1993-12', 'XMenUnlimitedVol1'),
 
   new Comic(1, '1988-10', 'XTerminatorsVol1'),
   new Comic(2, '1988-11', 'XTerminatorsVol1'),
