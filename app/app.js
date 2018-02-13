@@ -455,17 +455,54 @@ angular.module('app', ['angular-md5'])
 
   // Render collections as groups of comics
   var comicIndex;
+  var title, bgColor, txtColor
+  var collectionTheme = {theme:[title, bgColor, txtColor]};
   _.each(collections, function(collection) {
     var collectionColor = getCollectionColors();
+
 
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(comics, { 'id': comicId });
       if (!comicIndex) {
         throw new Error(comicId + ' not found in the comics db');
       }
+      for (var key in collectionTheme) {
+          var theme = collectionTheme[key];
+          for (var title in theme) {
+            console.log(comicIndex);
+            console.log('1 ' + theme[title], comics[comicIndex].titles);
+              if (theme[title] == comics[comicIndex].titles) {
+                //do nothing;
+                console.log('found');
+              }else{
+                collectionTheme.theme[title]=comics[comicIndex].titles;
+              //  console.log(collectionTheme.theme);
+              }
+          }
+      }
+    //  var count = collectionTheme.Theme.length;
+      //for each Theme in collectionTheme{
+        //for each title in Theme{
+          //console.log(title);
+        //}
+      //} //(i = 0; i < 10; i++){
+        //console.log(collectionTheme.Theme[i].[i]);//{
+          //console.log('found it');
+        //}
+      //}
+  //   collectionTitleIndex = _.findKey(collectionTheme.Theme, {'title': comics[comicIndex].titles})
+      //console.log(collectionTitleIndex);
+    //  if (!collectionTitleIndex){
+      //    collectionTheme.Theme.push(comics[comicIndex].titles,collectionColor.backgroundColor, collectionColor.textColor);
+          //console.log(collectionTheme);
+        //}
+        //else{
+          //these ones existed
+        //  console.log("exists" + collectionTheme.title);
+        //}
 
-      comics[comicIndex].styles.background = collectionColor.backgroundColor;
-      comics[comicIndex].styles.color = collectionColor.textColor;
+      comics[comicIndex].styles.background = collectionTheme.theme.bgColor;
+      comics[comicIndex].styles.color = collectionTheme.theme.txtColor;
     });
   });
 
@@ -496,6 +533,7 @@ angular.module('app', ['angular-md5'])
   var blue;
   var lightnessAdjustment;
   var rgbColor;
+
 
   function getCollectionColors() {
     var startColor;
