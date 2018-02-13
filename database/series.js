@@ -83,7 +83,7 @@ series.push(
   new Series('Thor', {1: 1966}),
   new Series('Uncanny X-Men', {1: 1963}),
   new Series('What If?', {2: 1989}),
-  new Series('Wolverine', {1: 1982, 2: 1993}),
+  new Series('Wolverine', {1: 1982, 2: 1988}),
   new Series('X-Factor', {1: 1986}),
   new Series('X-Factor Annual', {1: 1986}),
   new Series('X-Force', {1: 1991, 3: 2008}),

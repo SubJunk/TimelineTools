@@ -963,7 +963,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Cable Classic: Vol. 3',
+    'Cable Classic: Vol. 3 (Partial)',
     '2016-9-8',
     [
       'CableVol115'
@@ -1012,7 +1012,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Cable Classic: Vol. 3',
+    'Cable Classic: Vol. 3 (Partial)',
     '2016-9-8',
     [
       'CableVol117',
