@@ -454,6 +454,7 @@ angular.module('app', ['angular-md5'])
   });
 
   // Render collections as groups of comics
+  var collectionColorsIndex = {};
   var comicIndex;
   _.each(collections, function(collection) {
     var collectionColor = getCollectionColors(collection.title);
@@ -494,7 +495,6 @@ angular.module('app', ['angular-md5'])
   var blue;
   var lightnessAdjustment;
   var rgbColor;
-  var collectionColorsIndex = {};
 
   function getCollectionColors(collectionTitle) {
     if (!collectionColorsIndex[collectionTitle]) {
