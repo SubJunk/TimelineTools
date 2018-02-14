@@ -456,7 +456,7 @@ angular.module('app', ['angular-md5'])
   // Render collections as groups of comics
   var comicIndex;
   _.each(collections, function(collection) {
-    var collectionColor = getCollectionColors();
+    var collectionColor = getCollectionColors(collection.title);
 
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(comics, { 'id': comicId });
@@ -477,7 +477,6 @@ angular.module('app', ['angular-md5'])
    * @return {string} HSLA color
    */
   var backgroundLightness;
-  var textColor = '';
   var hue;
   var saturation;
   var lightness;
@@ -486,7 +485,6 @@ angular.module('app', ['angular-md5'])
   /**
    * A string representation of a HSL color, usable by browsers.
    */
-  var hslColor;
 
   var chroma;
   var huePrime;
@@ -496,108 +494,110 @@ angular.module('app', ['angular-md5'])
   var blue;
   var lightnessAdjustment;
   var rgbColor;
+  var collectionColorsIndex = {};
 
+  function getCollectionColors(collectionTitle) {
+    if (!collectionColorsIndex[collectionTitle]) {
+      var startColor;
 
-  function getCollectionColors() {
-    var startColor;
-
-    hslColor = 'hsl(';
-    if (angular.isDefined(startColor)) {
-      if ((startColor + stepChange) > 360) {
-        startColor -= 360;
-      }
-      startColor += stepChange;
-    } else {
-      startColor = Math.floor(Math.random() * 360);
-    }
-    hue = startColor;
-    hslColor += startColor + ', ';
-    saturation = parseFloat('0.' + Math.floor(Math.random() * ((75-35) + 1) + 35));
-    hslColor += saturation * 100 + '%, ';
-    lightness = parseFloat('0.' + Math.floor(Math.random() * ((85-30) + 1) + 30));
-    hslColor += lightness * 100  + '%)';
-
-    /**
-     * Start the conversion of the HSL color to RGB
-     * Converts an HSLA color value to RGB. Conversion formula
-     * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
-     * Assumes h, s, and l are contained in the set [0, 1] and
-     * assigns r, g, and b in the set [0, 255].
-     *
-     * @see https://github.com/kayellpeee/hsl_rgb_converter
-     */
-    chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
-    huePrime = hue / 60;
-    secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
-
-    huePrime = Math.floor(huePrime);
-
-    // Reset the values each time
-    red = 0;
-    green = 0;
-    blue = 0;
-
-    switch (huePrime) {
-      case 0:
-        red = chroma;
-        green = secondComponent;
-        break;
-      case 1:
-        red = secondComponent;
-        green = chroma;
-        break;
-      case 2:
-        green = chroma;
-        blue = secondComponent;
-        break;
-      case 3:
-        green = secondComponent;
-        blue = chroma;
-        break;
-      case 4:
-        red = secondComponent;
-        blue = chroma;
-        break;
-      case 5:
-        red = chroma;
-        blue = secondComponent;
-    }
-
-    lightnessAdjustment = lightness - (chroma / 2);
-    red += lightnessAdjustment;
-    green += lightnessAdjustment;
-    blue += lightnessAdjustment;
-
-    rgbColor = [Math.round(red * 255), Math.round(green * 255), Math.round(blue * 255)];
-
-    /**
-     * Given a color in RGB format, assign either a light
-     * or dark color.
-     *
-     * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
-     */
-    for (var i = 0; i < 3; ++i) {
-      rgbColor[i] /= 255;
-
-      if (rgbColor[i] <= 0.03928) {
-        rgbColor[i] = rgbColor[i] / 12.92;
+      collectionColorsIndex.hslColor = 'hsl(';
+      if (angular.isDefined(startColor)) {
+        if ((startColor + stepChange) > 360) {
+          startColor -= 360;
+        }
+        startColor += stepChange;
       } else {
-        rgbColor[i] = Math.pow((rgbColor[i] + 0.055) / 1.055, 2.4);
+        startColor = Math.floor(Math.random() * 360);
       }
+      hue = startColor;
+      collectionColorsIndex.hslColor += startColor + ', ';
+      saturation = parseFloat('0.' + Math.floor(Math.random() * ((75-35) + 1) + 35));
+      collectionColorsIndex.hslColor += saturation * 100 + '%, ';
+      lightness = parseFloat('0.' + Math.floor(Math.random() * ((85-30) + 1) + 30));
+      collectionColorsIndex.hslColor += lightness * 100  + '%)';
+
+      /**
+       * Start the conversion of the HSL color to RGB
+       * Converts an HSLA color value to RGB. Conversion formula
+       * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+       * Assumes h, s, and l are contained in the set [0, 1] and
+       * assigns r, g, and b in the set [0, 255].
+       *
+       * @see https://github.com/kayellpeee/hsl_rgb_converter
+       */
+      chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
+      huePrime = hue / 60;
+      secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
+
+      huePrime = Math.floor(huePrime);
+
+      // Reset the values each time
+      red = 0;
+      green = 0;
+      blue = 0;
+
+      switch (huePrime) {
+        case 0:
+          red = chroma;
+          green = secondComponent;
+          break;
+        case 1:
+          red = secondComponent;
+          green = chroma;
+          break;
+        case 2:
+          green = chroma;
+          blue = secondComponent;
+          break;
+        case 3:
+          green = secondComponent;
+          blue = chroma;
+          break;
+        case 4:
+          red = secondComponent;
+          blue = chroma;
+          break;
+        case 5:
+          red = chroma;
+          blue = secondComponent;
+      }
+
+      lightnessAdjustment = lightness - (chroma / 2);
+      red += lightnessAdjustment;
+      green += lightnessAdjustment;
+      blue += lightnessAdjustment;
+
+      rgbColor = [Math.round(red * 255), Math.round(green * 255), Math.round(blue * 255)];
+
+      /**
+       * Given a color in RGB format, assign either a light
+       * or dark color.
+       *
+       * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
+       */
+      for (var i = 0; i < 3; ++i) {
+        rgbColor[i] /= 255;
+
+        if (rgbColor[i] <= 0.03928) {
+          rgbColor[i] = rgbColor[i] / 12.92;
+        } else {
+          rgbColor[i] = Math.pow((rgbColor[i] + 0.055) / 1.055, 2.4);
+        }
+      }
+
+      backgroundLightness = 0.2126 * rgbColor[0] + 0.7152 * rgbColor[1] + 0.0722 * rgbColor[2];
+
+      if (backgroundLightness > 0.179) {
+        collectionColorsIndex.textColor = '#444';
+      } else {
+        collectionColorsIndex.textColor = '#ccc';
+      }
+
+      return {
+        backgroundColor: collectionColorsIndex[collectionTitle].hslColor,
+        textColor: collectionColorsIndex[collectionTitle].textColor
+      };
     }
-
-    backgroundLightness = 0.2126 * rgbColor[0] + 0.7152 * rgbColor[1] + 0.0722 * rgbColor[2];
-
-    if (backgroundLightness > 0.179) {
-      textColor = '#444';
-    } else {
-      textColor = '#ccc';
-    }
-
-    return {
-      backgroundColor: hslColor,
-      textColor: textColor
-    };
   }
 
 
