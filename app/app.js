@@ -464,7 +464,6 @@ angular.module('app', ['angular-md5'])
       if (!comicIndex) {
         throw new Error(comicId + ' not found in the comics db');
       }
-
       comics[comicIndex].styles.background = collectionColor.backgroundColor;
       comics[comicIndex].styles.color = collectionColor.textColor;
     });
@@ -499,8 +498,7 @@ angular.module('app', ['angular-md5'])
   function getCollectionColors(collectionTitle) {
     if (!collectionColorsIndex[collectionTitle]) {
       var startColor;
-      console.log(collectionColorsIndex[collectionTitle]);
-      console.log(collectionTitle);
+      collectionColorsIndex[collectionTitle] = {};
       collectionColorsIndex[collectionTitle].collectionTitle = collectionTitle;
       collectionColorsIndex[collectionTitle].hslColor = 'hsl(';
       if (angular.isDefined(startColor)) {
