@@ -458,7 +458,6 @@ angular.module('app', ['angular-md5'])
   var comicIndex;
   _.each(collections, function(collection) {
     var collectionColor = getCollectionColors(collection.title);
-
     _.each(collection.comicIds, function(comicId) {
       comicIndex = _.findKey(comics, { 'id': comicId });
       if (!comicIndex) {
@@ -592,12 +591,11 @@ angular.module('app', ['angular-md5'])
       } else {
         collectionColorsIndex[collectionTitle].textColor = '#ccc';
       }
-
-      return {
-        backgroundColor: collectionColorsIndex[collectionTitle].hslColor,
-        textColor: collectionColorsIndex[collectionTitle].textColor
-      };
     }
+    return {
+      backgroundColor: collectionColorsIndex[collectionTitle].hslColor,
+      textColor: collectionColorsIndex[collectionTitle].textColor
+    };
   }
 
 
