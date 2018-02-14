@@ -594,8 +594,8 @@ angular.module('app', ['angular-md5'])
       }
 
       return {
-        backgroundColor: collectionColorsIndex[collectionTitle].hslColor,
-        textColor: collectionColorsIndex[collectionTitle].textColor
+        backgroundColor: collectionColorsIndex.hslColor,
+        textColor: collectionColorsIndex.textColor
       };
     }
   }
