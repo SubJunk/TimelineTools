@@ -499,8 +499,10 @@ angular.module('app', ['angular-md5'])
   function getCollectionColors(collectionTitle) {
     if (!collectionColorsIndex[collectionTitle]) {
       var startColor;
-
-      collectionColorsIndex.hslColor = 'hsl(';
+      console.log(collectionColorsIndex[collectionTitle]);
+      console.log(collectionTitle);
+      collectionColorsIndex[collectionTitle].collectionTitle = collectionTitle;
+      collectionColorsIndex[collectionTitle].hslColor = 'hsl(';
       if (angular.isDefined(startColor)) {
         if ((startColor + stepChange) > 360) {
           startColor -= 360;
@@ -510,11 +512,11 @@ angular.module('app', ['angular-md5'])
         startColor = Math.floor(Math.random() * 360);
       }
       hue = startColor;
-      collectionColorsIndex.hslColor += startColor + ', ';
+      collectionColorsIndex[collectionTitle].hslColor += startColor + ', ';
       saturation = parseFloat('0.' + Math.floor(Math.random() * ((75-35) + 1) + 35));
-      collectionColorsIndex.hslColor += saturation * 100 + '%, ';
+      collectionColorsIndex[collectionTitle].hslColor += saturation * 100 + '%, ';
       lightness = parseFloat('0.' + Math.floor(Math.random() * ((85-30) + 1) + 30));
-      collectionColorsIndex.hslColor += lightness * 100  + '%)';
+      collectionColorsIndex[collectionTitle].hslColor += lightness * 100  + '%)';
 
       /**
        * Start the conversion of the HSL color to RGB
@@ -588,14 +590,14 @@ angular.module('app', ['angular-md5'])
       backgroundLightness = 0.2126 * rgbColor[0] + 0.7152 * rgbColor[1] + 0.0722 * rgbColor[2];
 
       if (backgroundLightness > 0.179) {
-        collectionColorsIndex.textColor = '#444';
+        collectionColorsIndex[collectionTitle].textColor = '#444';
       } else {
-        collectionColorsIndex.textColor = '#ccc';
+        collectionColorsIndex[collectionTitle].textColor = '#ccc';
       }
 
       return {
-        backgroundColor: collectionColorsIndex.hslColor,
-        textColor: collectionColorsIndex.textColor
+        backgroundColor: collectionColorsIndex[collectionTitle].hslColor,
+        textColor: collectionColorsIndex[collectionTitle].textColor
       };
     }
   }
