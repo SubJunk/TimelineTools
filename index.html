@@ -32,22 +32,22 @@
             <ul class="pagination">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}" data-toggle="tooltip" data-original-title="{{main.prevCollection.title}}" data-placement="bottom">
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
-                  <i class="material-icons">arrow_backward</i>
+                  <i class="material-icons" ng-style="comic.styles">arrow_backward</i>
                 </a>
               </li>
               <li class="waves-effect" ng-class="{disabled: !main.prevComic}" data-toggle="tooltip" data-original-title="{{main.prevComic.series}} #{{main.prevComic.issue}}" data-placement="bottom">
                 <a ng-click="main.toggleExpandComic(main.prevComic)">
-                  <i class="material-icons">chevron_left</i>
+                  <i class="material-icons" ng-style="comic.styles">chevron_left</i>
                 </a>
               </li>
               <li class="waves-effect" ng-class="{disabled: !main.nextComic }" data-toggle="tooltip" data-original-title="{{main.nextComic.series}} #{{main.nextComic.issue}}" data-placement="bottom">
                 <a ng-click="main.toggleExpandComic(main.nextComic)">
-                  <i class="material-icons">chevron_right</i>
+                  <i class="material-icons" ng-style="comic.styles">chevron_right</i>
                 </a>
               </li>
               <li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic }" data-toggle="tooltip" data-original-title="{{main.nextCollection.title}}" data-placement="bottom">
                 <a ng-click="main.toggleExpandComic(main.nextCollectionFirstComic)">
-                  <i class="material-icons">arrow_forward</i>
+                  <i class="material-icons" ng-style="comic.styles">arrow_forward</i>
                 </a>
               </li>
             </ul>
