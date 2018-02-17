@@ -229,6 +229,7 @@ body {
   background-color: unset;
   border: none;
   width: 47px;
+  color: unset;
 }
 
 .pagination > li > a:hover {
