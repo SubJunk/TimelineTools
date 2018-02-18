@@ -50,7 +50,7 @@ series.push(
   new Series('Adventures of Cyclops & Phoenix', {1: 1994}),
   new Series('Askani\'son', {1: 1996}),
   new Series('Avengers', {1: 1963}),
-  new Series('Avengers: West Coast', {2: 1985}),
+  new Series('Avengers West Coast', {2: 1985}),
   new Series('Avengers Annual', {1: 1967}),
   new Series('Black Knight: Exodus', {1: 1996}),
   new Series('Cable', {1: 1993, 2: 2008}),
