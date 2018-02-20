@@ -17,7 +17,8 @@ function Series(title, volumes) {
       new SeriesVolume(
         self.id,
         volume,
-        startYear
+        startYear,
+        title
       )
     );
   });
@@ -32,11 +33,12 @@ function Series(title, volumes) {
  * @param {number} startYear needed for Marvel API
  * @see Series
  */
-function SeriesVolume(seriesId, volume, startYear) {
+function SeriesVolume(seriesId, volume, startYear, title) {
   this.id = seriesId + 'Vol' + volume;
   this.seriesId = seriesId;
   this.volume = volume;
   this.startYear = startYear;
+  this.title = title;
 
   // Ugly hack to make the Uncanny series sit on the top row
   if (this.id === 'GiantSizeXMenVol1') {

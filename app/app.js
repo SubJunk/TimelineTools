@@ -294,11 +294,6 @@ angular.module('app', ['angular-md5'])
       throw new Error(comic.seriesVolumeId + " not found");
     }
 
-    var currentSeries = series[_.findKey(series, { 'id': currentSeriesVolume.seriesId })];
-    if (!currentSeries) {
-      throw new Error(comic.seriesId + " not found");
-    }
-
     comic.containerStyles = {};
     comic.styles = {};
 
@@ -386,6 +381,7 @@ angular.module('app', ['angular-md5'])
             }
             previousSeriesVolume.verticalPosition = null;
           }
+          newLabelNeeded = true;
 
           break;
         }
@@ -402,7 +398,7 @@ angular.module('app', ['angular-md5'])
     };
 
     // Store the name of the series in the comic object
-    comic.series = currentSeries.title;
+    comic.series = currentSeriesVolume.title;
 
     /**
      * Figure out what the name of the image on the server will be
@@ -431,7 +427,7 @@ angular.module('app', ['angular-md5'])
     var right = leftStart + ($jqWindow.innerWidth() * 1.5);
     if (newLabelNeeded) {
       seriesVolumeLabels.push({
-        text: currentSeries.title,
+        text: currentSeriesVolume.title,
         right: right,
         containerStyles: {
           top: comic.containerStyles.top,
