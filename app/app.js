@@ -427,16 +427,30 @@ angular.module('app', ['angular-md5'])
     // Match the width of the page to the width of the content
     bodyStyle.width = comic.containerStyles.left + horizontalIncrement - bodyStyle.padding;
 
+    var leftStart = comic.containerStyles.left - 150;
+    var right = leftStart + ($jqWindow.innerWidth() * 1.5);
     if (newLabelNeeded) {
       seriesVolumeLabels.push({
         text: currentSeries.title,
+        right: right,
         containerStyles: {
           top: comic.containerStyles.top,
-          left: (comic.containerStyles.left - 150)
+          left: leftStart
         }
       });
 
       newLabelNeeded = false;
+    } else if (currentSeries.title !== 'Giant Size X-Men') {
+      // Really ugly exception for Giant Size to stop it taking up the first row
+      var seriesVolumeLabelIndex = _.findIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
+        return seriesVolumeLabel.text === currentSeries.title;
+      });
+      if (seriesVolumeLabelIndex === -1) {
+        throw new Error(currentSeries.title + ' not found in the seriesVolumeLabelIndex');
+      }
+      // console.log(seriesVolumeLabelIndex, seriesVolumeLabels);
+      var seriesVolumeLabelsEntry = seriesVolumeLabels[seriesVolumeLabelIndex];
+      seriesVolumeLabelsEntry.right = right;
     }
   });
 
@@ -606,17 +620,28 @@ angular.module('app', ['angular-md5'])
       var $thisLabelContainer;
       var $thisScrollAnchor;
       var $thisLabel;
+      var $thisLabelText;
       var isScrolledPastLeft;
       $('.series-volume-label-container').each(function() {
         $thisLabelContainer = $(this);
         $thisScrollAnchor = $thisLabelContainer.find('.scroll-anchor');
         $thisLabel = $thisLabelContainer.find('.series-volume-label');
+        $thisLabelText = $thisLabel.text();
         isScrolledPastLeft = Boolean(scrollLeft > $thisScrollAnchor.offset().left);
 
+        var indexInSeriesVolumeLabels = _.findIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
+          return seriesVolumeLabel.text === $thisLabelText;
+        });
+        var seriesVolumeLabelsEntry = seriesVolumeLabels[indexInSeriesVolumeLabels];
         $thisLabel.toggleClass('sticky-left', isScrolledPastLeft);
 
         if (isScrolledPastLeft) {
           $thisLabel.css('marginTop', '-' + scrollTop);
+          if (seriesVolumeLabelsEntry.right < scrollLeft) {
+            $thisLabel.hide();
+          } else {
+            $thisLabel.show();
+          }
         } else {
           $thisLabel.css('marginTop', '');
         }
