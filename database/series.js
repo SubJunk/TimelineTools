@@ -90,7 +90,7 @@ series.push(
   new Series('X-Force Annual', {1: 1992}),
   new Series('X-Men', {2: 1991}),
   new Series('X-Men/Alpha Flight', {1: 1985}),
-  new Series('X-Men Annual', {1: 1970, 2: 1992}),
+  new Series('X-Men Annual', {1: 1970, 2: 1991}),
   new Series('X-Men Free Comic Book Day', {2008: 2008}),
   new Series('X-Men Legacy', {1: 2008}),
   new Series('X-Men Unlimited', {1: 1993}),

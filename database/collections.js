@@ -1001,14 +1001,31 @@ collections.push(
       'CableVol116'
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'X-Force: The Phalanx Covenant HC (Partial)',
+    '2013-8-14',
+    [
+      'XForceVol139'
+    ]
+  ),
   new Collection(
     'X-Force: Child\'s Play',
     '2016-5-12',
     [
       'XForceAnnualVol13'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Force: The Phalanx Covenant HC (Partial)',
+    '2013-8-14',
+    [
+      'XForceVol140',
+      'XForceVol141',
+      'XForceVol142',
+      'XForceVol143'
     ]
   ),
   new Collection(
