@@ -436,13 +436,13 @@ angular.module('app', ['angular-md5'])
       });
 
       newLabelNeeded = false;
-    } else if (currentSeries.title !== 'Giant Size X-Men') {
+    } else if (currentSeriesVolume.title !== 'Giant Size X-Men') {
       // Really ugly exception for Giant Size to stop it taking up the first row
       var seriesVolumeLabelIndex = _.findIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
-        return seriesVolumeLabel.text === currentSeries.title;
+        return seriesVolumeLabel.text === currentSeriesVolume.title;
       });
       if (seriesVolumeLabelIndex === -1) {
-        throw new Error(currentSeries.title + ' not found in the seriesVolumeLabelIndex');
+        throw new Error(currentSeriesVolume.title + ' not found in the seriesVolumeLabelIndex');
       }
       // console.log(seriesVolumeLabelIndex, seriesVolumeLabels);
       var seriesVolumeLabelsEntry = seriesVolumeLabels[seriesVolumeLabelIndex];
