@@ -60,14 +60,7 @@ angular.module('app', ['angular-md5'])
       }
 
       var firstAPIResult = response.data.data.results[0];
-
       comic.link = firstAPIResult.digitalId ? 'https://read.marvel.com/#book/' + firstAPIResult.digitalId : null;
-
-      // Set the title unless it is a generic placeholder from the API.
-      // TODO: Is this ever not a generic placeholder?
-      // if (firstAPIResult.title.indexOf(expandedSeries.title) !== 0) {
-      //   comic.titles.push(firstAPIResult.title);
-      // }
     }, function errorCallback(err) {
       throw new Error(err);
     });
@@ -398,6 +391,7 @@ angular.module('app', ['angular-md5'])
         }
       }
     }
+
     /**
      * Store a reference to the last horizontal position used
      * by the vertical position currently used by this series volume.
@@ -469,22 +463,19 @@ angular.module('app', ['angular-md5'])
   });
 
   /**
-   * Generates a color in HSL format, e.g. hsl(1, 2, 3)
+   * Returns either the existing color for the collection, or
+   * generates a color in HSL format, e.g. hsl(1, 2, 3)
    * converts it to RGB to find a light or dark contrasting color,
-   * returns a background color and text color
+   * returns a background color and text color.
    *
-   * @return {string} HSLA color
+   * @param  {string} collectionTitle
+   * @return {object} background and text colors
    */
   var backgroundLightness;
   var hue;
   var saturation;
   var lightness;
   var stepChange = 30;
-
-  /**
-   * A string representation of a HSL color, usable by browsers.
-   */
-
   var chroma;
   var huePrime;
   var secondComponent;
@@ -493,7 +484,6 @@ angular.module('app', ['angular-md5'])
   var blue;
   var lightnessAdjustment;
   var rgbColor;
-
   function getCollectionColors(collectionTitle) {
     if (!collectionColorsIndex[collectionTitle]) {
       var startColor;
@@ -597,7 +587,6 @@ angular.module('app', ['angular-md5'])
       textColor: collectionColorsIndex[collectionTitle].textColor
     };
   }
-
 
   /**
    * Use jQuery to manipulate classes and styles to make the expanded
