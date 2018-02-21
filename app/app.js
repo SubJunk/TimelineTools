@@ -347,8 +347,10 @@ angular.module('app', ['angular-md5'])
        * It has been a while (if ever) since the last issue of this
        * series appeared in the timeline so let's put this one on a
        * higher row if possible.
+       *
+       * Counter starts at 1 to keep Uncanny always at the top.
        */
-      for (var i = 0; i < globalVerticalPositionCounter; i++) {
+      for (var i = 1; i < globalVerticalPositionCounter; i++) {
         if (
           !latestVerticalHorizontalOffsets[i] ||
           latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
@@ -400,11 +402,14 @@ angular.module('app', ['angular-md5'])
      *    in a row) and forward slashes with underscores.
      * Finally it appends the volume and issue.
      */
-    comic.image = comic.series.replace(/[():&?']/g, '').replace(/\s+|\//g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
-
-    if (currentSeriesVolume.volume > 1) {
-      comic.series += ' Vol. ' + currentSeriesVolume.volume;
-    }
+    comic.image =
+      comic.series
+          .replace(/[():&?']/g, '')
+          .replace(/\s+|\//g, '_') +
+          '_Vol_' +
+          currentSeriesVolume.volume +
+          '_' +
+          comic.issue;
 
     previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
@@ -415,7 +420,7 @@ angular.module('app', ['angular-md5'])
     var right = leftStart + ($jqWindow.innerWidth() * 1.5);
     if (newLabelNeeded) {
       seriesVolumeLabels.push({
-        text: currentSeriesVolume.title,
+        text: currentSeriesVolume.titleWithVolume,
         right: right,
         containerStyles: {
           top: comic.containerStyles.top,
@@ -427,14 +432,14 @@ angular.module('app', ['angular-md5'])
     } else if (currentSeriesVolume.title !== 'Giant Size X-Men') {
       // Really ugly exception for Giant Size to stop it taking up the first row
       var seriesVolumeLabelIndex = _.findIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
-        return seriesVolumeLabel.text === currentSeriesVolume.title;
+        return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
       });
+
       if (seriesVolumeLabelIndex === -1) {
-        throw new Error(currentSeriesVolume.title + ' not found in the seriesVolumeLabelIndex');
+        throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
       }
-      // console.log(seriesVolumeLabelIndex, seriesVolumeLabels);
-      var seriesVolumeLabelsEntry = seriesVolumeLabels[seriesVolumeLabelIndex];
-      seriesVolumeLabelsEntry.right = right;
+
+      seriesVolumeLabels[seriesVolumeLabelIndex].right = right;
     }
   });
 
@@ -622,9 +627,9 @@ angular.module('app', ['angular-md5'])
         if (isScrolledPastLeft) {
           $thisLabel.css('marginTop', '-' + scrollTop);
           if (seriesVolumeLabelsEntry.right < scrollLeft) {
-            $thisLabel.hide();
+            $thisLabel.stop().animate({left: '-150px'});
           } else {
-            $thisLabel.show();
+            $thisLabel.stop().animate({left: '0px'});
           }
         } else {
           $thisLabel.css('marginTop', '');
