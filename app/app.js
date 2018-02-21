@@ -11,11 +11,6 @@ angular.module('app', ['angular-md5'])
   var series        = $window.series;
   var seriesVolumes = $window.seriesVolumes;
 
-  var firstYear;
-  var firstMonth;
-  var finalYear;
-  var finalMonth;
-  var monthsSinceFirst;
   var globalVerticalPositionCounter = 0;
   var bodyStyle = {
     width: null,
@@ -32,7 +27,6 @@ angular.module('app', ['angular-md5'])
   vm.expandedComicId;
   vm.expandedCollection;
   var expandedSeriesVolume;
-  var expandedSeries;
   vm.prevComic;
   vm.nextComic;
   var currentComicIndexInCollection;
@@ -206,11 +200,6 @@ angular.module('app', ['angular-md5'])
       return seriesVolume.id === currentComic.seriesVolumeId;
     });
 
-    expandedSeries = series[_.findKey(series, { 'id': expandedSeriesVolume.seriesId })];
-    if (!expandedSeries) {
-      throw new Error(expandedSeriesVolume.seriesId + " not found");
-    }
-
     if (expandedSeriesVolume.marvelId) {
       setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
     } else {
@@ -218,7 +207,7 @@ angular.module('app', ['angular-md5'])
         method: 'GET',
         url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
         params: {
-          title: expandedSeries.title,
+          title: expandedSeriesVolume.title,
           startYear: expandedSeriesVolume.startYear,
           apikey: apiKeyPublic
         }
@@ -236,17 +225,6 @@ angular.module('app', ['angular-md5'])
   // Sort the data by date
   comics = _.sortBy(comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
 
-  // Calculate the years and months spanned
-  var lastComic = _.last(comics);
-  var firstComic = _.first(comics);
-  finalYear = lastComic.yearPublished;
-  finalMonth = lastComic.monthPublished;
-  firstYear = firstComic.yearPublished;
-  firstMonth = firstComic.monthPublished;
-  var dates = {};
-  var yearIncrement;
-  var monthIncrement;
-
   /**
    * This loop populates the dates object with an array of years
    * which contains arrays of months, represented as numbers.
@@ -258,6 +236,16 @@ angular.module('app', ['angular-md5'])
    * that lets us reuse our magic number instead of having a duplicate
    * in the CSS.
    */
+  var lastComic = _.last(comics);
+  var firstComic = _.first(comics);
+  var monthsSinceFirst;
+  var finalYear = lastComic.yearPublished;
+  var finalMonth = lastComic.monthPublished;
+  var firstYear = firstComic.yearPublished;
+  var firstMonth = firstComic.monthPublished;
+  var dates = {};
+  var yearIncrement;
+  var monthIncrement;
   for (yearIncrement = firstYear; yearIncrement <= finalYear; yearIncrement++) {
     dates[yearIncrement] = {};
 
