@@ -416,15 +416,13 @@ angular.module('app', ['angular-md5'])
     // Match the width of the page to the width of the content
     bodyStyle.width = comic.containerStyles.left + horizontalIncrement - bodyStyle.padding;
 
-    var leftStart = comic.containerStyles.left - 150;
-    var right = leftStart + ($jqWindow.innerWidth() * 1.5);
     if (newLabelNeeded) {
       seriesVolumeLabels.push({
         text: currentSeriesVolume.titleWithVolume,
-        right: right,
+        right: comic.containerStyles.left - horizontalIncrement,
         containerStyles: {
           top: comic.containerStyles.top,
-          left: leftStart
+          left: comic.containerStyles.left - 150
         }
       });
 
@@ -439,7 +437,7 @@ angular.module('app', ['angular-md5'])
         throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
       }
 
-      seriesVolumeLabels[seriesVolumeLabelIndex].right = right;
+      seriesVolumeLabels[seriesVolumeLabelIndex].right = comic.containerStyles.left;
     }
   });
 
@@ -596,21 +594,36 @@ angular.module('app', ['angular-md5'])
    * panels always fit in the viewport, and series volume labels stick
    * to the left.
    */
+  var $expandedComic;
+  var $stickyAnchor;
+  var scrollLeft;
+  var scrollTop;
+  var $thisLabelContainer;
+  var $thisScrollAnchor;
+  var $thisLabel;
+  var $thisLabelText;
+  var isScrolledPastLeft;
+  var indexInSeriesVolumeLabels;
+  var anchorTopPosition;
+  var anchorLeftPosition;
+  var anchorRightPosition;
+  var anchorBottomPosition;
+  var scrollRight;
+  var scrollBottom;
+  var isStickyTop;
+  var isStickyLeft;
+  var isStickyRight;
+  var isStickyBottom;
   var repositionStickyElements = function() {
     $timeout(function() {
-      var $expandedComic = $('.expanded .comic');
-      var $stickyAnchor = $('.expanded .scroll-anchor');
-      var scrollLeft = $jqWindow.scrollLeft();
-      var scrollTop  = $jqWindow.scrollTop();
+      $expandedComic = $('.expanded .comic');
+      $stickyAnchor = $('.expanded .scroll-anchor');
+      scrollLeft = $jqWindow.scrollLeft();
+      scrollTop  = $jqWindow.scrollTop();
 
       /**
        * Label positioning:
        */
-      var $thisLabelContainer;
-      var $thisScrollAnchor;
-      var $thisLabel;
-      var $thisLabelText;
-      var isScrolledPastLeft;
       $('.series-volume-label-container').each(function() {
         $thisLabelContainer = $(this);
         $thisScrollAnchor = $thisLabelContainer.find('.scroll-anchor');
@@ -618,15 +631,17 @@ angular.module('app', ['angular-md5'])
         $thisLabelText = $thisLabel.text();
         isScrolledPastLeft = Boolean(scrollLeft > $thisScrollAnchor.offset().left);
 
-        var indexInSeriesVolumeLabels = _.findIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
+        indexInSeriesVolumeLabels = _.findIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
           return seriesVolumeLabel.text === $thisLabelText;
         });
-        var seriesVolumeLabelsEntry = seriesVolumeLabels[indexInSeriesVolumeLabels];
+
         $thisLabel.toggleClass('sticky-left', isScrolledPastLeft);
 
         if (isScrolledPastLeft) {
           $thisLabel.css('marginTop', '-' + scrollTop);
-          if (seriesVolumeLabelsEntry.right < scrollLeft) {
+
+          // If the browser is scrolled past the right, hide the label
+          if (seriesVolumeLabels[indexInSeriesVolumeLabels].right < scrollLeft) {
             $thisLabel.stop().animate({left: '-150px'});
           } else {
             $thisLabel.stop().animate({left: '0px'});
@@ -638,18 +653,18 @@ angular.module('app', ['angular-md5'])
 
       // Expanded panel positioning
       if ($expandedComic.length) {
-        var anchorTopPosition    = $stickyAnchor.offset().top;
-        var anchorLeftPosition   = $stickyAnchor.offset().left;
-        var anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
-        var anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
+        anchorTopPosition    = $stickyAnchor.offset().top;
+        anchorLeftPosition   = $stickyAnchor.offset().left;
+        anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
+        anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
 
-        var scrollRight  = scrollLeft + $jqWindow.innerWidth();
-        var scrollBottom = scrollTop  + $jqWindow.innerHeight();
+        scrollRight  = scrollLeft + $jqWindow.innerWidth();
+        scrollBottom = scrollTop  + $jqWindow.innerHeight();
 
-        var isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
-        var isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
-        var isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
-        var isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
+        isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
+        isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
+        isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
+        isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
 
         $expandedComic.toggleClass('sticky-top', isStickyTop);
         $expandedComic.toggleClass('sticky-left', isStickyLeft);
