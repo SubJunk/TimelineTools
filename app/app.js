@@ -11,11 +11,6 @@ angular.module('app', ['angular-md5'])
   var series        = $window.series;
   var seriesVolumes = $window.seriesVolumes;
 
-  var firstYear;
-  var firstMonth;
-  var finalYear;
-  var finalMonth;
-  var monthsSinceFirst;
   var globalVerticalPositionCounter = 0;
   var bodyStyle = {
     width: null,
@@ -32,7 +27,6 @@ angular.module('app', ['angular-md5'])
   vm.expandedComicId;
   vm.expandedCollection;
   var expandedSeriesVolume;
-  var expandedSeries;
   vm.prevComic;
   vm.nextComic;
   var currentComicIndexInCollection;
@@ -206,11 +200,6 @@ angular.module('app', ['angular-md5'])
       return seriesVolume.id === currentComic.seriesVolumeId;
     });
 
-    expandedSeries = series[_.findKey(series, { 'id': expandedSeriesVolume.seriesId })];
-    if (!expandedSeries) {
-      throw new Error(expandedSeriesVolume.seriesId + " not found");
-    }
-
     if (expandedSeriesVolume.marvelId) {
       setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
     } else {
@@ -218,7 +207,7 @@ angular.module('app', ['angular-md5'])
         method: 'GET',
         url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
         params: {
-          title: expandedSeries.title,
+          title: expandedSeriesVolume.title,
           startYear: expandedSeriesVolume.startYear,
           apikey: apiKeyPublic
         }
@@ -236,17 +225,6 @@ angular.module('app', ['angular-md5'])
   // Sort the data by date
   comics = _.sortBy(comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
 
-  // Calculate the years and months spanned
-  var lastComic = _.last(comics);
-  var firstComic = _.first(comics);
-  finalYear = lastComic.yearPublished;
-  finalMonth = lastComic.monthPublished;
-  firstYear = firstComic.yearPublished;
-  firstMonth = firstComic.monthPublished;
-  var dates = {};
-  var yearIncrement;
-  var monthIncrement;
-
   /**
    * This loop populates the dates object with an array of years
    * which contains arrays of months, represented as numbers.
@@ -258,6 +236,16 @@ angular.module('app', ['angular-md5'])
    * that lets us reuse our magic number instead of having a duplicate
    * in the CSS.
    */
+  var lastComic = _.last(comics);
+  var firstComic = _.first(comics);
+  var monthsSinceFirst;
+  var finalYear = lastComic.yearPublished;
+  var finalMonth = lastComic.monthPublished;
+  var firstYear = firstComic.yearPublished;
+  var firstMonth = firstComic.monthPublished;
+  var dates = {};
+  var yearIncrement;
+  var monthIncrement;
   for (yearIncrement = firstYear; yearIncrement <= finalYear; yearIncrement++) {
     dates[yearIncrement] = {};
 
@@ -359,8 +347,10 @@ angular.module('app', ['angular-md5'])
        * It has been a while (if ever) since the last issue of this
        * series appeared in the timeline so let's put this one on a
        * higher row if possible.
+       *
+       * Counter starts at 1 to keep Uncanny always at the top.
        */
-      for (var i = 0; i < globalVerticalPositionCounter; i++) {
+      for (var i = 1; i < globalVerticalPositionCounter; i++) {
         if (
           !latestVerticalHorizontalOffsets[i] ||
           latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
@@ -412,11 +402,14 @@ angular.module('app', ['angular-md5'])
      *    in a row) and forward slashes with underscores.
      * Finally it appends the volume and issue.
      */
-    comic.image = comic.series.replace(/[():&?']/g, '').replace(/\s+|\//g, '_') + '_Vol_' + currentSeriesVolume.volume + '_' + comic.issue;
-
-    if (currentSeriesVolume.volume > 1) {
-      comic.series += ' Vol. ' + currentSeriesVolume.volume;
-    }
+    comic.image =
+      comic.series
+          .replace(/[():&?']/g, '')
+          .replace(/\s+|\//g, '_') +
+          '_Vol_' +
+          currentSeriesVolume.volume +
+          '_' +
+          comic.issue;
 
     previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
@@ -425,14 +418,26 @@ angular.module('app', ['angular-md5'])
 
     if (newLabelNeeded) {
       seriesVolumeLabels.push({
-        text: currentSeriesVolume.title,
+        text: currentSeriesVolume.titleWithVolume,
+        right: comic.containerStyles.left - horizontalIncrement,
         containerStyles: {
           top: comic.containerStyles.top,
-          left: (comic.containerStyles.left - 150)
+          left: comic.containerStyles.left - 150
         }
       });
 
       newLabelNeeded = false;
+    } else if (currentSeriesVolume.title !== 'Giant Size X-Men') {
+      // Really ugly exception for Giant Size to stop it taking up the first row
+      var seriesVolumeLabelIndex = _.findLastIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
+        return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
+      });
+
+      if (seriesVolumeLabelIndex === -1) {
+        throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
+      }
+
+      seriesVolumeLabels[seriesVolumeLabelIndex].right = comic.containerStyles.left;
     }
   });
 
@@ -589,30 +594,55 @@ angular.module('app', ['angular-md5'])
    * panels always fit in the viewport, and series volume labels stick
    * to the left.
    */
+  var $expandedComic;
+  var $stickyAnchor;
+  var scrollLeft;
+  var scrollTop;
+  var $thisLabelContainer;
+  var $thisScrollAnchor;
+  var $thisLabel;
+  var $thisLabelId;
+  var isScrolledPastLeft;
+  var indexInSeriesVolumeLabels;
+  var anchorTopPosition;
+  var anchorLeftPosition;
+  var anchorRightPosition;
+  var anchorBottomPosition;
+  var scrollRight;
+  var scrollBottom;
+  var isStickyTop;
+  var isStickyLeft;
+  var isStickyRight;
+  var isStickyBottom;
   var repositionStickyElements = function() {
     $timeout(function() {
-      var $expandedComic = $('.expanded .comic');
-      var $stickyAnchor = $('.expanded .scroll-anchor');
-      var scrollLeft = $jqWindow.scrollLeft();
-      var scrollTop  = $jqWindow.scrollTop();
+      $expandedComic = $('.expanded .comic');
+      $stickyAnchor = $('.expanded .scroll-anchor');
+      scrollLeft = $jqWindow.scrollLeft();
+      scrollTop  = $jqWindow.scrollTop();
 
       /**
        * Label positioning:
        */
-      var $thisLabelContainer;
-      var $thisScrollAnchor;
-      var $thisLabel;
-      var isScrolledPastLeft;
       $('.series-volume-label-container').each(function() {
         $thisLabelContainer = $(this);
         $thisScrollAnchor = $thisLabelContainer.find('.scroll-anchor');
         $thisLabel = $thisLabelContainer.find('.series-volume-label');
+        $thisLabelId = $thisLabelContainer.find('.series-volume-label').attr('id');
         isScrolledPastLeft = Boolean(scrollLeft > $thisScrollAnchor.offset().left);
+        indexInSeriesVolumeLabels = $thisLabelId.substr(6);
 
         $thisLabel.toggleClass('sticky-left', isScrolledPastLeft);
 
         if (isScrolledPastLeft) {
           $thisLabel.css('marginTop', '-' + scrollTop);
+
+          // If the browser is scrolled past the right, hide the label
+          if (seriesVolumeLabels[indexInSeriesVolumeLabels].right < scrollLeft) {
+            $thisLabel.stop().animate({left: '-150px'});
+          } else {
+            $thisLabel.stop().animate({left: '0px'});
+          }
         } else {
           $thisLabel.css('marginTop', '');
         }
@@ -620,18 +650,18 @@ angular.module('app', ['angular-md5'])
 
       // Expanded panel positioning
       if ($expandedComic.length) {
-        var anchorTopPosition    = $stickyAnchor.offset().top;
-        var anchorLeftPosition   = $stickyAnchor.offset().left;
-        var anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
-        var anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
+        anchorTopPosition    = $stickyAnchor.offset().top;
+        anchorLeftPosition   = $stickyAnchor.offset().left;
+        anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
+        anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
 
-        var scrollRight  = scrollLeft + $jqWindow.innerWidth();
-        var scrollBottom = scrollTop  + $jqWindow.innerHeight();
+        scrollRight  = scrollLeft + $jqWindow.innerWidth();
+        scrollBottom = scrollTop  + $jqWindow.innerHeight();
 
-        var isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
-        var isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
-        var isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
-        var isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
+        isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
+        isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
+        isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
+        isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
 
         $expandedComic.toggleClass('sticky-top', isStickyTop);
         $expandedComic.toggleClass('sticky-left', isStickyLeft);
