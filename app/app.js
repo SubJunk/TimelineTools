@@ -429,7 +429,7 @@ angular.module('app', ['angular-md5'])
       newLabelNeeded = false;
     } else if (currentSeriesVolume.title !== 'Giant Size X-Men') {
       // Really ugly exception for Giant Size to stop it taking up the first row
-      var seriesVolumeLabelIndex = _.findIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
+      var seriesVolumeLabelIndex = _.findLastIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
         return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
       });
 
@@ -601,7 +601,7 @@ angular.module('app', ['angular-md5'])
   var $thisLabelContainer;
   var $thisScrollAnchor;
   var $thisLabel;
-  var $thisLabelText;
+  var $thisLabelId;
   var isScrolledPastLeft;
   var indexInSeriesVolumeLabels;
   var anchorTopPosition;
@@ -628,12 +628,9 @@ angular.module('app', ['angular-md5'])
         $thisLabelContainer = $(this);
         $thisScrollAnchor = $thisLabelContainer.find('.scroll-anchor');
         $thisLabel = $thisLabelContainer.find('.series-volume-label');
-        $thisLabelText = $thisLabel.text();
+        $thisLabelId = $thisLabelContainer.find('.series-volume-label').attr('id');
         isScrolledPastLeft = Boolean(scrollLeft > $thisScrollAnchor.offset().left);
-
-        indexInSeriesVolumeLabels = _.findIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
-          return seriesVolumeLabel.text === $thisLabelText;
-        });
+        indexInSeriesVolumeLabels = $thisLabelId.substr(6);
 
         $thisLabel.toggleClass('sticky-left', isScrolledPastLeft);
 
