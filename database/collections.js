@@ -791,8 +791,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Avengers/X-Men: Bloodties',
-    '2016-9-21',
+    'X-Men: The Wedding of Cyclops and Phoenix HC',
+    '2018-5-21',
     [
       'AvengersVol1368',
       'XMenVol226',
@@ -803,10 +803,16 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Wedding of Cyclops and Phoenix',
+    'X-Men: The Wedding of Cyclops and Phoenix (Partial)',
     '2012-9-19',
     [
-      'XMenAnnualVol22',
+      'XMenAnnualVol22'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Wedding of Cyclops and Phoenix HC',
+    '2018-5-19',
+    [
       'XMenVol227',
       'XMenUnlimitedVol13',
 
@@ -818,15 +824,15 @@ collections.push(
     [
       'XForceVol129',
       'XForceVol130',
-      'CableVol16',
-      'CableVol17',
-      'CableVol18'
     ]
   ),
   new Collection(
-    'X-Men: The Wedding of Cyclops and Phoenix',
-    '2012-9-19',
+    'X-Men: The Wedding of Cyclops and Phoenix HC',
+    '2018-5-19',
     [
+      'CableVol16',
+      'CableVol17',
+      'CableVol18',
       'UncannyXMenVol1308',
       'XMenVol228'
     ]
@@ -839,8 +845,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Wedding of Cyclops and Phoenix',
-    '2012-9-19',
+    'X-Men: The Wedding of Cyclops and Phoenix HC',
+    '2018-5-19',
     [
       'UncannyXMenVol1309',
       'XMenVol229'
@@ -867,20 +873,14 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Wedding of Cyclops and Phoenix',
-    '2012-9-19',
+    'X-Men: The Wedding of Cyclops and Phoenix HC',
+    '2018-5-19',
     [
       'XMenAnnualVol118',
       'XMenTheWeddingAlbumVol11',
       'UncannyXMenVol1310',
       'XMenVol230',
-      'WhatIfVol260'
-    ]
-  ),
-  new Collection(
-    'Uncollected (Soul Possessions story arc)',
-    null,
-    [
+      'WhatIfVol260',
       'XMenVol231',
       'XMenVol232'
     ]
@@ -900,7 +900,13 @@ collections.push(
     null,
     [
       'XMenUnlimitedVol14',
-      'XMenUnlimitedVol15',
+      'XMenUnlimitedVol15'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Wedding of Cyclops and Phoenix HC',
+    '2018-5-19',
+    [
       'XMenVol233'
     ]
   ),
@@ -923,8 +929,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncollected',
-    null,
+    'X-Men: The Wedding of Cyclops and Phoenix HC',
+    '2018-5-19',
     [
       'XMenVol234'
     ]
@@ -970,8 +976,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Adventures of Cyclops & Phoenix',
-    '2014-9-17',
+    'X-Men: The Wedding of Cyclops and Phoenix HC',
+    '2018-5-17',
     [
       'AdventuresofCyclopsPhoenixVol11',
       'AdventuresofCyclopsPhoenixVol12',
@@ -980,8 +986,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncollected',
-    null,
+    'X-Men: The Wedding of Cyclops and Phoenix HC',
+    '2018-5-19',
     [
       'XMenVol235'
     ]
