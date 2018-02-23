@@ -60,7 +60,6 @@ addComicsInSeriesVolume('AvengersVol1', [
   [369, '1993-12']
 ]);
 addComicsInSeriesVolume('AvengersWestCoastVol2', [[101, '1993-12']]);
-addComicsInSeriesVolume('BlackKnightExodusVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('CableBloodMetalVol1', [
   [1, '1992-10'],
   [2, '1992-11']

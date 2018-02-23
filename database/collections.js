@@ -798,8 +798,7 @@ collections.push(
       'XMenVol226',
       'AvengersWestCoastVol2101',
       'UncannyXMenVol1307',
-      'AvengersVol1369',
-      'BlackKnightExodusVol11'
+      'AvengersVol1369'
     ]
   ),
   new Collection(
