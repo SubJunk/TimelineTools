@@ -895,8 +895,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncollected',
-    null,
+    'X-Men: Legionquest',
+    '2018-4-17',
     [
       'XMenUnlimitedVol14',
       'XMenUnlimitedVol15'
@@ -1020,17 +1020,43 @@ collections.push(
       'XForceAnnualVol13'
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'X-Men: Legionquest',
+    '2018-4-17',
+    [
+      'XMenUnlimitedVol16'
+    ]
+  ),
+  new Collection(
+    'Bishop: The Mountjoy Crisis',
+    '1996-5',
+    [
+      'BishopVol11',
+      'BishopVol12',
+      'BishopVol13',
+      'BishopVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men: Legionquest',
+    '2018-4-17',
+    [
+      'XFactorVol1107'
+    ]
+  ),
   new Collection(
     'X-Force: The Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
       'XForceVol140',
-      'XForceVol141',
-      'XForceVol142',
-      'XForceVol143'
+      'XForceVol141'
+    ]
+  ),
+  new Collection(
+    'X-Men: Legionquest',
+    '2018-4-17',
+    [
+      'XMenUnlimitedVol17'
     ]
   ),
   new Collection(
@@ -1039,12 +1065,45 @@ collections.push(
     [
       'CableVol117',
       'CableVol118',
-      'CableVol119',
-      'CableVol120',
+      'CableVol119'
     ]
   ),
   new Collection(
-    'X-Men: The Adventures of Cyclops & Phoenix',
+    'X-Men: Legionquest',
+    '2018-4-17',
+    [
+      'UncannyXMenVol1318',
+      'XMenVol238'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Men: Legionquest',
+    '2018-4-17',
+    [
+      'XMenVol239',
+      'UncannyXMenVol1319',
+      'XFactorVol1108',
+      'XFactorVol1109',
+      'UncannyXMenVol1320',
+      'XMenVol240',
+      'UncannyXMenVol1321',
+      'CableVol120',
+      'XMenVol241'
+    ]
+  ),
+  new Collection(
+    'X-Force: The Phalanx Covenant HC (Partial)',
+    '2013-8-14',
+    [
+      'XForceVol142',
+      'XForceVol143'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
     '2014-9-17',
     [
       'XMenBooksofAskaniVol11',

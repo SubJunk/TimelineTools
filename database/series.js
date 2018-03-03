@@ -58,6 +58,7 @@ series.push(
   new Series('Avengers', {1: 1963}),
   new Series('Avengers West Coast', {2: 1985}),
   new Series('Avengers Annual', {1: 1967}),
+  new Series('Bishop', {1: 1994}),
   new Series('Cable', {1: 1993, 2: 2008}),
   new Series('Cable: Blood & Metal', {1: 1992}),
   new Series('Captain America', {1: 1968}),
