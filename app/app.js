@@ -79,7 +79,7 @@ angular.module('app', ['angular-md5'])
 
     // Unset the sticky styles if they exist
     $('.comic')
-        .removeClass('sticky-top sticky-left sticky-right sticky-bottom')
+        .removeClass('stickyTop stickyLeft stickyRight stickyBottom')
         .css({marginLeft: '', marginTop: '', marginRight: '', marginBottom: '' });
 
     vm.prevComic = undefined;
@@ -420,10 +420,13 @@ angular.module('app', ['angular-md5'])
       seriesVolumeLabels.push({
         text: currentSeriesVolume.titleWithVolume,
         right: comic.containerStyles.left - horizontalIncrement,
+        id: 'label-' + seriesVolumeLabels.length,
         containerStyles: {
           top: comic.containerStyles.top,
           left: comic.containerStyles.left - 150
-        }
+        },
+        labelClasses: {},
+        labelStyles: {},
       });
 
       newLabelNeeded = false;
@@ -598,12 +601,7 @@ angular.module('app', ['angular-md5'])
   var $stickyAnchor;
   var scrollLeft;
   var scrollTop;
-  var $thisLabelContainer;
-  var $thisScrollAnchor;
-  var $thisLabel;
-  var $thisLabelId;
   var isScrolledPastLeft;
-  var indexInSeriesVolumeLabels;
   var anchorTopPosition;
   var anchorLeftPosition;
   var anchorRightPosition;
@@ -626,27 +624,22 @@ angular.module('app', ['angular-md5'])
       /**
        * Label positioning:
        */
-      $('.series-volume-label-container').each(function() {
-        $thisLabelContainer = $(this);
-        $thisScrollAnchor = $thisLabelContainer.find('.scroll-anchor');
-        $thisLabel = $thisLabelContainer.find('.series-volume-label');
-        $thisLabelId = $thisLabelContainer.find('.series-volume-label').attr('id');
-        isScrolledPastLeft = Boolean(scrollLeft > $thisScrollAnchor.offset().left);
-        indexInSeriesVolumeLabels = $thisLabelId.substr(6);
+      _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
+        isScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
 
-        $thisLabel.toggleClass('sticky-left', isScrolledPastLeft);
+        seriesVolumeLabel.labelClasses.stickyLeft = isScrolledPastLeft;
 
         if (isScrolledPastLeft) {
-          $thisLabel.css('marginTop', '-' + scrollTop);
+          seriesVolumeLabel.labelStyles.marginTop = '-' + scrollTop;
 
           // If the browser is scrolled past the right, hide the label
-          if (seriesVolumeLabels[indexInSeriesVolumeLabels].right < scrollLeft) {
-            $thisLabel.stop().animate({left: '-150px'});
+          if (seriesVolumeLabel.right < scrollLeft) {
+            seriesVolumeLabel.labelStyles.left = '-150px';
           } else {
-            $thisLabel.stop().animate({left: '0px'});
+            seriesVolumeLabel.labelStyles.left = '0';
           }
         } else {
-          $thisLabel.css('marginTop', '');
+          seriesVolumeLabel.labelStyles.marginTop = false;
         }
       });
 
@@ -669,10 +662,10 @@ angular.module('app', ['angular-md5'])
           isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
           isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
 
-          $expandedComic.toggleClass('sticky-top', isStickyTop);
-          $expandedComic.toggleClass('sticky-left', isStickyLeft);
-          $expandedComic.toggleClass('sticky-right', isStickyRight);
-          $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
+          $expandedComic.toggleClass('stickyTop', isStickyTop);
+          $expandedComic.toggleClass('stickyLeft', isStickyLeft);
+          $expandedComic.toggleClass('stickyRight', isStickyRight);
+          $expandedComic.toggleClass('stickyBottom', isStickyBottom);
 
           if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
             $expandedComic.css('marginLeft', '-' + scrollLeft);

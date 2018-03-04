@@ -63,7 +63,7 @@ body {
   font-size: 12px;
 }
 
-.series-volume-label.sticky-left {
+.series-volume-label.stickyLeft {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   text-align: left;
@@ -190,22 +190,22 @@ body {
   max-width: 100%;
 }
 
-.sticky-top {
+.stickyTop {
   position: fixed;
   top: 0;
 }
 
-.sticky-left {
+.stickyLeft {
   position: fixed;
   left: 0;
 }
 
-.sticky-right {
+.stickyRight {
   position: fixed;
   right: 0;
 }
 
-.sticky-bottom {
+.stickyBottom {
   position: fixed;
   bottom: 0;
 }
