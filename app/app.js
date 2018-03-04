@@ -614,10 +614,12 @@ angular.module('app', ['angular-md5'])
   var isStickyLeft;
   var isStickyRight;
   var isStickyBottom;
+  var startTime;
+  var doSpeedProfile = false;
   var repositionStickyElements = function() {
+    if (doSpeedProfile) startTime = new Date();
+
     $timeout(function() {
-      $expandedComic = $('.expanded .comic');
-      $stickyAnchor = $('.expanded .scroll-anchor');
       scrollLeft = $jqWindow.scrollLeft();
       scrollTop  = $jqWindow.scrollTop();
 
@@ -649,35 +651,46 @@ angular.module('app', ['angular-md5'])
       });
 
       // Expanded panel positioning
-      if ($expandedComic.length) {
-        anchorTopPosition    = $stickyAnchor.offset().top;
-        anchorLeftPosition   = $stickyAnchor.offset().left;
-        anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
-        anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
+      if (vm.expandedComicId) {
+        $expandedComic = $('.expanded .comic');
+        if ($expandedComic.length) {
+          $stickyAnchor = $('.expanded .scroll-anchor');
 
-        scrollRight  = scrollLeft + $jqWindow.innerWidth();
-        scrollBottom = scrollTop  + $jqWindow.innerHeight();
+          anchorTopPosition    = $stickyAnchor.offset().top;
+          anchorLeftPosition   = $stickyAnchor.offset().left;
+          anchorRightPosition  = $stickyAnchor.offset().left + $expandedComic.width();
+          anchorBottomPosition = $stickyAnchor.offset().top  + $expandedComic.height();
 
-        isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
-        isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
-        isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
-        isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
+          scrollRight  = scrollLeft + $jqWindow.innerWidth();
+          scrollBottom = scrollTop  + $jqWindow.innerHeight();
 
-        $expandedComic.toggleClass('sticky-top', isStickyTop);
-        $expandedComic.toggleClass('sticky-left', isStickyLeft);
-        $expandedComic.toggleClass('sticky-right', isStickyRight);
-        $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
+          isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
+          isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
+          isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
+          isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
 
-        if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-          $expandedComic.css('marginLeft', '-' + scrollLeft);
-          $expandedComic.css('marginTop', '');
-        } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
-          $expandedComic.css('marginTop', '-' + scrollTop);
-          $expandedComic.css('marginLeft', '');
-        } else {
-          $expandedComic.css('marginLeft', '');
-          $expandedComic.css('marginTop', '');
+          $expandedComic.toggleClass('sticky-top', isStickyTop);
+          $expandedComic.toggleClass('sticky-left', isStickyLeft);
+          $expandedComic.toggleClass('sticky-right', isStickyRight);
+          $expandedComic.toggleClass('sticky-bottom', isStickyBottom);
+
+          if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
+            $expandedComic.css('marginLeft', '-' + scrollLeft);
+            $expandedComic.css('marginTop', '');
+          } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
+            $expandedComic.css('marginTop', '-' + scrollTop);
+            $expandedComic.css('marginLeft', '');
+          } else {
+            $expandedComic.css('marginLeft', '');
+            $expandedComic.css('marginTop', '');
+          }
         }
+      }
+
+      if (doSpeedProfile) {
+        var endTime = new Date();
+        var timeDiff = endTime - startTime;
+        $log.warn('Time to run repositionStickyElements:', timeDiff + 'ms');
       }
     });
   }
