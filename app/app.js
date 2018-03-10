@@ -22,6 +22,12 @@ angular.module('app', ['angular-md5'])
   var verticalIncrement = 60;
   var horizontalIncrement = verticalIncrement;
 
+  /*
+   * How far away the left edge of labels are from the left
+   * of the first thumbnail of a series volume.
+   */
+  var labelOffset = 150;
+
   var $jqWindow = $(window);
 
   vm.expandedComicId;
@@ -115,7 +121,6 @@ angular.module('app', ['angular-md5'])
 
     vm.expandedComicId = currentComic.id;
     var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
-    repositionStickyElements();
 
     // Get the collection containing this comic
     vm.expandedCollection = _.find(collections, function(collection) {
@@ -419,11 +424,11 @@ angular.module('app', ['angular-md5'])
     if (newLabelNeeded) {
       seriesVolumeLabels.push({
         text: currentSeriesVolume.titleWithVolume,
-        right: comic.containerStyles.left - horizontalIncrement,
+        right: comic.containerStyles.left,
         id: 'label-' + seriesVolumeLabels.length,
         containerStyles: {
           top: comic.containerStyles.top,
-          left: comic.containerStyles.left - 150
+          left: comic.containerStyles.left - labelOffset
         },
         labelClasses: {},
         labelStyles: {},
@@ -617,32 +622,41 @@ angular.module('app', ['angular-md5'])
   var repositionStickyElements = function() {
     if (doSpeedProfile) startTime = new Date();
 
-    $timeout(function() {
-      scrollLeft = $jqWindow.scrollLeft();
-      scrollTop  = $jqWindow.scrollTop();
+    // The scroll position of the page, minus the main padding
+    scrollLeft = $jqWindow.scrollLeft() - 20;
+    scrollTop  = $jqWindow.scrollTop();
 
-      /**
-       * Label positioning:
-       */
-      _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
-        isScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
+    /**
+     * Label positioning:
+     */
+    _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
+      isScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
 
-        seriesVolumeLabel.labelClasses.stickyLeft = isScrolledPastLeft;
+      seriesVolumeLabel.labelClasses.stickyLeft = isScrolledPastLeft;
 
-        if (isScrolledPastLeft) {
-          seriesVolumeLabel.labelStyles.marginTop = '-' + scrollTop;
+      if (isScrolledPastLeft) {
+        seriesVolumeLabel.labelStyles.marginTop = '-' + scrollTop;
 
-          // If the browser is scrolled past the right, hide the label
-          if (seriesVolumeLabel.right < scrollLeft) {
-            seriesVolumeLabel.labelStyles.left = '-150px';
-          } else {
-            seriesVolumeLabel.labelStyles.left = '0';
-          }
+        // If the browser is scrolled past the right, hide the label
+        if (
+          (scrollLeft - seriesVolumeLabel.right) > -labelOffset &&
+          (scrollLeft - seriesVolumeLabel.right) < 0
+        ) {
+          seriesVolumeLabel.visible = true;
+          seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - labelOffset);
+        } else if (seriesVolumeLabel.right < (scrollLeft + labelOffset)) {
+          seriesVolumeLabel.visible = false;
         } else {
-          seriesVolumeLabel.labelStyles.marginTop = false;
+          seriesVolumeLabel.visible = true;
+          seriesVolumeLabel.labelStyles.left = '0';
         }
-      });
+      } else {
+        seriesVolumeLabel.visible = true;
+        seriesVolumeLabel.labelStyles.marginTop = false;
+      }
+    });
 
+    $timeout(function() {
       // Expanded panel positioning
       if (vm.expandedComicId) {
         $expandedComic = $('.expanded .comic');

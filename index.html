@@ -19,7 +19,7 @@
     </ul>
     <ul class="comics">
       <li ng-repeat="(index, label) in ::main.seriesVolumeLabels" ng-style="label.containerStyles" class="series-volume-label-container">
-        <div class="series-volume-label truncate" ng-title="{{label.text}}" id="{{label.id}}" ng-style="label.labelStyles" ng-class="{stickyLeft: label.labelClasses.stickyLeft}">{{label.text}}</div>
+        <div class="series-volume-label truncate" ng-title="{{label.text}}" id="{{label.id}}" ng-style="label.labelStyles" ng-class="{stickyLeft: label.labelClasses.stickyLeft}" ng-if="label.visible">{{label.text}}</div>
       </li>
       <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
         <div class="scroll-anchor"></div>
