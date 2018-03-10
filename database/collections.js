@@ -1076,14 +1076,33 @@ collections.push(
       'XMenVol238'
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'Generation X Classic: Vol. 1 (Partial)',
+    '2010-12-15',
+    [
+      'GenerationXVol11',
+      'GenerationXVol12',
+      'GenerationXVol13'
+    ]
+  ),
   new Collection(
     'X-Men: Legionquest',
     '2018-4-17',
     [
-      'XMenVol239',
+      'XMenVol239'
+    ]
+  ),
+  new Collection(
+    'X-Force: The Phalanx Covenant HC (Partial)',
+    '2013-8-14',
+    [
+      'XForceVol142'
+    ]
+  ),
+  new Collection(
+    'X-Men: Legionquest',
+    '2018-4-17',
+    [
       'UncannyXMenVol1319',
       'XFactorVol1108',
       'XFactorVol1109',
@@ -1095,11 +1114,109 @@ collections.push(
     ]
   ),
   new Collection(
+    'Generation X Classic: Vol. 1 (Partial)',
+    '2010-12-15',
+    [
+      'GenerationXVol14'
+    ]
+  ),
+  new Collection(
     'X-Force: The Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
-      'XForceVol142',
       'XForceVol143'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: The Complete Epic Book 1',
+    '2005-3-30',
+    [
+      'XMenChroniclesVol11',
+      'TalesfromtheAgeofApocalypseSinsterBloodlinesVol11',
+      'XManVol1-1',
+      'XMenChroniclesVol12',
+      'TalesfromtheAgeofApocalypseBytheLightVol11',
+      'BlinkVol11',
+      'BlinkVol12',
+      'BlinkVol13',
+      'BlinkVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse Omnibus (Partial)',
+    '2012-2-22',
+    [
+      'XMenAlphaVol11',
+      'GenerationNextVol11',
+      'AstonishingXMenVol11',
+      'GambitandtheXTernalsVol11',
+      'WeaponXVol11',
+      'FactorXVol11',
+      'XManVol11',
+      'XCalibreVol11',
+      'AmazingXMenVol11',
+      'GenerationNextVol12',
+      'AstonishingXMenVol12',
+      'GambitandtheXTernalsVol12',
+      'WeaponXVol12',
+      'XCalibreVol12',
+      'FactorXVol12',
+      'XManVol12',
+      'AmazingXMenVol12',
+      'XCalibreVol13',
+      'FactorXVol13'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: The Complete Epic Book 3 (Partial)',
+    '2006-4-12',
+    [
+      'XUniverseVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse Omnibus (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol13',
+      'AmazingXMenVol13',
+      'XManVol13',
+      'WeaponXVol13',
+      'GenerationNextVol13',
+      'GambitandtheXTernalsVol13',
+      'AstonishingXMenVol14',
+      'GenerationNextVol14',
+      'XManVol14',
+      'XCalibreVol14',
+      'FactorXVol14',
+      'GambitandtheXTernalsVol14',
+      'WeaponXVol14',
+      'AmazingXMenVol14',
+      'GenerationNextVol14'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
+    '2006-11-1',
+    [
+      'XUniverseVol12'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse Omnibus (Partial)',
+    '2012-2-22',
+    [
+      'XMenOmegaVol11'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Men: Age of Apocalypse Omnibus (Partial)',
+    '2012-2-22',
+    [
+      'AgeofApocalypseTheChosenVol11',
     ]
   ),
   new Collection(
@@ -1114,6 +1231,22 @@ collections.push(
       'XMenPhoenixVol11',
       'XMenPhoenixVol12',
       'XMenPhoenixVol13'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: The Complete Epic Book 1',
+    '2005-3-30',
+    [
+      'XManAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
+    '2006-11-1',
+    [
+      'XManVol153',
+      'XManVol154',
+      'XMenPrimeVol11',
     ]
   ),
   /**
