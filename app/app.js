@@ -122,6 +122,9 @@ angular.module('app', ['angular-md5'])
     vm.expandedComicId = currentComic.id;
     var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
 
+    // Make sure the panel is fully visible
+    repositionStickyElements();
+
     // Get the collection containing this comic
     vm.expandedCollection = _.find(collections, function(collection) {
       return collection.comicIds.indexOf(currentComic.id) > -1;
@@ -682,7 +685,7 @@ angular.module('app', ['angular-md5'])
           $expandedComic.toggleClass('stickyBottom', isStickyBottom);
 
           if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-            $expandedComic.css('marginLeft', '-' + scrollLeft);
+            $expandedComic.css('marginLeft', '-' + (scrollLeft + bodyStyle.padding));
             $expandedComic.css('marginTop', '');
           } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
             $expandedComic.css('marginTop', '-' + scrollTop);
