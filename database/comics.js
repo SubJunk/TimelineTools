@@ -80,10 +80,10 @@ addComicsInSeriesVolume('BishopVol1', [
   [4, '1995-3']
 ]);
 addComicsInSeriesVolume('BlinkVol1', [
-  [1, '1995-3'],
-  [2, '1995-4'],
-  [3, '1995-5'],
-  [4, '1995-6']
+  [1, '2001-3'],
+  [2, '2001-4'],
+  [3, '2001-5'],
+  [4, '2001-6']
 ]);
 addComicsInSeriesVolume('CableBloodMetalVol1', [
   [1, '1992-10'],
