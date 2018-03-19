@@ -115,6 +115,8 @@ series.push(
   new Series('X-Men Free Comic Book Day', {2008: 2008}),
   new Series('X-Men Legacy', {1: 2008}),
   new Series('X-Men Unlimited', {1: 1993}),
+  new Series('X-Men: Age of Apocalypse', {1: 2005}),
+  new Series('X-Men: Age of Apocalypse One Shot', {1: 2005}),
   new Series('X-Men: Alpha', {1: 1995}),
   new Series('X-Men: Books of Askani', {1: 1995}),
   new Series('X-Men: Manifest Destiny', {1: 2008}),

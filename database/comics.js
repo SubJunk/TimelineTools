@@ -564,6 +564,17 @@ addComicsInSeriesVolume('XMenVol2', [
   [40, '1995-1'],
   [41, '1995-2']
 ]);
+addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
+  [1, '2005-3-2'],
+  [2, '2005-3-9'],
+  [3, '2005-3-16'],
+  [4, '2005-3-23'],
+  [5, '2005-3-30'],
+  [6, '2005-4-27']
+]);
+addComicsInSeriesVolume('XMenAgeofApocalypseOneShotVol1', [
+  [0, '2005-3-2']
+]);
 addComicsInSeriesVolume('XMenAlphaVol1', [[1, '1995-2']]);
 addComicsInSeriesVolume('XMenAnnualVol2', [
   [1, '1992-5'],

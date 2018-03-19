@@ -1128,8 +1128,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Age of Apocalypse: The Complete Epic Book 1',
-    '2005-3-30',
+    'X-Men: Age of Apocalypse: Dawn',
+    '2016-2-10',
     [
       'XMenChroniclesVol11',
       'TalesfromtheAgeofApocalypseSinsterBloodlinesVol11',
@@ -1143,6 +1143,19 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: The New Age of Apocalypse',
+    '2006-7-6',
+    [
+      'XMenAgeofApocalypseOneShotVol10',
+      'XMenAgeofApocalypseVol11',
+      'XMenAgeofApocalypseVol12',
+      'XMenAgeofApocalypseVol13',
+      'XMenAgeofApocalypseVol14',
+      'XMenAgeofApocalypseVol15',
+      'XMenAgeofApocalypseVol16'
+    ]
+  ),
+  new Collection(
     'X-Men: Age of Apocalypse Omnibus (Partial)',
     '2012-2-22',
     [
@@ -1152,7 +1165,20 @@ collections.push(
       'GambitandtheXTernalsVol11',
       'WeaponXVol11',
       'FactorXVol11',
-      'XManVol11',
+      'XManVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: Dawn',
+    '2016-2-10',
+    [
+      'AgeofApocalypseTheChosenVol11',
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse Omnibus (Partial)',
+    '2012-2-22',
+    [
       'XCalibreVol11',
       'AmazingXMenVol11',
       'GenerationNextVol12',
@@ -1191,8 +1217,7 @@ collections.push(
       'FactorXVol14',
       'GambitandtheXTernalsVol14',
       'WeaponXVol14',
-      'AmazingXMenVol14',
-      'GenerationNextVol14'
+      'AmazingXMenVol14'
     ]
   ),
   new Collection(
@@ -1213,13 +1238,6 @@ collections.push(
    * Roughly ordered for flow of crossovers until here.
    */
   new Collection(
-    'X-Men: Age of Apocalypse Omnibus (Partial)',
-    '2012-2-22',
-    [
-      'AgeofApocalypseTheChosenVol11',
-    ]
-  ),
-  new Collection(
     'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
     '2014-9-17',
     [
@@ -1234,8 +1252,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Age of Apocalypse: The Complete Epic Book 1',
-    '2005-3-30',
+    'X-Men: Age of Apocalypse: Dawn',
+    '2016-2-10',
     [
       'XManAnnualVol11'
     ]
