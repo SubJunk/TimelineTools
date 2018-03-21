@@ -1146,13 +1146,7 @@ collections.push(
     'X-Men: The New Age of Apocalypse',
     '2006-7-6',
     [
-      'XMenAgeofApocalypseOneShotVol10',
-      'XMenAgeofApocalypseVol11',
-      'XMenAgeofApocalypseVol12',
-      'XMenAgeofApocalypseVol13',
-      'XMenAgeofApocalypseVol14',
-      'XMenAgeofApocalypseVol15',
-      'XMenAgeofApocalypseVol16'
+      'XMenAgeofApocalypseOneShotVol10'
     ]
   ),
   new Collection(
@@ -1234,6 +1228,27 @@ collections.push(
       'XMenOmegaVol11'
     ]
   ),
+  new Collection(
+    'X-Men: The New Age of Apocalypse',
+    '2006-7-6',
+    [
+      'XMenAgeofApocalypseVol11',
+      'XMenAgeofApocalypseVol12',
+      'XMenAgeofApocalypseVol13',
+      'XMenAgeofApocalypseVol14',
+      'XMenAgeofApocalypseVol15',
+      'XMenAgeofApocalypseVol16'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
+    '2006-11-1',
+    [
+      'XManVol153',
+      'XManVol154',
+      'XMenPrimeVol11'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -1256,15 +1271,6 @@ collections.push(
     '2016-2-10',
     [
       'XManAnnualVol11'
-    ]
-  ),
-  new Collection(
-    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
-    '2006-11-1',
-    [
-      'XManVol153',
-      'XManVol154',
-      'XMenPrimeVol11',
     ]
   ),
   /**
