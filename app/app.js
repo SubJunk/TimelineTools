@@ -412,7 +412,7 @@ angular.module('app', ['angular-md5'])
      */
     comic.image =
       comic.series
-          .replace(/[():&?']/g, '')
+          .replace(/[():&?'.]/g, '')
           .replace(/\s+|\//g, '_') +
           '_Vol_' +
           currentSeriesVolume.volume +

@@ -272,8 +272,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Mutant Massacre',
-    '2013-2-12',
+    'X-Men: Mutant Massacre Omnibus',
+    '2018-11-20',
     [
       'UncannyXMenVol1210',
       'XFactorVol19',
@@ -282,29 +282,35 @@ collections.push(
       'NewMutantsVol146',
       'ThorVol1373',
       'PowerPackVol127',
-      'ThorVol1374',
       'UncannyXMenVol1212',
+      'ThorVol1374',
       'XFactorVol111',
       'DaredevilVol1238',
       'UncannyXMenVol1213',
-      'UncannyXMenVol1214'
-    ]
-  ),
-  new Collection(
-    'X-Men: Old Soldiers (Partial)',
-    '2004-7',
-    [
-      'UncannyXMenVol1215'
-    ]
-  ),
-  new Collection(
-    'Essential X-Men: Vol. 7 (Partial)',
-    '2006-4-12',
-    [
+      'XFactorVol112',
+      'UncannyXMenVol1214',
+      'UncannyXMenVol1215',
       'UncannyXMenVol1216',
+      'XFactorVol113',
+      'XFactorVol114',
+      'XFactorVol115',
       'UncannyXMenVol1217',
       'UncannyXMenVol1218',
-      'UncannyXMenVol1219'
+      'UncannyXMenVol1219',
+      'ThorVol1377',
+      'XFactorVol116',
+      'ThorVol1378',
+      'XFactorVol117',
+      'XFactorAnnualVol12',
+      'XMenvstheAvengersVol11',
+      'XMenvstheAvengersVol12',
+      'XMenvstheAvengersVol13',
+      'XMenvstheAvengersVol14',
+      'XMenAnnualVol111',
+      'FantasticFourvstheXMenVol11',
+      'FantasticFourvstheXMenVol12',
+      'FantasticFourvstheXMenVol13',
+      'FantasticFourvstheXMenVol14'
     ]
   ),
   new Collection(

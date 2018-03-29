@@ -117,6 +117,12 @@ addComicsInSeriesVolume('FactorXVol1', [
   [3, '1995-5'],
   [4, '1995-6']
 ]);
+addComicsInSeriesVolume('FantasticFourvstheXMenVol1', [
+  [1, '1987-2'],
+  [2, '1987-3'],
+  [3, '1987-4'],
+  [4, '1987-6']
+]);
 addComicsInSeriesVolume('GambitandtheXTernalsVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
@@ -137,6 +143,12 @@ addComicsInSeriesVolume('GenerationXVol1', [
 ]);
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseBytheLightVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']]);
+addComicsInSeriesVolume('ThorVol1', [
+  [373, '1986-11'],
+  [374, '1986-12'],
+  [377, '1987-3'],
+  [378, '1987-4']
+])
 addComicsInSeriesVolume('UncannyXMenVol1', [
   [94, '1975-8', ['The Doomsmith Scenario!']],
   [95, '1975-10', ['Warhunt!']],
@@ -419,6 +431,12 @@ addComicsInSeriesVolume('XFactorVol1', [
   [9, '1986-10'],
   [10, '1986-11'],
   [11, '1986-12'],
+  [12, '1987-1'],
+  [13, '1987-2'],
+  [14, '1987-3'],
+  [15, '1987-4'],
+  [16, '1987-5'],
+  [17, '1987-6'],
   [19, '1987-8'],
   [20, '1987-9'],
   [21, '1987-10'],
@@ -466,6 +484,13 @@ addComicsInSeriesVolume('XFactorVol1', [
   [108, '1994-11'],
   [109, '1994-12']
 ]);
+addComicsInSeriesVolume('XFactorAnnualVol1', [
+  [2, '1987-10'],
+  [3, '1988-8'],
+  [4, '1989-10'],
+  [6, '1991-8'],
+  [7, '1992-5']
+])
 addComicsInSeriesVolume('XForceVol1', [
   [1, '1991-8'],
   [2, '1991-9'],
@@ -571,23 +596,37 @@ addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [4, '2005-3-23'],
   [5, '2005-3-30'],
   [6, '2005-4-27']
-]);
-addComicsInSeriesVolume('XMenAgeofApocalypseOneShotVol1', [
-  [0, '2005-3-2']
-]);
-addComicsInSeriesVolume('XMenAlphaVol1', [[1, '1995-2']]);
+])
+addComicsInSeriesVolume('XMenAgeofApocalypseOneShotVol1', [[0, '2005-3-2']])
+addComicsInSeriesVolume('XMenAlphaVol1', [[1, '1995-2']])
+addComicsInSeriesVolume('XMenAnnualVol1', [
+  [3, '1979-8'],
+  [4, '1980-11'],
+  [5, '1981-11'],
+  [6, '1982-11'],
+  [7, '1983-12'],
+  [8, '1984-9'],
+  [10, '1987-1'],
+  [11, '1987-11'],
+  [12, '1988-10'],
+  [13, '1989-8'],
+  [15, '1991-8'],
+  [16, '1992-5'],
+  [17, '1993-6'],
+  [18, '1994-7']
+])
 addComicsInSeriesVolume('XMenAnnualVol2', [
   [1, '1992-5'],
   [2, '1993-10'],
   [3, '1994-10']
-]),
-addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']]);
+])
+addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']])
 addComicsInSeriesVolume('XMenChroniclesVol1', [
   [1, '1995-3'],
   [2, '1995-6']
-]),
-addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']]);
-addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']]);
+])
+addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']])
+addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']])
 addComicsInSeriesVolume('XMenPhoenixVol1', [
   [1, '1999-12'],
   [2, '2000-1'],
@@ -601,11 +640,17 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [5, '1994-6'],
   [6, '1994-9'],
   [7, '1994-12']
-]);
+])
+addComicsInSeriesVolume('XMenvstheAvengersVol1', [
+  [1, '1987-4'],
+  [2, '1987-5'],
+  [3, '1987-6'],
+  [4, '1987-7']
+])
 addComicsInSeriesVolume('XUniverseVol1', [
   [1, '1995-5'],
   [2, '1995-6']
-]),
+])
 
 comics.push(
   new Comic(1, '2008-5', 'CableVol2', ['War Baby (Chapter 1)']),
@@ -739,9 +784,6 @@ comics.push(
 
   new Comic(1, '1993-1-1', 'StryfesStrikeFileVol1'),
 
-  new Comic(373, '1986-11', 'ThorVol1'),
-  new Comic(374, '1986-12', 'ThorVol1'),
-
   new Comic(1, '1975-5', 'GiantSizeXMenVol1', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']),
 
   new Comic(60, '1994-4', 'WhatIfVol2'),
@@ -754,11 +796,6 @@ comics.push(
   new Comic(75, '1993-11', 'WolverineVol2'),
   new Comic(85, '1994-9', 'WolverineVol2'),
 
-  new Comic(3, '1988-8', 'XFactorAnnualVol1'),
-  new Comic(4, '1989-10', 'XFactorAnnualVol1'),
-  new Comic(6, '1991-8', 'XFactorAnnualVol1'),
-  new Comic(7, '1992-5', 'XFactorAnnualVol1'),
-
   new Comic(26, '2010-6', 'XForceVol3', ['Second Coming (Chapter Five)']),
   new Comic(27, '2010-7', 'XForceVol3', ['Second Coming (Chapter Nine)']),
   new Comic(28, '2010-9', 'XForceVol3', ['Second Coming, Chapter 13']),
@@ -766,20 +803,6 @@ comics.push(
   new Comic(1, '1992-5', 'XForceAnnualVol1'),
   new Comic(2, '1993-10', 'XForceAnnualVol1'),
   new Comic(3, '1994-10', 'XForceAnnualVol1'),
-
-  new Comic(3, '1979-8', 'XMenAnnualVol1', ['A Fire in the Sky!']),
-  new Comic(4, '1980-11', 'XMenAnnualVol1', ['Nightcrawler\'s Inferno']),
-  new Comic(5, '1981-11', 'XMenAnnualVol1'),
-  new Comic(6, '1982-11', 'XMenAnnualVol1'),
-  new Comic(7, '1983-12', 'XMenAnnualVol1'),
-  new Comic(8, '1984-9', 'XMenAnnualVol1'),
-  new Comic(10, '1987-1', 'XMenAnnualVol1'),
-  new Comic(12, '1988-10', 'XMenAnnualVol1'),
-  new Comic(13, '1989-8', 'XMenAnnualVol1'),
-  new Comic(15, '1991-8', 'XMenAnnualVol1'),
-  new Comic(16, '1992-5', 'XMenAnnualVol1'),
-  new Comic(17, '1993-6', 'XMenAnnualVol1'),
-  new Comic(18, '1994-7', 'XMenAnnualVol1'),
 
   new Comic(1, '1985-12', 'XMenAlphaFlightVol1'),
   new Comic(2, '1986-1', 'XMenAlphaFlightVol1'),
