@@ -138,26 +138,6 @@ angular.module('app', ['angular-md5'])
       );
     });
 
-    var allCollectionComicIds = [];
-    _.each(collectionsMerged, function(collection) {
-      if (collection.title === vm.expandedCollection.title) {
-        allCollectionComicIds = _.concat(allCollectionComicIds, collection.comicIds);
-      }
-    });
-
-    /**
-     * Copy all of the comicsIds from other parts of the same collection
-     * into allCollectionComics so we can display them within the
-     * expanded view and allow interaction with them, but still have the
-     * arrow keys work chronologically.
-     */
-    vm.expandedCollection.allCollectionComics = [];
-    _.each(allCollectionComicIds, function(comicId) {
-      vm.expandedCollection.allCollectionComics.push(
-        _.find(comics, ['id', comicId])
-      );
-    });
-
     currentComicIndexInCollection = vm.expandedCollection.comicIds.indexOf(currentComic.id);
     currentCollectionIndexInCollections = collections.indexOf(vm.expandedCollection);
 
@@ -740,17 +720,6 @@ angular.module('app', ['angular-md5'])
     }
   });
 
-  // Pass our transformed db objects to the view
-  vm.comics        = comics;
-  vm.collections   = collections;
-  vm.series        = series;
-  vm.seriesVolumes = seriesVolumes;
-
-  // Pass the other things the view needs
-  vm.dates = dates;
-  vm.bodyStyle = bodyStyle;
-  vm.seriesVolumeLabels = seriesVolumeLabels;
-
   /**
    * When all the initial loading of the app is finished, store
    * a clone of collections to be used to see all visible comics
@@ -758,6 +727,57 @@ angular.module('app', ['angular-md5'])
    * part of the collection.
    */
   var collectionsMerged = _.cloneDeep(collections);
+  var uniqueCollections = {};
+  _.each(collectionsMerged, function(collectionMerged) {
+    if (uniqueCollections[collectionMerged.id]) {
+      uniqueCollections[collectionMerged.id].allCollectionComicIds = _.concat(uniqueCollections[collectionMerged.id].allCollectionComicIds, collectionMerged.comicIds);
+    } else {
+      uniqueCollections[collectionMerged.id] = collectionMerged;
+      uniqueCollections[collectionMerged.id].allCollectionComicIds = collectionMerged.comicIds;
+    }
+    _.each(collections, function(collection) {
+      if (collection.title === collectionMerged.title) {
+        collection.allCollectionComicIds = uniqueCollections[collection.id].allCollectionComicIds;
+      }
+    });
+    // if (collectionMerged.title==='X-Men Epic Collection Vol. 5: Second Genesis') {
+    // console.log(collectionMerged);
+    // }
+  });
+
+  /**
+   * Copy all of the comicIds from other parts of the same collection
+   * into allCollectionComics so we can display them within the
+   * expanded view and allow interaction with them, but still have the
+   * arrow keys work chronologically.
+   */
+  _.each(uniqueCollections, function(uniqueCollection) {
+    uniqueCollection.allCollectionComics = [];
+    _.each(uniqueCollection.allCollectionComicIds, function(comicId) {
+      uniqueCollection.allCollectionComics.push(
+        _.find(comics, ['id', comicId])
+      );
+    });
+
+    _.each(collections, function(collection) {
+      if (collection.title === uniqueCollection.title) {
+        collection.allCollectionComics = uniqueCollection.allCollectionComics;
+      }
+    });
+    // console.log(collection);
+  });
+
+  // Pass our transformed db objects to the view
+  vm.comics            = comics;
+  vm.collections       = collections;
+  vm.uniqueCollections = uniqueCollections;
+  vm.series            = series;
+  vm.seriesVolumes     = seriesVolumes;
+
+  // Pass the other things the view needs
+  vm.dates = dates;
+  vm.bodyStyle = bodyStyle;
+  vm.seriesVolumeLabels = seriesVolumeLabels;
 
   // Expand the comic from the URL on load
   if ($location.search()) {
