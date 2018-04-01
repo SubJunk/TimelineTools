@@ -566,7 +566,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force Omnibus',
+    'X-Force Omnibus Vol. 1',
     '2013-2-6',
     [
       'XForceVol15',
@@ -578,8 +578,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncollected (Shattershot event)',
-    null,
+    'X-Men: Shattershot',
+    '1992-5',
     [
       'XMenAnnualVol21',
       'XMenAnnualVol116',
@@ -596,7 +596,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force Omnibus',
+    'X-Force Omnibus Vol. 1',
     '2013-2-6',
     [
       'XForceVol111',
