@@ -222,7 +222,6 @@ body {
 .stickyRight,
 .stickyBottom {
   position: fixed;
-  top: 0;
 }
 
 .stickyTop {
