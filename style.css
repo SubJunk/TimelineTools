@@ -94,7 +94,14 @@ body {
   border-radius: 50%;
 }
 
-.expanded .comic {
+.collection-container {
+  width: calc(var(--expanded-cover-height) / var(--cover-aspect-ratio));
+  transition: width 1s;
+  margin-right: 10px;
+}
+
+.expanded .comic,
+.collection-container.expanded {
   width: var(--expanded-width);
   border: none;
   border-radius: initial;
@@ -174,8 +181,11 @@ body {
   height: var(--expanded-cover-height);
 }
 
-.expanded-panel {
+.comic-container .expanded-panel {
   display: none;
+}
+
+.expanded-panel {
   left: 0;
   width: calc(var(--expanded-width) * 0.75);
   background: inherit;
@@ -185,6 +195,16 @@ body {
 .collection-container,
 .expanded .expanded-panel {
   display: inline-block;
+}
+
+.collection-container {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.collection-container .expanded-panel {
+  position: absolute;
+  left: calc(var(--expanded-width) * 0.24);
 }
 
 .expanded-panel .row {
