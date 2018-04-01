@@ -1013,7 +1013,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force: The Phalanx Covenant HC (Partial)',
+    'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
       'XForceVol139'
@@ -1051,7 +1051,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force: The Phalanx Covenant HC (Partial)',
+    'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
       'XForceVol140',
@@ -1099,7 +1099,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force: The Phalanx Covenant HC (Partial)',
+    'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
       'XForceVol142'
@@ -1127,7 +1127,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force: The Phalanx Covenant HC (Partial)',
+    'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
       'XForceVol143'
@@ -1321,51 +1321,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Fear Itself',
-    '2012-3',
-    [
-      'UncannyXMenVol1540',
-      'UncannyXMenVol1541',
-      'UncannyXMenVol1542',
-      'UncannyXMenVol1543',
-      'UncannyXMenVol1544'
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men: Breaking Point',
-    '2011-9',
-    [
-      'UncannyXMenVol1534.1',
-      'UncannyXMenVol1535',
-      'UncannyXMenVol1536',
-      'UncannyXMenVol1537',
-      'UncannyXMenVol1538',
-      'UncannyXMenVol1539'
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men: Quarantine',
-    '2011-6',
-    [
-      'UncannyXMenVol1530',
-      'UncannyXMenVol1531',
-      'UncannyXMenVol1532',
-      'UncannyXMenVol1533',
-      'UncannyXMenVol1534'
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men: The Five Lights (aka Uncanny X-Men: The Birth of Generation Hope)',
-    '2010-12',
-    [
-      'UncannyXMenVol1526',
-      'UncannyXMenVol1527',
-      'UncannyXMenVol1528',
-      'UncannyXMenVol1529',
-      'UncannyXMenVol1534'
-    ]
-  ),
-  new Collection(
     'X-Men: Second Coming',
     '2011-6',
     [
@@ -1384,6 +1339,50 @@ collections.push(
       'XForceVol326',
       'XForceVol327',
       'XForceVol328'
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Birth of Generation Hope',
+    '2010-12',
+    [
+      'UncannyXMenVol1526',
+      'UncannyXMenVol1527',
+      'UncannyXMenVol1528',
+      'UncannyXMenVol1529'
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Quarantine',
+    '2011-6',
+    [
+      'UncannyXMenVol1530',
+      'UncannyXMenVol1531',
+      'UncannyXMenVol1532',
+      'UncannyXMenVol1533',
+      'UncannyXMenVol1534'
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Breaking Point',
+    '2011-9',
+    [
+      'UncannyXMenVol1534.1',
+      'UncannyXMenVol1535',
+      'UncannyXMenVol1536',
+      'UncannyXMenVol1537',
+      'UncannyXMenVol1538',
+      'UncannyXMenVol1539'
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Fear Itself',
+    '2012-3',
+    [
+      'UncannyXMenVol1540',
+      'UncannyXMenVol1541',
+      'UncannyXMenVol1542',
+      'UncannyXMenVol1543',
+      'UncannyXMenVol1544'
     ]
   )
 );
