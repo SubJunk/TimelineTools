@@ -33,6 +33,10 @@ body {
   text-indent: 22px;
 }
 
+.collections {
+  margin-bottom: 20px;
+}
+
 .comics,
 .series-volume-labels,
 .collections {
