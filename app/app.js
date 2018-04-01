@@ -31,6 +31,7 @@ angular.module('app', ['angular-md5'])
   var $jqWindow = $(window);
 
   vm.expandedComicId;
+  vm.expandedCollectionId;
   vm.expandedCollection;
   var expandedSeriesVolume;
   vm.prevComic;
@@ -74,6 +75,36 @@ angular.module('app', ['angular-md5'])
     }
 
     return '';
+  }
+
+  /**
+   * Figure out what the name of the image on the server will be
+   * based on the series, volume and issue.
+   *
+   * Notes:
+   * This uses two regular expressions to sanitize/standardize the
+   * series name:
+   * 1) Remove all occurrences of the characters ():&
+   * 2) Replace all occurrences of whitespace (including multiple
+   *    in a row) and forward slashes with underscores.
+   * Finally it appends the volume and issue.
+   */
+  var getSanitizedString = function(isComic, seriesOrCollection, volume, issue) {
+    seriesOrCollection = seriesOrCollection
+        .replace(/[():&?'.,]/g, '')
+        .replace(/\s+|\//g, '_');
+
+    if (isComic) {
+      seriesOrCollection +=
+          '_Vol_' +
+          volume +
+          '_' +
+          issue;
+    } else {
+      seriesOrCollection = seriesOrCollection.replace(/_Partial/g, '')
+    }
+
+    return seriesOrCollection;
   }
 
   var prevComicId;
@@ -208,6 +239,10 @@ angular.module('app', ['angular-md5'])
         throw new Error(err);
       });
     }
+  };
+
+  vm.toggleExpandCollection = function(collection) {
+    vm.expandedCollectionId = vm.expandedCollectionId === collection.id ? null : collection.id;
   };
 
   // Sort the data by date
@@ -377,27 +412,7 @@ angular.module('app', ['angular-md5'])
 
     // Store the name of the series in the comic object
     comic.series = currentSeriesVolume.title;
-
-    /**
-     * Figure out what the name of the image on the server will be
-     * based on the series, volume and issue.
-     *
-     * Notes:
-     * This uses two regular expressions to sanitize/standardize the
-     * series name:
-     * 1) Remove all occurrences of the characters ():&
-     * 2) Replace all occurrences of whitespace (including multiple
-     *    in a row) and forward slashes with underscores.
-     * Finally it appends the volume and issue.
-     */
-    comic.image =
-      comic.series
-          .replace(/[():&?'.]/g, '')
-          .replace(/\s+|\//g, '_') +
-          '_Vol_' +
-          currentSeriesVolume.volume +
-          '_' +
-          comic.issue;
+    comic.image = getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
 
     previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
@@ -720,28 +735,25 @@ angular.module('app', ['angular-md5'])
     }
   });
 
-  /**
-   * When all the initial loading of the app is finished, store
-   * a clone of collections to be used to see all visible comics
-   * in a collection without them really being added to that
-   * part of the collection.
-   */
-  var collectionsMerged = _.cloneDeep(collections);
   var uniqueCollections = {};
-  _.each(collectionsMerged, function(collectionMerged) {
-    if (uniqueCollections[collectionMerged.id]) {
-      uniqueCollections[collectionMerged.id].allCollectionComicIds = _.concat(uniqueCollections[collectionMerged.id].allCollectionComicIds, collectionMerged.comicIds);
+  _.each(collections, function(collection) {
+    // While we are here we add the image string for lookup
+    collection.image = getSanitizedString(false, collection.title);
+
+    if (uniqueCollections[collection.id]) {
+      uniqueCollections[collection.id].allCollectionComicIds = _.concat(uniqueCollections[collection.id].allCollectionComicIds, collection.comicIds);
     } else {
-      uniqueCollections[collectionMerged.id] = collectionMerged;
-      uniqueCollections[collectionMerged.id].allCollectionComicIds = collectionMerged.comicIds;
+      uniqueCollections[collection.id] = collection;
+      uniqueCollections[collection.id].allCollectionComicIds = collection.comicIds;
     }
-    _.each(collections, function(collection) {
-      if (collection.title === collectionMerged.title) {
+
+    _.each(collections, function(collectionInner) {
+      if (collectionInner.title === collection.title) {
         collection.allCollectionComicIds = uniqueCollections[collection.id].allCollectionComicIds;
       }
     });
-    // if (collectionMerged.title==='X-Men Epic Collection Vol. 5: Second Genesis') {
-    // console.log(collectionMerged);
+    // if (collection.title==='X-Men Epic Collection Vol. 5: Second Genesis') {
+    // console.log(collection);
     // }
   });
 

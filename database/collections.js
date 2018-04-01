@@ -504,7 +504,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force Omnibus',
+    'X-Force Omnibus Vol. 1',
     '2013-2-6',
     [
       'NewMutantsVol198',

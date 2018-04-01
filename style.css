@@ -82,8 +82,7 @@ body {
   width: var(--month-width);
 }
 
-.comic-container.expanded,
-.collection-container {
+.comic-container.expanded {
   display: block;
   z-index: 3;
   width: unset;
@@ -162,14 +161,14 @@ body {
 }
 
 .expanded .comic .panel-left,
-.collection .panel-left {
+.comic-collection .panel-left {
   display: inline-block;
   vertical-align: top;
   width: calc(var(--expanded-width) * 0.24);
 }
 
 .expanded .comic .cover-thumbnail img,
-.collection .cover-thumbnail img {
+.comic-collection .cover-thumbnail img {
   border-radius: initial;
   width: calc(var(--expanded-cover-height) / var(--cover-aspect-ratio));
   height: var(--expanded-cover-height);
@@ -183,9 +182,8 @@ body {
   margin-top: 10px;
 }
 
-.expanded .expanded-panel,
-.collections .expanded-panel,
-.collection-container {
+.collection-container,
+.expanded .expanded-panel {
   display: inline-block;
 }
 
