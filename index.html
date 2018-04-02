@@ -9,6 +9,38 @@
     <title>TimelineTools</title>
   </head>
   <body ng-controller="DataController as main" ng-style='main.bodyStyle' class="ng-cloak">
+    <div class="footer switch">
+      <label>
+        Show collections:
+        <input type="checkbox" ng-model="main.isShowCollections">
+        <span class="lever"></span>
+      </label>
+    </div>
+    <ul class="collections" ng-if="main.isShowCollections">
+      <li ng-repeat="collection in main.uniqueCollections" class="collection-container" ng-class="{expanded: collection.id === main.expandedCollectionId}">
+        <div class="comic-collection z-depth-5 hoverable" ng-style="collection.styles">
+          <div class="panel-left">
+            <a title="{{collection.title}} cover" ng-click="main.toggleExpandCollection(collection)" class="waves-effect cover-thumbnail">
+              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{collection.image}}.jpg"></img>
+            </a>
+          </div>
+          <div class="expanded-panel">
+            <!-- <a ng-if="comic.link" class="marvel-unlimited-link" ng-href="{{comic.link}}" title="Open in Marvel Unlimited"></a> -->
+            <div class="title">{{collection.title}}</div>
+            <div class="date">{{collection.yearPublished}} / {{collection.monthPublished}}</div>
+            <div class="collection-comics">
+              <ul>
+                <li ng-repeat="comic in collection.allCollectionComics track by comic.id">
+                  <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="z-depth-5 waves-effect hoverable">
+                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg" ng-class="{current: comic.id === comicId}"></img>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
     <ul class="years">
       <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
         {{year}}

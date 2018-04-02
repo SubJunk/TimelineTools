@@ -33,9 +33,15 @@ body {
   text-indent: 22px;
 }
 
+.collections {
+  margin-bottom: 20px;
+}
+
 .comics,
-.series-volume-labels {
+.series-volume-labels,
+.collections {
   position: relative;
+  display: block;
 }
 
 .comic-container,
@@ -92,7 +98,14 @@ body {
   border-radius: 50%;
 }
 
-.expanded .comic {
+.collection-container {
+  width: calc(var(--expanded-cover-height) / var(--cover-aspect-ratio));
+  transition: width 1s;
+  margin-right: 10px;
+}
+
+.expanded .comic,
+.collection-container.expanded {
   width: var(--expanded-width);
   border: none;
   border-radius: initial;
@@ -158,28 +171,45 @@ body {
   margin: calc(var(--month-width) * 0.05);
 }
 
-.expanded .comic .panel-left {
+.expanded .comic .panel-left,
+.comic-collection .panel-left {
   display: inline-block;
   vertical-align: top;
   width: calc(var(--expanded-width) * 0.24);
 }
 
-.expanded .comic .cover-thumbnail img {
+.expanded .comic .cover-thumbnail img,
+.comic-collection .cover-thumbnail img {
   border-radius: initial;
   width: calc(var(--expanded-cover-height) / var(--cover-aspect-ratio));
   height: var(--expanded-cover-height);
 }
 
-.expanded-panel {
+.comic-container .expanded-panel {
   display: none;
+}
+
+.expanded-panel {
   left: 0;
   width: calc(var(--expanded-width) * 0.75);
   background: inherit;
   margin-top: 10px;
 }
 
+.collection-container,
 .expanded .expanded-panel {
   display: inline-block;
+}
+
+.collection-container {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.collection-container .expanded-panel {
+  position: absolute;
+  left: calc(var(--expanded-width) * 0.24);
+  top: 0;
 }
 
 .expanded-panel .row {
@@ -190,28 +220,38 @@ body {
   max-width: 100%;
 }
 
-.stickyTop {
+.stickyTop,
+.stickyLeft,
+.stickyRight,
+.stickyBottom {
   position: fixed;
+}
+
+.stickyTop {
   top: 0;
 }
 
 .stickyLeft {
-  position: fixed;
   left: 0;
 }
 
 .stickyRight {
-  position: fixed;
   right: 0;
 }
 
 .stickyBottom {
-  position: fixed;
   bottom: 0;
 }
 
 .scroll-anchor {
   width: var(--expanded-width);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
 }
 
 /**
