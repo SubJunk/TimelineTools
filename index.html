@@ -31,7 +31,7 @@
             <div class="collection-comics">
               <ul>
                 <li ng-repeat="comic in collection.allCollectionComics track by comic.id">
-                  <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="z-depth-5 waves-effect hoverable">
+                  <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
                     <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg" ng-class="{current: comic.id === comicId}"></img>
                   </a>
                 </li>
@@ -89,11 +89,11 @@
             <div class="title" ng-repeat="title in comic.titles">{{title}}</div>
             <div class="date">{{comic.yearPublished}} / {{comic.monthPublished}}</div>
             <div class="collection-comics">
-              <div class="collection-title">{{main.expandedCollection.title}}:</div>
+              <div class="collection-title">{{comic.collection.title}}:</div>
               <ul>
-                <li ng-repeat="comic in main.expandedCollection.allCollectionComics track by comic.id">
-                  <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="z-depth-5 waves-effect hoverable">
-                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg" ng-class="{current: comic.id === main.expandedComicId}"></img>
+                <li ng-repeat="collectionComic in comic.collection.allCollectionComics track by collectionComic.id">
+                  <a title="{{collectionComic.series}} #{{collectionComic.issue}}" ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
+                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{collectionComic.image}}.jpg" ng-class="{current: collectionComic.id === main.expandedComicId}"></img>
                   </a>
                 </li>
               </ul>
