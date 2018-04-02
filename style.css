@@ -102,7 +102,6 @@ body {
   width: calc(var(--expanded-cover-height) / var(--cover-aspect-ratio));
   transition: width 1s;
   margin-right: 10px;
-  overflow-y: hidden;
 }
 
 .expanded .comic,
@@ -111,7 +110,6 @@ body {
   border: none;
   border-radius: initial;
   height: auto;
-  overflow-y: auto;
 }
 
 .comic-container .series {
@@ -211,6 +209,7 @@ body {
 .collection-container .expanded-panel {
   position: absolute;
   left: calc(var(--expanded-width) * 0.24);
+  top: 0;
 }
 
 .expanded-panel .row {
