@@ -753,9 +753,6 @@ angular.module('app', ['angular-md5'])
         collection.allCollectionComicIds = uniqueCollections[collection.id].allCollectionComicIds;
       }
     });
-    // if (collection.title==='X-Men Epic Collection Vol. 5: Second Genesis') {
-    // console.log(collection);
-    // }
   });
 
   /**
@@ -777,7 +774,6 @@ angular.module('app', ['angular-md5'])
         collection.allCollectionComics = uniqueCollection.allCollectionComics;
       }
     });
-    // console.log(collection);
   });
 
   // Pass our transformed db objects to the view
