@@ -110,7 +110,7 @@ angular.module('app', ['angular-md5'])
 
   var prevComicId;
   var nextComicId;
-  vm.toggleExpandComic = function(currentComic) {
+  vm.toggleExpandComic = function(currentComic, isForceScroll) {
     if (!angular.isObject(currentComic)) {
       return;
     }
@@ -138,7 +138,12 @@ angular.module('app', ['angular-md5'])
      * above that we want to expand a different one, this block maintains
      * the expanded box's position on the page by scrolling the viewport.
      */
-    if (vm.expandedComicId) {
+    if (isForceScroll) {
+      $('html, body').animate({
+        scrollLeft: currentComic.containerStyles.left,
+        scrollTop:  currentComic.containerStyles.top
+      });
+    } else if (vm.expandedComicId) {
       var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
       var positionDifference = {
         left: previouslyExpandedComic.containerStyles.left - currentComic.containerStyles.left,
@@ -158,20 +163,14 @@ angular.module('app', ['angular-md5'])
     repositionStickyElements();
 
     // Get the collection containing this comic
-    vm.expandedCollection = _.find(collections, function(collection) {
-      return collection.comicIds.indexOf(currentComic.id) > -1;
+    vm.expandedCollection = _.find(collections, function(collection, index) {
+      currentComicIndexInCollection = collection.comicIds.indexOf(currentComic.id);
+      if (currentComicIndexInCollection > -1) {
+        currentCollectionIndexInCollections = index;
+        return true;
+      }
+      return false;
     });
-
-    // Copy the comics into the expandedCollection object to make them easier to use
-    vm.expandedCollection.comics = [];
-    _.each(vm.expandedCollection.comicIds, function(comicId) {
-      vm.expandedCollection.comics.push(
-        _.find(comics, ['id', comicId])
-      );
-    });
-
-    currentComicIndexInCollection = vm.expandedCollection.comicIds.indexOf(currentComic.id);
-    currentCollectionIndexInCollections = collections.indexOf(vm.expandedCollection);
 
     if (currentCollectionIndexInCollections > 0) {
       vm.prevCollection = collections[currentCollectionIndexInCollections - 1];
@@ -191,7 +190,7 @@ angular.module('app', ['angular-md5'])
 
     // Find the previous comic
     if (currentComicIndexInCollection > 0) {
-      vm.prevComic = vm.expandedCollection.comics[currentComicIndexInCollection - 1];
+      vm.prevComic = vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection - 1];
     } else if (vm.prevCollection) {
       /**
        * The expanded comic is the first one in a collection, so we need to find out
@@ -202,8 +201,8 @@ angular.module('app', ['angular-md5'])
     }
 
     // Find the next comic
-    if (vm.expandedCollection.comics[currentComicIndexInCollection + 1]) {
-      vm.nextComic = vm.expandedCollection.comics[currentComicIndexInCollection + 1];
+    if (vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection + 1]) {
+      vm.nextComic = vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection + 1];
     } else if (vm.nextCollection) {
       /**
        * The expanded comic is the last one in a collection, so we need to find out
@@ -773,6 +772,32 @@ angular.module('app', ['angular-md5'])
       if (collection.title === uniqueCollection.title) {
         collection.allCollectionComics = uniqueCollection.allCollectionComics;
       }
+    });
+  });
+
+  // Copy the comics into the collection objects on load
+  _.each(collections, function(collection) {
+    collection.comics = [];
+
+    _.each(collection.comicIds, function(comicId) {
+      collection.comics.push(
+        _.find(comics, ['id', comicId])
+      );
+    });
+  });
+
+  /**
+   * Add a copy of the comic collection to each comic node.
+   *
+   * This is super inefficient from a memory perspective but
+   * it turns out to be much more performant because the bottleneck
+   * is the browser adding new things to the DOM, so we get a
+   * big performance boost by always having everything in there.
+   */
+  _.each(comics, function(comic) {
+    // Get the collection containing this comic
+    comic.collection = _.find(collections, function(collection) {
+      return collection.comicIds.indexOf(comic.id) > -1;
     });
   });
 
