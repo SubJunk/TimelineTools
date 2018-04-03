@@ -140,8 +140,8 @@ angular.module('app', ['angular-md5'])
      */
     if (isForceScroll) {
       $('html, body').animate({
-        scrollLeft: currentComic.containerStyles.left,
-        scrollTop:  currentComic.containerStyles.top
+        scrollLeft: currentComic.containerStyles.left - 200,
+        scrollTop:  currentComic.containerStyles.top + 300
       });
     } else if (vm.expandedComicId) {
       var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
