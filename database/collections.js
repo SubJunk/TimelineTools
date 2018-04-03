@@ -1454,21 +1454,50 @@ collections.push(
       'XMenVol249'
     ]
   ),
-  // /**
-  //  * Roughly ordered for flow of crossovers until here.
-  //  */
   new Collection(
     'X-Men: Road to Onslaught Vol. 3',
     '2014-12-24',
     [
       'UncannyXMenVol1329',
-      'UncannyXMenVol1330',
+      'UncannyXMenVol1330'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force: Onslaught Rising (Partial)',
+    '2018-2-21',
+    [
+      'XForceVol149',
+      'XForceVol150',
+      'XForceVol151'
+    ]
+  ),
+  new Collection(
+    'X-Man: The Man Who Fell to Earth',
+    '2012-6-20',
+    [
+      'CableVol129',
+      'XManVol113'
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 3',
+    '2014-12-24',
+    [
       'ArchangelVol11',
       'XMenBroodVol11',
       'XMenBroodVol12',
       'XMenUnlimitedVol110',
       'XMenVol250',
-      'UncannyXMenVol1331',
+      'UncannyXMenVol1331'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 3',
+    '2014-12-24',
+    [
       'UncannyXMenVol1332',
       'WolverineVol2101',
       'XMenVol251',
@@ -1480,9 +1509,6 @@ collections.push(
     'Cable & X-Force: Onslaught Rising (Partial)',
     '2018-2-21',
     [
-      'XForceVol149',
-      'XForceVol150',
-      'XForceVol151',
       'XForceVol152',
       'XForceVol153',
       'XForceVol154',
@@ -1494,10 +1520,8 @@ collections.push(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
-      'XManVol113',
       'XManVol114',
       'ExcaliburVol195',
-      'CableVol129',
       'CableVol130',
       'CableVol131'
     ]
