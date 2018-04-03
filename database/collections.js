@@ -1247,17 +1247,94 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
-    '2006-11-1',
+    'X-Men: Road to Onslaught Vol. 1',
+    '2014-1-22',
     [
-      'XManVol153',
-      'XManVol154',
       'XMenPrimeVol11'
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'X-Man: The Man Who Fell to Earth',
+    '2012-6-20',
+    [
+      'XManVol15'
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 1',
+    '2014-1-22',
+    [
+      'UncannyXMenVol1322',
+      'XMenVol242',
+      'XMenVol243',
+      'XMenVol244'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force Classic Vol. 1',
+    '2014-1-22',
+    [
+      'CableVol121',
+      'XForceVol144'
+    ]
+  ),
+  new Collection(
+    'X-Man: The Man Who Fell to Earth',
+    '2012-6-20',
+    [
+      'XManVol16'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force Classic Vol. 1',
+    '2014-1-22',
+    [
+      'CableVol122',
+      'XForceVol145',
+      'XForceVol146',
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 1',
+    '2014-1-22',
+    [
+      'UncannyXMenVol1323',
+      'UncannyXMenVol1324'
+    ]
+  ),
+  new Collection(
+    'Generation X Classic Vol. 2',
+    '2014-1-22',
+    [
+      'GenerationXVol15',
+      'GenerationXVol16'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force Classic Vol. 1',
+    '2014-1-22',
+    [
+      'XForceVol147'
+    ]
+  ),
+  new Collection(
+    'X-Man: The Man Who Fell to Earth',
+    '2012-6-20',
+    [
+      'XManVol17'
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 1',
+    '2014-1-22',
+    [
+      'XMenAnnualVol31',
+      'UncannyXMenVol1325',
+      'XMenVol245',
+      'UncannyXMenVol1326',
+      'XMenUnlimitedVol18'
+    ]
+  ),
   new Collection(
     'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
     '2014-9-17',
@@ -1266,7 +1343,177 @@ collections.push(
       'AskanisonVol11',
       'AskanisonVol12',
       'AskanisonVol13',
-      'AskanisonVol14',
+      'AskanisonVol14'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force Classic Vol. 1',
+    '2014-1-22',
+    [
+      'CableVol123',
+      'CableVol124',
+      'CableVol125'
+    ]
+  ),
+  new Collection(
+    'X-Man: The Man Who Fell to Earth',
+    '2012-6-20',
+    [
+      'XManVol18',
+      'XManVol19',
+      'XManVol110'
+    ]
+  ),
+  new Collection(
+    'Generation X Classic Vol. 2',
+    '2014-1-22',
+    [
+      'GenerationXVol17',
+      'GenerationXVol18',
+      'GenerationXVol19'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force Classic Vol. 1',
+    '2014-1-22',
+    [
+      'XForceVol148'
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 2',
+    '2014-11-20',
+    [
+      'XMenClanDestineVol11',
+      'XMenClanDestineVol12',
+      'XMenAnnualVol119'
+    ]
+  ),
+  new Collection(
+    'Generation X Classic Vol. 2',
+    '2014-1-22',
+    [
+      'GenerationXAnnualVol11',
+      'GenerationXVol110',
+      'GenerationXVol111'
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 2',
+    '2014-11-20',
+    [
+      'XMenVol246',
+      'XMenVol247',
+      'UncannyXMenVol1327'
+    ]
+  ),
+  new Collection(
+    'X-Man: The Man Who Fell to Earth',
+    '2012-6-20',
+    [
+      'XManVol111'
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 2',
+    '2014-11-20',
+    [
+      'XMenUnlimitedVol19'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force Classic Vol. 1',
+    '2014-1-22',
+    [
+      'CableVol126',
+      'CableVol127',
+      'CableVol128'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force: Onslaught Rising (Partial)',
+    '2018-2-21',
+    [
+      'XForceCableAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'X-Man: The Man Who Fell to Earth',
+    '2012-6-20',
+    [
+      'XManVol112'
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 2',
+    '2014-11-20',
+    [
+      'UncannyXMenVol1328',
+      'SabretoothSpecialVol11',
+      'XMenVol248',
+      'XMenVol249'
+    ]
+  ),
+  // /**
+  //  * Roughly ordered for flow of crossovers until here.
+  //  */
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 3',
+    '2014-12-24',
+    [
+      'UncannyXMenVol1329',
+      'UncannyXMenVol1330',
+      'ArchangelVol11',
+      'XMenBroodVol11',
+      'XMenBroodVol12',
+      'XMenUnlimitedVol110',
+      'XMenVol250',
+      'UncannyXMenVol1331',
+      'UncannyXMenVol1332',
+      'WolverineVol2101',
+      'XMenVol251',
+      'XMenVol252',
+      'XavierInstituteAlumniYearbookVol11'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force: Onslaught Rising (Partial)',
+    '2018-2-21',
+    [
+      'XForceVol149',
+      'XForceVol150',
+      'XForceVol151',
+      'XForceVol152',
+      'XForceVol153',
+      'XForceVol154',
+      'XForceVol155',
+      'XForceVol156'
+    ]
+  ),
+  new Collection(
+    'X-Man: The Man Who Fell to Earth',
+    '2012-6-20',
+    [
+      'XManVol113',
+      'XManVol114',
+      'ExcaliburVol195',
+      'CableVol129',
+      'CableVol130',
+      'CableVol131'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
+    '2006-11-1',
+    [
+      'XManVol153',
+      'XManVol154'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
+    '2014-9-17',
+    [
       'XMenPhoenixVol11',
       'XMenPhoenixVol12',
       'XMenPhoenixVol13'
