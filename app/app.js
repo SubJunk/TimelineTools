@@ -841,6 +841,7 @@ angular.module('app', ['angular-md5'])
      */
     if (searchParams.gc) {
       var foundComic;
+      var isClean = true;
       var gcConsolePrepend = 'Garbage Collector: ';
 
       // Check that each comic is referenced by a collection
@@ -850,20 +851,31 @@ angular.module('app', ['angular-md5'])
         });
 
         if (!foundComic) {
+          isClean = false;
           $log.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
         }
       });
 
+      if (isClean) {
+        $log.info(gcConsolePrepend + 'All comics are referenced by collections.');
+      }
+
       // Check that each seriesVolume is referenced by a comic
+      isClean = true;
       _.each(seriesVolumes, function(seriesVolume) {
         foundComic = _.find(comics, function(comic) {
           return comic.seriesVolumeId === seriesVolume.id;
         });
 
         if (!foundComic) {
+          isClean = false;
           $log.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
         }
       });
+
+      if (isClean) {
+        $log.info(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
+      }
     }
   }
 });
