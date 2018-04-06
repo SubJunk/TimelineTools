@@ -1365,6 +1365,16 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine & Gambit: Victims',
+    '2002-6-1',
+    [
+      'WolverineGambitVictimsVol11',
+      'WolverineGambitVictimsVol12',
+      'WolverineGambitVictimsVol13',
+      'WolverineGambitVictimsVol14',
+    ]
+  ),
+  new Collection(
     'Generation X Classic Vol. 2',
     '2014-1-22',
     [

@@ -713,8 +713,7 @@ addComicsInSeriesVolume('XMenAnnualVol1', [
 ])
 addComicsInSeriesVolume('XMenAnnualVol2', [
   [1, '1992-5'],
-  [2, '1993-10'],
-  [3, '1994-10']
+  [2, '1993-10']
 ])
 addComicsInSeriesVolume('XMenAnnualVol3', [[1, '1995-10']])
 addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']])
