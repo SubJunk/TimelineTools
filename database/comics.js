@@ -144,6 +144,12 @@ addComicsInSeriesVolume('FantasticFourvstheXMenVol1', [
   [3, '1987-4'],
   [4, '1987-6']
 ])
+addComicsInSeriesVolume('FurtherAdventuresofCyclopsandPhoenixVol1', [
+  [1, '1996-6'],
+  [2, '1996-7'],
+  [3, '1996-8'],
+  [4, '1996-9']
+])
 addComicsInSeriesVolume('GambitandtheXTernalsVol1', [
   [1, '1995-3'],
   [2, '1995-4'],

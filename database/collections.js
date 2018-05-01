@@ -1501,18 +1501,14 @@ collections.push(
       'UncannyXMenVol1331'
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
-    'X-Men: Road to Onslaught Vol. 3',
-    '2014-12-24',
+    'The Further Adventures of Cyclops and Phoenix',
+    '1997-10-15',
     [
-      'UncannyXMenVol1332',
-      'WolverineVol2101',
-      'XMenVol251',
-      'XMenVol252',
-      'XavierInstituteAlumniYearbookVol11'
+      'FurtherAdventuresofCyclopsandPhoenixVol11',
+      'FurtherAdventuresofCyclopsandPhoenixVol12',
+      'FurtherAdventuresofCyclopsandPhoenixVol13',
+      'FurtherAdventuresofCyclopsandPhoenixVol14',
     ]
   ),
   new Collection(
@@ -1520,10 +1516,7 @@ collections.push(
     '2018-2-21',
     [
       'XForceVol152',
-      'XForceVol153',
-      'XForceVol154',
-      'XForceVol155',
-      'XForceVol156'
+      'XForceVol153'
     ]
   ),
   new Collection(
@@ -1534,6 +1527,41 @@ collections.push(
       'ExcaliburVol195',
       'CableVol130',
       'CableVol131'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force: Onslaught Rising (Partial)',
+    '2018-2-21',
+    [
+      'XForceVol154'
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 3',
+    '2014-12-24',
+    [
+      'UncannyXMenVol1332',
+      'WolverineVol2101',
+      'XMenVol251',
+      'XMenVol252'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 3',
+    '2014-12-24',
+    [
+      'XavierInstituteAlumniYearbookVol11'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force: Onslaught Rising (Partial)',
+    '2018-2-21',
+    [
+      'XForceVol155',
+      'XForceVol156'
     ]
   ),
   new Collection(
