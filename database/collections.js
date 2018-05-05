@@ -1730,9 +1730,31 @@ collections.push(
       'DeadpoolVol21'
     ]
   ),
+  new Collection(
+    'X-Men: Domino',
+    '2018-4-25',
+    [
+      'DominoVol11',
+      'DominoVol12',
+      'DominoVol13'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Men: Domino',
+    '2018-4-25',
+    [
+      'DominoVol21',
+      'DominoVol22',
+      'DominoVol23',
+      'DominoVol24',
+      'XForceSexandViolenceVol11',
+      'XForceSexandViolenceVol12',
+      'XForceSexandViolenceVol13'
+    ]
+  ),
   new Collection(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
