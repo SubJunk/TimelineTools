@@ -1649,19 +1649,30 @@ collections.push(
       'UncannyXMenVol1332',
       'WolverineVol2101',
       'XMenVol251',
-      'XMenVol252'
+      'XMenVol252',
+      'XavierInstituteAlumniYearbookVol11'
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
     'X-Men/Avengers: Onslaught Omnibus',
     '2015-8-19',
     [
       'CableVol132',
       'UncannyXMenVol1333',
-      'XForceVol155',
+      'XForceVol155'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force: Onslaught Rising (Partial)',
+    '2018-2-21',
+    [
+      'XForceVol156'
+    ]
+  ),
+  new Collection(
+    'X-Men/Avengers: Onslaught Omnibus',
+    '2015-8-19',
+    [
       'XManVol115',
       'XManVol116',
       'XManVol117',
@@ -1706,17 +1717,35 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Road to Onslaught Vol. 3',
-    '2014-12-24',
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
     [
-      'XavierInstituteAlumniYearbookVol11'
+      'DeadpoolVol20'
     ]
   ),
   new Collection(
-    'Cable & X-Force: Onslaught Rising (Partial)',
-    '2018-2-21',
+    'Deadpool Classic Vol. 1 (Partial)',
+    '2008-4-23',
     [
-      'XForceVol156'
+      'DeadpoolVol21'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolandDeathAnnualVol11',
+      'DeadpoolVol218',
+      'DeadpoolVol219',
+      'DeadpoolVol220',
+      'DeadpoolVol221',
+      'DeadpoolVol222',
+      'DeadpoolVol223',
+      'DeadpoolVol224',
+      'DeadpoolVol225',
     ]
   ),
   new Collection(

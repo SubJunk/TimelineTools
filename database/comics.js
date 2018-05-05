@@ -130,6 +130,37 @@ addComicsInSeriesVolume('CableVol1', [
   [35, '1996-9'],
   [36, '1996-10']
 ])
+addComicsInSeriesVolume('DeadpoolVol1', [
+  [1, '1994-8'],
+  [2, '1994-9'],
+  [3, '1994-10'],
+  [4, '1994-11'],
+])
+addComicsInSeriesVolume('DeadpoolVol2', [
+  [0, '1998-1'],
+  [1, '1997-1'],
+  [18, '1998-7'],
+  [19, '1998-8'],
+  [20, '1998-9'],
+  [21, '1998-10'],
+  [22, '1998-11'],
+  [23, '1998-12'],
+  [24, '1999-1'],
+  [25, '1999-2']
+])
+addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']])
+addComicsInSeriesVolume('DeadpoolTheCircleChaseVol1', [
+  [1, '1993-8'],
+  [2, '1993-9'],
+  [3, '1993-10'],
+  [4, '1993-11'],
+])
+addComicsInSeriesVolume('DeadpoolvsXForceVol1', [
+  [1, '2014-7-2'],
+  [2, '2014-7-23'],
+  [3, '2014-8-20'],
+  [4, '2014-9-3'],
+])
 addComicsInSeriesVolume('ExcaliburVol1', [
   [71, '1993-11'],
   [78, '1994-6'],
@@ -849,21 +880,6 @@ comics.push(
 
   new Comic(238, '1987-1', 'DaredevilVol1'),
   new Comic(252, '1988-3', 'DaredevilVol1'),
-
-  new Comic(1, '1994-8', 'DeadpoolVol1'),
-  new Comic(2, '1994-9', 'DeadpoolVol1'),
-  new Comic(3, '1994-10', 'DeadpoolVol1'),
-  new Comic(4, '1994-11', 'DeadpoolVol1'),
-
-  new Comic(1, '1993-8', 'DeadpoolTheCircleChaseVol1'),
-  new Comic(2, '1993-9', 'DeadpoolTheCircleChaseVol1'),
-  new Comic(3, '1993-10', 'DeadpoolTheCircleChaseVol1'),
-  new Comic(4, '1993-11', 'DeadpoolTheCircleChaseVol1'),
-
-  new Comic(1, '2014-7-2', 'DeadpoolvsXForceVol1'),
-  new Comic(2, '2014-7-23', 'DeadpoolvsXForceVol1'),
-  new Comic(3, '2014-8-20', 'DeadpoolvsXForceVol1'),
-  new Comic(4, '2014-9-3', 'DeadpoolvsXForceVol1'),
 
   new Comic(1, '1993-12', 'GambitVol1'),
   new Comic(2, '1994-1', 'GambitVol1'),
