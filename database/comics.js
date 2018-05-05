@@ -71,7 +71,9 @@ addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']])
 addComicsInSeriesVolume('AvengersVol1', [
   [263, '1986-1-10'],
   [368, '1993-11'],
-  [369, '1993-12']
+  [369, '1993-12'],
+  [401, '1996-8'],
+  [402, '1996-9']
 ])
 addComicsInSeriesVolume('AvengersWestCoastVol2', [[101, '1993-12']])
 addComicsInSeriesVolume('BishopVol1', [
@@ -121,7 +123,12 @@ addComicsInSeriesVolume('CableVol1', [
   [28, '1996-2'],
   [29, '1996-3'],
   [30, '1996-4'],
-  [31, '1996-5']
+  [31, '1996-5'],
+  [32, '1996-6'],
+  [33, '1996-7'],
+  [34, '1996-8'],
+  [35, '1996-9'],
+  [36, '1996-10']
 ])
 addComicsInSeriesVolume('ExcaliburVol1', [
   [71, '1993-11'],
@@ -137,6 +144,13 @@ addComicsInSeriesVolume('FactorXVol1', [
   [2, '1995-4'],
   [3, '1995-5'],
   [4, '1995-6']
+])
+
+addComicsInSeriesVolume('FantasticFourVol1', [
+  [286, '1986-1-10'],
+  [312, '1988-3'],
+  [415, '1996-8'],
+  [416, '1996-9']
 ])
 addComicsInSeriesVolume('FantasticFourvstheXMenVol1', [
   [1, '1987-2'],
@@ -176,14 +190,33 @@ addComicsInSeriesVolume('GenerationXVol1', [
   [11, '1996-1']
 ])
 addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']])
+addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']])
+addComicsInSeriesVolume('IncredibleHulkVol1', [
+  [340, '1988-2'],
+  [444, '1996-8'],
+  [445, '1996-9']
+])
+addComicsInSeriesVolume('IronManVol1', [
+  [332, '1996-9']
+])
+addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']])
+addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']])
+addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']])
+addComicsInSeriesVolume('PunisherVol3', [[11, '1996-9']])
 addComicsInSeriesVolume('SabretoothSpecialVol1', [[1, '1996-1']])
+addComicsInSeriesVolume('SpiderManVol1', [
+  [16, '1991-11'],
+  [72, '1996-9']
+])
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseBytheLightVol1', [[1, '1996-12']])
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']])
+addComicsInSeriesVolume('TheAmazingSpiderManVol1', [[415, '1996-9']])
 addComicsInSeriesVolume('ThorVol1', [
   [373, '1986-11'],
   [374, '1986-12'],
   [377, '1987-3'],
-  [378, '1987-4']
+  [378, '1987-4'],
+  [502, '1996-9']
 ])
 addComicsInSeriesVolume('UncannyXMenVol1', [
   [94, '1975-8', ['The Doomsmith Scenario!']],
@@ -425,6 +458,11 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [330, '1996-3'],
   [331, '1996-4'],
   [332, '1996-5'],
+  [333, '1996-6'],
+  [334, '1996-7'],
+  [335, '1996-8'],
+  [336, '1996-9'],
+  [337, '1996-10'],
 /**
  * Complete until here
  */
@@ -476,7 +514,29 @@ addComicsInSeriesVolume('WolverineVol1', [
 addComicsInSeriesVolume('WolverineVol2', [
   [75, '1993-11'],
   [85, '1994-9'],
-  [101, '1996-5']
+  [87, '1994-11'],
+  [88, '1994-12'],
+  [89, '1995-1'],
+  [90, '1995-2'],
+  [91, '1995-7'],
+  [92, '1995-8'],
+  [93, '1995-9'],
+  [94, '1995-10'],
+  [95, '1995-11'],
+  [96, '1995-12'],
+  [97, '1996-1'],
+  [98, '1996-2'],
+  [99, '1996-3'],
+  [100, '1996-4'],
+  [101, '1996-5'],
+  [104, '1996-8'],
+  [105, '1996-9']
+])
+addComicsInSeriesVolume('WolverineKnightofTerraVol1', [
+  [1, '1995-8']
+])
+addComicsInSeriesVolume('WolverineAnnualVol2', [
+  [1, '1995-9']
 ])
 addComicsInSeriesVolume('WolverineGambitVictimsVol1', [
   [1, '1995-9'],
@@ -546,7 +606,9 @@ addComicsInSeriesVolume('XFactorVol1', [
   [106, '1994-9'],
   [107, '1994-10'],
   [108, '1994-11'],
-  [109, '1994-12']
+  [109, '1994-12'],
+  [125, '1996-8'],
+  [126, '1996-9']
 ])
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],
@@ -611,7 +673,9 @@ addComicsInSeriesVolume('XForceVol1', [
   [53, '1996-4'],
   [54, '1996-5'],
   [55, '1996-6'],
-  [56, '1996-7']
+  [56, '1996-7'],
+  [57, '1996-8'],
+  [58, '1996-9']
 ])
 addComicsInSeriesVolume('XForceCableAnnualVol1', [
   [1, '1995-12']
@@ -632,6 +696,11 @@ addComicsInSeriesVolume('XManVol1', [
   [12, '1996-2'],
   [13, '1996-3'],
   [14, '1996-4'],
+  [15, '1996-5'],
+  [16, '1996-6'],
+  [17, '1996-7'],
+  [18, '1996-8'],
+  [19, '1996-9'],
   [53, '1999-7'],
   [54, '1999-8']
 ])
@@ -688,7 +757,12 @@ addComicsInSeriesVolume('XMenVol2', [
   [49, '1996-2'],
   [50, '1996-3'],
   [51, '1996-4'],
-  [52, '1996-5']
+  [52, '1996-5'],
+  [53, '1996-6'],
+  [54, '1996-7'],
+  [55, '1996-8'],
+  [56, '1996-9'],
+  [57, '1996-10']
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
@@ -719,7 +793,8 @@ addComicsInSeriesVolume('XMenAnnualVol1', [
 ])
 addComicsInSeriesVolume('XMenAnnualVol2', [
   [1, '1992-5'],
-  [2, '1993-10']
+  [2, '1993-10'],
+  [5, '1996-11']
 ])
 addComicsInSeriesVolume('XMenAnnualVol3', [[1, '1995-10']])
 addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']])
@@ -752,7 +827,8 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [7, '1994-12'],
   [8, '1995-10'],
   [9, '1995-12'],
-  [10, '1996-3']
+  [10, '1996-3'],
+  [11, '1996-6']
 ])
 addComicsInSeriesVolume('XMenvstheAvengersVol1', [
   [1, '1987-4'],
@@ -789,9 +865,6 @@ comics.push(
   new Comic(3, '2014-8-20', 'DeadpoolvsXForceVol1'),
   new Comic(4, '2014-9-3', 'DeadpoolvsXForceVol1'),
 
-  new Comic(286, '1986-1-10', 'FantasticFourVol1'),
-  new Comic(312, '1988-3', 'FantasticFourVol1'),
-
   new Comic(1, '1993-12', 'GambitVol1'),
   new Comic(2, '1994-1', 'GambitVol1'),
   new Comic(3, '1994-2', 'GambitVol1'),
@@ -799,8 +872,6 @@ comics.push(
 
   new Comic(26, '1992-6', 'GhostRiderVol3'),
   new Comic(27, '1992-7', 'GhostRiderVol3'),
-
-  new Comic(340, '1988-2', 'IncredibleHulkVol1'),
 
   new Comic(14, '1977-8', 'IronFistVol1', ['Snowfire']),
   new Comic(15, '1977-9', 'IronFistVol1', ['Enter, the X-Men']),
@@ -887,7 +958,6 @@ comics.push(
   new Comic(10, '1985-2', 'SecretWarsVol1'),
   new Comic(11, '1985-3', 'SecretWarsVol1'),
   new Comic(12, '1985-4', 'SecretWarsVol1'),
-  new Comic(16, '1991-11', 'SpiderManVol1'),
 
   new Comic(1, '1993-1-1', 'StryfesStrikeFileVol1'),
 

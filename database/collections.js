@@ -1013,6 +1013,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol287'
+    ]
+  ),
+  new Collection(
     'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
@@ -1066,6 +1073,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol288'
+    ]
+  ),
+  new Collection(
     'Cable Classic: Vol. 3 (Partial)',
     '2016-9-8',
     [
@@ -1099,6 +1113,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol289'
+    ]
+  ),
+  new Collection(
     'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
@@ -1117,6 +1138,13 @@ collections.push(
       'UncannyXMenVol1321',
       'CableVol120',
       'XMenVol241'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol290'
     ]
   ),
   new Collection(
@@ -1261,6 +1289,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol291'
+    ]
+  ),
+  new Collection(
     'X-Men: Road to Onslaught Vol. 1',
     '2014-1-22',
     [
@@ -1289,9 +1324,22 @@ collections.push(
     'Cable & X-Force Classic Vol. 1',
     '2014-1-22',
     [
-      'CableVol122',
+      'CableVol122'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineAnnualVol21'
+    ]
+  ),
+  new Collection(
+    'Cable & X-Force Classic Vol. 1',
+    '2014-1-22',
+    [
       'XForceVol145',
-      'XForceVol146',
+      'XForceVol146'
     ]
   ),
   new Collection(
@@ -1300,6 +1348,13 @@ collections.push(
     [
       'UncannyXMenVol1323',
       'UncannyXMenVol1324'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol292'
     ]
   ),
   new Collection(
@@ -1318,6 +1373,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineKnightofTerraVol11'
+    ]
+  ),
+  new Collection(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
@@ -1328,11 +1390,31 @@ collections.push(
     'X-Men: Road to Onslaught Vol. 1',
     '2014-1-22',
     [
-      'XMenAnnualVol31',
+      'XMenAnnualVol31'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol293'
+    ]
+  ),
+  new Collection(
+    'X-Men: Road to Onslaught Vol. 1',
+    '2014-1-22',
+    [
       'UncannyXMenVol1325',
       'XMenVol245',
       'UncannyXMenVol1326',
       'XMenUnlimitedVol18'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol294'
     ]
   ),
   new Collection(
@@ -1400,6 +1482,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol295'
+    ]
+  ),
+  new Collection(
     'Generation X Classic Vol. 2',
     '2014-1-22',
     [
@@ -1422,6 +1511,13 @@ collections.push(
     '2012-6-20',
     [
       'XManVol111'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol296'
     ]
   ),
   new Collection(
@@ -1537,6 +1633,16 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine Epic Collection: The Dying Game',
+    '2015-12-2',
+    [
+      'WolverineVol297',
+      'WolverineVol298',
+      'WolverineVol299',
+      'WolverineVol2100'
+    ]
+  ),
+  new Collection(
     'X-Men: Road to Onslaught Vol. 3',
     '2014-12-24',
     [
@@ -1550,6 +1656,56 @@ collections.push(
    * Roughly ordered for flow of crossovers until here.
    */
   new Collection(
+    'X-Men/Avengers: Onslaught Omnibus',
+    '2015-8-19',
+    [
+      'CableVol132',
+      'UncannyXMenVol1333',
+      'XForceVol155',
+      'XManVol115',
+      'XManVol116',
+      'XManVol117',
+      'XMenVol253',
+      'XMenUnlimitedVol111',
+      'CableVol133',
+      'UncannyXMenVol1334',
+      'XMenVol254',
+      'OnslaughtXMenVol11',
+      'UncannyXMenVol1335',
+      'AvengersVol1401',
+      'FantasticFourVol1415',
+      'CableVol134',
+      'IncredibleHulkVol1444',
+      'WolverineVol2104',
+      'XFactorVol1125',
+      'XFactorVol1126',
+      'TheAmazingSpiderManVol1415',
+      'GreenGoblinVol112',
+      'SpiderManVol172',
+      'XManVol118',
+      'XForceVol157',
+      'XMenVol255',
+      'UncannyXMenVol1336',
+      'CableVol135',
+      'XForceVol158',
+      'XManVol119',
+      'IncredibleHulkVol1445',
+      'IronManVol1332',
+      'AvengersVol1402',
+      'PunisherVol311',
+      'ThorVol1502',
+      'WolverineVol2105',
+      'FantasticFourVol1416',
+      'XMenVol256',
+      'OnslaughtMarvelUniverseVol11',
+      'CableVol136',
+      'UncannyXMenVol1337',
+      'XMenVol257',
+      'XMenAnnualVol25',
+      'OnslaughtEpilogueVol11'
+    ]
+  ),
+  new Collection(
     'X-Men: Road to Onslaught Vol. 3',
     '2014-12-24',
     [
@@ -1560,7 +1716,6 @@ collections.push(
     'Cable & X-Force: Onslaught Rising (Partial)',
     '2018-2-21',
     [
-      'XForceVol155',
       'XForceVol156'
     ]
   ),
