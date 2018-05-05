@@ -1717,6 +1717,15 @@ collections.push(
     ]
   ),
   new Collection(
+    'Uncollected',
+    null,
+    [
+      'UncannyXMenVol1338',
+      'UncannyXMenVol1339',
+      'UncannyXMenVol1340'
+    ]
+  ),
+  new Collection(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [

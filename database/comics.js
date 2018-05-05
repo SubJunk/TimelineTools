@@ -23,10 +23,8 @@ var comics = [];
 /**
  * Add multiple comics in a seriesVolume.
  *
- * @param {number}   issue
- * @param {string}   datePublished
  * @param {string}   seriesVolumeId
- * @param {string[]} [titles]
+ * @param {string[][]} comicsInSeriesVolume
  */
 function addComicsInSeriesVolume(seriesVolumeId, comicsInSeriesVolume) {
   _.each(comicsInSeriesVolume, function(comic) {
@@ -505,6 +503,9 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [335, '1996-8'],
   [336, '1996-9'],
   [337, '1996-10'],
+  [338, '1996-11'],
+  [339, '1996-12'],
+  [340, '1997-1'],
 /**
  * Complete until here
  */
