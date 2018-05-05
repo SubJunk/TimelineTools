@@ -1748,6 +1748,26 @@ collections.push(
       'DominoVol13'
     ]
   ),
+  new Collection(
+    'X-Men: The Trial of Gambit',
+    '2016-7-20',
+    [
+      'UncannyXMenVol1341',
+      'UncannyXMenVol1342',
+      'UncannyXMenVol1343',
+      'UncannyXMenVol1344',
+      'UncannyXMenVol1345',
+      'XMenVol262',
+      'XMenVol263',
+      'UncannyXMenVol1-1',
+      'XMenVol2-1',
+      'UncannyXMenVol1346',
+      'UncannyXMenVol1347',
+      'UncannyXMenVol1348',
+      'UncannyXMenVol1349',
+      'UncannyXMenVol1350'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */

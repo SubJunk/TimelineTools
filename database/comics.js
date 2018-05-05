@@ -259,6 +259,7 @@ addComicsInSeriesVolume('ThorVol1', [
   [502, '1996-9']
 ])
 addComicsInSeriesVolume('UncannyXMenVol1', [
+  [-1, '1997-7'],
   [94, '1975-8', ['The Doomsmith Scenario!']],
   [95, '1975-10', ['Warhunt!']],
   [96, '1975-12', ['Night of the Demon!']],
@@ -506,6 +507,16 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [338, '1996-11'],
   [339, '1996-12'],
   [340, '1997-1'],
+  [341, '1997-2'],
+  [342, '1997-3'],
+  [343, '1997-4'],
+  [344, '1997-5'],
+  [345, '1997-6'],
+  [346, '1997-8'],
+  [347, '1997-9'],
+  [348, '1997-10'],
+  [349, '1997-11'],
+  [350, '1997-12'],
 /**
  * Complete until here
  */
@@ -752,6 +763,7 @@ addComicsInSeriesVolume('XManVol1', [
 ])
 addComicsInSeriesVolume('XManAnnualVol1', [[1, '1996-12']])
 addComicsInSeriesVolume('XMenVol2', [
+  [-1, '1997-7'],
   [1, '1991-10'],
   [2, '1991-11'],
   [3, '1991-12'],
@@ -808,7 +820,9 @@ addComicsInSeriesVolume('XMenVol2', [
   [54, '1996-7'],
   [55, '1996-8'],
   [56, '1996-9'],
-  [57, '1996-10']
+  [57, '1996-10'],
+  [62, '1997-3'],
+  [63, '1997-4']
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
