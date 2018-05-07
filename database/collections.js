@@ -1740,6 +1740,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Age of Apocalypse: Dawn',
+    '2016-2-10',
+    [
+      'XManAnnualVol11'
+    ]
+  ),
+  new Collection(
     'X-Men: Domino',
     '2018-4-25',
     [
@@ -1749,23 +1756,129 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Trial of Gambit',
+    'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
       'UncannyXMenVol1341',
-      'UncannyXMenVol1342',
+      'UncannyXMenVol1342'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 2',
+    '2009-4-1',
+    [
+      'DeadpoolVol22',
+      'DeadpoolVol23'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Trial of Gambit (Partial)',
+    '2016-7-20',
+    [
       'UncannyXMenVol1343',
-      'UncannyXMenVol1344',
+      'UncannyXMenVol1344'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 2',
+    '2009-4-1',
+    [
+      'DeadpoolVol24',
+      'DeadpoolVol25'
+    ]
+  ),
+  new Collection(
+    'X-Men: Operation: Zero Tolerance',
+    '2008-8-15',
+    [
+      'GenerationXVol126',
+      'GenerationXVol127'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 2',
+    '2009-4-1',
+    [
+      'DeadpoolVol26'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Trial of Gambit (Partial)',
+    '2016-7-20',
+    [
       'UncannyXMenVol1345',
       'XMenVol262',
-      'XMenVol263',
+      'XMenVol263'
+    ]
+  ),
+  new Collection(
+    'X-Men: Operation: Zero Tolerance',
+    '2008-8-15',
+    [
+      'XForceVol167',
+      'XMenVol264',
+      'GenerationXVol128',
+      'XMenVol265'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Trial of Gambit (Partial)',
+    '2016-7-20',
+    [
       'UncannyXMenVol1-1',
-      'XMenVol2-1',
+      'XMenVol2-1'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 2',
+    '2009-4-1',
+    [
+      'DeadpoolVol2-1',
+      'DeadpoolVol27',
+      'DeadpoolVol28',
+      'DaredevilDeadpoolAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: Operation: Zero Tolerance',
+    '2008-8-15',
+    [
       'UncannyXMenVol1346',
+      'GenerationXVol129',
+      'XMenVol266',
+      'WolverineVol2115',
+      'XForceVol168',
+      'CableVol145',
+      'CableVol146',
+      'CableVol147',
+      'XForceVol169',
+      'WolverineVol2116',
+      'GenerationXVol130',
+      'GenerationXVol131',
+      'XMenVol267',
+      'XMenVol268',
+      'WolverineVol2117',
+      'XManVol130',
+      'XMenVol269',
+      'WolverineVol2118'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Trial of Gambit (Partial)',
+    '2016-7-20',
+    [
       'UncannyXMenVol1347',
       'UncannyXMenVol1348',
       'UncannyXMenVol1349',
       'UncannyXMenVol1350'
+    ]
+  ),
+  new Collection(
+    'X-Men: Operation: Zero Tolerance',
+    '2008-8-15',
+    [
+      'XForceVol170',
+      'XMenVol270'
     ]
   ),
   /**
@@ -1796,7 +1909,7 @@ collections.push(
       'DeadpoolVol222',
       'DeadpoolVol223',
       'DeadpoolVol224',
-      'DeadpoolVol225',
+      'DeadpoolVol225'
     ]
   ),
   new Collection(
@@ -1814,13 +1927,6 @@ collections.push(
       'XMenPhoenixVol11',
       'XMenPhoenixVol12',
       'XMenPhoenixVol13'
-    ]
-  ),
-  new Collection(
-    'X-Men: Age of Apocalypse: Dawn',
-    '2016-2-10',
-    [
-      'XManAnnualVol11'
     ]
   ),
   /**

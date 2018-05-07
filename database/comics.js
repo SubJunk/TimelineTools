@@ -126,8 +126,12 @@ addComicsInSeriesVolume('CableVol1', [
   [33, '1996-7'],
   [34, '1996-8'],
   [35, '1996-9'],
-  [36, '1996-10']
+  [36, '1996-10'],
+  [45, '1997-8'],
+  [46, '1997-9'],
+  [47, '1997-10']
 ])
+addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']])
 addComicsInSeriesVolume('DeadpoolVol1', [
   [1, '1994-8'],
   [2, '1994-9'],
@@ -135,8 +139,16 @@ addComicsInSeriesVolume('DeadpoolVol1', [
   [4, '1994-11'],
 ])
 addComicsInSeriesVolume('DeadpoolVol2', [
+  [-1, '1997-7'],
   [0, '1998-1'],
   [1, '1997-1'],
+  [2, '1997-2'],
+  [3, '1997-3'],
+  [4, '1997-4'],
+  [5, '1997-5'],
+  [6, '1997-6'],
+  [7, '1997-8'],
+  [8, '1997-9'],
   [18, '1998-7'],
   [19, '1998-8'],
   [20, '1998-9'],
@@ -227,7 +239,13 @@ addComicsInSeriesVolume('GenerationXVol1', [
   [8, '1995-10'],
   [9, '1995-11'],
   [10, '1995-12'],
-  [11, '1996-1']
+  [11, '1996-1'],
+  [26, '1997-4'],
+  [27, '1997-5'],
+  [28, '1997-6'],
+  [29, '1997-8'],
+  [30, '1997-9'],
+  [31, '1997-10']
 ])
 addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']])
 addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']])
@@ -584,7 +602,11 @@ addComicsInSeriesVolume('WolverineVol2', [
   [100, '1996-4'],
   [101, '1996-5'],
   [104, '1996-8'],
-  [105, '1996-9']
+  [105, '1996-9'],
+  [115, '1997-8'],
+  [116, '1997-9'],
+  [117, '1997-10'],
+  [118, '1997-11']
 ])
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [
   [1, '1995-8']
@@ -729,7 +751,11 @@ addComicsInSeriesVolume('XForceVol1', [
   [55, '1996-6'],
   [56, '1996-7'],
   [57, '1996-8'],
-  [58, '1996-9']
+  [58, '1996-9'],
+  [67, '1997-6'],
+  [68, '1997-8'],
+  [69, '1997-9'],
+  [70, '1997-10']
 ])
 addComicsInSeriesVolume('XForceCableAnnualVol1', [[1, '1995-12']])
 addComicsInSeriesVolume('XForceSexandViolenceVol1', [
@@ -758,6 +784,7 @@ addComicsInSeriesVolume('XManVol1', [
   [17, '1996-7'],
   [18, '1996-8'],
   [19, '1996-9'],
+  [30, '1997-9'],
   [53, '1999-7'],
   [54, '1999-8']
 ])
@@ -822,7 +849,14 @@ addComicsInSeriesVolume('XMenVol2', [
   [56, '1996-9'],
   [57, '1996-10'],
   [62, '1997-3'],
-  [63, '1997-4']
+  [63, '1997-4'],
+  [64, '1997-5'],
+  [65, '1997-6'],
+  [66, '1997-8'],
+  [67, '1997-9'],
+  [68, '1997-10'],
+  [69, '1997-11'],
+  [70, '1997-12']
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],

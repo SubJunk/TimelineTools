@@ -69,6 +69,7 @@ series.push(
   new Series('Captain America', {1: 1968}),
   new Series('Daredevil', {1: 1964}),
   new Series('Deadpool', {1: 1994, 2: 1997}),
+  new Series('Daredevil/Deadpool Annual', {1: 1997}),
   new Series('Deadpool: The Circle Chase', {1: 1993}),
   new Series('Deadpool and Death Annual', {1: 1998}),
   new Series('Deadpool vs. X-Force', {1: 2014}),
