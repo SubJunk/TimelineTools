@@ -1590,8 +1590,8 @@ collections.push(
     '2014-12-24',
     [
       'ArchangelVol11',
-      'XMenBroodVol11',
-      'XMenBroodVol12',
+      'XMenvsBroodVol11',
+      'XMenvsBroodVol12',
       'XMenUnlimitedVol110',
       'XMenVol250',
       'UncannyXMenVol1331'
@@ -1601,10 +1601,10 @@ collections.push(
     'The Further Adventures of Cyclops and Phoenix',
     '1997-10-15',
     [
-      'FurtherAdventuresofCyclopsandPhoenixVol11',
-      'FurtherAdventuresofCyclopsandPhoenixVol12',
-      'FurtherAdventuresofCyclopsandPhoenixVol13',
-      'FurtherAdventuresofCyclopsandPhoenixVol14',
+      'FurtherAdventuresofCyclopsPhoenixVol11',
+      'FurtherAdventuresofCyclopsPhoenixVol12',
+      'FurtherAdventuresofCyclopsPhoenixVol13',
+      'FurtherAdventuresofCyclopsPhoenixVol14',
     ]
   ),
   new Collection(

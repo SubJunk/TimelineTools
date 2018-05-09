@@ -210,7 +210,7 @@ addComicsInSeriesVolume('FantasticFourvstheXMenVol1', [
   [3, '1987-4'],
   [4, '1987-6']
 ])
-addComicsInSeriesVolume('FurtherAdventuresofCyclopsandPhoenixVol1', [
+addComicsInSeriesVolume('FurtherAdventuresofCyclopsPhoenixVol1', [
   [1, '1996-6'],
   [2, '1996-7'],
   [3, '1996-8'],
@@ -892,10 +892,6 @@ addComicsInSeriesVolume('XMenAnnualVol2', [
 ])
 addComicsInSeriesVolume('XMenAnnualVol3', [[1, '1995-10']])
 addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']])
-addComicsInSeriesVolume('XMenBroodVol1', [
-  [1, '1996-9'],
-  [2, '1996-10'],
-])
 addComicsInSeriesVolume('XMenChroniclesVol1', [
   [1, '1995-3'],
   [2, '1995-6']
@@ -923,6 +919,10 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [9, '1995-12'],
   [10, '1996-3'],
   [11, '1996-6']
+])
+addComicsInSeriesVolume('XMenvsBroodVol1', [
+  [1, '1996-9'],
+  [2, '1996-10'],
 ])
 addComicsInSeriesVolume('XMenvstheAvengersVol1', [
   [1, '1987-4'],
