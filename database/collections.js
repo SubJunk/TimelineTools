@@ -1619,9 +1619,9 @@ collections.push(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
-      'XManVol114',
       'ExcaliburVol195',
       'CableVol130',
+      'XManVol114',
       'CableVol131'
     ]
   ),
