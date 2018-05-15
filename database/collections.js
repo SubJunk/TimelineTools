@@ -1822,6 +1822,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable: The Hellfire Hunt',
+    '2017-11-15',
+    [
+      'CableVol1-1'
+    ]
+  ),
+  new Collection(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
@@ -1881,9 +1888,35 @@ collections.push(
       'XMenVol270'
     ]
   ),
+  new Collection(
+    'Cable: The Hellfire Hunt',
+    '2017-11-15',
+    [
+      'CableVol148',
+      'CableVol149',
+      'CableVol150',
+      'CableVol151',
+      'CableVol152',
+      'CableVol153',
+      'CableVol154'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Cable: The Hellfire Hunt',
+    '2017-11-15',
+    [
+      'CableVol155',
+      'CableMachineManAnnualVol11',
+      'MachineManBastionAnnualVol11',
+      'CableVol156',
+      'CableVol157',
+      'CableVol158',
+      'WolverineCableGutsandGloryVol11'
+    ]
+  ),
   new Collection(
     'X-Men: Domino',
     '2018-4-25',
