@@ -102,7 +102,7 @@ series.push(
   new Series('Nomad', {2: 1992}),
   new Series('Onslaught Epilogue', {1: 1997}),
   new Series('Onslaught Marvel Universe', {1: 1996}),
-  new Series('Onslaught X-Men', {1: 1996}),
+  new Series('Onslaught: X-Men', {1: 1996}),
   new Series('Power Pack', {1: 1984}),
   new Series('Punisher', {3: 1995}),
   new Series('Second Coming: Prepare', {1: 2010}),
