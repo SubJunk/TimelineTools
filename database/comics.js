@@ -202,7 +202,8 @@ addComicsInSeriesVolume('ExcaliburVol1', [
   [80, '1994-8'],
   [81, '1994-9'],
   [82, '1994-10'],
-  [95, '1996-3']
+  [95, '1996-3'],
+  [100, '1996-8']
 ])
 addComicsInSeriesVolume('FactorXVol1', [
   [1, '1995-3'],
@@ -918,6 +919,7 @@ addComicsInSeriesVolume('XMenPhoenixVol1', [
   [2, '2000-1'],
   [3, '2000-3']
 ])
+addComicsInSeriesVolume('XMenRoadtoOnslaughtVol1', [[1, '1996-10']])
 addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [1, '1993-6'],
   [2, '1993-9'],

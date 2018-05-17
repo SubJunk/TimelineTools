@@ -149,6 +149,7 @@ series.push(
   new Series('X-Men: Omega', {1: 1995}),
   new Series('X-Men: Phoenix', {1: 1999}),
   new Series('X-Men: Prime', {1: 1995}),
+  new Series('X-Men: Road to Onslaught', {1: 1996}),
   new Series('X-Men: Second Coming', {1: 2010}),
   new Series('X-Men: The Wedding Album', {1: 1994}),
   new Series('X-Universe', {1: 1995}),

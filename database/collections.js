@@ -1684,6 +1684,19 @@ collections.push(
       'OnslaughtXMenVol11',
       'UncannyXMenVol1335',
       'AvengersVol1401',
+    ]
+  ),
+  new Collection(
+    'X-Men: The Complete Onslaught Epic Book 2 (Partial)',
+    '2008-5-21',
+    [
+      'ExcaliburVol1100'
+    ]
+  ),
+  new Collection(
+    'X-Men/Avengers: Onslaught Omnibus',
+    '2015-8-19',
+    [
       'FantasticFourVol1415',
       'CableVol134',
       'IncredibleHulkVol1444',
@@ -1707,7 +1720,20 @@ collections.push(
       'ThorVol1502',
       'WolverineVol2105',
       'FantasticFourVol1416',
-      'XMenVol256',
+      'XMenVol256'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Complete Onslaught Epic Book 4 (Partial)',
+    '2008-12-24',
+    [
+      'XMenRoadtoOnslaughtVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men/Avengers: Onslaught Omnibus',
+    '2015-8-19',
+    [
       'OnslaughtMarvelUniverseVol11',
       'CableVol136',
       'UncannyXMenVol1337',
