@@ -55,7 +55,7 @@
       </li>
       <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
         <div class="scroll-anchor"></div>
-        <div class="comic z-depth-5 hoverable" ng-style="comic.styles">
+        <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
           <div class="panel-left">
             <a title="#{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip" data-container="body" data-placement="bottom">
               <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
