@@ -1113,6 +1113,16 @@ collections.push(
     ]
   ),
   new Collection(
+    'Gambit Classic, Volume 2',
+    '2013-2-5',
+    [
+      'RogueVol11',
+      'RogueVol12',
+      'RogueVol13',
+      'RogueVol14'
+    ]
+  ),
+  new Collection(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
@@ -1925,6 +1935,26 @@ collections.push(
       'CableVol152',
       'CableVol153',
       'CableVol154'
+    ]
+  ),
+  new Collection(
+    'Wolverine: Not Dead Yet',
+    '2013-1-2',
+    [
+      'WolverineVol2119',
+      'WolverineVol2120',
+      'WolverineVol2121',
+      'WolverineVol2122'
+    ]
+  ),
+  new Collection(
+    'Gambit Classic, Volume 2',
+    '2013-2-5',
+    [
+      'GambitVol21',
+      'GambitVol22',
+      'GambitVol23',
+      'GambitVol24'
     ]
   ),
   /**

@@ -230,6 +230,18 @@ addComicsInSeriesVolume('FurtherAdventuresofCyclopsPhoenixVol1', [
   [3, '1996-8'],
   [4, '1996-9']
 ])
+addComicsInSeriesVolume('GambitVol1', [
+  [1, '1993-12'],
+  [2, '1994-1'],
+  [3, '1994-2'],
+  [4, '1994-3']
+])
+addComicsInSeriesVolume('GambitVol2', [
+  [1, '1997-9'],
+  [2, '1997-10'],
+  [3, '1997-11'],
+  [4, '1997-12']
+])
 addComicsInSeriesVolume('GambitandtheXTernalsVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
@@ -276,6 +288,12 @@ addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']])
 addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']])
 addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']])
 addComicsInSeriesVolume('PunisherVol3', [[11, '1996-9']])
+addComicsInSeriesVolume('RogueVol1', [
+  [1, '1995-1'],
+  [2, '1995-2'],
+  [3, '1995-3'],
+  [4, '1995-4']
+])
 addComicsInSeriesVolume('SabretoothSpecialVol1', [[1, '1996-1']])
 addComicsInSeriesVolume('SpiderManVol1', [
   [16, '1991-11'],
@@ -621,7 +639,11 @@ addComicsInSeriesVolume('WolverineVol2', [
   [115, '1997-8'],
   [116, '1997-9'],
   [117, '1997-10'],
-  [118, '1997-11']
+  [118, '1997-11'],
+  [119, '1997-12'],
+  [120, '1998-1'],
+  [121, '1998-2'],
+  [122, '1998-3']
 ])
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']])
 addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']])
@@ -956,11 +978,6 @@ comics.push(
 
   new Comic(238, '1987-1', 'DaredevilVol1'),
   new Comic(252, '1988-3', 'DaredevilVol1'),
-
-  new Comic(1, '1993-12', 'GambitVol1'),
-  new Comic(2, '1994-1', 'GambitVol1'),
-  new Comic(3, '1994-2', 'GambitVol1'),
-  new Comic(4, '1994-3', 'GambitVol1'),
 
   new Comic(26, '1992-6', 'GhostRiderVol3'),
   new Comic(27, '1992-7', 'GhostRiderVol3'),
