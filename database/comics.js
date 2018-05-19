@@ -7,6 +7,10 @@
  * @param {string[]} [titles]
  */
 function Comic(issue, datePublished, seriesVolumeId, titles) {
+  if (!_.isEmpty(titles) && !_.isArray(titles)) {
+    return console.error('Expected comic title to be an array, got', titles);
+  }
+
   // Create a Date object from the datePublished string
   this.date = new Date(datePublished);
 
@@ -144,6 +148,15 @@ addComicsInSeriesVolume('CableVol1', [
   [57, '1998-8'],
   [58, '1998-9']
 ])
+addComicsInSeriesVolume('CableVol2', [
+  [1, '2008-5', ['War Baby (Chapter 1)']]
+])
+
+addComicsInSeriesVolume('CaptainAmericaVol1', [[339, '1988-3']])
+addComicsInSeriesVolume('DaredevilVol1', [
+  [238, '1987-1'],
+  [252, '1988-3'],
+])
 addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']])
 addComicsInSeriesVolume('DeadpoolVol1', [
   [1, '1994-8'],
@@ -274,19 +287,104 @@ addComicsInSeriesVolume('GenerationXVol1', [
   [31, '1997-10']
 ])
 addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']])
+addComicsInSeriesVolume('GhostRiderVol3', [
+  [26, '1992-6'],
+  [27, '1992-7'],
+])
+addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']]])
 addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']])
 addComicsInSeriesVolume('IncredibleHulkVol1', [
   [340, '1988-2'],
   [444, '1996-8'],
   [445, '1996-9']
 ])
+addComicsInSeriesVolume('IronFistVol1', [
+  [14, '1977-8', ['Snowfire']],
+  [15, '1977-9', ['Enter, the X-Men']],
+])
 addComicsInSeriesVolume('IronManVol1', [
   [332, '1996-9']
 ])
 addComicsInSeriesVolume('MachineManBastionAnnualVol1', [[1, '1998-6']])
+addComicsInSeriesVolume('MagikVol1', [
+  [1, '1983-12'],
+  [2, '1984-1'],
+  [3, '1984-2'],
+  [4, '1984-3'],
+])
+addComicsInSeriesVolume('MarvelGraphicNovelVol1', [[5, '1983-1']])
+addComicsInSeriesVolume('MarvelTeamUpVol1', [
+  [1976, '1976-12', ['The Lords of Light and Darkness!']],
+  [53,   '1977-1', ['Nightmare in New Mexico!']],
+  [69,   '1978-5', ['Night of the Living God!']],
+  [70,   '1978-6', ['Whom Gods Destroy!']],
+])
+addComicsInSeriesVolume('NewMutantsVol1', [
+  [46, '1986-12'],
+  [55, '1987-9'],
+  [56, '1987-10'],
+  [57, '1987-11'],
+  [58, '1987-12'],
+  [59, '1988-1'],
+  [60, '1988-2'],
+  [61, '1988-3'],
+  [62, '1988-4'],
+  [63, '1988-5'],
+  [64, '1988-6'],
+  [65, '1988-7'],
+  [66, '1988-8'],
+  [67, '1988-9'],
+  [68, '1988-10'],
+  [69, '1988-11'],
+  [70, '1988-12'],
+  [71, '1989-1'],
+  [72, '1989-2'],
+  [73, '1989-3'],
+  [87, '1990-3'],
+  [88, '1990-4'],
+  [89, '1990-5'],
+  [90, '1990-6'],
+  [91, '1990-7'],
+  [92, '1990-8'],
+  [93, '1990-9'],
+  [94, '1990-10'],
+  [95, '1990-11'],
+  [96, '1990-12'],
+  [97, '1991-1'],
+  [98, '1991-2'],
+  [99, '1991-3'],
+  [100, '1991-4'],
+])
+addComicsInSeriesVolume('NewMutantsVol3', [
+  [12, '2010-6', ['Second Coming (Chapter Three)']],
+  [13, '2010-7', ['Second Coming (Chapter Seven)']],
+  [14, '2010-8', ['Second Coming (Chapter Eleven)']],
+])
+addComicsInSeriesVolume('NewMutantsAnnualVol1', [
+  [4, '1988-9'],
+  [7, '1991-8'],
+])
+addComicsInSeriesVolume('NewWarriorsVol1', [
+  [31, '1993-1'],
+  [45, '1994-3'],
+  [46, '1994-4'],
+])
+addComicsInSeriesVolume('NightcrawlerVol1', [
+  [1, '1985-11'],
+  [2, '1985-12'],
+  [3, '1986-1'],
+  [4, '1986-2'],
+])
+addComicsInSeriesVolume('NomadVol2', [
+  [20, '1993-12'],
+])
 addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']])
 addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']])
 addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']])
+addComicsInSeriesVolume('PowerPackVol1', [
+  [27, '1986-12'],
+  [35, '1988-2'],
+])
 addComicsInSeriesVolume('PunisherVol3', [[11, '1996-9']])
 addComicsInSeriesVolume('RogueVol1', [
   [1, '1995-1'],
@@ -295,10 +393,26 @@ addComicsInSeriesVolume('RogueVol1', [
   [4, '1995-4']
 ])
 addComicsInSeriesVolume('SabretoothSpecialVol1', [[1, '1996-1']])
+addComicsInSeriesVolume('SecondComingPrepareVol1', [[1, '2010-4', ['Where Were You?']]])
+addComicsInSeriesVolume('SecretWarsVol1', [
+  [1, '1984-5'],
+  [2, '1984-6'],
+  [3, '1984-7'],
+  [4, '1984-8'],
+  [5, '1984-9'],
+  [6, '1984-10'],
+  [7, '1984-11'],
+  [8, '1984-12'],
+  [9, '1985-1'],
+  [10, '1985-2'],
+  [11, '1985-3'],
+  [12, '1985-4'],
+])
 addComicsInSeriesVolume('SpiderManVol1', [
   [16, '1991-11'],
   [72, '1996-9']
 ])
+addComicsInSeriesVolume('StryfesStrikeFileVol1', [[1, '1993-1-1']])
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseBytheLightVol1', [[1, '1996-12']])
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']])
 addComicsInSeriesVolume('TheAmazingSpiderManVol1', [[415, '1996-9']])
@@ -610,6 +724,7 @@ addComicsInSeriesVolume('WeaponXVol1', [
   [3, '1995-5'],
   [4, '1995-6']
 ])
+addComicsInSeriesVolume('WhatIfVol2', [[60, '1994-4']])
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
   [2, '1982-10'],
@@ -791,6 +906,16 @@ addComicsInSeriesVolume('XForceVol1', [
   [69, '1997-9'],
   [70, '1997-10']
 ])
+addComicsInSeriesVolume('XForceVol3', [
+  [26, '2010-6', ['Second Coming (Chapter Five)']],
+  [27, '2010-7', ['Second Coming (Chapter Nine)']],
+  [28, '2010-9', ['Second Coming, Chapter 13']],
+])
+addComicsInSeriesVolume('XForceAnnualVol1', [
+  [1, '1992-5'],
+  [2, '1993-10'],
+  [3, '1994-10'],
+])
 addComicsInSeriesVolume('XForceCableAnnualVol1', [[1, '1995-12']])
 addComicsInSeriesVolume('XForceSexandViolenceVol1', [
   [1, '2010-9'],
@@ -902,6 +1027,10 @@ addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseOneShotVol1', [[0, '2005-3-2']])
 addComicsInSeriesVolume('XMenAlphaVol1', [[1, '1995-2']])
+addComicsInSeriesVolume('XMenAlphaFlightVol1', [
+  [1, '1985-12'],
+  [2, '1986-1'],
+])
 addComicsInSeriesVolume('XMenAnnualVol1', [
   [3, '1979-8'],
   [4, '1980-11'],
@@ -934,6 +1063,19 @@ addComicsInSeriesVolume('XMenClanDestineVol1', [
   [1, '1996-10'],
   [2, '1996-11']
 ])
+addComicsInSeriesVolume('XMenFreeComicBookDayVol2008', [[1, '2008-5', ['X-Men: Pixies & Demons']]])
+addComicsInSeriesVolume('XMenLegacyVol1', [
+  [235, '2010-6', ['Second Coming (Chapter Four)']],
+  [236, '2010-7', ['Second Coming (Chapter Eight)']],
+  [237, '2010-8', ['Second Coming (Chapter Twelve)']],
+])
+addComicsInSeriesVolume('XMenManifestDestinyVol1', [
+  [1, '2008-11', ['Untitled']],
+  [2, '2008-12', ['Kill or Cure (Part 2)','Good With the Bad','Flaw']],
+  [3, '2009-1', ['Kill or Cure (Part 3)','Abomination','Uncheerable']],
+  [4, '2009-2', ['Kill or Cure (Part 4)','Mercury','Work It Out']],
+  [5, '2009-3', ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo']],
+])
 addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']])
 addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']])
 addComicsInSeriesVolume('XMenPhoenixVol1', [
@@ -942,6 +1084,11 @@ addComicsInSeriesVolume('XMenPhoenixVol1', [
   [3, '2000-3']
 ])
 addComicsInSeriesVolume('XMenRoadtoOnslaughtVol1', [[1, '1996-10']])
+addComicsInSeriesVolume('XMenSecondComingVol1', [
+  [1, '2010-5', ['Second Coming, Chapter One']],
+  [2, '2010-9', ['Second Coming Chapter XIV']],
+])
+addComicsInSeriesVolume('XMenTheWeddingAlbumVol1', [[1, '1994-1-1']])
 addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [1, '1993-6'],
   [2, '1993-9'],
@@ -970,140 +1117,9 @@ addComicsInSeriesVolume('XUniverseVol1', [
   [2, '1995-6']
 ])
 addComicsInSeriesVolume('XavierInstituteAlumniYearbookVol1', [[1, '1996-12']])
-
-comics.push(
-  new Comic(1, '2008-5', 'CableVol2', ['War Baby (Chapter 1)']),
-
-  new Comic(339, '1988-3', 'CaptainAmericaVol1'),
-
-  new Comic(238, '1987-1', 'DaredevilVol1'),
-  new Comic(252, '1988-3', 'DaredevilVol1'),
-
-  new Comic(26, '1992-6', 'GhostRiderVol3'),
-  new Comic(27, '1992-7', 'GhostRiderVol3'),
-
-  new Comic(14, '1977-8', 'IronFistVol1', ['Snowfire']),
-  new Comic(15, '1977-9', 'IronFistVol1', ['Enter, the X-Men']),
-
-  new Comic(1, '1983-12', 'MagikVol1'),
-  new Comic(2, '1984-1', 'MagikVol1'),
-  new Comic(3, '1984-2', 'MagikVol1'),
-  new Comic(4, '1984-3', 'MagikVol1'),
-
-  new Comic(5, '1983-1', 'MarvelGraphicNovelVol1'),
-
-  new Comic(1976, '1976-12', 'MarvelTeamUpVol1', ['The Lords of Light and Darkness!']),
-  new Comic(53, '1977-1', 'MarvelTeamUpVol1', ['Nightmare in New Mexico!']),
-  new Comic(69, '1978-5', 'MarvelTeamUpVol1', ['Night of the Living God!']),
-  new Comic(70, '1978-6', 'MarvelTeamUpVol1', ['Whom Gods Destroy!']),
-
-  new Comic(46, '1986-12', 'NewMutantsVol1'),
-  new Comic(55, '1987-9', 'NewMutantsVol1'),
-  new Comic(56, '1987-10', 'NewMutantsVol1'),
-  new Comic(57, '1987-11', 'NewMutantsVol1'),
-  new Comic(58, '1987-12', 'NewMutantsVol1'),
-  new Comic(59, '1988-1', 'NewMutantsVol1'),
-  new Comic(60, '1988-2', 'NewMutantsVol1'),
-  new Comic(61, '1988-3', 'NewMutantsVol1'),
-  new Comic(62, '1988-4', 'NewMutantsVol1'),
-  new Comic(63, '1988-5', 'NewMutantsVol1'),
-  new Comic(64, '1988-6', 'NewMutantsVol1'),
-  new Comic(65, '1988-7', 'NewMutantsVol1'),
-  new Comic(66, '1988-8', 'NewMutantsVol1'),
-  new Comic(67, '1988-9', 'NewMutantsVol1'),
-  new Comic(68, '1988-10', 'NewMutantsVol1'),
-  new Comic(69, '1988-11', 'NewMutantsVol1'),
-  new Comic(70, '1988-12', 'NewMutantsVol1'),
-  new Comic(71, '1989-1', 'NewMutantsVol1'),
-  new Comic(72, '1989-2', 'NewMutantsVol1'),
-  new Comic(73, '1989-3', 'NewMutantsVol1'),
-  new Comic(87, '1990-3', 'NewMutantsVol1'),
-  new Comic(88, '1990-4', 'NewMutantsVol1'),
-  new Comic(89, '1990-5', 'NewMutantsVol1'),
-  new Comic(90, '1990-6', 'NewMutantsVol1'),
-  new Comic(91, '1990-7', 'NewMutantsVol1'),
-  new Comic(92, '1990-8', 'NewMutantsVol1'),
-  new Comic(93, '1990-9', 'NewMutantsVol1'),
-  new Comic(94, '1990-10', 'NewMutantsVol1'),
-  new Comic(95, '1990-11', 'NewMutantsVol1'),
-  new Comic(96, '1990-12', 'NewMutantsVol1'),
-  new Comic(97, '1991-1', 'NewMutantsVol1'),
-  new Comic(98, '1991-2', 'NewMutantsVol1'),
-  new Comic(99, '1991-3', 'NewMutantsVol1'),
-  new Comic(100, '1991-4', 'NewMutantsVol1'),
-
-  new Comic(12, '2010-6', 'NewMutantsVol3', ['Second Coming (Chapter Three)']),
-  new Comic(13, '2010-7', 'NewMutantsVol3', ['Second Coming (Chapter Seven)']),
-  new Comic(14, '2010-8', 'NewMutantsVol3', ['Second Coming (Chapter Eleven)']),
-
-  new Comic(4, '1988-9', 'NewMutantsAnnualVol1'),
-  new Comic(7, '1991-8', 'NewMutantsAnnualVol1'),
-
-  new Comic(31, '1993-1', 'NewWarriorsVol1'),
-  new Comic(45, '1994-3', 'NewWarriorsVol1'),
-  new Comic(46, '1994-4', 'NewWarriorsVol1'),
-
-  new Comic(1, '1985-11', 'NightcrawlerVol1'),
-  new Comic(2, '1985-12', 'NightcrawlerVol1'),
-  new Comic(3, '1986-1', 'NightcrawlerVol1'),
-  new Comic(4, '1986-2', 'NightcrawlerVol1'),
-
-  new Comic(20, '1993-12', 'NomadVol2'),
-
-  new Comic(27, '1986-12', 'PowerPackVol1'),
-  new Comic(35, '1988-2', 'PowerPackVol1'),
-
-  new Comic(1, '2010-4', 'SecondComingPrepareVol1', ['Where Were You?']),
-
-  new Comic(1, '1984-5', 'SecretWarsVol1'),
-  new Comic(2, '1984-6', 'SecretWarsVol1'),
-  new Comic(3, '1984-7', 'SecretWarsVol1'),
-  new Comic(4, '1984-8', 'SecretWarsVol1'),
-  new Comic(5, '1984-9', 'SecretWarsVol1'),
-  new Comic(6, '1984-10', 'SecretWarsVol1'),
-  new Comic(7, '1984-11', 'SecretWarsVol1'),
-  new Comic(8, '1984-12', 'SecretWarsVol1'),
-  new Comic(9, '1985-1', 'SecretWarsVol1'),
-  new Comic(10, '1985-2', 'SecretWarsVol1'),
-  new Comic(11, '1985-3', 'SecretWarsVol1'),
-  new Comic(12, '1985-4', 'SecretWarsVol1'),
-
-  new Comic(1, '1993-1-1', 'StryfesStrikeFileVol1'),
-
-  new Comic(1, '1975-5', 'GiantSizeXMenVol1', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']),
-
-  new Comic(60, '1994-4', 'WhatIfVol2'),
-
-  new Comic(26, '2010-6', 'XForceVol3', ['Second Coming (Chapter Five)']),
-  new Comic(27, '2010-7', 'XForceVol3', ['Second Coming (Chapter Nine)']),
-  new Comic(28, '2010-9', 'XForceVol3', ['Second Coming, Chapter 13']),
-
-  new Comic(1, '1992-5', 'XForceAnnualVol1'),
-  new Comic(2, '1993-10', 'XForceAnnualVol1'),
-  new Comic(3, '1994-10', 'XForceAnnualVol1'),
-
-  new Comic(1, '1985-12', 'XMenAlphaFlightVol1'),
-  new Comic(2, '1986-1', 'XMenAlphaFlightVol1'),
-
-  new Comic(1, '2008-5', 'XMenFreeComicBookDayVol2008', ['X-Men: Pixies & Demons']),
-
-  new Comic(235, '2010-6', 'XMenLegacyVol1', ['Second Coming (Chapter Four)']),
-  new Comic(236, '2010-7', 'XMenLegacyVol1', ['Second Coming (Chapter Eight)']),
-  new Comic(237, '2010-8', 'XMenLegacyVol1', ['Second Coming (Chapter Twelve)']),
-
-  new Comic(1, '2008-11', 'XMenManifestDestinyVol1', ['Untitled']),
-  new Comic(2, '2008-12', 'XMenManifestDestinyVol1', ['Kill or Cure (Part 2)','Good With the Bad','Flaw']),
-  new Comic(3, '2009-1', 'XMenManifestDestinyVol1', ['Kill or Cure (Part 3)','Abomination','Uncheerable']),
-  new Comic(4, '2009-2', 'XMenManifestDestinyVol1', ['Kill or Cure (Part 4)','Mercury','Work It Out']),
-  new Comic(5, '2009-3', 'XMenManifestDestinyVol1', ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo']),
-
-  new Comic(1, '2010-5', 'XMenSecondComingVol1', ['Second Coming, Chapter One']),
-  new Comic(2, '2010-9', 'XMenSecondComingVol1', ['Second Coming Chapter XIV']),
-
-  new Comic(1, '1994-1-1', 'XMenTheWeddingAlbumVol1'),
-
-  new Comic(1, '1988-10', 'XTerminatorsVol1'),
-  new Comic(2, '1988-11', 'XTerminatorsVol1'),
-  new Comic(3, '1988-12', 'XTerminatorsVol1'),
-  new Comic(4, '1989-1', 'XTerminatorsVol1')
-);
+addComicsInSeriesVolume('XTerminatorsVol1', [
+  [1, '1988-10'],
+  [2, '1988-11'],
+  [3, '1988-12'],
+  [4, '1989-1']
+])
