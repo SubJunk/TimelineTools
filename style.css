@@ -59,14 +59,18 @@ body {
   z-index: 2;
 }
 
+.tooltip-inner,
 .series-volume-label {
   background-color: #222;
-  display: inline-block;
   color: #ccc;
   padding: 3px 8px;
   border-radius: 8px;
-  text-align: right;
   font-size: 12px;
+}
+
+.series-volume-label {
+  display: inline-block;
+  text-align: right;
 }
 
 .series-volume-label.stickyLeft {
@@ -255,7 +259,7 @@ body {
 }
 
 /**
- * Remove Bootstrap pagination styles
+ * Override Bootstrap styles
  */
 .pagination {
   margin: 5px 0 8px calc(var(--month-width) * 0.05);
@@ -283,4 +287,12 @@ body {
 .pagination > .disabled > a,
 .pagination > .disabled > a:hover {
   background-color: unset;
+}
+
+.tooltip.show {
+  opacity: 1;
+}
+
+.tooltip.show .arrow::before {
+  border-bottom-color: #222;
 }

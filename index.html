@@ -57,26 +57,26 @@
         <div class="scroll-anchor"></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles">
           <div class="panel-left">
-            <a title="#{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip" data-container="body" data-placement="bottom">
+            <a title="#{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip">
               <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
             </a>
             <ul class="pagination">
-              <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}" data-toggle="tooltip" data-original-title="{{main.prevCollection.title}}" data-placement="bottom">
+              <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}" data-toggle="tooltip" title="{{main.prevCollection.title}}">
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
                   <i class="material-icons">arrow_backward</i>
                 </a>
               </li>
-              <li class="waves-effect" ng-class="{disabled: !main.prevComic}" data-toggle="tooltip" data-original-title="{{main.prevComic.series}} #{{main.prevComic.issue}}" data-placement="bottom">
+              <li class="waves-effect" ng-class="{disabled: !main.prevComic}" data-toggle="tooltip" title="{{main.prevComic.series}} #{{main.prevComic.issue}}">
                 <a ng-click="main.toggleExpandComic(main.prevComic)">
                   <i class="material-icons">chevron_left</i>
                 </a>
               </li>
-              <li class="waves-effect" ng-class="{disabled: !main.nextComic }" data-toggle="tooltip" data-original-title="{{main.nextComic.series}} #{{main.nextComic.issue}}" data-placement="bottom">
+              <li class="waves-effect" ng-class="{disabled: !main.nextComic }" data-toggle="tooltip" title="{{main.nextComic.series}} #{{main.nextComic.issue}}">
                 <a ng-click="main.toggleExpandComic(main.nextComic)">
                   <i class="material-icons">chevron_right</i>
                 </a>
               </li>
-              <li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic }" data-toggle="tooltip" data-original-title="{{main.nextCollection.title}}" data-placement="bottom">
+              <li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic }" data-toggle="tooltip" title="{{main.nextCollection.title}}">
                 <a ng-click="main.toggleExpandComic(main.nextCollectionFirstComic)">
                   <i class="material-icons">arrow_forward</i>
                 </a>
@@ -92,7 +92,7 @@
               <div class="collection-title">{{comic.collection.title}}:</div>
               <ul>
                 <li ng-repeat="collectionComic in comic.collection.allCollectionComics track by collectionComic.id">
-                  <a title="{{collectionComic.series}} #{{collectionComic.issue}}" ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
+                  <a title="{{collectionComic.series}} #{{collectionComic.issue}}" ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable" data-toggle="tooltip">
                     <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{collectionComic.image}}.jpg" ng-class="{current: collectionComic.id === main.expandedComicId}"></img>
                   </a>
                 </li>
