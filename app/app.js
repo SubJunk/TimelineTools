@@ -451,7 +451,7 @@ angular.module('app', ['angular-md5'])
   $timeout(function() {
     bodyStyle.width += $('.scroll-anchor').width();
     bodyStyle.height = (globalVerticalPositionCounter * verticalIncrement);
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
   });
 
   // Render collections as groups of comics
