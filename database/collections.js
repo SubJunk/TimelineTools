@@ -1938,6 +1938,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Blue Vol. 0: Reunion',
+    '2018-3-21',
+    [
+      'XMenUnlimitedVol117'
+    ]
+  ),
+  new Collection(
     'Wolverine: Not Dead Yet',
     '2013-1-2',
     [
@@ -1957,6 +1964,104 @@ collections.push(
       'GambitVol24'
     ]
   ),
+  new Collection(
+    'X-Men: Gold Vol. 0: Homecoming (Partial)',
+    '2018-3-28',
+    [
+      'XMenUnlimitedVol118',
+      'XMenVol271',
+      'XMenVol272'
+    ]
+  ),
+  new Collection(
+    'X-Men: Blue Vol. 0: Reunion',
+    '2018-3-21',
+    [
+      'UncannyXMenVol1351',
+      'UncannyXMenVol1352'
+    ]
+  ),
+  new Collection(
+    'Cable: The Hellfire Hunt',
+    '2017-11-15',
+    [
+      'CableMachineManAnnualVol11',
+      'MachineManBastionAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: Blue Vol. 0: Reunion',
+    '2018-3-21',
+    [
+      'UncannyXMenVol1353',
+      'UncannyXMenVol1354',
+      'UncannyXMenVol1355'
+    ]
+  ),
+  new Collection(
+    'X-Men: Gold Vol. 0: Homecoming (Partial)',
+    '2018-3-28',
+    [
+      'XMenVol273'
+    ]
+  ),
+  new Collection(
+    'Cable: The Hellfire Hunt',
+    '2017-11-15',
+    [
+      'CableVol155',
+      'CableVol156'
+    ]
+  ),
+  new Collection(
+    'X-Men: Gold Vol. 0: Homecoming (Partial)',
+    '2018-3-28',
+    [
+      'XMenVol274',
+      'XMenVol275',
+      'XMenVol276'
+    ]
+  ),
+  new Collection(
+    'X-Men: Blue Vol. 0: Reunion',
+    '2018-3-21',
+    [
+      'UncannyXMenVol1356',
+      'UncannyXMenVol1357'
+    ]
+  ),
+  new Collection(
+    'X-Men: Gold Vol. 0: Homecoming (Partial)',
+    '2018-3-28',
+    [
+      'XMenVol277',
+      'XMenVol278'
+    ]
+  ),
+  new Collection(
+    'Cable: The Hellfire Hunt',
+    '2017-11-15',
+    [
+      'CableVol157',
+      'CableVol158'
+    ]
+  ),
+  new Collection(
+    'X-Men: Blue Vol. 0: Reunion',
+    '2018-3-21',
+    [
+      'UncannyXMenVol1358',
+      'UncannyXMenVol1359',
+      'UncannyXMenFantasticFourAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: Gold Vol. 0: Homecoming (Partial)',
+    '2018-3-28',
+    [
+      'XMenVol279'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -1964,13 +2069,21 @@ collections.push(
     'Cable: The Hellfire Hunt',
     '2017-11-15',
     [
-      'CableVol155',
-      'CableMachineManAnnualVol11',
-      'MachineManBastionAnnualVol11',
-      'CableVol156',
-      'CableVol157',
-      'CableVol158',
       'WolverineCableGutsandGloryVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: Blue Vol. 0: Reunion',
+    '2018-3-21',
+    [
+      'CerebrosGuidetotheXMenVol11'
+    ]
+  ),
+  new Collection(
+    'X-Men: Gold Vol. 0: Homecoming (Partial)',
+    '2018-3-28',
+    [
+      'XMenDrDoomAnnualVol11'
     ]
   ),
   new Collection(

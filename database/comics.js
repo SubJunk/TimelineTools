@@ -153,6 +153,7 @@ addComicsInSeriesVolume('CableVol2', [
 ])
 
 addComicsInSeriesVolume('CaptainAmericaVol1', [[339, '1988-3']])
+addComicsInSeriesVolume('CerebrosGuidetotheXMenVol1', [[1, '1998-1']])
 addComicsInSeriesVolume('DaredevilVol1', [
   [238, '1987-1'],
   [252, '1988-3'],
@@ -682,6 +683,15 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [348, '1997-10'],
   [349, '1997-11'],
   [350, '1997-12'],
+  [351, '1998-1'],
+  [352, '1998-2'],
+  [353, '1998-3'],
+  [354, '1998-4'],
+  [355, '1998-5'],
+  [356, '1998-6'],
+  [357, '1998-7'],
+  [358, '1998-8'],
+  [359, '1998-9'],
 /**
  * Complete until here
  */
@@ -718,6 +728,7 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [528, '2010-11', ['The Five Lights (Part 3)']],
   [529, '2010-12', ['The Five Lights (Part Four)']]
 ])
+addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']])
 addComicsInSeriesVolume('WeaponXVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
@@ -1015,7 +1026,16 @@ addComicsInSeriesVolume('XMenVol2', [
   [67, '1997-9'],
   [68, '1997-10'],
   [69, '1997-11'],
-  [70, '1997-12']
+  [70, '1997-12'],
+  [71, '1998-1'],
+  [72, '1998-1'],
+  [73, '1998-1'],
+  [74, '1998-1'],
+  [75, '1998-1'],
+  [76, '1998-1'],
+  [77, '1998-1'],
+  [78, '1998-1'],
+  [79, '1998-1']
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
@@ -1063,6 +1083,7 @@ addComicsInSeriesVolume('XMenClanDestineVol1', [
   [1, '1996-10'],
   [2, '1996-11']
 ])
+addComicsInSeriesVolume('XMenDrDoomAnnualVol1', [[1, '1998-6']])
 addComicsInSeriesVolume('XMenFreeComicBookDayVol2008', [[1, '2008-5', ['X-Men: Pixies & Demons']]])
 addComicsInSeriesVolume('XMenLegacyVol1', [
   [235, '2010-6', ['Second Coming (Chapter Four)']],
@@ -1100,7 +1121,9 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [8, '1995-10'],
   [9, '1995-12'],
   [10, '1996-3'],
-  [11, '1996-6']
+  [11, '1996-6'],
+  [17, '1997-12'],
+  [18, '1998-4']
 ])
 addComicsInSeriesVolume('XMenvsBroodVol1', [
   [1, '1996-9'],
