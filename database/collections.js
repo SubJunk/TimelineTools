@@ -1878,8 +1878,8 @@ collections.push(
     [
       'DeadpoolVol2-1',
       'DeadpoolVol27',
-      'DeadpoolVol28',
-      'DaredevilDeadpoolAnnualVol11'
+      'DaredevilDeadpoolAnnualVol11',
+      'DeadpoolVol28'
     ]
   ),
   new Collection(
@@ -1904,6 +1904,15 @@ collections.push(
       'XManVol130',
       'XMenVol269',
       'WolverineVol2118'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 3 (Partial)',
+    '2009-11-25',
+    [
+      'DeadpoolVol29',
+      'DeadpoolVol210',
+      'DeadpoolVol211'
     ]
   ),
   new Collection(
@@ -1974,6 +1983,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 3 (Partial)',
+    '2009-11-25',
+    [
+      'DeadpoolVol212',
+      'DeadpoolVol213'
+    ]
+  ),
+  new Collection(
     'X-Men: Blue Vol. 0: Reunion',
     '2018-3-21',
     [
@@ -2006,6 +2023,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 3 (Partial)',
+    '2009-11-25',
+    [
+      'DeadpoolVol214',
+      'DeadpoolVol215'
+    ]
+  ),
+  new Collection(
     'Cable: The Hellfire Hunt',
     '2017-11-15',
     [
@@ -2020,6 +2045,14 @@ collections.push(
       'XMenVol274',
       'XMenVol275',
       'XMenVol276'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 3 (Partial)',
+    '2009-11-25',
+    [
+      'DeadpoolVol216',
+      'DeadpoolVol217'
     ]
   ),
   new Collection(
