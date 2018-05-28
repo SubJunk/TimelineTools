@@ -247,6 +247,9 @@ angular.module('app', ['angular-md5'])
     vm.expandedCollectionId = vm.expandedCollectionId === collection.id ? null : collection.id;
   };
 
+  var doSpeedProfile = false;
+  if (doSpeedProfile) var startTimeInitialLoad = new Date();
+
   // Sort the data by date
   comics = _.sortBy(comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
 
@@ -296,7 +299,7 @@ angular.module('app', ['angular-md5'])
   var globalHorizontalOffset = 0;
   var latestVerticalHorizontalOffsets = {};
   var newLabelNeeded = false;
-
+  var windowWidth = $jqWindow.innerWidth();
   _.each(comics, function(comic) {
     /**
      * Look up the volume and series for this comic and
@@ -361,7 +364,7 @@ angular.module('app', ['angular-md5'])
      * The maximum horizontal offset allowed until we recycle the
      * vertical position.
      */
-    var horizontalClearanceLimit = comic.containerStyles.left - ($jqWindow.innerWidth() * 1.2);
+    var horizontalClearanceLimit = comic.containerStyles.left - windowWidth;
     if (
       !latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] ||
       (
@@ -454,6 +457,12 @@ angular.module('app', ['angular-md5'])
       seriesVolumeLabels[seriesVolumeLabelIndex].right = comic.containerStyles.left;
     }
   });
+
+  if (doSpeedProfile) {
+    var endTime = new Date();
+    var timeDiff = endTime - startTimeInitialLoad;
+    $log.warn('Time to run initial db loop:', timeDiff + 'ms');
+  }
 
   // Using $timeout lets Angular play nicer with jQuery
   var infoModal;
@@ -644,10 +653,8 @@ angular.module('app', ['angular-md5'])
   var isStickyLeft;
   var isStickyRight;
   var isStickyBottom;
-  var startTime;
-  var doSpeedProfile = false;
   var repositionStickyElements = function() {
-    if (doSpeedProfile) startTime = new Date();
+    if (doSpeedProfile) var startTimeReposition = new Date();
 
     // The scroll position of the page, minus the main padding
     scrollLeft = $jqWindow.scrollLeft() - 20;
@@ -732,7 +739,7 @@ angular.module('app', ['angular-md5'])
 
       if (doSpeedProfile) {
         var endTime = new Date();
-        var timeDiff = endTime - startTime;
+        var timeDiff = endTime - startTimeReposition;
         $log.warn('Time to run repositionStickyElements:', timeDiff + 'ms');
       }
     });
