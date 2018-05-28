@@ -2095,9 +2095,110 @@ collections.push(
       'XMenVol279'
     ]
   ),
+  new Collection(
+    'Cable: The Nemesis Contract',
+    '2018-1-10',
+    [
+      'CableVol159',
+      'CableVol160',
+      'CableVol161',
+      'CableVol162'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Hunt for Professor X',
+    '2015-6-17',
+    [
+      'UncannyXMenVol1360',
+      'XMenVol280',
+      'UncannyXMenVol1361',
+      'XMenVol281',
+      'UncannyXMenVol1362',
+      'XMenVol282',
+      'UncannyXMenVol1363',
+      'XMenVol283',
+      'UncannyXMenVol1364',
+      'XMenVol284',
+      'XMenUnlimitedVol122'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
+    '2017-2-1',
+    [
+      'WolverineVol2133',
+      'WolverineVol2134',
+      'WolverineVol2135',
+      'WolverineVol2136',
+      'WolverineVol2137',
+      'WolverineVol2138',
+    ]
+  ),
+  new Collection(
+    'Cable: The Nemesis Contract',
+    '2018-1-10',
+    [
+      'XManVol145',
+      'XManVol146',
+      'CableVol163',
+      'XManVol147'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
+    '2017-2-1',
+    [
+      'WolverineVol2139'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Hunt for Professor X',
+    '2015-6-17',
+    [
+      'UncannyXMenVol1365',
+      'XMenVol20.5',
+    ]
+  ),
+  new Collection(
+    'Cable: The Nemesis Contract',
+    '2018-1-10',
+    [
+      'CableVol164'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
+    '2017-2-1',
+    [
+      'WolverineVol2140',
+      'WolverineVol2141',
+      'WolverineVol2142',
+      'WolverineVol2143',
+      'WolverineVol2144',
+      'WolverineVol2145',
+      'WolverineVol2146',
+      'WolverineVol2147',
+      'WolverineVol2148',
+      'WolverineVol2149',
+      'IncredibleHulkVol28',
+    ]
+  ),
+  new Collection(
+    'Cable: The Nemesis Contract',
+    '2018-1-10',
+    [
+      'CableVol165',
+      'CableVol166',
+      'CableVol167',
+      'CableVol168',
+      'CableVol169',
+      'CableVol170',
+      'CableAnnualVol11'
+    ]
+  ),
   new Collection(
     'Cable: The Hellfire Hunt',
     '2017-11-15',

@@ -96,6 +96,8 @@ angular.module('app', ['angular-md5'])
         .replace(/\s+|\//g, '_');
 
     if (isComic) {
+      issue = issue.toString().replace(/[.]/g, '');
+
       seriesOrCollection +=
           '_Vol_' +
           volume +
