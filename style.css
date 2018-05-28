@@ -13,7 +13,6 @@
 
 body {
   background: hsl(216, 8%, 25%);
-  color: #ccc;
   overflow: auto;
   padding: 20px;
 }
@@ -26,6 +25,7 @@ body {
 
 .year {
   display: inline-block;
+  color: #ccc;  
 }
 
 .month {
@@ -249,13 +249,6 @@ body {
 
 .scroll-anchor {
   width: var(--expanded-width);
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
 }
 
 /**

@@ -9,12 +9,43 @@
     <title>TimelineTools</title>
   </head>
   <body ng-controller="DataController as main" ng-style='main.bodyStyle' class="ng-cloak">
-    <div class="footer switch">
-      <label>
-        Show collections:
-        <input type="checkbox" ng-model="main.isShowCollections">
-        <span class="lever"></span>
-      </label>
+    <div id="info" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Info & Credits</h4>
+        <p>This tool depends on data from others. Some of the most frequent sources of that data are:</p>
+        <ul>
+          <li>
+            <h5><a href="http://notahoaxnotadream.blogspot.co.nz/p/x-men-collected-editions-chart.html">NOT A HOAX! NOT A DREAM!</a></h5>
+            We rely on the reviews on this blog to know which order the comics appear in within collections.
+          </li>
+          <li>
+            <h5><a href="http://www.comicsbackissues.com/comic-book-reading-order/x-men-read-order-chronology/#order">Comics Back Issues</a></h5>
+            We rely on this to track and order crossovers.
+          </li>
+          <li>
+            <h5><a href="http://www.marvel.com">Marvel</a></h5>
+            We rely on the Marvel API to display the link to the online version of the comics.
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a ng-click="main.toggleInfoModal()" class="modal-close waves-effect waves-green btn-flat">Close</a>
+      </div>
+    </div>
+    <div class="fixed-action-btn" ng-cloak>
+      <a class="btn-floating btn-large red"><i class="large material-icons">menu</i></a>
+      <ul>
+        <li>
+          <a title="Toggle collections view" class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}" ng-click="main.isShowCollections = !main.isShowCollections" data-toggle="tooltip">
+            <i class="material-icons">library_books</i>
+          </a>
+        </li>
+        <li>
+          <a title="View information and credits" ng-click="main.toggleInfoModal()" class="btn-floating blue" data-toggle="tooltip">
+            <i class="material-icons">info</i>
+          </a>
+        </li>
+      </ul>
     </div>
     <ul class="collections" ng-if="main.isShowCollections">
       <li ng-repeat="collection in main.uniqueCollections" class="collection-container" ng-class="{expanded: collection.id === main.expandedCollectionId}" ng-if="collection.title !== 'Uncollected'">
