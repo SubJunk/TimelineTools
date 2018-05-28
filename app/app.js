@@ -449,11 +449,24 @@ angular.module('app', ['angular-md5'])
   });
 
   // Using $timeout lets Angular play nicer with jQuery
+  var infoModal;
+  var infoModalInstance;
   $timeout(function() {
     bodyStyle.width += $('.scroll-anchor').width();
     bodyStyle.height = (globalVerticalPositionCounter * verticalIncrement);
     $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
+    $('.fixed-action-btn').floatingActionButton({direction: 'left'});
+    infoModal = document.querySelectorAll('#info');
+    infoModalInstance = M.Modal.init(infoModal)[0];
   });
+
+  vm.toggleInfoModal = function() {
+    if (infoModalInstance.isOpen) {
+      infoModalInstance.close();
+    } else {
+      infoModalInstance.open();
+    }
+  }
 
   // Render collections as groups of comics
   var collectionColorsIndex = {};
