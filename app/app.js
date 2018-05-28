@@ -12,7 +12,7 @@ angular.module('app', ['angular-md5'])
   var seriesVolumes = $window.seriesVolumes;
 
   var globalVerticalPositionCounter = 0;
-  var bodyStyle = {
+  var bodyStyles = {
     width: null,
     padding: 20
   };
@@ -419,8 +419,13 @@ angular.module('app', ['angular-md5'])
 
     previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
-    // Match the width of the page to the width of the content
-    bodyStyle.width = comic.containerStyles.left + horizontalIncrement - bodyStyle.padding;
+    /**
+     * Match the width of the page to the width of the content, which
+     * includes one horizontal increment (the width of the current
+     * comic thumbnail) and 2 body padding units to make up for the
+     * left and right padding of the page.
+     */
+    bodyStyles.width = comic.containerStyles.left + horizontalIncrement + (bodyStyles.padding * 2);
 
     if (newLabelNeeded) {
       seriesVolumeLabels.push({
@@ -454,10 +459,19 @@ angular.module('app', ['angular-md5'])
   var infoModal;
   var infoModalInstance;
   $timeout(function() {
-    bodyStyle.width += $('.scroll-anchor').width();
-    bodyStyle.height = (globalVerticalPositionCounter * verticalIncrement);
+    // Make room for the farthest-right expanded panel
+    bodyStyles.width += $('.scroll-anchor').width();
+
+    // Make room for the farthest-bottom expanded panel
+    bodyStyles.height = $(document).height() + $(window).height();
+
+    // Init tooltips
     $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
+
+    // Init floating menu on the right
     $('.fixed-action-btn').floatingActionButton({direction: 'left'});
+
+    // Init "Info & Credits" modal
     infoModal = document.querySelectorAll('#info');
     infoModalInstance = M.Modal.init(infoModal)[0];
   });
@@ -706,7 +720,7 @@ angular.module('app', ['angular-md5'])
       expandedComic.classes.stickyLeft = isStickyLeft;
 
       if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-        expandedComic.styles.marginLeft = '-' + (scrollLeft + bodyStyle.padding);
+        expandedComic.styles.marginLeft = '-' + (scrollLeft + bodyStyles.padding);
         expandedComic.styles.marginTop = '';
       } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
         expandedComic.styles.marginLeft = '';
@@ -749,7 +763,7 @@ angular.module('app', ['angular-md5'])
   });
 
   // Reposition the expanded panel when the user scrolls the viewport
-  $jqWindow.scroll(repositionStickyElements);
+  $jqWindow.on('load scroll', repositionStickyElements);
 
   // Catch clicks
   $jqWindow.on('click', function(data) {
@@ -834,7 +848,7 @@ angular.module('app', ['angular-md5'])
 
   // Pass the other things the view needs
   vm.dates = dates;
-  vm.bodyStyle = bodyStyle;
+  vm.bodyStyles = bodyStyles;
   vm.seriesVolumeLabels = seriesVolumeLabels;
 
   // Expand the comic from the URL on load

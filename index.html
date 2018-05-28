@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="icons/x-men.ico" type="image/x-icon">
     <title>TimelineTools</title>
   </head>
-  <body ng-controller="DataController as main" ng-style='main.bodyStyle' class="ng-cloak">
+  <body ng-controller="DataController as main" ng-style='main.bodyStyles' class="ng-cloak">
     <div id="info" class="modal modal-fixed-footer">
       <div class="modal-content">
         <h4>Info & Credits</h4>
@@ -73,9 +73,9 @@
     </ul>
     <ul class="years">
       <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
-        {{year}}
+        {{::year}}
         <ul>
-          <li ng-repeat="month in ::months track by month.number" class="month" ng-style='month.styles'>{{::month.number}}</li>
+          <li ng-repeat="month in ::months track by month.number" class="month" ng-style='::month.styles'>{{::month.number}}</li>
         </ul>
       </li>
     </ul>
@@ -136,7 +136,7 @@
     <script src="https://cdn.jsdelivr.net/npm/angular-md5@0.1.10/angular-md5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="database/comics.js" charset="utf-8"></script>
