@@ -48,22 +48,21 @@
       </ul>
     </div>
     <ul class="collections" ng-if="main.isShowCollections">
-      <li ng-repeat="collection in main.uniqueCollections" class="collection-container" ng-class="{expanded: collection.id === main.expandedCollectionId}" ng-if="collection.title !== 'Uncollected'">
+      <li ng-repeat="collection in ::main.uniqueCollections" class="collection-container" ng-class="{expanded: collection.id === main.expandedCollectionId}" ng-if="collection.title !== 'Uncollected'">
         <div class="comic-collection z-depth-5 hoverable" ng-style="collection.styles">
           <div class="panel-left">
-            <a title="{{collection.title}} cover" ng-click="main.toggleExpandCollection(collection)" class="waves-effect cover-thumbnail">
-              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{collection.image}}.jpg"></img>
+            <a title="{{::collection.title}} cover" ng-click="main.toggleExpandCollection(collection)" class="waves-effect cover-thumbnail">
+              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::collection.image}}.jpg"></img>
             </a>
           </div>
           <div class="expanded-panel">
-            <!-- <a ng-if="comic.link" class="marvel-unlimited-link" ng-href="{{comic.link}}" title="Open in Marvel Unlimited"></a> -->
-            <div class="title">{{collection.title}}</div>
-            <div class="date">{{collection.yearPublished}} / {{collection.monthPublished}}</div>
+            <div class="title">{{::collection.title}}</div>
+            <div class="date">{{::collection.yearPublished}} / {{::collection.monthPublished}}</div>
             <div class="collection-comics">
               <ul>
-                <li ng-repeat="comic in collection.allCollectionComics track by comic.id">
-                  <a title="{{comic.series}} #{{comic.issue}}" ng-click="main.toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
-                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg" ng-class="{current: comic.id === comicId}"></img>
+                <li ng-repeat="comic in ::collection.allCollectionComics track by comic.id">
+                  <a title="{{::comic.series}} #{{::comic.issue}}" ng-click="main.toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
+                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::comic.image}}.jpg" ng-class="{current: comic.id === comicId}"></img>
                   </a>
                 </li>
               </ul>
@@ -76,20 +75,20 @@
       <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
         {{year}}
         <ul>
-          <li ng-repeat="month in ::months track by month.number" class="month" ng-style='month.styles'>{{month.number}}</li>
+          <li ng-repeat="month in ::months track by month.number" class="month" ng-style='month.styles'>{{::month.number}}</li>
         </ul>
       </li>
     </ul>
     <ul class="comics">
       <li ng-repeat="(index, label) in ::main.seriesVolumeLabels" ng-style="label.containerStyles" class="series-volume-label-container">
-        <div class="series-volume-label truncate" ng-title="{{label.text}}" id="{{label.id}}" ng-style="label.labelStyles" ng-class="{stickyLeft: label.labelClasses.stickyLeft}" ng-if="label.visible">{{label.text}}</div>
+        <div class="series-volume-label truncate" ng-title="{{::label.text}}" id="{{::label.id}}" ng-style="label.labelStyles" ng-class="{stickyLeft: label.labelClasses.stickyLeft}" ng-if="label.visible">{{::label.text}}</div>
       </li>
       <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
         <div class="scroll-anchor"></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
           <div class="panel-left">
-            <a title="#{{comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip">
-              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{comic.image}}.jpg"></img>
+            <a title="#{{::comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip">
+              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::comic.image}}.jpg"></img>
             </a>
             <ul class="pagination">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}" data-toggle="tooltip" title="{{main.prevCollection.title}}">
@@ -116,15 +115,15 @@
           </div>
           <div class="expanded-panel">
             <a ng-if="comic.link" class="marvel-unlimited-link" ng-href="{{comic.link}}" title="Open in Marvel Unlimited"></a>
-            <div class="series">{{comic.series}} #{{comic.issue}}</div>
-            <div class="title" ng-repeat="title in comic.titles">{{title}}</div>
-            <div class="date">{{comic.yearPublished}} / {{comic.monthPublished}}</div>
+            <div class="series">{{::comic.series}} #{{::comic.issue}}</div>
+            <div class="title" ng-repeat="title in ::comic.titles">{{::title}}</div>
+            <div class="date">{{::comic.yearPublished}} / {{::comic.monthPublished}}</div>
             <div class="collection-comics">
-              <div class="collection-title">{{comic.collection.title}}:</div>
+              <div class="collection-title">{{::comic.collection.title}}:</div>
               <ul>
-                <li ng-repeat="collectionComic in comic.collection.allCollectionComics track by collectionComic.id">
-                  <a title="{{collectionComic.series}} #{{collectionComic.issue}}" ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable" data-toggle="tooltip">
-                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{collectionComic.image}}.jpg" ng-class="{current: collectionComic.id === main.expandedComicId}"></img>
+                <li ng-repeat="collectionComic in ::comic.collection.allCollectionComics track by collectionComic.id">
+                  <a title="{{::collectionComic.series}} #{{::collectionComic.issue}}" ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable" data-toggle="tooltip">
+                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::collectionComic.image}}.jpg" ng-class="{current: collectionComic.id === main.expandedComicId}"></img>
                   </a>
                 </li>
               </ul>
