@@ -678,49 +678,48 @@ angular.module('app', ['angular-md5'])
     }
 
     // Expanded panel positioning
-    $expandedComic = $('.expanded .comic');
-    if (!$expandedComic.length) {
-      return;
-    }
+    $timeout(function() {
+      $expandedComic = $('.expanded .comic');
+      if (!$expandedComic.length) {
+        return;
+      }
 
-    var stickyAnchorOffset = $('.expanded .scroll-anchor').offset();
-    anchorTopPosition    = stickyAnchorOffset.top;
-    anchorLeftPosition   = stickyAnchorOffset.left;
-    anchorRightPosition  = stickyAnchorOffset.left + $expandedComic.width();
-    anchorBottomPosition = stickyAnchorOffset.top  + $expandedComic.height();
+      var stickyAnchorOffset = $('.expanded .scroll-anchor').offset();
+      anchorTopPosition    = stickyAnchorOffset.top;
+      anchorLeftPosition   = stickyAnchorOffset.left;
+      anchorRightPosition  = stickyAnchorOffset.left + $expandedComic.width();
+      anchorBottomPosition = stickyAnchorOffset.top  + $expandedComic.height();
 
-    scrollRight  = scrollLeft + $jqWindow.innerWidth();
-    scrollBottom = scrollTop  + $jqWindow.innerHeight();
+      scrollRight  = scrollLeft + $jqWindow.innerWidth();
+      scrollBottom = scrollTop  + $jqWindow.innerHeight();
 
-    isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
-    isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
-    isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
-    isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
+      isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
+      isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
+      isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
+      isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
 
-    expandedComic.classes.stickyTop = isStickyTop;
-    expandedComic.classes.stickyRight = isStickyRight;
-    expandedComic.classes.stickyBottom = isStickyBottom;
-    expandedComic.classes.stickyLeft = isStickyLeft;
+      expandedComic.classes.stickyTop = isStickyTop;
+      expandedComic.classes.stickyRight = isStickyRight;
+      expandedComic.classes.stickyBottom = isStickyBottom;
+      expandedComic.classes.stickyLeft = isStickyLeft;
 
-    if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-      expandedComic.styles.marginLeft = '-' + (scrollLeft + bodyStyle.padding);
-      expandedComic.styles.marginTop = '';
-    } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
-      expandedComic.styles.marginLeft = '';
-      expandedComic.styles.marginTop = '-' + scrollTop;
-    } else {
-      expandedComic.styles.marginLeft = '';
-      expandedComic.styles.marginTop = '';
-    }
+      if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
+        expandedComic.styles.marginLeft = '-' + (scrollLeft + bodyStyle.padding);
+        expandedComic.styles.marginTop = '';
+      } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
+        expandedComic.styles.marginLeft = '';
+        expandedComic.styles.marginTop = '-' + scrollTop;
+      } else {
+        expandedComic.styles.marginLeft = '';
+        expandedComic.styles.marginTop = '';
+      }
 
-    // Force AngularJS to update the DOM
-    $timeout();
-
-    if (doSpeedProfile) {
-      var endTime = new Date();
-      var timeDiff = endTime - startTime;
-      $log.warn('Time to run repositionStickyElements:', timeDiff + 'ms');
-    }
+      if (doSpeedProfile) {
+        var endTime = new Date();
+        var timeDiff = endTime - startTime;
+        $log.warn('Time to run repositionStickyElements:', timeDiff + 'ms');
+      }
+    });
   }
 
   /**
