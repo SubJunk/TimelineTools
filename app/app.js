@@ -453,13 +453,21 @@ angular.module('app', ['angular-md5'])
   // Using $timeout lets Angular play nicer with jQuery
   var infoModal;
   var infoModalInstance;
+  var featureDiscovery;
+  var featureDiscoveryInstances;
   $timeout(function() {
     bodyStyle.width += $('.scroll-anchor').width();
     bodyStyle.height = (globalVerticalPositionCounter * verticalIncrement);
     $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
     $('.fixed-action-btn').floatingActionButton({direction: 'left'});
-    infoModal = document.querySelectorAll('#info');
+
+    // Initialize the Modal feature of MaterializeCSS
+    infoModal = $('#info');
     infoModalInstance = M.Modal.init(infoModal)[0];
+
+    // Initialize the FeatureDiscovery feature of MaterializeCSS
+    featureDiscovery = $('.tap-target');
+    featureDiscoveryInstances = M.TapTarget.init(featureDiscovery);
   });
 
   vm.toggleInfoModal = function() {
@@ -468,6 +476,11 @@ angular.module('app', ['angular-md5'])
     } else {
       infoModalInstance.open();
     }
+  }
+
+  vm.nextWizardStep = function(currentStep) {
+    $('#wizard-step-' + currentStep).tapTarget('close');
+    $('#wizard-step-' + (currentStep + 1)).tapTarget('open');
   }
 
   // Render collections as groups of comics

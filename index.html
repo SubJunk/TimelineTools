@@ -9,6 +9,22 @@
     <title>TimelineTools</title>
   </head>
   <body ng-controller="DataController as main" ng-style='main.bodyStyle' class="ng-cloak">
+    <a class="waves-effect waves-light btn" ng-click="main.nextWizardStep(0)">Start wizard</a>
+    <div id="wizard-step-1" class="tap-target" data-target="floating-menu">
+      <div class="tap-target-content">
+        <h5>Menu</h5>
+        <small>Step 1 of 3</small>
+        <p>From this menu you can toggle the display of collections, and view the credits which include links to other awesome websites!</p>
+        <a class="waves-effect waves-light btn" ng-click="main.nextWizardStep(1)">Next</a>
+      </div>
+    </div>
+    <div id="wizard-step-2" class="tap-target" data-target="WolverineVol290">
+      <div class="tap-target-content">
+        <h5>Menu</h5>
+        <small>Step 2 of 3</small>
+        <p>From this menu you can toggle the display of collections, and view the credits which include links to other awesome websites!</p>
+      </div>
+    </div>
     <div id="info" class="modal modal-fixed-footer">
       <div class="modal-content">
         <h4>Info & Credits</h4>
@@ -32,7 +48,7 @@
         <a ng-click="main.toggleInfoModal()" class="modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
     </div>
-    <div class="fixed-action-btn" ng-cloak>
+    <div class="fixed-action-btn" id="floating-menu">
       <a class="btn-floating btn-large red"><i class="large material-icons">menu</i></a>
       <ul>
         <li>
@@ -84,7 +100,7 @@
       <li ng-repeat="(index, label) in ::main.seriesVolumeLabels" ng-style="label.containerStyles" class="series-volume-label-container">
         <div class="series-volume-label truncate" ng-title="{{label.text}}" id="{{label.id}}" ng-style="label.labelStyles" ng-class="{stickyLeft: label.labelClasses.stickyLeft}" ng-if="label.visible">{{label.text}}</div>
       </li>
-      <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
+      <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles" id="{{comic.id}}">
         <div class="scroll-anchor"></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
           <div class="panel-left">
