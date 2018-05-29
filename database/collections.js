@@ -2163,7 +2163,82 @@ collections.push(
     'Cable: The Nemesis Contract',
     '2018-1-10',
     [
-      'CableVol164'
+      'CableVol164',
+      'CableVol165'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Magneto War',
+    '2018-10-23',
+    [
+      'XMenVol285',
+      'XMENTHEMAGNETOWAR1Vol11',
+      'UncannyXMenVol1366',
+      'XMenVol286',
+      'UncannyXMenVol1367',
+      'XMenVol287'
+    ]
+  ),
+  new Collection(
+    'Cable: The Nemesis Contract',
+    '2018-1-10',
+    [
+      'CableVol166',
+      'CableVol167',
+      'CableVol168',
+      'CableVol169',
+      'CableVol170'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Magneto War',
+    '2018-10-23',
+    [
+      'XMenUnlimitedVol123',
+      'UncannyXMenVol1368',
+      'XMenVol288',
+      'UncannyXMenVol1369',
+      'MagnetoRexVol11',
+      'MagnetoRexVol12',
+      'MagnetoRexVol13',
+      'XMenVol289',
+      'UncannyXMenVol1370',
+      'XMenVol290',
+      'UncannyXMenVol1371',
+      'XMenVol291',
+      'XMenAnnualVol41'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
+    '2017-2-1',
+    [
+      'WolverineVol2140'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Magneto War',
+    '2018-10-23',
+    [
+      'XMenUnlimitedVol124'
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
+    '2017-2-1',
+    [
+      'WolverineVol2141',
+      'WolverineVol2142',
+      'WolverineVol2143',
+      'IncredibleHulkVol28',
+      'WolverineVol2144'
+    ]
+  ),
+  new Collection(
+    'Cable: The Nemesis Contract',
+    '2018-1-10',
+    [
+      'CableAnnualVol11'
     ]
   ),
   /**
@@ -2173,30 +2248,11 @@ collections.push(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
-      'WolverineVol2140',
-      'WolverineVol2141',
-      'WolverineVol2142',
-      'WolverineVol2143',
-      'WolverineVol2144',
       'WolverineVol2145',
       'WolverineVol2146',
       'WolverineVol2147',
       'WolverineVol2148',
-      'WolverineVol2149',
-      'IncredibleHulkVol28',
-    ]
-  ),
-  new Collection(
-    'Cable: The Nemesis Contract',
-    '2018-1-10',
-    [
-      'CableVol165',
-      'CableVol166',
-      'CableVol167',
-      'CableVol168',
-      'CableVol169',
-      'CableVol170',
-      'CableAnnualVol11'
+      'WolverineVol2149'
     ]
   ),
   new Collection(

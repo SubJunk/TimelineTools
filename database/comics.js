@@ -325,7 +325,7 @@ addComicsInSeriesVolume('IncredibleHulkVol2', [
 ])
 addComicsInSeriesVolume('IronFistVol1', [
   [14, '1977-8', ['Snowfire']],
-  [15, '1977-9', ['Enter, the X-Men']],
+  [15, '1977-9', ['Enter, the X-Men']]
 ])
 addComicsInSeriesVolume('IronManVol1', [
   [332, '1996-9']
@@ -335,14 +335,19 @@ addComicsInSeriesVolume('MagikVol1', [
   [1, '1983-12'],
   [2, '1984-1'],
   [3, '1984-2'],
-  [4, '1984-3'],
+  [4, '1984-3']
+])
+addComicsInSeriesVolume('MagnetoRexVol1', [
+  [1, '1999-5'],
+  [2, '1999-6'],
+  [3, '1999-7']
 ])
 addComicsInSeriesVolume('MarvelGraphicNovelVol1', [[5, '1983-1']])
 addComicsInSeriesVolume('MarvelTeamUpVol1', [
   [1976, '1976-12', ['The Lords of Light and Darkness!']],
   [53,   '1977-1', ['Nightmare in New Mexico!']],
   [69,   '1978-5', ['Night of the Living God!']],
-  [70,   '1978-6', ['Whom Gods Destroy!']],
+  [70,   '1978-6', ['Whom Gods Destroy!']]
 ])
 addComicsInSeriesVolume('NewMutantsVol1', [
   [46, '1986-12'],
@@ -722,6 +727,12 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [363, '1999-1-10'],
   [364, '1999-1-20'],
   [365, '1999-2'],
+  [366, '1999-3'],
+  [367, '1999-4'],
+  [368, '1999-5'],
+  [369, '1999-6'],
+  [370, '1999-7'],
+  [371, '1999-8'],
 /**
  * Complete until here
  */
@@ -1009,6 +1020,7 @@ addComicsInSeriesVolume('XManVol1', [
   [54, '1999-8']
 ])
 addComicsInSeriesVolume('XManAnnualVol1', [[1, '1996-12']])
+addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']])
 addComicsInSeriesVolume('XMenVol2', [
   [-1, '1997-7'],
   [0.5, '1998-1'],
@@ -1091,7 +1103,14 @@ addComicsInSeriesVolume('XMenVol2', [
   [81, '1998-11'],
   [82, '1998-12'],
   [83, '1999-1'],
-  [84, '1999-2']
+  [84, '1999-2'],
+  [85, '1999-3'],
+  [86, '1999-4-1'],
+  [87, '1999-4-16'],
+  [88, '1999-5'],
+  [89, '1999-6'],
+  [90, '1999-7'],
+  [91, '1999-8']
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
@@ -1130,6 +1149,7 @@ addComicsInSeriesVolume('XMenAnnualVol2', [
   [5, '1996-11']
 ])
 addComicsInSeriesVolume('XMenAnnualVol3', [[1, '1995-10']])
+addComicsInSeriesVolume('XMenAnnualVol4', [[1, '1999-8']])
 addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']])
 addComicsInSeriesVolume('XMenChroniclesVol1', [
   [1, '1995-3'],
@@ -1180,7 +1200,9 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [11, '1996-6'],
   [17, '1997-12'],
   [18, '1998-4'],
-  [22, '1999-3']
+  [22, '1999-3'],
+  [23, '1999-6'],
+  [24, '1999-9']
 ])
 addComicsInSeriesVolume('XMenvsBroodVol1', [
   [1, '1996-9'],
