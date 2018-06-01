@@ -475,9 +475,6 @@ angular.module('app', ['angular-md5'])
     // Make room for the farthest-bottom expanded panel
     bodyStyles.height = $(document).height() + $(window).height();
 
-    // Init tooltips
-    $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
-
     // Init floating menu on the right
     $('.fixed-action-btn').floatingActionButton({direction: 'left'});
 
@@ -873,9 +870,10 @@ angular.module('app', ['angular-md5'])
 
     var comicsIterator = 0;
     var pushComicChunkToVm = function() {
-      for (var i = comicsIterator; i < (comicsIterator + COMIC_CHUNKS); i++) {
-        if (comics[i]) {
-          vm.comics.push(comics[i]);
+      var currentChunkEnd = comicsIterator + COMIC_CHUNKS;
+      for (var currentChunkIterator = comicsIterator; currentChunkIterator < currentChunkEnd; currentChunkIterator++) {
+        if (comics[currentChunkIterator]) {
+          vm.comics.push(comics[currentChunkIterator]);
           continue;
         }
 
@@ -885,7 +883,7 @@ angular.module('app', ['angular-md5'])
          * iterator to the accurate number since it is currently
          * chunked, then stop the loop.
          */
-        comicsIterator = i;
+        comicsIterator = currentChunkIterator;
         break;
       }
     };
@@ -896,6 +894,9 @@ angular.module('app', ['angular-md5'])
         $("#loader").hide();
         $("body").css(bodyStyles);
         $("#app").show();
+
+        // Init tooltips
+        $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
         return;
       }
 
