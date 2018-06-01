@@ -863,10 +863,10 @@ angular.module('app', ['angular-md5'])
    */
   {
     // How many comics to add per loop
-    const COMIC_CHUNKS = 10;
+    var COMIC_CHUNKS = 10;
 
     // How many milliseconds delay between chunks
-    const COMIC_LOOP_DELAY = 1;
+    var COMIC_LOOP_DELAY = 1;
 
     var comicsIterator = 0;
     var pushComicChunkToVm = function() {
