@@ -465,32 +465,6 @@ angular.module('app', ['angular-md5'])
     $log.warn('Time to run initial db loop:', timeDiff + 'ms');
   }
 
-  // Using $timeout lets Angular play nicer with jQuery
-  var infoModal;
-  var infoModalInstance;
-  $timeout(function() {
-    // Make room for the farthest-right expanded panel
-    bodyStyles.width += $('.scroll-anchor').width();
-
-    // Make room for the farthest-bottom expanded panel
-    bodyStyles.height = $(document).height() + $(window).height();
-
-    // Init floating menu on the right
-    $('.fixed-action-btn').floatingActionButton({direction: 'left'});
-
-    // Init "Info & Credits" modal
-    infoModal = document.querySelectorAll('#info');
-    infoModalInstance = M.Modal.init(infoModal)[0];
-  });
-
-  vm.toggleInfoModal = function() {
-    if (infoModalInstance.isOpen) {
-      infoModalInstance.close();
-    } else {
-      infoModalInstance.open();
-    }
-  }
-
   // Render collections as groups of comics
   var collectionColorsIndex = {};
   var comicIndex;
@@ -891,13 +865,7 @@ angular.module('app', ['angular-md5'])
     var pushComicChunkToVmFactory = function() {
       // If we have finished looping, toggle the loader
       if (comicsIterator === comics.length) {
-        $("#loader").hide();
-        $("body").css(bodyStyles);
-        $("#app").show();
-
-        // Init tooltips
-        $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
-        return;
+        return finishedLoading();
       }
 
       // Update the loop iterator for the next chunk
@@ -915,6 +883,41 @@ angular.module('app', ['angular-md5'])
 
     // Initialize the chunk pushing factory
     pushComicChunkToVmFactory();
+  }
+
+  var infoModalInstance;
+  var finishedLoading = function() {
+    $timeout(function() {
+      $("#loader").hide();
+      $("body").css(bodyStyles);
+      $("#app").show();
+
+      // Init tooltips
+      $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
+
+      // Using $timeout lets Angular play nicer with jQuery
+      var infoModal;
+      // Make room for the farthest-right expanded panel
+      bodyStyles.width += $('.scroll-anchor').width();
+  
+      // Make room for the farthest-bottom expanded panel
+      bodyStyles.height = $(document).height() + $(window).height();
+  
+      // Init floating menu on the right
+      $('.fixed-action-btn').floatingActionButton({direction: 'left'});
+  
+      // Init "Info & Credits" modal
+      infoModal = document.querySelectorAll('#info');
+      infoModalInstance = M.Modal.init(infoModal)[0];
+    });
+  };
+
+  vm.toggleInfoModal = function() {
+    if (infoModalInstance.isOpen) {
+      infoModalInstance.close();
+    } else {
+      infoModalInstance.open();
+    }
   }
 
   // Expand the comic from the URL on load
