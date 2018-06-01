@@ -859,28 +859,32 @@ angular.module('app', ['angular-md5'])
   vm.bodyStyles = bodyStyles;
   vm.seriesVolumeLabels = seriesVolumeLabels;
 
-  var comicIterator = 0;
-  var comicIterato2 = 0;
-  _.each(comics, function(comic) {
-    if (comicIterator === 0) {
-      vm.comics.push(comic);
-    } else {
-      $timeout(function() {
-        vm.comics.push(comic);
-      }, comicIterato2);
+  var comicsIterator = 0;
+  var comicChunks = 10;
+  var pushComicChunkToVm = function() {
+    for (var i = comicsIterator; i < (comicsIterator + comicChunks); i++) {
+      if (comics[i]) {
+        vm.comics.push(comics[i]);
+      } else {
+      comicsIterator = i;
+      break;
+      }
     }
-    console.log(comicIterator, comics.length);
+  };
 
-    if (comicIterator === (comics.length - 1)) {
-      $timeout(function() {
-        $("#loader").hide();
-        $("body").css(bodyStyles);
-        $("#app").show();
-      });
+  var loop = function() {
+    if (comicsIterator === comics.length) {
+      $("#loader").hide();
+      $("body").css(bodyStyles);
+      $("#app").show();
+      return;
     }
-    comicIterator++;
-    comicIterato2 = comicIterato2 + 8;
-  });
+    comicsIterator += comicChunks;
+    $timeout(loop, 2);
+    pushComicChunkToVm();
+  };
+  pushComicChunkToVm();
+  loop();
 
   // Expand the comic from the URL on load
   if ($location.search()) {
