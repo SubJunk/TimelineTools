@@ -10,11 +10,13 @@ angular.module('app', ['angular-md5'])
   var collections   = $window.collections;
   var series        = $window.series;
   var seriesVolumes = $window.seriesVolumes;
+  var hasLoaded     = false;
 
   var globalVerticalPositionCounter = 0;
   var bodyStyles = {
     width: null,
     padding: 20
+    background: hsl(216, 8%, 25%);
   };
   var seriesVolumeLabels = [];
 
@@ -921,6 +923,12 @@ angular.module('app', ['angular-md5'])
       if (isClean) {
         $log.info(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
       }
+
     }
+      $timeout(function() {
+        $("#loader").hide();
+        $("body").css(bodyStyles);
+        $("#app").show();
+    });
   }
 });
