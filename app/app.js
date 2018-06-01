@@ -859,32 +859,62 @@ angular.module('app', ['angular-md5'])
   vm.bodyStyles = bodyStyles;
   vm.seriesVolumeLabels = seriesVolumeLabels;
 
-  var comicsIterator = 0;
-  var comicChunks = 10;
-  var pushComicChunkToVm = function() {
-    for (var i = comicsIterator; i < (comicsIterator + comicChunks); i++) {
-      if (comics[i]) {
-        vm.comics.push(comics[i]);
-      } else {
-      comicsIterator = i;
-      break;
-      }
-    }
-  };
+  /**
+   * This chunk limits the flow of comics being added to the
+   * DOM, which is needed to stop the loading spinner from
+   * freezing while it loads.
+   */
+  {
+    // How many comics to add per loop
+    const COMIC_CHUNKS = 10;
 
-  var loop = function() {
-    if (comicsIterator === comics.length) {
-      $("#loader").hide();
-      $("body").css(bodyStyles);
-      $("#app").show();
-      return;
-    }
-    comicsIterator += comicChunks;
-    $timeout(loop, 2);
+    // How many milliseconds delay between chunks
+    const COMIC_LOOP_DELAY = 1;
+
+    var comicsIterator = 0;
+    var pushComicChunkToVm = function() {
+      for (var i = comicsIterator; i < (comicsIterator + COMIC_CHUNKS); i++) {
+        if (comics[i]) {
+          vm.comics.push(comics[i]);
+          continue;
+        }
+
+        /**
+         * We get here if the comic doesn't exist, which means
+         * we reached the end of our comics. We set the comic
+         * iterator to the accurate number since it is currently
+         * chunked, then stop the loop.
+         */
+        comicsIterator = i;
+        break;
+      }
+    };
+
+    var pushComicChunkToVmFactory = function() {
+      // If we have finished looping, toggle the loader
+      if (comicsIterator === comics.length) {
+        $("#loader").hide();
+        $("body").css(bodyStyles);
+        $("#app").show();
+        return;
+      }
+
+      // Update the loop iterator for the next chunk
+      comicsIterator += COMIC_CHUNKS;
+
+      // Run this function again after a delay
+      $timeout(pushComicChunkToVmFactory, COMIC_LOOP_DELAY);
+
+      // Push the next chunk of comics to the DOM
+      pushComicChunkToVm();
+    };
+
+    // Do this first comic chunk instantly
     pushComicChunkToVm();
-  };
-  pushComicChunkToVm();
-  loop();
+
+    // Initialize the chunk pushing factory
+    pushComicChunkToVmFactory();
+  }
 
   // Expand the comic from the URL on load
   if ($location.search()) {
