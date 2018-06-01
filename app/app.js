@@ -10,13 +10,12 @@ angular.module('app', ['angular-md5'])
   var collections   = $window.collections;
   var series        = $window.series;
   var seriesVolumes = $window.seriesVolumes;
-  var hasLoaded     = false;
 
   var globalVerticalPositionCounter = 0;
   var bodyStyles = {
     width: null,
-    padding: 20
-    background: hsl(216, 8%, 25%);
+    padding: 20,
+    background: 'hsl(216, 8%, 25%)'
   };
   var seriesVolumeLabels = [];
 
@@ -849,7 +848,7 @@ angular.module('app', ['angular-md5'])
   });
 
   // Pass our transformed db objects to the view
-  vm.comics            = comics;
+  vm.comics            = [];
   vm.collections       = collections;
   vm.uniqueCollections = uniqueCollections;
   vm.series            = series;
@@ -859,6 +858,29 @@ angular.module('app', ['angular-md5'])
   vm.dates = dates;
   vm.bodyStyles = bodyStyles;
   vm.seriesVolumeLabels = seriesVolumeLabels;
+
+  var comicIterator = 0;
+  var comicIterato2 = 0;
+  _.each(comics, function(comic) {
+    if (comicIterator === 0) {
+      vm.comics.push(comic);
+    } else {
+      $timeout(function() {
+        vm.comics.push(comic);
+      }, comicIterato2);
+    }
+    console.log(comicIterator, comics.length);
+
+    if (comicIterator === (comics.length - 1)) {
+      $timeout(function() {
+        $("#loader").hide();
+        $("body").css(bodyStyles);
+        $("#app").show();
+      });
+    }
+    comicIterator++;
+    comicIterato2 = comicIterato2 + 8;
+  });
 
   // Expand the comic from the URL on load
   if ($location.search()) {
@@ -923,12 +945,6 @@ angular.module('app', ['angular-md5'])
       if (isClean) {
         $log.info(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
       }
-
     }
-      $timeout(function() {
-        $("#loader").hide();
-        $("body").css(bodyStyles);
-        $("#app").show();
-    });
   }
 });
