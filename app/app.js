@@ -877,7 +877,7 @@ angular.module('app', ['angular-md5'])
       // Push the next chunk of comics to the DOM
       pushComicChunkToVm();
 
-      //Update the loader
+      // Update the loader
       $("#load-percent").text(((comicsIterator / comics.length) * 100).toFixed(0) + '%');
     };
 
@@ -893,10 +893,8 @@ angular.module('app', ['angular-md5'])
     $timeout(function() {
       $("#loader").hide();
       $("body").css(bodyStyles);
-      $("#app").show();      
+      $("#app").show();
 
-      // Using $timeout lets Angular play nicer with jQuery
-      var infoModal;
       // Make room for the farthest-right expanded panel
       bodyStyles.width += $('.scroll-anchor').width();
 
@@ -907,7 +905,7 @@ angular.module('app', ['angular-md5'])
       $('.fixed-action-btn').floatingActionButton({direction: 'left'});
 
       // Init "Info & Credits" modal
-      infoModal = document.querySelectorAll('#info');
+      var infoModal = $('#info');
       infoModalInstance = M.Modal.init(infoModal)[0];
 
       /**
