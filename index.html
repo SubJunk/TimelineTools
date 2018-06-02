@@ -9,7 +9,10 @@
   <title>TimelineTools</title>
 </head>
 <body ng-style="main.bodyStyle">
-  <img id="loader" src="images/loader.gif">
+  <div id="loader">
+    <div id="load-percent">
+    </div>
+  </div>
   <div id="app" ng-controller="DataController as main">
     <div id="info" class="modal modal-fixed-footer">
       <div class="modal-content">

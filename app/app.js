@@ -837,7 +837,7 @@ angular.module('app', ['angular-md5'])
    */
   {
     // How many comics to add per loop
-    var COMIC_CHUNKS = 10;
+    var COMIC_CHUNKS = 20;
 
     // How many milliseconds delay between chunks
     var COMIC_LOOP_DELAY = 1;
@@ -876,6 +876,9 @@ angular.module('app', ['angular-md5'])
 
       // Push the next chunk of comics to the DOM
       pushComicChunkToVm();
+
+      //Update the loader
+      $("#load-percent").text(((comicsIterator / comics.length) * 100).toFixed(0) + '%');
     };
 
     // Do this first comic chunk instantly
@@ -890,25 +893,31 @@ angular.module('app', ['angular-md5'])
     $timeout(function() {
       $("#loader").hide();
       $("body").css(bodyStyles);
-      $("#app").show();
-
-      // Init tooltips
-      $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
+      $("#app").show();      
 
       // Using $timeout lets Angular play nicer with jQuery
       var infoModal;
       // Make room for the farthest-right expanded panel
       bodyStyles.width += $('.scroll-anchor').width();
-  
+
       // Make room for the farthest-bottom expanded panel
       bodyStyles.height = $(document).height() + $(window).height();
-  
+
       // Init floating menu on the right
       $('.fixed-action-btn').floatingActionButton({direction: 'left'});
-  
+
       // Init "Info & Credits" modal
       infoModal = document.querySelectorAll('#info');
       infoModalInstance = M.Modal.init(infoModal)[0];
+
+      /**
+       * The extra timeout is here because without it, 
+       * the tooltips initialization freezes the rest of the execution
+       */
+      $timeout(function() {
+        // Init tooltips
+        $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
+      });
     });
   };
 
