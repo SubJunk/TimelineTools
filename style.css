@@ -12,9 +12,32 @@
 }
 
 body {
-  background: hsl(216, 8%, 25%);
+  background: hsl(0, 0%, 15%);
   overflow: auto;
   padding: 20px;
+}
+
+#app {
+  display: none;
+}
+
+#loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400;
+  height: 400;
+  background-image: url('images/loader.gif');
+  transform: perspective(1px) translate(-50%, -50%);
+}
+
+#load-percent{
+    position:absolute;
+    color: ccc;
+    top: 50%;
+    left: 50%;
+    font-size: large;
+    transform: perspective(1px) translate(-50%, -50%);
 }
 
 .truncate {
@@ -25,7 +48,7 @@ body {
 
 .year {
   display: inline-block;
-  color: #ccc;  
+  color: #ccc;
 }
 
 .month {
@@ -122,7 +145,7 @@ body {
 }
 
 .comic-container .marvel-unlimited-link {
-  background-image: url('icons/marvel-unlimited.png');
+  background-image: url('images/marvel-unlimited.png');
   background-size: contain;
   display: block;
   width: 40px;

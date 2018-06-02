@@ -1,14 +1,19 @@
 <html ng-app="app">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="icons/x-men.ico" type="image/x-icon">
-    <title>TimelineTools</title>
-  </head>
-  <body ng-controller="DataController as main" ng-style='main.bodyStyles' class="ng-cloak">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/x-men.ico" type="image/x-icon">
+  <title>TimelineTools</title>
+</head>
+<body ng-style="main.bodyStyle">
+  <div id="loader">
+    <div id="load-percent">
+    </div>
+  </div>
+  <div id="app" ng-controller="DataController as main">
     <div id="info" class="modal modal-fixed-footer">
       <div class="modal-content">
         <h4>Info & Credits</h4>
@@ -144,5 +149,6 @@
     <script src="database/collections.js" charset="utf-8"></script>
     <script src="config.js" charset="utf-8"></script>
     <script src="app/app.js" charset="utf-8"></script>
-  </body>
+  </div>
+</body>
 </html>

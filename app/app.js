@@ -14,7 +14,8 @@ angular.module('app', ['angular-md5'])
   var globalVerticalPositionCounter = 0;
   var bodyStyles = {
     width: null,
-    padding: 20
+    padding: 20,
+    background: 'hsl(216, 8%, 25%)'
   };
   var seriesVolumeLabels = [];
 
@@ -464,35 +465,6 @@ angular.module('app', ['angular-md5'])
     $log.warn('Time to run initial db loop:', timeDiff + 'ms');
   }
 
-  // Using $timeout lets Angular play nicer with jQuery
-  var infoModal;
-  var infoModalInstance;
-  $timeout(function() {
-    // Make room for the farthest-right expanded panel
-    bodyStyles.width += $('.scroll-anchor').width();
-
-    // Make room for the farthest-bottom expanded panel
-    bodyStyles.height = $(document).height() + $(window).height();
-
-    // Init tooltips
-    $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
-
-    // Init floating menu on the right
-    $('.fixed-action-btn').floatingActionButton({direction: 'left'});
-
-    // Init "Info & Credits" modal
-    infoModal = document.querySelectorAll('#info');
-    infoModalInstance = M.Modal.init(infoModal)[0];
-  });
-
-  vm.toggleInfoModal = function() {
-    if (infoModalInstance.isOpen) {
-      infoModalInstance.close();
-    } else {
-      infoModalInstance.open();
-    }
-  }
-
   // Render collections as groups of comics
   var collectionColorsIndex = {};
   var comicIndex;
@@ -847,7 +819,7 @@ angular.module('app', ['angular-md5'])
   });
 
   // Pass our transformed db objects to the view
-  vm.comics            = comics;
+  vm.comics            = [];
   vm.collections       = collections;
   vm.uniqueCollections = uniqueCollections;
   vm.series            = series;
@@ -857,6 +829,103 @@ angular.module('app', ['angular-md5'])
   vm.dates = dates;
   vm.bodyStyles = bodyStyles;
   vm.seriesVolumeLabels = seriesVolumeLabels;
+
+  /**
+   * This chunk limits the flow of comics being added to the
+   * DOM, which is needed to stop the loading spinner from
+   * freezing while it loads.
+   */
+  {
+    // How many comics to add per loop
+    var COMIC_CHUNKS = 20;
+
+    // How many milliseconds delay between chunks
+    var COMIC_LOOP_DELAY = 1;
+
+    var comicsIterator = 0;
+    var pushComicChunkToVm = function() {
+      var currentChunkEnd = comicsIterator + COMIC_CHUNKS;
+      for (var currentChunkIterator = comicsIterator; currentChunkIterator < currentChunkEnd; currentChunkIterator++) {
+        if (comics[currentChunkIterator]) {
+          vm.comics.push(comics[currentChunkIterator]);
+          continue;
+        }
+
+        /**
+         * We get here if the comic doesn't exist, which means
+         * we reached the end of our comics. We set the comic
+         * iterator to the accurate number since it is currently
+         * chunked, then stop the loop.
+         */
+        comicsIterator = currentChunkIterator;
+        break;
+      }
+    };
+
+    var pushComicChunkToVmFactory = function() {
+      // If we have finished looping, toggle the loader
+      if (comicsIterator === comics.length) {
+        return finishedLoading();
+      }
+
+      // Update the loop iterator for the next chunk
+      comicsIterator += COMIC_CHUNKS;
+
+      // Run this function again after a delay
+      $timeout(pushComicChunkToVmFactory, COMIC_LOOP_DELAY);
+
+      // Push the next chunk of comics to the DOM
+      pushComicChunkToVm();
+
+      // Update the loader
+      $("#load-percent").text(((comicsIterator / comics.length) * 100).toFixed(0) + '%');
+    };
+
+    // Do this first comic chunk instantly
+    pushComicChunkToVm();
+
+    // Initialize the chunk pushing factory
+    pushComicChunkToVmFactory();
+  }
+
+  var infoModalInstance;
+  var finishedLoading = function() {
+    $timeout(function() {
+      $("#loader").hide();
+      $("body").css(bodyStyles);
+      $("#app").show();
+
+      // Make room for the farthest-right expanded panel
+      bodyStyles.width += $('.scroll-anchor').width();
+
+      // Make room for the farthest-bottom expanded panel
+      bodyStyles.height = $(document).height() + $(window).height();
+
+      // Init floating menu on the right
+      $('.fixed-action-btn').floatingActionButton({direction: 'left'});
+
+      // Init "Info & Credits" modal
+      var infoModal = $('#info');
+      infoModalInstance = M.Modal.init(infoModal)[0];
+
+      /**
+       * The extra timeout is here because without it, 
+       * the tooltips initialization freezes the rest of the execution
+       */
+      $timeout(function() {
+        // Init tooltips
+        $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
+      });
+    });
+  };
+
+  vm.toggleInfoModal = function() {
+    if (infoModalInstance.isOpen) {
+      infoModalInstance.close();
+    } else {
+      infoModalInstance.open();
+    }
+  }
 
   // Expand the comic from the URL on load
   if ($location.search()) {

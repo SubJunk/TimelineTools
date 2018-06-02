@@ -15,7 +15,8 @@
       "eslint:recommended"
     ],
     "globals": {
-      "_": true
+      "_": true,
+      "M": true
     },
     "rules": {
       "angular/angularelement": "off",
