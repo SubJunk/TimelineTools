@@ -1931,6 +1931,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Operation: Zero Tolerance',
+    '2008-8-15',
+    [
+      'XForceVol170'
+    ]
+  ),
+  new Collection(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
@@ -1970,7 +1977,6 @@ collections.push(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
-      'XForceVol170',
       'XMenVol270'
     ]
   ),
@@ -1978,7 +1984,8 @@ collections.push(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
-      'DeadpoolVol211'
+      'DeadpoolVol211',
+      'DeadpoolVol212'
     ]
   ),
   new Collection(
@@ -2034,7 +2041,6 @@ collections.push(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
-      'DeadpoolVol212',
       'DeadpoolVol213'
     ]
   ),
