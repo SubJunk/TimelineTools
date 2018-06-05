@@ -2295,6 +2295,23 @@ collections.push(
       'CableAnnualVol11'
     ]
   ),
+  new Collection(
+    'X-Men: The Shattering',
+    '2009-7-8',
+    [
+      'UncannyXMenVol1372',
+      'XMenVol292',
+      'AstonishingXMenVol21',
+      'AstonishingXMenVol22',
+      'AstonishingXMenVol23',
+      'UncannyXMenVol1373',
+      'UncannyXMenVol1374',
+      'XMenVol293',
+      'XMenVol294',
+      'UncannyXMenVol1375',
+      'XMenVol295'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */

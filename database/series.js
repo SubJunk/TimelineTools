@@ -58,7 +58,7 @@ series.push(
   new Series('Archangel', {1: 1996}),
   new Series('Askani\'son', {1: 1996}),
   new Series('Amazing X-Men', {1: 1995}),
-  new Series('Astonishing X-Men', {1: 1995}),
+  new Series('Astonishing X-Men', {1: 1995, 2: 1999}),
   new Series('Avengers', {1: 1963}),
   new Series('Avengers West Coast', {2: 1985}),
   new Series('Avengers Annual', {1: 1967}),

@@ -69,6 +69,11 @@ addComicsInSeriesVolume('AstonishingXMenVol1', [
   [3, '1995-5'],
   [4, '1995-6']
 ])
+addComicsInSeriesVolume('AstonishingXMenVol2', [
+  [1, '1999-9'],
+  [2, '1999-10'],
+  [3, '1999-11']
+])
 addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']])
 addComicsInSeriesVolume('AvengersVol1', [
   [263, '1986-1-10'],
@@ -733,6 +738,10 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [369, '1999-6'],
   [370, '1999-7'],
   [371, '1999-8'],
+  [372, '1999-9'],
+  [373, '1999-10'],
+  [374, '1999-11'],
+  [375, '1999-12'],
 /**
  * Complete until here
  */
@@ -1110,7 +1119,11 @@ addComicsInSeriesVolume('XMenVol2', [
   [88, '1999-5'],
   [89, '1999-6'],
   [90, '1999-7'],
-  [91, '1999-8']
+  [91, '1999-8'],
+  [92, '1999-9'],
+  [93, '1999-10'],
+  [94, '1999-11'],
+  [95, '1999-12']
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
