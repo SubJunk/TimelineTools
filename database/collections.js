@@ -2126,6 +2126,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolandDeathAnnualVol11',
+      'DeadpoolVol218'
+    ]
+  ),
+  new Collection(
     'Cable: The Hellfire Hunt',
     '2017-11-15',
     [
@@ -2140,6 +2148,14 @@ collections.push(
       'UncannyXMenVol1358',
       'UncannyXMenVol1359',
       'UncannyXMenFantasticFourAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolVol219',
+      'DeadpoolVol220'
     ]
   ),
   new Collection(
@@ -2160,6 +2176,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolVol221',
+      'DeadpoolVol222'
+    ]
+  ),
+  new Collection(
     'X-Men: The Hunt for Professor X',
     '2015-6-17',
     [
@@ -2174,6 +2198,14 @@ collections.push(
       'UncannyXMenVol1364',
       'XMenVol284',
       'XMenUnlimitedVol122'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolVol223',
+      'DeadpoolVol224'
     ]
   ),
   new Collection(
@@ -2196,6 +2228,13 @@ collections.push(
       'XManVol146',
       'CableVol163',
       'XManVol147'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolVol225'
     ]
   ),
   new Collection(
@@ -2358,21 +2397,6 @@ collections.push(
       'XForceSexandViolenceVol11',
       'XForceSexandViolenceVol12',
       'XForceSexandViolenceVol13'
-    ]
-  ),
-  new Collection(
-    'Deadpool Classic Vol. 4',
-    '2011-1-19',
-    [
-      'DeadpoolandDeathAnnualVol11',
-      'DeadpoolVol218',
-      'DeadpoolVol219',
-      'DeadpoolVol220',
-      'DeadpoolVol221',
-      'DeadpoolVol222',
-      'DeadpoolVol223',
-      'DeadpoolVol224',
-      'DeadpoolVol225'
     ]
   ),
   new Collection(
