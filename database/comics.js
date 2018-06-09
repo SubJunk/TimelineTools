@@ -355,6 +355,10 @@ addComicsInSeriesVolume('MarvelTeamUpVol1', [
   [70,   '1978-6', ['Whom Gods Destroy!']]
 ])
 addComicsInSeriesVolume('NewMutantsVol1', [
+  [26, '1985-4'],
+  [27, '1985-5'],
+  [28, '1985-6'],
+  [44, '1986-10'],
   [46, '1986-12'],
   [55, '1987-9'],
   [56, '1987-10'],

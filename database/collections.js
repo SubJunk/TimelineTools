@@ -226,7 +226,22 @@ collections.push(
       'XMenAnnualVol18',
       'XMenAlphaFlightVol11',
       'XMenAlphaFlightVol12',
-      'UncannyXMenVol1193',
+      'UncannyXMenVol1193'
+    ]
+  ),
+  new Collection(
+    'X-Men: Legion - Shadow King Rising (Partial)',
+    '2018-1-17',
+    [
+      'NewMutantsVol126',
+      'NewMutantsVol127',
+      'NewMutantsVol128'
+    ]
+  ),
+  new Collection(
+    'X-Men Epic Collection Vol. 12: The Gift',
+    '2016-1',
+    [
       'UncannyXMenVol1194',
       'UncannyXMenVol1195',
       'UncannyXMenVol1196',
@@ -263,7 +278,20 @@ collections.push(
       'UncannyXMenVol1202',
       'UncannyXMenVol1203',
       'UncannyXMenVol1204',
-      'UncannyXMenVol1205',
+      'UncannyXMenVol1205'
+    ]
+  ),
+  new Collection(
+    'X-Men: Legion - Shadow King Rising (Partial)',
+    '2018-1-17',
+    [
+      'NewMutantsVol144'
+    ]
+  ),
+  new Collection(
+    'X-Men: Ghosts',
+    '2013-5',
+    [
       'UncannyXMenVol1206',
       'UncannyXMenVol1207',
       'UncannyXMenVol1208',
