@@ -21,12 +21,19 @@
     "rules": {
       "angular/angularelement": "off",
       "angular/controller-as-vm": "off",
-      "angular/window-service": "off"
+      "angular/window-service": "off",
+      "block-scoped-var": "error",
+      "eqeqeq": "error",
+      "indent": [ "error", 2, {"SwitchCase": 1} ],
+      "no-else-return": "error",
+      "no-mixed-spaces-and-tabs": "error",
+      "quotes": [ 2, "single" ],
+      "semi": [ 2, "always" ]
     }
   },
   "devDependencies": {
-    "eslint": "^4.18.1",
+    "eslint": "^4.19.1",
     "eslint-config-angular": "^0.5.0",
-    "eslint-plugin-angular": "^3.2.0"
+    "eslint-plugin-angular": "^3.3.0"
   }
 }
