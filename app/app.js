@@ -724,7 +724,7 @@ angular.module('app', ['angular-md5'])
    */
   $(document).keydown(function(e) {
     switch(e.which) {
-      case 27: // close expanded panel the user clicks esc
+      case 27: // close expanded panel when the user presses esc
         vm.toggleExpandComic({});
         break;
 
