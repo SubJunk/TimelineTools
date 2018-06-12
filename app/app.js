@@ -40,6 +40,7 @@ angular.module('app', ['angular-md5'])
   var currentComicIndexInCollection;
   var currentCollectionIndexInCollections;
   vm.isShowCollections = false;
+  var isShowTable = false;
 
   // API variables
   var apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
@@ -926,6 +927,19 @@ angular.module('app', ['angular-md5'])
       infoModalInstance.open();
     }
   }
+
+  // Toggle between table view and timeline view
+  $("#toggleTableTimeline").click(function(){
+    if (isShowTable){
+      $("body").removeClass('table-container');
+      $("body").addClass('timeline-container');
+      isShowTable = false;
+      return;
+    }
+    $("body").removeClass('timeline-container');
+    $("body").addClass('table-container');
+    isShowTable = true;
+  });
 
   // Expand the comic from the URL on load
   if ($location.search()) {

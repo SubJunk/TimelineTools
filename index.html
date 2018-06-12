@@ -8,7 +8,7 @@
   <link rel="shortcut icon" href="images/x-men.ico" type="image/x-icon">
   <title>TimelineTools</title>
 </head>
-<body ng-style="main.bodyStyle">
+<body ng-style="main.bodyStyle" class="timeline-container">
   <div id="loader">
     <div id="load-percent">
     </div>
@@ -41,7 +41,14 @@
       <a class="btn-floating btn-large red"><i class="large material-icons">menu</i></a>
       <ul>
         <li>
-          <a title="Toggle collections view" class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}" ng-click="main.isShowCollections = !main.isShowCollections" data-toggle="tooltip">
+          <a title="Toggle table layout view" id="toggleTableTimeline" class="btn-floating green" ng-class="{green: main.isShowTable, grey: !main.isShowTable}" 
+            ng-click="main.isShowTable = !main.isShowTable" data-toggle="tooltip">
+            <i class="material-icons">view_list</i>
+          </a>
+        </li>
+        <li>
+          <a title="Toggle collections view" class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}"
+            ng-click="main.isShowCollections = !main.isShowCollections" data-toggle="tooltip">
             <i class="material-icons">library_books</i>
           </a>
         </li>

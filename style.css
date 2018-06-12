@@ -40,6 +40,10 @@ body {
     transform: perspective(1px) translate(-50%, -50%);
 }
 
+.table-container, .date {
+    display: inline-block;
+}
+
 .truncate {
   white-space: nowrap;
   overflow: hidden;
@@ -48,7 +52,6 @@ body {
 
 .year {
   display: inline-block;
-  color: #ccc;
 }
 
 .month {
@@ -67,9 +70,8 @@ body {
   display: block;
 }
 
-.comic-container,
-.series-volume-label-container {
-  position: absolute;
+.timeline-container .comic-container {
+  position: absolute;  
 }
 
 .series-volume-label-container,
@@ -77,9 +79,18 @@ body {
   width: 130px;
 }
 
+.table-container .series-volume-label{
+  display: none;
+}
+
 .series-volume-label-container {
   margin-top: calc(var(--month-width) * 0.29);
   z-index: 2;
+  position: absolute;  
+}
+
+.table-container .comic-container {
+  position: unset;
 }
 
 .tooltip-inner,
@@ -102,14 +113,20 @@ body {
   text-align: left;
 }
 
-.series-volume-label-container,
+.timeline-container .series-volume-label-container,
 .comic-container,
 .comic {
   height: var(--month-width);
 }
 
+.table-container .series-volume-label-container,
 .comic-container,
 .comic {
+  height: auto;
+}
+
+.comic-container,
+.timeline-container .comic {
   width: var(--month-width);
 }
 
@@ -125,10 +142,23 @@ body {
   border-radius: 50%;
 }
 
-.collection-container {
+.table-container .comic{
+  width: max-content;
+  border-radius: unset;
+}
+
+.timeline-container .collection-container {
   width: calc(var(--expanded-cover-height) / var(--cover-aspect-ratio));
   transition: width 1s;
   margin-right: 10px;
+}
+
+.table-container .years {
+  display: none;
+}
+
+.table-container .title {
+display: none;
 }
 
 .expanded .comic,
@@ -139,19 +169,27 @@ body {
   height: auto;
 }
 
-.comic-container .series {
+.timeline-container .comic-container .series {
   font-size: 130%;
   margin-right: 50px;
 }
 
+.table-container .comic-container .series {
+  font-size: 110%;
+}
+
 .comic-container .marvel-unlimited-link {
-  background-image: url('images/marvel-unlimited.png');
+  background-image: url('icons/marvel-unlimited.png');
   background-size: contain;
   display: block;
   width: 40px;
   height: 40px;
   float: right;
   margin-right: 5px;
+}
+
+.table-container .comic-container .marvel-unlimited-link{
+  margin-top: 10px;
 }
 
 .comic-container > a {
@@ -165,14 +203,23 @@ body {
   background: hsla(0, 0%, 100%, 0.1)
 }
 
-.collection-comics li {
+.timeline-container .collection-comics li {
   display: inline-block;
   padding: 5px 10px 5px 0;
+}
+
+.table-container .collection-comics li {
+  display: none;
 }
 
 .collection-comics img {
   height: var(--collection-thumbnails-height);
   width: calc(var(--collection-thumbnails-height) / var(--cover-aspect-ratio));
+}
+
+.table-container .collection-comics{
+  display: inline-block;
+  margin-left: 15px;
 }
 
 .collection-comics img.current {
@@ -188,13 +235,23 @@ body {
   display: block;
 }
 
-.cover-thumbnail img {
+.timeline-container .cover-thumbnail img {
   overflow: hidden;
   object-fit: cover;
   border-radius: 50%;
 
   width: calc(var(--month-width) * 0.9);
   height: calc(var(--month-width) * 0.9);
+  margin: calc(var(--month-width) * 0.05);
+}
+
+.table-container .cover-thumbnail img {
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 0%;
+
+  width: calc(var(--month-width) * 0.642);
+  height: calc(var(--month-width) * 1.0);
   margin: calc(var(--month-width) * 0.05);
 }
 
@@ -205,6 +262,16 @@ body {
   width: calc(var(--expanded-width) * 0.24);
 }
 
+.table-container .panel-left,
+.table-container .expanded-panel {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.table-container .panel-left {
+  margin: 10px;
+}
+
 .expanded .comic .cover-thumbnail img,
 .comic-collection .cover-thumbnail img {
   border-radius: initial;
@@ -212,7 +279,7 @@ body {
   height: var(--expanded-cover-height);
 }
 
-.comic-container .expanded-panel {
+.timeline-container .comic-container .expanded-panel {
   display: none;
 }
 
@@ -272,6 +339,13 @@ body {
 
 .scroll-anchor {
   width: var(--expanded-width);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
 }
 
 /**
