@@ -20,14 +20,13 @@ angular.module('app', ['angular-md5'])
     var seriesVolumeLabels = [];
 
     // Pixel counts
-    var verticalIncrement = 60;
-    var horizontalIncrement = verticalIncrement;
+    const VISUAL_BLOCK_SIZE = 60;
 
     /*
     * How far away the left edge of labels are from the left
     * of the first thumbnail of a series volume.
     */
-    var labelOffset = 150;
+    const LABEL_OFFSET = 150;
 
     var $jqWindow = $(window);
 
@@ -281,17 +280,17 @@ angular.module('app', ['angular-md5'])
       if (yearIncrement === finalYear) {
         // In this final year we stop the counter at the final month
         for (monthIncrement = 1; monthIncrement <= finalMonth; monthIncrement++) {
-          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: horizontalIncrement } };
+          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       } else if (yearIncrement === firstYear) {
         // In this first year we start the counter at the first month
         for (monthIncrement = firstMonth; monthIncrement <= 12; monthIncrement++) {
-          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: horizontalIncrement } };
+          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       } else {
         // In this in-between year we always add 12 months
         for (monthIncrement = 1; monthIncrement <= 12; monthIncrement++) {
-          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: horizontalIncrement } };
+          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       }
     }
@@ -319,16 +318,16 @@ angular.module('app', ['angular-md5'])
       monthsSinceFirst = (comic.yearPublished - firstYear) * 12;
       monthsSinceFirst -= firstMonth;
       monthsSinceFirst += comic.monthPublished;
-      comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
+      comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
 
       /**
        * Manage multiple releases of the same series in the same month
        * by making the month wider.
        */
       if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
-        dates[comic.yearPublished][comic.monthPublished].styles.width += horizontalIncrement;
-        comic.containerStyles.left += horizontalIncrement + globalHorizontalOffset;
-        globalHorizontalOffset += horizontalIncrement;
+        dates[comic.yearPublished][comic.monthPublished].styles.width += VISUAL_BLOCK_SIZE;
+        comic.containerStyles.left += VISUAL_BLOCK_SIZE + globalHorizontalOffset;
+        globalHorizontalOffset += VISUAL_BLOCK_SIZE;
       } else {
         comic.containerStyles.left += globalHorizontalOffset;
       }
@@ -346,10 +345,10 @@ angular.module('app', ['angular-md5'])
        * Step two documented below.
        */
       if (angular.isDefined(currentSeriesVolume.verticalPosition)) {
-        comic.containerStyles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
+        comic.containerStyles.top = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
         currentSeriesVolume.verticalPosition = globalVerticalPositionCounter;
-        comic.containerStyles.top = globalVerticalPositionCounter * verticalIncrement;
+        comic.containerStyles.top = globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
         globalVerticalPositionCounter++;
         newLabelNeeded = true;
       }
@@ -386,7 +385,7 @@ angular.module('app', ['angular-md5'])
             latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
           ) {
             currentSeriesVolume.verticalPosition = i;
-            comic.containerStyles.top = i * verticalIncrement;
+            comic.containerStyles.top = i * VISUAL_BLOCK_SIZE;
 
             /**
              * We are about to insert this seriesVolume into a vertical position
@@ -429,7 +428,7 @@ angular.module('app', ['angular-md5'])
        * comic thumbnail) and 2 body padding units to make up for the
        * left and right padding of the page.
        */
-      bodyStyles.width = comic.containerStyles.left + horizontalIncrement + (bodyStyles.padding * 2);
+      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (bodyStyles.padding * 2);
 
       if (newLabelNeeded) {
         seriesVolumeLabels.push({
@@ -438,7 +437,7 @@ angular.module('app', ['angular-md5'])
           id: 'label-' + seriesVolumeLabels.length,
           containerStyles: {
             top: comic.containerStyles.top,
-            left: comic.containerStyles.left - labelOffset
+            left: comic.containerStyles.left - LABEL_OFFSET
           },
           labelClasses: {},
           labelStyles: {},
@@ -645,12 +644,12 @@ angular.module('app', ['angular-md5'])
 
           // If the browser is scrolled past the right, hide the label
           if (
-            (scrollLeft - seriesVolumeLabel.right) > -labelOffset &&
+            (scrollLeft - seriesVolumeLabel.right) > -LABEL_OFFSET &&
             (scrollLeft - seriesVolumeLabel.right) < 0
           ) {
             seriesVolumeLabel.visible = true;
-            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - labelOffset);
-          } else if (seriesVolumeLabel.right < (scrollLeft + labelOffset)) {
+            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - LABEL_OFFSET);
+          } else if (seriesVolumeLabel.right < (scrollLeft + LABEL_OFFSET)) {
             seriesVolumeLabel.visible = false;
           } else {
             seriesVolumeLabel.visible = true;

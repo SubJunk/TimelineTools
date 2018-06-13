@@ -26,10 +26,13 @@
       "eqeqeq": "error",
       "indent": [ "error", 2, {"SwitchCase": 1} ],
       "no-else-return": "error",
-      "no-magic-numbers": [ "error", { "enforceConst": true }, { "detectObjects": true }],
+      "no-magic-numbers": [ "error", { "detectObjects": true, "enforceConst": true }],
       "no-mixed-spaces-and-tabs": "error",
       "quotes": [ 2, "single" ],
       "semi": [ 2, "always" ]
+    },
+    "parserOptions": {
+      "ecmaVersion": 6
     }
   },
   "devDependencies": {
