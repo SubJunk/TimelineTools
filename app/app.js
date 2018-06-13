@@ -10,11 +10,16 @@ angular.module('app', ['angular-md5'])
     var collections   = $window.collections;
     var series        = $window.series;
     var seriesVolumes = $window.seriesVolumes;
+    
 
-    var globalVerticalPositionCounter = 0;
+    const INITIAL_ZERO = 0;  // Used for all zero intialised vars
+    const BODY_PADDING = 20;
+    const ZERO_LENGTH = 0;   //Used to evaluate empty arrays, zero length responses or strings 
+    
+    var globalVerticalPositionCounter = INITIAL_ZERO;
     var bodyStyles = {
       width: null,
-      padding: 20,
+      padding: BODY_PADDING,
       background: 'hsl(216, 8%, 25%)'
     };
     var seriesVolumeLabels = [];
@@ -57,7 +62,7 @@ angular.module('app', ['angular-md5'])
           apikey: apiKeyPublic
         }
       }).then(function successCallback(response) {
-        if (response.data.data.results.length === 0) {
+        if (response.data.data.results.length === ZERO_LENGTH) {
           return;
         }
 
@@ -68,9 +73,11 @@ angular.module('app', ['angular-md5'])
       });
     };
 
+    const MILLISECONDS = 1000;
     var getExtraAPIParamsString = function() {
       if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
-        timestamp = Date.now() /1000 |0;
+        
+        timestamp = Date.now() / MILLISECONDS |0;
         apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
         return '?ts=' + timestamp + '&hash=' + apiHash;
       }
