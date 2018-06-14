@@ -15,8 +15,8 @@ angular.module('app', ['angular-md5'])
     const INITIAL_ZERO = 0;  // Used for all vars initialised to 0
     const INITAL_ONE = 1;    // Used for counters intiialised to 1
     const BODY_PADDING = 20;
-    const LEFT_OFFSET = 200;
-    const TOP_OFFSET = 300;
+    const LEFT_MARGIN = 200;
+    const TOP_MARGIN = 300;
 
     //Colour constants used in multiple functions
     const WHEEL_SIZE = 360;     //360 degrees in colour wheel
@@ -85,12 +85,12 @@ angular.module('app', ['angular-md5'])
       });
     };
 
-    const ONE_SECOND = 1000;  
+    const ONE_SECOND_IN_MILLISECONDS = 1000;
     var getExtraAPIParamsString = function() {
       if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
         
         // timestamp = Date.now() / ONE_SECOND |0;
-        Math.floor(timestamp = Date.now() / ONE_SECOND); //suggested new, wait for Klaus
+        timestamp = Math.floor(Date.now() / ONE_SECOND_IN_MILLISECONDS); //suggested new, wait for Klaus
         apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
         return '?ts=' + timestamp + '&hash=' + apiHash;
       }
@@ -160,12 +160,10 @@ angular.module('app', ['angular-md5'])
        * above that we want to expand a different one, this block maintains
        * the expanded box's position on the page by scrolling the viewport.
        */
-      if (isForceScroll) { //Need Klaus to explain how this works before I tackle this
+      if (isForceScroll) {
         $('html, body').animate({
-          //scrollLeft: currentComic.containerStyles.left - 200,
-          scrollLeft: currentComic.containerStyles.left - LEFT_OFFSET,
-          //scrollTop:  currentComic.containerStyles.top + 300
-          scrollTop:  currentComic.containerStyles.top + TOP_OFFSET
+          scrollLeft: currentComic.containerStyles.left - LEFT_MARGIN,
+          scrollTop:  currentComic.containerStyles.top + TOP_MARGIN
         });
       } else if (vm.expandedComicId) {
         var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
@@ -195,19 +193,12 @@ angular.module('app', ['angular-md5'])
         return false;
       });
 
-      //suggested revision for Klaus to check
-      // if (currentCollectionIndexInCollections > 0) {
-      //   vm.prevCollection = collections[currentCollectionIndexInCollections - 1];
-      //   vm.prevCollectionFirstComic = _.find(comics, ['id', vm.prevCollection.comicIds[0]]);
-      // } else {       
-      //   vm.prevCollection = undefined;
-      //   vm.prevCollectionFirstComic = undefined;
-      // }
+
       var prevCollectionIndexInCollections = currentCollectionIndexInCollections;
       var nextCollectionIndexInCollections = currentCollectionIndexInCollections;
       prevCollectionIndexInCollections --;
       nextCollectionIndexInCollections ++;
-
+      
       if(_.isEqual(collections[currentCollectionIndexInCollections], _.first(collections))){
         vm.prevCollection = undefined;
         vm.prevCollectionFirstComic = undefined;
@@ -1005,7 +996,7 @@ angular.module('app', ['angular-md5'])
 
         $timeout(function() {
           $('html, body').animate({
-            scrollLeft: comicFromUrl.containerStyles.left - LEFT_OFFSET,
+            scrollLeft: comicFromUrl.containerStyles.left - LEFT_MARGIN,
             scrollTop:  comicFromUrl.containerStyles.top
           });
         });
