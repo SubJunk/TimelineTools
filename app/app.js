@@ -186,7 +186,7 @@ angular.module('app', ['angular-md5'])
       // Get the collection containing this comic
       vm.expandedCollection = _.find(collections, function(collection, index) {
         currentComicIndexInCollection = collection.comicIds.indexOf(currentComic.id);
-        if (currentComicIndexInCollection > -1) {
+        if (currentComicIndexInCollection === Math.abs(currentComicIndexInCollection)) { //there's probably a better way to do this
           currentCollectionIndexInCollections = index;
           return true;
         }
@@ -225,19 +225,21 @@ angular.module('app', ['angular-md5'])
 
       var prevComicIndexInCollection = currentComicIndexInCollection;
       var nextComicIndexInCollection = currentComicIndexInCollection;
+      var LastComicInCollection = vm.prevCollection.comicIds.length;
       prevComicIndexInCollection--;
       nextComicIndexInCollection++;
+      LastComicInCollection--;
 
       // Find the previous comic
-      if (currentComicIndexInCollection > 0) {
-        vm.prevComic = vm.collections[currentCollectionIndexInCollections].comics[prevComicIndexInCollection];
-      } else if (vm.prevCollection) {
+      if(_.first(vm.collection && vm.prevCollection)){ 
         /**
          * The expanded comic is the first one in a collection, so we need to find out
          * the last comic in the previous collection.
          */
-        prevComicId = vm.prevCollection.comicIds[vm.prevCollection.comicIds.length - 1];
+        prevComicId = vm.prevCollection.comicIds[LastComicInCollection];
         vm.prevComic = _.find(comics, ['id', prevComicId]);
+      } else { //it's not the first comic
+        vm.prevComic = vm.collections[currentCollectionIndexInCollections].comics[prevComicIndexInCollection];
       }
 
       // Find the next comic
@@ -248,7 +250,7 @@ angular.module('app', ['angular-md5'])
          * The expanded comic is the last one in a collection, so we need to find out
          * the first comic in the next collection.
          */
-        nextComicId = vm.nextCollection.comicIds[0];
+        nextComicId = _.first(vm.nextCollection.comicIds);
         vm.nextComic = _.find(comics, ['id', nextComicId]);
       }
 
@@ -273,7 +275,7 @@ angular.module('app', ['angular-md5'])
           }
         }).then(function successCallback(response) {
           if (response.data.data.results.length) {
-            expandedSeriesVolume.marvelId = response.data.data.results[0].id;
+            expandedSeriesVolume.marvelId = _.first(response.data.data.results).id;
             setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
           }
         }, function errorCallback(err) {
@@ -313,23 +315,26 @@ angular.module('app', ['angular-md5'])
     var dates = {};
     var yearIncrement;
     var monthIncrement;
-    const ONE_YEAR = 12;
+    const ONE_YEAR_IN_MONTHS = 12;
+    const ONE_MONTH_IN_MONTHS = 1;
+    const ZERO_MONTHS_IN_MONTHS = 0;
+
     for (yearIncrement = firstYear; yearIncrement <= finalYear; yearIncrement++) {
       dates[yearIncrement] = {};
 
       if (yearIncrement === finalYear) {
         // In this final year we stop the counter at the final month
-        for (monthIncrement = 1; monthIncrement <= finalMonth; monthIncrement++) {
+        for (monthIncrement = ONE_MONTH_IN_MONTHS; monthIncrement <= finalMonth; monthIncrement++) {
           dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       } else if (yearIncrement === firstYear) {
         // In this first year we start the counter at the first month
-        for (monthIncrement = firstMonth; monthIncrement <= ONE_YEAR; monthIncrement++) {
+        for (monthIncrement = firstMonth; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
           dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       } else {
         // In this in-between year we always add 12 months
-        for (monthIncrement = 1; monthIncrement <= ONE_YEAR; monthIncrement++) {
+        for (monthIncrement = ONE_MONTH_IN_MONTHS; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
           dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       }
@@ -355,10 +360,10 @@ angular.module('app', ['angular-md5'])
       comic.styles = {};
 
       // Horizontal positioning
-      monthsSinceFirst = (comic.yearPublished - firstYear) * ONE_YEAR;
+      monthsSinceFirst = (comic.yearPublished - firstYear) * ONE_YEAR_IN_MONTHS;
       monthsSinceFirst -= firstMonth;
       monthsSinceFirst += comic.monthPublished;
-      comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
+      comic.containerStyles.left = (monthsSinceFirst <= ZERO_MONTHS_IN_MONTHS ? ZERO_MONTHS_IN_MONTHS : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
 
       /**
        * Manage multiple releases of the same series in the same month
@@ -468,7 +473,7 @@ angular.module('app', ['angular-md5'])
        * comic thumbnail) and 2 body padding units to make up for the
        * left and right padding of the page.
        */
-      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (bodyStyles.padding * 2);
+      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (bodyStyles.padding + bodyStyles.padding);
 
       if (newLabelNeeded) {
         seriesVolumeLabels.push({
