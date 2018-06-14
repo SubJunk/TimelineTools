@@ -12,8 +12,21 @@ angular.module('app', ['angular-md5'])
     var seriesVolumes = $window.seriesVolumes;
     
 
-    const INITIAL_ZERO = 0;  // Used for all zero intialised vars
+    const INITIAL_ZERO = 0;  // Used for all vars initialised to 0
+    const INITAL_ONE = 1;    // Used for counters intiialised to 1
     const BODY_PADDING = 20;
+    const LEFT_OFFSET = 200;
+    const TOP_OFFSET = 300;
+
+    //Colour constants used in multiple functions
+    const WHEEL_SIZE = 360;     //360 degrees in colour wheel
+    const STEP_CHANGE = 30;     //define how far to step around the colour wheel each time
+    const MIN_LIGHTNESS = 30;   //Lightness can be in the range 0-100
+    const MAX_LIGHTNESS = 85;   
+    const MIN_SATURATION = 35;  //Saturation can be in the range 0-100
+    const MAX_SATURATION = 75;  //We choose a mid range that's easy to see
+    const PERCENT_MULTIPLIER = 100;
+
     
     var globalVerticalPositionCounter = INITIAL_ZERO;
     var bodyStyles = {
@@ -147,13 +160,12 @@ angular.module('app', ['angular-md5'])
        * above that we want to expand a different one, this block maintains
        * the expanded box's position on the page by scrolling the viewport.
        */
-      
       if (isForceScroll) { //Need Klaus to explain how this works before I tackle this
         $('html, body').animate({
-          scrollLeft: currentComic.containerStyles.left - 200,
-          //scrollLeft: currentComic.containerStyles.left - leftOffset,
-          scrollTop:  currentComic.containerStyles.top + 300
-          //scrollTop:  currentComic.containerStyles.top + topOffset
+          //scrollLeft: currentComic.containerStyles.left - 200,
+          scrollLeft: currentComic.containerStyles.left - LEFT_OFFSET,
+          //scrollTop:  currentComic.containerStyles.top + 300
+          scrollTop:  currentComic.containerStyles.top + TOP_OFFSET
         });
       } else if (vm.expandedComicId) {
         var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
@@ -191,14 +203,10 @@ angular.module('app', ['angular-md5'])
       //   vm.prevCollection = undefined;
       //   vm.prevCollectionFirstComic = undefined;
       // }
-      var prevCollectionIndexInCollections;
-      var nextCollectionIndexInCollections;
-      prevCollectionIndexInCollections = currentCollectionIndexInCollections;
-      nextCollectionIndexInCollections = currentCollectionIndexInCollections;
+      var prevCollectionIndexInCollections = currentCollectionIndexInCollections;
+      var nextCollectionIndexInCollections = currentCollectionIndexInCollections;
       prevCollectionIndexInCollections --;
       nextCollectionIndexInCollections ++;
-
-      
 
       if(_.isEqual(collections[currentCollectionIndexInCollections], _.first(collections))){
         vm.prevCollection = undefined;
@@ -224,9 +232,14 @@ angular.module('app', ['angular-md5'])
         vm.nextCollectionFirstComic = _.find(comics, ['id', _.first(vm.nextCollection.comicIds)]);      
       }
 
+      var prevComicIndexInCollection = currentComicIndexInCollection;
+      var nextComicIndexInCollection = currentComicIndexInCollection;
+      prevComicIndexInCollection--;
+      nextComicIndexInCollection++;
+
       // Find the previous comic
       if (currentComicIndexInCollection > 0) {
-        vm.prevComic = vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection - 1];
+        vm.prevComic = vm.collections[currentCollectionIndexInCollections].comics[prevComicIndexInCollection];
       } else if (vm.prevCollection) {
         /**
          * The expanded comic is the first one in a collection, so we need to find out
@@ -237,8 +250,8 @@ angular.module('app', ['angular-md5'])
       }
 
       // Find the next comic
-      if (vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection + 1]) {
-        vm.nextComic = vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection + 1];
+      if (vm.collections[currentCollectionIndexInCollections].comics[nextComicIndexInCollection]) {
+        vm.nextComic = vm.collections[currentCollectionIndexInCollections].comics[nextComicIndexInCollection];
       } else if (vm.nextCollection) {
         /**
          * The expanded comic is the last one in a collection, so we need to find out
@@ -258,24 +271,24 @@ angular.module('app', ['angular-md5'])
       var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
       if (expandedSeriesVolume.marvelId) {
         setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
-      }// else {
-      //   $http({
-      //     method: 'GET',
-      //     url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
-      //     params: {
-      //       title: expandedSeriesVolume.title,
-      //       startYear: expandedSeriesVolume.startYear,
-      //       apikey: apiKeyPublic
-      //     }
-      //   }).then(function successCallback(response) {
-      //     if (response.data.data.results.length) {
-      //       expandedSeriesVolume.marvelId = response.data.data.results[0].id;
-      //       setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
-      //     }
-      //   }, function errorCallback(err) {
-      //     throw new Error(err);
-      //   });
-      // }
+      } else {
+        $http({
+          method: 'GET',
+          url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
+          params: {
+            title: expandedSeriesVolume.title,
+            startYear: expandedSeriesVolume.startYear,
+            apikey: apiKeyPublic
+          }
+        }).then(function successCallback(response) {
+          if (response.data.data.results.length) {
+            expandedSeriesVolume.marvelId = response.data.data.results[0].id;
+            setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+          }
+        }, function errorCallback(err) {
+          throw new Error(err);
+        });
+      }
     };
 
     vm.toggleExpandCollection = function(collection) {
@@ -309,6 +322,7 @@ angular.module('app', ['angular-md5'])
     var dates = {};
     var yearIncrement;
     var monthIncrement;
+    const ONE_YEAR = 12;
     for (yearIncrement = firstYear; yearIncrement <= finalYear; yearIncrement++) {
       dates[yearIncrement] = {};
 
@@ -319,19 +333,19 @@ angular.module('app', ['angular-md5'])
         }
       } else if (yearIncrement === firstYear) {
         // In this first year we start the counter at the first month
-        for (monthIncrement = firstMonth; monthIncrement <= 12; monthIncrement++) {
+        for (monthIncrement = firstMonth; monthIncrement <= ONE_YEAR; monthIncrement++) {
           dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       } else {
         // In this in-between year we always add 12 months
-        for (monthIncrement = 1; monthIncrement <= 12; monthIncrement++) {
+        for (monthIncrement = 1; monthIncrement <= ONE_YEAR; monthIncrement++) {
           dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       }
     }
 
     var previousYearMonthVolume;
-    var globalHorizontalOffset = 0;
+    var globalHorizontalOffset = INITIAL_ZERO;
     var latestVerticalHorizontalOffsets = {};
     var newLabelNeeded = false;
     var windowWidth = $jqWindow.innerWidth();
@@ -350,7 +364,7 @@ angular.module('app', ['angular-md5'])
       comic.styles = {};
 
       // Horizontal positioning
-      monthsSinceFirst = (comic.yearPublished - firstYear) * 12;
+      monthsSinceFirst = (comic.yearPublished - firstYear) * ONE_YEAR;
       monthsSinceFirst -= firstMonth;
       monthsSinceFirst += comic.monthPublished;
       comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
@@ -414,7 +428,7 @@ angular.module('app', ['angular-md5'])
          *
          * Counter starts at 1 to keep Uncanny always at the top.
          */
-        for (var i = 1; i < globalVerticalPositionCounter; i++) {
+        for (var i = INITAL_ONE; i < globalVerticalPositionCounter; i++) {
           if (
             !latestVerticalHorizontalOffsets[i] ||
             latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
@@ -527,7 +541,6 @@ angular.module('app', ['angular-md5'])
     var hue;
     var saturation;
     var lightness;
-    var stepChange = 30;
     var chroma;
     var huePrime;
     var secondComponent;
@@ -538,24 +551,25 @@ angular.module('app', ['angular-md5'])
     var rgbColor;
     function getCollectionColors(collectionTitle) {
       if (!collectionColorsIndex[collectionTitle]) {
+        console.log('setting colors');
         var startColor;
         collectionColorsIndex[collectionTitle] = {};
         collectionColorsIndex[collectionTitle].collectionTitle = collectionTitle;
         collectionColorsIndex[collectionTitle].hslColor = 'hsl(';
         if (angular.isDefined(startColor)) {
-          if ((startColor + stepChange) > 360) {
-            startColor -= 360;
+          if ((startColor + STEP_CHANGE) > WHEEL_SIZE) {
+            startColor -= WHEEL_SIZE;
           }
-          startColor += stepChange;
+          startColor += STEP_CHANGE;
         } else {
-          startColor = Math.floor(Math.random() * 360);
+          startColor = Math.floor(Math.random() * WHEEL_SIZE);
         }
         hue = startColor;
         collectionColorsIndex[collectionTitle].hslColor += startColor + ', ';
-        saturation = parseFloat('0.' + Math.floor(Math.random() * ((75-35) + 1) + 35));
-        collectionColorsIndex[collectionTitle].hslColor += saturation * 100 + '%, ';
-        lightness = parseFloat('0.' + Math.floor(Math.random() * ((85-30) + 1) + 30));
-        collectionColorsIndex[collectionTitle].hslColor += lightness * 100  + '%)';
+        saturation = parseFloat('0.' + Math.floor(Math.random() * ((MAX_SATURATION-MIN_SATURATION) + 1) + MIN_SATURATION));
+        collectionColorsIndex[collectionTitle].hslColor += saturation * PERCENT_MULTIPLIER + '%, ';
+        lightness = parseFloat('0.' + Math.floor(Math.random() * ((MAX_LIGHTNESS-MIN_LIGHTNESS) + 1) + MIN_LIGHTNESS));
+        collectionColorsIndex[collectionTitle].hslColor += lightness * PERCENT_MULTIPLIER  + '%)';
 
         /**
          * Start the conversion of the HSL color to RGB
@@ -566,39 +580,50 @@ angular.module('app', ['angular-md5'])
          *
          * @see https://github.com/kayellpeee/hsl_rgb_converter
          */
+        const RGB_MAX = 255;
+        const HUE_SEGMENT = 60; // 60 degrees, one sixth of the colour wheel
+        const MOD = 2;
+        const HUEPRIME_IS_ZERO = 0;
+        const HUEPRIME_IS_ONE = 1;
+        const HUEPRIME_IS_TWO = 2;
+        const HUEPRIME_IS_THREE = 3;
+        const HUEPRIME_IS_FOUR = 4;
+        const HUEPRIME_IS_FIVE = 5;
+
         chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
-        huePrime = hue / 60;
-        secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
+        huePrime = hue / HUE_SEGMENT;
+        secondComponent = chroma * (1 - Math.abs((huePrime % MOD) - 1));
 
         huePrime = Math.floor(huePrime);
 
         // Reset the values each time
-        red = 0;
-        green = 0;
-        blue = 0;
+        red = INITIAL_ZERO;
+        green = INITIAL_ZERO;
+        blue = INITIAL_ZERO;
+
 
         switch (huePrime) {
-          case 0:
+          case HUEPRIME_IS_ZERO:
             red = chroma;
             green = secondComponent;
             break;
-          case 1:
+          case HUEPRIME_IS_ONE:
             red = secondComponent;
             green = chroma;
             break;
-          case 2:
+          case HUEPRIME_IS_TWO:
             green = chroma;
             blue = secondComponent;
             break;
-          case 3:
+          case HUEPRIME_IS_THREE:
             green = secondComponent;
             blue = chroma;
             break;
-          case 4:
+          case HUEPRIME_IS_FOUR:
             red = secondComponent;
             blue = chroma;
             break;
-          case 5:
+          case HUEPRIME_IS_FIVE:
             red = chroma;
             blue = secondComponent;
         }
@@ -608,7 +633,7 @@ angular.module('app', ['angular-md5'])
         green += lightnessAdjustment;
         blue += lightnessAdjustment;
 
-        rgbColor = [Math.round(red * 255), Math.round(green * 255), Math.round(blue * 255)];
+        rgbColor = [Math.round(red * RGB_MAX), Math.round(green * RGB_MAX), Math.round(blue * RGB_MAX)];
 
         /**
          * Given a color in RGB format, assign either a light
@@ -616,13 +641,20 @@ angular.module('app', ['angular-md5'])
          *
          * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
          */
-        for (var i = 0; i < 3; ++i) {
-          rgbColor[i] /= 255;
 
-          if (rgbColor[i] <= 0.03928) {
-            rgbColor[i] = rgbColor[i] / 12.92;
+        const RGB_CUTTOFF = 0.03928;  // See http://entropymine.com/imageworsener/srgbformula/
+        const RGB_SLOPE = 0.055;      
+        const RGB_DENOMINATOR = 1.055;
+        const RGB_EXP = 2.4;        
+        const LINEAR_RGB = 12.92;      // R, G, B * LINEAR_RBG = RGB_CUTTOFF
+
+        for (var i = INITIAL_ZERO; i < 3; ++i) {
+          rgbColor[i] /= RGB_MAX;
+
+          if (rgbColor[i] <= RGB_CUTTOFF) {
+            rgbColor[i] = rgbColor[i] / LINEAR_RGB ;
           } else {
-            rgbColor[i] = Math.pow((rgbColor[i] + 0.055) / 1.055, 2.4);
+            rgbColor[i] = Math.pow((rgbColor[i] + RGB_SLOPE) / RGB_DENOMINATOR, RGB_EXP);
           }
         }
 
@@ -663,7 +695,7 @@ angular.module('app', ['angular-md5'])
       if (doSpeedProfile) var startTimeReposition = new Date();
 
       // The scroll position of the page, minus the main padding
-      scrollLeft = $jqWindow.scrollLeft() - 20;
+      scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
 
       /**
@@ -756,15 +788,18 @@ angular.module('app', ['angular-md5'])
      *
      * @link https://stackoverflow.com/questions/1402698/binding-arrow-keys-in-js-jquery
      */
+    const LEFT_KEYPRESS = 37;
+    const RIGHT_KEYPRESS = 39;
+
     $(document).keydown(function(e) {
       switch(e.which) {
-        case 37: // left
+        case LEFT_KEYPRESS: // left
           if (vm.prevComic) {
             vm.toggleExpandComic(vm.prevComic);
           }
           break;
 
-        case 39: // right
+        case RIGHT_KEYPRESS: // right
           if (vm.nextComic) {
             vm.toggleExpandComic(vm.nextComic);
           }
@@ -871,12 +906,12 @@ angular.module('app', ['angular-md5'])
      */
     {
       // How many comics to add per loop
-      var COMIC_CHUNKS = 20;
+      const COMIC_CHUNKS = 20;
 
       // How many milliseconds delay between chunks
-      var COMIC_LOOP_DELAY = 1;
+      const COMIC_LOOP_DELAY = 1;
 
-      var comicsIterator = 0;
+      var comicsIterator = INITIAL_ZERO;
       var pushComicChunkToVm = function() {
         var currentChunkEnd = comicsIterator + COMIC_CHUNKS;
         for (var currentChunkIterator = comicsIterator; currentChunkIterator < currentChunkEnd; currentChunkIterator++) {
@@ -912,7 +947,7 @@ angular.module('app', ['angular-md5'])
         pushComicChunkToVm();
 
         // Update the loader
-        $('#load-percent').text(((comicsIterator / comics.length) * 100).toFixed(0) + '%');
+        $('#load-percent').text(((comicsIterator / comics.length) * PERCENT_MULTIPLIER).toFixed(0) + '%');
       };
 
       // Do this first comic chunk instantly
@@ -971,7 +1006,7 @@ angular.module('app', ['angular-md5'])
 
         $timeout(function() {
           $('html, body').animate({
-            scrollLeft: comicFromUrl.containerStyles.left - 200,
+            scrollLeft: comicFromUrl.containerStyles.left - LEFT_OFFSET,
             scrollTop:  comicFromUrl.containerStyles.top
           });
         });
