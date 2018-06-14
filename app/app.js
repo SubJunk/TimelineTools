@@ -551,7 +551,6 @@ angular.module('app', ['angular-md5'])
     var rgbColor;
     function getCollectionColors(collectionTitle) {
       if (!collectionColorsIndex[collectionTitle]) {
-        console.log('setting colors');
         var startColor;
         collectionColorsIndex[collectionTitle] = {};
         collectionColorsIndex[collectionTitle].collectionTitle = collectionTitle;
