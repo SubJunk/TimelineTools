@@ -14,7 +14,6 @@ angular.module('app', ['angular-md5'])
 
     const INITIAL_ZERO = 0;  // Used for all zero intialised vars
     const BODY_PADDING = 20;
-    const ZERO_LENGTH = 0;   //Used to evaluate empty arrays, zero length responses or strings 
     
     var globalVerticalPositionCounter = INITIAL_ZERO;
     var bodyStyles = {
@@ -62,22 +61,23 @@ angular.module('app', ['angular-md5'])
           apikey: apiKeyPublic
         }
       }).then(function successCallback(response) {
-        if (response.data.data.results.length === ZERO_LENGTH) {
+        if (_.isEmpty(response.data.data.results)) {
           return;
         }
 
-        var firstAPIResult = response.data.data.results[0];
+        var firstAPIResult = _.first(response.data.data.results);
         comic.link = firstAPIResult.digitalId ? 'https://read.marvel.com/#book/' + firstAPIResult.digitalId : null;
       }, function errorCallback(err) {
         throw new Error(err);
       });
     };
 
-    const MILLISECONDS = 1000;
+    const ONE_SECOND = 1000;  
     var getExtraAPIParamsString = function() {
       if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
         
-        timestamp = Date.now() / MILLISECONDS |0;
+        // timestamp = Date.now() / ONE_SECOND |0;
+        Math.floor(timestamp = Date.now() / ONE_SECOND); //suggested new, wait for Klaus
         apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
         return '?ts=' + timestamp + '&hash=' + apiHash;
       }
@@ -147,10 +147,13 @@ angular.module('app', ['angular-md5'])
        * above that we want to expand a different one, this block maintains
        * the expanded box's position on the page by scrolling the viewport.
        */
-      if (isForceScroll) {
+      
+      if (isForceScroll) { //Need Klaus to explain how this works before I tackle this
         $('html, body').animate({
           scrollLeft: currentComic.containerStyles.left - 200,
+          //scrollLeft: currentComic.containerStyles.left - leftOffset,
           scrollTop:  currentComic.containerStyles.top + 300
+          //scrollTop:  currentComic.containerStyles.top + topOffset
         });
       } else if (vm.expandedComicId) {
         var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
@@ -180,20 +183,45 @@ angular.module('app', ['angular-md5'])
         return false;
       });
 
-      if (currentCollectionIndexInCollections > 0) {
-        vm.prevCollection = collections[currentCollectionIndexInCollections - 1];
-        vm.prevCollectionFirstComic = _.find(comics, ['id', vm.prevCollection.comicIds[0]]);
-      } else {
+      //suggested revision for Klaus to check
+      // if (currentCollectionIndexInCollections > 0) {
+      //   vm.prevCollection = collections[currentCollectionIndexInCollections - 1];
+      //   vm.prevCollectionFirstComic = _.find(comics, ['id', vm.prevCollection.comicIds[0]]);
+      // } else {       
+      //   vm.prevCollection = undefined;
+      //   vm.prevCollectionFirstComic = undefined;
+      // }
+      var prevCollectionIndexInCollections;
+      var nextCollectionIndexInCollections;
+      prevCollectionIndexInCollections = currentCollectionIndexInCollections;
+      nextCollectionIndexInCollections = currentCollectionIndexInCollections;
+      prevCollectionIndexInCollections --;
+      nextCollectionIndexInCollections ++;
+
+      
+
+      if(_.isEqual(collections[currentCollectionIndexInCollections], _.first(collections))){
         vm.prevCollection = undefined;
         vm.prevCollectionFirstComic = undefined;
+      } else  {
+        vm.prevCollection = collections[prevCollectionIndexInCollections];
+        vm.prevCollectionFirstComic = _.find(comics, ['id', _.first(vm.prevCollection.comicIds)]);
       }
 
-      if (vm.collections[currentCollectionIndexInCollections + 1]) {
-        vm.nextCollection = collections[currentCollectionIndexInCollections + 1];
-        vm.nextCollectionFirstComic = _.find(comics, ['id', vm.nextCollection.comicIds[0]]);
-      } else {
+      //  And also for Klaus to check
+      // if (vm.collections[currentCollectionIndexInCollections + 1]) {
+      //   vm.nextCollection = collections[currentCollectionIndexInCollections + 1];
+      //   vm.nextCollectionFirstComic = _.find(comics, ['id', vm.nextCollection.comicIds[0]]);
+      // } else {
+      //   vm.nextCollection = undefined;
+      //   vm.nextCollectionFirstComic = undefined;
+      // }
+      if(_.isEqual(collections[currentCollectionIndexInCollections], _.last(collections))){
         vm.nextCollection = undefined;
         vm.nextCollectionFirstComic = undefined;
+      } else {
+        vm.nextCollection = collections[nextCollectionIndexInCollections];
+        vm.nextCollectionFirstComic = _.find(comics, ['id', _.first(vm.nextCollection.comicIds)]);      
       }
 
       // Find the previous comic
@@ -230,24 +258,24 @@ angular.module('app', ['angular-md5'])
       var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
       if (expandedSeriesVolume.marvelId) {
         setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
-      } else {
-        $http({
-          method: 'GET',
-          url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
-          params: {
-            title: expandedSeriesVolume.title,
-            startYear: expandedSeriesVolume.startYear,
-            apikey: apiKeyPublic
-          }
-        }).then(function successCallback(response) {
-          if (response.data.data.results.length) {
-            expandedSeriesVolume.marvelId = response.data.data.results[0].id;
-            setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
-          }
-        }, function errorCallback(err) {
-          throw new Error(err);
-        });
-      }
+      }// else {
+      //   $http({
+      //     method: 'GET',
+      //     url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
+      //     params: {
+      //       title: expandedSeriesVolume.title,
+      //       startYear: expandedSeriesVolume.startYear,
+      //       apikey: apiKeyPublic
+      //     }
+      //   }).then(function successCallback(response) {
+      //     if (response.data.data.results.length) {
+      //       expandedSeriesVolume.marvelId = response.data.data.results[0].id;
+      //       setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+      //     }
+      //   }, function errorCallback(err) {
+      //     throw new Error(err);
+      //   });
+      // }
     };
 
     vm.toggleExpandCollection = function(collection) {
