@@ -2149,6 +2149,7 @@ collections.push(
     'X-Men: Gold Vol. 0: Homecoming (Partial)',
     '2018-3-28',
     [
+      'UncannyXMenVol1358',
       'XMenVol277',
       'XMenVol278'
     ]
@@ -2158,7 +2159,8 @@ collections.push(
     '2011-1-19',
     [
       'DeadpoolandDeathAnnualVol11',
-      'DeadpoolVol218'
+      'DeadpoolVol218',
+      'DeadpoolVol219'
     ]
   ),
   new Collection(
@@ -2173,7 +2175,6 @@ collections.push(
     'X-Men: Blue Vol. 0: Reunion',
     '2018-3-21',
     [
-      'UncannyXMenVol1358',
       'UncannyXMenVol1359',
       'UncannyXMenFantasticFourAnnualVol11'
     ]
@@ -2182,8 +2183,8 @@ collections.push(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
-      'DeadpoolVol219',
-      'DeadpoolVol220'
+      'DeadpoolVol220',
+      'DeadpoolVol221'
     ]
   ),
   new Collection(
@@ -2207,8 +2208,8 @@ collections.push(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
-      'DeadpoolVol221',
-      'DeadpoolVol222'
+      'DeadpoolVol222',
+      'DeadpoolVol223'
     ]
   ),
   new Collection(
@@ -2232,7 +2233,6 @@ collections.push(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
-      'DeadpoolVol223',
       'DeadpoolVol224'
     ]
   ),
