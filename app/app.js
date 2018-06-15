@@ -213,8 +213,8 @@ angular.module('app', ['angular-md5'])
         vm.nextCollection = undefined;
         vm.nextCollectionFirstComic = undefined;
       } else {
-        vm.nextCollection = collections[nextCollectionIndexInCollections]; //checked and correct
-        vm.nextCollectionFirstComic = _.find(comics, ['id', _.first(vm.nextCollection.comicIds)]); //checked and correct
+        vm.nextCollection = collections[nextCollectionIndexInCollections];
+        vm.nextCollectionFirstComic = _.find(comics, ['id', _.first(vm.nextCollection.comicIds)]);
       }
 
       var prevComicIndexInCollection;
