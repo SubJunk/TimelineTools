@@ -199,7 +199,8 @@ angular.module('app', ['angular-md5'])
       prevCollectionIndexInCollections --;
       nextCollectionIndexInCollections ++;
       
-      if(_.isEqual(collections[currentCollectionIndexInCollections], _.first(collections))){
+      // if this is the first collection, 
+      if(_.isEqual(collections[currentCollectionIndexInCollections], _.first(collections))) {
         vm.prevCollection = undefined;
         vm.prevCollectionFirstComic = undefined;
       } else  {
@@ -207,38 +208,44 @@ angular.module('app', ['angular-md5'])
         vm.prevCollectionFirstComic = _.find(comics, ['id', _.first(vm.prevCollection.comicIds)]);
       }
 
-      //  And also for Klaus to check
-      // if (vm.collections[currentCollectionIndexInCollections + 1]) {
-      //   vm.nextCollection = collections[currentCollectionIndexInCollections + 1];
-      //   vm.nextCollectionFirstComic = _.find(comics, ['id', vm.nextCollection.comicIds[0]]);
-      // } else {
-      //   vm.nextCollection = undefined;
-      //   vm.nextCollectionFirstComic = undefined;
-      // }
-      if(_.isEqual(collections[currentCollectionIndexInCollections], _.last(collections))){
+      // check for the last collection
+      if(_.isEqual(collections[currentCollectionIndexInCollections], _.last(collections))) {
         vm.nextCollection = undefined;
         vm.nextCollectionFirstComic = undefined;
       } else {
-        vm.nextCollection = collections[nextCollectionIndexInCollections];
-        vm.nextCollectionFirstComic = _.find(comics, ['id', _.first(vm.nextCollection.comicIds)]);      
+        vm.nextCollection = collections[nextCollectionIndexInCollections]; //checked and correct
+        vm.nextCollectionFirstComic = _.find(comics, ['id', _.first(vm.nextCollection.comicIds)]); //checked and correct
       }
 
-      var prevComicIndexInCollection = currentComicIndexInCollection;
-      var nextComicIndexInCollection = currentComicIndexInCollection;
-      var LastComicInCollection = vm.prevCollection.comicIds.length;
-      prevComicIndexInCollection--;
-      nextComicIndexInCollection++;
-      LastComicInCollection--;
+      var prevComicIndexInCollection;
+      var nextComicIndexInCollection;
+      var lastComicInCollection;
+      
+      // set if there is a previous collection
+      if(vm.prevCollection) {
+        prevComicIndexInCollection = currentComicIndexInCollection;
+        prevComicIndexInCollection--;
+        lastComicInCollection = vm.prevCollection.comicIds.length;
+        lastComicInCollection--;
+      }
+
+      //set if there is a next collection
+      if(vm.nextCollection) {
+        nextComicIndexInCollection = currentComicIndexInCollection;
+        nextComicIndexInCollection++;
+      }
 
       // Find the previous comic
-      if(_.first(vm.collection && vm.prevCollection)){ 
+      if (_.first(vm.collections[currentCollectionIndexInCollections].comics) === vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection]){
         /**
-         * The expanded comic is the first one in a collection, so we need to find out
-         * the last comic in the previous collection.
-         */
-        prevComicId = vm.prevCollection.comicIds[LastComicInCollection];
-        vm.prevComic = _.find(comics, ['id', prevComicId]);
-      } else { //it's not the first comic
+       * The expanded comic is the first one in a collection, so we need to find out
+       * the last comic in the previous collection.
+       */
+        if (vm.prevCollection) {
+          prevComicId = vm.prevCollection.comicIds[lastComicInCollection];
+          vm.prevComic = _.find(comics, ['id', prevComicId]);
+        }
+      } else { //it's not the first in the collection
         vm.prevComic = vm.collections[currentCollectionIndexInCollections].comics[prevComicIndexInCollection];
       }
 
@@ -495,7 +502,8 @@ angular.module('app', ['angular-md5'])
           return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
         });
 
-        if (seriesVolumeLabelIndex === -1) {
+        //check if index not found -1 
+        if (seriesVolumeLabelIndex !== Math.abs(seriesVolumeLabelIndex)) { 
           throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
         }
 
@@ -561,11 +569,11 @@ angular.module('app', ['angular-md5'])
         }
         hue = startColor;
         collectionColorsIndex[collectionTitle].hslColor += startColor + ', ';
-        saturation = parseFloat('0.' + Math.floor(Math.random() * ((MAX_SATURATION-MIN_SATURATION) + 1) + MIN_SATURATION));
+        saturation = parseFloat('0.' + Math.floor(Math.random() * ((MAX_SATURATION-MIN_SATURATION)) + MIN_SATURATION));
         collectionColorsIndex[collectionTitle].hslColor += saturation * PERCENT_MULTIPLIER + '%, ';
-        lightness = parseFloat('0.' + Math.floor(Math.random() * ((MAX_LIGHTNESS-MIN_LIGHTNESS) + 1) + MIN_LIGHTNESS));
+        lightness = parseFloat('0.' + Math.floor(Math.random() * ((MAX_LIGHTNESS-MIN_LIGHTNESS)) + MIN_LIGHTNESS));
         collectionColorsIndex[collectionTitle].hslColor += lightness * PERCENT_MULTIPLIER  + '%)';
-
+        
         /**
          * Start the conversion of the HSL color to RGB
          * Converts an HSLA color value to RGB. Conversion formula
@@ -584,10 +592,11 @@ angular.module('app', ['angular-md5'])
         const HUEPRIME_IS_THREE = 3;
         const HUEPRIME_IS_FOUR = 4;
         const HUEPRIME_IS_FIVE = 5;
+        const CHROMA_MAX = 1;
 
-        chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
+        chroma = (CHROMA_MAX - Math.abs((lightness + lightness) - CHROMA_MAX)) * saturation;
         huePrime = hue / HUE_SEGMENT;
-        secondComponent = chroma * (1 - Math.abs((huePrime % MOD) - 1));
+        secondComponent = chroma * (CHROMA_MAX - Math.abs((huePrime % MOD) - CHROMA_MAX));
 
         huePrime = Math.floor(huePrime);
 
@@ -595,7 +604,6 @@ angular.module('app', ['angular-md5'])
         red = INITIAL_ZERO;
         green = INITIAL_ZERO;
         blue = INITIAL_ZERO;
-
 
         switch (huePrime) {
           case HUEPRIME_IS_ZERO:
@@ -623,13 +631,12 @@ angular.module('app', ['angular-md5'])
             blue = secondComponent;
         }
 
-        lightnessAdjustment = lightness - (chroma / 2);
+        lightnessAdjustment = lightness - (chroma / (CHROMA_MAX + CHROMA_MAX));        
         red += lightnessAdjustment;
         green += lightnessAdjustment;
         blue += lightnessAdjustment;
 
         rgbColor = [Math.round(red * RGB_MAX), Math.round(green * RGB_MAX), Math.round(blue * RGB_MAX)];
-
         /**
          * Given a color in RGB format, assign either a light
          * or dark color.
@@ -642,8 +649,13 @@ angular.module('app', ['angular-md5'])
         const RGB_DENOMINATOR = 1.055;
         const RGB_EXP = 2.4;        
         const LINEAR_RGB = 12.92;      // R, G, B * LINEAR_RBG = RGB_CUTTOFF
+        const PERCEIVED_WEIGHTING_RED_LIGHT = 0.2126;
+        const PERCEIVED_WEIGHTING_GREEN_LIGHT = 0.7152;
+        const PERCEIVED_WEIGHTING_BLUE_LIGHT = 0.0722; //Given equal quantities of RGB, humans perceive them in a weighted way
+        const LIGHT_DARK_THRESHOLD = 0.179;
 
-        for (var i = INITIAL_ZERO; i < 3; ++i) {
+        for (var i = INITIAL_ZERO; i < rgbColor.length; ++i) {
+
           rgbColor[i] /= RGB_MAX;
 
           if (rgbColor[i] <= RGB_CUTTOFF) {
@@ -653,9 +665,15 @@ angular.module('app', ['angular-md5'])
           }
         }
 
-        backgroundLightness = 0.2126 * rgbColor[0] + 0.7152 * rgbColor[1] + 0.0722 * rgbColor[2];
+        var iterator = INITIAL_ZERO;
 
-        if (backgroundLightness > 0.179) {
+        backgroundLightness = PERCEIVED_WEIGHTING_RED_LIGHT * rgbColor[iterator];
+        iterator++;
+        backgroundLightness +=  PERCEIVED_WEIGHTING_GREEN_LIGHT * rgbColor[iterator];
+        iterator++;
+        backgroundLightness += PERCEIVED_WEIGHTING_BLUE_LIGHT * rgbColor[iterator];
+
+        if (backgroundLightness > LIGHT_DARK_THRESHOLD) {
           collectionColorsIndex[collectionTitle].textColor = '#444';
         } else {
           collectionColorsIndex[collectionTitle].textColor = '#ccc';
@@ -693,6 +711,7 @@ angular.module('app', ['angular-md5'])
       scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
 
+      const FAR_LEFT = 0;
       /**
        * Label positioning:
        */
@@ -707,7 +726,7 @@ angular.module('app', ['angular-md5'])
           // If the browser is scrolled past the right, hide the label
           if (
             (scrollLeft - seriesVolumeLabel.right) > -LABEL_OFFSET &&
-            (scrollLeft - seriesVolumeLabel.right) < 0
+            (scrollLeft - seriesVolumeLabel.right) < FAR_LEFT
           ) {
             seriesVolumeLabel.visible = true;
             seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - LABEL_OFFSET);
@@ -715,7 +734,7 @@ angular.module('app', ['angular-md5'])
             seriesVolumeLabel.visible = false;
           } else {
             seriesVolumeLabel.visible = true;
-            seriesVolumeLabel.labelStyles.left = '0';
+            seriesVolumeLabel.labelStyles.left = 'FAR_LEFT';
           }
         } else {
           seriesVolumeLabel.visible = true;
@@ -878,7 +897,10 @@ angular.module('app', ['angular-md5'])
     _.each(comics, function(comic) {
       // Get the collection containing this comic
       comic.collection = _.find(collections, function(collection) {
-        return collection.comicIds.indexOf(comic.id) > -1;
+        if(collection.comicIds.indexOf(comic.id) === Math.abs(collection.comicIds.indexOf(comic.id))){
+          return true;
+        }
+        return false;
       });
     });
 
@@ -942,7 +964,7 @@ angular.module('app', ['angular-md5'])
         pushComicChunkToVm();
 
         // Update the loader
-        $('#load-percent').text(((comicsIterator / comics.length) * PERCENT_MULTIPLIER).toFixed(0) + '%');
+        $('#load-percent').text(Math.round((comicsIterator / comics.length) * PERCENT_MULTIPLIER) + '%');
       };
 
       // Do this first comic chunk instantly
@@ -970,7 +992,7 @@ angular.module('app', ['angular-md5'])
 
         // Init "Info & Credits" modal
         var infoModal = $('#info');
-        infoModalInstance = M.Modal.init(infoModal)[0];
+        infoModalInstance = _.first(M.Modal.init(infoModal));
 
         /**
          * The extra timeout is here because without it, 
@@ -1025,7 +1047,10 @@ angular.module('app', ['angular-md5'])
         // Check that each comic is referenced by a collection
         _.each(comics, function(comic) {
           foundComic = _.find(collections, function(collection) {
-            return collection.comicIds.indexOf(comic.id) > -1;
+            if(collection.comicIds.indexOf(comic.id) === Math.abs(collection.comicIds.indexOf(comic.id))){
+              return true;
+            }
+            return false;
           });
 
           if (!foundComic) {
