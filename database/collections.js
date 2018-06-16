@@ -2379,6 +2379,38 @@ collections.push(
       'XMenVol295'
     ]
   ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 1: The Twelve',
+    '2008-3-5',
+    [
+      'WolverineVol2145',
+      'CableVol173',
+      'CableVol174'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
+    '2014-9-17',
+    [
+      'XMenPhoenixVol11',
+      'XMenPhoenixVol12',
+      'XMenPhoenixVol13'
+    ]
+  ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 1: The Twelve',
+    '2008-3-5',
+    [
+      'UncannyXMenVol1376',
+      'CableVol175',
+      'XMenVol296',
+      'WolverineVol2146',
+      'WolverineVol2147',
+      'UncannyXMenVol1377',
+      'CableVol176',
+      'XMenVol297',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -2386,9 +2418,6 @@ collections.push(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
-      'WolverineVol2145',
-      'WolverineVol2146',
-      'WolverineVol2147',
       'WolverineVol2148',
       'WolverineVol2149'
     ]
@@ -2433,15 +2462,6 @@ collections.push(
     [
       'XManVol153',
       'XManVol154'
-    ]
-  ),
-  new Collection(
-    'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
-    '2014-9-17',
-    [
-      'XMenPhoenixVol11',
-      'XMenPhoenixVol12',
-      'XMenPhoenixVol13'
     ]
   ),
   /**

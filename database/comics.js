@@ -163,7 +163,11 @@ addComicsInSeriesVolume('CableVol1', [
   [67, '1999-5'],
   [68, '1999-6'],
   [69, '1999-7'],
-  [70, '1999-8']
+  [70, '1999-8'],
+  [73, '1999-11'],
+  [74, '1999-12'],
+  [75, '2000-1'],
+  [76, '2000-2']
 ])
 addComicsInSeriesVolume('CableAnnualVol1', [[1, '1999-4']])
 addComicsInSeriesVolume('CableVol2', [
@@ -746,6 +750,8 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [373, '1999-10'],
   [374, '1999-11'],
   [375, '1999-12'],
+  [376, '2000-1'],
+  [377, '2000-2'],
 /**
  * Complete until here
  */
@@ -1127,7 +1133,9 @@ addComicsInSeriesVolume('XMenVol2', [
   [92, '1999-9'],
   [93, '1999-10'],
   [94, '1999-11'],
-  [95, '1999-12']
+  [95, '1999-12'],
+  [96, '2000-1'],
+  [97, '2000-2']
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
