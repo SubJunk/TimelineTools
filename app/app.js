@@ -19,13 +19,13 @@ angular.module('app', ['angular-md5'])
     const TOP_MARGIN = 300;
 
     //Colour constants used in multiple functions
-    const WHEEL_SIZE = 360;     //360 degrees in colour wheel
-    const STEP_CHANGE = 30;     //define how far to step around the colour wheel each time
-    const MIN_LIGHTNESS = 30;   //Lightness can be in the range 0-100
-    const MAX_LIGHTNESS = 85;   
-    const MIN_SATURATION = 35;  //Saturation can be in the range 0-100
-    const MAX_SATURATION = 75;  //We choose a mid range that's easy to see
+    const LIGHTNESS_MIN = 30;   //Lightness can be in the range 0-100
+    const LIGHTNESS_MAX = 85;   
     const PERCENT_MULTIPLIER = 100;
+    const SATURATION_MIN = 35;  //Saturation can be in the range 0-100
+    const SATURATION_MAX = 75;  //We choose a mid range that's easy to see
+    const STEP_CHANGE = 30;     //define how far to step around the colour wheel each time
+    const COMPLETE_COLOR_WHEEL_DEGREES = 360;     //360 degrees in colour wheel
 
     
     var globalVerticalPositionCounter = INITIAL_ZERO;
@@ -186,25 +186,19 @@ angular.module('app', ['angular-md5'])
       // Get the collection containing this comic
       vm.expandedCollection = _.find(collections, function(collection, index) {
         currentComicIndexInCollection = collection.comicIds.indexOf(currentComic.id);
-        if (currentComicIndexInCollection === Math.abs(currentComicIndexInCollection)) { //there's probably a better way to do this
+        if (collection.comicIds.includes(currentComic.id)) {
           currentCollectionIndexInCollections = index;
           return true;
         }
         return false;
       });
-
-
-      var prevCollectionIndexInCollections = currentCollectionIndexInCollections;
-      var nextCollectionIndexInCollections = currentCollectionIndexInCollections;
-      prevCollectionIndexInCollections --;
-      nextCollectionIndexInCollections ++;
       
       // if this is the first collection, 
       if(_.isEqual(collections[currentCollectionIndexInCollections], _.first(collections))) {
         vm.prevCollection = undefined;
         vm.prevCollectionFirstComic = undefined;
       } else  {
-        vm.prevCollection = collections[prevCollectionIndexInCollections];
+        vm.prevCollection = collections[currentCollectionIndexInCollections - 1];
         vm.prevCollectionFirstComic = _.find(comics, ['id', _.first(vm.prevCollection.comicIds)]);
       }
 
@@ -213,51 +207,30 @@ angular.module('app', ['angular-md5'])
         vm.nextCollection = undefined;
         vm.nextCollectionFirstComic = undefined;
       } else {
-        vm.nextCollection = collections[nextCollectionIndexInCollections];
+        vm.nextCollection = collections[currentCollectionIndexInCollections + 1];
         vm.nextCollectionFirstComic = _.find(comics, ['id', _.first(vm.nextCollection.comicIds)]);
       }
-
-      var prevComicIndexInCollection;
-      var nextComicIndexInCollection;
-      var lastComicInCollection;
-      
-      // set if there is a previous collection
-      if(vm.prevCollection) {
-        prevComicIndexInCollection = currentComicIndexInCollection;
-        prevComicIndexInCollection--;
-        lastComicInCollection = vm.prevCollection.comicIds.length;
-        lastComicInCollection--;
-      }
-
-      //set if there is a next collection
-      if(vm.nextCollection) {
-        nextComicIndexInCollection = currentComicIndexInCollection;
-        nextComicIndexInCollection++;
-      }
-
       // Find the previous comic
-      if (_.first(vm.collections[currentCollectionIndexInCollections].comics) === vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection]){
+      if (currentComicIndexInCollection > 0) {
+        vm.prevComic = vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection - 1];
+      } else if (vm.prevCollection) {
         /**
-       * The expanded comic is the first one in a collection, so we need to find out
-       * the last comic in the previous collection.
-       */
-        if (vm.prevCollection) {
-          prevComicId = vm.prevCollection.comicIds[lastComicInCollection];
-          vm.prevComic = _.find(comics, ['id', prevComicId]);
-        }
-      } else { //it's not the first in the collection
-        vm.prevComic = vm.collections[currentCollectionIndexInCollections].comics[prevComicIndexInCollection];
+         * The expanded comic is the first one in a collection, so we need to find out
+         * the last comic in the previous collection.
+         */
+        prevComicId = vm.prevCollection.comicIds[vm.prevCollection.comicIds.length - 1];
+        vm.prevComic = _.find(comics, ['id', prevComicId]);
       }
 
       // Find the next comic
-      if (vm.collections[currentCollectionIndexInCollections].comics[nextComicIndexInCollection]) {
-        vm.nextComic = vm.collections[currentCollectionIndexInCollections].comics[nextComicIndexInCollection];
+      if (vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection + 1]) {
+        vm.nextComic = vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection + 1];
       } else if (vm.nextCollection) {
         /**
          * The expanded comic is the last one in a collection, so we need to find out
          * the first comic in the next collection.
          */
-        nextComicId = _.first(vm.nextCollection.comicIds);
+        nextComicId = vm.nextCollection.comicIds[0];
         vm.nextComic = _.find(comics, ['id', nextComicId]);
       }
 
@@ -502,8 +475,7 @@ angular.module('app', ['angular-md5'])
           return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
         });
 
-        //check if index not found -1 
-        if (seriesVolumeLabelIndex !== Math.abs(seriesVolumeLabelIndex)) { 
+        if(_.includes(seriesVolumeLabels.seriesVolumeLabel)=== 'false') {
           throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
         }
 
@@ -560,18 +532,18 @@ angular.module('app', ['angular-md5'])
         collectionColorsIndex[collectionTitle].collectionTitle = collectionTitle;
         collectionColorsIndex[collectionTitle].hslColor = 'hsl(';
         if (angular.isDefined(startColor)) {
-          if ((startColor + STEP_CHANGE) > WHEEL_SIZE) {
-            startColor -= WHEEL_SIZE;
+          if ((startColor + STEP_CHANGE) > COMPLETE_COLOR_WHEEL_DEGREES) {
+            startColor -= COMPLETE_COLOR_WHEEL_DEGREES;
           }
           startColor += STEP_CHANGE;
         } else {
-          startColor = Math.floor(Math.random() * WHEEL_SIZE);
+          startColor = Math.floor(Math.random() * COMPLETE_COLOR_WHEEL_DEGREES);
         }
         hue = startColor;
         collectionColorsIndex[collectionTitle].hslColor += startColor + ', ';
-        saturation = parseFloat('0.' + Math.floor(Math.random() * ((MAX_SATURATION-MIN_SATURATION)) + MIN_SATURATION));
+        saturation = parseFloat('0.' + Math.floor(Math.random() * ((SATURATION_MAX-SATURATION_MIN)) + SATURATION_MIN));
         collectionColorsIndex[collectionTitle].hslColor += saturation * PERCENT_MULTIPLIER + '%, ';
-        lightness = parseFloat('0.' + Math.floor(Math.random() * ((MAX_LIGHTNESS-MIN_LIGHTNESS)) + MIN_LIGHTNESS));
+        lightness = parseFloat('0.' + Math.floor(Math.random() * ((LIGHTNESS_MAX-LIGHTNESS_MIN)) + LIGHTNESS_MIN));
         collectionColorsIndex[collectionTitle].hslColor += lightness * PERCENT_MULTIPLIER  + '%)';
         
         /**
@@ -647,7 +619,7 @@ angular.module('app', ['angular-md5'])
         const RGB_CUTTOFF = 0.03928;  // See http://entropymine.com/imageworsener/srgbformula/
         const RGB_SLOPE = 0.055;      
         const RGB_DENOMINATOR = 1.055;
-        const RGB_EXP = 2.4;        
+        const RGB_EXPONENT = 2.4;        
         const LINEAR_RGB = 12.92;      // R, G, B * LINEAR_RBG = RGB_CUTTOFF
         const PERCEIVED_WEIGHTING_RED_LIGHT = 0.2126;
         const PERCEIVED_WEIGHTING_GREEN_LIGHT = 0.7152;
@@ -661,7 +633,7 @@ angular.module('app', ['angular-md5'])
           if (rgbColor[i] <= RGB_CUTTOFF) {
             rgbColor[i] = rgbColor[i] / LINEAR_RGB ;
           } else {
-            rgbColor[i] = Math.pow((rgbColor[i] + RGB_SLOPE) / RGB_DENOMINATOR, RGB_EXP);
+            rgbColor[i] = Math.pow((rgbColor[i] + RGB_SLOPE) / RGB_DENOMINATOR, RGB_EXPONENT);
           }
         }
 
@@ -897,7 +869,7 @@ angular.module('app', ['angular-md5'])
     _.each(comics, function(comic) {
       // Get the collection containing this comic
       comic.collection = _.find(collections, function(collection) {
-        if(collection.comicIds.indexOf(comic.id) === Math.abs(collection.comicIds.indexOf(comic.id))){
+        if(collection.comicIds.includes(comic.id)){
           return true;
         }
         return false;
@@ -1047,7 +1019,7 @@ angular.module('app', ['angular-md5'])
         // Check that each comic is referenced by a collection
         _.each(comics, function(comic) {
           foundComic = _.find(collections, function(collection) {
-            if(collection.comicIds.indexOf(comic.id) === Math.abs(collection.comicIds.indexOf(comic.id))){
+            if(collection.comicIds.includes(comic.id)){
               return true;
             }
             return false;

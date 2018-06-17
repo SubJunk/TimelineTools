@@ -26,7 +26,7 @@
       "eqeqeq": "error",
       "indent": [ "error", 2, {"SwitchCase": 1} ],
       "no-else-return": "error",
-      "no-magic-numbers": [ "error", { "detectObjects": true, "enforceConst": true }],
+      "no-magic-numbers": [ "error", { "detectObjects": true, "enforceConst": true, "ignore": [1,0] }],
       "no-mixed-spaces-and-tabs": "error",
       "quotes": [ 2, "single" ],
       "semi": [ 2, "always" ]
