@@ -2411,14 +2411,36 @@ collections.push(
       'XMenVol297',
     ]
   ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
+    '2008-9-10',
+    [
+      'UncannyXMenAnnualVol11',
+      'UncannyXMenVol1378',
+      'CableVol177',
+      'X51Vol18',
+      'XMenUnlimitedVol126',
+      'WolverineVol2148',
+      'XMenVol298'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
   new Collection(
+    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
+    '2008-9-10',
+    [
+      'XMenSearchforCyclopsVol11',
+      'XMenSearchforCyclopsVol12',
+      'XMenSearchforCyclopsVol13',
+      'XMenSearchforCyclopsVol14'
+    ]
+  ),
+  new Collection(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
-      'WolverineVol2148',
       'WolverineVol2149'
     ]
   ),
