@@ -96,22 +96,22 @@
               <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::comic.image}}.jpg"></img>
             </a>
             <ul class="pagination">
-              <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}" data-toggle="tooltip" title="{{main.prevCollection.title}}" data-original-title=title="{{main.prevCollection.title}}">
+              <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}" data-toggle="tooltip" title="{{main.prevCollection.title}}">
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
                   <i class="material-icons">arrow_backward</i>
                 </a>
               </li>
-              <li class="waves-effect" ng-class="{disabled: !main.prevComic}" data-toggle="tooltip" title="{{main.prevComic.series}} #{{main.prevComic.issue}}" data-original-title="{{main.prevComic.series}} #{{main.prevComic.issue}}">
+              <li class="waves-effect" ng-class="{disabled: !main.prevComic}" data-toggle="tooltip" title="{{main.prevComic.series}} #{{main.prevComic.issue}}">
                 <a ng-click="main.toggleExpandComic(main.prevComic)">
                   <i class="material-icons">chevron_left</i>
                 </a>
               </li>
-              <li class="waves-effect" ng-class="{disabled: !main.nextComic }" data-toggle="tooltip" title="{{main.nextComic.series}} #{{main.nextComic.issue}}" data-original-title="{{main.nextComic.series}} #{{main.nextComic.issue}}">
+              <li class="waves-effect" ng-class="{disabled: !main.nextComic }" data-toggle="tooltip" title="{{main.nextComic.series}} #{{main.nextComic.issue}}">
                 <a ng-click="main.toggleExpandComic(main.nextComic)">
                   <i class="material-icons">chevron_right</i>
                 </a>
               </li>
-              <li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic }" data-toggle="tooltip" title="{{main.nextCollection.title}}" data-original-title="{{main.nextCollection.title}}">
+              <li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic }" data-toggle="tooltip" title="{{main.nextCollection.title}}">
                 <a ng-click="main.toggleExpandComic(main.nextCollectionFirstComic)">
                   <i class="material-icons">arrow_forward</i>
                 </a>
