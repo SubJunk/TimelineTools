@@ -163,7 +163,12 @@ addComicsInSeriesVolume('CableVol1', [
   [67, '1999-5'],
   [68, '1999-6'],
   [69, '1999-7'],
-  [70, '1999-8']
+  [70, '1999-8'],
+  [73, '1999-11'],
+  [74, '1999-12'],
+  [75, '2000-1'],
+  [76, '2000-2'],
+  [77, '2000-3']
 ])
 addComicsInSeriesVolume('CableAnnualVol1', [[1, '1999-4']])
 addComicsInSeriesVolume('CableVol2', [
@@ -746,6 +751,9 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [373, '1999-10'],
   [374, '1999-11'],
   [375, '1999-12'],
+  [376, '2000-1'],
+  [377, '2000-2'],
+  [378, '2000-3'],
 /**
  * Complete until here
  */
@@ -782,6 +790,7 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [528, '2010-11', ['The Five Lights (Part 3)']],
   [529, '2010-12', ['The Five Lights (Part Four)']]
 ])
+addComicsInSeriesVolume('UncannyXMenAnnualVol1', [[1, '2000-2']])
 addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']])
 addComicsInSeriesVolume('WeaponXVol1', [
   [1, '1995-3'],
@@ -851,6 +860,7 @@ addComicsInSeriesVolume('WolverineGambitVictimsVol1', [
   [3, '1995-11'],
   [4, '1995-12'],
 ])
+addComicsInSeriesVolume('X51Vol1', [[8, '2000-3']])
 addComicsInSeriesVolume('XCalibreVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
@@ -1127,7 +1137,10 @@ addComicsInSeriesVolume('XMenVol2', [
   [92, '1999-9'],
   [93, '1999-10'],
   [94, '1999-11'],
-  [95, '1999-12']
+  [95, '1999-12'],
+  [96, '2000-1'],
+  [97, '2000-2'],
+  [98, '2000-3']
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
@@ -1202,6 +1215,12 @@ addComicsInSeriesVolume('XMenSecondComingVol1', [
   [1, '2010-5', ['Second Coming, Chapter One']],
   [2, '2010-9', ['Second Coming Chapter XIV']],
 ])
+addComicsInSeriesVolume('XMenSearchforCyclopsVol1', [
+  [1, '2000-12'],
+  [2, '2001-1'],
+  [3, '2001-2'],
+  [4, '2001-3'],
+])
 addComicsInSeriesVolume('XMenTheWeddingAlbumVol1', [[1, '1994-1-1']])
 addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [1, '1993-6'],
@@ -1219,7 +1238,8 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [18, '1998-4'],
   [22, '1999-3'],
   [23, '1999-6'],
-  [24, '1999-9']
+  [24, '1999-9'],
+  [26, '2000-3']
 ])
 addComicsInSeriesVolume('XMenvsBroodVol1', [
   [1, '1996-9'],

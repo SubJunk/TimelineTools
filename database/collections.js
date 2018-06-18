@@ -2149,6 +2149,7 @@ collections.push(
     'X-Men: Gold Vol. 0: Homecoming (Partial)',
     '2018-3-28',
     [
+      'UncannyXMenVol1358',
       'XMenVol277',
       'XMenVol278'
     ]
@@ -2158,7 +2159,8 @@ collections.push(
     '2011-1-19',
     [
       'DeadpoolandDeathAnnualVol11',
-      'DeadpoolVol218'
+      'DeadpoolVol218',
+      'DeadpoolVol219'
     ]
   ),
   new Collection(
@@ -2173,7 +2175,6 @@ collections.push(
     'X-Men: Blue Vol. 0: Reunion',
     '2018-3-21',
     [
-      'UncannyXMenVol1358',
       'UncannyXMenVol1359',
       'UncannyXMenFantasticFourAnnualVol11'
     ]
@@ -2182,8 +2183,8 @@ collections.push(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
-      'DeadpoolVol219',
-      'DeadpoolVol220'
+      'DeadpoolVol220',
+      'DeadpoolVol221'
     ]
   ),
   new Collection(
@@ -2207,8 +2208,8 @@ collections.push(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
-      'DeadpoolVol221',
-      'DeadpoolVol222'
+      'DeadpoolVol222',
+      'DeadpoolVol223'
     ]
   ),
   new Collection(
@@ -2232,7 +2233,6 @@ collections.push(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
-      'DeadpoolVol223',
       'DeadpoolVol224'
     ]
   ),
@@ -2379,17 +2379,68 @@ collections.push(
       'XMenVol295'
     ]
   ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 1: The Twelve',
+    '2008-3-5',
+    [
+      'WolverineVol2145',
+      'CableVol173',
+      'CableVol174'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
+    '2014-9-17',
+    [
+      'XMenPhoenixVol11',
+      'XMenPhoenixVol12',
+      'XMenPhoenixVol13'
+    ]
+  ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 1: The Twelve',
+    '2008-3-5',
+    [
+      'UncannyXMenVol1376',
+      'CableVol175',
+      'XMenVol296',
+      'WolverineVol2146',
+      'WolverineVol2147',
+      'UncannyXMenVol1377',
+      'CableVol176',
+      'XMenVol297',
+    ]
+  ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
+    '2008-9-10',
+    [
+      'UncannyXMenAnnualVol11',
+      'UncannyXMenVol1378',
+      'CableVol177',
+      'X51Vol18',
+      'XMenUnlimitedVol126',
+      'WolverineVol2148',
+      'XMenVol298'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
   new Collection(
+    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
+    '2008-9-10',
+    [
+      'XMenSearchforCyclopsVol11',
+      'XMenSearchforCyclopsVol12',
+      'XMenSearchforCyclopsVol13',
+      'XMenSearchforCyclopsVol14'
+    ]
+  ),
+  new Collection(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
-      'WolverineVol2145',
-      'WolverineVol2146',
-      'WolverineVol2147',
-      'WolverineVol2148',
       'WolverineVol2149'
     ]
   ),
@@ -2433,15 +2484,6 @@ collections.push(
     [
       'XManVol153',
       'XManVol154'
-    ]
-  ),
-  new Collection(
-    'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
-    '2014-9-17',
-    [
-      'XMenPhoenixVol11',
-      'XMenPhoenixVol12',
-      'XMenPhoenixVol13'
     ]
   ),
   /**
