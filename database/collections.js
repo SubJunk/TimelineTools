@@ -2233,7 +2233,8 @@ collections.push(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
-      'DeadpoolVol224'
+      'DeadpoolVol224',
+      'DeadpoolVol225'
     ]
   ),
   new Collection(
@@ -2259,10 +2260,11 @@ collections.push(
     ]
   ),
   new Collection(
-    'Deadpool Classic Vol. 4',
-    '2011-1-19',
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
     [
-      'DeadpoolVol225'
+      'DeadpoolVol226',
+      'DeadpoolVol227'
     ]
   ),
   new Collection(
@@ -2301,6 +2303,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
+    [
+      'DeadpoolVol228',
+      'DeadpoolVol229'
+    ]
+  ),
+  new Collection(
     'Cable: The Nemesis Contract',
     '2018-1-10',
     [
@@ -2328,6 +2338,14 @@ collections.push(
       'UncannyXMenVol1371',
       'XMenVol291',
       'XMenAnnualVol41'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
+    [
+      'DeadpoolVol230',
+      'DeadpoolVol231'
     ]
   ),
   new Collection(
@@ -2360,6 +2378,14 @@ collections.push(
     '2018-1-10',
     [
       'CableAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
+    [
+      'DeadpoolVol232',
+      'DeadpoolVol233'
     ]
   ),
   new Collection(

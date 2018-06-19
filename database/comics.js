@@ -83,6 +83,7 @@ addComicsInSeriesVolume('AvengersVol1', [
   [402, '1996-9']
 ])
 addComicsInSeriesVolume('AvengersWestCoastVol2', [[101, '1993-12']])
+addComicsInSeriesVolume('BabysFirstDeadpoolBookVol1', [[1, '1998-12']])
 addComicsInSeriesVolume('BishopVol1', [
   [1, '1994-12'],
   [2, '1995-1'],
@@ -214,9 +215,18 @@ addComicsInSeriesVolume('DeadpoolVol2', [
   [22, '1998-11'],
   [23, '1998-12'],
   [24, '1999-1'],
-  [25, '1999-2']
+  [25, '1999-2'],
+  [26, '1999-3'],
+  [27, '1999-4'],
+  [28, '1999-5'],
+  [29, '1999-6'],
+  [30, '1999-7'],
+  [31, '1999-8'],
+  [32, '1999-9'],
+  [33, '1999-10']
 ])
 addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']])
+addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']])
 addComicsInSeriesVolume('DeadpoolTheCircleChaseVol1', [
   [1, '1993-8'],
   [2, '1993-9'],
