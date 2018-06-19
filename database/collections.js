@@ -2263,8 +2263,8 @@ collections.push(
     'Deadpool Classic Vol. 5',
     '2011-6-1',
     [
-      'DeadpoolVol226',
-      'DeadpoolVol227'
+      'BabysFirstDeadpoolBookVol11',
+      'DeadpoolTeamUpVol11'
     ]
   ),
   new Collection(
@@ -2280,6 +2280,14 @@ collections.push(
     [
       'UncannyXMenVol1365',
       'XMenVol20.5',
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
+    [
+      'DeadpoolVol226',
+      'DeadpoolVol227'
     ]
   ),
   new Collection(
