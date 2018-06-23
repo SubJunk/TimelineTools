@@ -15,7 +15,7 @@ angular.module('app', ['angular-md5'])
   var bodyStyles = {
     width: null,
     padding: 20,
-    background: 'hsl(216, 8%, 25%)'
+    background: null
   };
   var seriesVolumeLabels = [];
 
@@ -40,6 +40,7 @@ angular.module('app', ['angular-md5'])
   var currentComicIndexInCollection;
   var currentCollectionIndexInCollections;
   vm.isShowCollections = false;
+  vm.finishedLoading = false;
 
   // API variables
   var apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
@@ -878,10 +879,7 @@ angular.module('app', ['angular-md5'])
       pushComicChunkToVm();
 
       // Update the loader
-      /**
-       * @todo make this angulary
-       */
-      $("#load-percent").text(((comicsIterator / comics.length) * 100).toFixed(0) + '%');
+      vm.loadPercent = ((comicsIterator / comics.length) * 100).toFixed(0);
     };
 
     // Do this first comic chunk instantly
@@ -893,16 +891,16 @@ angular.module('app', ['angular-md5'])
 
   var infoModalInstance;
   var finishedLoading = function() {
-    $timeout(function() {
-      $("#loader").hide();
-      $("body").css(bodyStyles);
-      $("#app").show();
+    vm.finishedLoading = true;
 
+    $timeout(function() {
       // Make room for the farthest-right expanded panel
-      bodyStyles.width += $('.scroll-anchor').width();
+      vm.bodyStyles.width += $('.scroll-anchor').width();
 
       // Make room for the farthest-bottom expanded panel
-      bodyStyles.height = $(document).height() + $(window).height();
+      vm.bodyStyles.height = $(document).height() + $(window).height();
+
+      vm.bodyStyles.background = 'hsl(216, 8%, 25%)';
 
       // Init floating menu on the right
       $('.fixed-action-btn').floatingActionButton({direction: 'left'});
