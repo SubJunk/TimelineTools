@@ -878,6 +878,9 @@ angular.module('app', ['angular-md5'])
       pushComicChunkToVm();
 
       // Update the loader
+      /**
+       * @todo make this angulary
+       */
       $("#load-percent").text(((comicsIterator / comics.length) * 100).toFixed(0) + '%');
     };
 
@@ -908,6 +911,8 @@ angular.module('app', ['angular-md5'])
       var infoModal = $('#info');
       infoModalInstance = M.Modal.init(infoModal)[0];
 
+      useGetParameters();
+
       /**
        * The extra timeout is here because without it, 
        * the tooltips initialization freezes the rest of the execution
@@ -927,69 +932,75 @@ angular.module('app', ['angular-md5'])
     }
   }
 
-  // Expand the comic from the URL on load
-  if ($location.search()) {
-    var searchParams = $location.search();
+  /*
+   * Launches the initial expand and scroll on load, and
+   * the garbage collector, if the relevant GET parameters
+   * are specified (id and gc)
+   */
+  var useGetParameters = function() {
+    if ($location.search()) {
+      var searchParams = $location.search();
 
-    if (searchParams.id) {
-      var comicFromUrl = comics[_.findKey(comics, { 'id': searchParams.id })];
-      vm.toggleExpandComic(comicFromUrl);
+      if (searchParams.id) {
+        var comicFromUrl = comics[_.findKey(comics, { 'id': searchParams.id })];
+        vm.toggleExpandComic(comicFromUrl);
 
-      $timeout(function() {
-        $('html, body').animate({
-          scrollLeft: comicFromUrl.containerStyles.left - 200,
-          scrollTop:  comicFromUrl.containerStyles.top
+        $timeout(function() {
+          $('html, body').animate({
+            scrollLeft: comicFromUrl.containerStyles.left - 200,
+            scrollTop:  comicFromUrl.containerStyles.top
+          });
         });
-      });
-    }
-
-    /**
-     * The garbage collector.
-     *
-     * This picks up any orphaned comics and series that would
-     * not cause errors but just take up space.
-     *
-     * Note there is no need to check that the comicIds in
-     * collections map to comics, because that would cause big
-     * errors that we already watch out for.
-     */
-    if (searchParams.gc) {
-      var foundComic;
-      var isClean = true;
-      var gcConsolePrepend = 'Garbage Collector: ';
-
-      // Check that each comic is referenced by a collection
-      _.each(comics, function(comic) {
-        foundComic = _.find(collections, function(collection) {
-          return collection.comicIds.indexOf(comic.id) > -1;
-        });
-
-        if (!foundComic) {
-          isClean = false;
-          $log.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
-        }
-      });
-
-      if (isClean) {
-        $log.info(gcConsolePrepend + 'All comics are referenced by collections.');
       }
 
-      // Check that each seriesVolume is referenced by a comic
-      isClean = true;
-      _.each(seriesVolumes, function(seriesVolume) {
-        foundComic = _.find(comics, function(comic) {
-          return comic.seriesVolumeId === seriesVolume.id;
+      /**
+       * The garbage collector.
+       *
+       * This picks up any orphaned comics and series that would
+       * not cause errors but just take up space.
+       *
+       * Note there is no need to check that the comicIds in
+       * collections map to comics, because that would cause big
+       * errors that we already watch out for.
+       */
+      if (searchParams.gc) {
+        var foundComic;
+        var isClean = true;
+        var gcConsolePrepend = 'Garbage Collector: ';
+
+        // Check that each comic is referenced by a collection
+        _.each(comics, function(comic) {
+          foundComic = _.find(collections, function(collection) {
+            return collection.comicIds.indexOf(comic.id) > -1;
+          });
+
+          if (!foundComic) {
+            isClean = false;
+            $log.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
+          }
         });
 
-        if (!foundComic) {
-          isClean = false;
-          $log.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
+        if (isClean) {
+          $log.info(gcConsolePrepend + 'All comics are referenced by collections.');
         }
-      });
 
-      if (isClean) {
-        $log.info(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
+        // Check that each seriesVolume is referenced by a comic
+        isClean = true;
+        _.each(seriesVolumes, function(seriesVolume) {
+          foundComic = _.find(comics, function(comic) {
+            return comic.seriesVolumeId === seriesVolume.id;
+          });
+
+          if (!foundComic) {
+            isClean = false;
+            $log.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
+          }
+        });
+
+        if (isClean) {
+          $log.info(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
+        }
       }
     }
-  }
+  };
 });
