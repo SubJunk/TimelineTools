@@ -2458,6 +2458,18 @@ collections.push(
       'XMenVol298'
     ]
   ),
+  new Collection(
+    'X-Men: Powerless',
+    '2010-8',
+    [
+      'UncannyXMenVol1379',
+      'XForceVol1101',
+      'CableVol178',
+      'WolverineVol2149',
+      'XMenVol299',
+      'UncannyXMenVol1380',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -2469,13 +2481,6 @@ collections.push(
       'XMenSearchforCyclopsVol12',
       'XMenSearchforCyclopsVol13',
       'XMenSearchforCyclopsVol14'
-    ]
-  ),
-  new Collection(
-    'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
-    '2017-2-1',
-    [
-      'WolverineVol2149'
     ]
   ),
   new Collection(
