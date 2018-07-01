@@ -2527,9 +2527,52 @@ collections.push(
       'XForceVol1109',
     ]
   ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'XMenVol2100',
+      'XMenVol2101',
+      'UncannyXMenVol1381',
+      'UncannyXMenVol1382',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'XMenVol2102',
+      'XMenVol2103',
+      'XMenVol2104',
+      'XMenVol2105',
+      'XMenVol2106',
+      'XMenVol2107',
+      'XMenVol2108',
+      'XMenVol2109',
+      'XMenAnnualVol51',
+      'UncannyXMenVol1383',
+      'UncannyXMenVol1384',
+      'UncannyXMenVol1385',
+      'UncannyXMenVol1386',
+      'UncannyXMenVol1387',
+      'UncannyXMenVol1388',
+      'UncannyXMenVol1389',
+      'XMenUnlimitedVol127',
+      'XMenUnlimitedVol128',
+      'XMenUnlimitedVol129',
+      'XMenBlackSunVol11',
+      'XMenBlackSunVol12',
+      'XMenBlackSunVol13',
+      'XMenBlackSunVol14',
+      'XMenBlackSunVol15',
+      'BishopTheLastXManVol115',
+      'BishopTheLastXManVol116',
+      'CableVol187',
+    ]
+  ),
   new Collection(
     'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
     '2008-9-10',

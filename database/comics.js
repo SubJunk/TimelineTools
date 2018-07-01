@@ -90,6 +90,10 @@ addComicsInSeriesVolume('BishopVol1', [
   [3, '1995-2'],
   [4, '1995-3']
 ])
+addComicsInSeriesVolume('BishopTheLastXManVol1', [
+  [15, '2000-12'],
+  [16, '2001-1'],
+])
 addComicsInSeriesVolume('BlinkVol1', [
   [1, '2001-3'],
   [2, '2001-4'],
@@ -171,6 +175,7 @@ addComicsInSeriesVolume('CableVol1', [
   [76, '2000-2'],
   [77, '2000-3'],
   [78, '2000-4'],
+  [87, '2001-1'],
 ])
 addComicsInSeriesVolume('CableAnnualVol1', [[1, '1999-4']])
 addComicsInSeriesVolume('CableVol2', [
@@ -775,6 +780,15 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [378, '2000-3'],
   [379, '2000-4'],
   [380, '2000-5'],
+  [381, '2000-6'],
+  [382, '2000-7'],
+  [383, '2000-8'],
+  [384, '2000-9'],
+  [385, '2000-10'],
+  [386, '2000-11'],
+  [387, '2000-12'],
+  [388, '2001-1'],
+  [389, '2001-2'],
 /**
  * Complete until here
  */
@@ -1172,6 +1186,16 @@ addComicsInSeriesVolume('XMenVol2', [
   [97, '2000-2'],
   [98, '2000-3'],
   [99, '2000-4'],
+  [100, '2000-5'],
+  [101, '2000-6'],
+  [102, '2000-7'],
+  [103, '2000-8'],
+  [104, '2000-9'],
+  [105, '2000-10'],
+  [106, '2000-11'],
+  [107, '2000-12'],
+  [108, '2001-1'],
+  [109, '2001-2'],
 ])
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
@@ -1211,6 +1235,14 @@ addComicsInSeriesVolume('XMenAnnualVol2', [
 ])
 addComicsInSeriesVolume('XMenAnnualVol3', [[1, '1995-10']])
 addComicsInSeriesVolume('XMenAnnualVol4', [[1, '1999-8']])
+addComicsInSeriesVolume('XMenAnnualVol5', [[1, '2000-9']])
+addComicsInSeriesVolume('XMenBlackSunVol1', [
+  [1, '2000-11-1'],
+  [2, '2000-11-15'],
+  [3, '2000-12-1'],
+  [4, '2000-12-15'],
+  [5, '2000-12-31'],
+])
 addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']])
 addComicsInSeriesVolume('XMenChroniclesVol1', [
   [1, '1995-3'],
@@ -1270,7 +1302,10 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [22, '1999-3'],
   [23, '1999-6'],
   [24, '1999-9'],
-  [26, '2000-3']
+  [26, '2000-3'],
+  [27, '2000-6'],
+  [28, '2000-9'],
+  [29, '2000-12'],
 ])
 addComicsInSeriesVolume('XMenvsBroodVol1', [
   [1, '1996-9'],
