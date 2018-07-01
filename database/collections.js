@@ -2499,6 +2499,34 @@ collections.push(
       'UncannyXMenVol1380',
     ]
   ),
+  new Collection(
+    'Counter-X Vol. 2',
+    '2008-9-3',
+    [
+      'GenerationXVol163',
+      'GenerationXVol164',
+      'GenerationXVol165',
+      'GenerationXVol166',
+      'GenerationXVol167',
+      'GenerationXVol168',
+      'GenerationXVol169',
+      'GenerationXVol170',
+    ]
+  ),
+  new Collection(
+    'Counter-X Vol. 1',
+    '2008-7-2',
+    [
+      'XForceVol1102',
+      'XForceVol1103',
+      'XForceVol1104',
+      'XForceVol1105',
+      'XForceVol1106',
+      'XForceVol1107',
+      'XForceVol1108',
+      'XForceVol1109',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
