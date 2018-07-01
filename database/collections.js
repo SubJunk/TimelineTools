@@ -2176,7 +2176,8 @@ collections.push(
     '2018-3-21',
     [
       'UncannyXMenVol1359',
-      'UncannyXMenFantasticFourAnnualVol11'
+      'UncannyXMenFantasticFourAnnualVol11',
+      'CerebrosGuidetotheXMenVol11'
     ]
   ),
   new Collection(
@@ -2227,6 +2228,13 @@ collections.push(
       'UncannyXMenVol1364',
       'XMenVol284',
       'XMenUnlimitedVol122'
+    ]
+  ),
+  new Collection(
+    'X-Men: Gold Vol. 0: Homecoming (Partial)',
+    '2018-3-28',
+    [
+      'XMenDrDoomAnnualVol11'
     ]
   ),
   new Collection(
@@ -2339,7 +2347,21 @@ collections.push(
       'UncannyXMenVol1369',
       'MagnetoRexVol11',
       'MagnetoRexVol12',
-      'MagnetoRexVol13',
+      'MagnetoRexVol13'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
+    '2006-11-1',
+    [
+      'XManVol153',
+      'XManVol154'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Magneto War',
+    '2018-10-23',
+    [
       'XMenVol289',
       'UncannyXMenVol1370',
       'XMenVol290',
@@ -2423,6 +2445,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable: The Hellfire Hunt',
+    '2017-11-15',
+    [
+      'WolverineCableGutsandGloryVol11'
+    ]
+  ),
+  new Collection(
     'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
     '2014-9-17',
     [
@@ -2484,27 +2513,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'Cable: The Hellfire Hunt',
-    '2017-11-15',
-    [
-      'WolverineCableGutsandGloryVol11'
-    ]
-  ),
-  new Collection(
-    'X-Men: Blue Vol. 0: Reunion',
-    '2018-3-21',
-    [
-      'CerebrosGuidetotheXMenVol11'
-    ]
-  ),
-  new Collection(
-    'X-Men: Gold Vol. 0: Homecoming (Partial)',
-    '2018-3-28',
-    [
-      'XMenDrDoomAnnualVol11'
-    ]
-  ),
-  new Collection(
     'X-Men: Domino',
     '2018-4-25',
     [
@@ -2515,14 +2523,6 @@ collections.push(
       'XForceSexandViolenceVol11',
       'XForceSexandViolenceVol12',
       'XForceSexandViolenceVol13'
-    ]
-  ),
-  new Collection(
-    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
-    '2006-11-1',
-    [
-      'XManVol153',
-      'XManVol154'
     ]
   ),
   /**
