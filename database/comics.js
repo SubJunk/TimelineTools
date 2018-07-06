@@ -94,6 +94,7 @@ addComicsInSeriesVolume('BishopTheLastXManVol1', [
   [15, '2000-12'],
   [16, '2001-1'],
 ])
+addComicsInSeriesVolume('BlackPantherVol3', [[23, '2000-10']])
 addComicsInSeriesVolume('BlinkVol1', [
   [1, '2001-3'],
   [2, '2001-4'],
@@ -229,7 +230,19 @@ addComicsInSeriesVolume('DeadpoolVol2', [
   [30, '1999-7'],
   [31, '1999-8'],
   [32, '1999-9'],
-  [33, '1999-10']
+  [33, '1999-10'],
+  [34, '1999-11'],
+  [35, '1999-12'],
+  [36, '2000-1'],
+  [37, '2000-2'],
+  [38, '2000-3'],
+  [39, '2000-4'],
+  [40, '2000-5'],
+  [41, '2000-6'],
+  [42, '2000-7'],
+  [43, '2000-8'],
+  [44, '2000-9'],
+  [45, '2000-10'],
 ])
 addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']])
 addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']])

@@ -2436,6 +2436,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol234',
+      'DeadpoolVol235',
+    ]
+  ),
+  new Collection(
     'X-Men vs. Apocalypse Vol. 1: The Twelve',
     '2008-3-5',
     [
@@ -2461,6 +2469,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol236',
+      'DeadpoolVol237',
+    ]
+  ),
+  new Collection(
     'X-Men vs. Apocalypse Vol. 1: The Twelve',
     '2008-3-5',
     [
@@ -2472,6 +2488,14 @@ collections.push(
       'UncannyXMenVol1377',
       'CableVol176',
       'XMenVol297',
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol238',
+      'DeadpoolVol239',
     ]
   ),
   new Collection(
@@ -2497,6 +2521,14 @@ collections.push(
       'WolverineVol2149',
       'XMenVol299',
       'UncannyXMenVol1380',
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol240',
+      'DeadpoolVol241',
     ]
   ),
   new Collection(
@@ -2537,9 +2569,26 @@ collections.push(
       'UncannyXMenVol1382',
     ]
   ),
+  new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol242',
+      'DeadpoolVol243',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol244',
+      'BlackPantherVol323',
+      'DeadpoolVol245',
+    ]
+  ),
   new Collection(
     'X-Men: Revolution',
     '2018-8-14',
