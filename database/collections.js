@@ -1369,7 +1369,7 @@ collections.push(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
-      'WolverineAnnualVol21'
+      'WolverineAnnualVol11'
     ]
   ),
   new Collection(
@@ -2563,6 +2563,18 @@ collections.push(
     'X-Men: Revolution',
     '2018-8-14',
     [
+      'XMenUnlimitedVol127',
+      'XMenBlackSunVol11',
+      'XMenBlackSunVol12',
+      'XMenBlackSunVol13',
+      'XMenBlackSunVol14',
+      'XMenBlackSunVol15',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
       'XMenVol2100',
       'XMenVol2101',
       'UncannyXMenVol1381',
@@ -2577,9 +2589,51 @@ collections.push(
       'DeadpoolVol243',
     ]
   ),
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'WolverineVol2150',
+      'WolverineVol2151',
+      'WolverineVol2152',
+      'WolverineVol2153',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'XMenVol2102',
+      'UncannyXMenVol1383',
+      'XMenAnnualVol51',
+      'XMenVol2103',
+      'XMenUnlimitedVol128',
+      'UncannyXMenVol1384',
+      'XMenVol2104',
+      'UncannyXMenVol1385',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'WolverineVol2154',
+      'WolverineVol2155',
+      'WolverineVol2156',
+      'WolverineVol2157',
+      'WolverineVol2158',
+      'WolverineAnnualVol21',
+      'OriginVol11',
+      'OriginVol12',
+      'OriginVol13',
+      'OriginVol14',
+      'OriginVol15',
+      'OriginVol16',
+    ]
+  ),
   new Collection(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
@@ -2593,30 +2647,16 @@ collections.push(
     'X-Men: Revolution',
     '2018-8-14',
     [
-      'XMenVol2102',
-      'XMenVol2103',
-      'XMenVol2104',
       'XMenVol2105',
       'XMenVol2106',
       'XMenVol2107',
       'XMenVol2108',
       'XMenVol2109',
-      'XMenAnnualVol51',
-      'UncannyXMenVol1383',
-      'UncannyXMenVol1384',
-      'UncannyXMenVol1385',
       'UncannyXMenVol1386',
       'UncannyXMenVol1387',
       'UncannyXMenVol1388',
       'UncannyXMenVol1389',
-      'XMenUnlimitedVol127',
-      'XMenUnlimitedVol128',
       'XMenUnlimitedVol129',
-      'XMenBlackSunVol11',
-      'XMenBlackSunVol12',
-      'XMenBlackSunVol13',
-      'XMenBlackSunVol14',
-      'XMenBlackSunVol15',
       'BishopTheLastXManVol115',
       'BishopTheLastXManVol116',
       'CableVol187',

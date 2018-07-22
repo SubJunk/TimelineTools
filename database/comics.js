@@ -462,6 +462,14 @@ addComicsInSeriesVolume('NomadVol2', [
 addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']])
 addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']])
 addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']])
+addComicsInSeriesVolume('OriginVol1', [
+  [1, '2001-11'],
+  [2, '2001-12'],
+  [3, '2002-1'],
+  [4, '2002-2'],
+  [5, '2002-3'],
+  [6, '2002-4'],
+])
 addComicsInSeriesVolume('PowerPackVol1', [
   [27, '1986-12'],
   [35, '1988-2'],
@@ -847,6 +855,8 @@ addComicsInSeriesVolume('WeaponXVol1', [
   [4, '1995-6']
 ])
 addComicsInSeriesVolume('WhatIfVol2', [[60, '1994-4']])
+addComicsInSeriesVolume('WolverineAnnualVol1', [[1, '1995-9']])
+addComicsInSeriesVolume('WolverineAnnualVol2', [[1, '1999-3-11']])
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
   [2, '1982-10'],
@@ -897,11 +907,19 @@ addComicsInSeriesVolume('WolverineVol2', [
   [146, '2000-1'],
   [147, '2000-2'],
   [148, '2000-3'],
-  [149, '2000-4']
+  [149, '2000-4'],
+  [150, '2000-5'],
+  [151, '2000-6'],
+  [152, '2000-7'],
+  [153, '2000-8'],
+  [154, '2000-9'],
+  [155, '2000-10'],
+  [156, '2000-11'],
+  [157, '2000-12'],
+  [158, '2001-1'],
 ])
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']])
 addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']])
-addComicsInSeriesVolume('WolverineAnnualVol2', [[1, '1995-9']])
 addComicsInSeriesVolume('WolverineGambitVictimsVol1', [
   [1, '1995-9'],
   [2, '1995-10'],
