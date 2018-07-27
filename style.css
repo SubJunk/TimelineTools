@@ -176,7 +176,7 @@ display: none;
 }
 
 .comic-container .marvel-unlimited-link {
-  background-image: url('icons/marvel-unlimited.png');
+  background-image: url('images/marvel-unlimited.png');
   background-size: contain;
   display: block;
   width: 40px;
