@@ -8,7 +8,7 @@
  */
 function Comic(issue, datePublished, seriesVolumeId, titles) {
   if (!_.isEmpty(titles) && !_.isArray(titles)) {
-    return console.error('Expected comic title to be an array, got', titles);
+    throw new Error('Expected comic title to be an array, got' + titles);
   }
 
   // Create a Date object from the datePublished string
@@ -48,64 +48,64 @@ addComicsInSeriesVolume('AdventuresofCyclopsPhoenixVol1', [
   [2, '1994-6'],
   [3, '1994-7'],
   [4, '1994-8']
-])
-addComicsInSeriesVolume('AgeofApocalypseTheChosenVol1', [[1, '1995-4']])
+]);
+addComicsInSeriesVolume('AgeofApocalypseTheChosenVol1', [[1, '1995-4']]);
 addComicsInSeriesVolume('AmazingXMenVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
   [4, '1995-6']
-])
-addComicsInSeriesVolume('ArchangelVol1', [[1, '1996-2']])
+]);
+addComicsInSeriesVolume('ArchangelVol1', [[1, '1996-2']]);
 addComicsInSeriesVolume('AskanisonVol1', [
   [1, '1996-1'],
   [2, '1996-4'],
   [3, '1996-5'],
   [4, '1996-6']
-])
+]);
 addComicsInSeriesVolume('AstonishingXMenVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
   [4, '1995-6']
-])
+]);
 addComicsInSeriesVolume('AstonishingXMenVol2', [
   [1, '1999-9'],
   [2, '1999-10'],
   [3, '1999-11']
-])
-addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']])
+]);
+addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']]);
 addComicsInSeriesVolume('AvengersVol1', [
   [263, '1986-1-10'],
   [368, '1993-11'],
   [369, '1993-12'],
   [401, '1996-8'],
   [402, '1996-9']
-])
-addComicsInSeriesVolume('AvengersWestCoastVol2', [[101, '1993-12']])
-addComicsInSeriesVolume('BabysFirstDeadpoolBookVol1', [[1, '1998-12']])
+]);
+addComicsInSeriesVolume('AvengersWestCoastVol2', [[101, '1993-12']]);
+addComicsInSeriesVolume('BabysFirstDeadpoolBookVol1', [[1, '1998-12']]);
 addComicsInSeriesVolume('BishopVol1', [
   [1, '1994-12'],
   [2, '1995-1'],
   [3, '1995-2'],
   [4, '1995-3']
-])
+]);
 addComicsInSeriesVolume('BishopTheLastXManVol1', [
   [15, '2000-12'],
   [16, '2001-1'],
-])
-addComicsInSeriesVolume('BlackPantherVol3', [[23, '2000-10']])
+]);
+addComicsInSeriesVolume('BlackPantherVol3', [[23, '2000-10']]);
 addComicsInSeriesVolume('BlinkVol1', [
   [1, '2001-3'],
   [2, '2001-4'],
   [3, '2001-5'],
   [4, '2001-6']
-])
+]);
 addComicsInSeriesVolume('CableBloodMetalVol1', [
   [1, '1992-10'],
   [2, '1992-11']
-])
-addComicsInSeriesVolume('CableMachineManAnnualVol1', [[1, '1998-5']])
+]);
+addComicsInSeriesVolume('CableMachineManAnnualVol1', [[1, '1998-5']]);
 addComicsInSeriesVolume('CableVol1', [
   [-1, '1997-7'],
   [1,  '1993-5'],
@@ -177,24 +177,24 @@ addComicsInSeriesVolume('CableVol1', [
   [77, '2000-3'],
   [78, '2000-4'],
   [87, '2001-1'],
-])
-addComicsInSeriesVolume('CableAnnualVol1', [[1, '1999-4']])
+]);
+addComicsInSeriesVolume('CableAnnualVol1', [[1, '1999-4']]);
 addComicsInSeriesVolume('CableVol2', [
   [1, '2008-5', ['War Baby (Chapter 1)']]
-])
-addComicsInSeriesVolume('CaptainAmericaVol1', [[339, '1988-3']])
-addComicsInSeriesVolume('CerebrosGuidetotheXMenVol1', [[1, '1998-1']])
+]);
+addComicsInSeriesVolume('CaptainAmericaVol1', [[339, '1988-3']]);
+addComicsInSeriesVolume('CerebrosGuidetotheXMenVol1', [[1, '1998-1']]);
 addComicsInSeriesVolume('DaredevilVol1', [
   [238, '1987-1'],
   [252, '1988-3'],
-])
-addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']])
+]);
+addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']]);
 addComicsInSeriesVolume('DeadpoolVol1', [
   [1, '1994-8'],
   [2, '1994-9'],
   [3, '1994-10'],
   [4, '1994-11'],
-])
+]);
 addComicsInSeriesVolume('DeadpoolVol2', [
   [-1, '1997-7'],
   [0, '1996-12'],
@@ -243,32 +243,32 @@ addComicsInSeriesVolume('DeadpoolVol2', [
   [43, '2000-8'],
   [44, '2000-9'],
   [45, '2000-10'],
-])
-addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']])
-addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']])
+]);
+addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']]);
+addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']]);
 addComicsInSeriesVolume('DeadpoolTheCircleChaseVol1', [
   [1, '1993-8'],
   [2, '1993-9'],
   [3, '1993-10'],
   [4, '1993-11'],
-])
+]);
 addComicsInSeriesVolume('DeadpoolvsXForceVol1', [
   [1, '2014-7-2'],
   [2, '2014-7-23'],
   [3, '2014-8-20'],
   [4, '2014-9-3'],
-])
+]);
 addComicsInSeriesVolume('DominoVol1', [
   [1, '1997-1'],
   [2, '1997-2'],
   [3, '1997-3']
-])
+]);
 addComicsInSeriesVolume('DominoVol2', [
   [1, '2003-6-1'],
   [2, '2003-6-15'],
   [3, '2003-7'],
   [4, '2003-8']
-])
+]);
 addComicsInSeriesVolume('ExcaliburVol1', [
   [71, '1993-11'],
   [78, '1994-6'],
@@ -278,56 +278,56 @@ addComicsInSeriesVolume('ExcaliburVol1', [
   [82, '1994-10'],
   [95, '1996-3'],
   [100, '1996-8']
-])
+]);
 addComicsInSeriesVolume('FactorXVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
   [4, '1995-6']
-])
+]);
 
 addComicsInSeriesVolume('FantasticFourVol1', [
   [286, '1986-1-10'],
   [312, '1988-3'],
   [415, '1996-8'],
   [416, '1996-9']
-])
+]);
 addComicsInSeriesVolume('FantasticFourvstheXMenVol1', [
   [1, '1987-2'],
   [2, '1987-3'],
   [3, '1987-4'],
   [4, '1987-6']
-])
+]);
 addComicsInSeriesVolume('FurtherAdventuresofCyclopsPhoenixVol1', [
   [1, '1996-6'],
   [2, '1996-7'],
   [3, '1996-8'],
   [4, '1996-9']
-])
+]);
 addComicsInSeriesVolume('GambitVol1', [
   [1, '1993-12'],
   [2, '1994-1'],
   [3, '1994-2'],
   [4, '1994-3']
-])
+]);
 addComicsInSeriesVolume('GambitVol2', [
   [1, '1997-9'],
   [2, '1997-10'],
   [3, '1997-11'],
   [4, '1997-12']
-])
+]);
 addComicsInSeriesVolume('GambitandtheXTernalsVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
   [4, '1995-6']
-])
+]);
 addComicsInSeriesVolume('GenerationNextVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
   [4, '1995-6']
-])
+]);
 addComicsInSeriesVolume('GenerationXVol1', [
   [1, '1994-11'],
   [2, '1994-12'],
@@ -359,48 +359,48 @@ addComicsInSeriesVolume('GenerationXVol1', [
   [73, '2001-3'],
   [74, '2001-4'],
   [75, '2001-6'],
-])
-addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']])
+]);
+addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']]);
 addComicsInSeriesVolume('GhostRiderVol3', [
   [26, '1992-6'],
   [27, '1992-7'],
-])
-addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']]])
-addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']])
+]);
+addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']]]);
+addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']]);
 addComicsInSeriesVolume('IncredibleHulkVol1', [
   [340, '1988-2'],
   [444, '1996-8'],
   [445, '1996-9']
-])
+]);
 addComicsInSeriesVolume('IncredibleHulkVol2', [
   [8, '1999-11']
-])
+]);
 addComicsInSeriesVolume('IronFistVol1', [
   [14, '1977-8', ['Snowfire']],
   [15, '1977-9', ['Enter, the X-Men']]
-])
+]);
 addComicsInSeriesVolume('IronManVol1', [
   [332, '1996-9']
-])
-addComicsInSeriesVolume('MachineManBastionAnnualVol1', [[1, '1998-6']])
+]);
+addComicsInSeriesVolume('MachineManBastionAnnualVol1', [[1, '1998-6']]);
 addComicsInSeriesVolume('MagikVol1', [
   [1, '1983-12'],
   [2, '1984-1'],
   [3, '1984-2'],
   [4, '1984-3']
-])
+]);
 addComicsInSeriesVolume('MagnetoRexVol1', [
   [1, '1999-5'],
   [2, '1999-6'],
   [3, '1999-7']
-])
-addComicsInSeriesVolume('MarvelGraphicNovelVol1', [[5, '1983-1']])
+]);
+addComicsInSeriesVolume('MarvelGraphicNovelVol1', [[5, '1983-1']]);
 addComicsInSeriesVolume('MarvelTeamUpVol1', [
   [1976, '1976-12', ['The Lords of Light and Darkness!']],
   [53,   '1977-1', ['Nightmare in New Mexico!']],
   [69,   '1978-5', ['Night of the Living God!']],
   [70,   '1978-6', ['Whom Gods Destroy!']]
-])
+]);
 addComicsInSeriesVolume('NewMutantsVol1', [
   [26, '1985-4'],
   [27, '1985-5'],
@@ -440,33 +440,33 @@ addComicsInSeriesVolume('NewMutantsVol1', [
   [98, '1991-2'],
   [99, '1991-3'],
   [100, '1991-4'],
-])
+]);
 addComicsInSeriesVolume('NewMutantsVol3', [
   [12, '2010-6', ['Second Coming (Chapter Three)']],
   [13, '2010-7', ['Second Coming (Chapter Seven)']],
   [14, '2010-8', ['Second Coming (Chapter Eleven)']],
-])
+]);
 addComicsInSeriesVolume('NewMutantsAnnualVol1', [
   [4, '1988-9'],
   [7, '1991-8'],
-])
+]);
 addComicsInSeriesVolume('NewWarriorsVol1', [
   [31, '1993-1'],
   [45, '1994-3'],
   [46, '1994-4'],
-])
+]);
 addComicsInSeriesVolume('NightcrawlerVol1', [
   [1, '1985-11'],
   [2, '1985-12'],
   [3, '1986-1'],
   [4, '1986-2'],
-])
+]);
 addComicsInSeriesVolume('NomadVol2', [
   [20, '1993-12'],
-])
-addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']])
-addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']])
-addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']])
+]);
+addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']]);
+addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']]);
+addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']]);
 addComicsInSeriesVolume('OriginVol1', [
   [1, '2001-11'],
   [2, '2001-12'],
@@ -474,20 +474,20 @@ addComicsInSeriesVolume('OriginVol1', [
   [4, '2002-2'],
   [5, '2002-3'],
   [6, '2002-4'],
-])
+]);
 addComicsInSeriesVolume('PowerPackVol1', [
   [27, '1986-12'],
   [35, '1988-2'],
-])
-addComicsInSeriesVolume('PunisherVol3', [[11, '1996-9']])
+]);
+addComicsInSeriesVolume('PunisherVol3', [[11, '1996-9']]);
 addComicsInSeriesVolume('RogueVol1', [
   [1, '1995-1'],
   [2, '1995-2'],
   [3, '1995-3'],
   [4, '1995-4']
-])
-addComicsInSeriesVolume('SabretoothSpecialVol1', [[1, '1996-1']])
-addComicsInSeriesVolume('SecondComingPrepareVol1', [[1, '2010-4', ['Where Were You?']]])
+]);
+addComicsInSeriesVolume('SabretoothSpecialVol1', [[1, '1996-1']]);
+addComicsInSeriesVolume('SecondComingPrepareVol1', [[1, '2010-4', ['Where Were You?']]]);
 addComicsInSeriesVolume('SecretWarsVol1', [
   [1, '1984-5'],
   [2, '1984-6'],
@@ -501,22 +501,22 @@ addComicsInSeriesVolume('SecretWarsVol1', [
   [10, '1985-2'],
   [11, '1985-3'],
   [12, '1985-4'],
-])
+]);
 addComicsInSeriesVolume('SpiderManVol1', [
   [16, '1991-11'],
   [72, '1996-9']
-])
-addComicsInSeriesVolume('StryfesStrikeFileVol1', [[1, '1993-1-1']])
-addComicsInSeriesVolume('TalesfromtheAgeofApocalypseBytheLightVol1', [[1, '1996-12']])
-addComicsInSeriesVolume('TalesfromtheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']])
-addComicsInSeriesVolume('TheAmazingSpiderManVol1', [[415, '1996-9']])
+]);
+addComicsInSeriesVolume('StryfesStrikeFileVol1', [[1, '1993-1-1']]);
+addComicsInSeriesVolume('TalesfromtheAgeofApocalypseBytheLightVol1', [[1, '1996-12']]);
+addComicsInSeriesVolume('TalesfromtheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']]);
+addComicsInSeriesVolume('TheAmazingSpiderManVol1', [[415, '1996-9']]);
 addComicsInSeriesVolume('ThorVol1', [
   [373, '1986-11'],
   [374, '1986-12'],
   [377, '1987-3'],
   [378, '1987-4'],
   [502, '1996-9']
-])
+]);
 addComicsInSeriesVolume('UncannyXMenVol1', [
   [-1, '1997-7'],
   [94, '1975-8', ['The Doomsmith Scenario!']],
@@ -815,9 +815,9 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [387, '2000-12'],
   [388, '2001-1'],
   [389, '2001-2'],
-/**
- * Complete until here
- */
+  /**
+   * Complete until here
+   */
   [492, '2008-1', ['Messiah Complex: Chapter Two']],
   [493, '2008-2', ['Messiah Complex: Chapter Six']],
   [494, '2008-3', ['Messiah Complex: Chapter Ten']],
@@ -850,24 +850,24 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [527, '2010-10', ['The Five Lights (Part 2) - Velocidad']],
   [528, '2010-11', ['The Five Lights (Part 3)']],
   [529, '2010-12', ['The Five Lights (Part Four)']]
-])
-addComicsInSeriesVolume('UncannyXMenAnnualVol1', [[1, '2000-2']])
-addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']])
+]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol1', [[1, '2000-2']]);
+addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']]);
 addComicsInSeriesVolume('WeaponXVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
   [4, '1995-6']
-])
-addComicsInSeriesVolume('WhatIfVol2', [[60, '1994-4']])
-addComicsInSeriesVolume('WolverineAnnualVol1', [[1, '1995-9']])
-addComicsInSeriesVolume('WolverineAnnualVol2', [[1, '1999-3-11']])
+]);
+addComicsInSeriesVolume('WhatIfVol2', [[60, '1994-4']]);
+addComicsInSeriesVolume('WolverineAnnualVol1', [[1, '1995-9']]);
+addComicsInSeriesVolume('WolverineAnnualVol2', [[1, '1999-3-11']]);
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
   [2, '1982-10'],
   [3, '1982-11'],
   [4, '1982-12']
-])
+]);
 addComicsInSeriesVolume('WolverineVol2', [
   [75, '1993-11'],
   [85, '1994-9'],
@@ -928,22 +928,22 @@ addComicsInSeriesVolume('WolverineVol2', [
   [167, '2001-10'],
   [168, '2001-11'],
   [169, '2001-12'],
-])
-addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']])
-addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']])
+]);
+addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']]);
+addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']]);
 addComicsInSeriesVolume('WolverineGambitVictimsVol1', [
   [1, '1995-9'],
   [2, '1995-10'],
   [3, '1995-11'],
   [4, '1995-12'],
-])
-addComicsInSeriesVolume('X51Vol1', [[8, '2000-3']])
+]);
+addComicsInSeriesVolume('X51Vol1', [[8, '2000-3']]);
 addComicsInSeriesVolume('XCalibreVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
   [4, '1995-6']
-])
+]);
 addComicsInSeriesVolume('XFactorVol1', [
   [1, '1986-2-10'],
   [9, '1986-10'],
@@ -1003,14 +1003,14 @@ addComicsInSeriesVolume('XFactorVol1', [
   [109, '1994-12'],
   [125, '1996-8'],
   [126, '1996-9']
-])
+]);
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],
   [3, '1988-8'],
   [4, '1989-10'],
   [6, '1991-8'],
   [7, '1992-5']
-])
+]);
 addComicsInSeriesVolume('XForceVol1', [
   [1, '1991-8'],
   [2, '1991-9'],
@@ -1089,23 +1089,23 @@ addComicsInSeriesVolume('XForceVol1', [
   [113, '2001-4'],
   [114, '2001-5'],
   [115, '2001-6'],
-])
+]);
 addComicsInSeriesVolume('XForceVol3', [
   [26, '2010-6', ['Second Coming (Chapter Five)']],
   [27, '2010-7', ['Second Coming (Chapter Nine)']],
   [28, '2010-9', ['Second Coming, Chapter 13']],
-])
+]);
 addComicsInSeriesVolume('XForceAnnualVol1', [
   [1, '1992-5'],
   [2, '1993-10'],
   [3, '1994-10'],
-])
-addComicsInSeriesVolume('XForceCableAnnualVol1', [[1, '1995-12']])
+]);
+addComicsInSeriesVolume('XForceCableAnnualVol1', [[1, '1995-12']]);
 addComicsInSeriesVolume('XForceSexandViolenceVol1', [
   [1, '2010-9'],
   [2, '2010-10'],
   [3, '2010-11']
-])
+]);
 addComicsInSeriesVolume('XManVol1', [
   [-1, '1997-7'],
   [1, '1995-3'],
@@ -1133,9 +1133,9 @@ addComicsInSeriesVolume('XManVol1', [
   [47, '1999-1'],
   [53, '1999-7'],
   [54, '1999-8']
-])
-addComicsInSeriesVolume('XManAnnualVol1', [[1, '1996-12']])
-addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']])
+]);
+addComicsInSeriesVolume('XManAnnualVol1', [[1, '1996-12']]);
+addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']]);
 addComicsInSeriesVolume('XMenVol2', [
   [-1, '1997-7'],
   [0.5, '1998-1'],
@@ -1244,7 +1244,7 @@ addComicsInSeriesVolume('XMenVol2', [
   [107, '2000-12'],
   [108, '2001-1'],
   [109, '2001-2'],
-])
+]);
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
   [2, '2005-3-9'],
@@ -1252,13 +1252,13 @@ addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [4, '2005-3-23'],
   [5, '2005-3-30'],
   [6, '2005-4-27']
-])
-addComicsInSeriesVolume('XMenAgeofApocalypseOneShotVol1', [[0, '2005-3-2']])
-addComicsInSeriesVolume('XMenAlphaVol1', [[1, '1995-2']])
+]);
+addComicsInSeriesVolume('XMenAgeofApocalypseOneShotVol1', [[0, '2005-3-2']]);
+addComicsInSeriesVolume('XMenAlphaVol1', [[1, '1995-2']]);
 addComicsInSeriesVolume('XMenAlphaFlightVol1', [
   [1, '1985-12'],
   [2, '1986-1'],
-])
+]);
 addComicsInSeriesVolume('XMenAnnualVol1', [
   [3, '1979-8'],
   [4, '1980-11'],
@@ -1275,64 +1275,64 @@ addComicsInSeriesVolume('XMenAnnualVol1', [
   [17, '1993-6'],
   [18, '1994-7'],
   [19, '1995-11']
-])
+]);
 addComicsInSeriesVolume('XMenAnnualVol2', [
   [1, '1992-5'],
   [2, '1993-10'],
   [5, '1996-11']
-])
-addComicsInSeriesVolume('XMenAnnualVol3', [[1, '1995-10']])
-addComicsInSeriesVolume('XMenAnnualVol4', [[1, '1999-8']])
-addComicsInSeriesVolume('XMenAnnualVol5', [[1, '2000-9']])
+]);
+addComicsInSeriesVolume('XMenAnnualVol3', [[1, '1995-10']]);
+addComicsInSeriesVolume('XMenAnnualVol4', [[1, '1999-8']]);
+addComicsInSeriesVolume('XMenAnnualVol5', [[1, '2000-9']]);
 addComicsInSeriesVolume('XMenBlackSunVol1', [
   [1, '2000-11-1'],
   [2, '2000-11-15'],
   [3, '2000-12-1'],
   [4, '2000-12-15'],
   [5, '2000-12-31'],
-])
-addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']])
+]);
+addComicsInSeriesVolume('XMenBooksofAskaniVol1', [[1, '1995-2-1']]);
 addComicsInSeriesVolume('XMenChroniclesVol1', [
   [1, '1995-3'],
   [2, '1995-6']
-])
+]);
 addComicsInSeriesVolume('XMenClanDestineVol1', [
   [1, '1996-10'],
   [2, '1996-11']
-])
-addComicsInSeriesVolume('XMenDrDoomAnnualVol1', [[1, '1998-6']])
-addComicsInSeriesVolume('XMenFreeComicBookDayVol2008', [[1, '2008-5', ['X-Men: Pixies & Demons']]])
+]);
+addComicsInSeriesVolume('XMenDrDoomAnnualVol1', [[1, '1998-6']]);
+addComicsInSeriesVolume('XMenFreeComicBookDayVol2008', [[1, '2008-5', ['X-Men: Pixies & Demons']]]);
 addComicsInSeriesVolume('XMenLegacyVol1', [
   [235, '2010-6', ['Second Coming (Chapter Four)']],
   [236, '2010-7', ['Second Coming (Chapter Eight)']],
   [237, '2010-8', ['Second Coming (Chapter Twelve)']],
-])
+]);
 addComicsInSeriesVolume('XMenManifestDestinyVol1', [
   [1, '2008-11', ['Untitled']],
   [2, '2008-12', ['Kill or Cure (Part 2)','Good With the Bad','Flaw']],
   [3, '2009-1', ['Kill or Cure (Part 3)','Abomination','Uncheerable']],
   [4, '2009-2', ['Kill or Cure (Part 4)','Mercury','Work It Out']],
   [5, '2009-3', ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo']],
-])
-addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']])
-addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']])
+]);
+addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']]);
+addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']]);
 addComicsInSeriesVolume('XMenPhoenixVol1', [
   [1, '1999-12'],
   [2, '2000-1'],
   [3, '2000-3']
-])
-addComicsInSeriesVolume('XMenRoadtoOnslaughtVol1', [[1, '1996-10']])
+]);
+addComicsInSeriesVolume('XMenRoadtoOnslaughtVol1', [[1, '1996-10']]);
 addComicsInSeriesVolume('XMenSecondComingVol1', [
   [1, '2010-5', ['Second Coming, Chapter One']],
   [2, '2010-9', ['Second Coming Chapter XIV']],
-])
+]);
 addComicsInSeriesVolume('XMenSearchforCyclopsVol1', [
   [1, '2000-12'],
   [2, '2001-1'],
   [3, '2001-2'],
   [4, '2001-3'],
-])
-addComicsInSeriesVolume('XMenTheWeddingAlbumVol1', [[1, '1994-1-1']])
+]);
+addComicsInSeriesVolume('XMenTheWeddingAlbumVol1', [[1, '1994-1-1']]);
 addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [1, '1993-6'],
   [2, '1993-9'],
@@ -1354,25 +1354,25 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [27, '2000-6'],
   [28, '2000-9'],
   [29, '2000-12'],
-])
+]);
 addComicsInSeriesVolume('XMenvsBroodVol1', [
   [1, '1996-9'],
   [2, '1996-10'],
-])
+]);
 addComicsInSeriesVolume('XMenvstheAvengersVol1', [
   [1, '1987-4'],
   [2, '1987-5'],
   [3, '1987-6'],
   [4, '1987-7']
-])
+]);
 addComicsInSeriesVolume('XUniverseVol1', [
   [1, '1995-5'],
   [2, '1995-6']
-])
-addComicsInSeriesVolume('XavierInstituteAlumniYearbookVol1', [[1, '1996-12']])
+]);
+addComicsInSeriesVolume('XavierInstituteAlumniYearbookVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('XTerminatorsVol1', [
   [1, '1988-10'],
   [2, '1988-11'],
   [3, '1988-12'],
   [4, '1989-1']
-])
+]);

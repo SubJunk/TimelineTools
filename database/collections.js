@@ -2783,7 +2783,7 @@ collections.push(
       'UncannyXMenVol1492',
       'UncannyXMenVol1493',
       'UncannyXMenVol1494'
-   ]
+    ]
   ),
   new Collection(
     'Uncanny X-Men: Divided We Stand',
