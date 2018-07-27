@@ -11,23 +11,35 @@ angular.module('app', ['angular-md5'])
     var series        = $window.series;
     var seriesVolumes = $window.seriesVolumes;
 
+    const BODY_PADDING = 20;
+    const LEFT_MARGIN = 200;
+    const TOP_MARGIN = 300;
+
+    //Colour constants used in multiple functions
+    const LIGHTNESS_MIN = 30;   //Lightness can be in the range 0-100
+    const LIGHTNESS_MAX = 85;
+    const PERCENT_MULTIPLIER = 100;
+    const SATURATION_MIN = 35;  //Saturation can be in the range 0-100
+    const SATURATION_MAX = 75;  //We choose a mid range that's easy to see
+    const STEP_CHANGE = 30;     //define how far to step around the colour wheel each time
+    const COMPLETE_COLOR_WHEEL_DEGREES = 360;     //360 degrees in colour wheel
+
     var globalVerticalPositionCounter = 0;
     var bodyStyles = {
       width: null,
-      padding: 20,
+      padding: BODY_PADDING,
       background: null
     };
     var seriesVolumeLabels = [];
 
     // Pixel counts
-    var verticalIncrement = 60;
-    var horizontalIncrement = verticalIncrement;
+    const VISUAL_BLOCK_SIZE = 60;
 
     /*
-    * How far away the left edge of labels are from the left
-    * of the first thumbnail of a series volume.
-    */
-    var labelOffset = 150;
+     * How far away the left edge of labels are from the left
+     * of the first thumbnail of a series volume.
+     */
+    const LABEL_OFFSET = 150;
 
     var $jqWindow = $(window);
 
@@ -59,20 +71,21 @@ angular.module('app', ['angular-md5'])
           apikey: apiKeyPublic
         }
       }).then(function successCallback(response) {
-        if (response.data.data.results.length === 0) {
+        if (_.isEmpty(response.data.data.results)) {
           return;
         }
 
-        var firstAPIResult = response.data.data.results[0];
+        var firstAPIResult = _.first(response.data.data.results);
         comic.link = firstAPIResult.digitalId ? 'https://read.marvel.com/#book/' + firstAPIResult.digitalId : null;
       }, function errorCallback(err) {
         throw new Error(err);
       });
     };
 
+    const ONE_SECOND_IN_MILLISECONDS = 1000;
     var getExtraAPIParamsString = function() {
       if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
-        timestamp = Date.now() /1000 |0;
+        timestamp = Date.now() / ONE_SECOND_IN_MILLISECONDS | 0;
         apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
         return '?ts=' + timestamp + '&hash=' + apiHash;
       }
@@ -144,8 +157,8 @@ angular.module('app', ['angular-md5'])
        */
       if (isForceScroll) {
         $('html, body').animate({
-          scrollLeft: currentComic.containerStyles.left - 200,
-          scrollTop:  currentComic.containerStyles.top + 300
+          scrollLeft: currentComic.containerStyles.left - LEFT_MARGIN,
+          scrollTop:  currentComic.containerStyles.top + TOP_MARGIN
         });
       } else if (vm.expandedComicId) {
         var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
@@ -168,27 +181,29 @@ angular.module('app', ['angular-md5'])
       // Get the collection containing this comic
       vm.expandedCollection = _.find(collections, function(collection, index) {
         currentComicIndexInCollection = collection.comicIds.indexOf(currentComic.id);
-        if (currentComicIndexInCollection > -1) {
+        if (collection.comicIds.includes(currentComic.id)) {
           currentCollectionIndexInCollections = index;
           return true;
         }
         return false;
       });
 
-      if (currentCollectionIndexInCollections > 0) {
-        vm.prevCollection = collections[currentCollectionIndexInCollections - 1];
-        vm.prevCollectionFirstComic = _.find(comics, ['id', vm.prevCollection.comicIds[0]]);
-      } else {
+      // if this is the first collection
+      if (_.isEqual(collections[currentCollectionIndexInCollections], _.first(collections))) {
         vm.prevCollection = undefined;
         vm.prevCollectionFirstComic = undefined;
+      } else  {
+        vm.prevCollection = collections[currentCollectionIndexInCollections - 1];
+        vm.prevCollectionFirstComic = _.find(comics, ['id', _.first(vm.prevCollection.comicIds)]);
       }
 
-      if (vm.collections[currentCollectionIndexInCollections + 1]) {
-        vm.nextCollection = collections[currentCollectionIndexInCollections + 1];
-        vm.nextCollectionFirstComic = _.find(comics, ['id', vm.nextCollection.comicIds[0]]);
-      } else {
+      // check for the last collection
+      if (_.isEqual(collections[currentCollectionIndexInCollections], _.last(collections))) {
         vm.nextCollection = undefined;
         vm.nextCollectionFirstComic = undefined;
+      } else {
+        vm.nextCollection = collections[currentCollectionIndexInCollections + 1];
+        vm.nextCollectionFirstComic = _.find(comics, ['id', _.first(vm.nextCollection.comicIds)]);
       }
 
       // Find the previous comic
@@ -236,7 +251,7 @@ angular.module('app', ['angular-md5'])
           }
         }).then(function successCallback(response) {
           if (response.data.data.results.length) {
-            expandedSeriesVolume.marvelId = response.data.data.results[0].id;
+            expandedSeriesVolume.marvelId = _.first(response.data.data.results).id;
             setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
           }
         }, function errorCallback(err) {
@@ -276,23 +291,25 @@ angular.module('app', ['angular-md5'])
     var dates = {};
     var yearIncrement;
     var monthIncrement;
+    const ONE_YEAR_IN_MONTHS = 12;
+
     for (yearIncrement = firstYear; yearIncrement <= finalYear; yearIncrement++) {
       dates[yearIncrement] = {};
 
       if (yearIncrement === finalYear) {
         // In this final year we stop the counter at the final month
         for (monthIncrement = 1; monthIncrement <= finalMonth; monthIncrement++) {
-          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: horizontalIncrement } };
+          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       } else if (yearIncrement === firstYear) {
         // In this first year we start the counter at the first month
-        for (monthIncrement = firstMonth; monthIncrement <= 12; monthIncrement++) {
-          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: horizontalIncrement } };
+        for (monthIncrement = firstMonth; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
+          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       } else {
         // In this in-between year we always add 12 months
-        for (monthIncrement = 1; monthIncrement <= 12; monthIncrement++) {
-          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: horizontalIncrement } };
+        for (monthIncrement = 1; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
+          dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       }
     }
@@ -317,19 +334,19 @@ angular.module('app', ['angular-md5'])
       comic.styles = {};
 
       // Horizontal positioning
-      monthsSinceFirst = (comic.yearPublished - firstYear) * 12;
+      monthsSinceFirst = (comic.yearPublished - firstYear) * ONE_YEAR_IN_MONTHS;
       monthsSinceFirst -= firstMonth;
       monthsSinceFirst += comic.monthPublished;
-      comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * horizontalIncrement;
+      comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
 
       /**
        * Manage multiple releases of the same series in the same month
        * by making the month wider.
        */
       if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
-        dates[comic.yearPublished][comic.monthPublished].styles.width += horizontalIncrement;
-        comic.containerStyles.left += horizontalIncrement + globalHorizontalOffset;
-        globalHorizontalOffset += horizontalIncrement;
+        dates[comic.yearPublished][comic.monthPublished].styles.width += VISUAL_BLOCK_SIZE;
+        comic.containerStyles.left += VISUAL_BLOCK_SIZE + globalHorizontalOffset;
+        globalHorizontalOffset += VISUAL_BLOCK_SIZE;
       } else {
         comic.containerStyles.left += globalHorizontalOffset;
       }
@@ -347,10 +364,10 @@ angular.module('app', ['angular-md5'])
        * Step two documented below.
        */
       if (angular.isDefined(currentSeriesVolume.verticalPosition)) {
-        comic.containerStyles.top = currentSeriesVolume.verticalPosition * verticalIncrement;
+        comic.containerStyles.top = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
         currentSeriesVolume.verticalPosition = globalVerticalPositionCounter;
-        comic.containerStyles.top = globalVerticalPositionCounter * verticalIncrement;
+        comic.containerStyles.top = globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
         globalVerticalPositionCounter++;
         newLabelNeeded = true;
       }
@@ -387,7 +404,7 @@ angular.module('app', ['angular-md5'])
             latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
           ) {
             currentSeriesVolume.verticalPosition = i;
-            comic.containerStyles.top = i * verticalIncrement;
+            comic.containerStyles.top = i * VISUAL_BLOCK_SIZE;
 
             /**
              * We are about to insert this seriesVolume into a vertical position
@@ -430,8 +447,7 @@ angular.module('app', ['angular-md5'])
        * comic thumbnail) and 2 body padding units to make up for the
        * left and right padding of the page.
        */
-      bodyStyles.width = comic.containerStyles.left + horizontalIncrement + (bodyStyles.padding * 2);
-
+      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (bodyStyles.padding * 2);
       if (newLabelNeeded) {
         seriesVolumeLabels.push({
           text: currentSeriesVolume.titleWithVolume,
@@ -439,7 +455,7 @@ angular.module('app', ['angular-md5'])
           id: 'label-' + seriesVolumeLabels.length,
           containerStyles: {
             top: comic.containerStyles.top,
-            left: comic.containerStyles.left - labelOffset
+            left: comic.containerStyles.left - LABEL_OFFSET
           },
           labelClasses: {},
           labelStyles: {},
@@ -494,7 +510,6 @@ angular.module('app', ['angular-md5'])
     var hue;
     var saturation;
     var lightness;
-    var stepChange = 30;
     var chroma;
     var huePrime;
     var secondComponent;
@@ -510,19 +525,19 @@ angular.module('app', ['angular-md5'])
         collectionColorsIndex[collectionTitle].collectionTitle = collectionTitle;
         collectionColorsIndex[collectionTitle].hslColor = 'hsl(';
         if (angular.isDefined(startColor)) {
-          if ((startColor + stepChange) > 360) {
-            startColor -= 360;
+          if ((startColor + STEP_CHANGE) > COMPLETE_COLOR_WHEEL_DEGREES) {
+            startColor -= COMPLETE_COLOR_WHEEL_DEGREES;
           }
-          startColor += stepChange;
+          startColor += STEP_CHANGE;
         } else {
-          startColor = Math.floor(Math.random() * 360);
+          startColor = Math.floor(Math.random() * COMPLETE_COLOR_WHEEL_DEGREES);
         }
         hue = startColor;
         collectionColorsIndex[collectionTitle].hslColor += startColor + ', ';
-        saturation = parseFloat('0.' + Math.floor(Math.random() * ((75-35) + 1) + 35));
-        collectionColorsIndex[collectionTitle].hslColor += saturation * 100 + '%, ';
-        lightness = parseFloat('0.' + Math.floor(Math.random() * ((85-30) + 1) + 30));
-        collectionColorsIndex[collectionTitle].hslColor += lightness * 100  + '%)';
+        saturation = parseFloat('0.' + Math.floor(Math.random() * ((SATURATION_MAX - SATURATION_MIN)) + SATURATION_MIN));
+        collectionColorsIndex[collectionTitle].hslColor += saturation * PERCENT_MULTIPLIER + '%, ';
+        lightness = parseFloat('0.' + Math.floor(Math.random() * ((LIGHTNESS_MAX - LIGHTNESS_MIN)) + LIGHTNESS_MIN));
+        collectionColorsIndex[collectionTitle].hslColor += lightness * PERCENT_MULTIPLIER  + '%)';
 
         /**
          * Start the conversion of the HSL color to RGB
@@ -533,9 +548,14 @@ angular.module('app', ['angular-md5'])
          *
          * @see https://github.com/kayellpeee/hsl_rgb_converter
          */
-        chroma = (1 - Math.abs((2 * lightness) - 1)) * saturation;
-        huePrime = hue / 60;
-        secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1));
+        const RGB_MAX = 255;
+        const HUE_SEGMENT = 60; // 60 degrees, one sixth of the colour wheel
+        const MOD = 2;
+        const CHROMA_MAX = 1;
+
+        chroma = (CHROMA_MAX - Math.abs((lightness + lightness) - CHROMA_MAX)) * saturation;
+        huePrime = hue / HUE_SEGMENT;
+        secondComponent = chroma * (CHROMA_MAX - Math.abs((huePrime % MOD) - CHROMA_MAX));
 
         huePrime = Math.floor(huePrime);
 
@@ -575,27 +595,43 @@ angular.module('app', ['angular-md5'])
         green += lightnessAdjustment;
         blue += lightnessAdjustment;
 
-        rgbColor = [Math.round(red * 255), Math.round(green * 255), Math.round(blue * 255)];
-
+        rgbColor = [Math.round(red * RGB_MAX), Math.round(green * RGB_MAX), Math.round(blue * RGB_MAX)];
         /**
          * Given a color in RGB format, assign either a light
          * or dark color.
          *
          * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
          */
-        for (var i = 0; i < 3; ++i) {
-          rgbColor[i] /= 255;
 
-          if (rgbColor[i] <= 0.03928) {
-            rgbColor[i] = rgbColor[i] / 12.92;
+        const RGB_CUTOFF = 0.03928;  // See http://entropymine.com/imageworsener/srgbformula/
+        const RGB_SLOPE = 0.055;
+        const RGB_DENOMINATOR = 1.055;
+        const RGB_EXPONENT = 2.4;
+        const LINEAR_RGB = 12.92;      // R, G, B * LINEAR_RBG = RGB_CUTTOFF
+        const PERCEIVED_WEIGHTING_RED_LIGHT = 0.2126;
+        const PERCEIVED_WEIGHTING_GREEN_LIGHT = 0.7152;
+        const PERCEIVED_WEIGHTING_BLUE_LIGHT = 0.0722; //Given equal quantities of RGB, humans perceive them in a weighted way
+        const LIGHT_DARK_THRESHOLD = 0.179;
+
+        for (var i = 0; i < rgbColor.length; ++i) {
+          rgbColor[i] /= RGB_MAX;
+
+          if (rgbColor[i] <= RGB_CUTOFF) {
+            rgbColor[i] = rgbColor[i] / LINEAR_RGB ;
           } else {
-            rgbColor[i] = Math.pow((rgbColor[i] + 0.055) / 1.055, 2.4);
+            rgbColor[i] = Math.pow((rgbColor[i] + RGB_SLOPE) / RGB_DENOMINATOR, RGB_EXPONENT);
           }
         }
 
-        backgroundLightness = 0.2126 * rgbColor[0] + 0.7152 * rgbColor[1] + 0.0722 * rgbColor[2];
+        var iterator = 0;
 
-        if (backgroundLightness > 0.179) {
+        backgroundLightness = PERCEIVED_WEIGHTING_RED_LIGHT * rgbColor[iterator];
+        iterator++;
+        backgroundLightness +=  PERCEIVED_WEIGHTING_GREEN_LIGHT * rgbColor[iterator];
+        iterator++;
+        backgroundLightness += PERCEIVED_WEIGHTING_BLUE_LIGHT * rgbColor[iterator];
+
+        if (backgroundLightness > LIGHT_DARK_THRESHOLD) {
           collectionColorsIndex[collectionTitle].textColor = '#444';
         } else {
           collectionColorsIndex[collectionTitle].textColor = '#ccc';
@@ -630,7 +666,7 @@ angular.module('app', ['angular-md5'])
       if (doSpeedProfile) var startTimeReposition = new Date();
 
       // The scroll position of the page, minus the main padding
-      scrollLeft = $jqWindow.scrollLeft() - 20;
+      scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
 
       /**
@@ -646,12 +682,12 @@ angular.module('app', ['angular-md5'])
 
           // If the browser is scrolled past the right, hide the label
           if (
-            (scrollLeft - seriesVolumeLabel.right) > -labelOffset &&
+            (scrollLeft - seriesVolumeLabel.right) > -LABEL_OFFSET &&
             (scrollLeft - seriesVolumeLabel.right) < 0
           ) {
             seriesVolumeLabel.visible = true;
-            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - labelOffset);
-          } else if (seriesVolumeLabel.right < (scrollLeft + labelOffset)) {
+            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - LABEL_OFFSET);
+          } else if (seriesVolumeLabel.right < (scrollLeft + LABEL_OFFSET)) {
             seriesVolumeLabel.visible = false;
           } else {
             seriesVolumeLabel.visible = true;
@@ -723,15 +759,18 @@ angular.module('app', ['angular-md5'])
      *
      * @link https://stackoverflow.com/questions/1402698/binding-arrow-keys-in-js-jquery
      */
+    const LEFT_KEYPRESS = 37;
+    const RIGHT_KEYPRESS = 39;
+
     $(document).keydown(function(e) {
-      switch(e.which) {
-        case 37: // left
+      switch (e.which) {
+        case LEFT_KEYPRESS: // left
           if (vm.prevComic) {
             vm.toggleExpandComic(vm.prevComic);
           }
           break;
 
-        case 39: // right
+        case RIGHT_KEYPRESS: // right
           if (vm.nextComic) {
             vm.toggleExpandComic(vm.nextComic);
           }
@@ -815,7 +854,7 @@ angular.module('app', ['angular-md5'])
     _.each(comics, function(comic) {
       // Get the collection containing this comic
       comic.collection = _.find(collections, function(collection) {
-        return collection.comicIds.indexOf(comic.id) > -1;
+        return collection.comicIds.includes(comic.id);
       });
     });
 
@@ -838,10 +877,10 @@ angular.module('app', ['angular-md5'])
      */
     {
       // How many comics to add per loop
-      var COMIC_CHUNKS = 20;
+      const COMIC_CHUNKS = 20;
 
       // How many milliseconds delay between chunks
-      var COMIC_LOOP_DELAY = 1;
+      const COMIC_LOOP_DELAY = 1;
 
       var comicsIterator = 0;
       var pushComicChunkToVm = function() {
@@ -907,12 +946,12 @@ angular.module('app', ['angular-md5'])
 
         // Init "Info & Credits" modal
         var infoModal = $('#info');
-        infoModalInstance = M.Modal.init(infoModal)[0];
+        infoModalInstance = _.first(M.Modal.init(infoModal));
 
         useGetParameters();
 
         /**
-         * The extra timeout is here because without it, 
+         * The extra timeout is here because without it,
          * the tooltips initialization freezes the rest of the execution
          */
         $timeout(function() {
@@ -945,7 +984,7 @@ angular.module('app', ['angular-md5'])
 
           $timeout(function() {
             $('html, body').animate({
-              scrollLeft: comicFromUrl.containerStyles.left - 200,
+              scrollLeft: comicFromUrl.containerStyles.left - LEFT_MARGIN,
               scrollTop:  comicFromUrl.containerStyles.top
             });
           });
@@ -969,7 +1008,7 @@ angular.module('app', ['angular-md5'])
           // Check that each comic is referenced by a collection
           _.each(comics, function(comic) {
             foundComic = _.find(collections, function(collection) {
-              return collection.comicIds.indexOf(comic.id) > -1;
+              return collection.comicIds.includes(comic.id);
             });
 
             if (!foundComic) {
