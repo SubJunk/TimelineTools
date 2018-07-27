@@ -759,18 +759,23 @@ angular.module('app', ['angular-md5'])
      *
      * @link https://stackoverflow.com/questions/1402698/binding-arrow-keys-in-js-jquery
      */
+    const ESCAPE_KEYPRESS = 27;
     const LEFT_KEYPRESS = 37;
     const RIGHT_KEYPRESS = 39;
 
     $(document).keydown(function(e) {
       switch (e.which) {
-        case LEFT_KEYPRESS: // left
+        case ESCAPE_KEYPRESS:
+          vm.toggleExpandComic({});
+          break;
+
+        case LEFT_KEYPRESS:
           if (vm.prevComic) {
             vm.toggleExpandComic(vm.prevComic);
           }
           break;
 
-        case RIGHT_KEYPRESS: // right
+        case RIGHT_KEYPRESS:
           if (vm.nextComic) {
             vm.toggleExpandComic(vm.nextComic);
           }
