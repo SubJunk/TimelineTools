@@ -975,9 +975,14 @@ angular.module('app', ['angular-md5'])
       }
     };
 
-  // Expand the comic from the URL on load
-  if ($location.search()) {
-    var searchParams = $location.search();
+    /*
+     * Launches the initial expand and scroll on load, and
+     * the garbage collector, if the relevant GET parameters
+     * are specified (id and gc)
+     */
+    var useGetParameters = function() {
+      if ($location.search()) {
+        var searchParams = $location.search();
 
         if (searchParams.id) {
           var comicFromUrl = comics[_.findKey(comics, { 'id': searchParams.id })];
