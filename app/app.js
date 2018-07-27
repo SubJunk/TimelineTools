@@ -975,6 +975,20 @@ angular.module('app', ['angular-md5'])
       }
     };
 
+    // Toggle between table view and timeline view
+    $('#toggleTableTimeline').click(function() {
+      if (isShowTable) {
+        $('body').removeClass('table-container');
+        $('body').addClass('timeline-container');
+        isShowTable = false;
+        return;
+      }
+
+      $('body').removeClass('timeline-container');
+      $('body').addClass('table-container');
+      isShowTable = true;
+    });
+
     /*
      * Launches the initial expand and scroll on load, and
      * the garbage collector, if the relevant GET parameters
