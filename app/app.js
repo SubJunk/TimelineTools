@@ -468,7 +468,7 @@ angular.module('app', ['angular-md5'])
           return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
         });
 
-        if (_.includes(seriesVolumeLabels.seriesVolumeLabel) === false) {
+        if (seriesVolumeLabelIndex === -1) {
           throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
         }
 
