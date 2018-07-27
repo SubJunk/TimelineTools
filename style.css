@@ -28,12 +28,12 @@ body {
 }
 
 #load-percent {
-    position:absolute;
-    color: ccc;
-    top: 50%;
-    left: 50%;
-    font-size: large;
-    transform: perspective(1px) translate(-50%, -50%);
+  position: absolute;
+  color: ccc;
+  top: 50%;
+  left: 50%;
+  font-size: large;
+  transform: perspective(1px) translate(-50%, -50%);
 }
 
 .table-container, .date {
