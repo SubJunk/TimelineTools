@@ -226,7 +226,22 @@ collections.push(
       'XMenAnnualVol18',
       'XMenAlphaFlightVol11',
       'XMenAlphaFlightVol12',
-      'UncannyXMenVol1193',
+      'UncannyXMenVol1193'
+    ]
+  ),
+  new Collection(
+    'X-Men: Legion - Shadow King Rising (Partial)',
+    '2018-1-17',
+    [
+      'NewMutantsVol126',
+      'NewMutantsVol127',
+      'NewMutantsVol128'
+    ]
+  ),
+  new Collection(
+    'X-Men Epic Collection Vol. 12: The Gift',
+    '2016-1',
+    [
       'UncannyXMenVol1194',
       'UncannyXMenVol1195',
       'UncannyXMenVol1196',
@@ -263,7 +278,20 @@ collections.push(
       'UncannyXMenVol1202',
       'UncannyXMenVol1203',
       'UncannyXMenVol1204',
-      'UncannyXMenVol1205',
+      'UncannyXMenVol1205'
+    ]
+  ),
+  new Collection(
+    'X-Men: Legion - Shadow King Rising (Partial)',
+    '2018-1-17',
+    [
+      'NewMutantsVol144'
+    ]
+  ),
+  new Collection(
+    'X-Men: Ghosts',
+    '2013-5',
+    [
       'UncannyXMenVol1206',
       'UncannyXMenVol1207',
       'UncannyXMenVol1208',
@@ -1341,7 +1369,7 @@ collections.push(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
-      'WolverineAnnualVol21'
+      'WolverineAnnualVol11'
     ]
   ),
   new Collection(
@@ -1931,6 +1959,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Operation: Zero Tolerance',
+    '2008-8-15',
+    [
+      'XForceVol170'
+    ]
+  ),
+  new Collection(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
@@ -1970,7 +2005,6 @@ collections.push(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
-      'XForceVol170',
       'XMenVol270'
     ]
   ),
@@ -1978,7 +2012,8 @@ collections.push(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
-      'DeadpoolVol211'
+      'DeadpoolVol211',
+      'DeadpoolVol212'
     ]
   ),
   new Collection(
@@ -2034,7 +2069,6 @@ collections.push(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
-      'DeadpoolVol212',
       'DeadpoolVol213'
     ]
   ),
@@ -2115,8 +2149,18 @@ collections.push(
     'X-Men: Gold Vol. 0: Homecoming (Partial)',
     '2018-3-28',
     [
+      'UncannyXMenVol1358',
       'XMenVol277',
       'XMenVol278'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolandDeathAnnualVol11',
+      'DeadpoolVol218',
+      'DeadpoolVol219'
     ]
   ),
   new Collection(
@@ -2131,9 +2175,17 @@ collections.push(
     'X-Men: Blue Vol. 0: Reunion',
     '2018-3-21',
     [
-      'UncannyXMenVol1358',
       'UncannyXMenVol1359',
-      'UncannyXMenFantasticFourAnnualVol11'
+      'UncannyXMenFantasticFourAnnualVol11',
+      'CerebrosGuidetotheXMenVol11'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolVol220',
+      'DeadpoolVol221'
     ]
   ),
   new Collection(
@@ -2154,6 +2206,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolVol222',
+      'DeadpoolVol223'
+    ]
+  ),
+  new Collection(
     'X-Men: The Hunt for Professor X',
     '2015-6-17',
     [
@@ -2168,6 +2228,21 @@ collections.push(
       'UncannyXMenVol1364',
       'XMenVol284',
       'XMenUnlimitedVol122'
+    ]
+  ),
+  new Collection(
+    'X-Men: Gold Vol. 0: Homecoming (Partial)',
+    '2018-3-28',
+    [
+      'XMenDrDoomAnnualVol11'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 4',
+    '2011-1-19',
+    [
+      'DeadpoolVol224',
+      'DeadpoolVol225'
     ]
   ),
   new Collection(
@@ -2193,6 +2268,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
+    [
+      'BabysFirstDeadpoolBookVol11',
+      'DeadpoolTeamUpVol11'
+    ]
+  ),
+  new Collection(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
@@ -2205,6 +2288,14 @@ collections.push(
     [
       'UncannyXMenVol1365',
       'XMenVol20.5',
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
+    [
+      'DeadpoolVol226',
+      'DeadpoolVol227'
     ]
   ),
   new Collection(
@@ -2228,6 +2319,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
+    [
+      'DeadpoolVol228',
+      'DeadpoolVol229'
+    ]
+  ),
+  new Collection(
     'Cable: The Nemesis Contract',
     '2018-1-10',
     [
@@ -2248,13 +2347,35 @@ collections.push(
       'UncannyXMenVol1369',
       'MagnetoRexVol11',
       'MagnetoRexVol12',
-      'MagnetoRexVol13',
+      'MagnetoRexVol13'
+    ]
+  ),
+  new Collection(
+    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
+    '2006-11-1',
+    [
+      'XManVol153',
+      'XManVol154'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Magneto War',
+    '2018-10-23',
+    [
       'XMenVol289',
       'UncannyXMenVol1370',
       'XMenVol290',
       'UncannyXMenVol1371',
       'XMenVol291',
       'XMenAnnualVol41'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
+    [
+      'DeadpoolVol230',
+      'DeadpoolVol231'
     ]
   ),
   new Collection(
@@ -2289,18 +2410,46 @@ collections.push(
       'CableAnnualVol11'
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
-    'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
-    '2017-2-1',
+    'Deadpool Classic Vol. 5',
+    '2011-6-1',
+    [
+      'DeadpoolVol232',
+      'DeadpoolVol233'
+    ]
+  ),
+  new Collection(
+    'X-Men: The Shattering',
+    '2009-7-8',
+    [
+      'UncannyXMenVol1372',
+      'XMenVol292',
+      'AstonishingXMenVol21',
+      'AstonishingXMenVol22',
+      'AstonishingXMenVol23',
+      'UncannyXMenVol1373',
+      'UncannyXMenVol1374',
+      'XMenVol293',
+      'XMenVol294',
+      'UncannyXMenVol1375',
+      'XMenVol295'
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol234',
+      'DeadpoolVol235',
+    ]
+  ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 1: The Twelve',
+    '2008-3-5',
     [
       'WolverineVol2145',
-      'WolverineVol2146',
-      'WolverineVol2147',
-      'WolverineVol2148',
-      'WolverineVol2149'
+      'CableVol173',
+      'CableVol174'
     ]
   ),
   new Collection(
@@ -2311,17 +2460,299 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Blue Vol. 0: Reunion',
-    '2018-3-21',
+    'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
+    '2014-9-17',
     [
-      'CerebrosGuidetotheXMenVol11'
+      'XMenPhoenixVol11',
+      'XMenPhoenixVol12',
+      'XMenPhoenixVol13'
     ]
   ),
   new Collection(
-    'X-Men: Gold Vol. 0: Homecoming (Partial)',
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol236',
+      'DeadpoolVol237',
+    ]
+  ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 1: The Twelve',
+    '2008-3-5',
+    [
+      'UncannyXMenVol1376',
+      'CableVol175',
+      'XMenVol296',
+      'WolverineVol2146',
+      'WolverineVol2147',
+      'UncannyXMenVol1377',
+      'CableVol176',
+      'XMenVol297',
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol238',
+      'DeadpoolVol239',
+    ]
+  ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
+    '2008-9-10',
+    [
+      'UncannyXMenAnnualVol11',
+      'UncannyXMenVol1378',
+      'CableVol177',
+      'X51Vol18',
+      'XMenUnlimitedVol126',
+      'WolverineVol2148',
+      'XMenVol298'
+    ]
+  ),
+  new Collection(
+    'X-Men: Powerless',
+    '2010-8',
+    [
+      'UncannyXMenVol1379',
+      'XForceVol1101',
+      'CableVol178',
+      'WolverineVol2149',
+      'XMenVol299',
+      'UncannyXMenVol1380',
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol240',
+      'DeadpoolVol241',
+    ]
+  ),
+  new Collection(
+    'Counter-X Vol. 2',
+    '2008-9-3',
+    [
+      'GenerationXVol163',
+      'GenerationXVol164',
+      'GenerationXVol165',
+      'GenerationXVol166',
+      'GenerationXVol167',
+      'GenerationXVol168',
+      'GenerationXVol169',
+      'GenerationXVol170',
+    ]
+  ),
+  new Collection(
+    'Counter-X Vol. 1',
+    '2008-7-2',
+    [
+      'XForceVol1102',
+      'XForceVol1103',
+      'XForceVol1104',
+      'XForceVol1105',
+      'XForceVol1106',
+      'XForceVol1107',
+      'XForceVol1108',
+      'XForceVol1109',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'XMenUnlimitedVol127',
+      'XMenBlackSunVol11',
+      'XMenBlackSunVol12',
+      'XMenBlackSunVol13',
+      'XMenBlackSunVol14',
+      'XMenBlackSunVol15',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'XMenVol2100',
+      'XMenVol2101',
+      'UncannyXMenVol1381',
+      'UncannyXMenVol1382',
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol242',
+      'DeadpoolVol243',
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
     '2018-3-28',
     [
-      'XMenDrDoomAnnualVol11'
+      'WolverineVol2150',
+      'WolverineVol2151',
+      'WolverineVol2152',
+      'WolverineVol2153',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'XMenVol2102',
+      'UncannyXMenVol1383',
+      'XMenAnnualVol51',
+      'XMenVol2103',
+      'XMenUnlimitedVol128',
+      'UncannyXMenVol1384',
+      'XMenVol2104',
+      'UncannyXMenVol1385',
+    ]
+  ),
+  new Collection(
+    'Deadpool Classic Vol. 6',
+    '2012-1-18',
+    [
+      'DeadpoolVol244',
+      'BlackPantherVol323',
+      'DeadpoolVol245',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'XMenVol2105',
+      'XMenVol2106',
+      'UncannyXMenVol1386',
+      'UncannyXMenVol1387',
+      'BishopTheLastXManVol115',
+      'XMenVol2107',
+      'XMenUnlimitedVol129',
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'WolverineVol2154',
+      'WolverineVol2155',
+      'WolverineVol2156',
+      'WolverineVol2157',
+      'WolverineAnnualVol21',
+    ]
+  ),
+  new Collection(
+    'Counter-X: X-Force - Rage War',
+    '2012-8',
+    [
+      'XForceVol1110',
+      'XForceVol1111',
+      'XForceVol1112',
+      'XForceVol1113',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'UncannyXMenVol1388',
+      'CableVol187',
+      'BishopTheLastXManVol116',
+      'XMenVol2108',
+    ]
+  ),
+  new Collection(
+    'Counter-X: X-Force - Rage War',
+    '2012-8',
+    [
+      'XForceVol1114',
+      'XForceVol1115',
+    ]
+  ),
+  new Collection(
+    'Counter-X: Generation X - Four Days',
+    '2013-2-13',
+    [
+      'GenerationXVol171',
+      'GenerationXVol172',
+      'GenerationXVol173',
+      'GenerationXVol174',
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'WolverineVol2158',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'UncannyXMenVol1389',
+    ]
+  ),
+  new Collection(
+    'Wolverine: The Best There Is',
+    '2002-9',
+    [
+      'WolverineVol2159',
+      'WolverineVol2160',
+      'WolverineVol2161',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'XMenVol2109',
+    ]
+  ),
+  new Collection(
+    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
+    '2008-9-10',
+    [
+      'XMenSearchforCyclopsVol11',
+      'XMenSearchforCyclopsVol12',
+      'XMenSearchforCyclopsVol13',
+      'XMenSearchforCyclopsVol14'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Wolverine: The Best There Is',
+    '2002-9',
+    [
+      'WolverineVol2167',
+      'WolverineVol2168',
+      'WolverineVol2169',
+    ]
+  ),
+  new Collection(
+    'Counter-X: Generation X - Four Days',
+    '2013-2-13',
+    [
+      'GenerationXVol175',
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'OriginVol11',
+      'OriginVol12',
+      'OriginVol13',
+      'OriginVol14',
+      'OriginVol15',
+      'OriginVol16',
     ]
   ),
   new Collection(
@@ -2335,38 +2766,6 @@ collections.push(
       'XForceSexandViolenceVol11',
       'XForceSexandViolenceVol12',
       'XForceSexandViolenceVol13'
-    ]
-  ),
-  new Collection(
-    'Deadpool Classic Vol. 4',
-    '2011-1-19',
-    [
-      'DeadpoolandDeathAnnualVol11',
-      'DeadpoolVol218',
-      'DeadpoolVol219',
-      'DeadpoolVol220',
-      'DeadpoolVol221',
-      'DeadpoolVol222',
-      'DeadpoolVol223',
-      'DeadpoolVol224',
-      'DeadpoolVol225'
-    ]
-  ),
-  new Collection(
-    'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
-    '2006-11-1',
-    [
-      'XManVol153',
-      'XManVol154'
-    ]
-  ),
-  new Collection(
-    'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
-    '2014-9-17',
-    [
-      'XMenPhoenixVol11',
-      'XMenPhoenixVol12',
-      'XMenPhoenixVol13'
     ]
   ),
   /**
@@ -2384,7 +2783,7 @@ collections.push(
       'UncannyXMenVol1492',
       'UncannyXMenVol1493',
       'UncannyXMenVol1494'
-   ]
+    ]
   ),
   new Collection(
     'Uncanny X-Men: Divided We Stand',
