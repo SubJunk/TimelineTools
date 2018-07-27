@@ -17,11 +17,7 @@ body {
   padding: 20px;
 }
 
-#app {
-  display: none;
-}
-
-#loader{
+#loader {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,7 +27,7 @@ body {
   transform: perspective(1px) translate(-50%, -50%);
 }
 
-#load-percent{
+#load-percent {
     position:absolute;
     color: ccc;
     top: 50%;
