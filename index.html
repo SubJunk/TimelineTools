@@ -8,12 +8,13 @@
   <link rel="shortcut icon" href="images/x-men.ico" type="image/x-icon">
   <title>TimelineTools</title>
 </head>
-<body ng-style="main.bodyStyle">
-  <div id="loader">
+<body ng-style="main.bodyStyles" ng-controller="DataController as main">
+  <div id="loader" ng-hide="main.finishedLoading">
     <div id="load-percent">
+      <span ng-bind="main.loadPercent">0</span>%
     </div>
   </div>
-  <div id="app" ng-controller="DataController as main">
+  <div id="app" ng-show="main.finishedLoading" ng-cloak>
     <div id="info" class="modal modal-fixed-footer">
       <div class="modal-content">
         <h4>Info & Credits</h4>

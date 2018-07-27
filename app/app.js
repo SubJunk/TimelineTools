@@ -10,7 +10,6 @@ angular.module('app', ['angular-md5'])
     var collections   = $window.collections;
     var series        = $window.series;
     var seriesVolumes = $window.seriesVolumes;
-    
 
     const INITIAL_ZERO = 0;  // Used for all vars initialised to 0
     const INITAL_ONE = 1;    // Used for counters intiialised to 1
@@ -27,7 +26,6 @@ angular.module('app', ['angular-md5'])
     const STEP_CHANGE = 30;     //define how far to step around the colour wheel each time
     const COMPLETE_COLOR_WHEEL_DEGREES = 360;     //360 degrees in colour wheel
 
-    
     var globalVerticalPositionCounter = INITIAL_ZERO;
     var bodyStyles = {
       width: null,
@@ -40,9 +38,9 @@ angular.module('app', ['angular-md5'])
     const VISUAL_BLOCK_SIZE = 60;
 
     /*
-    * How far away the left edge of labels are from the left
-    * of the first thumbnail of a series volume.
-    */
+     * How far away the left edge of labels are from the left
+     * of the first thumbnail of a series volume.
+     */
     const LABEL_OFFSET = 150;
 
     var $jqWindow = $(window);
@@ -88,8 +86,6 @@ angular.module('app', ['angular-md5'])
     const ONE_SECOND_IN_MILLISECONDS = 1000;
     var getExtraAPIParamsString = function() {
       if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
-        
-        // timestamp = Date.now() / ONE_SECOND |0;
         timestamp = Math.floor(Date.now() / ONE_SECOND_IN_MILLISECONDS); //suggested new, wait for Klaus
         apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
         return '?ts=' + timestamp + '&hash=' + apiHash;
@@ -545,7 +541,7 @@ angular.module('app', ['angular-md5'])
         collectionColorsIndex[collectionTitle].hslColor += saturation * PERCENT_MULTIPLIER + '%, ';
         lightness = parseFloat('0.' + Math.floor(Math.random() * ((LIGHTNESS_MAX-LIGHTNESS_MIN)) + LIGHTNESS_MIN));
         collectionColorsIndex[collectionTitle].hslColor += lightness * PERCENT_MULTIPLIER  + '%)';
-        
+
         /**
          * Start the conversion of the HSL color to RGB
          * Converts an HSLA color value to RGB. Conversion formula
@@ -616,7 +612,7 @@ angular.module('app', ['angular-md5'])
          * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
          */
 
-        const RGB_CUTTOFF = 0.03928;  // See http://entropymine.com/imageworsener/srgbformula/
+        const RGB_CUTOFF = 0.03928;  // See http://entropymine.com/imageworsener/srgbformula/
         const RGB_SLOPE = 0.055;      
         const RGB_DENOMINATOR = 1.055;
         const RGB_EXPONENT = 2.4;        
@@ -630,7 +626,7 @@ angular.module('app', ['angular-md5'])
 
           rgbColor[i] /= RGB_MAX;
 
-          if (rgbColor[i] <= RGB_CUTTOFF) {
+          if (rgbColor[i] <= RGB_CUTOFF) {
             rgbColor[i] = rgbColor[i] / LINEAR_RGB ;
           } else {
             rgbColor[i] = Math.pow((rgbColor[i] + RGB_SLOPE) / RGB_DENOMINATOR, RGB_EXPONENT);
@@ -869,10 +865,7 @@ angular.module('app', ['angular-md5'])
     _.each(comics, function(comic) {
       // Get the collection containing this comic
       comic.collection = _.find(collections, function(collection) {
-        if(collection.comicIds.includes(comic.id)){
-          return true;
-        }
-        return false;
+        return collection.comicIds.includes(comic.id);
       });
     });
 
@@ -936,7 +929,7 @@ angular.module('app', ['angular-md5'])
         pushComicChunkToVm();
 
         // Update the loader
-        $('#load-percent').text(Math.round((comicsIterator / comics.length) * PERCENT_MULTIPLIER) + '%');
+        vm.loadPercent = ((comicsIterator / comics.length) * 100).toFixed(0);
       };
 
       // Do this first comic chunk instantly
@@ -948,16 +941,16 @@ angular.module('app', ['angular-md5'])
 
     var infoModalInstance;
     var finishedLoading = function() {
-      $timeout(function() {
-        $('#loader').hide();
-        $('body').css(bodyStyles);
-        $('#app').show();
+      vm.finishedLoading = true;
 
+      $timeout(function() {
         // Make room for the farthest-right expanded panel
-        bodyStyles.width += $('.scroll-anchor').width();
+        vm.bodyStyles.width += $('.scroll-anchor').width();
 
         // Make room for the farthest-bottom expanded panel
-        bodyStyles.height = $(document).height() + $(window).height();
+        vm.bodyStyles.height = $(document).height() + $(window).height();
+
+        vm.bodyStyles.background = 'hsl(216, 8%, 25%)';
 
         // Init floating menu on the right
         $('.fixed-action-btn').floatingActionButton({direction: 'left'});
@@ -965,6 +958,8 @@ angular.module('app', ['angular-md5'])
         // Init "Info & Credits" modal
         var infoModal = $('#info');
         infoModalInstance = _.first(M.Modal.init(infoModal));
+
+        useGetParameters();
 
         /**
          * The extra timeout is here because without it, 
@@ -985,72 +980,75 @@ angular.module('app', ['angular-md5'])
       }
     };
 
-    // Expand the comic from the URL on load
-    if ($location.search()) {
-      var searchParams = $location.search();
+    /*
+    * Launches the initial expand and scroll on load, and
+    * the garbage collector, if the relevant GET parameters
+    * are specified (id and gc)
+    */
+    var useGetParameters = function() {
+      if ($location.search()) {
+        var searchParams = $location.search();
 
-      if (searchParams.id) {
-        var comicFromUrl = comics[_.findKey(comics, { 'id': searchParams.id })];
-        vm.toggleExpandComic(comicFromUrl);
+        if (searchParams.id) {
+          var comicFromUrl = comics[_.findKey(comics, { 'id': searchParams.id })];
+          vm.toggleExpandComic(comicFromUrl);
 
-        $timeout(function() {
-          $('html, body').animate({
-            scrollLeft: comicFromUrl.containerStyles.left - LEFT_MARGIN,
-            scrollTop:  comicFromUrl.containerStyles.top
+          $timeout(function() {
+            $('html, body').animate({
+              scrollLeft: comicFromUrl.containerStyles.left - LEFT_MARGIN,
+              scrollTop:  comicFromUrl.containerStyles.top
+            });
           });
-        });
-      }
+        }
 
-      /**
-       * The garbage collector.
-       *
-       * This picks up any orphaned comics and series that would
-       * not cause errors but just take up space.
-       *
-       * Note there is no need to check that the comicIds in
-       * collections map to comics, because that would cause big
-       * errors that we already watch out for.
-       */
-      if (searchParams.gc) {
-        var foundComic;
-        var isClean = true;
-        var gcConsolePrepend = 'Garbage Collector: ';
+        /**
+         * The garbage collector.
+         *
+         * This picks up any orphaned comics and series that would
+         * not cause errors but just take up space.
+         *
+         * Note there is no need to check that the comicIds in
+         * collections map to comics, because that would cause big
+         * errors that we already watch out for.
+         */
+        if (searchParams.gc) {
+          var foundComic;
+          var isClean = true;
+          var gcConsolePrepend = 'Garbage Collector: ';
 
-        // Check that each comic is referenced by a collection
-        _.each(comics, function(comic) {
-          foundComic = _.find(collections, function(collection) {
-            if(collection.comicIds.includes(comic.id)){
-              return true;
+          // Check that each comic is referenced by a collection
+          _.each(comics, function(comic) {
+            foundComic = _.find(collections, function(collection) {
+              return collection.comicIds.includes(comic.id);
+            });
+
+            if (!foundComic) {
+              isClean = false;
+              $log.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
             }
-            return false;
           });
 
-          if (!foundComic) {
-            isClean = false;
-            $log.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
+          if (isClean) {
+            $log.info(gcConsolePrepend + 'All comics are referenced by collections.');
           }
-        });
 
-        if (isClean) {
-          $log.info(gcConsolePrepend + 'All comics are referenced by collections.');
-        }
+          // Check that each seriesVolume is referenced by a comic
+          isClean = true;
+          _.each(seriesVolumes, function(seriesVolume) {
+            foundComic = _.find(comics, function(comic) {
+              return comic.seriesVolumeId === seriesVolume.id;
+            });
 
-        // Check that each seriesVolume is referenced by a comic
-        isClean = true;
-        _.each(seriesVolumes, function(seriesVolume) {
-          foundComic = _.find(comics, function(comic) {
-            return comic.seriesVolumeId === seriesVolume.id;
+            if (!foundComic) {
+              isClean = false;
+              $log.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
+            }
           });
 
-          if (!foundComic) {
-            isClean = false;
-            $log.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
+          if (isClean) {
+            $log.info(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
           }
-        });
-
-        if (isClean) {
-          $log.info(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
         }
       }
-    }
+    };
   });
