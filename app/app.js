@@ -19,7 +19,7 @@ angular.module('app', ['angular-md5'])
 
     //Colour constants used in multiple functions
     const LIGHTNESS_MIN = 30;   //Lightness can be in the range 0-100
-    const LIGHTNESS_MAX = 85;   
+    const LIGHTNESS_MAX = 85;
     const PERCENT_MULTIPLIER = 100;
     const SATURATION_MIN = 35;  //Saturation can be in the range 0-100
     const SATURATION_MAX = 75;  //We choose a mid range that's easy to see
@@ -54,6 +54,7 @@ angular.module('app', ['angular-md5'])
     var currentComicIndexInCollection;
     var currentCollectionIndexInCollections;
     vm.isShowCollections = false;
+    vm.finishedLoading = false;
 
     // API variables
     var apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
@@ -86,7 +87,7 @@ angular.module('app', ['angular-md5'])
     const ONE_SECOND_IN_MILLISECONDS = 1000;
     var getExtraAPIParamsString = function() {
       if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
-        timestamp = Math.floor(Date.now() / ONE_SECOND_IN_MILLISECONDS); //suggested new, wait for Klaus
+        timestamp = Date.now() / ONE_SECOND_IN_MILLISECONDS;
         apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
         return '?ts=' + timestamp + '&hash=' + apiHash;
       }
@@ -188,9 +189,9 @@ angular.module('app', ['angular-md5'])
         }
         return false;
       });
-      
-      // if this is the first collection, 
-      if(_.isEqual(collections[currentCollectionIndexInCollections], _.first(collections))) {
+
+      // if this is the first collection
+      if (_.isEqual(collections[currentCollectionIndexInCollections], _.first(collections))) {
         vm.prevCollection = undefined;
         vm.prevCollectionFirstComic = undefined;
       } else  {
@@ -199,7 +200,7 @@ angular.module('app', ['angular-md5'])
       }
 
       // check for the last collection
-      if(_.isEqual(collections[currentCollectionIndexInCollections], _.last(collections))) {
+      if (_.isEqual(collections[currentCollectionIndexInCollections], _.last(collections))) {
         vm.nextCollection = undefined;
         vm.nextCollectionFirstComic = undefined;
       } else {
@@ -471,7 +472,7 @@ angular.module('app', ['angular-md5'])
           return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
         });
 
-        if(_.includes(seriesVolumeLabels.seriesVolumeLabel)=== 'false') {
+        if (_.includes(seriesVolumeLabels.seriesVolumeLabel)=== 'false') {
           throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
         }
 
@@ -599,7 +600,7 @@ angular.module('app', ['angular-md5'])
             blue = secondComponent;
         }
 
-        lightnessAdjustment = lightness - (chroma / (CHROMA_MAX + CHROMA_MAX));        
+        lightnessAdjustment = lightness - (chroma / (CHROMA_MAX + CHROMA_MAX));
         red += lightnessAdjustment;
         green += lightnessAdjustment;
         blue += lightnessAdjustment;
@@ -613,9 +614,9 @@ angular.module('app', ['angular-md5'])
          */
 
         const RGB_CUTOFF = 0.03928;  // See http://entropymine.com/imageworsener/srgbformula/
-        const RGB_SLOPE = 0.055;      
+        const RGB_SLOPE = 0.055;
         const RGB_DENOMINATOR = 1.055;
-        const RGB_EXPONENT = 2.4;        
+        const RGB_EXPONENT = 2.4;
         const LINEAR_RGB = 12.92;      // R, G, B * LINEAR_RBG = RGB_CUTTOFF
         const PERCEIVED_WEIGHTING_RED_LIGHT = 0.2126;
         const PERCEIVED_WEIGHTING_GREEN_LIGHT = 0.7152;
@@ -774,7 +775,7 @@ angular.module('app', ['angular-md5'])
     const RIGHT_KEYPRESS = 39;
 
     $(document).keydown(function(e) {
-      switch(e.which) {
+      switch (e.which) {
         case LEFT_KEYPRESS: // left
           if (vm.prevComic) {
             vm.toggleExpandComic(vm.prevComic);
@@ -962,7 +963,7 @@ angular.module('app', ['angular-md5'])
         useGetParameters();
 
         /**
-         * The extra timeout is here because without it, 
+         * The extra timeout is here because without it,
          * the tooltips initialization freezes the rest of the execution
          */
         $timeout(function() {

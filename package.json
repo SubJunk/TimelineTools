@@ -23,12 +23,16 @@
       "angular/controller-as-vm": "off",
       "angular/window-service": "off",
       "block-scoped-var": "error",
+      "brace-style": "error",
       "eqeqeq": "error",
       "indent": [ "error", 2, {"SwitchCase": 1} ],
+      "keyword-spacing": "error",
       "no-else-return": "error",
       "no-mixed-spaces-and-tabs": "error",
+      "no-trailing-spaces": "error",
       "quotes": [ 2, "single" ],
-      "semi": [ 2, "always" ]
+      "semi": [ 2, "always" ],
+      "space-before-blocks": "error"
     },
     "parserOptions": {
       "ecmaVersion": 6
