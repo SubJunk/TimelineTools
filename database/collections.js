@@ -2613,27 +2613,6 @@ collections.push(
       'UncannyXMenVol1385',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
-  new Collection(
-    'Wolverine Epic Collection: Blood Debt',
-    '2018-3-28',
-    [
-      'WolverineVol2154',
-      'WolverineVol2155',
-      'WolverineVol2156',
-      'WolverineVol2157',
-      'WolverineVol2158',
-      'WolverineAnnualVol21',
-      'OriginVol11',
-      'OriginVol12',
-      'OriginVol13',
-      'OriginVol14',
-      'OriginVol15',
-      'OriginVol16',
-    ]
-  ),
   new Collection(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
@@ -2649,17 +2628,90 @@ collections.push(
     [
       'XMenVol2105',
       'XMenVol2106',
-      'XMenVol2107',
-      'XMenVol2108',
-      'XMenVol2109',
       'UncannyXMenVol1386',
       'UncannyXMenVol1387',
-      'UncannyXMenVol1388',
-      'UncannyXMenVol1389',
-      'XMenUnlimitedVol129',
       'BishopTheLastXManVol115',
-      'BishopTheLastXManVol116',
+      'XMenVol2107',
+      'XMenUnlimitedVol129',
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'WolverineVol2154',
+      'WolverineVol2155',
+      'WolverineVol2156',
+      'WolverineVol2157',
+      'WolverineAnnualVol21',
+    ]
+  ),
+  new Collection(
+    'Counter-X: X-Force - Rage War',
+    '2012-8',
+    [
+      'XForceVol1110',
+      'XForceVol1111',
+      'XForceVol1112',
+      'XForceVol1113',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'UncannyXMenVol1388',
       'CableVol187',
+      'BishopTheLastXManVol116',
+      'XMenVol2108',
+    ]
+  ),
+  new Collection(
+    'Counter-X: X-Force - Rage War',
+    '2012-8',
+    [
+      'XForceVol1114',
+      'XForceVol1115',
+    ]
+  ),
+  new Collection(
+    'Counter-X: Generation X - Four Days',
+    '2013-2-13',
+    [
+      'GenerationXVol171',
+      'GenerationXVol172',
+      'GenerationXVol173',
+      'GenerationXVol174',
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'WolverineVol2158',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'UncannyXMenVol1389',
+    ]
+  ),
+  new Collection(
+    'Wolverine: The Best There Is',
+    '2002-9',
+    [
+      'WolverineVol2159',
+      'WolverineVol2160',
+      'WolverineVol2161',
+    ]
+  ),
+  new Collection(
+    'X-Men: Revolution',
+    '2018-8-14',
+    [
+      'XMenVol2109',
     ]
   ),
   new Collection(
@@ -2670,6 +2722,37 @@ collections.push(
       'XMenSearchforCyclopsVol12',
       'XMenSearchforCyclopsVol13',
       'XMenSearchforCyclopsVol14'
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Wolverine: The Best There Is',
+    '2002-9',
+    [
+      'WolverineVol2167',
+      'WolverineVol2168',
+      'WolverineVol2169',
+    ]
+  ),
+  new Collection(
+    'Counter-X: Generation X - Four Days',
+    '2013-2-13',
+    [
+      'GenerationXVol175',
+    ]
+  ),
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'OriginVol11',
+      'OriginVol12',
+      'OriginVol13',
+      'OriginVol14',
+      'OriginVol15',
+      'OriginVol16',
     ]
   ),
   new Collection(

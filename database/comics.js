@@ -354,6 +354,11 @@ addComicsInSeriesVolume('GenerationXVol1', [
   [68, '2000-10'],
   [69, '2000-11'],
   [70, '2000-12'],
+  [71, '2001-1'],
+  [72, '2001-2'],
+  [73, '2001-3'],
+  [74, '2001-4'],
+  [75, '2001-6'],
 ])
 addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']])
 addComicsInSeriesVolume('GhostRiderVol3', [
@@ -917,6 +922,12 @@ addComicsInSeriesVolume('WolverineVol2', [
   [156, '2000-11'],
   [157, '2000-12'],
   [158, '2001-1'],
+  [159, '2001-2'],
+  [160, '2001-3'],
+  [161, '2001-4'],
+  [167, '2001-10'],
+  [168, '2001-11'],
+  [169, '2001-12'],
 ])
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']])
 addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']])
@@ -1072,6 +1083,12 @@ addComicsInSeriesVolume('XForceVol1', [
   [107, '2000-10'],
   [108, '2000-11'],
   [109, '2000-12'],
+  [110, '2001-1'],
+  [111, '2001-2'],
+  [112, '2001-3'],
+  [113, '2001-4'],
+  [114, '2001-5'],
+  [115, '2001-6'],
 ])
 addComicsInSeriesVolume('XForceVol3', [
   [26, '2010-6', ['Second Coming (Chapter Five)']],
