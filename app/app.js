@@ -11,8 +11,6 @@ angular.module('app', ['angular-md5'])
     var series        = $window.series;
     var seriesVolumes = $window.seriesVolumes;
 
-    const INITIAL_ZERO = 0;  // Used for all vars initialised to 0
-    const INITAL_ONE = 1;    // Used for counters intiialised to 1
     const BODY_PADDING = 20;
     const LEFT_MARGIN = 200;
     const TOP_MARGIN = 300;
@@ -26,11 +24,11 @@ angular.module('app', ['angular-md5'])
     const STEP_CHANGE = 30;     //define how far to step around the colour wheel each time
     const COMPLETE_COLOR_WHEEL_DEGREES = 360;     //360 degrees in colour wheel
 
-    var globalVerticalPositionCounter = INITIAL_ZERO;
+    var globalVerticalPositionCounter = 0;
     var bodyStyles = {
       width: null,
       padding: BODY_PADDING,
-      background: 'hsl(216, 8%, 25%)'
+      background: null
     };
     var seriesVolumeLabels = [];
 
@@ -87,7 +85,7 @@ angular.module('app', ['angular-md5'])
     const ONE_SECOND_IN_MILLISECONDS = 1000;
     var getExtraAPIParamsString = function() {
       if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
-        timestamp = Date.now() / ONE_SECOND_IN_MILLISECONDS;
+        timestamp = Date.now() / ONE_SECOND_IN_MILLISECONDS | 0;
         apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
         return '?ts=' + timestamp + '&hash=' + apiHash;
       }
@@ -207,6 +205,7 @@ angular.module('app', ['angular-md5'])
         vm.nextCollection = collections[currentCollectionIndexInCollections + 1];
         vm.nextCollectionFirstComic = _.find(comics, ['id', _.first(vm.nextCollection.comicIds)]);
       }
+
       // Find the previous comic
       if (currentComicIndexInCollection > 0) {
         vm.prevComic = vm.collections[currentCollectionIndexInCollections].comics[currentComicIndexInCollection - 1];
@@ -293,15 +292,13 @@ angular.module('app', ['angular-md5'])
     var yearIncrement;
     var monthIncrement;
     const ONE_YEAR_IN_MONTHS = 12;
-    const ONE_MONTH_IN_MONTHS = 1;
-    const ZERO_MONTHS_IN_MONTHS = 0;
 
     for (yearIncrement = firstYear; yearIncrement <= finalYear; yearIncrement++) {
       dates[yearIncrement] = {};
 
       if (yearIncrement === finalYear) {
         // In this final year we stop the counter at the final month
-        for (monthIncrement = ONE_MONTH_IN_MONTHS; monthIncrement <= finalMonth; monthIncrement++) {
+        for (monthIncrement = 1; monthIncrement <= finalMonth; monthIncrement++) {
           dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       } else if (yearIncrement === firstYear) {
@@ -311,14 +308,14 @@ angular.module('app', ['angular-md5'])
         }
       } else {
         // In this in-between year we always add 12 months
-        for (monthIncrement = ONE_MONTH_IN_MONTHS; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
+        for (monthIncrement = 1; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
           dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
         }
       }
     }
 
     var previousYearMonthVolume;
-    var globalHorizontalOffset = INITIAL_ZERO;
+    var globalHorizontalOffset = 0;
     var latestVerticalHorizontalOffsets = {};
     var newLabelNeeded = false;
     var windowWidth = $jqWindow.innerWidth();
@@ -340,7 +337,7 @@ angular.module('app', ['angular-md5'])
       monthsSinceFirst = (comic.yearPublished - firstYear) * ONE_YEAR_IN_MONTHS;
       monthsSinceFirst -= firstMonth;
       monthsSinceFirst += comic.monthPublished;
-      comic.containerStyles.left = (monthsSinceFirst <= ZERO_MONTHS_IN_MONTHS ? ZERO_MONTHS_IN_MONTHS : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
+      comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
 
       /**
        * Manage multiple releases of the same series in the same month
@@ -401,7 +398,7 @@ angular.module('app', ['angular-md5'])
          *
          * Counter starts at 1 to keep Uncanny always at the top.
          */
-        for (var i = INITAL_ONE; i < globalVerticalPositionCounter; i++) {
+        for (var i = 1; i < globalVerticalPositionCounter; i++) {
           if (
             !latestVerticalHorizontalOffsets[i] ||
             latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
@@ -450,8 +447,7 @@ angular.module('app', ['angular-md5'])
        * comic thumbnail) and 2 body padding units to make up for the
        * left and right padding of the page.
        */
-      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (bodyStyles.padding + bodyStyles.padding);
-
+      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (bodyStyles.padding * 2);
       if (newLabelNeeded) {
         seriesVolumeLabels.push({
           text: currentSeriesVolume.titleWithVolume,
@@ -472,7 +468,7 @@ angular.module('app', ['angular-md5'])
           return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
         });
 
-        if (_.includes(seriesVolumeLabels.seriesVolumeLabel)=== 'false') {
+        if (_.includes(seriesVolumeLabels.seriesVolumeLabel) === false) {
           throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
         }
 
@@ -538,9 +534,9 @@ angular.module('app', ['angular-md5'])
         }
         hue = startColor;
         collectionColorsIndex[collectionTitle].hslColor += startColor + ', ';
-        saturation = parseFloat('0.' + Math.floor(Math.random() * ((SATURATION_MAX-SATURATION_MIN)) + SATURATION_MIN));
+        saturation = parseFloat('0.' + Math.floor(Math.random() * ((SATURATION_MAX - SATURATION_MIN)) + SATURATION_MIN));
         collectionColorsIndex[collectionTitle].hslColor += saturation * PERCENT_MULTIPLIER + '%, ';
-        lightness = parseFloat('0.' + Math.floor(Math.random() * ((LIGHTNESS_MAX-LIGHTNESS_MIN)) + LIGHTNESS_MIN));
+        lightness = parseFloat('0.' + Math.floor(Math.random() * ((LIGHTNESS_MAX - LIGHTNESS_MIN)) + LIGHTNESS_MIN));
         collectionColorsIndex[collectionTitle].hslColor += lightness * PERCENT_MULTIPLIER  + '%)';
 
         /**
@@ -555,12 +551,6 @@ angular.module('app', ['angular-md5'])
         const RGB_MAX = 255;
         const HUE_SEGMENT = 60; // 60 degrees, one sixth of the colour wheel
         const MOD = 2;
-        const HUEPRIME_IS_ZERO = 0;
-        const HUEPRIME_IS_ONE = 1;
-        const HUEPRIME_IS_TWO = 2;
-        const HUEPRIME_IS_THREE = 3;
-        const HUEPRIME_IS_FOUR = 4;
-        const HUEPRIME_IS_FIVE = 5;
         const CHROMA_MAX = 1;
 
         chroma = (CHROMA_MAX - Math.abs((lightness + lightness) - CHROMA_MAX)) * saturation;
@@ -570,37 +560,37 @@ angular.module('app', ['angular-md5'])
         huePrime = Math.floor(huePrime);
 
         // Reset the values each time
-        red = INITIAL_ZERO;
-        green = INITIAL_ZERO;
-        blue = INITIAL_ZERO;
+        red = 0;
+        green = 0;
+        blue = 0;
 
         switch (huePrime) {
-          case HUEPRIME_IS_ZERO:
+          case 0:
             red = chroma;
             green = secondComponent;
             break;
-          case HUEPRIME_IS_ONE:
+          case 1:
             red = secondComponent;
             green = chroma;
             break;
-          case HUEPRIME_IS_TWO:
+          case 2:
             green = chroma;
             blue = secondComponent;
             break;
-          case HUEPRIME_IS_THREE:
+          case 3:
             green = secondComponent;
             blue = chroma;
             break;
-          case HUEPRIME_IS_FOUR:
+          case 4:
             red = secondComponent;
             blue = chroma;
             break;
-          case HUEPRIME_IS_FIVE:
+          case 5:
             red = chroma;
             blue = secondComponent;
         }
 
-        lightnessAdjustment = lightness - (chroma / (CHROMA_MAX + CHROMA_MAX));
+        lightnessAdjustment = lightness - (chroma / 2);
         red += lightnessAdjustment;
         green += lightnessAdjustment;
         blue += lightnessAdjustment;
@@ -623,8 +613,7 @@ angular.module('app', ['angular-md5'])
         const PERCEIVED_WEIGHTING_BLUE_LIGHT = 0.0722; //Given equal quantities of RGB, humans perceive them in a weighted way
         const LIGHT_DARK_THRESHOLD = 0.179;
 
-        for (var i = INITIAL_ZERO; i < rgbColor.length; ++i) {
-
+        for (var i = 0; i < rgbColor.length; ++i) {
           rgbColor[i] /= RGB_MAX;
 
           if (rgbColor[i] <= RGB_CUTOFF) {
@@ -634,7 +623,7 @@ angular.module('app', ['angular-md5'])
           }
         }
 
-        var iterator = INITIAL_ZERO;
+        var iterator = 0;
 
         backgroundLightness = PERCEIVED_WEIGHTING_RED_LIGHT * rgbColor[iterator];
         iterator++;
@@ -680,7 +669,6 @@ angular.module('app', ['angular-md5'])
       scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
 
-      const FAR_LEFT = 0;
       /**
        * Label positioning:
        */
@@ -695,7 +683,7 @@ angular.module('app', ['angular-md5'])
           // If the browser is scrolled past the right, hide the label
           if (
             (scrollLeft - seriesVolumeLabel.right) > -LABEL_OFFSET &&
-            (scrollLeft - seriesVolumeLabel.right) < FAR_LEFT
+            (scrollLeft - seriesVolumeLabel.right) < 0
           ) {
             seriesVolumeLabel.visible = true;
             seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - LABEL_OFFSET);
@@ -703,7 +691,7 @@ angular.module('app', ['angular-md5'])
             seriesVolumeLabel.visible = false;
           } else {
             seriesVolumeLabel.visible = true;
-            seriesVolumeLabel.labelStyles.left = 'FAR_LEFT';
+            seriesVolumeLabel.labelStyles.left = '0';
           }
         } else {
           seriesVolumeLabel.visible = true;
@@ -894,7 +882,7 @@ angular.module('app', ['angular-md5'])
       // How many milliseconds delay between chunks
       const COMIC_LOOP_DELAY = 1;
 
-      var comicsIterator = INITIAL_ZERO;
+      var comicsIterator = 0;
       var pushComicChunkToVm = function() {
         var currentChunkEnd = comicsIterator + COMIC_CHUNKS;
         for (var currentChunkIterator = comicsIterator; currentChunkIterator < currentChunkEnd; currentChunkIterator++) {
