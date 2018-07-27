@@ -276,7 +276,7 @@ display: none;
   height: var(--expanded-cover-height);
 }
 
-.timeline-container .comic-container .expanded-panel {
+.comic-container .expanded-panel {
   display: none;
 }
 
@@ -288,7 +288,8 @@ display: none;
 }
 
 .collection-container,
-.expanded .expanded-panel {
+.expanded .expanded-panel,
+.table-container  .comic-container .expanded-panel {
   display: inline-block;
 }
 
