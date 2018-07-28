@@ -27,8 +27,7 @@ angular.module('app', ['angular-md5'])
     var globalVerticalPositionCounter = 0;
     var bodyStyles = {
       width: null,
-      padding: BODY_PADDING,
-      background: 'hsl(216, 8%, 25%)'
+      padding: BODY_PADDING
     };
     var seriesVolumeLabels = [];
 
@@ -921,9 +920,6 @@ angular.module('app', ['angular-md5'])
 
         // Push the next chunk of comics to the DOM
         pushComicChunkToVm();
-
-        // Update the loader
-        vm.loadPercent = ((comicsIterator / comics.length) * 100).toFixed(0);
       };
 
       // Do this first comic chunk instantly
