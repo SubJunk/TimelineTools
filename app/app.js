@@ -51,7 +51,6 @@ angular.module('app', ['angular-md5'])
     var currentComicIndexInCollection;
     var currentCollectionIndexInCollections;
     vm.isShowCollections = false;
-    vm.finishedLoading = false;
 
     // API variables
     var apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
@@ -931,8 +930,6 @@ angular.module('app', ['angular-md5'])
 
     var infoModalInstance;
     var finishedLoading = function() {
-      vm.finishedLoading = true;
-
       $timeout(function() {
         // Make room for the farthest-right expanded panel
         vm.bodyStyles.width += $('.scroll-anchor').width();
