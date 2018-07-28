@@ -979,7 +979,7 @@ angular.module('app', ['angular-md5'])
     * the garbage collector, if the relevant GET parameters
     * are specified (id and gc)
     */
-    var useGetParameters = function() {
+    var useGetParameters = functi on() {
       if ($location.search()) { 
         var searchParams = $location.search();
 
