@@ -1,4 +1,5 @@
 # TimelineTools
+[![Build Status](https://travis-ci.com/SubJunk/TimelineTools.svg?branch=master)](https://travis-ci.org/UniversalMediaServer/UniversalMediaServer)
 
 ## General
 
@@ -16,6 +17,8 @@ If you are viewing the project locally (URL starts with `file://`) you will need
 
 There's no build/compile step and no development packages are needed.
 
-Optionally you can run `yarn install` to install ESLint and related plugins to help with development.
+Each push will trigger a Travis build which will run ESLint and stylelint. If either of them report errors, any Pull Request related to the branch will be prevented from being merged.
+
+Optionally you can also run them locally to help with development. To do this, run `yarn install` to install the tools, and you will probably also want to install the relevant extensions in your IDE.
 
 There is a garbage collection functionality built-in to check the database for orphans. It can be run by adding `gc` to the URL, e.g. `index.html#!?id=ThorVol1373&gc` and looking in the browser console.
