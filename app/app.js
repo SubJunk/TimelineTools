@@ -987,7 +987,7 @@ angular.module('app', ['angular-md5'])
           var comicFromUrl = comics[_.findKey(comics, { 'id': searchParams.id })];
           vm.toggleExpandComic(comicFromUrl);
 
-          $timeout(function(){
+          $timeout(function() {
             $('html, body').animate({
               scrollLeft: comicFromUrl.containerStyles.left - LEFT_MARGIN,
               scrollTop:  comicFromUrl.containerStyles.top
