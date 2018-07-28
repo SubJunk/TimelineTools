@@ -2724,6 +2724,14 @@ collections.push(
       'XMenSearchforCyclopsVol14'
     ]
   ),
+  new Collection(
+    'X-Men: Dream\'s End (Partial)',
+    '2005-1-12',
+    [
+      'UncannyXMenVol1390',
+      'XMenVol2110',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
