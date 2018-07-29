@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - "8"
+addons:
+  firefox: "latest"
 script:
   - node_modules/.bin/eslint .
   - node_modules/.bin/stylelint "**/*.css"
