@@ -2553,6 +2553,18 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol179',
+      'CableVol180',
+      'CableVol181',
+      'CableVol182',
+      'CableVol183',
+      'CableVol184',
+    ]
+  ),
+  new Collection(
     'Counter-X Vol. 1',
     '2008-7-2',
     [
@@ -2643,6 +2655,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol185',
+      'CableVol186',
+    ]
+  ),
+  new Collection(
     'Wolverine Epic Collection: Blood Debt',
     '2018-3-28',
     [
@@ -2705,6 +2725,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol188',
+    ]
+  ),
+  new Collection(
     'Wolverine: The Best There Is',
     '2002-9',
     [
@@ -2731,6 +2758,19 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol189',
+      'CableVol190',
+      'CableVol191',
+      'CableVol192',
+      'CableVol193',
+      'CableVol194',
+      'CableVol195',
+    ]
+  ),
+  new Collection(
     'X-Men: Dream\'s End (Partial)',
     '2005-1-12',
     [
@@ -2741,6 +2781,13 @@ collections.push(
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol196',
+    ]
+  ),
   new Collection(
     'Wolverine: The Best There Is',
     '2002-9',
