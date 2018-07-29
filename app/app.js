@@ -964,7 +964,7 @@ angular.module('app', ['angular-md5'])
         infoModalInstance.open();
       }
     };
-
+    var sfdff = fhfgh.sdf;
     /*
     * Launches the initial expand and scroll on load, and
     * the garbage collector, if the relevant GET parameters
