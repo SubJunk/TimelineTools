@@ -2276,6 +2276,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'WolverineAnnualVol21',
+    ]
+  ),
+  new Collection(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
@@ -2643,7 +2650,6 @@ collections.push(
       'WolverineVol2155',
       'WolverineVol2156',
       'WolverineVol2157',
-      'WolverineAnnualVol21',
     ]
   ),
   new Collection(
