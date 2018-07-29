@@ -40,9 +40,23 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        chromeOptions: {
+            prefs: {
+                profile: {
+                    default_content_setting_values: {
+                        'images': 2
+                    }
+                }
+            }
+        }
     }, {
-        browserName: 'firefox'
+        browserName: 'firefox',
+        'moz:firefoxOptions': {
+            prefs: {
+                'permissions.default.image': 2
+            }
+        }
     }],
     //
     // ===================
