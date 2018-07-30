@@ -966,10 +966,10 @@ angular.module('app', ['angular-md5'])
     };
 
     /*
-    * Launches the initial expand and scroll on load, and
-    * the garbage collector, if the relevant GET parameters
-    * are specified (id and gc)
-    */
+     * Launches the initial expand and scroll on load, and the
+     * garbage collector, if the relevant GET parameters are
+     * specified (id and gc)
+     */
     var useGetParameters = function() {
       if ($location.search()) {
         var searchParams = $location.search();
