@@ -1692,6 +1692,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Onslaught Aftermath',
+    '2019-4-2',
+    [
+      'UncannyXMenAnnualVol11',
+    ]
+  ),
+  new Collection(
     'X-Men/Avengers: Onslaught Omnibus',
     '2015-8-19',
     [
@@ -1762,6 +1769,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Onslaught Aftermath',
+    '2019-4-2',
+    [
+      'XMenUnlimitedVol112',
+    ]
+  ),
+  new Collection(
     'X-Men: The Complete Onslaught Epic Book 4 (Partial)',
     '2008-12-24',
     [
@@ -1781,12 +1795,17 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncollected',
-    null,
+    'X-Men: Onslaught Aftermath',
+    '2019-4-2',
     [
       'UncannyXMenVol1338',
+      'UncannyXMenAnnualVol12',
+      'XMenVol258',
       'UncannyXMenVol1339',
-      'UncannyXMenVol1340'
+      'XMenVol259',
+      'XMenUnlimitedVol113',
+      'UncannyXMenVol1340',
+      'XFactorVol1130',
     ]
   ),
   new Collection(
@@ -1801,6 +1820,16 @@ collections.push(
     '2008-4-23',
     [
       'DeadpoolVol21'
+    ]
+  ),
+  new Collection(
+    'X-Men: Onslaught Aftermath',
+    '2019-4-2',
+    [
+      'XMenVol260',
+      'XMenVol261',
+      'XMenAnnualVol33',
+      'XMenUnlimitedVol114',
     ]
   ),
   new Collection(
@@ -2509,7 +2538,7 @@ collections.push(
     'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
     '2008-9-10',
     [
-      'UncannyXMenAnnualVol11',
+      'UncannyXMenAnnualVol21',
       'UncannyXMenVol1378',
       'CableVol177',
       'X51Vol18',

@@ -869,7 +869,11 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [528, '2010-11', ['The Five Lights (Part 3)']],
   [529, '2010-12', ['The Five Lights (Part Four)']]
 ]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol1', [[1, '2000-2']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
+  [1, '1996-9'],
+  [2, '1997-10'],
+]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol2', [[1, '2000-2']]);
 addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']]);
 addComicsInSeriesVolume('WeaponXVol1', [
   [1, '1995-3'],
@@ -1020,7 +1024,8 @@ addComicsInSeriesVolume('XFactorVol1', [
   [108, '1994-11'],
   [109, '1994-12'],
   [125, '1996-8'],
-  [126, '1996-9']
+  [126, '1996-9'],
+  [130, '1997-1'],
 ]);
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],
@@ -1214,6 +1219,10 @@ addComicsInSeriesVolume('XMenVol2', [
   [55, '1996-8'],
   [56, '1996-9'],
   [57, '1996-10'],
+  [58, '1996-11'],
+  [59, '1996-12'],
+  [60, '1997-1'],
+  [61, '1998-2'],
   [62, '1997-3'],
   [63, '1997-4'],
   [64, '1997-5'],
@@ -1300,7 +1309,10 @@ addComicsInSeriesVolume('XMenAnnualVol2', [
   [2, '1993-10'],
   [5, '1996-11']
 ]);
-addComicsInSeriesVolume('XMenAnnualVol3', [[1, '1995-10']]);
+addComicsInSeriesVolume('XMenAnnualVol3', [
+  [1, '1995-10'],
+  [3, '1997-5'],
+]);
 addComicsInSeriesVolume('XMenAnnualVol4', [[1, '1999-8']]);
 addComicsInSeriesVolume('XMenAnnualVol5', [[1, '2000-9']]);
 addComicsInSeriesVolume('XMenBlackSunVol1', [
@@ -1364,6 +1376,9 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [9, '1995-12'],
   [10, '1996-3'],
   [11, '1996-6'],
+  [12, '1996-9'],
+  [13, '1996-12'],
+  [14, '1997-3'],
   [17, '1997-12'],
   [18, '1998-4'],
   [22, '1999-3'],
