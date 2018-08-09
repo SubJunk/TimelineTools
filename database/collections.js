@@ -2807,19 +2807,42 @@ collections.push(
       'XMenVol2110',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'X-Men Legends Vol. IV: Hated & Feared',
+    '2003-12-3',
+    [
+      'XMenUnlimitedVol131',
+    ]
+  ),
+  new Collection(
+    'Wolverine/Deadpool: Weapon X',
+    '1999-11-30',
+    [
+      'WolverineVol2162',
+      'WolverineVol2163',
+      'WolverineVol2164',
+      'WolverineVol2165',
+      'WolverineVol2166',
+      'DeadpoolVol257',
+      'DeadpoolVol258',
+      'DeadpoolVol259',
+      'DeadpoolVol260',
+    ]
+  ),
+  new Collection(
+    'Wolverine: The Best There Is',
+    '2002-9',
+    [
+      'WolverineVol2167',
+      'WolverineVol2168',
+      'WolverineVol2169',
+    ]
+  ),
   new Collection(
     'X-Men: Eve of Destruction',
     '2005-5-4',
     [
       'UncannyXMenVol1391',
-      'UncannyXMenVol1392',
-      'UncannyXMenVol1393',
-      'XMenVol2111',
-      'XMenVol2112',
-      'XMenVol2113',
     ]
   ),
   new Collection(
@@ -2830,12 +2853,31 @@ collections.push(
     ]
   ),
   new Collection(
-    'Wolverine: The Best There Is',
-    '2002-9',
+    'X-Men: Eve of Destruction',
+    '2005-5-4',
     [
-      'WolverineVol2167',
-      'WolverineVol2168',
-      'WolverineVol2169',
+      'XMenVol2111',
+      'UncannyXMenVol1392',
+      'XMenVol2112',
+      'UncannyXMenVol1393',
+      'XMenVol2113',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Men Legends Vol. IV: Hated & Feared',
+    '2003-12-3',
+    [
+      'XMenUnlimitedVol135',
+      'XMenUnlimitedVol136',
+      'XMenUnlimitedVol140',
+      'XMenUnlimitedVol142',
+      'XMenUnlimitedVol146',
+      'XMenUnlimitedVol147',
+      'XMenUnlimitedVol148',
+      'XMenUnlimitedVol149',
     ]
   ),
   new Collection(
