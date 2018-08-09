@@ -12,28 +12,9 @@
 }
 
 body {
-  background: hsl(0, 0%, 15%);
+  background: hsl(216, 8%, 25%);
   overflow: auto;
   padding: 20px;
-}
-
-#loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400;
-  height: 400;
-  background-image: url('images/loader.gif');
-  transform: perspective(1px) translate(-50%, -50%);
-}
-
-#load-percent {
-  position: absolute;
-  color: ccc;
-  top: 50%;
-  left: 50%;
-  font-size: large;
-  transform: perspective(1px) translate(-50%, -50%);
 }
 
 .table-container, .date {

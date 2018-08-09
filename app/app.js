@@ -27,8 +27,7 @@ angular.module('app', ['angular-md5'])
     var globalVerticalPositionCounter = 0;
     var bodyStyles = {
       width: null,
-      padding: BODY_PADDING,
-      background: null
+      padding: BODY_PADDING
     };
     var seriesVolumeLabels = [];
 
@@ -52,7 +51,6 @@ angular.module('app', ['angular-md5'])
     var currentComicIndexInCollection;
     var currentCollectionIndexInCollections;
     vm.isShowCollections = false;
-    vm.finishedLoading = false;
     var isShowTable = false;
 
     // API variables
@@ -878,12 +876,12 @@ angular.module('app', ['angular-md5'])
 
     /**
      * This chunk limits the flow of comics being added to the
-     * DOM, which is needed to stop the loading spinner from
-     * freezing while it loads.
+     * DOM, which prevents the browser from being unresponsive
+     * during the initial load.
      */
     {
       // How many comics to add per loop
-      const COMIC_CHUNKS = 20;
+      const COMIC_CHUNKS = 50;
 
       // How many milliseconds delay between chunks
       const COMIC_LOOP_DELAY = 1;
@@ -922,9 +920,6 @@ angular.module('app', ['angular-md5'])
 
         // Push the next chunk of comics to the DOM
         pushComicChunkToVm();
-
-        // Update the loader
-        vm.loadPercent = ((comicsIterator / comics.length) * 100).toFixed(0);
       };
 
       // Do this first comic chunk instantly
@@ -936,16 +931,12 @@ angular.module('app', ['angular-md5'])
 
     var infoModalInstance;
     var finishedLoading = function() {
-      vm.finishedLoading = true;
-
       $timeout(function() {
         // Make room for the farthest-right expanded panel
         vm.bodyStyles.width += $('.scroll-anchor').width();
 
         // Make room for the farthest-bottom expanded panel
         vm.bodyStyles.height = $(document).height() + $(window).height();
-
-        vm.bodyStyles.background = 'hsl(216, 8%, 25%)';
 
         // Init floating menu on the right
         $('.fixed-action-btn').floatingActionButton({direction: 'left'});
@@ -990,9 +981,9 @@ angular.module('app', ['angular-md5'])
     });
 
     /*
-     * Launches the initial expand and scroll on load, and
-     * the garbage collector, if the relevant GET parameters
-     * are specified (id and gc)
+     * Launches the initial expand and scroll on load, and the
+     * garbage collector, if the relevant GET parameters are
+     * specified (id and gc)
      */
     var useGetParameters = function() {
       if ($location.search()) {

@@ -1692,6 +1692,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Onslaught Aftermath',
+    '2019-4-2',
+    [
+      'UncannyXMenAnnualVol11',
+    ]
+  ),
+  new Collection(
     'X-Men/Avengers: Onslaught Omnibus',
     '2015-8-19',
     [
@@ -1762,6 +1769,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Onslaught Aftermath',
+    '2019-4-2',
+    [
+      'XMenUnlimitedVol112',
+    ]
+  ),
+  new Collection(
     'X-Men: The Complete Onslaught Epic Book 4 (Partial)',
     '2008-12-24',
     [
@@ -1781,12 +1795,17 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncollected',
-    null,
+    'X-Men: Onslaught Aftermath',
+    '2019-4-2',
     [
       'UncannyXMenVol1338',
+      'UncannyXMenAnnualVol12',
+      'XMenVol258',
       'UncannyXMenVol1339',
-      'UncannyXMenVol1340'
+      'XMenVol259',
+      'XMenUnlimitedVol113',
+      'UncannyXMenVol1340',
+      'XFactorVol1130',
     ]
   ),
   new Collection(
@@ -1801,6 +1820,16 @@ collections.push(
     '2008-4-23',
     [
       'DeadpoolVol21'
+    ]
+  ),
+  new Collection(
+    'X-Men: Onslaught Aftermath',
+    '2019-4-2',
+    [
+      'XMenVol260',
+      'XMenVol261',
+      'XMenAnnualVol33',
+      'XMenUnlimitedVol114',
     ]
   ),
   new Collection(
@@ -2276,6 +2305,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'WolverineAnnualVol21',
+    ]
+  ),
+  new Collection(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
@@ -2502,7 +2538,7 @@ collections.push(
     'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
     '2008-9-10',
     [
-      'UncannyXMenAnnualVol11',
+      'UncannyXMenAnnualVol21',
       'UncannyXMenVol1378',
       'CableVol177',
       'X51Vol18',
@@ -2543,6 +2579,18 @@ collections.push(
       'GenerationXVol168',
       'GenerationXVol169',
       'GenerationXVol170',
+    ]
+  ),
+  new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol179',
+      'CableVol180',
+      'CableVol181',
+      'CableVol182',
+      'CableVol183',
+      'CableVol184',
     ]
   ),
   new Collection(
@@ -2636,6 +2684,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol185',
+      'CableVol186',
+    ]
+  ),
+  new Collection(
     'Wolverine Epic Collection: Blood Debt',
     '2018-3-28',
     [
@@ -2643,7 +2699,6 @@ collections.push(
       'WolverineVol2155',
       'WolverineVol2156',
       'WolverineVol2157',
-      'WolverineAnnualVol21',
     ]
   ),
   new Collection(
@@ -2699,6 +2754,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol188',
+    ]
+  ),
+  new Collection(
     'Wolverine: The Best There Is',
     '2002-9',
     [
@@ -2725,6 +2787,19 @@ collections.push(
     ]
   ),
   new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol189',
+      'CableVol190',
+      'CableVol191',
+      'CableVol192',
+      'CableVol193',
+      'CableVol194',
+      'CableVol195',
+    ]
+  ),
+  new Collection(
     'X-Men: Dream\'s End (Partial)',
     '2005-1-12',
     [
@@ -2735,6 +2810,25 @@ collections.push(
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Men: Eve of Destruction',
+    '2005-5-4',
+    [
+      'UncannyXMenVol1391',
+      'UncannyXMenVol1392',
+      'UncannyXMenVol1393',
+      'XMenVol2111',
+      'XMenVol2112',
+      'XMenVol2113',
+    ]
+  ),
+  new Collection(
+    'Cable: Revolution',
+    '2018-4-28',
+    [
+      'CableVol196',
+    ]
+  ),
   new Collection(
     'Wolverine: The Best There Is',
     '2002-9',
