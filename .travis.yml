@@ -1,4 +1,7 @@
 language: node_js
+os:
+  - linux
+  - osx
 node_js:
   - "8"
 sudo: required
@@ -9,9 +12,9 @@ addons:
   chrome: "stable"
   firefox: "latest"
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - "npm config set spin false"
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm config set spin false; fi
 script:
   - node_modules/.bin/eslint .
   - node_modules/.bin/stylelint "**/*.css"
