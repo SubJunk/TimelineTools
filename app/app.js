@@ -875,8 +875,8 @@ angular.module('app', ['angular-md5'])
 
     /**
      * This chunk limits the flow of comics being added to the
-     * DOM, which is needed to stop the loading spinner from
-     * freezing while it loads.
+     * DOM, which prevents the browser from being unresponsive
+     * during the initial load.
      */
     {
       // How many comics to add per loop

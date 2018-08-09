@@ -833,6 +833,9 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [388, '2001-1'],
   [389, '2001-2'],
   [390, '2001-3'],
+  [391, '2001-4'],
+  [392, '2001-5'],
+  [393, '2001-6'],
   /**
    * Complete until here
    */
@@ -1272,6 +1275,9 @@ addComicsInSeriesVolume('XMenVol2', [
   [108, '2001-1'],
   [109, '2001-2'],
   [110, '2001-3'],
+  [111, '2001-4'],
+  [112, '2001-5'],
+  [113, '2001-6'],
 ]);
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],

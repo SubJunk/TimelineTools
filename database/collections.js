@@ -2811,6 +2811,18 @@ collections.push(
    * Roughly ordered for flow of crossovers until here.
    */
   new Collection(
+    'X-Men: Eve of Destruction',
+    '2005-5-4',
+    [
+      'UncannyXMenVol1391',
+      'UncannyXMenVol1392',
+      'UncannyXMenVol1393',
+      'XMenVol2111',
+      'XMenVol2112',
+      'XMenVol2113',
+    ]
+  ),
+  new Collection(
     'Cable: Revolution',
     '2018-4-28',
     [
