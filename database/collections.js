@@ -2893,9 +2893,71 @@ collections.push(
       'XTremeXMenVol14',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'Wolverine Epic Collection: Blood Debt',
+    '2018-3-28',
+    [
+      'OriginVol11',
+      'OriginVol12',
+      'OriginVol13',
+      'OriginVol14',
+      'OriginVol15',
+      'OriginVol16',
+    ]
+  ),
+  new Collection(
+    'Counter-X: Generation X - Four Days',
+    '2013-2-13',
+    [
+      'GenerationXVol175',
+    ]
+  ),
+  new Collection(
+    'X-Men: X-Corps',
+    '2013-11-12',
+    [
+      'UncannyXMenVol1394',
+    ]
+  ),
+  new Collection(
+    'New X-Men Vol. 1: E Is for Extinction',
+    '2002-12-1',
+    [
+      'NewXMenVol1114',
+      'NewXMenVol1115',
+      'NewXMenVol1116',
+    ]
+  ),
+  new Collection(
+    'X-Men: X-Corps',
+    '2013-11-12',
+    [
+      'UncannyXMenVol1395',
+      'UncannyXMenVol1396',
+      'UncannyXMenVol1397',
+      'UncannyXMenVol1398',
+    ]
+  ),
+  new Collection(
+    'X-Men Icons: Cyclops',
+    '2004-4-1',
+    [
+      'IconsCyclopsVol11',
+      'IconsCyclopsVol12',
+      'IconsCyclopsVol13',
+      'IconsCyclopsVol14',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men: Savage Land',
+    '2002-4-1',
+    [
+      'XTremeXMenSavageLandVol11',
+      'XTremeXMenSavageLandVol12',
+      'XTremeXMenSavageLandVol13',
+      'XTremeXMenSavageLandVol14',
+    ]
+  ),
   new Collection(
     'Cable Vol. II: The End',
     '2002-11-20',
@@ -2913,6 +2975,68 @@ collections.push(
       'XTremeXMenVol16',
       'XTremeXMenVol17',
       'XTremeXMenVol18',
+    ]
+  ),
+  new Collection(
+    'New X-Men Vol. 1: E Is for Extinction',
+    '2002-12-1',
+    [
+      'NewXMenAnnualVol11',
+      'NewXMenVol1117',
+    ]
+  ),
+  new Collection(
+    'New X-Men Vol. 2: Imperial',
+    '2014-9-23',
+    [
+      'NewXMenVol1118',
+      'NewXMenVol1119',
+      'NewXMenVol1120',
+      'NewXMenVol1121',
+    ]
+  ),
+  new Collection(
+    'X-Men: X-Corps',
+    '2013-11-12',
+    [
+      'UncannyXMenVol1399',
+      'UncannyXMenVol1400',
+      'UncannyXMenAnnualVol31',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'New X-Men Vol. 2: Imperial',
+    '2014-9-23',
+    [
+      'NewXMenVol1122',
+      'NewXMenVol1123',
+      'NewXMenVol1124',
+      'NewXMenVol1125',
+      'NewXMenVol1126',
+    ]
+  ),
+  new Collection(
+    'X-Men: X-Corps',
+    '2013-11-12',
+    [
+      'UncannyXMenVol1401',
+      'UncannyXMenVol1402',
+      'UncannyXMenVol1403',
+      'UncannyXMenVol1404',
+      'UncannyXMenVol1405',
+      'UncannyXMenVol1406',
+      'UncannyXMenVol1407',
+      'UncannyXMenVol1408',
+      'UncannyXMenVol1409',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men, Volume 1: Destiny',
+    '2003-5-1',
+    [
       'XTremeXMenVol19',
     ]
   ),
@@ -2928,25 +3052,6 @@ collections.push(
       'XMenUnlimitedVol147',
       'XMenUnlimitedVol148',
       'XMenUnlimitedVol149',
-    ]
-  ),
-  new Collection(
-    'Counter-X: Generation X - Four Days',
-    '2013-2-13',
-    [
-      'GenerationXVol175',
-    ]
-  ),
-  new Collection(
-    'Wolverine Epic Collection: Blood Debt',
-    '2018-3-28',
-    [
-      'OriginVol11',
-      'OriginVol12',
-      'OriginVol13',
-      'OriginVol14',
-      'OriginVol15',
-      'OriginVol16',
     ]
   ),
   new Collection(

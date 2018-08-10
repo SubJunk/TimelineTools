@@ -399,21 +399,23 @@ addComicsInSeriesVolume('GhostRiderVol3', [
 ]);
 addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']]]);
 addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']]);
+addComicsInSeriesVolume('IconsCyclopsVol1', [
+  [1, '2001-9'],
+  [2, '2001-10'],
+  [3, '2001-11'],
+  [4, '2001-12'],
+]);
 addComicsInSeriesVolume('IncredibleHulkVol1', [
   [340, '1988-2'],
   [444, '1996-8'],
   [445, '1996-9']
 ]);
-addComicsInSeriesVolume('IncredibleHulkVol2', [
-  [8, '1999-11']
-]);
+addComicsInSeriesVolume('IncredibleHulkVol2', [[8, '1999-11']]);
 addComicsInSeriesVolume('IronFistVol1', [
   [14, '1977-8', ['Snowfire']],
   [15, '1977-9', ['Enter, the X-Men']]
 ]);
-addComicsInSeriesVolume('IronManVol1', [
-  [332, '1996-9']
-]);
+addComicsInSeriesVolume('IronManVol1', [[332, '1996-9']]);
 addComicsInSeriesVolume('MachineManBastionAnnualVol1', [[1, '1998-6']]);
 addComicsInSeriesVolume('MagikVol1', [
   [1, '1983-12'],
@@ -487,15 +489,29 @@ addComicsInSeriesVolume('NewWarriorsVol1', [
   [45, '1994-3'],
   [46, '1994-4'],
 ]);
+addComicsInSeriesVolume('NewXMenAnnualVol1', [[1, '2001-9']]);
+addComicsInSeriesVolume('NewXMenVol1', [
+  [114, '2001-7'],
+  [115, '2001-8'],
+  [116, '2001-9'],
+  [117, '2001-10'],
+  [118, '2001-11'],
+  [119, '2001-12'],
+  [120, '2002-1'],
+  [121, '2002-2'],
+  [122, '2002-3'],
+  [123, '2002-4'],
+  [124, '2002-5'],
+  [125, '2002-6'],
+  [126, '2002-7'],
+]);
 addComicsInSeriesVolume('NightcrawlerVol1', [
   [1, '1985-11'],
   [2, '1985-12'],
   [3, '1986-1'],
   [4, '1986-2'],
 ]);
-addComicsInSeriesVolume('NomadVol2', [
-  [20, '1993-12'],
-]);
+addComicsInSeriesVolume('NomadVol2', [[20, '1993-12']]);
 addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']]);
 addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']]);
 addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']]);
@@ -851,6 +867,22 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [391, '2001-4'],
   [392, '2001-5'],
   [393, '2001-6'],
+  [394, '2001-7'],
+  [395, '2001-8'],
+  [396, '2001-9'],
+  [397, '2001-10'],
+  [398, '2001-11'],
+  [399, '2001-12'],
+  [400, '2002-1'],
+  [401, '2002-2'],
+  [402, '2002-3'],
+  [403, '2002-4'],
+  [404, '2002-5'],
+  [405, '2002-6'],
+  [406, '2002-7'],
+  [407, '2002-8'],
+  [408, '2002-9-1'],
+  [409, '2002-9-15'],
   /**
    * Complete until here
    */
@@ -892,6 +924,7 @@ addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
   [2, '1997-10'],
 ]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol2', [[1, '2000-2']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol3', [[1, '2002-2']]);
 addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']]);
 addComicsInSeriesVolume('WeaponXVol1', [
   [1, '1995-3'],
@@ -1455,4 +1488,10 @@ addComicsInSeriesVolume('XTremeXMenVol1', [
   [7, '2002-1'],
   [8, '2002-2'],
   [9, '2002-3'],
+]);
+addComicsInSeriesVolume('XTremeXMenSavageLandVol1', [
+  [1, '2001-11'],
+  [2, '2001-12'],
+  [3, '2002-1'],
+  [4, '2002-2'],
 ]);
