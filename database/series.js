@@ -168,6 +168,7 @@ series.push(
   new Series('X-Men: Second Coming', {1: 2010}),
   new Series('X-MEN: THE MAGNETO WAR 1', {1: 1999}),
   new Series('X-Men: The Wedding Album', {1: 1994}),
+  new Series('X-Treme X-Men', {1: 2001}),
   new Series('X-Universe', {1: 1995}),
   new Series('X-Terminators', {1: 1988}),
   new Series('Xavier Institute Alumni Yearbook', {1: 1996})

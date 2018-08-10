@@ -2863,9 +2863,59 @@ collections.push(
       'XMenVol2113',
     ]
   ),
+  new Collection(
+    'Cable Vol. I: The Shining Path',
+    '2002-6-3',
+    [
+      'CableVol197',
+      'CableVol198',
+      'CableVol199',
+      'CableVol1100',
+    ]
+  ),
+  new Collection(
+    'Cable Vol. II: The End',
+    '2002-11-20',
+    [
+      'CableVol1101',
+      'CableVol1102',
+      'CableVol1103',
+      'CableVol1104',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men, Volume 1: Destiny',
+    '2003-5-1',
+    [
+      'XTremeXMenVol11',
+      'XTremeXMenVol12',
+      'XTremeXMenVol13',
+      'XTremeXMenVol14',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Cable Vol. II: The End',
+    '2002-11-20',
+    [
+      'CableVol1105',
+      'CableVol1106',
+      'CableVol1107',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men, Volume 1: Destiny',
+    '2003-5-1',
+    [
+      'XTremeXMenVol15',
+      'XTremeXMenVol16',
+      'XTremeXMenVol17',
+      'XTremeXMenVol18',
+      'XTremeXMenVol19',
+    ]
+  ),
   new Collection(
     'X-Men Legends Vol. IV: Hated & Feared',
     '2003-12-3',
