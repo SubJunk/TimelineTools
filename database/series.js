@@ -138,7 +138,7 @@ series.push(
   new Series('Wolverine/Cable: Guts and Glory', {1: 1999}),
   new Series('X-51', {1: 2000}),
   new Series('X-Calibre', {1: 1995}),
-  new Series('X-Factor', {1: 1986}),
+  new Series('X-Factor', {1: 1986, 2: 2002}),
   new Series('X-Factor Annual', {1: 1986}),
   new Series('X-Force', {1: 1991, 3: 2008}),
   new Series('X-Force/Cable Annual', {1: 1995}),

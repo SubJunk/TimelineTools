@@ -1083,6 +1083,12 @@ addComicsInSeriesVolume('XFactorVol1', [
   [126, '1996-9'],
   [130, '1997-1'],
 ]);
+addComicsInSeriesVolume('XFactorVol2', [
+  [1, '2002-6'],
+  [2, '2002-7'],
+  [3, '2002-9'],
+  [4, '2002-10']
+]);
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],
   [3, '1988-8'],
