@@ -1495,7 +1495,7 @@ addComicsInSeriesVolume('XTremeXMenVol1', [
   [8, '2002-2'],
   [9, '2002-3'],
 ]);
-addComicsInSeriesVolume('XTremeXMenSavageLandVol1', [
+addComicsInSeriesVolume('XTremeXMenTheSavageLandVol1', [
   [1, '2001-11'],
   [2, '2001-12'],
   [3, '2002-1'],

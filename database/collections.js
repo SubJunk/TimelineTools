@@ -2952,10 +2952,10 @@ collections.push(
     'X-Treme X-Men: Savage Land',
     '2002-4-1',
     [
-      'XTremeXMenSavageLandVol11',
-      'XTremeXMenSavageLandVol12',
-      'XTremeXMenSavageLandVol13',
-      'XTremeXMenSavageLandVol14',
+      'XTremeXMenTheSavageLandVol11',
+      'XTremeXMenTheSavageLandVol12',
+      'XTremeXMenTheSavageLandVol13',
+      'XTremeXMenTheSavageLandVol14',
     ]
   ),
   new Collection(

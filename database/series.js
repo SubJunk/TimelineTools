@@ -86,7 +86,7 @@ series.push(
   new Series('Fantastic Four', {1: 1961}),
   new Series('Fantastic Four vs. the X-Men', {1: 1987}),
   new Series('Further Adventures of Cyclops & Phoenix', {1: 1996}),
-  new Series('Gambit', {1: 1993, 2: 1997, 3: 1999}),
+  new Series('Gambit', {1: 1993, 2: 1997}),
   new Series('Gambit and the X-Ternals', {1: 1995}),
   new Series('Generation Next', {1: 1995}),
   new Series('Generation X', {1: 1994}),
@@ -172,7 +172,7 @@ series.push(
   new Series('X-MEN: THE MAGNETO WAR 1', {1: 1999}),
   new Series('X-Men: The Wedding Album', {1: 1994}),
   new Series('X-Treme X-Men', {1: 2001}),
-  new Series('X-Treme X-Men: Savage Land', {1: 2001}),
+  new Series('X-Treme X-Men: The Savage Land', {1: 2001}),
   new Series('X-Universe', {1: 1995}),
   new Series('X-Terminators', {1: 1988}),
   new Series('Xavier Institute Alumni Yearbook', {1: 1996})
