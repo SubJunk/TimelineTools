@@ -3057,9 +3057,35 @@ collections.push(
       'XFactorVol24',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'X-Treme X-Men Volume 8: Prisoner of Fire',
+    '2004-7-28',
+    [
+      'XTremeXMenAnnualVol11',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 2: Invasion',
+    '2003-1-6',
+    [
+      'XTremeXMenVol110',
+      'XTremeXMenVol111',
+      'XTremeXMenVol112',
+      'XTremeXMenVol113',
+      'XTremeXMenVol114',
+      'XTremeXMenVol115',
+      'XTremeXMenVol116',
+      'XTremeXMenVol117',
+      'XTremeXMenVol118',
+    ]
+  ),
+  new Collection(
+    'New X-Men Vol. 3: New Worlds',
+    '2006-10-18',
+    [
+      'NewXMenVol1127',
+    ]
+  ),
   new Collection(
     'X-Men: X-Corps',
     '2013-11-12',
@@ -3074,6 +3100,58 @@ collections.push(
     [
       'XMenUnlimitedVol135',
       'XMenUnlimitedVol136',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 3: Schism',
+    '2003-5-28',
+    [
+      'XTremeXMenVol119',
+    ]
+  ),
+  new Collection(
+    'New X-Men Vol. 3: New Worlds',
+    '2006-10-18',
+    [
+      'NewXMenVol1128',
+      'NewXMenVol1129',
+      'NewXMenVol1130',
+      'NewXMenVol1131',
+      'NewXMenVol1132',
+      'NewXMenVol1133',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 1: Hope',
+    '2003-1-20',
+    [
+      'UncannyXMenVol1410',
+      'UncannyXMenVol1411',
+      'UncannyXMenVol1412',
+      'UncannyXMenVol1413',
+      'UncannyXMenVol1414',
+      'UncannyXMenVol1415',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Treme X-Men Volume 3: Schism',
+    '2003-5-28',
+    [
+      'XTremeXMenXPoseVol11',
+      'XTremeXMenXPoseVol12',
+      'XTremeXMenVol120',
+      'XTremeXMenVol121',
+      'XTremeXMenVol122',
+      'XTremeXMenVol123',
+    ]
+  ),
+  new Collection(
+    'X-Men Legends Vol. IV: Hated & Feared',
+    '2003-12-3',
+    [
       'XMenUnlimitedVol140',
       'XMenUnlimitedVol142',
       'XMenUnlimitedVol146',
@@ -3093,6 +3171,19 @@ collections.push(
       'XForceSexandViolenceVol11',
       'XForceSexandViolenceVol12',
       'XForceSexandViolenceVol13'
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 8: Prisoner of Fire',
+    '2004-7-28',
+    [
+      'XTremeXMenVol140',
+      'XTremeXMenVol141',
+      'XTremeXMenVol142',
+      'XTremeXMenVol143',
+      'XTremeXMenVol144',
+      'XTremeXMenVol145',
+      'XTremeXMenVol146',
     ]
   ),
   /**
