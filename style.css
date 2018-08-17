@@ -50,7 +50,8 @@ body {
 }
 
 .series-volume-label-container,
-.series-volume-label {
+.series-volume-label,
+.popover {
   width: 130px;
 }
 
@@ -59,8 +60,30 @@ body {
   z-index: 2;
 }
 
+.popover {
+  display: none;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  overflow: visible;
+}
+
+.popover > div {
+  position: relative;
+  left: -65px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+li:hover > .popover {
+  display: inline-block;
+}
+
 .tooltip-inner,
-.series-volume-label {
+.series-volume-label,
+.popover > div {
   background-color: #222;
   color: #ccc;
   padding: 3px 8px;
@@ -259,6 +282,10 @@ body {
   display: none;
   cursor: default;
   width: var(--expanded-width-panel-left);
+}
+
+.pagination > li {
+  overflow: visible;
 }
 
 .pagination > li > a,

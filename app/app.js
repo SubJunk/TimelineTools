@@ -945,15 +945,6 @@ angular.module('app', ['angular-md5'])
         infoModalInstance = _.first(M.Modal.init(infoModal));
 
         useGetParameters();
-
-        /**
-         * The extra timeout is here because without it,
-         * the tooltips initialization freezes the rest of the execution
-         */
-        $timeout(function() {
-          // Init tooltips
-          $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
-        });
       });
     };
 
