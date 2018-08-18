@@ -64,7 +64,7 @@ body {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  top: 100%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%);
   overflow: visible;
@@ -76,7 +76,7 @@ body {
 li:hover > .popover {
   visibility: visible;
   opacity: 1;
-  top: calc(100% + 10px);
+  top: calc(100% + 5px);
 }
 
 .expanded > .popover {
