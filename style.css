@@ -98,6 +98,10 @@ li:hover > .popover {
   display: inline-block;
 }
 
+.fixed-action-btn li {
+  position: relative;
+}
+
 .series-volume-label {
   display: inline-block;
   text-align: right;

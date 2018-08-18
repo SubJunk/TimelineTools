@@ -63,6 +63,7 @@
             <div class="collection-comics">
               <ul>
                 <li ng-repeat="comic in ::collection.allCollectionComics track by comic.id">
+                  <div class="popover"><div>{{::comic.series}} #{{::comic.issue}}</div></div>
                   <a title="{{::comic.series}} #{{::comic.issue}}" ng-click="main.toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
                     <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::comic.image}}.jpg" ng-class="{current: comic.id === comicId}"></img>
                   </a>
