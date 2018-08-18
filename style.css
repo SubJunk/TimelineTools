@@ -50,8 +50,7 @@ body {
 }
 
 .series-volume-label-container,
-.series-volume-label,
-.popover {
+.series-volume-label {
   width: 130px;
 }
 
@@ -65,25 +64,19 @@ body {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  bottom: -15px;
+  top: 100%;
   left: 50%;
+  transform: translate(-50%);
   overflow: visible;
-  transition: bottom 0.3s, visibility 0.2s, opacity 0.2s;
-}
-
-.popover > div {
-  position: relative;
-  left: -65px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  transition: top 0.3s, visibility 0.2s, opacity 0.2s;
+  min-width: 130px;
   text-align: center;
 }
 
 li:hover > .popover {
   visibility: visible;
   opacity: 1;
-  bottom: -35px;
+  top: calc(100% + 10px);
 }
 
 .expanded > .popover {
@@ -98,6 +91,11 @@ li:hover > .popover {
   padding: 3px 8px;
   border-radius: 8px;
   font-size: 12px;
+}
+
+.popover > div {
+  max-width: 130px;
+  display: inline-block;
 }
 
 .series-volume-label {
