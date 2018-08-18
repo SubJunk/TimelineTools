@@ -61,11 +61,14 @@ body {
 }
 
 .popover {
-  display: none;
+  display: inline-block;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
-  bottom: -35px;
+  bottom: -15px;
   left: 50%;
   overflow: visible;
+  transition: bottom 0.3s, visibility 0.2s, opacity 0.2s;
 }
 
 .popover > div {
@@ -78,7 +81,13 @@ body {
 }
 
 li:hover > .popover {
-  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  bottom: -35px;
+}
+
+.expanded > .popover {
+  display: none;
 }
 
 .tooltip-inner,
@@ -162,10 +171,11 @@ li:hover > .popover {
 .collection-comics {
   margin: 5px 5px 5px 0;
   padding: 5px 5px 5px 10px;
-  background: hsla(0, 0%, 100%, 0.1)
+  background: hsla(0, 0%, 100%, 0.1);
 }
 
 .collection-comics li {
+  position: relative;
   display: inline-block;
   padding: 5px 10px 5px 0;
 }
