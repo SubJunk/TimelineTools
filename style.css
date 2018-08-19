@@ -79,6 +79,10 @@ li:hover > .popover {
   top: calc(100% + 5px);
 }
 
+li:hover {
+  z-index: 1;
+}
+
 .expanded > .popover {
   display: none;
 }
@@ -179,7 +183,8 @@ li:hover > .popover {
 .collection-comics li {
   position: relative;
   display: inline-block;
-  padding: 5px 10px 5px 0;
+  padding: 5px 0;
+  margin-right: 10px;
 }
 
 .collection-comics img {
