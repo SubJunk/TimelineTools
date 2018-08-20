@@ -96,25 +96,25 @@
             </a>
             <ul class="pagination">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
-                <div class="popover"><div>{{main.prevCollection.title}}</div></div>
+                <div class="popover" ng-if="main.prevCollectionFirstComic"><div>{{main.prevCollection.title}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
                   <i class="material-icons">arrow_backward</i>
                 </a>
               </li>
               <li class="waves-effect" ng-class="{disabled: !main.prevComic}">
-                <div class="popover"><div>{{main.prevComic.series}} #{{main.prevComic.issue}}</div></div>
+                <div class="popover" ng-if="main.prevComic"><div>{{main.prevComic.series}} #{{main.prevComic.issue}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.prevComic)">
                   <i class="material-icons">chevron_left</i>
                 </a>
               </li>
               <li class="waves-effect" ng-class="{disabled: !main.nextComic}">
-                <div class="popover"><div>{{main.nextComic.series}} #{{main.nextComic.issue}}</div></div>
+                <div class="popover" ng-if="main.nextComic"><div>{{main.nextComic.series}} #{{main.nextComic.issue}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.nextComic)">
                   <i class="material-icons">chevron_right</i>
                 </a>
               </li>
               <li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic}">
-                <div class="popover"><div>{{main.nextCollection.title}}</div></div>
+                <div class="popover" ng-if="main.nextCollectionFirstComic"><div>{{main.nextCollection.title}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.nextCollectionFirstComic)">
                   <i class="material-icons">arrow_forward</i>
                 </a>
