@@ -862,7 +862,7 @@ angular.module('app', ['angular-md5'])
     });
 
     // Pass our transformed db objects to the view
-    vm.comics            = [];
+    vm.comics            = comics;
     vm.collections       = collections;
     vm.uniqueCollections = uniqueCollections;
     vm.series            = series;
@@ -873,80 +873,23 @@ angular.module('app', ['angular-md5'])
     vm.bodyStyles = bodyStyles;
     vm.seriesVolumeLabels = seriesVolumeLabels;
 
-    /**
-     * This chunk limits the flow of comics being added to the
-     * DOM, which prevents the browser from being unresponsive
-     * during the initial load.
-     */
-    {
-      // How many comics to add per loop
-      const COMIC_CHUNKS = 50;
-
-      // How many milliseconds delay between chunks
-      const COMIC_LOOP_DELAY = 1;
-
-      var comicsIterator = 0;
-      var pushComicChunkToVm = function() {
-        var currentChunkEnd = comicsIterator + COMIC_CHUNKS;
-        for (var currentChunkIterator = comicsIterator; currentChunkIterator < currentChunkEnd; currentChunkIterator++) {
-          if (comics[currentChunkIterator]) {
-            vm.comics.push(comics[currentChunkIterator]);
-            continue;
-          }
-
-          /**
-           * We get here if the comic doesn't exist, which means
-           * we reached the end of our comics. We set the comic
-           * iterator to the accurate number since it is currently
-           * chunked, then stop the loop.
-           */
-          comicsIterator = currentChunkIterator;
-          break;
-        }
-      };
-
-      var pushComicChunkToVmFactory = function() {
-        // If we have finished looping, toggle the loader
-        if (comicsIterator === comics.length) {
-          return finishedLoading();
-        }
-
-        // Update the loop iterator for the next chunk
-        comicsIterator += COMIC_CHUNKS;
-
-        // Run this function again after a delay
-        $timeout(pushComicChunkToVmFactory, COMIC_LOOP_DELAY);
-
-        // Push the next chunk of comics to the DOM
-        pushComicChunkToVm();
-      };
-
-      // Do this first comic chunk instantly
-      pushComicChunkToVm();
-
-      // Initialize the chunk pushing factory
-      pushComicChunkToVmFactory();
-    }
-
     var infoModalInstance;
-    var finishedLoading = function() {
-      $timeout(function() {
-        // Make room for the farthest-right expanded panel
-        vm.bodyStyles.width += $('.scroll-anchor').width();
+    $timeout(function() {
+      // Make room for the farthest-right expanded panel
+      vm.bodyStyles.width += $('.scroll-anchor').width();
 
-        // Make room for the farthest-bottom expanded panel
-        vm.bodyStyles.height = $(document).height() + $(window).height();
+      // Make room for the farthest-bottom expanded panel
+      vm.bodyStyles.height = $(document).height() + $(window).height();
 
-        // Init floating menu on the right
-        $('.fixed-action-btn').floatingActionButton({direction: 'left'});
+      // Init floating menu on the right
+      $('.fixed-action-btn').floatingActionButton({direction: 'left'});
 
-        // Init "Info & Credits" modal
-        var infoModal = $('#info');
-        infoModalInstance = _.first(M.Modal.init(infoModal));
+      // Init "Info & Credits" modal
+      var infoModal = $('#info');
+      infoModalInstance = _.first(M.Modal.init(infoModal));
 
-        useGetParameters();
-      });
-    };
+      useGetParameters();
+    });
 
     vm.toggleInfoModal = function() {
       if (infoModalInstance.isOpen) {
