@@ -3129,19 +3129,69 @@ collections.push(
       'UncannyXMenVol1411',
       'UncannyXMenVol1412',
       'UncannyXMenVol1413',
-      'UncannyXMenVol1414',
-      'UncannyXMenVol1415',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
     'X-Treme X-Men Volume 3: Schism',
     '2003-5-28',
     [
       'XTremeXMenXPoseVol11',
       'XTremeXMenXPoseVol12',
+    ]
+  ),
+  new Collection(
+    'Wolverine Legends Vol. 3: Law of the Jungle',
+    '2003-3-19',
+    [
+      'WolverineVol2181',
+      'WolverineVol2182',
+      'WolverineVol2183',
+      'WolverineVol2184',
+      'WolverineVol2185',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 4: Mekanix',
+    '2003-6-30',
+    [
+      'XTremeXMenMekanixVol11',
+      'XTremeXMenMekanixVol12',
+      'XTremeXMenMekanixVol13',
+      'XTremeXMenMekanixVol14',
+      'XTremeXMenMekanixVol15',
+      'XTremeXMenMekanixVol16',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 1: Hope',
+    '2003-1-20',
+    [
+      'UncannyXMenVol1414',
+      'UncannyXMenVol1415',
+    ]
+  ),
+  new Collection(
+    'X-Men Legends Vol. IV: Hated & Feared',
+    '2003-12-3',
+    [
+      'XMenUnlimitedVol140',
+      'XMenUnlimitedVol142',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Wolverine Legends Vol. 3: Law of the Jungle',
+    '2003-3-19',
+    [
+      'WolverineVol2186',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 3: Schism',
+    '2003-5-28',
+    [
       'XTremeXMenVol120',
       'XTremeXMenVol121',
       'XTremeXMenVol122',
@@ -3152,8 +3202,6 @@ collections.push(
     'X-Men Legends Vol. IV: Hated & Feared',
     '2003-12-3',
     [
-      'XMenUnlimitedVol140',
-      'XMenUnlimitedVol142',
       'XMenUnlimitedVol146',
       'XMenUnlimitedVol147',
       'XMenUnlimitedVol148',

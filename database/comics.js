@@ -1019,6 +1019,12 @@ addComicsInSeriesVolume('WolverineVol2', [
   [167, '2001-10'],
   [168, '2001-11'],
   [169, '2001-12'],
+  [181, '2002-11'],
+  [182, '2002-12'],
+  [183, '2003-1'],
+  [184, '2003-2'],
+  [185, '2003-3'],
+  [186, '2003-4'],
 ]);
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']]);
 addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']]);
@@ -1498,6 +1504,14 @@ addComicsInSeriesVolume('XTerminatorsVol1', [
   [4, '1989-1']
 ]);
 addComicsInSeriesVolume('XTremeXMenAnnualVol1', [[1, '2002-2']]);
+addComicsInSeriesVolume('XTremeXMenMekanixVol1', [
+  [1, '2002-10'],
+  [2, '2002-11'],
+  [3, '2002-12'],
+  [4, '2003-1'],
+  [5, '2003-2'],
+  [6, '2003-3'],
+]);
 addComicsInSeriesVolume('XTremeXMenVol1', [
   [1, '2001-7'],
   [2, '2001-8'],

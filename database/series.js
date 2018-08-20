@@ -173,6 +173,7 @@ series.push(
   new Series('X-Men: The Wedding Album', {1: 1994}),
   new Series('X-Treme X-Men', {1: 2001}),
   new Series('X-Treme X-Men Annual', {1: 2002}),
+  new Series('X-Treme X-Men: Mekanix', {1: 2001}),
   new Series('X-Treme X-Men: The Savage Land', {1: 2001}),
   new Series('X-Treme X-Men: X-Pose', {1: 2003}),
   new Series('X-Universe', {1: 1995}),
