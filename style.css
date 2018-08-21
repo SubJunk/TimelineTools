@@ -59,13 +59,51 @@ body {
   z-index: 2;
 }
 
+.popover {
+  display: inline-block;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%);
+  overflow: visible;
+  transition: top 0.3s, visibility 0.2s, opacity 0.2s;
+  min-width: 130px;
+  text-align: center;
+}
+
+li:hover > .popover {
+  visibility: visible;
+  opacity: 1;
+  top: calc(100% + 5px);
+}
+
+li:hover {
+  z-index: 1;
+}
+
+.expanded > .popover {
+  display: none;
+}
+
 .tooltip-inner,
-.series-volume-label {
+.series-volume-label,
+.popover > div {
   background-color: #222;
   color: #ccc;
   padding: 3px 8px;
   border-radius: 8px;
   font-size: 12px;
+}
+
+.popover > div {
+  max-width: 130px;
+  display: inline-block;
+}
+
+.fixed-action-btn li {
+  position: relative;
 }
 
 .series-volume-label {
@@ -139,12 +177,14 @@ body {
 .collection-comics {
   margin: 5px 5px 5px 0;
   padding: 5px 5px 5px 10px;
-  background: hsla(0, 0%, 100%, 0.1)
+  background: hsla(0, 0%, 100%, 0.1);
 }
 
 .collection-comics li {
+  position: relative;
   display: inline-block;
-  padding: 5px 10px 5px 0;
+  padding: 5px 0;
+  margin-right: 10px;
 }
 
 .collection-comics img {
@@ -259,6 +299,10 @@ body {
   display: none;
   cursor: default;
   width: var(--expanded-width-panel-left);
+}
+
+.pagination > li {
+  overflow: visible;
 }
 
 .pagination > li > a,
