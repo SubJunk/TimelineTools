@@ -316,7 +316,6 @@ angular.module('app', ['angular-md5'])
     var globalHorizontalOffset = 0;
     var latestVerticalHorizontalOffsets = {};
     var newLabelNeeded = false;
-    var windowWidth = $jqWindow.innerWidth();
     _.each(comics, function(comic) {
       /**
        * Look up the volume and series for this comic and
@@ -362,10 +361,10 @@ angular.module('app', ['angular-md5'])
        * Step two documented below.
        */
       if (angular.isDefined(currentSeriesVolume.verticalPosition)) {
-        comic.containerStyles.top = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
+        comic.containerStyles.top = currentSeriesVolume.verticalPosition * (VISUAL_BLOCK_SIZE / 2);
       } else {
         currentSeriesVolume.verticalPosition = globalVerticalPositionCounter;
-        comic.containerStyles.top = globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
+        comic.containerStyles.top = globalVerticalPositionCounter * (VISUAL_BLOCK_SIZE / 2);
         globalVerticalPositionCounter++;
         newLabelNeeded = true;
       }
@@ -381,7 +380,7 @@ angular.module('app', ['angular-md5'])
        * The maximum horizontal offset allowed until we recycle the
        * vertical position.
        */
-      var horizontalClearanceLimit = comic.containerStyles.left - windowWidth;
+      var horizontalClearanceLimit = comic.containerStyles.left - (VISUAL_BLOCK_SIZE * 3);
       if (
         !latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] ||
         (
@@ -402,7 +401,7 @@ angular.module('app', ['angular-md5'])
             latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
           ) {
             currentSeriesVolume.verticalPosition = i;
-            comic.containerStyles.top = i * VISUAL_BLOCK_SIZE;
+            comic.containerStyles.top = i * (VISUAL_BLOCK_SIZE / 2);
 
             /**
              * We are about to insert this seriesVolume into a vertical position

@@ -55,7 +55,7 @@ body {
 }
 
 .series-volume-label-container {
-  margin-top: calc(var(--month-width) * 0.29);
+  margin-top: 2px;
   z-index: 2;
 }
 
@@ -92,7 +92,7 @@ li:hover {
 .popover > div {
   background-color: #222;
   color: #ccc;
-  padding: 3px 8px;
+  padding: 2px 8px;
   border-radius: 8px;
   font-size: 12px;
 }
@@ -120,7 +120,7 @@ li:hover {
 .series-volume-label-container,
 .comic-container,
 .comic {
-  height: var(--month-width);
+  height: var(--month-width) / 2;
 }
 
 .comic-container,
@@ -137,7 +137,7 @@ li:hover {
 
 .comic {
   background: #1A1C1C;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 .collection-container {
@@ -208,11 +208,11 @@ li:hover {
 .cover-thumbnail img {
   overflow: hidden;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 10%;
 
-  width: calc(var(--month-width) * 0.9);
-  height: calc(var(--month-width) * 0.9);
-  margin: calc(var(--month-width) * 0.05);
+  width: calc(var(--month-width) * 0.96);
+  height: calc(var(--month-width) * 0.4);
+  margin: calc(var(--month-width) * 0.02);
 }
 
 .expanded .comic .panel-left,
