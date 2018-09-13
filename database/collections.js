@@ -3192,6 +3192,31 @@ collections.push(
       'NewXMenVol1134',
     ]
   ),
+  new Collection(
+    'Wolverine Legends Vol. 3: Law of the Jungle',
+    '2003-3-19',
+    [
+      'WolverineVol2186',
+    ]
+  ),
+  new Collection(
+    'Cable: Soldier X',
+    '2018-11-6',
+    [
+      'SoldierXVol17',
+      'SoldierXVol18',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 2: Dominant Species',
+    '2003-5-21',
+    [
+      'UncannyXMenVol1417',
+      'UncannyXMenVol1418',
+      'UncannyXMenVol1419',
+      'UncannyXMenVol1420',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -3206,16 +3231,6 @@ collections.push(
       'NewXMenVol1139',
       'NewXMenVol1140',
       'NewXMenVol1141',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men Vol. 2: Dominant Species',
-    '2003-5-21',
-    [
-      'UncannyXMenVol1417',
-      'UncannyXMenVol1418',
-      'UncannyXMenVol1419',
-      'UncannyXMenVol1420',
     ]
   ),
   new Collection(
@@ -3259,19 +3274,10 @@ collections.push(
     'Cable: Soldier X',
     '2018-11-6',
     [
-      'SoldierXVol17',
-      'SoldierXVol18',
       'SoldierXVol19',
       'SoldierXVol110',
       'SoldierXVol111',
       'SoldierXVol112',
-    ]
-  ),
-  new Collection(
-    'Wolverine Legends Vol. 3: Law of the Jungle',
-    '2003-3-19',
-    [
-      'WolverineVol2186',
     ]
   ),
   new Collection(
