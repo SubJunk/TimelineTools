@@ -120,6 +120,7 @@ series.push(
   new Series('Second Coming: Prepare', {1: 2010}),
   new Series('Sabretooth Special', {1: 1995}),
   new Series('Secret Wars', {1: 1984}),
+  new Series('Soldier X', {1: 2002}),
   new Series('Spider-Man', {1: 1990}),
   new Series('Stryfe\'s Strike File', {1: 1993}),
   new Series('The Amazing Spider-Man', {1: 1963}),

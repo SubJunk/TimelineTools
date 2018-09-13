@@ -2864,19 +2864,13 @@ collections.push(
     ]
   ),
   new Collection(
-    'Cable Vol. I: The Shining Path',
-    '2002-6-3',
+    'Cable: Soldier X',
+    '2018-11-6',
     [
       'CableVol197',
       'CableVol198',
       'CableVol199',
       'CableVol1100',
-    ]
-  ),
-  new Collection(
-    'Cable Vol. II: The End',
-    '2002-11-20',
-    [
       'CableVol1101',
       'CableVol1102',
       'CableVol1103',
@@ -2920,8 +2914,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1: E Is for Extinction',
-    '2002-12-1',
+    'New X-Men Vol. 1',
+    '2008-5-14',
     [
       'NewXMenVol1114',
       'NewXMenVol1115',
@@ -2959,8 +2953,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Cable Vol. II: The End',
-    '2002-11-20',
+    'Cable: Soldier X',
+    '2018-11-6',
     [
       'CableVol1105',
       'CableVol1106',
@@ -2978,17 +2972,11 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1: E Is for Extinction',
-    '2002-12-1',
+    'New X-Men Vol. 1',
+    '2008-5-14',
     [
       'NewXMenAnnualVol11',
       'NewXMenVol1117',
-    ]
-  ),
-  new Collection(
-    'New X-Men Vol. 2: Imperial',
-    '2014-9-23',
-    [
       'NewXMenVol1118',
       'NewXMenVol1119',
       'NewXMenVol1120',
@@ -3005,8 +2993,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2: Imperial',
-    '2014-9-23',
+    'New X-Men Vol. 1',
+    '2008-5-14',
     [
       'NewXMenVol1122',
     ]
@@ -3026,8 +3014,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2: Imperial',
-    '2014-9-23',
+    'New X-Men Vol. 1',
+    '2008-5-14',
     [
       'NewXMenVol1123',
       'NewXMenVol1124',
@@ -3080,8 +3068,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 3: New Worlds',
-    '2006-10-18',
+    'New X-Men Vol. 2',
+    '2008-8-27',
     [
       'NewXMenVol1127',
     ]
@@ -3110,8 +3098,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 3: New Worlds',
-    '2006-10-18',
+    'New X-Men Vol. 2',
+    '2008-8-27',
     [
       'NewXMenVol1128',
       'NewXMenVol1129',
@@ -3178,9 +3166,107 @@ collections.push(
       'XMenUnlimitedVol142',
     ]
   ),
+  new Collection(
+    'Cable: Soldier X',
+    '2018-11-6',
+    [
+      'SoldierXVol11',
+      'SoldierXVol12',
+      'SoldierXVol13',
+      'SoldierXVol14',
+      'SoldierXVol15',
+      'SoldierXVol16',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 2: Dominant Species',
+    '2003-5-21',
+    [
+      'UncannyXMenVol1416',
+    ]
+  ),
+  new Collection(
+    'New X-Men Vol. 2',
+    '2008-8-27',
+    [
+      'NewXMenVol1134',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'New X-Men Vol. 2',
+    '2008-8-27',
+    [
+      'NewXMenVol1135',
+      'NewXMenVol1136',
+      'NewXMenVol1137',
+      'NewXMenVol1138',
+      'NewXMenVol1139',
+      'NewXMenVol1140',
+      'NewXMenVol1141',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 2: Dominant Species',
+    '2003-5-21',
+    [
+      'UncannyXMenVol1417',
+      'UncannyXMenVol1418',
+      'UncannyXMenVol1419',
+      'UncannyXMenVol1420',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 3: Holy War',
+    '2003-9-15',
+    [
+      'UncannyXMenVol1421',
+      'UncannyXMenVol1422',
+      'UncannyXMenVol1423',
+      'UncannyXMenVol1424',
+      'UncannyXMenVol1425',
+      'UncannyXMenVol1426',
+      'UncannyXMenVol1427',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 4: The Draco',
+    '2004-3-1',
+    [
+      'UncannyXMenVol1428',
+      'UncannyXMenVol1429',
+      'UncannyXMenVol1430',
+      'UncannyXMenVol1431',
+      'UncannyXMenVol1432',
+      'UncannyXMenVol1433',
+      'UncannyXMenVol1434',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 5: She Lies with Angels',
+    '2004-5-5',
+    [
+      'UncannyXMenVol1437',
+      'UncannyXMenVol1438',
+      'UncannyXMenVol1439',
+      'UncannyXMenVol1440',
+      'UncannyXMenVol1441',
+    ]
+  ),
+  new Collection(
+    'Cable: Soldier X',
+    '2018-11-6',
+    [
+      'SoldierXVol17',
+      'SoldierXVol18',
+      'SoldierXVol19',
+      'SoldierXVol110',
+      'SoldierXVol111',
+      'SoldierXVol112',
+    ]
+  ),
   new Collection(
     'Wolverine Legends Vol. 3: Law of the Jungle',
     '2003-3-19',
