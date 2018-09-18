@@ -549,6 +549,12 @@ addComicsInSeriesVolume('RogueVol1', [
   [3, '1995-3'],
   [4, '1995-4']
 ]);
+addComicsInSeriesVolume('SabretoothVol2', [
+  [1, '2004-10-6'],
+  [2, '2004-12-1'],
+  [3, '2005-1-1'],
+  [4, '2005-2-1']
+]);
 addComicsInSeriesVolume('SabretoothSpecialVol1', [[1, '1996-1']]);
 addComicsInSeriesVolume('SecondComingPrepareVol1', [[1, '2010-4', ['Where Were You?']]]);
 addComicsInSeriesVolume('SecretWarsVol1', [
@@ -1073,6 +1079,19 @@ addComicsInSeriesVolume('WolverineVol2', [
   [184, '2003-2'],
   [185, '2003-3'],
   [186, '2003-4'],
+  [187, '2003-5-10'],
+  [188, '2003-5-20'],
+  [189, '2003-6-1'],
+]);
+addComicsInSeriesVolume('WolverineVol3', [
+  [33, '2005-9-28'],
+  [34, '2005-10-12'],
+  [35, '2005-10-26'],
+  [36, '2005-11-30'],
+  [37, '2005-12-28'],
+  [38, '2006-1-25'],
+  [39, '2006-2-22'],
+  [40, '2006-3-22'],
 ]);
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']]);
 addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']]);
@@ -1584,6 +1603,12 @@ addComicsInSeriesVolume('XTremeXMenVol1', [
   [21, '2003-4'],
   [22, '2003-5-1'],
   [23, '2003-5-15'],
+  [24, '2003-6-1'],
+  [31, '2003-11-1'],
+  [32, '2003-12-1'],
+  [33, '2003-12-15'],
+  [34, '2004-1-1'],
+  [35, '2004-2-1'],
   [40, '2004-7'],
   [41, '2004-8'],
   [42, '2004-9'],

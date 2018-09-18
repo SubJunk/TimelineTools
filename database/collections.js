@@ -3217,20 +3217,29 @@ collections.push(
       'UncannyXMenVol1420',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
+    '2017-1-31',
     [
-      'NewXMenVol1135',
-      'NewXMenVol1136',
-      'NewXMenVol1137',
-      'NewXMenVol1138',
-      'NewXMenVol1139',
-      'NewXMenVol1140',
-      'NewXMenVol1141',
+      'WolverineVol2187',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 3: Schism',
+    '2003-5-28',
+    [
+      'XTremeXMenVol120',
+      'XTremeXMenVol121',
+      'XTremeXMenVol122',
+      'XTremeXMenVol123',
+    ]
+  ),
+  new Collection(
+    'Cable: Soldier X',
+    '2018-11-6',
+    [
+      'SoldierXVol19',
+      'SoldierXVol110',
     ]
   ),
   new Collection(
@@ -3241,6 +3250,86 @@ collections.push(
       'UncannyXMenVol1422',
       'UncannyXMenVol1423',
       'UncannyXMenVol1424',
+    ]
+  ),
+  new Collection(
+    'New X-Men Vol. 2',
+    '2008-8-27',
+    [
+      'NewXMenVol1135',
+      'NewXMenVol1136',
+      'NewXMenVol1137',
+      'NewXMenVol1138',
+    ]
+  ),
+  new Collection(
+    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
+    '2017-1-31',
+    [
+      'WolverineVol2188',
+      'WolverineVol2189',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 6: Intifada',
+    '2004-3-1',
+    [
+      'XTremeXMenVol124',
+    ]
+  ),
+  new Collection(
+    'Cable: Soldier X',
+    '2018-11-6',
+    [
+      'SoldierXVol111',
+      'SoldierXVol112',
+    ]
+  ),
+  new Collection(
+    'New X-Men Vol. 2',
+    '2008-8-27',
+    [
+      'NewXMenVol1139',
+      'NewXMenVol1140',
+      'NewXMenVol1141',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Treme X-Men Volume 6: Intifada',
+    '2004-3-1',
+    [
+      'XTremeXMenVol131',
+      'XTremeXMenVol132',
+      'XTremeXMenVol133',
+      'XTremeXMenVol134',
+      'XTremeXMenVol135',
+    ]
+  ),
+  new Collection(
+    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
+    '2017-1-31',
+    [
+      'WolverineVol333',
+      'WolverineVol334',
+      'WolverineVol335',
+      'WolverineVol336',
+      'WolverineVol337',
+      'WolverineVol338',
+      'WolverineVol339',
+      'WolverineVol340',
+      'SabretoothVol21',
+      'SabretoothVol22',
+      'SabretoothVol23',
+      'SabretoothVol24',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 3: Holy War',
+    '2003-9-15',
+    [
       'UncannyXMenVol1425',
       'UncannyXMenVol1426',
       'UncannyXMenVol1427',
@@ -3268,26 +3357,6 @@ collections.push(
       'UncannyXMenVol1439',
       'UncannyXMenVol1440',
       'UncannyXMenVol1441',
-    ]
-  ),
-  new Collection(
-    'Cable: Soldier X',
-    '2018-11-6',
-    [
-      'SoldierXVol19',
-      'SoldierXVol110',
-      'SoldierXVol111',
-      'SoldierXVol112',
-    ]
-  ),
-  new Collection(
-    'X-Treme X-Men Volume 3: Schism',
-    '2003-5-28',
-    [
-      'XTremeXMenVol120',
-      'XTremeXMenVol121',
-      'XTremeXMenVol122',
-      'XTremeXMenVol123',
     ]
   ),
   new Collection(
