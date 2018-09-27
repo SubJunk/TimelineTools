@@ -3306,9 +3306,71 @@ collections.push(
       'XTremeXMenVol130',
     ]
   ),
+  new Collection(
+    'New Mutants: Back to School - The Complete Collection',
+    '2018-1-24',
+    [
+      'NewMutantsVol21',
+      'NewMutantsVol22',
+      'NewMutantsVol23',
+      'NewMutantsVol24',
+      'NewMutantsVol25',
+      'NewMutantsVol26',
+    ]
+  ),
+  new Collection(
+    'X-Men Legends Vol. IV: Hated & Feared',
+    '2003-12-3',
+    [
+      'XMenUnlimitedVol146',
+      'XMenUnlimitedVol147',
+      'XMenUnlimitedVol148',
+    ]
+  ),
+  new Collection(
+    'Mystique Vol. 1: Dead Drop Gorgeous',
+    '2004-6-23',
+    [
+      'MystiqueVol11',
+      'MystiqueVol12',
+      'MystiqueVol13',
+      'MystiqueVol14',
+      'MystiqueVol15',
+      'MystiqueVol16',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 3: Holy War',
+    '2003-9-15',
+    [
+      'UncannyXMenVol1425',
+      'UncannyXMenVol1426',
+      'UncannyXMenVol1427',
+    ]
+  ),
+  new Collection(
+    'X-Men Legends Vol. IV: Hated & Feared',
+    '2003-12-3',
+    [
+      'XMenUnlimitedVol149',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'New Mutants: Back to School - The Complete Collection',
+    '2018-1-24',
+    [
+      'NewMutantsVol27',
+      'NewMutantsVol28',
+      'NewMutantsVol29',
+      'NewMutantsVol210',
+      'NewMutantsVol211',
+      'NewMutantsVol212',
+      'NewMutantsVol213',
+    ]
+  ),
   new Collection(
     'X-Treme X-Men Volume 6: Intifada',
     '2004-3-1',
@@ -3339,15 +3401,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men Vol. 3: Holy War',
-    '2003-9-15',
-    [
-      'UncannyXMenVol1425',
-      'UncannyXMenVol1426',
-      'UncannyXMenVol1427',
-    ]
-  ),
-  new Collection(
     'Uncanny X-Men Vol. 4: The Draco',
     '2004-3-1',
     [
@@ -3369,16 +3422,6 @@ collections.push(
       'UncannyXMenVol1439',
       'UncannyXMenVol1440',
       'UncannyXMenVol1441',
-    ]
-  ),
-  new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
-    '2003-12-3',
-    [
-      'XMenUnlimitedVol146',
-      'XMenUnlimitedVol147',
-      'XMenUnlimitedVol148',
-      'XMenUnlimitedVol149',
     ]
   ),
   new Collection(

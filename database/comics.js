@@ -435,6 +435,14 @@ addComicsInSeriesVolume('MarvelTeamUpVol1', [
   [69,   '1978-5', ['Night of the Living God!']],
   [70,   '1978-6', ['Whom Gods Destroy!']]
 ]);
+addComicsInSeriesVolume('MystiqueVol1', [
+  [1, '2003-6'],
+  [2, '2003-7'],
+  [3, '2003-8'],
+  [4, '2003-9'],
+  [5, '2003-10'],
+  [6, '2003-11'],
+]);
 addComicsInSeriesVolume('NewMutantsVol1', [
   [26, '1985-4'],
   [27, '1985-5'],
@@ -474,6 +482,21 @@ addComicsInSeriesVolume('NewMutantsVol1', [
   [98, '1991-2'],
   [99, '1991-3'],
   [100, '1991-4'],
+]);
+addComicsInSeriesVolume('NewMutantsVol2', [
+  [1, '2003-7-1'],
+  [2, '2003-8-1'],
+  [3, '2003-9-1'],
+  [4, '2003-10-1'],
+  [5, '2003-10-20'],
+  [6, '2003-10-29'],
+  [7, '2003-11-5'],
+  [8, '2003-12-17'],
+  [9, '2004-1-1'],
+  [10, '2004-1-21'],
+  [11, '2004-2-18'],
+  [12, '2004-3-17'],
+  [13, '2004-4-21'],
 ]);
 addComicsInSeriesVolume('NewMutantsVol3', [
   [12, '2010-6', ['Second Coming (Chapter Three)']],
