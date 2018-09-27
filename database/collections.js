@@ -3294,6 +3294,18 @@ collections.push(
       'NewXMenVol1141',
     ]
   ),
+  new Collection(
+    'X-Treme X-Men Volume 5: God Loves, Man Kills',
+    '2003-10-27',
+    [
+      'XTremeXMenVol125',
+      'XTremeXMenVol126',
+      'XTremeXMenVol127',
+      'XTremeXMenVol128',
+      'XTremeXMenVol129',
+      'XTremeXMenVol130',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
