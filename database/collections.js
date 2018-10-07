@@ -3355,9 +3355,42 @@ collections.push(
       'XMenUnlimitedVol149',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'Emma Frost Vol. 1: Higher Learning',
+    '2004-8-4',
+    [
+      'EmmaFrostVol11',
+      'EmmaFrostVol12',
+      'EmmaFrostVol13',
+      'EmmaFrostVol14',
+      'EmmaFrostVol15',
+      'EmmaFrostVol16',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 4: The Draco',
+    '2004-3-1',
+    [
+      'UncannyXMenVol1428',
+      'UncannyXMenVol1429',
+      'UncannyXMenVol1430',
+      'UncannyXMenVol1431',
+      'UncannyXMenVol1432',
+      'UncannyXMenVol1433',
+      'UncannyXMenVol1434',
+    ]
+  ),
+  new Collection(
+    'Wolverine Vol. 1: The Brotherhood',
+    '2004-2-1',
+    [
+      'WolverineVol31',
+      'WolverineVol32',
+      'WolverineVol33',
+      'WolverineVol34',
+      'WolverineVol35',
+    ]
+  ),
   new Collection(
     'New Mutants: Back to School - The Complete Collection',
     '2018-1-24',
@@ -3368,7 +3401,6 @@ collections.push(
       'NewMutantsVol210',
       'NewMutantsVol211',
       'NewMutantsVol212',
-      'NewMutantsVol213',
     ]
   ),
   new Collection(
@@ -3380,6 +3412,45 @@ collections.push(
       'XTremeXMenVol133',
       'XTremeXMenVol134',
       'XTremeXMenVol135',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 6: Bright New Mourning',
+    '2004-6-23',
+    [
+      'UncannyXMenVol1435',
+      'UncannyXMenVol1436',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 5: She Lies with Angels',
+    '2004-5-5',
+    [
+      'UncannyXMenVol1437',
+      'UncannyXMenVol1438',
+      'UncannyXMenVol1439',
+      'UncannyXMenVol1440',
+      'UncannyXMenVol1441',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Uncanny X-Men Vol. 6: Bright New Mourning',
+    '2004-6-23',
+    [
+      'UncannyXMenVol1442',
+      'UncannyXMenVol1443',
+      'NewXMenVol1155',
+      'NewXMenVol1156'
+    ]
+  ),
+  new Collection(
+    'New Mutants: Back to School - The Complete Collection',
+    '2018-1-24',
+    [
+      'NewMutantsVol213',
     ]
   ),
   new Collection(
@@ -3398,30 +3469,6 @@ collections.push(
       'SabretoothVol22',
       'SabretoothVol23',
       'SabretoothVol24',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men Vol. 4: The Draco',
-    '2004-3-1',
-    [
-      'UncannyXMenVol1428',
-      'UncannyXMenVol1429',
-      'UncannyXMenVol1430',
-      'UncannyXMenVol1431',
-      'UncannyXMenVol1432',
-      'UncannyXMenVol1433',
-      'UncannyXMenVol1434',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men Vol. 5: She Lies with Angels',
-    '2004-5-5',
-    [
-      'UncannyXMenVol1437',
-      'UncannyXMenVol1438',
-      'UncannyXMenVol1439',
-      'UncannyXMenVol1440',
-      'UncannyXMenVol1441',
     ]
   ),
   new Collection(

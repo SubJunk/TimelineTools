@@ -81,6 +81,7 @@ series.push(
   new Series('Deadpool and Death Annual', {1: 1998}),
   new Series('Deadpool vs. X-Force', {1: 2014}),
   new Series('Domino', {1: 1997, 2: 2003}),
+  new Series('Emma Frost', {1: 2003}),
   new Series('Excalibur', {1: 1988}),
   new Series('Factor X', {1: 1995}),
   new Series('Fantastic Four', {1: 1961}),
