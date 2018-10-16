@@ -3433,6 +3433,19 @@ collections.push(
       'UncannyXMenVol1441',
     ]
   ),
+  new Collection(
+    'Mystique Vol.2: Tinker, Tailor, Mutant, Spy',
+    '2004-9-22',
+    [
+      'MystiqueVol17',
+      'MystiqueVol18',
+      'MystiqueVol19',
+      'MystiqueVol110',
+      'MystiqueVol111',
+      'MystiqueVol112',
+      'MystiqueVol113',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
