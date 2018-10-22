@@ -611,7 +611,7 @@ chownr@^1.0.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
   integrity sha512-j38EvO5+LHX84jlo6h4UzmOwi0UgW61WRyPtJz4qaadK5eY3BTS5TY/S1Stc3Uk2lIM6TPevAlULiEJwie860g==
 
-chromedriver@^2.42.0:
+chromedriver@^2.43.0:
   version "2.43.0"
   resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.43.0.tgz#435d3e582e8383204827c1ffd8be80683da20330"
   integrity sha512-W0aEk0ibNs7S4PA/vtH1xYcuAXc2474a1XjA9ERE1ZUSFo4NwJMtR7G8w+XP8mkaaxDYSOtiuDUAGW23cT6Gjg==
