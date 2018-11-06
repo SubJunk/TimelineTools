@@ -3446,6 +3446,16 @@ collections.push(
       'MystiqueVol113',
     ]
   ),
+  new Collection(
+    'X-Treme X-Men Volume 7: Storm - The Arena',
+    '2004-4-1',
+    [
+      'XTremeXMenVol136',
+      'XTremeXMenVol137',
+      'XTremeXMenVol138',
+      'XTremeXMenVol139',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
