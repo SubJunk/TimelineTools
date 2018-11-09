@@ -3389,6 +3389,7 @@ collections.push(
       'WolverineVol33',
       'WolverineVol34',
       'WolverineVol35',
+      'WolverineVol36',
     ]
   ),
   new Collection(
@@ -3456,9 +3457,115 @@ collections.push(
       'XTremeXMenVol139',
     ]
   ),
+  new Collection(
+    'Wolverine Vol. 2: Coyote Crossing',
+    '2004-4-21',
+    [
+      'WolverineVol37',
+      'WolverineVol38',
+      'WolverineVol39',
+      'WolverineVol310',
+      'WolverineVol311',
+    ]
+  ),
+  new Collection(
+    'Wolverine Vol. 3: Return of the Native',
+    '2004-10-13',
+    [
+      'WolverineVol312',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol11',
+      'CableDeadpoolVol12',
+      'CableDeadpoolVol13',
+      'CableDeadpoolVol14',
+      'CableDeadpoolVol15',
+      'CableDeadpoolVol16',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Treme X-Men Volume 8: Prisoner of Fire',
+    '2004-7-28',
+    [
+      'XTremeXMenVol140',
+      'XTremeXMenVol141',
+      'XTremeXMenVol142',
+      'XTremeXMenVol143',
+      'XTremeXMenVol144',
+      'XTremeXMenVol145',
+      'XTremeXMenVol146',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol17',
+      'CableDeadpoolVol18',
+      'CableDeadpoolVol19',
+      'CableDeadpoolVol110',
+      'CableDeadpoolVol111',
+      'CableDeadpoolVol112',
+      'CableDeadpoolVol113',
+      'CableDeadpoolVol114',
+      'CableDeadpoolVol115',
+      'CableDeadpoolVol116',
+      'CableDeadpoolVol117',
+      'CableDeadpoolVol118',
+      'CableDeadpoolVol119',
+      'CableDeadpoolVol120',
+      'CableDeadpoolVol121',
+      'CableDeadpoolVol122',
+      'CableDeadpoolVol123',
+      'CableDeadpoolVol124',
+      'CableDeadpoolVol125',
+      'CableDeadpoolVol126',
+      'CableDeadpoolVol127',
+      'CableDeadpoolVol128',
+      'CableDeadpoolVol129',
+      'CableDeadpoolVol130',
+      'CableDeadpoolVol131',
+      'CableDeadpoolVol132',
+      'CableDeadpoolVol133',
+      'CableDeadpoolVol134',
+      'CableDeadpoolVol135',
+      'CableDeadpoolVol136',
+      'CableDeadpoolVol137',
+      'CableDeadpoolVol138',
+      'CableDeadpoolVol139',
+      'CableDeadpoolVol140',
+      'CableDeadpoolVol141',
+      'CableDeadpoolVol142',
+      'CableDeadpoolVol143',
+      'CableDeadpoolVol144',
+      'CableDeadpoolVol145',
+      'CableDeadpoolVol146',
+      'CableDeadpoolVol147',
+      'CableDeadpoolVol148',
+      'CableDeadpoolVol149',
+      'CableDeadpoolVol150',
+    ]
+  ),
+  new Collection(
+    'Wolverine Vol. 3: Return of the Native',
+    '2004-10-13',
+    [
+      'WolverineVol313',
+      'WolverineVol314',
+      'WolverineVol315',
+      'WolverineVol316',
+      'WolverineVol317',
+      'WolverineVol318',
+      'WolverineVol319',
+    ]
+  ),
   new Collection(
     'Uncanny X-Men Vol. 6: Bright New Mourning',
     '2004-6-23',
@@ -3505,19 +3612,6 @@ collections.push(
       'XForceSexandViolenceVol11',
       'XForceSexandViolenceVol12',
       'XForceSexandViolenceVol13'
-    ]
-  ),
-  new Collection(
-    'X-Treme X-Men Volume 8: Prisoner of Fire',
-    '2004-7-28',
-    [
-      'XTremeXMenVol140',
-      'XTremeXMenVol141',
-      'XTremeXMenVol142',
-      'XTremeXMenVol143',
-      'XTremeXMenVol144',
-      'XTremeXMenVol145',
-      'XTremeXMenVol146',
     ]
   ),
   /**

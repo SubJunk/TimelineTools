@@ -68,6 +68,7 @@ series.push(
   new Series('Black Panther', {3: 1998}),
   new Series('Blink', {1: 2001}),
   new Series('Cable', {1: 1993, 2: 2008}),
+  new Series('Cable & Deadpool', {1: 2004}),
   new Series('Cable: Blood & Metal', {1: 1992}),
   new Series('Cable/Machine Man Annual', {1: 1998}),
   new Series('Cable Annual', {1: 1999}),
