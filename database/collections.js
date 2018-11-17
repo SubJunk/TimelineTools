@@ -3487,9 +3487,21 @@ collections.push(
       'CableDeadpoolVol16',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'New X-Men Vol. 3',
+    '2008-11-26',
+    [
+      'NewXMenVol1142',
+      'NewXMenVol1143',
+      'NewXMenVol1144',
+      'NewXMenVol1145',
+      'NewXMenVol1146',
+      'NewXMenVol1147',
+      'NewXMenVol1148',
+      'NewXMenVol1149',
+      'NewXMenVol1150',
+    ]
+  ),
   new Collection(
     'X-Treme X-Men Volume 8: Prisoner of Fire',
     '2004-7-28',
@@ -3500,9 +3512,45 @@ collections.push(
       'XTremeXMenVol143',
       'XTremeXMenVol144',
       'XTremeXMenVol145',
+    ]
+  ),
+  new Collection(
+    'New X-Men Vol. 3',
+    '2008-11-26',
+    [
+      'NewXMenVol1151',
+      'NewXMenVol1152',
+      'NewXMenVol1153',
+      'NewXMenVol1154',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men Vol. 6: Bright New Mourning',
+    '2004-6-23',
+    [
+      'NewXMenVol1155',
+      'NewXMenVol1156',
+      'UncannyXMenVol1442',
+      'UncannyXMenVol1443',
+    ]
+  ),
+  new Collection(
+    'New Mutants: Back to School - The Complete Collection',
+    '2018-1-24',
+    [
+      'NewMutantsVol213',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 8: Prisoner of Fire',
+    '2004-7-28',
+    [
       'XTremeXMenVol146',
     ]
   ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
   new Collection(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
@@ -3564,23 +3612,6 @@ collections.push(
       'WolverineVol317',
       'WolverineVol318',
       'WolverineVol319',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men Vol. 6: Bright New Mourning',
-    '2004-6-23',
-    [
-      'UncannyXMenVol1442',
-      'UncannyXMenVol1443',
-      'NewXMenVol1155',
-      'NewXMenVol1156'
-    ]
-  ),
-  new Collection(
-    'New Mutants: Back to School - The Complete Collection',
-    '2018-1-24',
-    [
-      'NewMutantsVol213',
     ]
   ),
   new Collection(
