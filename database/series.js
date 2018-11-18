@@ -151,7 +151,7 @@ series.push(
   new Series('X-Force Annual', {1: 1992}),
   new Series('X-Man', {1: 1995}),
   new Series('X-Man Annual', {1: 1996}),
-  new Series('X-Men', {2: 1991}),
+  new Series('X-Men', {2: 1991, 3: 2004}),
   new Series('X-Men/Alpha Flight', {1: 1985}),
   new Series('X-Men/ClanDestine', {1: 1996}),
   new Series('X-Men/Dr. Doom Annual', {1: 1998}),

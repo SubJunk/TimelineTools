@@ -3548,9 +3548,42 @@ collections.push(
       'XTremeXMenVol146',
     ]
   ),
+  new Collection(
+    'X-Men: Day of the Atom',
+    '2005-3-2',
+    [
+      'XMenVol3157',
+      'XMenVol3158',
+      'XMenVol3159',
+      'XMenVol3160',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 1: The End of History',
+    '2004-12-15',
+    [
+      'UncannyXMenVol1444',
+      'UncannyXMenVol1445',
+      'UncannyXMenVol1446',
+      'UncannyXMenVol1447',
+      'UncannyXMenVol1448',
+      'UncannyXMenVol1449',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Men: Day of the Atom',
+    '2005-3-2',
+    [
+      'XMenVol3161',
+      'XMenVol3162',
+      'XMenVol3163',
+      'XMenVol3164',
+      'XMenVol3165',
+    ]
+  ),
   new Collection(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
