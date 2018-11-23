@@ -3582,9 +3582,41 @@ collections.push(
       'AstonishingXMenVol36',
     ]
   ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol21',
+      'NewXMenVol22',
+      'NewXMenVol23',
+      'NewXMenVol24',
+      'NewXMenVol25',
+      'NewXMenVol26',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol27',
+      'NewXMenVol28',
+      'NewXMenVol29',
+      'NewXMenVol210',
+      'NewXMenVol211',
+      'NewXMenVol212',
+      'NewXMenVol213',
+      'NewXMenVol214',
+      'NewXMenVol215',
+      'NewXMenAcademyXYearbookSpecialVol11',
+      'NewXMenHellionsVol11',
+      'NewXMenHellionsVol12',
+      'NewXMenHellionsVol13',
+      'NewXMenHellionsVol14',
+    ]
+  ),
   new Collection(
     'Astonishing X-Men Omnibus',
     '2009-10-7',

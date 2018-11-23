@@ -606,7 +606,14 @@ addComicsInSeriesVolume('NewWarriorsVol1', [
   [45, '1994-3'],
   [46, '1994-4'],
 ]);
+addComicsInSeriesVolume('NewXMenAcademyXYearbookSpecialVol1', [[1, '2005-1']]);
 addComicsInSeriesVolume('NewXMenAnnualVol1', [[1, '2001-9']]);
+addComicsInSeriesVolume('NewXMenHellionsVol1', [
+  [1, '2005-5-25'],
+  [2, '2005-6-29'],
+  [3, '2005-7-20'],
+  [4, '2005-8-17'],
+]);
 addComicsInSeriesVolume('NewXMenVol1', [
   [114, '2001-7'],
   [115, '2001-8'],
@@ -651,6 +658,23 @@ addComicsInSeriesVolume('NewXMenVol1', [
   [154, '2004-3'],
   [155, '2004-4-7'],
   [156, '2004-4-21'],
+]);
+addComicsInSeriesVolume('NewXMenVol2', [
+  [1, '2004-5-19'],
+  [2, '2004-6-16'],
+  [3, '2004-7-21'],
+  [4, '2004-8-18'],
+  [5, '2004-9-15'],
+  [6, '2004-10-20'],
+  [7, '2004-11-17'],
+  [8, '2004-12-15'],
+  [9, '2005-1-19'],
+  [10, '2005-2-16'],
+  [11, '2005-3-23'],
+  [12, '2005-4-20'],
+  [13, '2005-5-4'],
+  [14, '2005-5-18'],
+  [15, '2005-6-22'],
 ]);
 addComicsInSeriesVolume('NightcrawlerVol1', [
   [1, '1985-11'],
