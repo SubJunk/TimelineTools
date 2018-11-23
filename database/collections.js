@@ -2914,8 +2914,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1',
-    '2008-5-14',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1114',
       'NewXMenVol1115',
@@ -2972,8 +2972,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1',
-    '2008-5-14',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenAnnualVol11',
       'NewXMenVol1117',
@@ -2993,8 +2993,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1',
-    '2008-5-14',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1122',
     ]
@@ -3014,8 +3014,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1',
-    '2008-5-14',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1123',
       'NewXMenVol1124',
@@ -3068,8 +3068,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1127',
     ]
@@ -3098,8 +3098,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1128',
       'NewXMenVol1129',
@@ -3186,8 +3186,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1134',
     ]
@@ -3253,8 +3253,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1135',
       'NewXMenVol1136',
@@ -3286,8 +3286,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1139',
       'NewXMenVol1140',
@@ -3435,7 +3435,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Mystique Vol.2: Tinker, Tailor, Mutant, Spy',
+    'Mystique Vol. 2: Tinker, Tailor, Mutant, Spy',
     '2004-9-22',
     [
       'MystiqueVol17',
@@ -3488,8 +3488,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 3',
-    '2008-11-26',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1142',
       'NewXMenVol1143',
@@ -3515,8 +3515,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 3',
-    '2008-11-26',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1151',
       'NewXMenVol1152',
