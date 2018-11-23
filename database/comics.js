@@ -74,6 +74,32 @@ addComicsInSeriesVolume('AstonishingXMenVol2', [
   [2, '1999-10'],
   [3, '1999-11']
 ]);
+addComicsInSeriesVolume('AstonishingXMenVol3', [
+  [1, '2004-5-26'],
+  [2, '2004-6-23'],
+  [3, '2004-7-28'],
+  [4, '2004-8-25'],
+  [5, '2004-9-22'],
+  [6, '2004-11-3'],
+  [7, '2004-12-22'],
+  [8, '2005-2-16'],
+  [9, '2005-3-30'],
+  [10, '2005-5-11'],
+  [11, '2005-6-5'],
+  [12, '2005-8-31'],
+  [13, '2006-2-22'],
+  [14, '2006-4-26'],
+  [15, '2006-6-21'],
+  [16, '2006-8-23'],
+  [17, '2006-9-20'],
+  [18, '2006-11-15'],
+  [19, '2006-12-27'],
+  [20, '2007-2-14'],
+  [21, '2007-5-2'],
+  [22, '2007-8-22'],
+  [23, '2007-11-7'],
+  [24, '2008-1-23'],
+]);
 addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']]);
 addComicsInSeriesVolume('AvengersVol1', [
   [263, '1986-1-10'],
@@ -457,6 +483,7 @@ addComicsInSeriesVolume('GhostRiderVol3', [
   [26, '1992-6'],
   [27, '1992-7'],
 ]);
+addComicsInSeriesVolume('GiantSizeAstonishingXMenVol1', [[1, '2008-5-26']]);
 addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']]]);
 addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']]);
 addComicsInSeriesVolume('IconsCyclopsVol1', [

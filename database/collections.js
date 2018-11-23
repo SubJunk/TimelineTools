@@ -3570,9 +3570,46 @@ collections.push(
       'UncannyXMenVol1449',
     ]
   ),
+  new Collection(
+    'Astonishing X-Men Omnibus',
+    '2009-10-7',
+    [
+      'AstonishingXMenVol31',
+      'AstonishingXMenVol32',
+      'AstonishingXMenVol33',
+      'AstonishingXMenVol34',
+      'AstonishingXMenVol35',
+      'AstonishingXMenVol36',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Astonishing X-Men Omnibus',
+    '2009-10-7',
+    [
+      'AstonishingXMenVol37',
+      'AstonishingXMenVol38',
+      'AstonishingXMenVol39',
+      'AstonishingXMenVol310',
+      'AstonishingXMenVol311',
+      'AstonishingXMenVol312',
+      'AstonishingXMenVol313',
+      'AstonishingXMenVol314',
+      'AstonishingXMenVol315',
+      'AstonishingXMenVol316',
+      'AstonishingXMenVol317',
+      'AstonishingXMenVol318',
+      'AstonishingXMenVol319',
+      'AstonishingXMenVol320',
+      'AstonishingXMenVol321',
+      'AstonishingXMenVol322',
+      'AstonishingXMenVol323',
+      'AstonishingXMenVol324',
+      'GiantSizeAstonishingXMenVol11',
+    ]
+  ),
   new Collection(
     'X-Men: Day of the Atom',
     '2005-3-2',
