@@ -3594,6 +3594,28 @@ collections.push(
       'NewXMenVol26',
     ]
   ),
+  new Collection(
+    'Excalibur Vol. 1: Forging the Sword',
+    '2004-10-27',
+    [
+      'ExcaliburVol31',
+      'ExcaliburVol32',
+      'ExcaliburVol33',
+      'ExcaliburVol34',
+    ]
+  ),
+  new Collection(
+    'District X Vol. 1: Mr. M',
+    '2005-1-12',
+    [
+      'DistrictXVol11',
+      'DistrictXVol12',
+      'DistrictXVol13',
+      'DistrictXVol14',
+      'DistrictXVol15',
+      'DistrictXVol16',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */

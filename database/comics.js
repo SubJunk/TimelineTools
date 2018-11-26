@@ -368,6 +368,14 @@ addComicsInSeriesVolume('DeadpoolvsXForceVol1', [
   [3, '2014-8-20'],
   [4, '2014-9-3'],
 ]);
+addComicsInSeriesVolume('DistrictXVol1', [
+  [1, '2004-5-12'],
+  [2, '2004-6-9'],
+  [3, '2004-7-14'],
+  [4, '2004-8-11'],
+  [5, '2004-9-8'],
+  [6, '2004-10-13'],
+]);
 addComicsInSeriesVolume('DominoVol1', [
   [1, '1997-1'],
   [2, '1997-2'],
@@ -396,6 +404,12 @@ addComicsInSeriesVolume('ExcaliburVol1', [
   [82, '1994-10'],
   [95, '1996-3'],
   [100, '1996-8']
+]);
+addComicsInSeriesVolume('ExcaliburVol3', [
+  [1, '2004-7-1'],
+  [2, '2004-8-1'],
+  [3, '2004-9-1'],
+  [4, '2004-10-1'],
 ]);
 addComicsInSeriesVolume('FactorXVol1', [
   [1, '1995-3'],
