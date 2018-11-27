@@ -3616,6 +3616,18 @@ collections.push(
       'DistrictXVol16',
     ]
   ),
+  new Collection(
+    'Emma Frost Vol. 2: Mind Games',
+    '2005-1-19',
+    [
+      'EmmaFrostVol17',
+      'EmmaFrostVol18',
+      'EmmaFrostVol19',
+      'EmmaFrostVol110',
+      'EmmaFrostVol111',
+      'EmmaFrostVol112',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
