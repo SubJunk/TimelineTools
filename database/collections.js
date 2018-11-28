@@ -3356,8 +3356,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Emma Frost Vol. 1: Higher Learning',
-    '2004-8-4',
+    'Emma Frost Ultimate Collection',
+    '2011-5-25',
     [
       'EmmaFrostVol11',
       'EmmaFrostVol12',
@@ -3617,8 +3617,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Emma Frost Vol. 2: Mind Games',
-    '2005-1-19',
+    'Emma Frost Ultimate Collection',
+    '2011-5-25',
     [
       'EmmaFrostVol17',
       'EmmaFrostVol18',
@@ -3650,6 +3650,18 @@ collections.push(
       'MystiqueVol116',
       'MystiqueVol117',
       'MystiqueVol118',
+    ]
+  ),
+  new Collection(
+    'Emma Frost Ultimate Collection',
+    '2011-5-25',
+    [
+      'EmmaFrostVol113',
+      'EmmaFrostVol114',
+      'EmmaFrostVol115',
+      'EmmaFrostVol116',
+      'EmmaFrostVol117',
+      'EmmaFrostVol118',
     ]
   ),
   /**
