@@ -3328,8 +3328,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Mystique Vol. 1: Dead Drop Gorgeous',
-    '2004-6-23',
+    'Mystique by Brian K. Vaughan Ultimate Collection',
+    '2011-5-25',
     [
       'MystiqueVol11',
       'MystiqueVol12',
@@ -3435,8 +3435,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Mystique Vol. 2: Tinker, Tailor, Mutant, Spy',
-    '2004-9-22',
+    'Mystique by Brian K. Vaughan Ultimate Collection',
+    '2011-5-25',
     [
       'MystiqueVol17',
       'MystiqueVol18',
@@ -3628,9 +3628,45 @@ collections.push(
       'EmmaFrostVol112',
     ]
   ),
+  new Collection(
+    'Wolverine Vol. 3: Return of the Native',
+    '2004-10-13',
+    [
+      'WolverineVol313',
+      'WolverineVol314',
+      'WolverineVol315',
+      'WolverineVol316',
+      'WolverineVol317',
+      'WolverineVol318',
+      'WolverineVol319',
+    ]
+  ),
+  new Collection(
+    'Mystique by Sean Mckeever Ultimate Collection',
+    '2011-6-22',
+    [
+      'MystiqueVol114',
+      'MystiqueVol115',
+      'MystiqueVol116',
+      'MystiqueVol117',
+      'MystiqueVol118',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Mystique by Sean Mckeever Ultimate Collection',
+    '2011-6-22',
+    [
+      'MystiqueVol119',
+      'MystiqueVol120',
+      'MystiqueVol121',
+      'MystiqueVol122',
+      'MystiqueVol123',
+      'MystiqueVol124',
+    ]
+  ),
   new Collection(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
@@ -3735,19 +3771,6 @@ collections.push(
       'CableDeadpoolVol148',
       'CableDeadpoolVol149',
       'CableDeadpoolVol150',
-    ]
-  ),
-  new Collection(
-    'Wolverine Vol. 3: Return of the Native',
-    '2004-10-13',
-    [
-      'WolverineVol313',
-      'WolverineVol314',
-      'WolverineVol315',
-      'WolverineVol316',
-      'WolverineVol317',
-      'WolverineVol318',
-      'WolverineVol319',
     ]
   ),
   new Collection(
