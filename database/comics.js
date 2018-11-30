@@ -530,6 +530,13 @@ addComicsInSeriesVolume('IronFistVol1', [
 ]);
 addComicsInSeriesVolume('IronManVol1', [[332, '1996-9']]);
 addComicsInSeriesVolume('MachineManBastionAnnualVol1', [[1, '1998-6']]);
+addComicsInSeriesVolume('MadroxVol1', [
+  [1, '2004-9-15'],
+  [2, '2004-10-20'],
+  [3, '2004-11-17'],
+  [4, '2004-12-15'],
+  [5, '2005-1-19'],
+]);
 addComicsInSeriesVolume('MagikVol1', [
   [1, '1983-12'],
   [2, '1984-1'],
@@ -741,6 +748,20 @@ addComicsInSeriesVolume('RogueVol1', [
   [2, '1995-2'],
   [3, '1995-3'],
   [4, '1995-4']
+]);
+addComicsInSeriesVolume('RogueVol3', [
+  [1, '2004-7-28'],
+  [2, '2004-8-18'],
+  [3, '2004-9-22'],
+  [4, '2004-10-20'],
+  [5, '2004-11-24'],
+  [6, '2004-12-22'],
+  [7, '2005-1-19'],
+  [8, '2005-2-23'],
+  [9, '2005-3-23'],
+  [10, '2005-5-4'],
+  [11, '2005-5-18'],
+  [12, '2005-6-22'],
 ]);
 addComicsInSeriesVolume('SabretoothVol2', [
   [1, '2004-10-6'],

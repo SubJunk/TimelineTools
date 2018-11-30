@@ -3664,9 +3664,18 @@ collections.push(
       'EmmaFrostVol118',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'Rogue: The Complete Collection',
+    '2015-9-1',
+    [
+      'RogueVol31',
+      'RogueVol32',
+      'RogueVol33',
+      'RogueVol34',
+      'RogueVol35',
+      'RogueVol36',
+    ]
+  ),
   new Collection(
     'Mystique by Sean Mckeever Ultimate Collection',
     '2011-6-22',
@@ -3677,6 +3686,32 @@ collections.push(
       'MystiqueVol122',
       'MystiqueVol123',
       'MystiqueVol124',
+    ]
+  ),
+  new Collection(
+    'Madrox: Multiple Choice',
+    '2005-3-30',
+    [
+      'MadroxVol11',
+      'MadroxVol12',
+      'MadroxVol13',
+      'MadroxVol14',
+      'MadroxVol15',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Rogue: The Complete Collection',
+    '2015-9-1',
+    [
+      'RogueVol37',
+      'RogueVol38',
+      'RogueVol39',
+      'RogueVol310',
+      'RogueVol311',
+      'RogueVol312',
     ]
   ),
   new Collection(
