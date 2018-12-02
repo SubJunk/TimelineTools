@@ -3699,9 +3699,45 @@ collections.push(
       'MadroxVol15',
     ]
   ),
+  new Collection(
+    'Nightcrawler: The Devil Inside',
+    '2005-5-25',
+    [
+      'NightcrawlerVol31',
+      'NightcrawlerVol32',
+      'NightcrawlerVol33',
+      'NightcrawlerVol34',
+      'NightcrawlerVol35',
+      'NightcrawlerVol36',
+    ]
+  ),
+  new Collection(
+    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
+    '2017-1-31',
+    [
+      'SabretoothVol21',
+      'SabretoothVol22',
+      'SabretoothVol23',
+      'SabretoothVol24',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
+    '2017-1-31',
+    [
+      'WolverineVol333',
+      'WolverineVol334',
+      'WolverineVol335',
+      'WolverineVol336',
+      'WolverineVol337',
+      'WolverineVol338',
+      'WolverineVol339',
+      'WolverineVol340',
+    ]
+  ),
   new Collection(
     'Rogue: The Complete Collection',
     '2015-9-1',
@@ -3818,24 +3854,6 @@ collections.push(
       'CableDeadpoolVol148',
       'CableDeadpoolVol149',
       'CableDeadpoolVol150',
-    ]
-  ),
-  new Collection(
-    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
-    '2017-1-31',
-    [
-      'WolverineVol333',
-      'WolverineVol334',
-      'WolverineVol335',
-      'WolverineVol336',
-      'WolverineVol337',
-      'WolverineVol338',
-      'WolverineVol339',
-      'WolverineVol340',
-      'SabretoothVol21',
-      'SabretoothVol22',
-      'SabretoothVol23',
-      'SabretoothVol24',
     ]
   ),
   new Collection(

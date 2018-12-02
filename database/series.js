@@ -116,7 +116,7 @@ series.push(
   new Series('New X-Men: Academy X Yearbook Special', {1: 2005}),
   new Series('New X-Men: Hellions', {1: 2005}),
   new Series('New X-Men Annual', {1: 2001}),
-  new Series('Nightcrawler', {1: 1985}),
+  new Series('Nightcrawler', {1: 1985, 3: 2004}),
   new Series('Nomad', {2: 1992}),
   new Series('Onslaught: Epilogue', {1: 1997}),
   new Series('Onslaught: Marvel Universe', {1: 1996}),
