@@ -94,7 +94,7 @@
             <a ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail">
               <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::comic.image}}.jpg"></img>
             </a>
-            <ul class="pagination">
+            <ul class="pagination" ng-if="comic.id === main.expandedComicId">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
                 <div class="popover" ng-if="main.prevCollectionFirstComic"><div>{{main.prevCollection.title}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
@@ -121,8 +121,8 @@
               </li>
             </ul>
           </div>
-          <div class="expanded-panel">
-            <a ng-if="comic.link" class="marvel-unlimited-link" ng-href="{{comic.link}}" title="Open in Marvel Unlimited"></a>
+          <div class="expanded-panel" ng-if="comic.id === main.expandedComicId">
+            <a ng-if="::comic.link" class="marvel-unlimited-link" ng-href="{{::comic.link}}" title="Open in Marvel Unlimited"></a>
             <div class="series">{{::comic.series}} #{{::comic.issue}}</div>
             <div class="title" ng-repeat="title in ::comic.titles">{{::title}}</div>
             <div class="date">{{::comic.yearPublished}} / {{::comic.monthPublished}}</div>
