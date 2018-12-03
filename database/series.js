@@ -118,6 +118,7 @@ series.push(
   new Series('New X-Men Annual', {1: 2001}),
   new Series('Nightcrawler', {1: 1985, 3: 2004}),
   new Series('Nomad', {2: 1992}),
+  new Series('NYX', {1: 2003}),
   new Series('Onslaught: Epilogue', {1: 1997}),
   new Series('Onslaught: Marvel Universe', {1: 1996}),
   new Series('Onslaught: X-Men', {1: 1996}),

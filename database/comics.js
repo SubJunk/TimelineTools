@@ -735,6 +735,15 @@ addComicsInSeriesVolume('NightcrawlerVol3', [
   [6, '2005-2-23'],
 ]);
 addComicsInSeriesVolume('NomadVol2', [[20, '1993-12']]);
+addComicsInSeriesVolume('NYXVol1', [
+  [1, '2003-10-8'],
+  [2, '2003-11-12'],
+  [3, '2003-12-10'],
+  [4, '2004-5-26'],
+  [5, '2004-10-6'],
+  [6, '2005-7-13'],
+  [7, '2005-9-28'],
+]);
 addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']]);
 addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']]);
 addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']]);

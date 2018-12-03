@@ -3721,6 +3721,19 @@ collections.push(
       'SabretoothVol24',
     ]
   ),
+  new Collection(
+    'NYX: Wannabe',
+    '2006-5-10',
+    [
+      'NYXVol11',
+      'NYXVol12',
+      'NYXVol13',
+      'NYXVol14',
+      'NYXVol15',
+      'NYXVol16',
+      'NYXVol17',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
