@@ -3734,9 +3734,64 @@ collections.push(
       'NYXVol17',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men – The New Age Vol. 2: The Cruelest Cut',
+    '2005-2-2',
+    [
+      'UncannyXMenVol1450',
+      'UncannyXMenVol1451',
+    ]
+  ),
+  new Collection(
+    'X-Men: Day of the Atom',
+    '2005-3-2',
+    [
+      'XMenVol3161',
+      'XMenVol3162',
+      'XMenVol3163',
+      'XMenVol3164',
+      'XMenVol3165',
+    ]
+  ),
+  new Collection(
+    'Excalibur Vol. 2: Saturday Night Fever',
+    '2005-5-18',
+    [
+      'ExcaliburVol35',
+      'ExcaliburVol36',
+      'ExcaliburVol37',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol27',
+      'NewXMenVol28',
+      'NewXMenVol29',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Excalibur Vol. 2: Saturday Night Fever',
+    '2005-5-18',
+    [
+      'ExcaliburVol38',
+      'ExcaliburVol39',
+      'ExcaliburVol310',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men – The New Age Vol. 2: The Cruelest Cut',
+    '2005-2-2',
+    [
+      'UncannyXMenVol1452',
+      'UncannyXMenVol1453',
+      'UncannyXMenVol1454',
+    ]
+  ),
   new Collection(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
@@ -3767,9 +3822,6 @@ collections.push(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
-      'NewXMenVol27',
-      'NewXMenVol28',
-      'NewXMenVol29',
       'NewXMenVol210',
       'NewXMenVol211',
       'NewXMenVol212',
@@ -3806,17 +3858,6 @@ collections.push(
       'AstonishingXMenVol323',
       'AstonishingXMenVol324',
       'GiantSizeAstonishingXMenVol11',
-    ]
-  ),
-  new Collection(
-    'X-Men: Day of the Atom',
-    '2005-3-2',
-    [
-      'XMenVol3161',
-      'XMenVol3162',
-      'XMenVol3163',
-      'XMenVol3164',
-      'XMenVol3165',
     ]
   ),
   new Collection(
