@@ -3771,6 +3771,28 @@ collections.push(
       'NewXMenVol29',
     ]
   ),
+  new Collection(
+    'District X Vol. 2: Underground',
+    '2005-9-7',
+    [
+      'DistrictXVol17',
+      'DistrictXVol18',
+      'DistrictXVol19',
+      'DistrictXVol110',
+      'DistrictXVol111',
+      'DistrictXVol112',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol17',
+      'CableDeadpoolVol18',
+      'CableDeadpoolVol19',
+      'CableDeadpoolVol110',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -3864,10 +3886,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol17',
-      'CableDeadpoolVol18',
-      'CableDeadpoolVol19',
-      'CableDeadpoolVol110',
       'CableDeadpoolVol111',
       'CableDeadpoolVol112',
       'CableDeadpoolVol113',
