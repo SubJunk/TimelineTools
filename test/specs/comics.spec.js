@@ -4,13 +4,15 @@ describe('Comics', function() {
     });
   
    it('should create a comic thumbnail with the correct value', function() {
-    //this does not work
-     browser.waitForVisible('//*[@id="app"]/ul[2]/li[172]/div[3]/div[1]/a/img.src*=Giant_Size_X-Men_Vol_1_1.jpg'); 
+    var assert = require('assert');
+    browser.waitForVisible('ul.comics li:nth-child(172) div.comic.z-depth-5.hoverable div img');
+    var firstThumbSrc = browser.getAttribute('ul.comics li:nth-child(172) div.comic.z-depth-5.hoverable div img', 'src');
+    assert.equal(firstThumbSrc, 'https://www.spirton.com/images/comics/Giant_Size_X-Men_Vol_1_1.jpg');
    });
-});
 
-  //timeout error 
-  //Timeout of 10000ms exceeded. 
-  //Try to reduce the run time or increase your timeout for test specs 
-  //(http://webdriver.io/guide/testrunner/timeouts.html); 
-  //if returning a Promise, ensure it resolves. (/Users/paulenec/TimelineTools2/test/specs/labels.spec.js)
+   it ('should open the expanded panel with the correct title', function() {
+    browser.waitForVisible('ul.comics li:nth-child(172) div.comic.z-depth-5.hoverable div img');
+    browser.click('ul.comics li:nth-child(172) div.comic.z-depth-5.hoverable div a');
+    browser.waitForVisible('div.series*=Giant Size X-Men #1');
+  });
+});
