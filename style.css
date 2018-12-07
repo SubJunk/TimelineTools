@@ -291,6 +291,13 @@ li:hover {
   width: var(--expanded-width);
 }
 
+.scroll-to-comic-button {
+  vertical-align: text-top;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 15px;
+}
+
 /**
  * Override Bootstrap styles
  */
