@@ -3707,8 +3707,6 @@ collections.push(
       'NightcrawlerVol32',
       'NightcrawlerVol33',
       'NightcrawlerVol34',
-      'NightcrawlerVol35',
-      'NightcrawlerVol36',
     ]
   ),
   new Collection(
@@ -3793,6 +3791,35 @@ collections.push(
       'CableDeadpoolVol110',
     ]
   ),
+  new Collection(
+    'Gambit: House of Cards',
+    '2005-3-9',
+    [
+      'GambitVol41',
+      'GambitVol42',
+      'GambitVol43',
+      'GambitVol44',
+      'GambitVol45',
+      'GambitVol46',
+    ]
+  ),
+  new Collection(
+    'Nightcrawler: The Devil Inside',
+    '2005-5-25',
+    [
+      'NightcrawlerVol35',
+      'NightcrawlerVol36',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men – The New Age Vol. 2: The Cruelest Cut',
+    '2005-2-2',
+    [
+      'UncannyXMenVol1452',
+      'UncannyXMenVol1453',
+      'UncannyXMenVol1454',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -3803,15 +3830,6 @@ collections.push(
       'ExcaliburVol38',
       'ExcaliburVol39',
       'ExcaliburVol310',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men – The New Age Vol. 2: The Cruelest Cut',
-    '2005-2-2',
-    [
-      'UncannyXMenVol1452',
-      'UncannyXMenVol1453',
-      'UncannyXMenVol1454',
     ]
   ),
   new Collection(

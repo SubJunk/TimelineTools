@@ -472,6 +472,14 @@ addComicsInSeriesVolume('GambitVol2', [
   [3, '1997-11'],
   [4, '1997-12']
 ]);
+addComicsInSeriesVolume('GambitVol4', [
+  [1, '2004-9-1'],
+  [2, '2004-9-29'],
+  [3, '2004-10-20'],
+  [4, '2004-11-10'],
+  [5, '2004-12-8'],
+  [6, '2005-1-12'],
+]);
 addComicsInSeriesVolume('GambitandtheXTernalsVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
