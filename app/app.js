@@ -720,8 +720,8 @@ angular.module('app', ['angular-md5'])
         anchorRightPosition  = stickyAnchorOffset.left + $expandedComic.width();
         anchorBottomPosition = stickyAnchorOffset.top  + $expandedComic.height();
 
-        scrollRight  = scrollLeft + $jqWindow.innerWidth();
-        scrollBottom = scrollTop  + $jqWindow.innerHeight();
+        scrollRight  = scrollLeft + window.innerWidth;
+        scrollBottom = scrollTop  + window.innerHeight;
 
         isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
         isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
