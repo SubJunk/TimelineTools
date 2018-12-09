@@ -920,6 +920,10 @@ angular.module('app', ['angular-md5'])
           });
         }
 
+        if (searchParams.showCollections) {
+          vm.isShowCollections = true;
+        }
+
         /**
          * The garbage collector.
          *
