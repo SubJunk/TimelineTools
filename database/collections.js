@@ -3733,7 +3733,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men – The New Age Vol. 2: The Cruelest Cut',
+    'Uncanny X-Men - The New Age Vol. 2: The Cruelest Cut',
     '2005-2-2',
     [
       'UncannyXMenVol1450',
@@ -3812,12 +3812,23 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men – The New Age Vol. 2: The Cruelest Cut',
+    'Uncanny X-Men - The New Age Vol. 2: The Cruelest Cut',
     '2005-2-2',
     [
       'UncannyXMenVol1452',
       'UncannyXMenVol1453',
       'UncannyXMenVol1454',
+    ]
+  ),
+  new Collection(
+    'X-Men: Golgotha',
+    '2005-7-13',
+    [
+      'XMenVol3166',
+      'XMenVol3167',
+      'XMenVol3168',
+      'XMenVol3169',
+      'XMenVol3170',
     ]
   ),
   /**
