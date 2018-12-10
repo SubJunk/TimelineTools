@@ -3831,9 +3831,6 @@ collections.push(
       'XMenVol3170',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
     'Excalibur Vol. 2: Saturday Night Fever',
     '2005-5-18',
@@ -3843,6 +3840,30 @@ collections.push(
       'ExcaliburVol310',
     ]
   ),
+  new Collection(
+    'Gambit: Hath No Fury',
+    '2005-9-14',
+    [
+      'GambitVol47',
+      'GambitVol48',
+      'GambitVol49',
+      'GambitVol410',
+      'GambitVol411',
+      'GambitVol412',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol210',
+      'NewXMenVol211',
+      'NewXMenVol212',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
   new Collection(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
@@ -3873,9 +3894,6 @@ collections.push(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
-      'NewXMenVol210',
-      'NewXMenVol211',
-      'NewXMenVol212',
       'NewXMenVol213',
       'NewXMenVol214',
       'NewXMenVol215',
