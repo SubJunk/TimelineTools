@@ -899,6 +899,25 @@ angular.module('app', ['angular-md5'])
       }
     };
 
+    vm.toggleShowCollections = function(forcedState) {
+      var state;
+      if (forcedState) {
+        state = forcedState;
+      } else if (vm.isShowCollections) {
+        state = '';
+      } else {
+        state = '1';
+      }
+
+      $location.search('showCollections', state);
+
+      if (state === '1') {
+        vm.isShowCollections = true;
+      } else {
+        vm.isShowCollections = false;
+      }
+    };
+
     /*
      * Launches the initial expand and scroll on load, and the
      * garbage collector, if the relevant GET parameters are
@@ -921,7 +940,7 @@ angular.module('app', ['angular-md5'])
         }
 
         if (searchParams.showCollections) {
-          vm.isShowCollections = true;
+          vm.toggleShowCollections('1');
         }
 
         /**
