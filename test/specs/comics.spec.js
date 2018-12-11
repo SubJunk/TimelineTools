@@ -3,7 +3,7 @@ var assert = require('assert');
 describe('Comics', function() {
    before(function() {
       browser.url('file://' + process.cwd() + '/index.html');
-      console.log('before' + browser.url);
+      console.log('before' + browser.getUrl());
     });
   
    it('should create a comic thumbnail with the correct value', function() {
