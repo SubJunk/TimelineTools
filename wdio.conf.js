@@ -45,7 +45,7 @@ exports.config = {
             prefs: {
                 profile: {
                     default_content_setting_values: {
-                        'images': 1
+                        'images': 2
                     }
                 }
             }
