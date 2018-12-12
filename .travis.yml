@@ -11,7 +11,7 @@ cache:
 addons:
   artefacts: "true"
   paths:
-  - $(ls *.png | tr "\n" ":")
+  - $(ls ./errorShots/*.png | tr "\n" ":")
   chrome: "stable"
   firefox: "62.0.3"
 before_install:
