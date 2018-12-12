@@ -9,6 +9,9 @@ cache:
   directories:
     - node_modules
 addons:
+  artefacts: "true"
+  paths:
+  - $(ls /tmp/*.png | tr "\n" ":")
   chrome: "stable"
   firefox: "62.0.3"
 before_install:
