@@ -16,7 +16,6 @@ addons:
     target_paths: $TRAVIS_BUILD_NUMBER
     working_dir: WORKING_DIR
     s3_region: ap-southeast-2
-deploy:
   chrome: "stable"
   firefox: "62.0.3"
 before_install:
