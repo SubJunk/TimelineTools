@@ -11,7 +11,7 @@ cache:
 addons:
   artefacts: "true"
   paths:
-  - $(ls /tmp/*.png | tr "\n" ":")
+  - $(ls *.png | tr "\n" ":")
   chrome: "stable"
   firefox: "62.0.3"
 before_install:
