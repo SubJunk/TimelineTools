@@ -9,9 +9,10 @@ cache:
   directories:
     - node_modules
 addons:
-  artefacts: "true"
-  paths:
-  - $(ls ./errorShots/*.png | tr "\n" ":")
+  artifacts: "true"
+  s3-region: "asia-pacific"
+deploy:
+  provider: s3
   chrome: "stable"
   firefox: "62.0.3"
 before_install:
