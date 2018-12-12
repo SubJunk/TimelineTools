@@ -9,6 +9,7 @@ cache:
   directories:
     - node_modules
 addons:
+  artefacts: "true"
   chrome: "stable"
   firefox: "62.0.3"
 before_install:
