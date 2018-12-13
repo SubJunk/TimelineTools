@@ -1550,6 +1550,14 @@ addComicsInSeriesVolume('XForceVol1', [
   [114, '2001-5'],
   [115, '2001-6'],
 ]);
+addComicsInSeriesVolume('XForceVol2', [
+  [1, '2004-8-4'],
+  [2, '2004-9-8'],
+  [3, '2004-10-13'],
+  [4, '2004-11-17'],
+  [5, '2004-12-15'],
+  [6, '2005-2-16'],
+]);
 addComicsInSeriesVolume('XForceVol3', [
   [26, '2010-6', ['Second Coming (Chapter Five)']],
   [27, '2010-7', ['Second Coming (Chapter Nine)']],

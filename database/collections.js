@@ -3861,6 +3861,26 @@ collections.push(
       'NewXMenVol212',
     ]
   ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol111',
+      'CableDeadpoolVol112',
+    ]
+  ),
+  new Collection(
+    'X-Force & Cable Vol. 1: The Legend Returns',
+    '2005-3-30',
+    [
+      'XForceVol21',
+      'XForceVol22',
+      'XForceVol23',
+      'XForceVol24',
+      'XForceVol25',
+      'XForceVol26',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -3933,8 +3953,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol111',
-      'CableDeadpoolVol112',
       'CableDeadpoolVol113',
       'CableDeadpoolVol114',
       'CableDeadpoolVol115',

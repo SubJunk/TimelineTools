@@ -151,7 +151,7 @@ series.push(
   new Series('X-Calibre', {1: 1995}),
   new Series('X-Factor', {1: 1986, 2: 2002}),
   new Series('X-Factor Annual', {1: 1986}),
-  new Series('X-Force', {1: 1991, 3: 2008}),
+  new Series('X-Force', {1: 1991, 2: 2004, 3: 2008}),
   new Series('X-Force/Cable Annual', {1: 1995}),
   new Series('X-Force: Sex and Violence', {1: 2010}),
   new Series('X-Force Annual', {1: 1992}),
