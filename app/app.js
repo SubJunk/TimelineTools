@@ -899,6 +899,25 @@ angular.module('app', ['angular-md5'])
       }
     };
 
+    vm.toggleShowCollections = function(forcedState) {
+      var state;
+      if (forcedState) {
+        state = forcedState;
+      } else if (vm.isShowCollections) {
+        state = '';
+      } else {
+        state = '1';
+      }
+
+      $location.search('showCollections', state);
+
+      if (state === '1') {
+        vm.isShowCollections = true;
+      } else {
+        vm.isShowCollections = false;
+      }
+    };
+
     vm.scrollToComic = function(comicId) {
       var comicFromId = comics[_.findKey(comics, { 'id': comicId })];
 
@@ -926,6 +945,10 @@ angular.module('app', ['angular-md5'])
 
         if (searchParams.id) {
           vm.scrollToComic(searchParams.id);
+        }
+
+        if (searchParams.showCollections) {
+          vm.toggleShowCollections('1');
         }
 
         /**

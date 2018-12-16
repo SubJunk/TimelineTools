@@ -37,7 +37,7 @@
       <ul>
         <li>
           <div class="popover"><div>Toggle collections view</div></div>
-          <a class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}" ng-click="main.isShowCollections = !main.isShowCollections">
+          <a class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}" ng-click="main.toggleShowCollections()">
             <i class="material-icons">library_books</i>
           </a>
         </li>
@@ -91,7 +91,7 @@
         <div class="popover"><div>#{{::comic.issue}}</div></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
           <div class="panel-left">
-            <a ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail">
+            <a ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
               <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::comic.image}}.jpg"></img>
             </a>
             <ul class="pagination" ng-if="comic.id === main.expandedComicId">
