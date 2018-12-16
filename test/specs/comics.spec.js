@@ -11,7 +11,7 @@ describe('Comics', function() {
 
   it('should open the expanded panel with the correct title', function() {
     browser.waitForVisible('.cover-thumbnail img[src*=Giant_Size_X-Men_Vol_1_1]');
-    browser.click('.cover-thumbnail img[src*=Giant_Size_X-Men_Vol_1_1]');
+    browser.click('#expand-GiantSizeXMenVol11');
     browser.waitForVisible('div.series*=Giant Size X-Men #1');
   });
 });
