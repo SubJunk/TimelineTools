@@ -472,6 +472,20 @@ addComicsInSeriesVolume('GambitVol2', [
   [3, '1997-11'],
   [4, '1997-12']
 ]);
+addComicsInSeriesVolume('GambitVol4', [
+  [1, '2004-9-1'],
+  [2, '2004-9-29'],
+  [3, '2004-10-20'],
+  [4, '2004-11-10'],
+  [5, '2004-12-8'],
+  [6, '2005-1-12'],
+  [7, '2005-2-9'],
+  [8, '2005-3-9'],
+  [9, '2005-4-13'],
+  [10, '2005-5-11'],
+  [11, '2005-6-1'],
+  [12, '2005-6-15'],
+]);
 addComicsInSeriesVolume('GambitandtheXTernalsVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
@@ -1536,6 +1550,14 @@ addComicsInSeriesVolume('XForceVol1', [
   [114, '2001-5'],
   [115, '2001-6'],
 ]);
+addComicsInSeriesVolume('XForceVol2', [
+  [1, '2004-8-4'],
+  [2, '2004-9-8'],
+  [3, '2004-10-13'],
+  [4, '2004-11-17'],
+  [5, '2004-12-15'],
+  [6, '2005-2-16'],
+]);
 addComicsInSeriesVolume('XForceVol3', [
   [26, '2010-6', ['Second Coming (Chapter Five)']],
   [27, '2010-7', ['Second Coming (Chapter Nine)']],
@@ -1709,6 +1731,11 @@ addComicsInSeriesVolume('XMenVol3', [
   [163, '2004-10-27'],
   [164, '2004-11-17'],
   [165, '2004-12-15'],
+  [166, '2005-1-19'],
+  [167, '2005-2-23'],
+  [168, '2005-3-23'],
+  [169, '2005-4-20'],
+  [170, '2005-5-25'],
 ]);
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],

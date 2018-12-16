@@ -3707,8 +3707,6 @@ collections.push(
       'NightcrawlerVol32',
       'NightcrawlerVol33',
       'NightcrawlerVol34',
-      'NightcrawlerVol35',
-      'NightcrawlerVol36',
     ]
   ),
   new Collection(
@@ -3735,7 +3733,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men – The New Age Vol. 2: The Cruelest Cut',
+    'Uncanny X-Men - The New Age Vol. 2: The Cruelest Cut',
     '2005-2-2',
     [
       'UncannyXMenVol1450',
@@ -3793,9 +3791,46 @@ collections.push(
       'CableDeadpoolVol110',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'Gambit: House of Cards',
+    '2005-3-9',
+    [
+      'GambitVol41',
+      'GambitVol42',
+      'GambitVol43',
+      'GambitVol44',
+      'GambitVol45',
+      'GambitVol46',
+    ]
+  ),
+  new Collection(
+    'Nightcrawler: The Devil Inside',
+    '2005-5-25',
+    [
+      'NightcrawlerVol35',
+      'NightcrawlerVol36',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 2: The Cruelest Cut',
+    '2005-2-2',
+    [
+      'UncannyXMenVol1452',
+      'UncannyXMenVol1453',
+      'UncannyXMenVol1454',
+    ]
+  ),
+  new Collection(
+    'X-Men: Golgotha',
+    '2005-7-13',
+    [
+      'XMenVol3166',
+      'XMenVol3167',
+      'XMenVol3168',
+      'XMenVol3169',
+      'XMenVol3170',
+    ]
+  ),
   new Collection(
     'Excalibur Vol. 2: Saturday Night Fever',
     '2005-5-18',
@@ -3806,14 +3841,49 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men – The New Age Vol. 2: The Cruelest Cut',
-    '2005-2-2',
+    'Gambit: Hath No Fury',
+    '2005-9-14',
     [
-      'UncannyXMenVol1452',
-      'UncannyXMenVol1453',
-      'UncannyXMenVol1454',
+      'GambitVol47',
+      'GambitVol48',
+      'GambitVol49',
+      'GambitVol410',
+      'GambitVol411',
+      'GambitVol412',
     ]
   ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol210',
+      'NewXMenVol211',
+      'NewXMenVol212',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol111',
+      'CableDeadpoolVol112',
+    ]
+  ),
+  new Collection(
+    'X-Force & Cable Vol. 1: The Legend Returns',
+    '2005-3-30',
+    [
+      'XForceVol21',
+      'XForceVol22',
+      'XForceVol23',
+      'XForceVol24',
+      'XForceVol25',
+      'XForceVol26',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
   new Collection(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
@@ -3844,9 +3914,6 @@ collections.push(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
-      'NewXMenVol210',
-      'NewXMenVol211',
-      'NewXMenVol212',
       'NewXMenVol213',
       'NewXMenVol214',
       'NewXMenVol215',
@@ -3886,8 +3953,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol111',
-      'CableDeadpoolVol112',
       'CableDeadpoolVol113',
       'CableDeadpoolVol114',
       'CableDeadpoolVol115',
