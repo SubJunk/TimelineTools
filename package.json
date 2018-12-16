@@ -60,14 +60,14 @@
     }
   },
   "devDependencies": {
-    "chromedriver": "^2.44.1",
+    "chromedriver": "^2.45.0",
     "eslint": "^5.10.0",
     "eslint-config-angular": "^0.5.0",
     "eslint-plugin-angular": "^4.0.0",
     "geckodriver": "^1.14.1",
     "stylelint": "^9.9.0",
     "wdio-mocha-framework": "^0.6.4",
-    "wdio-selenium-standalone-service": "^0.0.11",
+    "wdio-selenium-standalone-service": "^0.0.12",
     "wdio-spec-reporter": "^0.1.5",
     "webdriverio": "^4.14.1"
   }
