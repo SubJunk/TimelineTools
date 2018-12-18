@@ -759,6 +759,12 @@ addComicsInSeriesVolume('NightcrawlerVol3', [
   [4, '2004-12-22'],
   [5, '2005-1-19'],
   [6, '2005-2-23'],
+  [7, '2005-6-22'],
+  [8, '2005-7-27'],
+  [9, '2005-8-24'],
+  [10, '2005-9-28'],
+  [11, '2005-11-2'],
+  [12, '2005-11-30'],
 ]);
 addComicsInSeriesVolume('NomadVol2', [[20, '1993-12']]);
 addComicsInSeriesVolume('NYXVol1', [
@@ -1220,6 +1226,13 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [452, '2004-12-1'],
   [453, '2005-1-1'],
   [454, '2005-1-5'],
+  [455, '2005-2-2'],
+  [456, '2005-2-23'],
+  [457, '2005-3-16'],
+  [458, '2005-4-20'],
+  [459, '2005-5-18'],
+  [460, '2005-6-1'],
+  [461, '2005-6-15'],
   /**
    * Complete until here
    */
@@ -1389,6 +1402,14 @@ addComicsInSeriesVolume('WolverineGambitVictimsVol1', [
   [2, '1995-10'],
   [3, '1995-11'],
   [4, '1995-12'],
+]);
+addComicsInSeriesVolume('X23Vol1', [
+  [1, '2005-1-12'],
+  [2, '2005-1-26'],
+  [3, '2005-2-23'],
+  [4, '2005-3-30'],
+  [5, '2005-4-20'],
+  [6, '2005-5-25'],
 ]);
 addComicsInSeriesVolume('X51Vol1', [[8, '2000-3']]);
 addComicsInSeriesVolume('XCalibreVol1', [

@@ -3881,9 +3881,52 @@ collections.push(
       'XForceVol26',
     ]
   ),
+  new Collection(
+    'Nightcrawler: The Winding Way',
+    '2006-2-22',
+    [
+      'NightcrawlerVol37',
+      'NightcrawlerVol38',
+      'NightcrawlerVol39',
+      'NightcrawlerVol310',
+      'NightcrawlerVol311',
+      'NightcrawlerVol312',
+    ]
+  ),
+  new Collection(
+    'X-23: Innocence Lost',
+    '2006-4-12',
+    [
+      'X23Vol11',
+      'X23Vol12',
+      'X23Vol13',
+      'X23Vol14',
+      'X23Vol15',
+      'X23Vol16',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 3: On Ice',
+    '2005-8-10',
+    [
+      'UncannyXMenVol1455',
+      'UncannyXMenVol1456',
+      'UncannyXMenVol1457',
+      'UncannyXMenVol1458',
+      'UncannyXMenVol1459',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 3: On Ice',
+    '2005-8-10',
+    [
+      'UncannyXMenVol1460',
+      'UncannyXMenVol1461',
+    ]
+  ),
   new Collection(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',

@@ -147,6 +147,7 @@ series.push(
   new Series('Wolverine & Gambit: Victims', {1: 1995}),
   new Series('Wolverine Annual', {1: 1995, 2: 1999}),
   new Series('Wolverine/Cable: Guts and Glory', {1: 1999}),
+  new Series('X-23', {1: 2005}),
   new Series('X-51', {1: 2000}),
   new Series('X-Calibre', {1: 1995}),
   new Series('X-Factor', {1: 1986, 2: 2002}),
