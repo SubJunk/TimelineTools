@@ -3867,6 +3867,8 @@ collections.push(
     [
       'CableDeadpoolVol111',
       'CableDeadpoolVol112',
+      'CableDeadpoolVol113',
+      'CableDeadpoolVol114',
     ]
   ),
   new Collection(
@@ -3916,15 +3918,115 @@ collections.push(
       'UncannyXMenVol1459',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'X-Men: Phoenix - Endsong',
+    '2005-12-14',
+    [
+      'XMenPhoenixEndsongVol11',
+      'XMenPhoenixEndsongVol12',
+      'XMenPhoenixEndsongVol13',
+      'XMenPhoenixEndsongVol14',
+      'XMenPhoenixEndsongVol15',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Enemy of the State Ultimate Collection',
+    '2008-6-11',
+    [
+      'WolverineVol320',
+      'WolverineVol321',
+      'WolverineVol322',
+      'WolverineVol323',
+      'WolverineVol324',
+      'WolverineVol325',
+      'WolverineVol326',
+      'WolverineVol327',
+      'WolverineVol328',
+      'WolverineVol329',
+      'WolverineVol330',
+      'WolverineVol331',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol213',
+    ]
+  ),
   new Collection(
     'Uncanny X-Men - The New Age Vol. 3: On Ice',
     '2005-8-10',
     [
       'UncannyXMenVol1460',
       'UncannyXMenVol1461',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men Omnibus',
+    '2009-10-7',
+    [
+      'AstonishingXMenVol37',
+      'AstonishingXMenVol38',
+      'AstonishingXMenVol39',
+      'AstonishingXMenVol310',
+      'AstonishingXMenVol311',
+      'AstonishingXMenVol312',
+    ]
+  ),
+  new Collection(
+    'Rogue: The Complete Collection',
+    '2015-9-1',
+    [
+      'RogueVol37',
+      'RogueVol38',
+      'RogueVol39',
+      'RogueVol310',
+      'RogueVol311',
+      'RogueVol312',
+    ]
+  ),
+  new Collection(
+    'X-Men: Bizarre Love Triangle',
+    '2005-10-12',
+    [
+      'XMenVol3171',
+      'XMenVol3172',
+      'XMenVol3173',
+      'XMenVol3174',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol214',
+      'NewXMenVol215',
+      'NewXMenHellionsVol11',
+      'NewXMenHellionsVol12',
+      'NewXMenHellionsVol13',
+      'NewXMenHellionsVol14',
+      'NewXMenAcademyXYearbookSpecialVol11',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol115',
+      'CableDeadpoolVol116',
+      'CableDeadpoolVol117',
+      'CableDeadpoolVol118',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Wolverine: Enemy of the State Ultimate Collection',
+    '2008-6-11',
+    [
+      'WolverineVol332',
     ]
   ),
   new Collection(
@@ -3942,41 +4044,9 @@ collections.push(
     ]
   ),
   new Collection(
-    'Rogue: The Complete Collection',
-    '2015-9-1',
-    [
-      'RogueVol37',
-      'RogueVol38',
-      'RogueVol39',
-      'RogueVol310',
-      'RogueVol311',
-      'RogueVol312',
-    ]
-  ),
-  new Collection(
-    'New X-Men: Academy X - Complete Collection',
-    '2018-12-31',
-    [
-      'NewXMenVol213',
-      'NewXMenVol214',
-      'NewXMenVol215',
-      'NewXMenAcademyXYearbookSpecialVol11',
-      'NewXMenHellionsVol11',
-      'NewXMenHellionsVol12',
-      'NewXMenHellionsVol13',
-      'NewXMenHellionsVol14',
-    ]
-  ),
-  new Collection(
     'Astonishing X-Men Omnibus',
     '2009-10-7',
     [
-      'AstonishingXMenVol37',
-      'AstonishingXMenVol38',
-      'AstonishingXMenVol39',
-      'AstonishingXMenVol310',
-      'AstonishingXMenVol311',
-      'AstonishingXMenVol312',
       'AstonishingXMenVol313',
       'AstonishingXMenVol314',
       'AstonishingXMenVol315',
@@ -3996,12 +4066,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol113',
-      'CableDeadpoolVol114',
-      'CableDeadpoolVol115',
-      'CableDeadpoolVol116',
-      'CableDeadpoolVol117',
-      'CableDeadpoolVol118',
       'CableDeadpoolVol119',
       'CableDeadpoolVol120',
       'CableDeadpoolVol121',
