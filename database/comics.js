@@ -1840,6 +1840,13 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [236, '2010-7', ['Second Coming (Chapter Eight)']],
   [237, '2010-8', ['Second Coming (Chapter Twelve)']],
 ]);
+addComicsInSeriesVolume('XMenKittyPrydeShadowFlameVol1', [
+  [1, '2005-6-29'],
+  [2, '2005-7-20'],
+  [3, '2005-8-17'],
+  [4, '2005-9-28'],
+  [5, '2005-11-30'],
+]);
 addComicsInSeriesVolume('XMenManifestDestinyVol1', [
   [1, '2008-11', ['Untitled']],
   [2, '2008-12', ['Kill or Cure (Part 2)','Good With the Bad','Flaw']],

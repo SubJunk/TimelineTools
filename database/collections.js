@@ -4019,9 +4019,6 @@ collections.push(
       'CableDeadpoolVol118',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
     'Wolverine: Enemy of the State Ultimate Collection',
     '2008-6-11',
@@ -4029,6 +4026,20 @@ collections.push(
       'WolverineVol332',
     ]
   ),
+  new Collection(
+    'X-Men: Kitty Pryde - Shadow & Flame',
+    '2006-1-18',
+    [
+      'XMenKittyPrydeShadowFlameVol11',
+      'XMenKittyPrydeShadowFlameVol12',
+      'XMenKittyPrydeShadowFlameVol13',
+      'XMenKittyPrydeShadowFlameVol14',
+      'XMenKittyPrydeShadowFlameVol15',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
   new Collection(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',

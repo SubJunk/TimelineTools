@@ -174,6 +174,7 @@ series.push(
   new Series('X-Men: Alpha', {1: 1995}),
   new Series('X-Men: Black Sun', {1: 2000}),
   new Series('X-Men: Books of Askani', {1: 1995}),
+  new Series('X-Men: Kitty Pryde - Shadow & Flame', {1: 2005}),
   new Series('X-Men: Manifest Destiny', {1: 2008}),
   new Series('X-Men: Omega', {1: 1995}),
   new Series('X-Men: Phoenix', {1: 1999}),
