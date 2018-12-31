@@ -1,5 +1,3 @@
-var assert = require('assert');
-
 describe('Collections', function() {
   before(function() {
     browser.url('file://' + process.cwd() + '/index.html#!?showCollections=1');
