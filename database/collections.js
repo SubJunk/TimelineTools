@@ -3862,6 +3862,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'District X Vol. 2: Underground',
+    '2005-9-7',
+    [
+      'DistrictXVol113',
+      'DistrictXVol114',
+    ]
+  ),
+  new Collection(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [

@@ -381,6 +381,8 @@ addComicsInSeriesVolume('DistrictXVol1', [
   [10, '2005-2-9'],
   [11, '2005-3-9'],
   [12, '2005-4-13'],
+  [13, '2005-5-11'],
+  [14, '2005-6-8'],
 ]);
 addComicsInSeriesVolume('DominoVol1', [
   [1, '1997-1'],
