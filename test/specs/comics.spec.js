@@ -1,17 +1,16 @@
-var assert = require('assert');
-
 describe('Comics', function() {
   before(function() {
     browser.url('file://' + process.cwd() + '/index.html');
   });
   
-  it('should create a comic thumbnail with the correct value', function() {
-    browser.waitForVisible('.cover-thumbnail img[src*=Giant_Size_X-Men_Vol_1_1]');
-  });
+  it('should create a comic thumbnail with the correct value, and open the expanded panel with the correct title', function() {
+    const giantSizeThumbnail = $('.cover-thumbnail img[src*=Giant_Size_X-Men_Vol_1_1]');
+    giantSizeThumbnail.waitForVisible();
 
-  it('should open the expanded panel with the correct title', function() {
-    browser.waitForVisible('.cover-thumbnail img[src*=Giant_Size_X-Men_Vol_1_1]');
-    browser.click('#expand-GiantSizeXMenVol11');
-    browser.waitForVisible('div.series*=Giant Size X-Men #1');
+    const giantSizeExpandLink = $('#expand-GiantSizeXMenVol11');
+    giantSizeExpandLink.click();
+
+    const giantSizeExpandedPanelTitle = $('div.series*=Giant Size X-Men #1');
+    giantSizeExpandedPanelTitle.waitForVisible();
   });
 });

@@ -60,8 +60,9 @@
     }
   },
   "devDependencies": {
+    "@wdio/cli": "^5.1.2",
     "chromedriver": "^2.45.0",
-    "eslint": "^5.10.0",
+    "eslint": "^5.11.1",
     "eslint-config-angular": "^0.5.0",
     "eslint-plugin-angular": "^4.0.0",
     "geckodriver": "^1.14.1",
@@ -69,6 +70,6 @@
     "wdio-mocha-framework": "^0.6.4",
     "wdio-selenium-standalone-service": "^0.0.12",
     "wdio-spec-reporter": "^0.1.5",
-    "webdriverio": "^4.14.1"
+    "webdriverio": "^5.1.1"
   }
 }
