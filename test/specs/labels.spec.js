@@ -19,6 +19,6 @@ describe('Labels', function() {
   it('should create a first month heading with the correct value', function() {
     const firstMonth = $('ul.years li:nth-child(1) ul li:nth-child(1)');
     firstMonth.waitForDisplayed();
-    assert.equal(firstMonthText.getText(), '5');
+    assert.equal(firstMonth.getText(), '5');
   });
 });
