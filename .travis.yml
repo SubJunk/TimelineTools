@@ -17,7 +17,7 @@ addons:
     working_dir: WORKING_DIR
     s3_region: "ap-southeast-2"
   chrome: "stable"
-  firefox: "62.0.3"
+  firefox: "latest"
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
