@@ -49,15 +49,15 @@ exports.config = {
     //
     capabilities: [{
         browserName: 'chrome',
-        // chromeOptions: {
-        //     prefs: {
-        //         profile: {
-        //             default_content_setting_values: {
-        //                 'images': 2
-        //             }
-        //         }
-        //     }
-        // }
+        'goog:chromeOptions': {
+            prefs: {
+                profile: {
+                    default_content_setting_values: {
+                        'images': 2
+                    }
+                }
+            }
+        }
     }, {
         browserName: 'firefox',
         'moz:firefoxOptions': {
