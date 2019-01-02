@@ -1,4 +1,4 @@
-var assert = require('assert');
+const assert = require('assert');
 
 describe('Labels', function() {
   before(function() {
@@ -6,19 +6,19 @@ describe('Labels', function() {
   });
 
   it('should create a series label with the correct value', function() {
-    browser.waitForVisible('#label-0*=Uncanny X-Men');
+    const uncannyLabel = $('#label-0*=Uncanny X-Men');
+    uncannyLabel.waitForDisplayed();
   });
 
   it('should create a first year heading with the correct value', function() {
-    browser.waitForVisible('ul.years > li:nth-child(1)');
-    var firstYearText = browser.getText('ul.years > li:nth-child(1)');
-    assert(firstYearText.indexOf('1975') > -1);
+    const firstYear = $('ul.years > li:nth-child(1)');
+    firstYear.waitForDisplayed();
+    assert(firstYear.getText().indexOf('1975') > -1);
   });
 
   it('should create a first month heading with the correct value', function() {
-    var assert = require('assert');
-    browser.waitForVisible('ul.years li:nth-child(1) ul li:nth-child(1)');
-    var firstMonthText = browser.getText('ul.years li:nth-child(1) ul li:nth-child(1)');
-    assert.equal(firstMonthText, '5');
+    const firstMonth = $('ul.years li:nth-child(1) ul li:nth-child(1)');
+    firstMonth.waitForDisplayed();
+    assert.equal(firstMonth.getText(), '5');
   });
 });
