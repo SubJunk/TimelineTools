@@ -789,6 +789,12 @@ addComicsInSeriesVolume('OriginVol1', [
   [5, '2002-3'],
   [6, '2002-4'],
 ]);
+addComicsInSeriesVolume('OroroBeforetheStormVol1', [
+  [1, '2005-6-1'],
+  [2, '2005-7-6'],
+  [3, '2005-8-3'],
+  [4, '2005-9-7'],
+]);
 addComicsInSeriesVolume('PowerPackVol1', [
   [27, '1986-12'],
   [35, '1988-2'],
@@ -1834,6 +1840,13 @@ addComicsInSeriesVolume('XMenChroniclesVol1', [
 addComicsInSeriesVolume('XMenClanDestineVol1', [
   [1, '1996-10'],
   [2, '1996-11']
+]);
+addComicsInSeriesVolume('XMenColossusBloodlineVol1', [
+  [1, '2005-9-7'],
+  [2, '2005-10-19'],
+  [3, '2005-11-2'],
+  [4, '2005-12-7'],
+  [5, '2006-1-4'],
 ]);
 addComicsInSeriesVolume('XMenDrDoomAnnualVol1', [[1, '1998-6']]);
 addComicsInSeriesVolume('XMenFreeComicBookDayVol2008', [[1, '2008-5', ['X-Men: Pixies & Demons']]]);

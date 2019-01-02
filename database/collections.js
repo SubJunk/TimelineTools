@@ -4045,6 +4045,27 @@ collections.push(
       'XMenKittyPrydeShadowFlameVol15',
     ]
   ),
+  new Collection(
+    'X-Men: Colossus Bloodline',
+    '2005-6-18',
+    [
+      'XMenColossusBloodlineVol11',
+      'XMenColossusBloodlineVol12',
+      'XMenColossusBloodlineVol13',
+      'XMenColossusBloodlineVol14',
+      'XMenColossusBloodlineVol15',
+    ]
+  ),
+  new Collection(
+    'Ororo: Before the Storm',
+    '2005-12-7',
+    [
+      'OroroBeforetheStormVol11',
+      'OroroBeforetheStormVol12',
+      'OroroBeforetheStormVol13',
+      'OroroBeforetheStormVol14',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
