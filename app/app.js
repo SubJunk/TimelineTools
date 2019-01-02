@@ -720,8 +720,8 @@ angular.module('app', ['angular-md5'])
         anchorRightPosition  = stickyAnchorOffset.left + $expandedComic.width();
         anchorBottomPosition = stickyAnchorOffset.top  + $expandedComic.height();
 
-        scrollRight  = scrollLeft + $jqWindow.innerWidth();
-        scrollBottom = scrollTop  + $jqWindow.innerHeight();
+        scrollRight  = scrollLeft + window.innerWidth;
+        scrollBottom = scrollTop  + window.innerHeight;
 
         isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
         isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
@@ -899,6 +899,41 @@ angular.module('app', ['angular-md5'])
       }
     };
 
+    vm.toggleShowCollections = function(forcedState) {
+      var state;
+      if (forcedState) {
+        state = forcedState;
+      } else if (vm.isShowCollections) {
+        state = '';
+      } else {
+        state = '1';
+      }
+
+      $location.search('showCollections', state);
+
+      if (state === '1') {
+        vm.isShowCollections = true;
+      } else {
+        vm.isShowCollections = false;
+      }
+    };
+
+    vm.scrollToComic = function(comicId) {
+      var comicFromId = comics[_.findKey(comics, { 'id': comicId })];
+
+      // Expand the comic if it isn't already
+      if (vm.expandedComicId !== comicId) {
+        vm.toggleExpandComic(comicFromId);
+      }
+
+      $timeout(function() {
+        $('html, body').animate({
+          scrollLeft: comicFromId.containerStyles.left - LEFT_MARGIN,
+          scrollTop:  comicFromId.containerStyles.top
+        });
+      });
+    };
+
     /*
      * Launches the initial expand and scroll on load, and the
      * garbage collector, if the relevant GET parameters are
@@ -909,15 +944,11 @@ angular.module('app', ['angular-md5'])
         var searchParams = $location.search();
 
         if (searchParams.id) {
-          var comicFromUrl = comics[_.findKey(comics, { 'id': searchParams.id })];
-          vm.toggleExpandComic(comicFromUrl);
+          vm.scrollToComic(searchParams.id);
+        }
 
-          $timeout(function() {
-            $('html, body').animate({
-              scrollLeft: comicFromUrl.containerStyles.left - LEFT_MARGIN,
-              scrollTop:  comicFromUrl.containerStyles.top
-            });
-          });
+        if (searchParams.showCollections) {
+          vm.toggleShowCollections('1');
         }
 
         /**

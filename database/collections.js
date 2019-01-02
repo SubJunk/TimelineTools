@@ -2914,8 +2914,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1',
-    '2008-5-14',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1114',
       'NewXMenVol1115',
@@ -2972,8 +2972,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1',
-    '2008-5-14',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenAnnualVol11',
       'NewXMenVol1117',
@@ -2993,8 +2993,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1',
-    '2008-5-14',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1122',
     ]
@@ -3014,8 +3014,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 1',
-    '2008-5-14',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1123',
       'NewXMenVol1124',
@@ -3068,8 +3068,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1127',
     ]
@@ -3098,8 +3098,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1128',
       'NewXMenVol1129',
@@ -3186,8 +3186,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1134',
     ]
@@ -3253,8 +3253,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1135',
       'NewXMenVol1136',
@@ -3286,8 +3286,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men Vol. 2',
-    '2008-8-27',
+    'New X-Men Omnibus',
+    '2016-9-20',
     [
       'NewXMenVol1139',
       'NewXMenVol1140',
@@ -3328,8 +3328,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Mystique Vol. 1: Dead Drop Gorgeous',
-    '2004-6-23',
+    'Mystique by Brian K. Vaughan Ultimate Collection',
+    '2011-5-25',
     [
       'MystiqueVol11',
       'MystiqueVol12',
@@ -3356,8 +3356,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Emma Frost Vol. 1: Higher Learning',
-    '2004-8-4',
+    'Emma Frost Ultimate Collection',
+    '2011-5-25',
     [
       'EmmaFrostVol11',
       'EmmaFrostVol12',
@@ -3389,6 +3389,7 @@ collections.push(
       'WolverineVol33',
       'WolverineVol34',
       'WolverineVol35',
+      'WolverineVol36',
     ]
   ),
   new Collection(
@@ -3433,17 +3434,104 @@ collections.push(
       'UncannyXMenVol1441',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'Mystique by Brian K. Vaughan Ultimate Collection',
+    '2011-5-25',
+    [
+      'MystiqueVol17',
+      'MystiqueVol18',
+      'MystiqueVol19',
+      'MystiqueVol110',
+      'MystiqueVol111',
+      'MystiqueVol112',
+      'MystiqueVol113',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 7: Storm - The Arena',
+    '2004-4-1',
+    [
+      'XTremeXMenVol136',
+      'XTremeXMenVol137',
+      'XTremeXMenVol138',
+      'XTremeXMenVol139',
+    ]
+  ),
+  new Collection(
+    'Wolverine Vol. 2: Coyote Crossing',
+    '2004-4-21',
+    [
+      'WolverineVol37',
+      'WolverineVol38',
+      'WolverineVol39',
+      'WolverineVol310',
+      'WolverineVol311',
+    ]
+  ),
+  new Collection(
+    'Wolverine Vol. 3: Return of the Native',
+    '2004-10-13',
+    [
+      'WolverineVol312',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol11',
+      'CableDeadpoolVol12',
+      'CableDeadpoolVol13',
+      'CableDeadpoolVol14',
+      'CableDeadpoolVol15',
+      'CableDeadpoolVol16',
+    ]
+  ),
+  new Collection(
+    'New X-Men Omnibus',
+    '2016-9-20',
+    [
+      'NewXMenVol1142',
+      'NewXMenVol1143',
+      'NewXMenVol1144',
+      'NewXMenVol1145',
+      'NewXMenVol1146',
+      'NewXMenVol1147',
+      'NewXMenVol1148',
+      'NewXMenVol1149',
+      'NewXMenVol1150',
+    ]
+  ),
+  new Collection(
+    'X-Treme X-Men Volume 8: Prisoner of Fire',
+    '2004-7-28',
+    [
+      'XTremeXMenVol140',
+      'XTremeXMenVol141',
+      'XTremeXMenVol142',
+      'XTremeXMenVol143',
+      'XTremeXMenVol144',
+      'XTremeXMenVol145',
+    ]
+  ),
+  new Collection(
+    'New X-Men Omnibus',
+    '2016-9-20',
+    [
+      'NewXMenVol1151',
+      'NewXMenVol1152',
+      'NewXMenVol1153',
+      'NewXMenVol1154',
+    ]
+  ),
   new Collection(
     'Uncanny X-Men Vol. 6: Bright New Mourning',
     '2004-6-23',
     [
+      'NewXMenVol1155',
+      'NewXMenVol1156',
       'UncannyXMenVol1442',
       'UncannyXMenVol1443',
-      'NewXMenVol1155',
-      'NewXMenVol1156'
     ]
   ),
   new Collection(
@@ -3453,6 +3541,513 @@ collections.push(
       'NewMutantsVol213',
     ]
   ),
+  new Collection(
+    'X-Treme X-Men Volume 8: Prisoner of Fire',
+    '2004-7-28',
+    [
+      'XTremeXMenVol146',
+    ]
+  ),
+  new Collection(
+    'X-Men: Day of the Atom',
+    '2005-3-2',
+    [
+      'XMenVol3157',
+      'XMenVol3158',
+      'XMenVol3159',
+      'XMenVol3160',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 1: The End of History',
+    '2004-12-15',
+    [
+      'UncannyXMenVol1444',
+      'UncannyXMenVol1445',
+      'UncannyXMenVol1446',
+      'UncannyXMenVol1447',
+      'UncannyXMenVol1448',
+      'UncannyXMenVol1449',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men Omnibus',
+    '2009-10-7',
+    [
+      'AstonishingXMenVol31',
+      'AstonishingXMenVol32',
+      'AstonishingXMenVol33',
+      'AstonishingXMenVol34',
+      'AstonishingXMenVol35',
+      'AstonishingXMenVol36',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol21',
+      'NewXMenVol22',
+      'NewXMenVol23',
+      'NewXMenVol24',
+      'NewXMenVol25',
+      'NewXMenVol26',
+    ]
+  ),
+  new Collection(
+    'Excalibur Vol. 1: Forging the Sword',
+    '2004-10-27',
+    [
+      'ExcaliburVol31',
+      'ExcaliburVol32',
+      'ExcaliburVol33',
+      'ExcaliburVol34',
+    ]
+  ),
+  new Collection(
+    'District X Vol. 1: Mr. M',
+    '2005-1-12',
+    [
+      'DistrictXVol11',
+      'DistrictXVol12',
+      'DistrictXVol13',
+      'DistrictXVol14',
+      'DistrictXVol15',
+      'DistrictXVol16',
+    ]
+  ),
+  new Collection(
+    'Emma Frost Ultimate Collection',
+    '2011-5-25',
+    [
+      'EmmaFrostVol17',
+      'EmmaFrostVol18',
+      'EmmaFrostVol19',
+      'EmmaFrostVol110',
+      'EmmaFrostVol111',
+      'EmmaFrostVol112',
+    ]
+  ),
+  new Collection(
+    'Wolverine Vol. 3: Return of the Native',
+    '2004-10-13',
+    [
+      'WolverineVol313',
+      'WolverineVol314',
+      'WolverineVol315',
+      'WolverineVol316',
+      'WolverineVol317',
+      'WolverineVol318',
+      'WolverineVol319',
+    ]
+  ),
+  new Collection(
+    'Mystique by Sean Mckeever Ultimate Collection',
+    '2011-6-22',
+    [
+      'MystiqueVol114',
+      'MystiqueVol115',
+      'MystiqueVol116',
+      'MystiqueVol117',
+      'MystiqueVol118',
+    ]
+  ),
+  new Collection(
+    'Emma Frost Ultimate Collection',
+    '2011-5-25',
+    [
+      'EmmaFrostVol113',
+      'EmmaFrostVol114',
+      'EmmaFrostVol115',
+      'EmmaFrostVol116',
+      'EmmaFrostVol117',
+      'EmmaFrostVol118',
+    ]
+  ),
+  new Collection(
+    'Rogue: The Complete Collection',
+    '2015-9-1',
+    [
+      'RogueVol31',
+      'RogueVol32',
+      'RogueVol33',
+      'RogueVol34',
+      'RogueVol35',
+      'RogueVol36',
+    ]
+  ),
+  new Collection(
+    'Mystique by Sean Mckeever Ultimate Collection',
+    '2011-6-22',
+    [
+      'MystiqueVol119',
+      'MystiqueVol120',
+      'MystiqueVol121',
+      'MystiqueVol122',
+      'MystiqueVol123',
+      'MystiqueVol124',
+    ]
+  ),
+  new Collection(
+    'Madrox: Multiple Choice',
+    '2005-3-30',
+    [
+      'MadroxVol11',
+      'MadroxVol12',
+      'MadroxVol13',
+      'MadroxVol14',
+      'MadroxVol15',
+    ]
+  ),
+  new Collection(
+    'Nightcrawler: The Devil Inside',
+    '2005-5-25',
+    [
+      'NightcrawlerVol31',
+      'NightcrawlerVol32',
+      'NightcrawlerVol33',
+      'NightcrawlerVol34',
+    ]
+  ),
+  new Collection(
+    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
+    '2017-1-31',
+    [
+      'SabretoothVol21',
+      'SabretoothVol22',
+      'SabretoothVol23',
+      'SabretoothVol24',
+    ]
+  ),
+  new Collection(
+    'NYX: Wannabe',
+    '2006-5-10',
+    [
+      'NYXVol11',
+      'NYXVol12',
+      'NYXVol13',
+      'NYXVol14',
+      'NYXVol15',
+      'NYXVol16',
+      'NYXVol17',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 2: The Cruelest Cut',
+    '2005-2-2',
+    [
+      'UncannyXMenVol1450',
+      'UncannyXMenVol1451',
+    ]
+  ),
+  new Collection(
+    'X-Men: Day of the Atom',
+    '2005-3-2',
+    [
+      'XMenVol3161',
+      'XMenVol3162',
+      'XMenVol3163',
+      'XMenVol3164',
+      'XMenVol3165',
+    ]
+  ),
+  new Collection(
+    'Excalibur Vol. 2: Saturday Night Fever',
+    '2005-5-18',
+    [
+      'ExcaliburVol35',
+      'ExcaliburVol36',
+      'ExcaliburVol37',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol27',
+      'NewXMenVol28',
+      'NewXMenVol29',
+    ]
+  ),
+  new Collection(
+    'District X Vol. 2: Underground',
+    '2005-9-7',
+    [
+      'DistrictXVol17',
+      'DistrictXVol18',
+      'DistrictXVol19',
+      'DistrictXVol110',
+      'DistrictXVol111',
+      'DistrictXVol112',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol17',
+      'CableDeadpoolVol18',
+      'CableDeadpoolVol19',
+      'CableDeadpoolVol110',
+    ]
+  ),
+  new Collection(
+    'Gambit: House of Cards',
+    '2005-3-9',
+    [
+      'GambitVol41',
+      'GambitVol42',
+      'GambitVol43',
+      'GambitVol44',
+      'GambitVol45',
+      'GambitVol46',
+    ]
+  ),
+  new Collection(
+    'Nightcrawler: The Devil Inside',
+    '2005-5-25',
+    [
+      'NightcrawlerVol35',
+      'NightcrawlerVol36',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 2: The Cruelest Cut',
+    '2005-2-2',
+    [
+      'UncannyXMenVol1452',
+      'UncannyXMenVol1453',
+      'UncannyXMenVol1454',
+    ]
+  ),
+  new Collection(
+    'X-Men: Golgotha',
+    '2005-7-13',
+    [
+      'XMenVol3166',
+      'XMenVol3167',
+      'XMenVol3168',
+      'XMenVol3169',
+      'XMenVol3170',
+    ]
+  ),
+  new Collection(
+    'Excalibur Vol. 2: Saturday Night Fever',
+    '2005-5-18',
+    [
+      'ExcaliburVol38',
+      'ExcaliburVol39',
+      'ExcaliburVol310',
+    ]
+  ),
+  new Collection(
+    'Gambit: Hath No Fury',
+    '2005-9-14',
+    [
+      'GambitVol47',
+      'GambitVol48',
+      'GambitVol49',
+      'GambitVol410',
+      'GambitVol411',
+      'GambitVol412',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol210',
+      'NewXMenVol211',
+      'NewXMenVol212',
+    ]
+  ),
+  new Collection(
+    'District X Vol. 2: Underground',
+    '2005-9-7',
+    [
+      'DistrictXVol113',
+      'DistrictXVol114',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol111',
+      'CableDeadpoolVol112',
+      'CableDeadpoolVol113',
+      'CableDeadpoolVol114',
+    ]
+  ),
+  new Collection(
+    'X-Force & Cable Vol. 1: The Legend Returns',
+    '2005-3-30',
+    [
+      'XForceVol21',
+      'XForceVol22',
+      'XForceVol23',
+      'XForceVol24',
+      'XForceVol25',
+      'XForceVol26',
+    ]
+  ),
+  new Collection(
+    'Nightcrawler: The Winding Way',
+    '2006-2-22',
+    [
+      'NightcrawlerVol37',
+      'NightcrawlerVol38',
+      'NightcrawlerVol39',
+      'NightcrawlerVol310',
+      'NightcrawlerVol311',
+      'NightcrawlerVol312',
+    ]
+  ),
+  new Collection(
+    'X-23: Innocence Lost',
+    '2006-4-12',
+    [
+      'X23Vol11',
+      'X23Vol12',
+      'X23Vol13',
+      'X23Vol14',
+      'X23Vol15',
+      'X23Vol16',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 3: On Ice',
+    '2005-8-10',
+    [
+      'UncannyXMenVol1455',
+      'UncannyXMenVol1456',
+      'UncannyXMenVol1457',
+      'UncannyXMenVol1458',
+      'UncannyXMenVol1459',
+    ]
+  ),
+  new Collection(
+    'X-Men: Phoenix - Endsong',
+    '2005-12-14',
+    [
+      'XMenPhoenixEndsongVol11',
+      'XMenPhoenixEndsongVol12',
+      'XMenPhoenixEndsongVol13',
+      'XMenPhoenixEndsongVol14',
+      'XMenPhoenixEndsongVol15',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Enemy of the State Ultimate Collection',
+    '2008-6-11',
+    [
+      'WolverineVol320',
+      'WolverineVol321',
+      'WolverineVol322',
+      'WolverineVol323',
+      'WolverineVol324',
+      'WolverineVol325',
+      'WolverineVol326',
+      'WolverineVol327',
+      'WolverineVol328',
+      'WolverineVol329',
+      'WolverineVol330',
+      'WolverineVol331',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol213',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 3: On Ice',
+    '2005-8-10',
+    [
+      'UncannyXMenVol1460',
+      'UncannyXMenVol1461',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men Omnibus',
+    '2009-10-7',
+    [
+      'AstonishingXMenVol37',
+      'AstonishingXMenVol38',
+      'AstonishingXMenVol39',
+      'AstonishingXMenVol310',
+      'AstonishingXMenVol311',
+      'AstonishingXMenVol312',
+    ]
+  ),
+  new Collection(
+    'Rogue: The Complete Collection',
+    '2015-9-1',
+    [
+      'RogueVol37',
+      'RogueVol38',
+      'RogueVol39',
+      'RogueVol310',
+      'RogueVol311',
+      'RogueVol312',
+    ]
+  ),
+  new Collection(
+    'X-Men: Bizarre Love Triangle',
+    '2005-10-12',
+    [
+      'XMenVol3171',
+      'XMenVol3172',
+      'XMenVol3173',
+      'XMenVol3174',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Academy X - Complete Collection',
+    '2018-12-31',
+    [
+      'NewXMenVol214',
+      'NewXMenVol215',
+      'NewXMenHellionsVol11',
+      'NewXMenHellionsVol12',
+      'NewXMenHellionsVol13',
+      'NewXMenHellionsVol14',
+      'NewXMenAcademyXYearbookSpecialVol11',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol115',
+      'CableDeadpoolVol116',
+      'CableDeadpoolVol117',
+      'CableDeadpoolVol118',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Enemy of the State Ultimate Collection',
+    '2008-6-11',
+    [
+      'WolverineVol332',
+    ]
+  ),
+  new Collection(
+    'X-Men: Kitty Pryde - Shadow & Flame',
+    '2006-1-18',
+    [
+      'XMenKittyPrydeShadowFlameVol11',
+      'XMenKittyPrydeShadowFlameVol12',
+      'XMenKittyPrydeShadowFlameVol13',
+      'XMenKittyPrydeShadowFlameVol14',
+      'XMenKittyPrydeShadowFlameVol15',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
   new Collection(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
@@ -3465,10 +4060,63 @@ collections.push(
       'WolverineVol338',
       'WolverineVol339',
       'WolverineVol340',
-      'SabretoothVol21',
-      'SabretoothVol22',
-      'SabretoothVol23',
-      'SabretoothVol24',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men Omnibus',
+    '2009-10-7',
+    [
+      'AstonishingXMenVol313',
+      'AstonishingXMenVol314',
+      'AstonishingXMenVol315',
+      'AstonishingXMenVol316',
+      'AstonishingXMenVol317',
+      'AstonishingXMenVol318',
+      'AstonishingXMenVol319',
+      'AstonishingXMenVol320',
+      'AstonishingXMenVol321',
+      'AstonishingXMenVol322',
+      'AstonishingXMenVol323',
+      'AstonishingXMenVol324',
+      'GiantSizeAstonishingXMenVol11',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol119',
+      'CableDeadpoolVol120',
+      'CableDeadpoolVol121',
+      'CableDeadpoolVol122',
+      'CableDeadpoolVol123',
+      'CableDeadpoolVol124',
+      'CableDeadpoolVol125',
+      'CableDeadpoolVol126',
+      'CableDeadpoolVol127',
+      'CableDeadpoolVol128',
+      'CableDeadpoolVol129',
+      'CableDeadpoolVol130',
+      'CableDeadpoolVol131',
+      'CableDeadpoolVol132',
+      'CableDeadpoolVol133',
+      'CableDeadpoolVol134',
+      'CableDeadpoolVol135',
+      'CableDeadpoolVol136',
+      'CableDeadpoolVol137',
+      'CableDeadpoolVol138',
+      'CableDeadpoolVol139',
+      'CableDeadpoolVol140',
+      'CableDeadpoolVol141',
+      'CableDeadpoolVol142',
+      'CableDeadpoolVol143',
+      'CableDeadpoolVol144',
+      'CableDeadpoolVol145',
+      'CableDeadpoolVol146',
+      'CableDeadpoolVol147',
+      'CableDeadpoolVol148',
+      'CableDeadpoolVol149',
+      'CableDeadpoolVol150',
     ]
   ),
   new Collection(
@@ -3482,19 +4130,6 @@ collections.push(
       'XForceSexandViolenceVol11',
       'XForceSexandViolenceVol12',
       'XForceSexandViolenceVol13'
-    ]
-  ),
-  new Collection(
-    'X-Treme X-Men Volume 8: Prisoner of Fire',
-    '2004-7-28',
-    [
-      'XTremeXMenVol140',
-      'XTremeXMenVol141',
-      'XTremeXMenVol142',
-      'XTremeXMenVol143',
-      'XTremeXMenVol144',
-      'XTremeXMenVol145',
-      'XTremeXMenVol146',
     ]
   ),
   /**

@@ -7,6 +7,13 @@ node_js:
   - "8"
 sudo: required
 addons:
+  artifacts:
+    debug: true
+    paths:
+      - ./errorShots/
+    target_paths: $TRAVIS_BUILD_NUMBER
+    working_dir: WORKING_DIR
+    s3_region: "ap-southeast-2"
   chrome: "stable"
   firefox: "latest"
   java: "8"

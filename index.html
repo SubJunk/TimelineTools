@@ -37,7 +37,7 @@
       <ul>
         <li>
           <div class="popover"><div>Toggle collections view</div></div>
-          <a class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}" ng-click="main.isShowCollections = !main.isShowCollections">
+          <a class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}" ng-click="main.toggleShowCollections()">
             <i class="material-icons">library_books</i>
           </a>
         </li>
@@ -54,7 +54,7 @@
         <div class="comic-collection z-depth-5 hoverable" ng-style="collection.styles">
           <div class="panel-left">
             <a ng-click="main.toggleExpandCollection(collection)" class="waves-effect cover-thumbnail">
-              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::collection.image}}.jpg" alt="{{::collection.title}} cover"></img>
+              <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::collection.image}}.jpg" alt="{{::collection.title}} cover"></img>
             </a>
           </div>
           <div class="expanded-panel">
@@ -65,7 +65,7 @@
                 <li ng-repeat="comic in ::collection.allCollectionComics track by comic.id">
                   <div class="popover"><div>{{::comic.series}} #{{::comic.issue}}</div></div>
                   <a title="{{::comic.series}} #{{::comic.issue}}" ng-click="main.toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
-                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::comic.image}}.jpg" ng-class="{current: comic.id === comicId}"></img>
+                    <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::comic.image}}.jpg" ng-class="{current: comic.id === comicId}"></img>
                   </a>
                 </li>
               </ul>
@@ -91,10 +91,10 @@
         <div class="popover"><div>#{{::comic.issue}}</div></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
           <div class="panel-left">
-            <a ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail">
-              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::comic.image}}.jpg"></img>
+            <a ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
+              <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::comic.image}}.jpg"></img>
             </a>
-            <ul class="pagination">
+            <ul class="pagination" ng-if="comic.id === main.expandedComicId">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
                 <div class="popover" ng-if="main.prevCollectionFirstComic"><div>{{main.prevCollection.title}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
@@ -121,9 +121,14 @@
               </li>
             </ul>
           </div>
-          <div class="expanded-panel">
-            <a ng-if="comic.link" class="marvel-unlimited-link" ng-href="{{comic.link}}" title="Open in Marvel Unlimited"></a>
-            <div class="series">{{::comic.series}} #{{::comic.issue}}</div>
+          <div class="expanded-panel" ng-if="comic.id === main.expandedComicId">
+            <a ng-if="::comic.link" class="marvel-unlimited-link" ng-href="{{::comic.link}}" title="Open in Marvel Unlimited"></a>
+            <div class="series">
+              {{::comic.series}} #{{::comic.issue}}
+              <a ng-click="main.scrollToComic(comic.id)" tabindex="0" title="Scroll to this comic's position on the page" class="scroll-to-comic-button">
+                <i class="material-icons">near_me</i>
+              </a>
+            </div>
             <div class="title" ng-repeat="title in ::comic.titles">{{::title}}</div>
             <div class="date">{{::comic.yearPublished}} / {{::comic.monthPublished}}</div>
             <div class="collection-comics">
@@ -132,7 +137,7 @@
                 <li ng-repeat="collectionComic in ::comic.collection.allCollectionComics track by collectionComic.id">
                   <div class="popover"><div>{{::collectionComic.series}} #{{::collectionComic.issue}}</div></div>
                   <a ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
-                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::collectionComic.image}}.jpg" ng-class="{current: collectionComic.id === main.expandedComicId}"></img>
+                    <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::collectionComic.image}}.jpg" ng-class="{current: collectionComic.id === main.expandedComicId}"></img>
                   </a>
                 </li>
               </ul>
@@ -141,7 +146,7 @@
         </div>
       </li>
     </ul>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/angular-md5@0.1.10/angular-md5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
