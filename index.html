@@ -92,7 +92,22 @@
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
           <div class="panel-left">
             <a ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
-              <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::comic.image}}.jpg"></img>
+              <img
+                  class="responsive-img"
+                  ng-if="comic.id !== main.expandedComicId"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.spirton.com/images/comics/{{::comic.image}}.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.spirton.com/images/comics/{{::comic.image}}.jpg 1x"
+                  ng-src="https://api.rethumb.com/v1/square/50/https://www.spirton.com/images/comics/{{::comic.image}}.jpg"
+              >
+              <img
+                  class="responsive-img"
+                  ng-if="comic.id === main.expandedComicId"
+                  srcset="
+                      https://api.rethumb.com/v1/width/400/https://www.spirton.com/images/comics/{{::comic.image}}.jpg 2x,
+                      https://api.rethumb.com/v1/width/200/https://www.spirton.com/images/comics/{{::comic.image}}.jpg 1x"
+                  ng-src="https://api.rethumb.com/v1/width/200/https://www.spirton.com/images/comics/{{::comic.image}}.jpg"
+              >
             </a>
             <ul class="pagination" ng-if="comic.id === main.expandedComicId">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
