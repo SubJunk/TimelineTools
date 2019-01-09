@@ -95,7 +95,7 @@
               <img
                   class="responsive-img"
                   ng-if="comic.id !== main.expandedComicId"
-                  srcset="
+                  ng-srcset="
                       https://api.rethumb.com/v1/square/100/https://www.spirton.com/images/comics/{{::comic.image}}.jpg 2x,
                       https://api.rethumb.com/v1/square/50/https://www.spirton.com/images/comics/{{::comic.image}}.jpg 1x"
                   ng-src="https://api.rethumb.com/v1/square/50/https://www.spirton.com/images/comics/{{::comic.image}}.jpg"
@@ -103,7 +103,7 @@
               <img
                   class="responsive-img"
                   ng-if="comic.id === main.expandedComicId"
-                  srcset="
+                  ng-srcset="
                       https://api.rethumb.com/v1/width/400/https://www.spirton.com/images/comics/{{::comic.image}}.jpg 2x,
                       https://api.rethumb.com/v1/width/200/https://www.spirton.com/images/comics/{{::comic.image}}.jpg 1x"
                   ng-src="https://api.rethumb.com/v1/width/200/https://www.spirton.com/images/comics/{{::comic.image}}.jpg"
