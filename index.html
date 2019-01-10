@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="images/x-men.ico" type="image/x-icon">
-  <title>TimelineTools</title>
+  <title>X-Men Timeline</title>
 </head>
 <body ng-style="main.bodyStyles" ng-controller="DataController as main">
   <div id="app" ng-cloak>
@@ -54,7 +54,14 @@
         <div class="comic-collection z-depth-5 hoverable" ng-style="collection.styles">
           <div class="panel-left">
             <a ng-click="main.toggleExpandCollection(collection)" class="waves-effect cover-thumbnail">
-              <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::collection.image}}.jpg" alt="{{::collection.title}} cover"></img>
+              <img
+                  class="responsive-img"
+                  ng-if="comic.id === main.expandedComicId"
+                  ng-srcset="
+                      https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 2x,
+                      https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 1x"
+                  ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg"
+              >
             </a>
           </div>
           <div class="expanded-panel">
@@ -65,7 +72,14 @@
                 <li ng-repeat="comic in ::collection.allCollectionComics track by comic.id">
                   <div class="popover"><div>{{::comic.series}} #{{::comic.issue}}</div></div>
                   <a title="{{::comic.series}} #{{::comic.issue}}" ng-click="main.toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
-                    <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::comic.image}}.jpg" ng-class="{current: comic.id === comicId}"></img>
+                    <img
+                        class="responsive-img"
+                        ng-class="{current: comic.id === comicId}"
+                        ng-srcset="
+                            https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
+                            https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 1x"
+                        ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+                    >
                   </a>
                 </li>
               </ul>
@@ -92,7 +106,22 @@
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
           <div class="panel-left">
             <a ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
-              <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::comic.image}}.jpg"></img>
+              <img
+                  class="responsive-img"
+                  ng-if="comic.id !== main.expandedComicId"
+                  ng-srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 1x"
+                  ng-src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+              >
+              <img
+                  class="responsive-img"
+                  ng-if="comic.id === main.expandedComicId"
+                  ng-srcset="
+                      https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
+                      https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 1x"
+                  ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+              >
             </a>
             <ul class="pagination" ng-if="comic.id === main.expandedComicId">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
@@ -137,7 +166,14 @@
                 <li ng-repeat="collectionComic in ::comic.collection.allCollectionComics track by collectionComic.id">
                   <div class="popover"><div>{{::collectionComic.series}} #{{::collectionComic.issue}}</div></div>
                   <a ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
-                    <img class="responsive-img" ng-src="https://www.spirton.com/images/comics/{{::collectionComic.image}}.jpg" ng-class="{current: collectionComic.id === main.expandedComicId}"></img>
+                    <img
+                        class="responsive-img"
+                        ng-class="{current: collectionComic.id === main.expandedComicId}"
+                        ng-srcset="
+                            https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg 2x,
+                            https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg 1x"
+                        ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg"
+                    >
                   </a>
                 </li>
               </ul>
