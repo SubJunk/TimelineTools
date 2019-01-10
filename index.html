@@ -168,6 +168,7 @@
                   <a ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
                     <img
                         class="responsive-img"
+                        ng-class="{current: collectionComic.id === main.expandedComicId}"
                         ng-srcset="
                             https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg 2x,
                             https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg 1x"
