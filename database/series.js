@@ -43,11 +43,6 @@ function SeriesVolume(seriesId, volume, startYear, title) {
   if (volume > 1) {
     this.titleWithVolume += ' Vol. ' + volume;
   }
-
-  // Ugly hack to make the Uncanny series sit on the top row
-  if (this.id === 'GiantSizeXMenVol1') {
-    this.verticalPosition = 1;
-  }
 }
 
 var series        = [];
