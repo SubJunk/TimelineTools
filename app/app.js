@@ -453,7 +453,7 @@ angular.module('app', ['angular-md5'])
           id: 'label-' + seriesVolumeLabels.length,
           containerStyles: {
             top: comic.containerStyles.top,
-            left: comic.containerStyles.left - LABEL_OFFSET
+            masterRight: comic.containerStyles.left + BODY_PADDING
           },
           labelClasses: {},
           labelStyles: {},
@@ -667,10 +667,11 @@ angular.module('app', ['angular-md5'])
       scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
 
-      /**
-       * Label positioning:
-       */
+      // Label positioning:
       _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
+        // We only know for sure how wide the page will be after the big initial loop, so we wait until here
+        seriesVolumeLabel.containerStyles.right = vm.bodyStyles.width - seriesVolumeLabel.containerStyles.masterRight;
+
         isScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
 
         seriesVolumeLabel.labelClasses.stickyLeft = isScrolledPastLeft;

@@ -49,11 +49,6 @@ body {
   position: absolute;
 }
 
-.series-volume-label-container,
-.series-volume-label {
-  width: 130px;
-}
-
 .series-volume-label-container {
   margin-top: calc(var(--month-width) * 0.29);
   z-index: 2;
