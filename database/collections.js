@@ -21,6 +21,35 @@ function Collection(title, datePublished, comicIds) {
 var collections = [];
 collections.push(
   new Collection(
+    'X-Men Epic Collection: Children of the Atom',
+    '2015-1-6',
+    [
+      'UncannyXMenVol11',
+      'UncannyXMenVol12',
+      'UncannyXMenVol13',
+      'UncannyXMenVol14',
+      'UncannyXMenVol15',
+      'UncannyXMenVol16',
+      'UncannyXMenVol17',
+      'UncannyXMenVol18',
+      'UncannyXMenVol19',
+      'UncannyXMenVol110',
+      'UncannyXMenVol111',
+      'UncannyXMenVol112',
+      'UncannyXMenVol113',
+      'UncannyXMenVol114',
+      'UncannyXMenVol115',
+      'UncannyXMenVol116',
+      'UncannyXMenVol117',
+      'UncannyXMenVol118',
+      'UncannyXMenVol119',
+      'UncannyXMenVol120',
+      'UncannyXMenVol121',
+      'UncannyXMenVol122',
+      'UncannyXMenVol123',
+    ]
+  ),
+  new Collection(
     'X-Men Epic Collection Vol. 5: Second Genesis',
     '2017-4',
     [
