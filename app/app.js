@@ -460,8 +460,7 @@ angular.module('app', ['angular-md5'])
         });
 
         newLabelNeeded = false;
-      } else if (currentSeriesVolume.title !== 'Giant Size X-Men') {
-        // Really ugly exception for Giant Size to stop it taking up the first row
+      } else {
         var seriesVolumeLabelIndex = _.findLastIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
           return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
         });

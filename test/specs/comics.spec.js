@@ -4,13 +4,13 @@ describe('Comics', function() {
   });
   
   it('should create a comic thumbnail with the correct value, and open the expanded panel with the correct title', function() {
-    const giantSizeThumbnail = $('.cover-thumbnail img[src*=Giant_Size_X-Men_Vol_1_1]');
+    const giantSizeThumbnail = $('.cover-thumbnail img[src*=Uncanny_X-Men_Vol_1_2]');
     giantSizeThumbnail.waitForDisplayed();
 
-    const giantSizeExpandLink = $('#expand-GiantSizeXMenVol11');
+    const giantSizeExpandLink = $('#expand-UncannyXMenVol12');
     giantSizeExpandLink.click();
 
-    const giantSizeExpandedPanelTitle = $('div.series*=Giant Size X-Men #1');
+    const giantSizeExpandedPanelTitle = $('div.series*=Uncanny X-Men #2');
     giantSizeExpandedPanelTitle.waitForDisplayed();
   });
 });
