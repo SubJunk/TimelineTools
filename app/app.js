@@ -12,6 +12,7 @@ angular.module('app', ['angular-md5'])
     var seriesVolumes = $window.seriesVolumes;
 
     const BODY_PADDING = 20;
+    const BODY_PADDING_X2 = BODY_PADDING * 2;
     const LEFT_MARGIN = 200;
     const TOP_MARGIN = 300;
 
@@ -33,12 +34,6 @@ angular.module('app', ['angular-md5'])
 
     // Pixel counts
     const VISUAL_BLOCK_SIZE = 60;
-
-    /*
-     * How far away the left edge of labels are from the left
-     * of the first thumbnail of a series volume.
-     */
-    const LABEL_OFFSET = 150;
 
     var $jqWindow = $(window);
 
@@ -452,8 +447,9 @@ angular.module('app', ['angular-md5'])
           right: comic.containerStyles.left,
           id: 'label-' + seriesVolumeLabels.length,
           containerStyles: {
+            masterLeft: comic.containerStyles.left,
+            masterRight: comic.containerStyles.left, // this looks weird but it increments when other issues appear
             top: comic.containerStyles.top,
-            masterRight: comic.containerStyles.left + BODY_PADDING
           },
           labelClasses: {},
           labelStyles: {},
@@ -470,6 +466,7 @@ angular.module('app', ['angular-md5'])
         }
 
         seriesVolumeLabels[seriesVolumeLabelIndex].right = comic.containerStyles.left;
+        seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles.masterRight = comic.containerStyles.left;
       }
     });
 
@@ -659,37 +656,51 @@ angular.module('app', ['angular-md5'])
     var isStickyLeft;
     var isStickyRight;
     var isStickyBottom;
+    var $jqLabel;
+    var scrollVsPositionDifference;
     var repositionStickyElements = function() {
       if (doSpeedProfile) var startTimeReposition = new Date();
 
       // The scroll position of the page, minus the main padding
-      scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
+      scrollLeft = $jqWindow.scrollLeft();
       scrollTop  = $jqWindow.scrollTop();
+      scrollRight = vm.bodyStyles.width - scrollLeft;
 
       // Label positioning:
       _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
-        // We only know for sure how wide the page will be after the big initial loop, so we wait until here
-        seriesVolumeLabel.containerStyles.right = vm.bodyStyles.width - seriesVolumeLabel.containerStyles.masterRight;
+        // We only know the width after the initial render, so store it
+        if (!seriesVolumeLabel.labelWidthFromDom) {
+          $jqLabel = $('#' + seriesVolumeLabel.id);
+          if ($jqLabel.length > -1) {
+            seriesVolumeLabel.labelWidthFromDom = $jqLabel.outerWidth();
+          }
+        }
 
-        isScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
+        // We only know for sure how wide the page will be after the big initial loop, so we wait until here
+        seriesVolumeLabel.containerStyles.right = vm.bodyStyles.width - seriesVolumeLabel.containerStyles.masterLeft - BODY_PADDING;
+
+        isScrolledPastLeft = Boolean(scrollRight < (seriesVolumeLabel.containerStyles.right + seriesVolumeLabel.labelWidthFromDom + BODY_PADDING));
 
         seriesVolumeLabel.labelClasses.stickyLeft = isScrolledPastLeft;
 
         if (isScrolledPastLeft) {
           seriesVolumeLabel.labelStyles.marginTop = '-' + scrollTop;
 
+          scrollVsPositionDifference = scrollRight - seriesVolumeLabel.containerStyles.right;
+
           // If the browser is scrolled past the right, hide the label
           if (
-            (scrollLeft - seriesVolumeLabel.right) > -LABEL_OFFSET &&
-            (scrollLeft - seriesVolumeLabel.right) < 0
+            scrollVsPositionDifference >= -seriesVolumeLabel.labelWidthFromDom &&
+            scrollVsPositionDifference < 0
           ) {
             seriesVolumeLabel.visible = true;
-            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - LABEL_OFFSET);
-          } else if (seriesVolumeLabel.right < (scrollLeft + LABEL_OFFSET)) {
+            seriesVolumeLabel.labelStyles.left = scrollVsPositionDifference;
+          } else if (seriesVolumeLabel.right < (scrollLeft + seriesVolumeLabel.labelWidthFromDom)) {
             seriesVolumeLabel.visible = false;
           } else {
             seriesVolumeLabel.visible = true;
             seriesVolumeLabel.labelStyles.left = '0';
+            seriesVolumeLabel.labelStyles.right = '';
           }
         } else {
           seriesVolumeLabel.visible = true;
@@ -785,7 +796,7 @@ angular.module('app', ['angular-md5'])
     });
 
     // Reposition the expanded panel when the user scrolls the viewport
-    $jqWindow.on('load scroll', repositionStickyElements);
+    $jqWindow.on('scroll', repositionStickyElements);
 
     // Catch clicks
     $jqWindow.on('click', function(data) {
@@ -877,6 +888,8 @@ angular.module('app', ['angular-md5'])
     $timeout(function() {
       // Make room for the farthest-right expanded panel
       vm.bodyStyles.width += $('.scroll-anchor').width();
+
+      repositionStickyElements();
 
       // Make room for the farthest-bottom expanded panel
       vm.bodyStyles.height = $(document).height() + $(window).height();
