@@ -447,7 +447,8 @@ angular.module('app', ['angular-md5'])
           id: 'label-' + seriesVolumeLabels.length,
           containerStyles: {
             top: comic.containerStyles.top,
-            left: comic.containerStyles.left
+            left: comic.containerStyles.left,
+            opacity: 0 // Hide it initially in a way that lets jQuery still get its width
           },
           labelClasses: {},
           labelStyles: {},
@@ -681,6 +682,8 @@ angular.module('app', ['angular-md5'])
           }
         }
 
+        seriesVolumeLabel.scrollDifference = scrollLeft - seriesVolumeLabel.right;
+
         isScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
 
         seriesVolumeLabel.labelClasses.stickyLeft = isScrolledPastLeft;
@@ -690,8 +693,8 @@ angular.module('app', ['angular-md5'])
 
           // If the browser is scrolled past the right, hide the label
           if (
-            (scrollLeft - seriesVolumeLabel.right) > -seriesVolumeLabel.labelWidthFromDom &&
-            (scrollLeft - seriesVolumeLabel.right) < 0
+            seriesVolumeLabel.scrollDifference > -seriesVolumeLabel.labelWidthFromDom &&
+            seriesVolumeLabel.scrollDifference < 0
           ) {
             seriesVolumeLabel.visible = true;
             seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - seriesVolumeLabel.labelWidthFromDom);
@@ -705,6 +708,9 @@ angular.module('app', ['angular-md5'])
           seriesVolumeLabel.visible = true;
           seriesVolumeLabel.labelStyles.marginTop = false;
         }
+
+        // Show the label after we have its correct position calculated
+        seriesVolumeLabel.containerStyles.opacity = 1;
       });
 
       // Exit early and force render if there is no comic expanded
