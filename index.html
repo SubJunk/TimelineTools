@@ -106,24 +106,21 @@
         <div class="popover"><div>#{{::comic.issue}}</div></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
           <div class="panel-left">
-            <a ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
+            <a ng-if="comic.id !== main.expandedComicId" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
               <img
                   class="responsive-img"
-                  ng-if="comic.id !== main.expandedComicId"
                   ng-srcset="
                       https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
                       https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 1x"
                   ng-src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
               >
-              <img
-                  class="responsive-img"
-                  ng-if="comic.id === main.expandedComicId"
-                  ng-srcset="
-                      https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
-                      https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 1x"
-                  ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
-              >
             </a>
+            <span class="cover-thumbnail" ng-if="comic.id === main.expandedComicId">
+              <img
+                  class="responsive-img materialboxed"
+                  ng-src="https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+              >
+            </span>
             <ul class="pagination" ng-if="comic.id === main.expandedComicId">
               <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
                 <div class="popover" ng-if="main.prevCollectionFirstComic"><div>{{main.prevCollection.title}}</div></div>
