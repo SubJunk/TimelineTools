@@ -133,13 +133,13 @@
               </li>
               <li class="waves-effect" ng-class="{disabled: !main.prevComic}">
                 <div class="popover" ng-if="main.prevComic"><div>{{main.prevComic.series}} #{{main.prevComic.issue}}</div></div>
-                <a ng-click="main.toggleExpandComic(main.prevComic)">
+                <a ng-click="main.toggleExpandComic(main.prevComic)" class="button-previous-comic">
                   <i class="material-icons">chevron_left</i>
                 </a>
               </li>
               <li class="waves-effect" ng-class="{disabled: !main.nextComic}">
                 <div class="popover" ng-if="main.nextComic"><div>{{main.nextComic.series}} #{{main.nextComic.issue}}</div></div>
-                <a ng-click="main.toggleExpandComic(main.nextComic)">
+                <a ng-click="main.toggleExpandComic(main.nextComic)" class="button-next-comic">
                   <i class="material-icons">chevron_right</i>
                 </a>
               </li>
