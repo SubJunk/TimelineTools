@@ -896,6 +896,10 @@ angular.module('app', ['angular-md5'])
 
     var infoModalInstance;
     $timeout(function() {
+      // Hide the initial data and display the real one
+      $('#app').fadeIn('slow');
+      $('#pre-app').fadeOut('slow');
+
       // Make room for the farthest-right expanded panel
       vm.bodyStyles.width += $('.scroll-anchor').width();
 
