@@ -61,7 +61,7 @@ series.push(
   new Series('Bishop', {1: 1994}),
   new Series('Baby\'s First Deadpool Book', {1: 1998}),
   new Series('Bishop: The Last X-Man', {1: 1999}),
-  new Series('Black Panther', {3: 1998}),
+  new Series('Black Panther', {3: 1998, 4: 2005}),
   new Series('Blink', {1: 2001}),
   new Series('Cable', {1: 1993, 2: 2008}),
   new Series('Cable & Deadpool', {1: 2004}),

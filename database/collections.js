@@ -4284,6 +4284,26 @@ collections.push(
       'OroroBeforetheStormVol14',
     ]
   ),
+  new Collection(
+    'X-Men/Black Panther: Wild Kingdom',
+    '2006-1-25',
+    [
+      'XMenVol3175',
+      'BlackPantherVol48',
+      'XMenVol3176',
+      'BlackPantherVol49',
+    ]
+  ),
+  new Collection(
+    'House of M: Excalibur - Prelude',
+    '2005-7-27',
+    [
+      'ExcaliburVol311',
+      'ExcaliburVol312',
+      'ExcaliburVol313',
+      'ExcaliburVol314',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */

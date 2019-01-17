@@ -117,7 +117,7 @@ addComicsInSeriesVolume('AvengersVol1', [
   [368, '1993-11'],
   [369, '1993-12'],
   [401, '1996-8'],
-  [402, '1996-9']
+  [402, '1996-9'],
 ]);
 addComicsInSeriesVolume('AvengersWestCoastVol2', [[101, '1993-12']]);
 addComicsInSeriesVolume('BabysFirstDeadpoolBookVol1', [[1, '1998-12']]);
@@ -125,22 +125,26 @@ addComicsInSeriesVolume('BishopVol1', [
   [1, '1994-12'],
   [2, '1995-1'],
   [3, '1995-2'],
-  [4, '1995-3']
+  [4, '1995-3'],
 ]);
 addComicsInSeriesVolume('BishopTheLastXManVol1', [
   [15, '2000-12'],
   [16, '2001-1'],
 ]);
 addComicsInSeriesVolume('BlackPantherVol3', [[23, '2000-10']]);
+addComicsInSeriesVolume('BlackPantherVol4', [
+  [8, '2005-9-21'],
+  [9, '2005-10-26'],
+]);
 addComicsInSeriesVolume('BlinkVol1', [
   [1, '2001-3'],
   [2, '2001-4'],
   [3, '2001-5'],
-  [4, '2001-6']
+  [4, '2001-6'],
 ]);
 addComicsInSeriesVolume('CableBloodMetalVol1', [
   [1, '1992-10'],
-  [2, '1992-11']
+  [2, '1992-11'],
 ]);
 addComicsInSeriesVolume('CableMachineManAnnualVol1', [[1, '1998-5']]);
 addComicsInSeriesVolume('CableVol1', [
@@ -457,6 +461,10 @@ addComicsInSeriesVolume('ExcaliburVol3', [
   [8, '2004-12-22'],
   [9, '2005-2-2'],
   [10, '2005-2-23'],
+  [11, '2005-3-23'],
+  [12, '2005-5-4'],
+  [13, '2005-5-11'],
+  [14, '2005-5-25'],
 ]);
 addComicsInSeriesVolume('FactorXVol1', [
   [1, '1995-3'],
@@ -1946,6 +1954,8 @@ addComicsInSeriesVolume('XMenVol3', [
   [172, '2005-6-29'],
   [173, '2005-7-27'],
   [174, '2005-8-10'],
+  [175, '2005-9-14'],
+  [176, '2005-10-19'],
 ]);
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
