@@ -416,3 +416,11 @@ li:hover {
 .tooltip.show .arrow::before {
   border-bottom-color: #222;
 }
+
+/**
+ * Override Materialize
+ */
+
+.material-placeholder {
+  z-index: 2;
+}

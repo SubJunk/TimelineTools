@@ -229,6 +229,11 @@ angular.module('app', ['angular-md5'])
         return seriesVolume.id === currentComic.seriesVolumeId;
       });
 
+      // Instruct Materialize to make the expanded cover fullscreen on click
+      $timeout(function() {
+        $('.materialboxed').materialbox();
+      });
+
       var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
       if (expandedSeriesVolume.marvelId) {
         setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
