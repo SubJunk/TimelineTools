@@ -4236,16 +4236,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'Deadpool & Cable Omnibus',
-    '2014-11-11',
-    [
-      'CableDeadpoolVol115',
-      'CableDeadpoolVol116',
-      'CableDeadpoolVol117',
-      'CableDeadpoolVol118',
-    ]
-  ),
-  new Collection(
     'Wolverine: Enemy of the State Ultimate Collection',
     '2008-6-11',
     [
@@ -4304,9 +4294,95 @@ collections.push(
       'ExcaliburVol314',
     ]
   ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol115',
+      'CableDeadpoolVol116',
+      'CableDeadpoolVol117',
+      'CableDeadpoolVol118',
+    ]
+  ),
+  new Collection(
+    'X-Men and Spider-Man',
+    '2009-12-9',
+    [
+      'XMenSpiderManVol11',
+      'XMenSpiderManVol12',
+      'XMenSpiderManVol13',
+      'XMenSpiderManVol14',
+    ]
+  ),
+  new Collection(
+    'House of M',
+    '2006-2-1',
+    [
+      'HouseofMVol11',
+      'HouseofMVol12',
+      'HouseofMVol13',
+      'HouseofMVol14',
+      'HouseofMVol15',
+    ]
+  ),
+  new Collection(
+    'House of M: Uncanny X-Men',
+    '2006-1-25',
+    [
+      'UncannyXMenVol1462',
+      'UncannyXMenVol1463',
+      'UncannyXMenVol1464',
+      'UncannyXMenVol1465',
+      'SecretsoftheHouseofMVol11',
+    ]
+  ),
+  new Collection(
+    'House of M',
+    '2006-2-1',
+    [
+      'HouseofMVol16',
+      'HouseofMVol17',
+      'HouseofMVol18',
+    ]
+  ),
+  new Collection(
+    'Decimation: X-Men - The Day After',
+    '2006-4-26',
+    [
+      'DecimationHouseofMTheDayAfterVol11',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol119',
+      'CableDeadpoolVol120',
+      'CableDeadpoolVol121',
+      'CableDeadpoolVol122',
+      'CableDeadpoolVol123',
+    ]
+  ),
+  new Collection(
+    'Decimation: X-Men - The Day After',
+    '2006-4-26',
+    [
+      'XMenVol3177',
+      'XMenVol3178',
+      'XMenVol3179',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Decimation: X-Men - The Day After',
+    '2006-4-26',
+    [
+      'XMenVol3180',
+      'XMenVol3181',
+    ]
+  ),
   new Collection(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
@@ -4344,11 +4420,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol119',
-      'CableDeadpoolVol120',
-      'CableDeadpoolVol121',
-      'CableDeadpoolVol122',
-      'CableDeadpoolVol123',
       'CableDeadpoolVol124',
       'CableDeadpoolVol125',
       'CableDeadpoolVol126',

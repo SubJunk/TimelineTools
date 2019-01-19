@@ -375,6 +375,7 @@ addComicsInSeriesVolume('CableDeadpoolVol1', [
   [49, '2008-1-16'],
   [50, '2008-2-20'],
 ]);
+addComicsInSeriesVolume('DecimationHouseofMTheDayAfterVol1', [[1, '2005-11-9']]);
 addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']]);
 addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']]);
 addComicsInSeriesVolume('DeadpoolTheCircleChaseVol1', [
@@ -571,6 +572,16 @@ addComicsInSeriesVolume('GiantSizeFantasticFourVol1', [[4, '1975-2-10']]);
 addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']]]);
 addComicsInSeriesVolume('GiantSizeXMenFirstClassVol1', [[1, '2008-10-29', ]]);
 addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']]);
+addComicsInSeriesVolume('HouseofMVol1', [
+  [1, '2005-6-1'],
+  [2, '2005-6-22'],
+  [3, '2005-7-6'],
+  [4, '2005-7-20'],
+  [5, '2005-8-10'],
+  [6, '2005-10-1'],
+  [7, '2005-10-12'],
+  [8, '2005-11-2'],
+]);
 addComicsInSeriesVolume('IconsCyclopsVol1', [
   [1, '2001-9'],
   [2, '2001-10'],
@@ -886,6 +897,7 @@ addComicsInSeriesVolume('SecretWarsVol1', [
   [11, '1985-3'],
   [12, '1985-4'],
 ]);
+addComicsInSeriesVolume('SecretsoftheHouseofMVol1', [[1, '2005-7-20']]);
 addComicsInSeriesVolume('SoldierXVol1', [
   [1, '2002-9'],
   [2, '2002-10'],
@@ -1354,6 +1366,10 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [459, '2005-5-18'],
   [460, '2005-6-1'],
   [461, '2005-6-15'],
+  [462, '2005-7-6'],
+  [463, '2005-8-3'],
+  [464, '2005-9-7'],
+  [465, '2005-10-5'],
   /**
    * Complete until here
    */
@@ -1956,6 +1972,11 @@ addComicsInSeriesVolume('XMenVol3', [
   [174, '2005-8-10'],
   [175, '2005-9-14'],
   [176, '2005-10-19'],
+  [177, '2005-11-9'],
+  [178, '2005-11-30'],
+  [179, '2005-12-14'],
+  [180, '2005-12-28'],
+  [181, '2006-1-25'],
 ]);
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
@@ -2067,6 +2088,12 @@ addComicsInSeriesVolume('XMenSearchforCyclopsVol1', [
   [2, '2001-1'],
   [3, '2001-2'],
   [4, '2001-3'],
+]);
+addComicsInSeriesVolume('XMenSpiderManVol1', [
+  [1, '2008-11-1'],
+  [2, '2008-12-10'],
+  [3, '2009-1-14'],
+  [4, '2009-3-4'],
 ]);
 addComicsInSeriesVolume('XMenTheWeddingAlbumVol1', [[1, '1994-1-1']]);
 addComicsInSeriesVolume('XMenUnlimitedVol1', [
