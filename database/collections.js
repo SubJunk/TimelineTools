@@ -4295,26 +4295,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'Deadpool & Cable Omnibus',
-    '2014-11-11',
-    [
-      'CableDeadpoolVol115',
-      'CableDeadpoolVol116',
-      'CableDeadpoolVol117',
-      'CableDeadpoolVol118',
-    ]
-  ),
-  new Collection(
-    'X-Men and Spider-Man',
-    '2009-12-9',
-    [
-      'XMenSpiderManVol11',
-      'XMenSpiderManVol12',
-      'XMenSpiderManVol13',
-      'XMenSpiderManVol14',
-    ]
-  ),
-  new Collection(
     'House of M',
     '2006-2-1',
     [
@@ -4323,6 +4303,16 @@ collections.push(
       'HouseofMVol13',
       'HouseofMVol14',
       'HouseofMVol15',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol115',
+      'CableDeadpoolVol116',
+      'CableDeadpoolVol117',
+      'CableDeadpoolVol118',
     ]
   ),
   new Collection(
@@ -4343,6 +4333,16 @@ collections.push(
       'HouseofMVol16',
       'HouseofMVol17',
       'HouseofMVol18',
+    ]
+  ),
+  new Collection(
+    'X-Men and Spider-Man',
+    '2009-12-9',
+    [
+      'XMenSpiderManVol11',
+      'XMenSpiderManVol12',
+      'XMenSpiderManVol13',
+      'XMenSpiderManVol14',
     ]
   ),
   new Collection(
@@ -4370,6 +4370,27 @@ collections.push(
       'XMenVol3177',
       'XMenVol3178',
       'XMenVol3179',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 1',
+    '2006-4-26',
+    [
+      'NewXMenVol220',
+      'NewXMenVol221',
+      'NewXMenVol222',
+      'NewXMenVol223',
+    ]
+  ),
+  new Collection(
+    'Decimation: Generation M',
+    '2006-6-28',
+    [
+      'GenerationMVol11',
+      'GenerationMVol12',
+      'GenerationMVol13',
+      'GenerationMVol14',
+      'GenerationMVol15',
     ]
   ),
   /**

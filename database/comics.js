@@ -524,6 +524,13 @@ addComicsInSeriesVolume('GambitandtheXTernalsVol1', [
   [3, '1995-5'],
   [4, '1995-6']
 ]);
+addComicsInSeriesVolume('GenerationMVol1', [
+  [1, '2006-1-10'],
+  [2, '2006-2-1'],
+  [3, '2006-3-1'],
+  [4, '2006-4-1'],
+  [5, '2006-5-1'],
+]);
 addComicsInSeriesVolume('GenerationNextVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
@@ -802,6 +809,10 @@ addComicsInSeriesVolume('NewXMenVol2', [
   [13, '2005-5-4'],
   [14, '2005-5-18'],
   [15, '2005-6-22'],
+  [20, '2005-11-9'],
+  [21, '2005-12-14'],
+  [22, '2006-1-11'],
+  [23, '2006-2-22'],
 ]);
 addComicsInSeriesVolume('NightcrawlerVol1', [
   [1, '1985-11'],

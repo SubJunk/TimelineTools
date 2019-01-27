@@ -89,6 +89,7 @@ series.push(
   new Series('Further Adventures of Cyclops & Phoenix', {1: 1996}),
   new Series('Gambit', {1: 1993, 2: 1997, 4: 2004}),
   new Series('Gambit and the X-Ternals', {1: 1995}),
+  new Series('Generation M', {1: 2005}),
   new Series('Generation Next', {1: 1995}),
   new Series('Generation X', {1: 1994}),
   new Series('Generation X Annual', {1: 1995}),
