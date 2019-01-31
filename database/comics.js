@@ -1644,14 +1644,22 @@ addComicsInSeriesVolume('XFactorVol2', [
   [1, '2002-6'],
   [2, '2002-7'],
   [3, '2002-9'],
-  [4, '2002-10']
+  [4, '2002-10'],
+]);
+addComicsInSeriesVolume('XFactorVol3', [
+  [1, '2005-12-14'],
+  [2, '2005-12-28'],
+  [3, '2006-2-1'],
+  [4, '2006-3-1'],
+  [5, '2006-3-22'],
+  [6, '2006-4-26'],
 ]);
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],
   [3, '1988-8'],
   [4, '1989-10'],
   [6, '1991-8'],
-  [7, '1992-5']
+  [7, '1992-5'],
 ]);
 addComicsInSeriesVolume('XForceVol1', [
   [1, '1991-8'],
@@ -1820,6 +1828,13 @@ addComicsInSeriesVolume('XMenFirstClassVol2', [
   [14, '2008-7-30'],
   [15, '2008-8-20'],
   [16, '2008-9-17'],
+]);
+addComicsInSeriesVolume('XMenThe198Vol1', [
+  [1, '2006-1-11'],
+  [2, '2006-2-8'],
+  [3, '2006-3-8'],
+  [4, '2006-4-12'],
+  [5, '2006-5-10'],
 ]);
 addComicsInSeriesVolume('XMenTheHiddenYearsVol1', [
   [1, '2007-5-16'],

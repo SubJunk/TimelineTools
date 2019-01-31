@@ -4393,6 +4393,29 @@ collections.push(
       'GenerationMVol15',
     ]
   ),
+  new Collection(
+    'Decimation: X-Men - The 198',
+    '2006-8-30',
+    [
+      'XMenThe198Vol11',
+      'XMenThe198Vol12',
+      'XMenThe198Vol13',
+      'XMenThe198Vol14',
+      'XMenThe198Vol15',
+    ]
+  ),
+  new Collection(
+    'X-Factor: The Longest Night',
+    '2007-3-7',
+    [
+      'XFactorVol31',
+      'XFactorVol32',
+      'XFactorVol33',
+      'XFactorVol34',
+      'XFactorVol35',
+      'XFactorVol36',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
