@@ -16,7 +16,8 @@
     ],
     "globals": {
       "_": true,
-      "M": true
+      "M": true,
+      "moment": true
     },
     "rules": {
       "angular/angularelement": "off",

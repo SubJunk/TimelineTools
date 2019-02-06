@@ -11,13 +11,29 @@ function Comic(issue, datePublished, seriesVolumeId, titles) {
     throw new Error('Expected comic title to be an array, got' + titles);
   }
 
-  // Create a Date object from the datePublished string
-  this.date = new Date(datePublished);
+  var year;
+  var month;
+  var day;
 
+  var datePublishedSplit = datePublished.split(/[^0-9]/);
+  year = datePublishedSplit[0];
+  month = datePublishedSplit[1];
+  day = datePublishedSplit[2] || '01';
+
+  // Pad the month and day
+  if (month.length === 1) {
+    month = '0' + month;
+  }
+  if (day.length === 1) {
+    day = '0' + day;
+  }
+
+  // Create a Date object from the datePublished string
+  this.date = moment(year + '-' + month + '-' + day);
   this.id = seriesVolumeId + issue;
   this.issue = issue;
-  this.yearPublished = this.date.getFullYear();
-  this.monthPublished = this.date.getMonth() + 1;
+  this.yearPublished = this.date.year();
+  this.monthPublished = this.date.month() + 1;
   this.seriesVolumeId = seriesVolumeId;
   this.titles = titles ? titles : [];
 }
