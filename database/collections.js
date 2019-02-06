@@ -4416,9 +4416,46 @@ collections.push(
       'XFactorVol36',
     ]
   ),
+  new Collection(
+    'New Excalibur Vol. 1: Defenders of the Realm',
+    '2006-7-26',
+    [
+      'NewExcaliburVol11',
+      'NewExcaliburVol12',
+      'NewExcaliburVol13',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 4: End of Greys',
+    '2006-6-21',
+    [
+      'UncannyXMenVol1466',
+      'UncannyXMenVol1467',
+      'UncannyXMenVol1468',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 1: Defenders of the Realm',
+    '2006-7-26',
+    [
+      'NewExcaliburVol14',
+      'NewExcaliburVol15',
+      'NewExcaliburVol16',
+      'NewExcaliburVol17',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 4: End of Greys',
+    '2006-6-21',
+    [
+      'UncannyXMenVol1469',
+      'UncannyXMenVol1470',
+      'UncannyXMenVol1471',
+    ]
+  ),
   new Collection(
     'Decimation: X-Men - The Day After',
     '2006-4-26',

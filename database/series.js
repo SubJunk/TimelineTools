@@ -113,6 +113,7 @@ series.push(
   new Series('Marvel Tales', {2: 1964}),
   new Series('Marvel Team-Up', {1: 1972}),
   new Series('Mystique', {1: 2003}),
+  new Series('New Excalibur', {1: 2005}),
   new Series('New Mutants', {1: 1983, 2: 2003, 3: 2009}),
   new Series('New Mutants Annual', {1: 1984}),
   new Series('New Warriors', {1: 1990}),
