@@ -592,6 +592,7 @@ addComicsInSeriesVolume('GhostRiderVol3', [
 ]);
 addComicsInSeriesVolume('GiantSizeAstonishingXMenVol1', [[1, '2008-5-26']]);
 addComicsInSeriesVolume('GiantSizeFantasticFourVol1', [[4, '1975-2-10']]);
+addComicsInSeriesVolume('GiantSizeWolverineVol1', [[1, '2006-10-4']]);
 addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']]]);
 addComicsInSeriesVolume('GiantSizeXMenFirstClassVol1', [[1, '2008-10-29', ]]);
 addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']]);
@@ -1464,6 +1465,13 @@ addComicsInSeriesVolume('WeaponXVol1', [
 addComicsInSeriesVolume('WhatIfVol2', [[60, '1994-4']]);
 addComicsInSeriesVolume('WolverineAnnualVol1', [[1, '1995-9']]);
 addComicsInSeriesVolume('WolverineAnnualVol2', [[1, '1999-3-11']]);
+addComicsInSeriesVolume('WolverineOriginsVol1', [
+  [1, '2006-4-19'],
+  [2, '2006-5-17'],
+  [3, '2006-6-14'],
+  [4, '2006-7-12'],
+  [5, '2006-8-9'],
+]);
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
   [2, '1982-10'],
@@ -1586,6 +1594,8 @@ addComicsInSeriesVolume('WolverineVol3', [
   [38, '2006-1-25'],
   [39, '2006-2-22'],
   [40, '2006-3-22'],
+  [41, '2006-4-26'],
+  [49, '2006-12-13'],
 ]);
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']]);
 addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']]);
@@ -2187,6 +2197,7 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [48, '2003-7-15'],
   [49, '2003-8'],
 ]);
+addComicsInSeriesVolume('XMenUnlimitedVol2', [[12, '2005-12-7']]);
 addComicsInSeriesVolume('XMenvsBroodVol1', [
   [1, '1996-9'],
   [2, '1996-10'],

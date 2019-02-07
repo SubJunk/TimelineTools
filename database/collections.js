@@ -4417,6 +4417,15 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
+    '2017-1-31',
+    [
+      'WolverineVol333',
+      'WolverineVol334',
+      'WolverineVol335',
+    ]
+  ),
+  new Collection(
     'New Excalibur Vol. 1: Defenders of the Realm',
     '2006-7-26',
     [
@@ -4444,9 +4453,45 @@ collections.push(
       'NewExcaliburVol17',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
+    '2017-1-31',
+    [
+      'WolverineVol336',
+      'WolverineVol337',
+      'WolverineVol338',
+      'WolverineVol339',
+      'WolverineVol340',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Origins Vol. 1 - Born in Blood',
+    '2007-4-4',
+    [
+      'WolverineOriginsVol11',
+      'WolverineOriginsVol12',
+      'WolverineOriginsVol13',
+      'WolverineOriginsVol14',
+      'WolverineOriginsVol15',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Blood & Sorrow',
+    '2007-6-27',
+    [
+      'WolverineVol341',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol124',
+      'CableDeadpoolVol125',
+      'CableDeadpoolVol126',
+      'CableDeadpoolVol127',
+    ]
+  ),
   new Collection(
     'Uncanny X-Men - The New Age Vol. 4: End of Greys',
     '2006-6-21',
@@ -4456,26 +4501,24 @@ collections.push(
       'UncannyXMenVol1471',
     ]
   ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Wolverine: Blood & Sorrow',
+    '2007-6-27',
+    [
+      'WolverineVol349',
+      'GiantSizeWolverineVol11',
+      'XMenUnlimitedVol212',
+    ]
+  ),
   new Collection(
     'Decimation: X-Men - The Day After',
     '2006-4-26',
     [
       'XMenVol3180',
       'XMenVol3181',
-    ]
-  ),
-  new Collection(
-    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
-    '2017-1-31',
-    [
-      'WolverineVol333',
-      'WolverineVol334',
-      'WolverineVol335',
-      'WolverineVol336',
-      'WolverineVol337',
-      'WolverineVol338',
-      'WolverineVol339',
-      'WolverineVol340',
     ]
   ),
   new Collection(
@@ -4501,10 +4544,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol124',
-      'CableDeadpoolVol125',
-      'CableDeadpoolVol126',
-      'CableDeadpoolVol127',
       'CableDeadpoolVol128',
       'CableDeadpoolVol129',
       'CableDeadpoolVol130',
