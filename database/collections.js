@@ -4236,6 +4236,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Wolverine: Blood & Sorrow',
+    '2007-6-27',
+    [
+      'XMenUnlimitedVol212',
+    ]
+  ),
+  new Collection(
     'Wolverine: Enemy of the State Ultimate Collection',
     '2008-6-11',
     [
@@ -4501,16 +4508,50 @@ collections.push(
       'UncannyXMenVol1471',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 5: First Foursaken',
+    '2006-6-21',
+    [
+      'UncannyXMenVol1472',
+      'UncannyXMenVol1473',
+      'UncannyXMenVol1474',
+      'UncannyXMenAnnualVol41',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Blood & Sorrow',
+    '2007-6-27',
+    [
+      'GiantSizeWolverineVol11',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 2: Last Days of Camelot',
+    '2007-3-14',
+    [
+      'NewExcaliburVol18',
+      'NewExcaliburVol19',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'New Excalibur Vol. 2: Last Days of Camelot',
+    '2007-3-14',
+    [
+      'NewExcaliburVol110',
+      'NewExcaliburVol111',
+      'NewExcaliburVol112',
+      'NewExcaliburVol113',
+      'NewExcaliburVol114',
+    ]
+  ),
   new Collection(
     'Wolverine: Blood & Sorrow',
     '2007-6-27',
     [
       'WolverineVol349',
-      'GiantSizeWolverineVol11',
-      'XMenUnlimitedVol212',
     ]
   ),
   new Collection(

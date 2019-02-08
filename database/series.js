@@ -147,7 +147,7 @@ series.push(
   new Series('Thor', {1: 1966}),
   new Series('Uncanny X-Men', {1: 1963}),
   new Series('Uncanny X-Men/Fantastic Four Annual', {1: 1998}),
-  new Series('Uncanny X-Men Annual', {1: 1996, 2: 1999, 3: 2001}),
+  new Series('Uncanny X-Men Annual', {1: 1996, 2: 1999, 3: 2001, 4: 2006}),
   new Series('Weapon X', {1: 1995}),
   new Series('What If?', {2: 1989}),
   new Series('Wolverine', {1: 1982, 2: 1988, 3: 2003}),

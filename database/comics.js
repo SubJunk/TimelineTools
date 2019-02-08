@@ -696,6 +696,13 @@ addComicsInSeriesVolume('NewExcaliburVol1', [
   [5, '2006-3-1'],
   [6, '2006-4-5'],
   [7, '2006-5-24'],
+  [8, '2006-6-21'],
+  [9, '2006-7-5'],
+  [10, '2006-8-2'],
+  [11, '2006-9-13'],
+  [12, '2006-10-25'],
+  [13, '2006-11-22'],
+  [14, '2006-12-6'],
 ]);
 addComicsInSeriesVolume('NewMutantsVol1', [
   [26, '1985-4'],
@@ -1413,6 +1420,9 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [469, '2006-2-1'],
   [470, '2006-3-1'],
   [471, '2006-3-29'],
+  [472, '2006-4-12'],
+  [473, '2006-5-10'],
+  [474, '2006-6-21'],
   /**
    * Complete until here
    */
@@ -1455,6 +1465,7 @@ addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
 ]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol2', [[1, '2000-2']]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol3', [[1, '2002-2']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol4', [[1, '2006-6-21']]);
 addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']]);
 addComicsInSeriesVolume('WeaponXVol1', [
   [1, '1995-3'],
