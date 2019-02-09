@@ -4515,7 +4515,6 @@ collections.push(
       'UncannyXMenVol1472',
       'UncannyXMenVol1473',
       'UncannyXMenVol1474',
-      'UncannyXMenAnnualVol41',
     ]
   ),
   new Collection(
@@ -4531,6 +4530,21 @@ collections.push(
     [
       'NewExcaliburVol18',
       'NewExcaliburVol19',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 5: First Foursaken',
+    '2006-6-21',
+    [
+      'UncannyXMenAnnualVol41',
+    ]
+  ),
+  new Collection(
+    'Decimation: X-Men - The Day After',
+    '2006-4-26',
+    [
+      'XMenVol3180',
+      'XMenVol3181',
     ]
   ),
   /**
@@ -4552,14 +4566,6 @@ collections.push(
     '2007-6-27',
     [
       'WolverineVol349',
-    ]
-  ),
-  new Collection(
-    'Decimation: X-Men - The Day After',
-    '2006-4-26',
-    [
-      'XMenVol3180',
-      'XMenVol3181',
     ]
   ),
   new Collection(
