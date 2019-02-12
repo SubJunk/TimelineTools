@@ -4547,6 +4547,18 @@ collections.push(
       'XMenVol3181',
     ]
   ),
+  new Collection(
+    'X-Men: The Blood of Apocalypse (Partial)',
+    '2006-7-12',
+    [
+      'XMenVol3182',
+      'XMenVol3183',
+      'XMenVol3184',
+      'XMenVol3185',
+      'XMenVol3186',
+      'XMenVol3187',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
