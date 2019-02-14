@@ -163,6 +163,14 @@ angular.module('app', ['angular-md5'])
           top: previouslyExpandedComic.containerStyles.top  - currentComic.containerStyles.top
         };
 
+        // reset the styles for the previous comic
+        previouslyExpandedComic.classes.stickyTop = false;
+        previouslyExpandedComic.classes.stickyRight = false;
+        previouslyExpandedComic.classes.stickyBottom = false;
+        previouslyExpandedComic.classes.stickyLeft = false;
+        previouslyExpandedComic.classes.marginTop = false;
+        previouslyExpandedComic.classes.marginLeft = false;
+
         $('html, body').animate({
           scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
           scrollTop:  $jqWindow.scrollTop()  - positionDifference.top
