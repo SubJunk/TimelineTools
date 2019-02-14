@@ -119,15 +119,19 @@ angular.module('app', ['angular-md5'])
 
     var prevComicId;
     var nextComicId;
+
+    /**
+     * Toggles the expanded comic
+     *
+     * @param {Object}  currentComic  the current comic object
+     * @param {Boolean} isForceScroll forces this to find a new scroll position
+     *                                instead of using a relative one.
+     *                                Used when clicking on a comic from the collections view
+     */
     vm.toggleExpandComic = function(currentComic, isForceScroll) {
       if (!angular.isObject(currentComic)) {
         return;
       }
-
-      // Unset the sticky styles if they exist
-      $('.comic')
-        .removeClass('stickyTop stickyLeft stickyRight stickyBottom')
-        .css({marginLeft: '', marginTop: '', marginRight: '', marginBottom: '' });
 
       vm.prevComic = undefined;
       vm.nextComic = undefined;
@@ -151,7 +155,7 @@ angular.module('app', ['angular-md5'])
         $('html, body').animate({
           scrollLeft: currentComic.containerStyles.left - LEFT_MARGIN,
           scrollTop:  currentComic.containerStyles.top + TOP_MARGIN
-        });
+        }, 400, 'swing', repositionStickyElements);
       } else if (vm.expandedComicId) {
         var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
         var positionDifference = {
@@ -162,13 +166,10 @@ angular.module('app', ['angular-md5'])
         $('html, body').animate({
           scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
           scrollTop:  $jqWindow.scrollTop()  - positionDifference.top
-        });
+        }, 400, 'swing', repositionStickyElements);
       }
 
       vm.expandedComicId = currentComic.id;
-
-      // Make sure the panel is fully visible
-      repositionStickyElements();
 
       // Get the collection containing this comic
       vm.expandedCollection = _.find(collections, function(collection, index) {
@@ -955,6 +956,11 @@ angular.module('app', ['angular-md5'])
         $('html, body').animate({
           scrollLeft: comicFromId.containerStyles.left - LEFT_MARGIN,
           scrollTop:  comicFromId.containerStyles.top
+        }, function() {
+          // Expand the comic if it isn't already
+          if (vm.expandedComicId !== comicId) {
+            vm.toggleExpandComic(comicFromId);
+          }
         });
       });
     };
