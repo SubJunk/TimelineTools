@@ -168,8 +168,8 @@ angular.module('app', ['angular-md5'])
         previouslyExpandedComic.classes.stickyRight = false;
         previouslyExpandedComic.classes.stickyBottom = false;
         previouslyExpandedComic.classes.stickyLeft = false;
-        previouslyExpandedComic.classes.marginTop = false;
-        previouslyExpandedComic.classes.marginLeft = false;
+        previouslyExpandedComic.styles.marginTop = false;
+        previouslyExpandedComic.styles.marginLeft = false;
 
         $('html, body').animate({
           scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
