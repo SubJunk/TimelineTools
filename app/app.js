@@ -725,7 +725,7 @@ angular.module('app', ['angular-md5'])
       });
 
       // Exit early and force render if there is no comic expanded
-      if (!vm.expandedComicId && !currentComicId) {
+      if (!vm.expandedComicId && currentComicId) {
         return $timeout();
       }
 
