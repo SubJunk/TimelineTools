@@ -175,6 +175,8 @@ angular.module('app', ['angular-md5'])
           scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
           scrollTop:  $jqWindow.scrollTop()  - positionDifference.top
         }, 400, 'swing', repositionStickyElements);
+      } else {
+        repositionStickyElements(currentComic.id);
       }
 
       vm.expandedComicId = currentComic.id;
@@ -236,11 +238,6 @@ angular.module('app', ['angular-md5'])
       // Get the series volume containing this comic
       expandedSeriesVolume = _.find(vm.seriesVolumes, function(seriesVolume) {
         return seriesVolume.id === currentComic.seriesVolumeId;
-      });
-
-      // Instruct Materialize to make the expanded cover fullscreen on click
-      $timeout(function() {
-        $('.materialboxed').materialbox();
       });
 
       var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
@@ -670,7 +667,7 @@ angular.module('app', ['angular-md5'])
     var isStickyRight;
     var isStickyBottom;
     var $jqLabel;
-    var repositionStickyElements = function() {
+    var repositionStickyElements = function(currentComicId) {
       if (doSpeedProfile) var startTimeReposition = new Date();
 
       // The scroll position of the page, minus the main padding
@@ -728,11 +725,11 @@ angular.module('app', ['angular-md5'])
       });
 
       // Exit early and force render if there is no comic expanded
-      if (!vm.expandedComicId) {
+      if (!vm.expandedComicId && !currentComicId) {
         return $timeout();
       }
 
-      var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
+      var expandedComic = _.find(comics, ['id', vm.expandedComicId || currentComicId]);
       if (!expandedComic) {
         return $log.error('The comic ' + vm.expandedComicId + ' could not be found.');
       }
@@ -773,6 +770,9 @@ angular.module('app', ['angular-md5'])
           expandedComic.styles.marginLeft = '';
           expandedComic.styles.marginTop = '';
         }
+
+        // Instruct Materialize to make the expanded cover fullscreen on click
+        $('.materialboxed').materialbox();
 
         if (doSpeedProfile) {
           var endTime = new Date();
