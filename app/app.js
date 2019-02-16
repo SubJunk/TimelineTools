@@ -965,11 +965,6 @@ angular.module('app', ['angular-md5'])
     vm.scrollToComic = function(comicId) {
       var comicFromId = comics[_.findKey(comics, { 'id': comicId })];
 
-      // Expand the comic if it isn't already
-      if (vm.expandedComicId !== comicId) {
-        vm.toggleExpandComic(comicFromId);
-      }
-
       $timeout(function() {
         $('html, body').animate({
           scrollLeft: comicFromId.containerStyles.left - LEFT_MARGIN,
