@@ -15,6 +15,8 @@ angular.module('app', ['angular-md5'])
     const LEFT_MARGIN = 200;
     const TOP_MARGIN = 300;
 
+    const ANIMATION_DURATION = 400;
+
     //Colour constants used in multiple functions
     const LIGHTNESS_MIN = 30;   //Lightness can be in the range 0-100
     const LIGHTNESS_MAX = 85;
@@ -155,7 +157,7 @@ angular.module('app', ['angular-md5'])
         $('html, body').animate({
           scrollLeft: currentComic.containerStyles.left - LEFT_MARGIN,
           scrollTop:  currentComic.containerStyles.top + TOP_MARGIN
-        }, 400, 'swing', repositionStickyElements);
+        }, ANIMATION_DURATION, 'swing', repositionStickyElements);
       } else if (vm.expandedComicId) {
         var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
         var positionDifference = {
@@ -174,7 +176,7 @@ angular.module('app', ['angular-md5'])
         $('html, body').animate({
           scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
           scrollTop:  $jqWindow.scrollTop()  - positionDifference.top
-        }, 400, 'swing', repositionStickyElements);
+        }, ANIMATION_DURATION, 'swing', repositionStickyElements);
       } else {
         repositionStickyElements(currentComic.id);
       }
@@ -969,7 +971,7 @@ angular.module('app', ['angular-md5'])
         $('html, body').animate({
           scrollLeft: comicFromId.containerStyles.left - LEFT_MARGIN,
           scrollTop:  comicFromId.containerStyles.top
-        }, function() {
+        }, ANIMATION_DURATION, 'swing', function() {
           // Expand the comic if it isn't already
           if (vm.expandedComicId !== comicId) {
             vm.toggleExpandComic(comicFromId);
