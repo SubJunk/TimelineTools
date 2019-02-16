@@ -670,6 +670,14 @@ angular.module('app', ['angular-md5'])
     var repositionStickyElements = function(currentComicId) {
       if (doSpeedProfile) var startTimeReposition = new Date();
 
+      /*
+       * jQuery passes an object when it triggers this function from a
+       * page event, but we only care about strings we pass in.
+       */
+      if (!angular.isString(currentComicId)) {
+        currentComicId = undefined;
+      }
+
       // The scroll position of the page, minus the main padding
       scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
@@ -724,14 +732,16 @@ angular.module('app', ['angular-md5'])
         seriesVolumeLabel.containerStyles.opacity = 1;
       });
 
+      var selectedComic = currentComicId || vm.expandedComicId;
+
       // Exit early and force render if there is no comic expanded
-      if (!vm.expandedComicId && currentComicId) {
+      if (!selectedComic) {
         return $timeout();
       }
 
-      var expandedComic = _.find(comics, ['id', vm.expandedComicId || currentComicId]);
+      var expandedComic = _.find(comics, ['id', selectedComic]);
       if (!expandedComic) {
-        return $log.error('The comic ' + vm.expandedComicId + ' could not be found.');
+        return $log.error('The comic could not be found', selectedComic);
       }
 
       // Expanded panel positioning
