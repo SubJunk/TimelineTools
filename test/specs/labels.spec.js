@@ -13,12 +13,12 @@ describe('Labels', function() {
   it('should create a first year heading with the correct value', function() {
     const firstYear = $('ul.years > li:nth-child(1)');
     firstYear.waitForDisplayed();
-    assert(firstYear.getText().indexOf('1975') > -1);
+    assert(firstYear.getText().indexOf('1963') > -1);
   });
 
   it('should create a first month heading with the correct value', function() {
     const firstMonth = $('ul.years li:nth-child(1) ul li:nth-child(1)');
     firstMonth.waitForDisplayed();
-    assert.equal(firstMonth.getText(), '5');
+    assert.equal(firstMonth.getText(), '9');
   });
 });

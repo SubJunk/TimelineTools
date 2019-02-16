@@ -34,12 +34,6 @@ angular.module('app', ['angular-md5'])
     // Pixel counts
     const VISUAL_BLOCK_SIZE = 60;
 
-    /*
-     * How far away the left edge of labels are from the left
-     * of the first thumbnail of a series volume.
-     */
-    const LABEL_OFFSET = 150;
-
     var $jqWindow = $(window);
 
     vm.expandedComicId;
@@ -233,6 +227,11 @@ angular.module('app', ['angular-md5'])
       // Get the series volume containing this comic
       expandedSeriesVolume = _.find(vm.seriesVolumes, function(seriesVolume) {
         return seriesVolume.id === currentComic.seriesVolumeId;
+      });
+
+      // Instruct Materialize to make the expanded cover fullscreen on click
+      $timeout(function() {
+        $('.materialboxed').materialbox();
       });
 
       var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
@@ -453,15 +452,16 @@ angular.module('app', ['angular-md5'])
           id: 'label-' + seriesVolumeLabels.length,
           containerStyles: {
             top: comic.containerStyles.top,
-            left: comic.containerStyles.left - LABEL_OFFSET
+            left: comic.containerStyles.left,
+            opacity: 0 // Hide it initially in a way that lets jQuery still get its width
           },
           labelClasses: {},
           labelStyles: {},
+          visible: true
         });
 
         newLabelNeeded = false;
-      } else if (currentSeriesVolume.title !== 'Giant Size X-Men') {
-        // Really ugly exception for Giant Size to stop it taking up the first row
+      } else {
         var seriesVolumeLabelIndex = _.findLastIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
           return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
         });
@@ -660,6 +660,7 @@ angular.module('app', ['angular-md5'])
     var isStickyLeft;
     var isStickyRight;
     var isStickyBottom;
+    var $jqLabel;
     var repositionStickyElements = function() {
       if (doSpeedProfile) var startTimeReposition = new Date();
 
@@ -667,10 +668,27 @@ angular.module('app', ['angular-md5'])
       scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
 
-      /**
-       * Label positioning:
-       */
+      // Label positioning:
       _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
+        // Initial section where we cache information on the first loop
+        {
+          // We only know the width after the initial render, so store it
+          if (!seriesVolumeLabel.labelWidthFromDom) {
+            $jqLabel = $('#' + seriesVolumeLabel.id);
+            if ($jqLabel.length > -1) {
+              seriesVolumeLabel.labelWidthFromDom = $jqLabel.outerWidth() + BODY_PADDING;
+            }
+          }
+
+          // Subtract width of the label from the left position
+          if (!seriesVolumeLabel.isWidthSubtracted) {
+            seriesVolumeLabel.containerStyles.left = seriesVolumeLabel.containerStyles.left - seriesVolumeLabel.labelWidthFromDom;
+            seriesVolumeLabel.isWidthSubtracted = true;
+          }
+        }
+
+        seriesVolumeLabel.scrollDifference = scrollLeft - seriesVolumeLabel.right;
+
         isScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
 
         seriesVolumeLabel.labelClasses.stickyLeft = isScrolledPastLeft;
@@ -680,12 +698,12 @@ angular.module('app', ['angular-md5'])
 
           // If the browser is scrolled past the right, hide the label
           if (
-            (scrollLeft - seriesVolumeLabel.right) > -LABEL_OFFSET &&
-            (scrollLeft - seriesVolumeLabel.right) < 0
+            seriesVolumeLabel.scrollDifference > -seriesVolumeLabel.labelWidthFromDom &&
+            seriesVolumeLabel.scrollDifference < 0
           ) {
             seriesVolumeLabel.visible = true;
-            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - LABEL_OFFSET);
-          } else if (seriesVolumeLabel.right < (scrollLeft + LABEL_OFFSET)) {
+            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - seriesVolumeLabel.labelWidthFromDom);
+          } else if (seriesVolumeLabel.right < (scrollLeft + seriesVolumeLabel.labelWidthFromDom)) {
             seriesVolumeLabel.visible = false;
           } else {
             seriesVolumeLabel.visible = true;
@@ -695,6 +713,9 @@ angular.module('app', ['angular-md5'])
           seriesVolumeLabel.visible = true;
           seriesVolumeLabel.labelStyles.marginTop = false;
         }
+
+        // Show the label after we have its correct position calculated
+        seriesVolumeLabel.containerStyles.opacity = 1;
       });
 
       // Exit early and force render if there is no comic expanded
@@ -875,6 +896,10 @@ angular.module('app', ['angular-md5'])
 
     var infoModalInstance;
     $timeout(function() {
+      // Hide the initial data and display the real one
+      $('#app').fadeIn('slow');
+      $('#pre-app').fadeOut('slow');
+
       // Make room for the farthest-right expanded panel
       vm.bodyStyles.width += $('.scroll-anchor').width();
 

@@ -21,6 +21,224 @@ function Collection(title, datePublished, comicIds) {
 var collections = [];
 collections.push(
   new Collection(
+    'X-Men Epic Collection: Children of the Atom',
+    '2015-1-6',
+    [
+      'UncannyXMenVol11',
+      'UncannyXMenVol12',
+      'UncannyXMenVol13',
+      'UncannyXMenVol14',
+      'UncannyXMenVol15',
+      'UncannyXMenVol16',
+      'UncannyXMenVol17',
+      'UncannyXMenVol18',
+      'UncannyXMenVol19',
+      'UncannyXMenVol110',
+      'UncannyXMenVol111',
+      'UncannyXMenVol112',
+      'UncannyXMenVol113',
+      'UncannyXMenVol114',
+      'UncannyXMenVol115',
+      'UncannyXMenVol116',
+      'UncannyXMenVol117',
+      'UncannyXMenVol118',
+      'UncannyXMenVol119',
+      'UncannyXMenVol120',
+      'UncannyXMenVol121',
+      'UncannyXMenVol122',
+      'UncannyXMenVol123',
+    ]
+  ),
+  new Collection(
+    'X-Men: First Class, Vol. 1: Tomorrow\'s Brightest',
+    '2007-7-4',
+    [
+      'XMenFirstClassVol11',
+      'XMenFirstClassVol12',
+      'XMenFirstClassVol13',
+      'XMenFirstClassVol14',
+      'XMenFirstClassVol15',
+      'XMenFirstClassVol16',
+      'XMenFirstClassVol17',
+      'XMenFirstClassVol18',
+    ]
+  ),
+  new Collection(
+    'X-Men: First Class - Mutant Mayhem',
+    '2008-4-2',
+    [
+      'XMenFirstClassVol21',
+      'XMenFirstClassVol22',
+      'XMenFirstClassVol23',
+      'XMenFirstClassVol24',
+      'XMenFirstClassVol25',
+      'XMenFirstClassSpecialVol11',
+    ]
+  ),
+  new Collection(
+    'X-Men: First Class - Band of Brothers',
+    '2008-11-26',
+    [
+      'XMenFirstClassVol26',
+      'XMenFirstClassVol27',
+      'XMenFirstClassVol28',
+      'XMenFirstClassVol29',
+      'XMenFirstClassVol210',
+    ]
+  ),
+  new Collection(
+    'X-Men: First Class - The Wonder Years',
+    '2009-3-18',
+    [
+      'XMenFirstClassVol211',
+      'XMenFirstClassVol212',
+      'XMenFirstClassVol213',
+      'XMenFirstClassVol214',
+      'XMenFirstClassVol215',
+      'XMenFirstClassVol216',
+      'GiantSizeXMenFirstClassVol11',
+    ]
+  ),
+  new Collection(
+    'X-Men Epic Collection: Lonely Are the Hunted',
+    '2016-12-7',
+    [
+      'UncannyXMenVol124',
+      'UncannyXMenVol125',
+      'UncannyXMenVol126',
+      'UncannyXMenVol127',
+      'UncannyXMenVol128',
+      'UncannyXMenVol129',
+      'UncannyXMenVol130',
+      'UncannyXMenVol131',
+      'UncannyXMenVol132',
+      'UncannyXMenVol133',
+      'UncannyXMenVol134',
+      'UncannyXMenVol135',
+      'UncannyXMenVol136',
+      'UncannyXMenVol137',
+      'UncannyXMenVol138',
+      'UncannyXMenVol139',
+      'UncannyXMenVol140',
+      'UncannyXMenVol141',
+      'UncannyXMenVol142',
+      'UncannyXMenVol143',
+      'UncannyXMenVol144',
+      'UncannyXMenVol145',
+      'AvengersVol153',
+    ]
+  ),
+  new Collection(
+    'X-Men Epic Collection: The Sentinels Live',
+    '2018-11-14',
+    [
+      'UncannyXMenVol146',
+      'UncannyXMenVol147',
+      'UncannyXMenVol148',
+      'KaZarVol12',
+      'KaZarVol13',
+      'MarvelTalesVol230',
+      'UncannyXMenVol149',
+      'UncannyXMenVol150',
+      'UncannyXMenVol151',
+      'UncannyXMenVol152',
+      'UncannyXMenVol153',
+      'UncannyXMenVol154',
+      'UncannyXMenVol155',
+      'UncannyXMenVol156',
+      'UncannyXMenVol157',
+      'UncannyXMenVol158',
+      'UncannyXMenVol159',
+      'UncannyXMenVol160',
+      'UncannyXMenVol161',
+      'UncannyXMenVol162',
+      'UncannyXMenVol163',
+      'UncannyXMenVol164',
+      'UncannyXMenVol165',
+      'UncannyXMenVol166',
+    ]
+  ),
+  new Collection(
+    'X-Men: The Hidden Years, Vol. 1',
+    '2017-11-2',
+    [
+      'XMenTheHiddenYearsVol11',
+      'XMenTheHiddenYearsVol12',
+      'XMenTheHiddenYearsVol13',
+      'XMenTheHiddenYearsVol14',
+      'XMenTheHiddenYearsVol15',
+      'XMenTheHiddenYearsVol16',
+      'XMenTheHiddenYearsVol17',
+      'XMenTheHiddenYearsVol18',
+      'XMenTheHiddenYearsVol19',
+      'XMenTheHiddenYearsVol110',
+      'XMenTheHiddenYearsVol111',
+      'XMenTheHiddenYearsVol112',
+    ]
+  ),
+  new Collection(
+    'X-Men: The Hidden Years, Vol. 2',
+    '2017-11-9',
+    [
+      'XMenTheHiddenYearsVol113',
+      'XMenTheHiddenYearsVol114',
+      'XMenTheHiddenYearsVol115',
+      'XMenTheHiddenYearsVol116',
+      'XMenTheHiddenYearsVol117',
+      'XMenTheHiddenYearsVol118',
+      'XMenTheHiddenYearsVol119',
+      'XMenTheHiddenYearsVol120',
+      'XMenTheHiddenYearsVol121',
+      'XMenTheHiddenYearsVol122',
+    ]
+  ),
+  new Collection(
+    'Marvel Masterworks: The X-Men Vol. 7',
+    '2008-10-15',
+    [
+      'TheAmazingSpiderManVol192',
+      'IncredibleHulkVol1150',
+      'MarvelTeamUpVol14',
+      'AmazingAdventuresVol211',
+      'AmazingAdventuresVol212',
+      'AmazingAdventuresVol213',
+      'AmazingAdventuresVol214',
+      'AmazingAdventuresVol215',
+      'AmazingAdventuresVol216',
+      'IncredibleHulkVol1161',
+    ]
+  ),
+  new Collection(
+    'Marvel Masterworks: The X-Men Vol. 8',
+    '2010-3-24',
+    [
+      'AvengersVol1110',
+      'AvengersVol1111',
+      'IncredibleHulkVol1172',
+      'CaptainAmericaVol1172',
+      'CaptainAmericaVol1173',
+      'CaptainAmericaVol1174',
+      'CaptainAmericaVol1175',
+      'MarvelTeamUpVol123',
+      'DefendersVol115',
+      'DefendersVol116',
+      'IncredibleHulkVol1180',
+      'IncredibleHulkVol1181',
+      'MarvelTeamUpVol138',
+      'GiantSizeFantasticFourVol14',
+    ]
+  ),
+  new Collection(
+    'X-Men: First Class Finals',
+    '2009-8-26',
+    [
+      'XMenFirstClassFinalsVol11',
+      'XMenFirstClassFinalsVol12',
+      'XMenFirstClassFinalsVol13',
+      'XMenFirstClassFinalsVol14',
+    ]
+  ),
+  new Collection(
     'X-Men Epic Collection Vol. 5: Second Genesis',
     '2017-4',
     [
@@ -4018,13 +4236,10 @@ collections.push(
     ]
   ),
   new Collection(
-    'Deadpool & Cable Omnibus',
-    '2014-11-11',
+    'Wolverine: Blood & Sorrow',
+    '2007-6-27',
     [
-      'CableDeadpoolVol115',
-      'CableDeadpoolVol116',
-      'CableDeadpoolVol117',
-      'CableDeadpoolVol118',
+      'XMenUnlimitedVol212',
     ]
   ),
   new Collection(
@@ -4045,9 +4260,169 @@ collections.push(
       'XMenKittyPrydeShadowFlameVol15',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'X-Men: Colossus Bloodline',
+    '2005-6-18',
+    [
+      'XMenColossusBloodlineVol11',
+      'XMenColossusBloodlineVol12',
+      'XMenColossusBloodlineVol13',
+      'XMenColossusBloodlineVol14',
+      'XMenColossusBloodlineVol15',
+    ]
+  ),
+  new Collection(
+    'Ororo: Before the Storm',
+    '2005-12-7',
+    [
+      'OroroBeforetheStormVol11',
+      'OroroBeforetheStormVol12',
+      'OroroBeforetheStormVol13',
+      'OroroBeforetheStormVol14',
+    ]
+  ),
+  new Collection(
+    'X-Men/Black Panther: Wild Kingdom',
+    '2006-1-25',
+    [
+      'XMenVol3175',
+      'BlackPantherVol48',
+      'XMenVol3176',
+      'BlackPantherVol49',
+    ]
+  ),
+  new Collection(
+    'House of M: Excalibur - Prelude',
+    '2005-7-27',
+    [
+      'ExcaliburVol311',
+      'ExcaliburVol312',
+      'ExcaliburVol313',
+      'ExcaliburVol314',
+    ]
+  ),
+  new Collection(
+    'House of M',
+    '2006-2-1',
+    [
+      'HouseofMVol11',
+      'HouseofMVol12',
+      'HouseofMVol13',
+      'HouseofMVol14',
+      'HouseofMVol15',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol115',
+      'CableDeadpoolVol116',
+      'CableDeadpoolVol117',
+      'CableDeadpoolVol118',
+    ]
+  ),
+  new Collection(
+    'House of M: Uncanny X-Men',
+    '2006-1-25',
+    [
+      'UncannyXMenVol1462',
+      'UncannyXMenVol1463',
+      'UncannyXMenVol1464',
+      'UncannyXMenVol1465',
+      'SecretsoftheHouseofMVol11',
+    ]
+  ),
+  new Collection(
+    'House of M',
+    '2006-2-1',
+    [
+      'HouseofMVol16',
+      'HouseofMVol17',
+      'HouseofMVol18',
+    ]
+  ),
+  new Collection(
+    'X-Men and Spider-Man',
+    '2009-12-9',
+    [
+      'XMenSpiderManVol11',
+      'XMenSpiderManVol12',
+      'XMenSpiderManVol13',
+      'XMenSpiderManVol14',
+    ]
+  ),
+  new Collection(
+    'Decimation: X-Men - The Day After',
+    '2006-4-26',
+    [
+      'DecimationHouseofMTheDayAfterVol11',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol119',
+      'CableDeadpoolVol120',
+      'CableDeadpoolVol121',
+      'CableDeadpoolVol122',
+      'CableDeadpoolVol123',
+    ]
+  ),
+  new Collection(
+    'Decimation: X-Men - The Day After',
+    '2006-4-26',
+    [
+      'XMenVol3177',
+      'XMenVol3178',
+      'XMenVol3179',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 1',
+    '2006-4-26',
+    [
+      'NewXMenVol220',
+      'NewXMenVol221',
+      'NewXMenVol222',
+      'NewXMenVol223',
+    ]
+  ),
+  new Collection(
+    'Decimation: Generation M',
+    '2006-6-28',
+    [
+      'GenerationMVol11',
+      'GenerationMVol12',
+      'GenerationMVol13',
+      'GenerationMVol14',
+      'GenerationMVol15',
+    ]
+  ),
+  new Collection(
+    'Decimation: X-Men - The 198',
+    '2006-8-30',
+    [
+      'XMenThe198Vol11',
+      'XMenThe198Vol12',
+      'XMenThe198Vol13',
+      'XMenThe198Vol14',
+      'XMenThe198Vol15',
+    ]
+  ),
+  new Collection(
+    'X-Factor: The Longest Night',
+    '2007-3-7',
+    [
+      'XFactorVol31',
+      'XFactorVol32',
+      'XFactorVol33',
+      'XFactorVol34',
+      'XFactorVol35',
+      'XFactorVol36',
+    ]
+  ),
   new Collection(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
@@ -4055,11 +4430,154 @@ collections.push(
       'WolverineVol333',
       'WolverineVol334',
       'WolverineVol335',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 1: Defenders of the Realm',
+    '2006-7-26',
+    [
+      'NewExcaliburVol11',
+      'NewExcaliburVol12',
+      'NewExcaliburVol13',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 4: End of Greys',
+    '2006-6-21',
+    [
+      'UncannyXMenVol1466',
+      'UncannyXMenVol1467',
+      'UncannyXMenVol1468',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 1: Defenders of the Realm',
+    '2006-7-26',
+    [
+      'NewExcaliburVol14',
+      'NewExcaliburVol15',
+      'NewExcaliburVol16',
+      'NewExcaliburVol17',
+    ]
+  ),
+  new Collection(
+    'Wolverine by Daniel Way: The Complete Collection Vol. 1',
+    '2017-1-31',
+    [
       'WolverineVol336',
       'WolverineVol337',
       'WolverineVol338',
       'WolverineVol339',
       'WolverineVol340',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Origins Vol. 1 - Born in Blood',
+    '2007-4-4',
+    [
+      'WolverineOriginsVol11',
+      'WolverineOriginsVol12',
+      'WolverineOriginsVol13',
+      'WolverineOriginsVol14',
+      'WolverineOriginsVol15',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Blood & Sorrow',
+    '2007-6-27',
+    [
+      'WolverineVol341',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol124',
+      'CableDeadpoolVol125',
+      'CableDeadpoolVol126',
+      'CableDeadpoolVol127',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 4: End of Greys',
+    '2006-6-21',
+    [
+      'UncannyXMenVol1469',
+      'UncannyXMenVol1470',
+      'UncannyXMenVol1471',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 5: First Foursaken',
+    '2006-6-21',
+    [
+      'UncannyXMenVol1472',
+      'UncannyXMenVol1473',
+      'UncannyXMenVol1474',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Blood & Sorrow',
+    '2007-6-27',
+    [
+      'GiantSizeWolverineVol11',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 2: Last Days of Camelot',
+    '2007-3-14',
+    [
+      'NewExcaliburVol18',
+      'NewExcaliburVol19',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men - The New Age Vol. 5: First Foursaken',
+    '2006-6-21',
+    [
+      'UncannyXMenAnnualVol41',
+    ]
+  ),
+  new Collection(
+    'Decimation: X-Men - The Day After',
+    '2006-4-26',
+    [
+      'XMenVol3180',
+      'XMenVol3181',
+    ]
+  ),
+  new Collection(
+    'X-Men: The Blood of Apocalypse (Partial)',
+    '2006-7-12',
+    [
+      'XMenVol3182',
+      'XMenVol3183',
+      'XMenVol3184',
+      'XMenVol3185',
+      'XMenVol3186',
+      'XMenVol3187',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'New Excalibur Vol. 2: Last Days of Camelot',
+    '2007-3-14',
+    [
+      'NewExcaliburVol110',
+      'NewExcaliburVol111',
+      'NewExcaliburVol112',
+      'NewExcaliburVol113',
+      'NewExcaliburVol114',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Blood & Sorrow',
+    '2007-6-27',
+    [
+      'WolverineVol349',
     ]
   ),
   new Collection(
@@ -4085,15 +4603,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol119',
-      'CableDeadpoolVol120',
-      'CableDeadpoolVol121',
-      'CableDeadpoolVol122',
-      'CableDeadpoolVol123',
-      'CableDeadpoolVol124',
-      'CableDeadpoolVol125',
-      'CableDeadpoolVol126',
-      'CableDeadpoolVol127',
       'CableDeadpoolVol128',
       'CableDeadpoolVol129',
       'CableDeadpoolVol130',
