@@ -4587,6 +4587,18 @@ collections.push(
       'WolverineOriginsVol110',
     ]
   ),
+  new Collection(
+    'X-Men: Deadly Genesis',
+    '2006-12-27',
+    [
+      'XMenDeadlyGenesisVol11',
+      'XMenDeadlyGenesisVol12',
+      'XMenDeadlyGenesisVol13',
+      'XMenDeadlyGenesisVol14',
+      'XMenDeadlyGenesisVol15',
+      'XMenDeadlyGenesisVol16',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */

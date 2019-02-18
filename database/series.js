@@ -185,6 +185,7 @@ series.push(
   new Series('X-Men: Black Sun', {1: 2000}),
   new Series('X-Men: Books of Askani', {1: 1995}),
   new Series('X-Men: Colossus Bloodline', {1: 2005}),
+  new Series('X-Men: Deadly Genesis', {1: 2005}),
   new Series('X-Men: First Class', {1: 2006, 2: 2007}),
   new Series('X-Men: First Class Finals', {1: 2009}),
   new Series('X-Men: First Class Special', {1: 2007}),
