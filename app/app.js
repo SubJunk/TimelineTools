@@ -657,7 +657,9 @@ angular.module('app', ['angular-md5'])
     var $expandedComic;
     var scrollLeft;
     var scrollTop;
-    var isScrolledPastLeft;
+    var isLabelScrolledPastLeft;
+    var isComicScrolledPastLeft;
+    var isComicScrolledPastRight;
     var anchorTopPosition;
     var anchorLeftPosition;
     var anchorRightPosition;
@@ -683,6 +685,7 @@ angular.module('app', ['angular-md5'])
       // The scroll position of the page, minus the main padding
       scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
+      scrollRight = scrollLeft + $jqWindow.innerWidth();
 
       // Label positioning:
       _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
@@ -705,11 +708,11 @@ angular.module('app', ['angular-md5'])
 
         seriesVolumeLabel.scrollDifference = scrollLeft - seriesVolumeLabel.right;
 
-        isScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
+        isLabelScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
 
-        seriesVolumeLabel.labelClasses.stickyLeft = isScrolledPastLeft;
+        seriesVolumeLabel.labelClasses.stickyLeft = isLabelScrolledPastLeft;
 
-        if (isScrolledPastLeft) {
+        if (isLabelScrolledPastLeft) {
           seriesVolumeLabel.labelStyles.marginTop = '-' + scrollTop;
 
           // If the browser is scrolled past the right, hide the label
@@ -732,6 +735,24 @@ angular.module('app', ['angular-md5'])
 
         // Show the label after we have its correct position calculated
         seriesVolumeLabel.containerStyles.opacity = 1;
+      });
+
+      // Lazy-load thumbnails that aren't in the viewport
+      _.each(vm.comics, function(comic) {
+        // skip this calculation if the comic has been previously displayed
+        if (comic.visible === true) {
+          return;
+        }
+
+        comic.scrollDifference = scrollLeft - comic.containerStyles.left;
+
+        isComicScrolledPastLeft  = Boolean(scrollLeft > (comic.containerStyles.left + VISUAL_BLOCK_SIZE));
+        isComicScrolledPastRight = Boolean(scrollRight < comic.containerStyles.left);
+
+        // the comic is out of the viewport, to the left
+        if (!isComicScrolledPastLeft && !isComicScrolledPastRight) {
+          comic.visible = true;
+        }
       });
 
       var selectedComic = currentComicId || vm.expandedComicId;
