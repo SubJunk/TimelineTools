@@ -108,6 +108,7 @@
           <div class="panel-left">
             <a ng-if="comic.id !== main.expandedComicId" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
               <img
+                  ng-if="comic.visible"
                   class="responsive-img"
                   ng-srcset="
                       https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
