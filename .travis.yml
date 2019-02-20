@@ -18,7 +18,7 @@ addons:
     working_dir: WORKING_DIR
     s3_region: "ap-southeast-2"
   chrome: "stable"
-  # firefox: "latest"
+  firefox: "latest"
   java: "8"
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
