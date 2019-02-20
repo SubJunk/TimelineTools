@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
   <title>X-Men Timeline</title>
 </head>
 <body ng-style="main.bodyStyles" ng-controller="DataController as main">
@@ -108,6 +108,7 @@
           <div class="panel-left">
             <a ng-if="comic.id !== main.expandedComicId" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
               <img
+                  ng-if="comic.visible"
                   class="responsive-img"
                   ng-srcset="
                       https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
@@ -254,7 +255,7 @@
         <div class="popover"><div>#1</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol11">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_1.jpg"
                   srcset="
@@ -271,7 +272,7 @@
         <div class="popover"><div>#2</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol12">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_2.jpg"
                   srcset="
@@ -288,7 +289,7 @@
         <div class="popover"><div>#3</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol13">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_3.jpg"
                   srcset="
@@ -305,7 +306,7 @@
         <div class="popover"><div>#4</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol14">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_4.jpg"
                   srcset="
@@ -322,7 +323,7 @@
         <div class="popover"><div>#5</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol15">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_5.jpg"
                   srcset="
@@ -339,7 +340,7 @@
         <div class="popover"><div>#6</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol16">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_6.jpg"
                   srcset="
@@ -356,7 +357,7 @@
         <div class="popover"><div>#7</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol17">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_7.jpg"
                   srcset="
@@ -373,7 +374,7 @@
         <div class="popover"><div>#8</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol18">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_8.jpg"
                   srcset="
@@ -390,7 +391,7 @@
         <div class="popover"><div>#9</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol19">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_9.jpg"
                   srcset="
@@ -407,7 +408,7 @@
         <div class="popover"><div>#10</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol110">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_10.jpg"
                   srcset="
@@ -424,7 +425,7 @@
         <div class="popover"><div>#11</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol111">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_11.jpg"
                   srcset="
@@ -441,7 +442,7 @@
         <div class="popover"><div>#12</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol112">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_12.jpg"
                   srcset="
@@ -458,7 +459,7 @@
         <div class="popover"><div>#13</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol113">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_13.jpg"
                   srcset="
@@ -475,7 +476,7 @@
         <div class="popover"><div>#14</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol114">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_14.jpg"
                   srcset="
@@ -492,7 +493,7 @@
         <div class="popover"><div>#15</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol115">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_15.jpg"
                   srcset="
@@ -509,7 +510,7 @@
         <div class="popover"><div>#16</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol116">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_16.jpg"
                   srcset="
@@ -526,7 +527,7 @@
         <div class="popover"><div>#17</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol117">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_17.jpg"
                   srcset="
@@ -543,7 +544,7 @@
         <div class="popover"><div>#18</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol118">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_18.jpg"
                   srcset="
@@ -560,7 +561,7 @@
         <div class="popover"><div>#19</div></div>
         <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
           <div class="panel-left">
-            <a class="waves-effect cover-thumbnail" id="expand-UncannyXMenVol119">
+            <a class="waves-effect cover-thumbnail">
               <img class="responsive-img"
                   src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_19.jpg"
                   srcset="

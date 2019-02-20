@@ -4559,9 +4559,14 @@ collections.push(
       'XMenVol3187',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol128',
+      'CableDeadpoolVol129',
+    ]
+  ),
   new Collection(
     'New Excalibur Vol. 2: Last Days of Camelot',
     '2007-3-14',
@@ -4569,6 +4574,38 @@ collections.push(
       'NewExcaliburVol110',
       'NewExcaliburVol111',
       'NewExcaliburVol112',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Origins Vol. 2 - Savior',
+    '2007-9-19',
+    [
+      'WolverineOriginsVol16',
+      'WolverineOriginsVol17',
+      'WolverineOriginsVol18',
+      'WolverineOriginsVol19',
+      'WolverineOriginsVol110',
+    ]
+  ),
+  new Collection(
+    'X-Men: Deadly Genesis',
+    '2006-12-27',
+    [
+      'XMenDeadlyGenesisVol11',
+      'XMenDeadlyGenesisVol12',
+      'XMenDeadlyGenesisVol13',
+      'XMenDeadlyGenesisVol14',
+      'XMenDeadlyGenesisVol15',
+      'XMenDeadlyGenesisVol16',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'New Excalibur Vol. 2: Last Days of Camelot',
+    '2007-3-14',
+    [
       'NewExcaliburVol113',
       'NewExcaliburVol114',
     ]
@@ -4603,8 +4640,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol128',
-      'CableDeadpoolVol129',
       'CableDeadpoolVol130',
       'CableDeadpoolVol131',
       'CableDeadpoolVol132',

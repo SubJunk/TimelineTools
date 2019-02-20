@@ -1482,6 +1482,11 @@ addComicsInSeriesVolume('WolverineOriginsVol1', [
   [3, '2006-6-14'],
   [4, '2006-7-12'],
   [5, '2006-8-9'],
+  [6, '2006-9-13'],
+  [7, '2006-10-11'],
+  [8, '2006-11-8'],
+  [9, '2006-12-27'],
+  [10, '2007-1-10'],
 ]);
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
@@ -2126,6 +2131,14 @@ addComicsInSeriesVolume('XMenColossusBloodlineVol1', [
   [3, '2005-11-2'],
   [4, '2005-12-7'],
   [5, '2006-1-4'],
+]);
+addComicsInSeriesVolume('XMenDeadlyGenesisVol1', [
+  [1, '2005-11-16'],
+  [2, '2005-12-21'],
+  [3, '2006-1-25'],
+  [4, '2006-2-15'],
+  [5, '2006-3-15'],
+  [6, '2006-5-17'],
 ]);
 addComicsInSeriesVolume('XMenDrDoomAnnualVol1', [[1, '1998-6']]);
 addComicsInSeriesVolume('XMenFreeComicBookDayVol2008', [[1, '2008-5', ['X-Men: Pixies & Demons']]]);
