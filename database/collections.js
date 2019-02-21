@@ -4599,9 +4599,45 @@ collections.push(
       'XMenDeadlyGenesisVol16',
     ]
   ),
+  new Collection(
+    'X-Factor Vol. 2: Life & Death Matters',
+    '2007-8-1',
+    [
+      'XFactorVol37',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Rise & Fall of the Shi\'ar Empire',
+    '2007-7-25',
+    [
+      'UncannyXMenVol1475',
+      'UncannyXMenVol1476',
+      'UncannyXMenVol1477',
+      'UncannyXMenVol1478',
+      'UncannyXMenVol1479',
+      'UncannyXMenVol1480',
+      'UncannyXMenVol1481',
+      'UncannyXMenVol1482',
+      'UncannyXMenVol1483',
+      'UncannyXMenVol1484',
+      'UncannyXMenVol1485',
+      'UncannyXMenVol1486',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Factor Vol. 2: Life & Death Matters',
+    '2007-8-1',
+    [
+      'XFactorVol38',
+      'XFactorVol39',
+      'XFactorVol310',
+      'XFactorVol311',
+      'XFactorVol312',
+    ]
+  ),
   new Collection(
     'New Excalibur Vol. 2: Last Days of Camelot',
     '2007-3-14',
