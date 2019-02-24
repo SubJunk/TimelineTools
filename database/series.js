@@ -172,7 +172,7 @@ series.push(
   new Series('X-Men/ClanDestine', {1: 1996}),
   new Series('X-Men/Dr. Doom Annual', {1: 1998}),
   new Series('X-Men/Spider-Man', {1: 2008}),
-  new Series('X-Men Annual', {1: 1970, 2: 1991, 3: 1995, 4: 1999, 5: 2000}),
+  new Series('X-Men Annual', {1: 1970, 2: 1991, 3: 1995, 4: 1999, 5: 2000, 6: 2007}),
   new Series('X-Men Chronicles', {1: 1995}),
   new Series('X-Men Free Comic Book Day', {2008: 2008}),
   new Series('X-Men Legacy', {1: 2008}),

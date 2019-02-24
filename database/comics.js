@@ -2084,6 +2084,18 @@ addComicsInSeriesVolume('XMenVol3', [
   [185, '2006-4-19'],
   [186, '2006-5-17'],
   [187, '2006-6-28'],
+  [188, '2006-7-12'],
+  [189, '2006-7-26'],
+  [190, '2006-8-30'],
+  [191, '2006-9-27'],
+  [192, '2006-10-25'],
+  [193, '2006-11-29'],
+  [194, '2006-12-27'],
+  [195, '2007-1-31'],
+  [196, '2007-2-28'],
+  [197, '2007-3-21'],
+  [198, '2007-4-25'],
+  [199, '2007-5-23'],
 ]);
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
@@ -2127,6 +2139,7 @@ addComicsInSeriesVolume('XMenAnnualVol3', [
 ]);
 addComicsInSeriesVolume('XMenAnnualVol4', [[1, '1999-8']]);
 addComicsInSeriesVolume('XMenAnnualVol5', [[1, '2000-9']]);
+addComicsInSeriesVolume('XMenAnnualVol6', [[1, '2007-2-7']]);
 addComicsInSeriesVolume('XMenBlackSunVol1', [
   [1, '2000-11-1'],
   [2, '2000-11-15'],

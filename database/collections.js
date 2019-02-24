@@ -4624,9 +4624,34 @@ collections.push(
       'UncannyXMenVol1486',
     ]
   ),
+  new Collection(
+    'X-Men: Supernovas',
+    '2007-8-8',
+    [
+      'XMenVol3188',
+      'XMenVol3189',
+      'XMenVol3190',
+      'XMenVol3191',
+      'XMenVol3192',
+      'XMenVol3193',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Men: Supernovas',
+    '2007-8-8',
+    [
+      'XMenVol3194',
+      'XMenVol3195',
+      'XMenVol3196',
+      'XMenVol3197',
+      'XMenVol3198',
+      'XMenVol3199',
+      'XMenAnnualVol61',
+    ]
+  ),
   new Collection(
     'X-Factor Vol. 2: Life & Death Matters',
     '2007-8-1',
