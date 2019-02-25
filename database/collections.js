@@ -4636,6 +4636,29 @@ collections.push(
       'XMenVol3193',
     ]
   ),
+  new Collection(
+    'Wolverine: Origins Vol. 3 - Swift and Terrible',
+    '2007-11-14',
+    [
+      'WolverineOriginsVol111',
+      'WolverineOriginsVol112',
+      'WolverineOriginsVol113',
+      'WolverineOriginsVol114',
+      'WolverineOriginsVol115',
+    ]
+  ),
+  new Collection(
+    'X-23: Target X',
+    '2007-8-22',
+    [
+      'X23TargetXVol11',
+      'X23TargetXVol12',
+      'X23TargetXVol13',
+      'X23TargetXVol14',
+      'X23TargetXVol15',
+      'X23TargetXVol16',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */

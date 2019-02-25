@@ -1499,6 +1499,11 @@ addComicsInSeriesVolume('WolverineOriginsVol1', [
   [8, '2006-11-8'],
   [9, '2006-12-27'],
   [10, '2007-1-10'],
+  [11, '2007-2-14'],
+  [12, '2007-3-14'],
+  [13, '2007-4-11'],
+  [14, '2007-5-9'],
+  [15, '2007-6-27'],
 ]);
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
@@ -1640,6 +1645,14 @@ addComicsInSeriesVolume('X23Vol1', [
   [4, '2005-3-30'],
   [5, '2005-4-20'],
   [6, '2005-5-25'],
+]);
+addComicsInSeriesVolume('X23TargetXVol1', [
+  [1, '2006-12-13'],
+  [2, '2007-1-3'],
+  [3, '2007-2-7'],
+  [4, '2007-3-21'],
+  [5, '2007-4-18'],
+  [6, '2007-5-30'],
 ]);
 addComicsInSeriesVolume('X51Vol1', [[8, '2000-3']]);
 addComicsInSeriesVolume('XCalibreVol1', [
