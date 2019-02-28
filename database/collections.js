@@ -4659,6 +4659,96 @@ collections.push(
       'X23TargetXVol16',
     ]
   ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
+      'CivilWarVol11',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 2: Life & Death Matters',
+    '2007-8-1',
+    [
+      'XFactorVol38',
+    ]
+  ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
+      'CivilWarVol12',
+      'CivilWarVol13',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 2: Life & Death Matters',
+    '2007-8-1',
+    [
+      'XFactorVol39',
+    ]
+  ),
+  new Collection(
+    'Civil War: X-Men',
+    '2007-4-25',
+    [
+      'CivilWarXMenVol11',
+      'CivilWarXMenVol12',
+      'CivilWarXMenVol13',
+      'CivilWarXMenVol14',
+    ]
+  ),
+  new Collection(
+    'Civil War: X-Men',
+    '2007-5-2',
+    [
+      'WolverineVol342',
+      'WolverineVol343',
+      'WolverineVol344',
+      'WolverineVol345',
+      'WolverineVol346',
+      'WolverineVol347',
+      'WolverineVol348',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 2: Life & Death Matters',
+    '2007-8-1',
+    [
+      'XFactorVol310',
+      'XFactorVol311',
+      'XFactorVol312',
+    ]
+  ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
+      'CivilWarVol14',
+      'CivilWarVol15',
+      'CivilWarVol16',
+      'CivilWarVol17',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol130',
+      'CableDeadpoolVol131',
+      'CableDeadpoolVol132',
+      'CableDeadpoolVol133',
+      'CableDeadpoolVol134',
+      'CableDeadpoolVol135',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Blood & Sorrow',
+    '2007-6-27',
+    [
+      'WolverineVol349',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -4676,29 +4766,11 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor Vol. 2: Life & Death Matters',
-    '2007-8-1',
-    [
-      'XFactorVol38',
-      'XFactorVol39',
-      'XFactorVol310',
-      'XFactorVol311',
-      'XFactorVol312',
-    ]
-  ),
-  new Collection(
     'New Excalibur Vol. 2: Last Days of Camelot',
     '2007-3-14',
     [
       'NewExcaliburVol113',
       'NewExcaliburVol114',
-    ]
-  ),
-  new Collection(
-    'Wolverine: Blood & Sorrow',
-    '2007-6-27',
-    [
-      'WolverineVol349',
     ]
   ),
   new Collection(
@@ -4724,9 +4796,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol130',
-      'CableDeadpoolVol131',
-      'CableDeadpoolVol132',
       'CableDeadpoolVol133',
       'CableDeadpoolVol134',
       'CableDeadpoolVol135',

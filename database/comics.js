@@ -391,6 +391,21 @@ addComicsInSeriesVolume('CableDeadpoolVol1', [
   [49, '2008-1-16'],
   [50, '2008-2-20'],
 ]);
+addComicsInSeriesVolume('CivilWarVol1', [
+  [1, '2006-5-3'],
+  [2, '2006-6-14'],
+  [3, '2006-7-19'],
+  [4, '2006-9-20'],
+  [5, '2006-11-15'],
+  [6, '2006-1-3'],
+  [7, '2007-2-21'],
+]);
+addComicsInSeriesVolume('CivilWarXMenVol1', [
+  [1, '2006-7-19'],
+  [2, '2006-8-16'],
+  [3, '2006-9-20'],
+  [4, '2006-10-18'],
+]);
 addComicsInSeriesVolume('DecimationHouseofMTheDayAfterVol1', [[1, '2005-11-9']]);
 addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']]);
 addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']]);
@@ -1628,6 +1643,13 @@ addComicsInSeriesVolume('WolverineVol3', [
   [39, '2006-2-22'],
   [40, '2006-3-22'],
   [41, '2006-4-26'],
+  [42, '2006-5-24'],
+  [43, '2006-6-28'],
+  [44, '2006-7-26'],
+  [45, '2006-8-23'],
+  [46, '2006-9-20'],
+  [47, '2006-10-18'],
+  [48, '2006-11-22'],
   [49, '2006-12-13'],
 ]);
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']]);

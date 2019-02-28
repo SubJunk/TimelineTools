@@ -70,6 +70,8 @@ series.push(
   new Series('Cable Annual', {1: 1999}),
   new Series('Captain America', {1: 1968}),
   new Series('Cerebro\'s Guide to the X-Men', {1: 1998}),
+  new Series('Civil War', {1: 2006}),
+  new Series('Civil War: X-Men', {1: 2006}),
   new Series('Daredevil', {1: 1964}),
   new Series('Deadpool', {1: 1994, 2: 1997}),
   new Series('Deadpool Team-Up', {1: 1998}),
