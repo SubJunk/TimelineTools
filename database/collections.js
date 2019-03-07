@@ -4461,6 +4461,16 @@ collections.push(
     ]
   ),
   new Collection(
+    'New X-Men: Childhood\'s End Vol. 1',
+    '2006-8-2',
+    [
+      'NewXMenVol224',
+      'NewXMenVol225',
+      'NewXMenVol226',
+      'NewXMenVol227',
+    ]
+  ),
+  new Collection(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
     [
@@ -4737,9 +4747,32 @@ collections.push(
       'CableDeadpoolVol130',
       'CableDeadpoolVol131',
       'CableDeadpoolVol132',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 3',
+    '2006-12-6',
+    [
+      'NewXMenVol228',
+      'NewXMenVol229',
+      'NewXMenVol230',
+      'NewXMenVol231',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
       'CableDeadpoolVol133',
       'CableDeadpoolVol134',
       'CableDeadpoolVol135',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 3',
+    '2006-12-6',
+    [
+      'NewXMenVol232',
     ]
   ),
   new Collection(
@@ -4749,9 +4782,106 @@ collections.push(
       'WolverineVol349',
     ]
   ),
+  new Collection(
+    'X-Factor: Many Lives of Madrox',
+    '2007-10-24',
+    [
+      'XFactorVol313',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 2: Last Days of Camelot',
+    '2007-3-14',
+    [
+      'NewExcaliburVol113',
+      'NewExcaliburVol114',
+      'NewExcaliburVol115',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol136',
+      'CableDeadpoolVol137',
+      'CableDeadpoolVol138',
+      'CableDeadpoolVol139',
+    ]
+  ),
+  new Collection(
+    'X-Men: Phoenix - Warsong',
+    '2007-7-11',
+    [
+      'XMenPhoenixWarsongVol11',
+      'XMenPhoenixWarsongVol12',
+      'XMenPhoenixWarsongVol13',
+      'XMenPhoenixWarsongVol14',
+      'XMenPhoenixWarsongVol15',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 4',
+    '2007-5-30',
+    [
+      'NewXMenVol233',
+      'NewXMenVol234',
+      'NewXMenVol235',
+      'NewXMenVol236',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 3: Battle for Eternity',
+    '2007-12-5',
+    [
+      'NewExcaliburVol116',
+      'NewExcaliburVol117',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Many Lives of Madrox',
+    '2007-10-24',
+    [
+      'XFactorVol314',
+      'XFactorVol315',
+      'XFactorVol316',
+      'XFactorVol317',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 5',
+    '2007-12-12',
+    [
+      'NewXMenVol237',
+      'NewXMenVol238',
+      'NewXMenVol239',
+      'NewXMenVol240',
+      'NewXMenVol241',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 5',
+    '2007-12-12',
+    [
+      'NewXMenVol242',
+      'NewXMenVol243',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 3: Battle for Eternity',
+    '2007-12-5',
+    [
+      'NewExcaliburVol118',
+      'NewExcaliburVol119',
+      'NewExcaliburVol120',
+      'NewExcaliburVol121',
+      'NewExcaliburVol122',
+      'NewExcaliburVol123',
+      'NewExcaliburVol124',
+    ]
+  ),
   new Collection(
     'X-Men: Supernovas',
     '2007-8-8',
@@ -4763,14 +4893,6 @@ collections.push(
       'XMenVol3198',
       'XMenVol3199',
       'XMenAnnualVol61',
-    ]
-  ),
-  new Collection(
-    'New Excalibur Vol. 2: Last Days of Camelot',
-    '2007-3-14',
-    [
-      'NewExcaliburVol113',
-      'NewExcaliburVol114',
     ]
   ),
   new Collection(
@@ -4796,13 +4918,6 @@ collections.push(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol133',
-      'CableDeadpoolVol134',
-      'CableDeadpoolVol135',
-      'CableDeadpoolVol136',
-      'CableDeadpoolVol137',
-      'CableDeadpoolVol138',
-      'CableDeadpoolVol139',
       'CableDeadpoolVol140',
       'CableDeadpoolVol141',
       'CableDeadpoolVol142',
