@@ -3907,8 +3907,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Madrox: Multiple Choice',
-    '2005-3-30',
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
     [
       'MadroxVol11',
       'MadroxVol12',
@@ -4412,8 +4412,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor: The Longest Night',
-    '2007-3-7',
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
     [
       'XFactorVol31',
       'XFactorVol32',
@@ -4461,7 +4461,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men: Childhood\'s End Vol. 1',
+    'New X-Men: Childhood\'s End Vol. 2',
     '2006-8-2',
     [
       'NewXMenVol224',
@@ -4610,8 +4610,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor Vol. 2: Life & Death Matters',
-    '2007-8-1',
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
     [
       'XFactorVol37',
     ]
@@ -4677,8 +4677,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor Vol. 2: Life & Death Matters',
-    '2007-8-1',
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
     [
       'XFactorVol38',
     ]
@@ -4692,8 +4692,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor Vol. 2: Life & Death Matters',
-    '2007-8-1',
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
     [
       'XFactorVol39',
     ]
@@ -4722,8 +4722,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor Vol. 2: Life & Death Matters',
-    '2007-8-1',
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
     [
       'XFactorVol310',
       'XFactorVol311',
@@ -4783,8 +4783,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor: Many Lives of Madrox',
-    '2007-10-24',
+    'X-Factor by Peter David: The Complete Collection, Vol. 2',
+    '2014-6-10',
     [
       'XFactorVol313',
     ]
@@ -4838,8 +4838,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor: Many Lives of Madrox',
-    '2007-10-24',
+    'X-Factor by Peter David: The Complete Collection, Vol. 2',
+    '2014-6-10',
     [
       'XFactorVol314',
       'XFactorVol315',
@@ -4858,9 +4858,83 @@ collections.push(
       'NewXMenVol241',
     ]
   ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2',
+    '2014-6-10',
+    [
+      'XFactorVol318',
+      'XFactorVol319',
+      'XFactorVol320',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Evolution',
+    '2008-3-5',
+    [
+      'WolverineVol350',
+      'WolverineVol351',
+      'WolverineVol352',
+      'WolverineVol353',
+      'WolverineVol354',
+      'WolverineVol355',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Origins Vol. 4 - Our War',
+    '2008-6-11',
+    [
+      'WolverineOriginsAnnualVol11',
+    ]
+  ),
+  new Collection(
+    'Wolverine: The Death of Wolverine',
+    '2008-7-23',
+    [
+      'WolverineVol356',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Wolverine: Origins Vol. 4 - Our War',
+    '2008-6-11',
+    [
+      'WolverineOriginsVol116',
+      'WolverineOriginsVol117',
+      'WolverineOriginsVol118',
+      'WolverineOriginsVol119',
+      'WolverineOriginsVol120',
+    ]
+  ),
+  new Collection(
+    'Wolverine: The Death of Wolverine',
+    '2008-7-23',
+    [
+      'WolverineVol357',
+      'WolverineVol358',
+      'WolverineVol359',
+      'WolverineVol360',
+      'WolverineVol361',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2',
+    '2014-6-10',
+    [
+      'XFactorVol321',
+      'XFactorVol322',
+      'XFactorVol323',
+      'XFactorVol324',
+      'XFactorVol328',
+      'XFactorVol329',
+      'XFactorVol330',
+      'XFactorVol331',
+      'XFactorVol332',
+      'XFactorLaylaMillerVol11',
+      'XFactorTheQuickandtheDeadVol11',
+    ]
+  ),
   new Collection(
     'New X-Men: Childhood\'s End Vol. 5',
     '2007-12-12',

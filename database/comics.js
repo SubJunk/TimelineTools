@@ -1533,6 +1533,7 @@ addComicsInSeriesVolume('WeaponXVol1', [
 addComicsInSeriesVolume('WhatIfVol2', [[60, '1994-4']]);
 addComicsInSeriesVolume('WolverineAnnualVol1', [[1, '1995-9']]);
 addComicsInSeriesVolume('WolverineAnnualVol2', [[1, '1999-3-11']]);
+addComicsInSeriesVolume('WolverineOriginsAnnualVol1', [[1, '2007-7-18']]);
 addComicsInSeriesVolume('WolverineOriginsVol1', [
   [1, '2006-4-19'],
   [2, '2006-5-17'],
@@ -1549,6 +1550,11 @@ addComicsInSeriesVolume('WolverineOriginsVol1', [
   [13, '2007-4-11'],
   [14, '2007-5-9'],
   [15, '2007-6-27'],
+  [16, '2007-8-15'],
+  [17, '2007-9-19'],
+  [18, '2007-10-17'],
+  [19, '2007-11-21'],
+  [20, '2007-12-19'],
 ]);
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
@@ -1681,6 +1687,18 @@ addComicsInSeriesVolume('WolverineVol3', [
   [47, '2006-10-18'],
   [48, '2006-11-22'],
   [49, '2006-12-13'],
+  [50, '2007-1-24'],
+  [51, '2007-2-28'],
+  [52, '2007-3-28'],
+  [53, '2007-4-25'],
+  [54, '2007-5-30'],
+  [55, '2007-7-25'],
+  [56, '2007-8-22'],
+  [57, '2007-9-6'],
+  [58, '2007-10-10'],
+  [59, '2007-11-14'],
+  [60, '2007-12-12'],
+  [61, '2008-1-9'],
 ]);
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']]);
 addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']]);
@@ -1798,6 +1816,18 @@ addComicsInSeriesVolume('XFactorVol3', [
   [15, '2007-1-24'],
   [16, '2007-2-28'],
   [17, '2007-3-21'],
+  [18, '2007-4-18'],
+  [19, '2007-5-16'],
+  [20, '2007-6-27'],
+  [21, '2007-7-11'],
+  [22, '2007-8-8'],
+  [23, '2007-9-12'],
+  [24, '2007-10-10'],
+  [28, '2008-2-13'],
+  [29, '2008-3-12'],
+  [30, '2008-4-16'],
+  [31, '2008-5-21'],
+  [32, '2008-6-18'],
 ]);
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],
@@ -1806,6 +1836,8 @@ addComicsInSeriesVolume('XFactorAnnualVol1', [
   [6, '1991-8'],
   [7, '1992-5'],
 ]);
+addComicsInSeriesVolume('XFactorLaylaMillerVol1', [[1, '2008-8-20']]);
+addComicsInSeriesVolume('XFactorTheQuickandtheDeadVol1', [[1, '2008-5-7']]);
 addComicsInSeriesVolume('XForceVol1', [
   [1, '1991-8'],
   [2, '1991-9'],
