@@ -690,6 +690,12 @@ addComicsInSeriesVolume('MarvelTeamUpVol1', [
   [69, '1978-5', ['Night of the Living God!']],
   [70, '1978-6', ['Whom Gods Destroy!']],
 ]);
+addComicsInSeriesVolume('MysticArcanaVol1', [
+  [1, '2007-6-13'],
+  [2, '2007-7-18'],
+  [3, '2007-8-22'],
+  [4, '2007-11-7'],
+]);
 addComicsInSeriesVolume('MystiqueVol1', [
   [1, '2003-6-1'],
   [2, '2003-7-1'],
@@ -1989,6 +1995,20 @@ addComicsInSeriesVolume('XManVol1', [
 ]);
 addComicsInSeriesVolume('XManAnnualVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']]);
+addComicsInSeriesVolume('XMenDiebytheSwordVol1', [
+  [1, '2007-10-17'],
+  [2, '2007-10-24'],
+  [3, '2007-11-14'],
+  [4, '2007-12-5'],
+  [5, '2007-12-12'],
+]);
+addComicsInSeriesVolume('XMenEmperorVulcanVol1', [
+  [1, '2007-9-12'],
+  [2, '2007-10-17'],
+  [3, '2007-11-21'],
+  [4, '2007-12-28'],
+  [5, '2008-1-30'],
+]);
 addComicsInSeriesVolume('XMenFirstClassFinalsVol1', [
   [1, '2009-2-4'],
   [2, '2009-3-4'],

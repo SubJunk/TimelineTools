@@ -4922,9 +4922,17 @@ collections.push(
       'NewExcaliburVol124',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'X-Men: Die by the Sword',
+    '2008-3-26',
+    [
+      'XMenDiebytheSwordVol11',
+      'XMenDiebytheSwordVol12',
+      'XMenDiebytheSwordVol13',
+      'XMenDiebytheSwordVol14',
+      'XMenDiebytheSwordVol15',
+    ]
+  ),
   new Collection(
     'Wolverine: Origins Vol. 4 - Our War',
     '2008-6-11',
@@ -4948,41 +4956,24 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor by Peter David: The Complete Collection, Vol. 2',
-    '2014-6-10',
+    'X-Men: Emperor Vulcan',
+    '2008-4-23',
     [
-      'XFactorVol321',
-      'XFactorVol322',
-      'XFactorVol323',
-      'XFactorVol324',
-      'XFactorVol328',
-      'XFactorVol329',
-      'XFactorVol330',
-      'XFactorVol331',
-      'XFactorVol332',
-      'XFactorLaylaMillerVol11',
-      'XFactorTheQuickandtheDeadVol11',
+      'XMenEmperorVulcanVol11',
+      'XMenEmperorVulcanVol12',
+      'XMenEmperorVulcanVol13',
+      'XMenEmperorVulcanVol14',
+      'XMenEmperorVulcanVol15',
     ]
   ),
   new Collection(
-    'New X-Men: Childhood\'s End Vol. 5',
-    '2007-12-12',
+    'Mystic Arcana',
+    '2016-2-18',
     [
-      'NewXMenVol242',
-      'NewXMenVol243',
-    ]
-  ),
-  new Collection(
-    'X-Men: Supernovas',
-    '2007-8-8',
-    [
-      'XMenVol3194',
-      'XMenVol3195',
-      'XMenVol3196',
-      'XMenVol3197',
-      'XMenVol3198',
-      'XMenVol3199',
-      'XMenAnnualVol61',
+      'MysticArcanaVol11',
+      'MysticArcanaVol12',
+      'MysticArcanaVol13',
+      'MysticArcanaVol14',
     ]
   ),
   new Collection(
@@ -5005,10 +4996,35 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Supernovas',
+    '2007-8-8',
+    [
+      'XMenAnnualVol61',
+      'XMenVol3194',
+      'XMenVol3195',
+      'XMenVol3196',
+      'XMenVol3197',
+      'XMenVol3198',
+    ]
+  ),
+  new Collection(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
       'CableDeadpoolVol140',
+    ]
+  ),
+  new Collection(
+    'X-Men: Supernovas',
+    '2007-8-8',
+    [
+      'XMenVol3199',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
       'CableDeadpoolVol141',
       'CableDeadpoolVol142',
       'CableDeadpoolVol143',
@@ -5019,6 +5035,34 @@ collections.push(
       'CableDeadpoolVol148',
       'CableDeadpoolVol149',
       'CableDeadpoolVol150',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2',
+    '2014-6-10',
+    [
+      'XFactorVol321',
+      'XFactorVol322',
+      'XFactorVol323',
+      'XFactorVol324',
+      'XFactorVol328',
+      'XFactorVol329',
+      'XFactorVol330',
+      'XFactorVol331',
+      'XFactorVol332',
+      'XFactorLaylaMillerVol11',
+      'XFactorTheQuickandtheDeadVol11',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 5',
+    '2007-12-12',
+    [
+      'NewXMenVol242',
+      'NewXMenVol243',
     ]
   ),
   new Collection(
