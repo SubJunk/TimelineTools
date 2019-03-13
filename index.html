@@ -128,20 +128,20 @@
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
                   <i class="material-icons">arrow_backward</i>
                 </a>
-              </li>
-              <li class="waves-effect" ng-class="{disabled: !main.prevComic}">
+              </li><!--
+              --><li class="waves-effect" ng-class="{disabled: !main.prevComic}">
                 <div class="popover" ng-if="main.prevComic"><div>{{main.prevComic.series}} #{{main.prevComic.issue}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.prevComic)" class="button-previous-comic">
                   <i class="material-icons">chevron_left</i>
                 </a>
-              </li>
-              <li class="waves-effect" ng-class="{disabled: !main.nextComic}">
+              </li><!--
+              --><li class="waves-effect" ng-class="{disabled: !main.nextComic}">
                 <div class="popover" ng-if="main.nextComic"><div>{{main.nextComic.series}} #{{main.nextComic.issue}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.nextComic)" class="button-next-comic">
                   <i class="material-icons">chevron_right</i>
                 </a>
-              </li>
-              <li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic}">
+              </li><!--
+              --><li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic}">
                 <div class="popover" ng-if="main.nextCollectionFirstComic"><div>{{main.nextCollection.title}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.nextCollectionFirstComic)">
                   <i class="material-icons">arrow_forward</i>

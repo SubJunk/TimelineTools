@@ -378,7 +378,7 @@ li:hover {
  * Override Bootstrap styles
  */
 .pagination {
-  margin: 5px 0 8px calc(var(--month-width) * 0.05);
+  margin: 8px 0 8px calc(var(--month-width) * 0.05);
   display: none;
   cursor: default;
   width: var(--expanded-width-panel-left);
@@ -386,6 +386,7 @@ li:hover {
 
 .pagination > li {
   overflow: visible;
+  width: 25%;
 }
 
 .pagination > li > a,
