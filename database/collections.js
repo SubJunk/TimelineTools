@@ -4893,6 +4893,35 @@ collections.push(
       'WolverineVol356',
     ]
   ),
+  new Collection(
+    'World War Hulk: X-Men',
+    '2008-5-14',
+    [
+      'GhostRiderVol512',
+      'IronManDirectorofSHIELDVol119',
+      'WorldWarHulkXMenVol11',
+      'IrredeemableAntManVol110',
+      'AvengersTheInitiativeVol14',
+      'GhostRiderVol513',
+      'WorldWarHulkXMenVol12',
+      'IronManDirectorofSHIELDVol120',
+      'WorldWarHulkXMenVol13',
+      'AvengersTheInitiativeVol15',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 3: Battle for Eternity',
+    '2007-12-5',
+    [
+      'NewExcaliburVol118',
+      'NewExcaliburVol119',
+      'NewExcaliburVol120',
+      'NewExcaliburVol121',
+      'NewExcaliburVol122',
+      'NewExcaliburVol123',
+      'NewExcaliburVol124',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -4941,19 +4970,6 @@ collections.push(
     [
       'NewXMenVol242',
       'NewXMenVol243',
-    ]
-  ),
-  new Collection(
-    'New Excalibur Vol. 3: Battle for Eternity',
-    '2007-12-5',
-    [
-      'NewExcaliburVol118',
-      'NewExcaliburVol119',
-      'NewExcaliburVol120',
-      'NewExcaliburVol121',
-      'NewExcaliburVol122',
-      'NewExcaliburVol123',
-      'NewExcaliburVol124',
     ]
   ),
   new Collection(

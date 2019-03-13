@@ -125,6 +125,10 @@ addComicsInSeriesVolume('AstonishingXMenVol3', [
   [24, '2008-1-23'],
 ]);
 addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']]);
+addComicsInSeriesVolume('AvengersTheInitiativeVol1', [
+  [4, '2007-7-18'],
+  [5, '2007-8-29'],
+]);
 addComicsInSeriesVolume('AvengersVol1', [
   [53, '1968-6-10'],
   [110, '1973-4-10'],
@@ -605,6 +609,10 @@ addComicsInSeriesVolume('GhostRiderVol3', [
   [26, '1992-6'],
   [27, '1992-7'],
 ]);
+addComicsInSeriesVolume('GhostRiderVol5', [
+  [12, '2007-6-20'],
+  [13, '2007-7-18'],
+]);
 addComicsInSeriesVolume('GiantSizeAstonishingXMenVol1', [[1, '2008-5-26']]);
 addComicsInSeriesVolume('GiantSizeFantasticFourVol1', [[4, '1975-2-10']]);
 addComicsInSeriesVolume('GiantSizeWolverineVol1', [[1, '2006-10-4']]);
@@ -643,6 +651,11 @@ addComicsInSeriesVolume('IronFistVol1', [
   [15, '1977-9', ['Enter, the X-Men']]
 ]);
 addComicsInSeriesVolume('IronManVol1', [[332, '1996-9']]);
+addComicsInSeriesVolume('IronManDirectorofSHIELDVol1', [
+  [19, '2007-6-20'],
+  [20, '2007-7-25'],
+]);
+addComicsInSeriesVolume('IrredeemableAntManVol1', [[10, '2007-7-5']]);
 addComicsInSeriesVolume('KaZarVol1', [
   [2, '1970-12-1'],
   [3, '1971-3-1']
@@ -1707,6 +1720,11 @@ addComicsInSeriesVolume('WolverineGambitVictimsVol1', [
   [2, '1995-10'],
   [3, '1995-11'],
   [4, '1995-12'],
+]);
+addComicsInSeriesVolume('WorldWarHulkXMenVol1', [
+  [1, '2007-6-27'],
+  [2, '2007-7-25'],
+  [3, '2007-8-29'],
 ]);
 addComicsInSeriesVolume('X23Vol1', [
   [1, '2005-1-12'],
