@@ -694,7 +694,7 @@ angular.module('app', ['angular-md5'])
           // We only know the width after the initial render, so store it
           if (!seriesVolumeLabel.labelWidthFromDom) {
             $jqLabel = $('#' + seriesVolumeLabel.id);
-            if ($jqLabel.length > -1) {
+            if ($jqLabel.length && $jqLabel.outerWidth() > 0) {
               seriesVolumeLabel.labelWidthFromDom = $jqLabel.outerWidth() + BODY_PADDING;
             }
           }
@@ -723,14 +723,14 @@ angular.module('app', ['angular-md5'])
             seriesVolumeLabel.visible = true;
             seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - seriesVolumeLabel.labelWidthFromDom);
           } else if (seriesVolumeLabel.right < (scrollLeft + seriesVolumeLabel.labelWidthFromDom)) {
-            seriesVolumeLabel.visible = false;
+            delete seriesVolumeLabel.visible;
           } else {
             seriesVolumeLabel.visible = true;
             seriesVolumeLabel.labelStyles.left = '0';
           }
         } else {
           seriesVolumeLabel.visible = true;
-          seriesVolumeLabel.labelStyles.marginTop = false;
+          delete seriesVolumeLabel.labelStyles.marginTop;
         }
 
         // Show the label after we have its correct position calculated
