@@ -49,13 +49,37 @@ angular.module('app', ['angular-md5'])
     vm.isShowCollections = false;
 
     // API variables
-    var apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
-    var apiKeyPublic = _.isEmpty($window.apiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : $window.apiKeyPublic;
-    var apiKeyPrivate = $window.apiKeyPrivate;
+    const apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
+    const apiKeyPublic = _.isEmpty($window.apiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : $window.apiKeyPublic;
+    const apiKeyPrivate = $window.apiKeyPrivate;
+    const ONE_SECOND_IN_MILLISECONDS = 1000;
     var timestamp;
     var apiHash;
 
-    var setAPIComicData = function(comic, seriesVolumeMarvelID) {
+    /**
+     * @param {object} seriesVolume the series volume object
+     * @returns the series data from the Marvel API
+     */
+    var getAPISeriesVolume = function getAPISeriesVolume(seriesVolume) {
+      return $http({
+        method: 'GET',
+        url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
+        params: {
+          title: seriesVolume.title,
+          startYear: seriesVolume.startYear,
+          apikey: apiKeyPublic
+        }
+      });
+    };
+
+    /**
+     * Writes a "link" value to the comic object, which is a URL to the
+     * comic on Marvel Unlimited.
+     *
+     * @param {object} comic                the comic object
+     * @param {number} seriesVolumeMarvelID the series ID in the Marvel API
+     */
+    var setAPIComicData = function setAPIComicData(comic, seriesVolumeMarvelID) {
       $http({
         method: 'GET',
         url: apiBaseUrl + 'comics' + getExtraAPIParamsString(),
@@ -76,8 +100,7 @@ angular.module('app', ['angular-md5'])
       });
     };
 
-    const ONE_SECOND_IN_MILLISECONDS = 1000;
-    var getExtraAPIParamsString = function() {
+    var getExtraAPIParamsString = function getExtraAPIParamsString() {
       if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
         timestamp = Date.now() / ONE_SECOND_IN_MILLISECONDS | 0;
         apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
@@ -246,22 +269,15 @@ angular.module('app', ['angular-md5'])
       if (expandedSeriesVolume.marvelId) {
         setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
       } else {
-        $http({
-          method: 'GET',
-          url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
-          params: {
-            title: expandedSeriesVolume.title,
-            startYear: expandedSeriesVolume.startYear,
-            apikey: apiKeyPublic
-          }
-        }).then(function successCallback(response) {
-          if (response.data.data.results.length) {
-            expandedSeriesVolume.marvelId = _.first(response.data.data.results).id;
-            setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
-          }
-        }, function errorCallback(err) {
-          throw new Error(err);
-        });
+        getAPISeriesVolume(expandedSeriesVolume)
+          .then(function successCallback(response) {
+            if (response.data.data.results.length) {
+              expandedSeriesVolume.marvelId = _.first(response.data.data.results).id;
+              setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+            }
+          }, function errorCallback(err) {
+            throw new Error(err);
+          });
       }
     };
 
