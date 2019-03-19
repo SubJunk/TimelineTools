@@ -910,6 +910,9 @@ addComicsInSeriesVolume('NewXMenVol2', [
   [41, '2007-8-15'],
   [42, '2007-9-19'],
   [43, '2007-10-31'],
+  [44, '2007-11-21'],
+  [45, '2007-12-19'],
+  [46, '2008-1-16'],
 ]);
 addComicsInSeriesVolume('NightcrawlerVol1', [
   [1, '1985-11'],
@@ -1499,12 +1502,17 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [484, '2007-3-7'],
   [485, '2007-4-11'],
   [486, '2007-5-16'],
+  [487, '2007-6-6'],
+  [488, '2007-7-5'],
+  [489, '2007-8-1'],
+  [490, '2007-9-6'],
+  [491, '2007-10-3'],
+  [492, '2007-11-7'],
+  [493, '2007-12-5'],
+  [494, '2008-1-4'],
   /**
    * Complete until here
    */
-  [492, '2008-1', ['Messiah Complex: Chapter Two']],
-  [493, '2008-2', ['Messiah Complex: Chapter Six']],
-  [494, '2008-3', ['Messiah Complex: Chapter Ten']],
   [495, '2008-4', ['X-Men: Divided (Part 1)']],
   [496, '2008-5', ['X-Men: Divided (Part 2)']],
   [500, '2008-9', ['SFX (1 of 3)']],
@@ -1847,6 +1855,9 @@ addComicsInSeriesVolume('XFactorVol3', [
   [22, '2007-8-8'],
   [23, '2007-9-12'],
   [24, '2007-10-10'],
+  [25, '2007-11-14'],
+  [26, '2007-12-12'],
+  [27, '2008-1-9'],
   [28, '2008-2-13'],
   [29, '2008-3-12'],
   [30, '2008-4-16'],
@@ -2236,6 +2247,14 @@ addComicsInSeriesVolume('XMenVol3', [
   [197, '2007-3-21'],
   [198, '2007-4-25'],
   [199, '2007-5-23'],
+  [200, '2007-6-27'],
+  [201, '2007-7-25'],
+  [202, '2007-8-22'],
+  [203, '2007-9-26'],
+  [204, '2007-10-24'],
+  [205, '2007-11-29'],
+  [206, '2007-12-28'],
+  [207, '2008-1-23'],
 ]);
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
@@ -2312,18 +2331,26 @@ addComicsInSeriesVolume('XMenDeadlyGenesisVol1', [
   [6, '2006-5-17'],
 ]);
 addComicsInSeriesVolume('XMenDrDoomAnnualVol1', [[1, '1998-6']]);
+addComicsInSeriesVolume('XMenEndangeredSpeciesVol1', [[1, '2007-6-20']]);
 addComicsInSeriesVolume('XMenFreeComicBookDayVol2008', [[1, '2008-5', ['X-Men: Pixies & Demons']]]);
-addComicsInSeriesVolume('XMenLegacyVol1', [
-  [235, '2010-6', ['Second Coming (Chapter Four)']],
-  [236, '2010-7', ['Second Coming (Chapter Eight)']],
-  [237, '2010-8', ['Second Coming (Chapter Twelve)']],
-]);
 addComicsInSeriesVolume('XMenKittyPrydeShadowFlameVol1', [
   [1, '2005-6-29'],
   [2, '2005-7-20'],
   [3, '2005-8-17'],
   [4, '2005-9-28'],
   [5, '2005-11-30'],
+]);
+addComicsInSeriesVolume('XMenLegacyVol1', [
+  [235, '2010-6', ['Second Coming (Chapter Four)']],
+  [236, '2010-7', ['Second Coming (Chapter Eight)']],
+  [237, '2010-8', ['Second Coming (Chapter Twelve)']],
+]);
+addComicsInSeriesVolume('XMenMagnetoTestamentVol1', [
+  [1, '2008-9-10'],
+  [2, '2008-10-8'],
+  [3, '2008-11-12'],
+  [4, '2008-12-31'],
+  [5, '2009-2-4'],
 ]);
 addComicsInSeriesVolume('XMenManifestDestinyVol1', [
   [1, '2008-11', ['Untitled']],
@@ -2332,6 +2359,8 @@ addComicsInSeriesVolume('XMenManifestDestinyVol1', [
   [4, '2009-2', ['Kill or Cure (Part 4)','Mercury','Work It Out']],
   [5, '2009-3', ['Kill or Cure (Part 5)','Nick\'s','Dazzler: Solo']],
 ]);
+addComicsInSeriesVolume('XMenMessiahComplexVol1', [[1, '2007-10-31']]);
+addComicsInSeriesVolume('XMenMessiahComplexMutantFilesVol1', [[1, '2007-12-28']]);
 addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']]);
 addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']]);
 addComicsInSeriesVolume('XMenPhoenixVol1', [

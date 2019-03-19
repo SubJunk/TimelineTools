@@ -4848,14 +4848,12 @@ collections.push(
     ]
   ),
   new Collection(
-    'New X-Men: Childhood\'s End Vol. 5',
+    'New X-Men: Childhood\'s End Vol. 5 (Partial)',
     '2007-12-12',
     [
       'NewXMenVol237',
       'NewXMenVol238',
       'NewXMenVol239',
-      'NewXMenVol240',
-      'NewXMenVol241',
     ]
   ),
   new Collection(
@@ -5037,17 +5035,93 @@ collections.push(
       'CableDeadpoolVol150',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men: The Extremists (Partial)',
+    '2008-1-9',
+    [
+      'UncannyXMenVol1487',
+    ]
+  ),
+  new Collection(
+    'X-Men: Endangered Species',
+    '2008-1-9',
+    [
+      'XMenEndangeredSpeciesVol11',
+      'XMenVol3200',
+      'UncannyXMenVol1488',
+      'XFactorVol321',
+      'NewXMenVol240',
+      'XMenVol3201',
+      'UncannyXMenVol1489',
+      'XFactorVol322',
+      'NewXMenVol241',
+      'XMenVol3202',
+      'UncannyXMenVol1490',
+      'XFactorVol323',
+      'NewXMenVol242',
+      'XMenVol3203',
+      'UncannyXMenVol1491',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
+    '2014-6-10',
+    [
+      'XFactorVol324',
+    ]
+  ),
+  new Collection(
+    'X-Men: Endangered Species',
+    '2008-1-9',
+    [
+      'XMenVol3204',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 5 (Partial)',
+    '2007-12-12',
+    [
+      'NewXMenVol243',
+    ]
+  ),
+  new Collection(
+    'X-Men: Magneto Testament',
+    '2009-6-10',
+    [
+      'XMenMagnetoTestamentVol11',
+      'XMenMagnetoTestamentVol12',
+      'XMenMagnetoTestamentVol13',
+      'XMenMagnetoTestamentVol14',
+      'XMenMagnetoTestamentVol15',
+    ]
+  ),
+  new Collection(
+    'X-Men: Messiah Complex',
+    '2008-10-29',
+    [
+      'XMenMessiahComplexMutantFilesVol11',
+      'XMenMessiahComplexVol11',
+      'UncannyXMenVol1492',
+      'XFactorVol325',
+      'NewXMenVol244',
+      'XMenVol3205',
+      'UncannyXMenVol1493',
+      'XFactorVol326',
+      'NewXMenVol245',
+      'XMenVol3206',
+      'UncannyXMenVol1494',
+      'XFactorVol327',
+      'NewXMenVol246',
+      'XMenVol3207',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
   new Collection(
-    'X-Factor by Peter David: The Complete Collection, Vol. 2',
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
     '2014-6-10',
     [
-      'XFactorVol321',
-      'XFactorVol322',
-      'XFactorVol323',
-      'XFactorVol324',
       'XFactorVol328',
       'XFactorVol329',
       'XFactorVol330',
@@ -5055,14 +5129,6 @@ collections.push(
       'XFactorVol332',
       'XFactorLaylaMillerVol11',
       'XFactorTheQuickandtheDeadVol11',
-    ]
-  ),
-  new Collection(
-    'New X-Men: Childhood\'s End Vol. 5',
-    '2007-12-12',
-    [
-      'NewXMenVol242',
-      'NewXMenVol243',
     ]
   ),
   new Collection(
@@ -5085,15 +5151,6 @@ collections.push(
     'Cable Vol. 1: Messiah War',
     '2008-12',
     ['CableVol21']
-  ),
-  new Collection(
-    'X-Men: Messiah Complex',
-    '2008-11',
-    [
-      'UncannyXMenVol1492',
-      'UncannyXMenVol1493',
-      'UncannyXMenVol1494'
-    ]
   ),
   new Collection(
     'Uncanny X-Men: Divided We Stand',
