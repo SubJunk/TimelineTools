@@ -696,13 +696,10 @@ angular.module('app', ['angular-md5'])
             $jqLabel = $('#' + seriesVolumeLabel.id);
             if ($jqLabel.length && $jqLabel.outerWidth() > 0) {
               seriesVolumeLabel.labelWidthFromDom = $jqLabel.outerWidth() + BODY_PADDING;
-            }
-          }
 
-          // Subtract width of the label from the left position
-          if (!seriesVolumeLabel.isWidthSubtracted) {
-            seriesVolumeLabel.containerStyles.left = seriesVolumeLabel.containerStyles.left - seriesVolumeLabel.labelWidthFromDom;
-            seriesVolumeLabel.isWidthSubtracted = true;
+              // Subtract width of the label from the left position
+              seriesVolumeLabel.containerStyles.left = seriesVolumeLabel.containerStyles.left - seriesVolumeLabel.labelWidthFromDom;
+            }
           }
         }
 
