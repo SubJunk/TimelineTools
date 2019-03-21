@@ -208,6 +208,7 @@ series.push(
   new Series('X-Men: Manifest Destiny', {1: 2008}),
   new Series('X-Men: Messiah Complex', {1: 2007}),
   new Series('X-Men: Messiah Complex - Mutant Files', {1: 2007}),
+  new Series('X-Men: Odd Men Out', {1: 2008}),
   new Series('X-Men: Omega', {1: 1995}),
   new Series('X-Men: Phoenix', {1: 1999}),
   new Series('X-Men: Phoenix - Endsong', {1: 2005}),
@@ -219,6 +220,7 @@ series.push(
   new Series('X-Men: The 198', {1: 2006}),
   new Series('X-Men: The Hidden Years', {1: 1999}),
   new Series('X-MEN: THE MAGNETO WAR 1', {1: 1999}),
+  new Series('X-Men: The Unlikely Saga of Xavier, Magneto and Stan', {1: 2006}),
   new Series('X-Men: The Wedding Album', {1: 1994}),
   new Series('X-Treme X-Men', {1: 2001}),
   new Series('X-Treme X-Men Annual', {1: 2002}),
@@ -227,5 +229,6 @@ series.push(
   new Series('X-Treme X-Men: X-Pose', {1: 2003}),
   new Series('X-Universe', {1: 1995}),
   new Series('X-Terminators', {1: 1988}),
-  new Series('Xavier Institute Alumni Yearbook', {1: 1996})
+  new Series('Xavier Institute Alumni Yearbook', {1: 1996}),
+  new Series('Young X-Men', {1: 2008})
 );

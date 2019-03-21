@@ -1726,6 +1726,10 @@ addComicsInSeriesVolume('WolverineVol3', [
   [59, '2007-11-14'],
   [60, '2007-12-12'],
   [61, '2008-1-9'],
+  [62, '2008-2-13'],
+  [63, '2008-3-12'],
+  [64, '2008-4-9'],
+  [65, '2008-5-14'],
 ]);
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']]);
 addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']]);
@@ -1961,6 +1965,12 @@ addComicsInSeriesVolume('XForceVol2', [
   [6, '2005-2-16'],
 ]);
 addComicsInSeriesVolume('XForceVol3', [
+  [1, '2008-2-13'],
+  [2, '2008-3-5'],
+  [3, '2008-4-23'],
+  [4, '2008-5-29'],
+  [5, '2008-7-16'],
+  [6, '2008-8-27'],
   [26, '2010-6', ['Second Coming (Chapter Five)']],
   [27, '2010-7', ['Second Coming (Chapter Nine)']],
   [28, '2010-9', ['Second Coming, Chapter 13']],
@@ -2341,6 +2351,15 @@ addComicsInSeriesVolume('XMenKittyPrydeShadowFlameVol1', [
   [5, '2005-11-30'],
 ]);
 addComicsInSeriesVolume('XMenLegacyVol1', [
+  [208, '2008-2-27'],
+  [209, '2008-3-26'],
+  [210, '2008-4-30'],
+  [211, '2008-5-14'],
+  [212, '2008-5-29'],
+  [213, '2008-6-25'],
+  [214, '2008-7-23'],
+  [215, '2008-8-27'],
+  [216, '2008-9-24'],
   [235, '2010-6', ['Second Coming (Chapter Four)']],
   [236, '2010-7', ['Second Coming (Chapter Eight)']],
   [237, '2010-8', ['Second Coming (Chapter Twelve)']],
@@ -2361,6 +2380,7 @@ addComicsInSeriesVolume('XMenManifestDestinyVol1', [
 ]);
 addComicsInSeriesVolume('XMenMessiahComplexVol1', [[1, '2007-10-31']]);
 addComicsInSeriesVolume('XMenMessiahComplexMutantFilesVol1', [[1, '2007-12-28']]);
+addComicsInSeriesVolume('XMenOddMenOutVol1', [[1, '2008-7-30']]);
 addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']]);
 addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']]);
 addComicsInSeriesVolume('XMenPhoenixVol1', [
@@ -2399,6 +2419,7 @@ addComicsInSeriesVolume('XMenSpiderManVol1', [
   [3, '2009-1-14'],
   [4, '2009-3-4'],
 ]);
+addComicsInSeriesVolume('XMenTheUnlikelySagaofXavierMagnetoandStanVol1', [[1, '2006-9']]);
 addComicsInSeriesVolume('XMenTheWeddingAlbumVol1', [[1, '1994-1-1']]);
 addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [1, '1993-6'],
@@ -2522,4 +2543,11 @@ addComicsInSeriesVolume('XTremeXMenTheSavageLandVol1', [
 addComicsInSeriesVolume('XTremeXMenXPoseVol1', [
   [1, '2003-1'],
   [2, '2003-2'],
+]);
+addComicsInSeriesVolume('YoungXMenVol1', [
+  [1, '2008-4-2'],
+  [2, '2008-5-7'],
+  [3, '2008-6-4'],
+  [4, '2008-7-9'],
+  [5, '2008-8-20'],
 ]);

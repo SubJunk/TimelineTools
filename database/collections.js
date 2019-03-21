@@ -5115,9 +5115,46 @@ collections.push(
       'XMenVol3207',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
+  new Collection(
+    'Wolverine: Get Mystique',
+    '2008-8-27',
+    [
+      'WolverineVol362',
+      'WolverineVol363',
+      'WolverineVol364',
+      'WolverineVol365',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Divided He Stands',
+    '2008-8-27',
+    [
+      'XMenLegacyVol1208',
+      'XMenLegacyVol1209',
+      'XMenLegacyVol1210',
+      'XMenLegacyVol1211',
+      'XMenLegacyVol1212',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Sins of the Father',
+    '2009-3-11',
+    [
+      'XMenLegacyVol1213',
+      'XMenLegacyVol1214',
+    ]
+  ),
+  new Collection(
+    'Young X-Men, Vol. 1: Final Genesis',
+    '2008-12-3',
+    [
+      'YoungXMenVol11',
+      'YoungXMenVol12',
+      'YoungXMenVol13',
+      'YoungXMenVol14',
+      'YoungXMenVol15',
+    ]
+  ),
   new Collection(
     'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
     '2014-6-10',
@@ -5127,6 +5164,37 @@ collections.push(
       'XFactorVol330',
       'XFactorVol331',
       'XFactorVol332',
+    ]
+  ),
+  new Collection(
+    'X-Force Vol. 1: Angels and Demons',
+    '2009-1-28',
+    [
+      'XForceVol31',
+      'XForceVol32',
+      'XForceVol33',
+      'XForceVol34',
+      'XForceVol35',
+      'XForceVol36',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Men: Legacy - Sins of the Father',
+    '2009-3-11',
+    [
+      'XMenLegacyVol1215',
+      'XMenLegacyVol1216',
+      'XMenTheUnlikelySagaofXavierMagnetoandStanVol11',
+      'XMenOddMenOutVol11',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
+    '2014-6-10',
+    [
       'XFactorLaylaMillerVol11',
       'XFactorTheQuickandtheDeadVol11',
     ]
