@@ -5178,6 +5178,17 @@ collections.push(
       'XForceVol36',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men: Divided We Stand',
+    '2008-10',
+    [
+      'UncannyXMenVol1495',
+      'UncannyXMenVol1496',
+      'UncannyXMenVol1497',
+      'UncannyXMenVol1498',
+      'UncannyXMenVol1499',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -5219,14 +5230,6 @@ collections.push(
     'Cable Vol. 1: Messiah War',
     '2008-12',
     ['CableVol21']
-  ),
-  new Collection(
-    'Uncanny X-Men: Divided We Stand',
-    '2008-10',
-    [
-      'UncannyXMenVol1495',
-      'UncannyXMenVol1496'
-    ]
   ),
   new Collection(
     'Uncanny X-Men: Manifest Destiny',

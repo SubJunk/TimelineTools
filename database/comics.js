@@ -1510,11 +1510,14 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [492, '2007-11-7'],
   [493, '2007-12-5'],
   [494, '2008-1-4'],
+  [495, '2008-2-6'],
+  [496, '2008-3-5'],
+  [497, '2008-4-23'],
+  [498, '2008-5-29'],
+  [499, '2008-6-25'],
   /**
    * Complete until here
    */
-  [495, '2008-4', ['X-Men: Divided (Part 1)']],
-  [496, '2008-5', ['X-Men: Divided (Part 2)']],
   [500, '2008-9', ['SFX (1 of 3)']],
   [501, '2008-10', ['SFX (2 of 3): All Tomorrow\'s Parties']],
   [502, '2008-11', ['SFX (3 of 3) - Beginning to See the Light']],
