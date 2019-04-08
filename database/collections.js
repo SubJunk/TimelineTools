@@ -4688,6 +4688,19 @@ collections.push(
     '2007-4-11',
     [
       'CivilWarVol12',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol130',
+    ]
+  ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
       'CivilWarVol13',
     ]
   ),
@@ -4735,18 +4748,23 @@ collections.push(
     '2007-4-11',
     [
       'CivilWarVol14',
-      'CivilWarVol15',
-      'CivilWarVol16',
-      'CivilWarVol17',
     ]
   ),
   new Collection(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol130',
       'CableDeadpoolVol131',
       'CableDeadpoolVol132',
+    ]
+  ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
+      'CivilWarVol15',
+      'CivilWarVol16',
+      'CivilWarVol17',
     ]
   ),
   new Collection(
@@ -5189,9 +5207,78 @@ collections.push(
       'UncannyXMenVol1499',
     ]
   ),
+  new Collection(
+    'X-Men: Divided We Stand',
+    '2008-9-3',
+    [
+      'XMenDividedWeStandVol11',
+      'XMenDividedWeStandVol12',
+      'XMenFreeComicBookDayVol20081',
+    ]
+  ),
+  new Collection(
+    'Cable Vol. 1: Messiah War',
+    '2008-10-8',
+    [
+      'CableVol21',
+      'CableVol22',
+      'CableVol23',
+      'CableVol24',
+      'CableVol25',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Logan',
+    '2009-4-29',
+    [
+      'LoganVol11',
+      'LoganVol12',
+      'LoganVol13',
+    ]
+  ),
+  new Collection(
+    'X-Men: Angel - Revelations',
+    '2009-1-7',
+    [
+      'AngelRevelationsVol11',
+      'AngelRevelationsVol12',
+      'AngelRevelationsVol13',
+      'AngelRevelationsVol14',
+      'AngelRevelationsVol15',
+    ]
+  ),
+  new Collection(
+    'War of Kings: Road to War of Kings',
+    '2009-6-3',
+    [
+      'XMenKingbreakerVol11',
+      'XMenKingbreakerVol12',
+      'XMenKingbreakerVol13',
+      'XMenKingbreakerVol14',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Manifest Destiny (Partial)',
+    '2009-10',
+    [
+      'XMenManifestDestinyVol11',
+      'XMenManifestDestinyVol12',
+      'XMenManifestDestinyVol13',
+      'XMenManifestDestinyVol14',
+      'XMenManifestDestinyVol15'
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'War of Kings: Road to War of Kings',
+    '2009-6-3',
+    [
+      'SecretInvasionWarofKingsVol11',
+      'WarofKingsSagaVol11',
+    ]
+  ),
   new Collection(
     'X-Men: Legacy - Sins of the Father',
     '2009-3-11',
@@ -5227,24 +5314,13 @@ collections.push(
    * Big gap here, and in general the contents after here need to be reviewed.
    */
   new Collection(
-    'Cable Vol. 1: Messiah War',
-    '2008-12',
-    ['CableVol21']
-  ),
-  new Collection(
-    'Uncanny X-Men: Manifest Destiny',
+    'Uncanny X-Men: Manifest Destiny (Partial)',
     '2009-10',
     [
       'UncannyXMenVol1500',
       'UncannyXMenVol1501',
       'UncannyXMenVol1502',
       'UncannyXMenVol1503',
-      'XMenFreeComicBookDayVol20081',
-      'XMenManifestDestinyVol11',
-      'XMenManifestDestinyVol12',
-      'XMenManifestDestinyVol13',
-      'XMenManifestDestinyVol14',
-      'XMenManifestDestinyVol15'
     ]
   ),
   new Collection(
