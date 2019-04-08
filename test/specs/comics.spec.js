@@ -10,7 +10,7 @@ describe('Comics', function() {
   function() {
     const preloadedThumbnails = $('#pre-app');
     // This confusing syntax means wait for it to NOT be displayed
-    preloadedThumbnails.waitForDisplayed(500, true);
+    preloadedThumbnails.waitForDisplayed(undefined, true);
 
     const giantSizeThumbnail = $('.cover-thumbnail img[src*=Uncanny_X-Men_Vol_1_5]');
     giantSizeThumbnail.waitForDisplayed();
