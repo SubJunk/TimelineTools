@@ -2,14 +2,17 @@ describe('Comics', function() {
   before(function() {
     browser.url('file://' + process.cwd() + '/index.html');
   });
-  
-  it.only(
+
+  it(
     'should create a comic thumbnail with the correct value\n' +
     'should open the expanded panel with the correct title\n' +
     'should use the arrow button to go to the next comic',
   function() {
     const giantSizeThumbnail = $('.cover-thumbnail img[src*=Uncanny_X-Men_Vol_1_5]');
     giantSizeThumbnail.waitForDisplayed();
+
+    const preloadedThumbnails = $('#pre-app');
+    preloadedThumbnails.waitForDisplayed(500, true);
 
     const giantSizeExpandLink = $('#expand-UncannyXMenVol15');
     giantSizeExpandLink.click();
