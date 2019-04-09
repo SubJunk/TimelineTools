@@ -10,7 +10,6 @@ cache:
     - node_modules
 addons:
   artifacts:
-    debug: true
     paths:
       - ./errorShots/
     target_paths: $TRAVIS_BUILD_NUMBER
