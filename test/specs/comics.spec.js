@@ -12,7 +12,7 @@ describe('Comics', function() {
     // This confusing syntax means wait for it to NOT be displayed
     preloadedThumbnails.waitForDisplayed(undefined, true);
 
-    const giantSizeThumbnail = $('.cover-thumbnail img[src*=Uncanny_X-Men_Vol_1_5]');
+    const giantSizeThumbnail = $('#app .cover-thumbnail.waves-effect img[src*=Uncanny_X-Men_Vol_1_5]');
     giantSizeThumbnail.waitForDisplayed();
 
     const giantSizeExpandLink = $('#expand-UncannyXMenVol15');
