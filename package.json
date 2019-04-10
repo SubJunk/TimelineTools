@@ -66,7 +66,7 @@
     "@wdio/mocha-framework": "^5.4.14",
     "@wdio/selenium-standalone-service": "^5.4.14",
     "@wdio/spec-reporter": "^5.4.15",
-    "@wdio/sync": "^5.4.14",
+    "@wdio/sync": "^5.7.9",
     "chromedriver": "^2.46.0",
     "eslint": "^5.16.0",
     "eslint-config-angular": "^0.5.0",
