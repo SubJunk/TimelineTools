@@ -73,6 +73,6 @@
     "eslint-plugin-angular": "^4.0.0",
     "geckodriver": "^1.15.0",
     "stylelint": "^9.10.1",
-    "webdriverio": "^5.4.17"
+    "webdriverio": "^5.7.9"
   }
 }
