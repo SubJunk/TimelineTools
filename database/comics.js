@@ -1561,7 +1561,7 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [526, '2010-9', ['The Five Lights (Part 1): Freak Like Me', 'Rebuilding']],
   [527, '2010-10', ['The Five Lights (Part 2) - Velocidad']],
   [528, '2010-11', ['The Five Lights (Part 3)']],
-  [529, '2010-12', ['The Five Lights (Part Four)']]
+  [529, '2010-12', ['The Five Lights (Part Four)']],
 ]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
   [1, '1996-9'],
@@ -1576,11 +1576,17 @@ addComicsInSeriesVolume('WeaponXVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
-  [4, '1995-6']
+  [4, '1995-6'],
 ]);
 addComicsInSeriesVolume('WhatIfVol2', [[60, '1994-4']]);
 addComicsInSeriesVolume('WolverineAnnualVol1', [[1, '1995-9']]);
 addComicsInSeriesVolume('WolverineAnnualVol2', [[1, '1999-3-11']]);
+addComicsInSeriesVolume('WolverineManifestDestinyVol1', [
+  [1, '2008-10-22'],
+  [2, '2008-12-3'],
+  [3, '2008-12-31'],
+  [4, '2009-2-11'],
+]);
 addComicsInSeriesVolume('WolverineOriginsAnnualVol1', [[1, '2007-7-18']]);
 addComicsInSeriesVolume('WolverineOriginsVol1', [
   [1, '2006-4-19'],
@@ -1608,7 +1614,7 @@ addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
   [2, '1982-10'],
   [3, '1982-11'],
-  [4, '1982-12']
+  [4, '1982-12'],
 ]);
 addComicsInSeriesVolume('WolverineVol2', [
   [75, '1993-11'],
@@ -2402,6 +2408,7 @@ addComicsInSeriesVolume('XMenMagnetoTestamentVol1', [
   [4, '2008-12-31'],
   [5, '2009-2-4'],
 ]);
+addComicsInSeriesVolume('XMenManifestDestinyNightcrawlerVol1', [[1, '2009-3-11']]);
 addComicsInSeriesVolume('XMenManifestDestinyVol1', [
   [1, '2008-9-3'],
   [2, '2008-10-8'],

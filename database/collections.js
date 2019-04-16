@@ -5258,14 +5258,19 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Manifest Destiny (Partial)',
-    '2009-10',
+    'X-Men: Manifest Destiny',
+    '2009-5-27',
     [
       'XMenManifestDestinyVol11',
       'XMenManifestDestinyVol12',
       'XMenManifestDestinyVol13',
       'XMenManifestDestinyVol14',
-      'XMenManifestDestinyVol15'
+      'XMenManifestDestinyVol15',
+      'XMenManifestDestinyNightcrawlerVol11',
+      'WolverineManifestDestinyVol11',
+      'WolverineManifestDestinyVol12',
+      'WolverineManifestDestinyVol13',
+      'WolverineManifestDestinyVol14',
     ]
   ),
   /**
