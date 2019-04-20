@@ -224,9 +224,9 @@
     glob "^7.1.2"
 
 "@wdio/interface@^5.7.0":
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/@wdio/interface/-/interface-5.7.0.tgz#be4fe52e684fe6644d7c1246f7b6ea1d2fb6edf2"
-  integrity sha512-aC6acVWrVy2Rk6pfISq8q9kq4ctuDXauArsV9A/yKGbAf+NB9/OZUDg/3BIYso8aYf/asdui/qAUzbDm1wmmDQ==
+  version "5.7.8"
+  resolved "https://registry.yarnpkg.com/@wdio/interface/-/interface-5.7.8.tgz#dd3d238045d12c55c68cbd03c7ac69fb2ba61b62"
+  integrity sha512-US3zcH0blPMVj8INIZG6Oi8NkbsHUeT6oZygt+n3/hO8TRjRABKFCMd1WexqkSuQnd53UHrKz2Fg7pWc8JHMbQ==
   dependencies:
     ansi-escapes "^3.0.0"
     chalk "^2.3.2"
