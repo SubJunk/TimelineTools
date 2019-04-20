@@ -4145,8 +4145,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Phoenix - Endsong',
-    '2005-12-14',
+    'X-Men: Phoenix - Endsong/Warsong Ultimate Collection',
+    '2012-6-13',
     [
       'XMenPhoenixEndsongVol11',
       'XMenPhoenixEndsongVol12',
@@ -4827,8 +4827,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Phoenix - Warsong',
-    '2007-7-11',
+    'X-Men: Phoenix - Endsong/Warsong Ultimate Collection',
+    '2012-6-13',
     [
       'XMenPhoenixWarsongVol11',
       'XMenPhoenixWarsongVol12',
