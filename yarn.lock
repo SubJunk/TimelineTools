@@ -190,15 +190,14 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@wdio/cli@5.4.20":
-  version "5.4.20"
-  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-5.4.20.tgz#f478b03a271465dd322ef1bda623f77400887ead"
-  integrity sha512-joF1Zk65YXiuwsA9eqwchlKVmNLbi9T0SqKS6C6sYvg0fHwCat0VhyPXC+BoKElybpNITX/P+m5Ju4S11f2zsg==
+"@wdio/cli@5.4.19":
+  version "5.4.19"
+  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-5.4.19.tgz#b505db8767a901643accd8c7313ab9beaaed0271"
+  integrity sha512-QSBFzxc60RQy/tHQBIhRz4z9tj+tmj8MTmZR4WuoL68FuiCl7iIDBbLqIyAVBnTTTmNGkMVQs9rqx9sbVsEyFw==
   dependencies:
-    "@wdio/config" "^5.4.20"
+    "@wdio/config" "^5.4.18"
     "@wdio/interface" "^5.4.6"
     "@wdio/logger" "^5.4.6"
-    "@wdio/utils" "^5.4.20"
     async-exit-hook "^2.0.1"
     chalk "^2.3.2"
     chokidar "^2.0.4"
@@ -209,11 +208,11 @@
     lodash.flattendeep "^4.4.0"
     lodash.pickby "^4.6.0"
     lodash.union "^4.6.0"
-    webdriverio "^5.4.20"
+    webdriverio "^5.4.19"
     yargs "^11.1.0"
     yarn-install "^1.0.0"
 
-"@wdio/config@^5.4.20", "@wdio/config@^5.7.13":
+"@wdio/config@^5.4.18", "@wdio/config@^5.7.13":
   version "5.7.13"
   resolved "https://registry.yarnpkg.com/@wdio/config/-/config-5.7.13.tgz#39f9c3d345bc4c3116ab5d411abcf8c6c12c30a2"
   integrity sha512-/BiX8Ufgxixrm1+Nk06KVIScEWS95y5kGuwVG3CWieZX7LWi8LU9twRH5Dac8LjQVXp14cTJi00NFj8puOTiAQ==
@@ -339,14 +338,6 @@
     "@wdio/config" "^5.7.3"
     "@wdio/logger" "^5.7.0"
     fibers "^3.1.1"
-
-"@wdio/utils@^5.4.20":
-  version "5.7.8"
-  resolved "https://registry.yarnpkg.com/@wdio/utils/-/utils-5.7.8.tgz#e1a4ebd243cc3fb2a948c23904a56d1d6187757d"
-  integrity sha512-igtwm9AK6kkssZNq6KhI5/6EV5Rk5pXOhp2Xk1yInycjJJSdY9KOcIUK1h3he/kj8bXIslnxoF+TqplKimxW3A==
-  dependencies:
-    "@wdio/logger" "^5.7.8"
-    deepmerge "^3.2.0"
 
 "@wdio/utils@^5.7.0":
   version "5.7.0"
@@ -4757,7 +4748,7 @@ webdriverio@^5.4.17, webdriverio@^5.7.3:
     serialize-error "^3.0.0"
     webdriver "^5.7.3"
 
-webdriverio@^5.4.20:
+webdriverio@^5.4.19:
   version "5.7.15"
   resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.7.15.tgz#511d27d2963e5e24c565d56a06d589364d2e4192"
   integrity sha512-Dg/azrry/qVZhmUfT3Sn5ODssYeCnXjhd9zUAvZIihNC2T2QrRCz7XSAhLuY4PTfY2vQfzP1zC0f8XiHIotX6A==
