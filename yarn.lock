@@ -223,15 +223,6 @@
     deepmerge "^2.0.1"
     glob "^7.1.2"
 
-"@wdio/config@^5.7.3":
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/@wdio/config/-/config-5.7.3.tgz#732317e2a2026e612832c809ff0e01fc299d26da"
-  integrity sha512-4RuR+VkfLXtyUkBr5AYMC5miOwRN8xQsWMAzHzaQJvwk3uUB+uFRtve2sS0byoieQBCVI4V5BVKdNvDYfrAXEA==
-  dependencies:
-    "@wdio/logger" "^5.7.0"
-    deepmerge "^2.0.1"
-    glob "^7.1.2"
-
 "@wdio/interface@^5.7.8":
   version "5.7.8"
   resolved "https://registry.yarnpkg.com/@wdio/interface/-/interface-5.7.8.tgz#dd3d238045d12c55c68cbd03c7ac69fb2ba61b62"
@@ -252,7 +243,7 @@
     async-exit-hook "^2.0.1"
     stream-buffers "^3.0.2"
 
-"@wdio/logger@^5.7.0", "@wdio/logger@^5.7.8":
+"@wdio/logger@^5.7.8":
   version "5.7.8"
   resolved "https://registry.yarnpkg.com/@wdio/logger/-/logger-5.7.8.tgz#c2a58d971ce5b891d7dcd5aafa4ecc2d2d1ef7d5"
   integrity sha512-cbX/fHoTQ7xZvl8X4r828UjWv/ccKhpzPuNGZGukK2DRC7vSOg8sAi8bKNyjvv8nedaZkCQKaSFmsuHHlbIJ7g==
@@ -316,13 +307,13 @@
     chalk "^2.3.2"
     pretty-ms "^3.1.0"
 
-"@wdio/sync@^5.4.14":
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.7.3.tgz#eb3456d69c44f2b93a255fe536a2fe0c6c650d95"
-  integrity sha512-WDlUGBVvwnfm0gYx395H2OZ6771q9s5yyCs5Q19gW+SarTVSvoKNKbbahifMTKmZAExMtSl8/Cm7jiW/U4E5Ew==
+"@wdio/sync@^5.7.13":
+  version "5.7.13"
+  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.7.13.tgz#4f6651c011ecd6b99858f4795243ae2c519e0d20"
+  integrity sha512-TVtBxrz7VcjfvFWomK8f5+be0FyzZIlxgrdBLLo0elr9bv7q+tNrnImfF+fgliKhlJXyHPLCoPnwEUxMW6Y5eg==
   dependencies:
-    "@wdio/config" "^5.7.3"
-    "@wdio/logger" "^5.7.0"
+    "@wdio/config" "^5.7.13"
+    "@wdio/logger" "^5.7.8"
     fibers "^3.1.1"
 
 "@wdio/utils@^5.7.8":
