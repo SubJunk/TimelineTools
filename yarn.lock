@@ -190,15 +190,15 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@wdio/cli@5.4":
-  version "5.4.20"
-  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-5.4.20.tgz#f478b03a271465dd322ef1bda623f77400887ead"
-  integrity sha512-joF1Zk65YXiuwsA9eqwchlKVmNLbi9T0SqKS6C6sYvg0fHwCat0VhyPXC+BoKElybpNITX/P+m5Ju4S11f2zsg==
+"@wdio/cli@5.6":
+  version "5.6.6"
+  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-5.6.6.tgz#24c18b5e1da2d5ce43edb96dff02949a21144c80"
+  integrity sha512-xd7GKJMVHkvlY1HzAXBY7+jWHo0gM4ua7rYDV2PQGbNi/Hh3BOClOFg4oEeHxO56d07eMQ41wTa0ZdwmvgAC1Q==
   dependencies:
-    "@wdio/config" "^5.4.20"
-    "@wdio/interface" "^5.4.6"
-    "@wdio/logger" "^5.4.6"
-    "@wdio/utils" "^5.4.20"
+    "@wdio/config" "^5.6.4"
+    "@wdio/interface" "^5.6.4"
+    "@wdio/logger" "^5.6.4"
+    "@wdio/utils" "^5.6.4"
     async-exit-hook "^2.0.1"
     chalk "^2.3.2"
     chokidar "^2.0.4"
@@ -209,11 +209,11 @@
     lodash.flattendeep "^4.4.0"
     lodash.pickby "^4.6.0"
     lodash.union "^4.6.0"
-    webdriverio "^5.4.20"
+    webdriverio "^5.6.6"
     yargs "^11.1.0"
     yarn-install "^1.0.0"
 
-"@wdio/config@^5.4.20", "@wdio/config@^5.7.13":
+"@wdio/config@^5.6.4", "@wdio/config@^5.7.13":
   version "5.7.13"
   resolved "https://registry.yarnpkg.com/@wdio/config/-/config-5.7.13.tgz#39f9c3d345bc4c3116ab5d411abcf8c6c12c30a2"
   integrity sha512-/BiX8Ufgxixrm1+Nk06KVIScEWS95y5kGuwVG3CWieZX7LWi8LU9twRH5Dac8LjQVXp14cTJi00NFj8puOTiAQ==
@@ -231,7 +231,7 @@
     deepmerge "^2.0.1"
     glob "^7.1.2"
 
-"@wdio/interface@^5.4.6":
+"@wdio/interface@^5.6.4":
   version "5.7.8"
   resolved "https://registry.yarnpkg.com/@wdio/interface/-/interface-5.7.8.tgz#dd3d238045d12c55c68cbd03c7ac69fb2ba61b62"
   integrity sha512-US3zcH0blPMVj8INIZG6Oi8NkbsHUeT6oZygt+n3/hO8TRjRABKFCMd1WexqkSuQnd53UHrKz2Fg7pWc8JHMbQ==
@@ -251,7 +251,7 @@
     async-exit-hook "^2.0.1"
     stream-buffers "^3.0.2"
 
-"@wdio/logger@^5.4.6", "@wdio/logger@^5.7.0", "@wdio/logger@^5.7.8":
+"@wdio/logger@^5.6.4", "@wdio/logger@^5.7.0", "@wdio/logger@^5.7.8":
   version "5.7.8"
   resolved "https://registry.yarnpkg.com/@wdio/logger/-/logger-5.7.8.tgz#c2a58d971ce5b891d7dcd5aafa4ecc2d2d1ef7d5"
   integrity sha512-cbX/fHoTQ7xZvl8X4r828UjWv/ccKhpzPuNGZGukK2DRC7vSOg8sAi8bKNyjvv8nedaZkCQKaSFmsuHHlbIJ7g==
@@ -324,7 +324,7 @@
     "@wdio/logger" "^5.7.0"
     fibers "^3.1.1"
 
-"@wdio/utils@^5.4.20", "@wdio/utils@^5.7.8":
+"@wdio/utils@^5.6.4", "@wdio/utils@^5.7.8":
   version "5.7.8"
   resolved "https://registry.yarnpkg.com/@wdio/utils/-/utils-5.7.8.tgz#e1a4ebd243cc3fb2a948c23904a56d1d6187757d"
   integrity sha512-igtwm9AK6kkssZNq6KhI5/6EV5Rk5pXOhp2Xk1yInycjJJSdY9KOcIUK1h3he/kj8bXIslnxoF+TqplKimxW3A==
@@ -4656,7 +4656,7 @@ webdriver@^5.7.15:
     lodash.merge "^4.6.1"
     request "^2.83.0"
 
-webdriverio@^5.4.20, webdriverio@^5.7.15:
+webdriverio@^5.6.6, webdriverio@^5.7.15:
   version "5.7.15"
   resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.7.15.tgz#511d27d2963e5e24c565d56a06d589364d2e4192"
   integrity sha512-Dg/azrry/qVZhmUfT3Sn5ODssYeCnXjhd9zUAvZIihNC2T2QrRCz7XSAhLuY4PTfY2vQfzP1zC0f8XiHIotX6A==
