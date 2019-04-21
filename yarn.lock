@@ -305,18 +305,6 @@
     gaze "^1.1.2"
     webdriverio "^5.7.15"
 
-"@wdio/runner@^5.7.3":
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/@wdio/runner/-/runner-5.7.3.tgz#7d95a7d29413469d264b6c208908bbc8589cb53a"
-  integrity sha512-ttRfcHoDqfb35GhgPY5dT2n6lnznnhK/0Wxug+0RqPQFUTac5ceBYYVVIm9dRQA+9eE3VCsP/+qGKiSCmfgdCA==
-  dependencies:
-    "@wdio/config" "^5.7.3"
-    "@wdio/logger" "^5.7.0"
-    "@wdio/utils" "^5.7.0"
-    deepmerge "^2.0.1"
-    gaze "^1.1.2"
-    webdriverio "^5.7.3"
-
 "@wdio/selenium-standalone-service@^5.4.14":
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/@wdio/selenium-standalone-service/-/selenium-standalone-service-5.7.2.tgz#77b6e04b946da9f90ebc523ebd298422eaf24f6e"
