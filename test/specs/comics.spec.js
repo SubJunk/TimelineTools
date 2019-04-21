@@ -2,26 +2,30 @@ describe('Comics', function() {
   before(function() {
     browser.url('file://' + process.cwd() + '/index.html');
   });
-  
-  it.only(
+
+  it(
     'should create a comic thumbnail with the correct value\n' +
     'should open the expanded panel with the correct title\n' +
     'should use the arrow button to go to the next comic',
   function() {
-    const giantSizeThumbnail = $('.cover-thumbnail img[src*=Uncanny_X-Men_Vol_1_2]');
+    const preloadedThumbnails = $('#pre-app');
+    // This confusing syntax means wait for it to NOT be displayed
+    preloadedThumbnails.waitForDisplayed(undefined, true);
+
+    const giantSizeThumbnail = $('#app .cover-thumbnail.waves-effect img[src*=Uncanny_X-Men_Vol_1_5]');
     giantSizeThumbnail.waitForDisplayed();
 
-    const giantSizeExpandLink = $('#expand-UncannyXMenVol12');
+    const giantSizeExpandLink = $('#expand-UncannyXMenVol15');
     giantSizeExpandLink.click();
 
-    const giantSizeExpandedPanelTitle = $('div.series*=Uncanny X-Men #2');
+    const giantSizeExpandedPanelTitle = $('div.series*=Uncanny X-Men #5');
     giantSizeExpandedPanelTitle.waitForDisplayed();
 
     const nextComicBtn = $('.button-next-comic');
     nextComicBtn.waitForDisplayed();
     nextComicBtn.click();
 
-    const nextExpandedPanelTitle = $('div.series*=Uncanny X-Men #3');
+    const nextExpandedPanelTitle = $('div.series*=Uncanny X-Men #6');
     nextExpandedPanelTitle.waitForDisplayed();
   });
 });

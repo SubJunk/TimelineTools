@@ -3907,8 +3907,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Madrox: Multiple Choice',
-    '2005-3-30',
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
     [
       'MadroxVol11',
       'MadroxVol12',
@@ -4145,8 +4145,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Phoenix - Endsong',
-    '2005-12-14',
+    'X-Men: Phoenix - Endsong/Warsong Ultimate Collection',
+    '2012-6-13',
     [
       'XMenPhoenixEndsongVol11',
       'XMenPhoenixEndsongVol12',
@@ -4412,8 +4412,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor: The Longest Night',
-    '2007-3-7',
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
     [
       'XFactorVol31',
       'XFactorVol32',
@@ -4458,6 +4458,16 @@ collections.push(
       'NewExcaliburVol15',
       'NewExcaliburVol16',
       'NewExcaliburVol17',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 2',
+    '2006-8-2',
+    [
+      'NewXMenVol224',
+      'NewXMenVol225',
+      'NewXMenVol226',
+      'NewXMenVol227',
     ]
   ),
   new Collection(
@@ -4599,15 +4609,188 @@ collections.push(
       'XMenDeadlyGenesisVol16',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
-    'New Excalibur Vol. 2: Last Days of Camelot',
-    '2007-3-14',
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
     [
-      'NewExcaliburVol113',
-      'NewExcaliburVol114',
+      'XFactorVol37',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Rise & Fall of the Shi\'ar Empire',
+    '2007-7-25',
+    [
+      'UncannyXMenVol1475',
+      'UncannyXMenVol1476',
+      'UncannyXMenVol1477',
+      'UncannyXMenVol1478',
+      'UncannyXMenVol1479',
+      'UncannyXMenVol1480',
+      'UncannyXMenVol1481',
+      'UncannyXMenVol1482',
+      'UncannyXMenVol1483',
+      'UncannyXMenVol1484',
+      'UncannyXMenVol1485',
+      'UncannyXMenVol1486',
+    ]
+  ),
+  new Collection(
+    'X-Men: Supernovas',
+    '2007-8-8',
+    [
+      'XMenVol3188',
+      'XMenVol3189',
+      'XMenVol3190',
+      'XMenVol3191',
+      'XMenVol3192',
+      'XMenVol3193',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Origins Vol. 3 - Swift and Terrible',
+    '2007-11-14',
+    [
+      'WolverineOriginsVol111',
+      'WolverineOriginsVol112',
+      'WolverineOriginsVol113',
+      'WolverineOriginsVol114',
+      'WolverineOriginsVol115',
+    ]
+  ),
+  new Collection(
+    'X-23: Target X',
+    '2007-8-22',
+    [
+      'X23TargetXVol11',
+      'X23TargetXVol12',
+      'X23TargetXVol13',
+      'X23TargetXVol14',
+      'X23TargetXVol15',
+      'X23TargetXVol16',
+    ]
+  ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
+      'CivilWarVol11',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
+    [
+      'XFactorVol38',
+    ]
+  ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
+      'CivilWarVol12',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol130',
+    ]
+  ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
+      'CivilWarVol13',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
+    [
+      'XFactorVol39',
+    ]
+  ),
+  new Collection(
+    'Civil War: X-Men',
+    '2007-4-25',
+    [
+      'CivilWarXMenVol11',
+      'CivilWarXMenVol12',
+      'CivilWarXMenVol13',
+      'CivilWarXMenVol14',
+    ]
+  ),
+  new Collection(
+    'Civil War: X-Men',
+    '2007-5-2',
+    [
+      'WolverineVol342',
+      'WolverineVol343',
+      'WolverineVol344',
+      'WolverineVol345',
+      'WolverineVol346',
+      'WolverineVol347',
+      'WolverineVol348',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 1',
+    '2014-2-4',
+    [
+      'XFactorVol310',
+      'XFactorVol311',
+      'XFactorVol312',
+    ]
+  ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
+      'CivilWarVol14',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol131',
+      'CableDeadpoolVol132',
+    ]
+  ),
+  new Collection(
+    'Civil War',
+    '2007-4-11',
+    [
+      'CivilWarVol15',
+      'CivilWarVol16',
+      'CivilWarVol17',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 3',
+    '2006-12-6',
+    [
+      'NewXMenVol228',
+      'NewXMenVol229',
+      'NewXMenVol230',
+      'NewXMenVol231',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol133',
+      'CableDeadpoolVol134',
+      'CableDeadpoolVol135',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 3',
+    '2006-12-6',
+    [
+      'NewXMenVol232',
     ]
   ),
   new Collection(
@@ -4615,6 +4798,198 @@ collections.push(
     '2007-6-27',
     [
       'WolverineVol349',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2',
+    '2014-6-10',
+    [
+      'XFactorVol313',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 2: Last Days of Camelot',
+    '2007-3-14',
+    [
+      'NewExcaliburVol113',
+      'NewExcaliburVol114',
+      'NewExcaliburVol115',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol136',
+      'CableDeadpoolVol137',
+      'CableDeadpoolVol138',
+      'CableDeadpoolVol139',
+    ]
+  ),
+  new Collection(
+    'X-Men: Phoenix - Endsong/Warsong Ultimate Collection',
+    '2012-6-13',
+    [
+      'XMenPhoenixWarsongVol11',
+      'XMenPhoenixWarsongVol12',
+      'XMenPhoenixWarsongVol13',
+      'XMenPhoenixWarsongVol14',
+      'XMenPhoenixWarsongVol15',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 4',
+    '2007-5-30',
+    [
+      'NewXMenVol233',
+      'NewXMenVol234',
+      'NewXMenVol235',
+      'NewXMenVol236',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 3: Battle for Eternity',
+    '2007-12-5',
+    [
+      'NewExcaliburVol116',
+      'NewExcaliburVol117',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2',
+    '2014-6-10',
+    [
+      'XFactorVol314',
+      'XFactorVol315',
+      'XFactorVol316',
+      'XFactorVol317',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 5 (Partial)',
+    '2007-12-12',
+    [
+      'NewXMenVol237',
+      'NewXMenVol238',
+      'NewXMenVol239',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2',
+    '2014-6-10',
+    [
+      'XFactorVol318',
+      'XFactorVol319',
+      'XFactorVol320',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Evolution',
+    '2008-3-5',
+    [
+      'WolverineVol350',
+      'WolverineVol351',
+      'WolverineVol352',
+      'WolverineVol353',
+      'WolverineVol354',
+      'WolverineVol355',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Origins Vol. 4 - Our War',
+    '2008-6-11',
+    [
+      'WolverineOriginsAnnualVol11',
+    ]
+  ),
+  new Collection(
+    'Wolverine: The Death of Wolverine',
+    '2008-7-23',
+    [
+      'WolverineVol356',
+    ]
+  ),
+  new Collection(
+    'World War Hulk: X-Men',
+    '2008-5-14',
+    [
+      'GhostRiderVol512',
+      'IronManDirectorofSHIELDVol119',
+      'WorldWarHulkXMenVol11',
+      'IrredeemableAntManVol110',
+      'AvengersTheInitiativeVol14',
+      'GhostRiderVol513',
+      'WorldWarHulkXMenVol12',
+      'IronManDirectorofSHIELDVol120',
+      'WorldWarHulkXMenVol13',
+      'AvengersTheInitiativeVol15',
+    ]
+  ),
+  new Collection(
+    'New Excalibur Vol. 3: Battle for Eternity',
+    '2007-12-5',
+    [
+      'NewExcaliburVol118',
+      'NewExcaliburVol119',
+      'NewExcaliburVol120',
+      'NewExcaliburVol121',
+      'NewExcaliburVol122',
+      'NewExcaliburVol123',
+      'NewExcaliburVol124',
+    ]
+  ),
+  new Collection(
+    'X-Men: Die by the Sword',
+    '2008-3-26',
+    [
+      'XMenDiebytheSwordVol11',
+      'XMenDiebytheSwordVol12',
+      'XMenDiebytheSwordVol13',
+      'XMenDiebytheSwordVol14',
+      'XMenDiebytheSwordVol15',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Origins Vol. 4 - Our War',
+    '2008-6-11',
+    [
+      'WolverineOriginsVol116',
+      'WolverineOriginsVol117',
+      'WolverineOriginsVol118',
+      'WolverineOriginsVol119',
+      'WolverineOriginsVol120',
+    ]
+  ),
+  new Collection(
+    'Wolverine: The Death of Wolverine',
+    '2008-7-23',
+    [
+      'WolverineVol357',
+      'WolverineVol358',
+      'WolverineVol359',
+      'WolverineVol360',
+      'WolverineVol361',
+    ]
+  ),
+  new Collection(
+    'X-Men: Emperor Vulcan',
+    '2008-4-23',
+    [
+      'XMenEmperorVulcanVol11',
+      'XMenEmperorVulcanVol12',
+      'XMenEmperorVulcanVol13',
+      'XMenEmperorVulcanVol14',
+      'XMenEmperorVulcanVol15',
+    ]
+  ),
+  new Collection(
+    'Mystic Arcana',
+    '2016-2-18',
+    [
+      'MysticArcanaVol11',
+      'MysticArcanaVol12',
+      'MysticArcanaVol13',
+      'MysticArcanaVol14',
     ]
   ),
   new Collection(
@@ -4637,20 +5012,35 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Supernovas',
+    '2007-8-8',
+    [
+      'XMenAnnualVol61',
+      'XMenVol3194',
+      'XMenVol3195',
+      'XMenVol3196',
+      'XMenVol3197',
+      'XMenVol3198',
+    ]
+  ),
+  new Collection(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
-      'CableDeadpoolVol130',
-      'CableDeadpoolVol131',
-      'CableDeadpoolVol132',
-      'CableDeadpoolVol133',
-      'CableDeadpoolVol134',
-      'CableDeadpoolVol135',
-      'CableDeadpoolVol136',
-      'CableDeadpoolVol137',
-      'CableDeadpoolVol138',
-      'CableDeadpoolVol139',
       'CableDeadpoolVol140',
+    ]
+  ),
+  new Collection(
+    'X-Men: Supernovas',
+    '2007-8-8',
+    [
+      'XMenVol3199',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
       'CableDeadpoolVol141',
       'CableDeadpoolVol142',
       'CableDeadpoolVol143',
@@ -4661,6 +5051,255 @@ collections.push(
       'CableDeadpoolVol148',
       'CableDeadpoolVol149',
       'CableDeadpoolVol150',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Extremists (Partial)',
+    '2008-1-9',
+    [
+      'UncannyXMenVol1487',
+    ]
+  ),
+  new Collection(
+    'X-Men: Endangered Species',
+    '2008-1-9',
+    [
+      'XMenEndangeredSpeciesVol11',
+      'XMenVol3200',
+      'UncannyXMenVol1488',
+      'XFactorVol321',
+      'NewXMenVol240',
+      'XMenVol3201',
+      'UncannyXMenVol1489',
+      'XFactorVol322',
+      'NewXMenVol241',
+      'XMenVol3202',
+      'UncannyXMenVol1490',
+      'XFactorVol323',
+      'NewXMenVol242',
+      'XMenVol3203',
+      'UncannyXMenVol1491',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
+    '2014-6-10',
+    [
+      'XFactorVol324',
+    ]
+  ),
+  new Collection(
+    'X-Men: Endangered Species',
+    '2008-1-9',
+    [
+      'XMenVol3204',
+    ]
+  ),
+  new Collection(
+    'New X-Men: Childhood\'s End Vol. 5 (Partial)',
+    '2007-12-12',
+    [
+      'NewXMenVol243',
+    ]
+  ),
+  new Collection(
+    'X-Men: Magneto Testament',
+    '2009-6-10',
+    [
+      'XMenMagnetoTestamentVol11',
+      'XMenMagnetoTestamentVol12',
+      'XMenMagnetoTestamentVol13',
+      'XMenMagnetoTestamentVol14',
+      'XMenMagnetoTestamentVol15',
+    ]
+  ),
+  new Collection(
+    'X-Men: Messiah Complex',
+    '2008-10-29',
+    [
+      'XMenMessiahComplexMutantFilesVol11',
+      'XMenMessiahComplexVol11',
+      'UncannyXMenVol1492',
+      'XFactorVol325',
+      'NewXMenVol244',
+      'XMenVol3205',
+      'UncannyXMenVol1493',
+      'XFactorVol326',
+      'NewXMenVol245',
+      'XMenVol3206',
+      'UncannyXMenVol1494',
+      'XFactorVol327',
+      'NewXMenVol246',
+      'XMenVol3207',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Get Mystique',
+    '2008-8-27',
+    [
+      'WolverineVol362',
+      'WolverineVol363',
+      'WolverineVol364',
+      'WolverineVol365',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Divided He Stands',
+    '2008-8-27',
+    [
+      'XMenLegacyVol1208',
+      'XMenLegacyVol1209',
+      'XMenLegacyVol1210',
+      'XMenLegacyVol1211',
+      'XMenLegacyVol1212',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Sins of the Father',
+    '2009-3-11',
+    [
+      'XMenLegacyVol1213',
+      'XMenLegacyVol1214',
+    ]
+  ),
+  new Collection(
+    'Young X-Men, Vol. 1: Final Genesis',
+    '2008-12-3',
+    [
+      'YoungXMenVol11',
+      'YoungXMenVol12',
+      'YoungXMenVol13',
+      'YoungXMenVol14',
+      'YoungXMenVol15',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
+    '2014-6-10',
+    [
+      'XFactorVol328',
+      'XFactorVol329',
+      'XFactorVol330',
+      'XFactorVol331',
+      'XFactorVol332',
+    ]
+  ),
+  new Collection(
+    'X-Force Vol. 1: Angels and Demons',
+    '2009-1-28',
+    [
+      'XForceVol31',
+      'XForceVol32',
+      'XForceVol33',
+      'XForceVol34',
+      'XForceVol35',
+      'XForceVol36',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Divided We Stand',
+    '2008-10',
+    [
+      'UncannyXMenVol1495',
+      'UncannyXMenVol1496',
+      'UncannyXMenVol1497',
+      'UncannyXMenVol1498',
+      'UncannyXMenVol1499',
+    ]
+  ),
+  new Collection(
+    'X-Men: Divided We Stand',
+    '2008-9-3',
+    [
+      'XMenDividedWeStandVol11',
+      'XMenDividedWeStandVol12',
+      'XMenFreeComicBookDayVol20081',
+    ]
+  ),
+  new Collection(
+    'Cable Vol. 1: Messiah War',
+    '2008-10-8',
+    [
+      'CableVol21',
+      'CableVol22',
+      'CableVol23',
+      'CableVol24',
+      'CableVol25',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Logan',
+    '2009-4-29',
+    [
+      'LoganVol11',
+      'LoganVol12',
+      'LoganVol13',
+    ]
+  ),
+  new Collection(
+    'X-Men: Angel - Revelations',
+    '2009-1-7',
+    [
+      'AngelRevelationsVol11',
+      'AngelRevelationsVol12',
+      'AngelRevelationsVol13',
+      'AngelRevelationsVol14',
+      'AngelRevelationsVol15',
+    ]
+  ),
+  new Collection(
+    'War of Kings: Road to War of Kings',
+    '2009-6-3',
+    [
+      'XMenKingbreakerVol11',
+      'XMenKingbreakerVol12',
+      'XMenKingbreakerVol13',
+      'XMenKingbreakerVol14',
+    ]
+  ),
+  new Collection(
+    'X-Men: Manifest Destiny',
+    '2009-5-27',
+    [
+      'XMenManifestDestinyVol11',
+      'XMenManifestDestinyVol12',
+      'XMenManifestDestinyVol13',
+      'XMenManifestDestinyVol14',
+      'XMenManifestDestinyVol15',
+      'XMenManifestDestinyNightcrawlerVol11',
+      'WolverineManifestDestinyVol11',
+      'WolverineManifestDestinyVol12',
+      'WolverineManifestDestinyVol13',
+      'WolverineManifestDestinyVol14',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'War of Kings: Road to War of Kings',
+    '2009-6-3',
+    [
+      'SecretInvasionWarofKingsVol11',
+      'WarofKingsSagaVol11',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Sins of the Father',
+    '2009-3-11',
+    [
+      'XMenLegacyVol1215',
+      'XMenLegacyVol1216',
+      'XMenTheUnlikelySagaofXavierMagnetoandStanVol11',
+      'XMenOddMenOutVol11',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
+    '2014-6-10',
+    [
+      'XFactorLaylaMillerVol11',
+      'XFactorTheQuickandtheDeadVol11',
     ]
   ),
   new Collection(
@@ -4680,41 +5319,13 @@ collections.push(
    * Big gap here, and in general the contents after here need to be reviewed.
    */
   new Collection(
-    'Cable Vol. 1: Messiah War',
-    '2008-12',
-    ['CableVol21']
-  ),
-  new Collection(
-    'X-Men: Messiah Complex',
-    '2008-11',
-    [
-      'UncannyXMenVol1492',
-      'UncannyXMenVol1493',
-      'UncannyXMenVol1494'
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men: Divided We Stand',
-    '2008-10',
-    [
-      'UncannyXMenVol1495',
-      'UncannyXMenVol1496'
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men: Manifest Destiny',
+    'Uncanny X-Men: Manifest Destiny (Partial)',
     '2009-10',
     [
       'UncannyXMenVol1500',
       'UncannyXMenVol1501',
       'UncannyXMenVol1502',
       'UncannyXMenVol1503',
-      'XMenFreeComicBookDayVol20081',
-      'XMenManifestDestinyVol11',
-      'XMenManifestDestinyVol12',
-      'XMenManifestDestinyVol13',
-      'XMenManifestDestinyVol14',
-      'XMenManifestDestinyVol15'
     ]
   ),
   new Collection(
