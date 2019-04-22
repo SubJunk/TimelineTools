@@ -1,28 +1,14 @@
-language: node_js
-os:
-  - linux
-  - osx
-  - windows
-node_js:
-  - "10"
-sudo: required
-cache:
-  directories:
-    - node_modules
-addons:
-  artifacts:
-    paths:
-      - ./errorShots/
-    target_paths: $TRAVIS_BUILD_NUMBER
-    working_dir: WORKING_DIR
-    s3_region: "ap-southeast-2"
-  chrome: "stable"
-  firefox: "latest"
-  java: "8"
+language: shell
+os: windows
+env:
+  global:
+    - NODEJS_VERSION: 11.9.0
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm config set spin false; fi
+  - git clone https://github.com/portapps/portapps ${TRAVIS_BUILD_DIR}/../portapps
+  - source ${TRAVIS_BUILD_DIR}/../portapps/.travis/prepare.sh
+  - bash ${TRAVIS_BUILD_DIR}/../portapps/.travis/java.sh
+  - bash ${TRAVIS_BUILD_DIR}/../portapps/.travis/nodejs.sh
+  - set
 script:
   - node_modules/.bin/eslint .
   - node_modules/.bin/stylelint "**/*.css"
