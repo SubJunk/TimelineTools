@@ -3,6 +3,9 @@ os: windows
 env:
   global:
     - NODEJS_VERSION: 11.9.0
+addons:
+  chrome: "stable"
+  firefox: "latest"
 before_install:
   - git clone https://github.com/portapps/portapps ${TRAVIS_BUILD_DIR}/../portapps
   - source ${TRAVIS_BUILD_DIR}/../portapps/.travis/prepare.sh
