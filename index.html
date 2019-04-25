@@ -156,7 +156,7 @@
               </li>
             </ul>
           </div>
-          <div class="expanded-panel" ng-if="comic.id === main.expandedComicId">
+          <div class="expanded-panel" ng-if="comic.id === main.expandedComicId || main.isShowTabular">
             <a ng-if="::comic.link" class="marvel-unlimited-link" ng-href="{{::comic.link}}" title="Open in Marvel Unlimited"></a>
             <div class="series">
               {{::comic.series}} #{{::comic.issue}}
