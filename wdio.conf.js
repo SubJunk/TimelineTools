@@ -1,5 +1,13 @@
 /* eslint-disable */
 exports.config = {
+    //
+    // ====================
+    // Runner Configuration
+    // ====================
+    //
+    // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
+    // on a remote machine).
+    runner: 'local',
     
     //
     // ==================
@@ -33,7 +41,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -41,7 +49,7 @@ exports.config = {
     //
     capabilities: [{
         browserName: 'chrome',
-        chromeOptions: {
+        'goog:chromeOptions': {
             prefs: {
                 profile: {
                     default_content_setting_values: {
@@ -64,16 +72,8 @@ exports.config = {
     // ===================
     // Define all options that are relevant for the WebdriverIO instance here
     //
-    // By default WebdriverIO commands are executed in a synchronous way using
-    // the wdio-sync package. If you still want to run your tests in an async way
-    // e.g. using promises you can set the sync option to false.
-    sync: true,
-    //
-    // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'error',
-    //
-    // Enables colors for log output.
-    coloredLogs: true,
+    // Level of logging verbosity: trace | debug | info | warn | error
+    // logLevel: 'debug',
     //
     // Warns when a deprecated command is used
     deprecationWarnings: true,
@@ -82,9 +82,6 @@ exports.config = {
     // bail (default is 0 - don't bail, run all tests).
     bail: 0,
     //
-    // Saves a screenshot to a given path if a command fails.
-    // screenshotPath: './errorShots/',
-    //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
@@ -92,7 +89,7 @@ exports.config = {
     baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -100,24 +97,6 @@ exports.config = {
     //
     // Default request retries count
     connectionRetryCount: 3,
-    //
-    // Initialize the browser instance with a WebdriverIO plugin. The object should have the
-    // plugin name as key and the desired plugin options as properties. Make sure you have
-    // the plugin installed before running any tests. The following plugins are currently
-    // available:
-    // WebdriverCSS: https://github.com/webdriverio/webdrivercss
-    // WebdriverRTC: https://github.com/webdriverio/webdriverrtc
-    // Browserevent: https://github.com/webdriverio/browserevent
-    // plugins: {
-    //     webdrivercss: {
-    //         screenshotRoot: 'my-shots',
-    //         failedComparisonsRoot: 'diffs',
-    //         misMatchTolerance: 0.05,
-    //         screenWidth: [320,480,640,1024]
-    //     },
-    //     webdriverrtc: {},
-    //     browserevent: {}
-    // },
     //
     // Test runner services
     // Services take over a specific job you don't want to take care of. They enhance
@@ -127,7 +106,7 @@ exports.config = {
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
-    // see also: http://webdriver.io/guide/testrunner/frameworks.html
+    // see also: https://webdriver.io/docs/frameworks.html
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
@@ -135,14 +114,15 @@ exports.config = {
     //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
-    // see also: http://webdriver.io/guide/reporters/dot.html
+    // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
     
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        timeout: 60000
     },
     //
     // =====
@@ -203,13 +183,13 @@ exports.config = {
     // beforeHook: function () {
     // },
     /**
-     * Hook that gets executed _after_ a hook within the suite ends (e.g. runs after calling
+     * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
      */
     // afterHook: function () {
     // },
     /**
-     * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) ends.
+     * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
      */
     // afterTest: function (test) {
@@ -252,7 +232,8 @@ exports.config = {
      * @param {Object} exitCode 0 - success, 1 - fail
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
+     * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities) {
+    // onComplete: function(exitCode, config, capabilities, results) {
     // }
 }

@@ -15,6 +15,8 @@ angular.module('app', ['angular-md5'])
     const LEFT_MARGIN = 200;
     const TOP_MARGIN = 300;
 
+    const ANIMATION_DURATION = 400;
+
     //Colour constants used in multiple functions
     const LIGHTNESS_MIN = 30;   //Lightness can be in the range 0-100
     const LIGHTNESS_MAX = 85;
@@ -34,12 +36,6 @@ angular.module('app', ['angular-md5'])
     // Pixel counts
     const VISUAL_BLOCK_SIZE = 60;
 
-    /*
-     * How far away the left edge of labels are from the left
-     * of the first thumbnail of a series volume.
-     */
-    const LABEL_OFFSET = 150;
-
     var $jqWindow = $(window);
 
     vm.expandedComicId;
@@ -54,13 +50,37 @@ angular.module('app', ['angular-md5'])
     var isShowTable = false;
 
     // API variables
-    var apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
-    var apiKeyPublic = _.isEmpty($window.apiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : $window.apiKeyPublic;
-    var apiKeyPrivate = $window.apiKeyPrivate;
+    const apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
+    const apiKeyPublic = _.isEmpty($window.apiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : $window.apiKeyPublic;
+    const apiKeyPrivate = $window.apiKeyPrivate;
+    const ONE_SECOND_IN_MILLISECONDS = 1000;
     var timestamp;
     var apiHash;
 
-    var setAPIComicData = function(comic, seriesVolumeMarvelID) {
+    /**
+     * @param {object} seriesVolume the series volume object
+     * @returns the series data from the Marvel API
+     */
+    var getAPISeriesVolume = function getAPISeriesVolume(seriesVolume) {
+      return $http({
+        method: 'GET',
+        url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
+        params: {
+          title: seriesVolume.title,
+          startYear: seriesVolume.startYear,
+          apikey: apiKeyPublic
+        }
+      });
+    };
+
+    /**
+     * Writes a "link" value to the comic object, which is a URL to the
+     * comic on Marvel Unlimited.
+     *
+     * @param {object} comic                the comic object
+     * @param {number} seriesVolumeMarvelID the series ID in the Marvel API
+     */
+    var setAPIComicData = function setAPIComicData(comic, seriesVolumeMarvelID) {
       $http({
         method: 'GET',
         url: apiBaseUrl + 'comics' + getExtraAPIParamsString(),
@@ -81,8 +101,7 @@ angular.module('app', ['angular-md5'])
       });
     };
 
-    const ONE_SECOND_IN_MILLISECONDS = 1000;
-    var getExtraAPIParamsString = function() {
+    var getExtraAPIParamsString = function getExtraAPIParamsString() {
       if (!_.isEmpty(apiKeyPrivate) && $location.protocol() === 'file') {
         timestamp = Date.now() / ONE_SECOND_IN_MILLISECONDS | 0;
         apiHash = md5.createHash(timestamp + apiKeyPrivate + apiKeyPublic);
@@ -126,15 +145,19 @@ angular.module('app', ['angular-md5'])
 
     var prevComicId;
     var nextComicId;
+
+    /**
+     * Toggles the expanded comic
+     *
+     * @param {Object}  currentComic  the current comic object
+     * @param {Boolean} isForceScroll forces this to find a new scroll position
+     *                                instead of using a relative one.
+     *                                Used when clicking on a comic from the collections view
+     */
     vm.toggleExpandComic = function(currentComic, isForceScroll) {
       if (!angular.isObject(currentComic)) {
         return;
       }
-
-      // Unset the sticky styles if they exist
-      $('.comic')
-        .removeClass('stickyTop stickyLeft stickyRight stickyBottom')
-        .css({marginLeft: '', marginTop: '', marginRight: '', marginBottom: '' });
 
       vm.prevComic = undefined;
       vm.nextComic = undefined;
@@ -158,7 +181,7 @@ angular.module('app', ['angular-md5'])
         $('html, body').animate({
           scrollLeft: currentComic.containerStyles.left - LEFT_MARGIN,
           scrollTop:  currentComic.containerStyles.top + TOP_MARGIN
-        });
+        }, ANIMATION_DURATION, 'swing', repositionStickyElements);
       } else if (vm.expandedComicId) {
         var previouslyExpandedComic = vm.expandedCollection.comics[currentComicIndexInCollection];
         var positionDifference = {
@@ -166,16 +189,23 @@ angular.module('app', ['angular-md5'])
           top: previouslyExpandedComic.containerStyles.top  - currentComic.containerStyles.top
         };
 
+        // reset the styles for the previous comic
+        previouslyExpandedComic.classes.stickyTop = false;
+        previouslyExpandedComic.classes.stickyRight = false;
+        previouslyExpandedComic.classes.stickyBottom = false;
+        previouslyExpandedComic.classes.stickyLeft = false;
+        previouslyExpandedComic.styles.marginTop = false;
+        previouslyExpandedComic.styles.marginLeft = false;
+
         $('html, body').animate({
           scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
           scrollTop:  $jqWindow.scrollTop()  - positionDifference.top
-        });
+        }, ANIMATION_DURATION, 'swing', repositionStickyElements);
+      } else {
+        repositionStickyElements(currentComic.id);
       }
 
       vm.expandedComicId = currentComic.id;
-
-      // Make sure the panel is fully visible
-      repositionStickyElements();
 
       // Get the collection containing this comic
       vm.expandedCollection = _.find(collections, function(collection, index) {
@@ -240,22 +270,15 @@ angular.module('app', ['angular-md5'])
       if (expandedSeriesVolume.marvelId) {
         setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
       } else {
-        $http({
-          method: 'GET',
-          url: apiBaseUrl + 'series' + getExtraAPIParamsString(),
-          params: {
-            title: expandedSeriesVolume.title,
-            startYear: expandedSeriesVolume.startYear,
-            apikey: apiKeyPublic
-          }
-        }).then(function successCallback(response) {
-          if (response.data.data.results.length) {
-            expandedSeriesVolume.marvelId = _.first(response.data.data.results).id;
-            setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
-          }
-        }, function errorCallback(err) {
-          throw new Error(err);
-        });
+        getAPISeriesVolume(expandedSeriesVolume)
+          .then(function successCallback(response) {
+            if (response.data.data.results.length) {
+              expandedSeriesVolume.marvelId = _.first(response.data.data.results).id;
+              setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+            }
+          }, function errorCallback(err) {
+            throw new Error(err);
+          });
       }
     };
 
@@ -454,15 +477,16 @@ angular.module('app', ['angular-md5'])
           id: 'label-' + seriesVolumeLabels.length,
           containerStyles: {
             top: comic.containerStyles.top,
-            left: comic.containerStyles.left - LABEL_OFFSET
+            left: comic.containerStyles.left,
+            opacity: 0 // Hide it initially in a way that lets jQuery still get its width
           },
           labelClasses: {},
           labelStyles: {},
+          visible: true
         });
 
         newLabelNeeded = false;
-      } else if (currentSeriesVolume.title !== 'Giant Size X-Men') {
-        // Really ugly exception for Giant Size to stop it taking up the first row
+      } else {
         var seriesVolumeLabelIndex = _.findLastIndex(seriesVolumeLabels, function(seriesVolumeLabel) {
           return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
         });
@@ -650,7 +674,9 @@ angular.module('app', ['angular-md5'])
     var $expandedComic;
     var scrollLeft;
     var scrollTop;
-    var isScrolledPastLeft;
+    var isLabelScrolledPastLeft;
+    var isComicScrolledPastLeft;
+    var isComicScrolledPastRight;
     var anchorTopPosition;
     var anchorLeftPosition;
     var anchorRightPosition;
@@ -661,51 +687,98 @@ angular.module('app', ['angular-md5'])
     var isStickyLeft;
     var isStickyRight;
     var isStickyBottom;
-    var repositionStickyElements = function() {
+    var $jqLabel;
+    var repositionStickyElements = function(currentComicId) {
       if (doSpeedProfile) var startTimeReposition = new Date();
+
+      /*
+       * jQuery passes an object when it triggers this function from a
+       * page event, but we only care about strings we pass in.
+       */
+      if (!angular.isString(currentComicId)) {
+        currentComicId = undefined;
+      }
 
       // The scroll position of the page, minus the main padding
       scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
+      scrollRight = scrollLeft + $jqWindow.innerWidth();
 
-      /**
-       * Label positioning:
-       */
+      // Label positioning:
       _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
-        isScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
+        // Initial section where we cache information on the first loop
+        {
+          // We only know the width after the initial render, so store it
+          if (!seriesVolumeLabel.labelWidthFromDom) {
+            $jqLabel = $('#' + seriesVolumeLabel.id);
+            if ($jqLabel.length && $jqLabel.outerWidth() > 0) {
+              seriesVolumeLabel.labelWidthFromDom = $jqLabel.outerWidth() + BODY_PADDING;
 
-        seriesVolumeLabel.labelClasses.stickyLeft = isScrolledPastLeft;
+              // Subtract width of the label from the left position
+              seriesVolumeLabel.containerStyles.left = seriesVolumeLabel.containerStyles.left - seriesVolumeLabel.labelWidthFromDom;
+            }
+          }
+        }
 
-        if (isScrolledPastLeft) {
+        seriesVolumeLabel.scrollDifference = scrollLeft - seriesVolumeLabel.right;
+
+        isLabelScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
+
+        seriesVolumeLabel.labelClasses.stickyLeft = isLabelScrolledPastLeft;
+
+        if (isLabelScrolledPastLeft) {
           seriesVolumeLabel.labelStyles.marginTop = '-' + scrollTop;
 
           // If the browser is scrolled past the right, hide the label
           if (
-            (scrollLeft - seriesVolumeLabel.right) > -LABEL_OFFSET &&
-            (scrollLeft - seriesVolumeLabel.right) < 0
+            seriesVolumeLabel.scrollDifference > -seriesVolumeLabel.labelWidthFromDom &&
+            seriesVolumeLabel.scrollDifference < 0
           ) {
             seriesVolumeLabel.visible = true;
-            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - LABEL_OFFSET);
-          } else if (seriesVolumeLabel.right < (scrollLeft + LABEL_OFFSET)) {
-            seriesVolumeLabel.visible = false;
+            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - seriesVolumeLabel.labelWidthFromDom);
+          } else if (seriesVolumeLabel.right < (scrollLeft + seriesVolumeLabel.labelWidthFromDom)) {
+            delete seriesVolumeLabel.visible;
           } else {
             seriesVolumeLabel.visible = true;
             seriesVolumeLabel.labelStyles.left = '0';
           }
         } else {
           seriesVolumeLabel.visible = true;
-          seriesVolumeLabel.labelStyles.marginTop = false;
+          delete seriesVolumeLabel.labelStyles.marginTop;
+        }
+
+        // Show the label after we have its correct position calculated
+        seriesVolumeLabel.containerStyles.opacity = 1;
+      });
+
+      // Lazy-load thumbnails that aren't in the viewport
+      _.each(vm.comics, function(comic) {
+        // skip this calculation if the comic has been previously displayed
+        if (comic.visible === true) {
+          return;
+        }
+
+        comic.scrollDifference = scrollLeft - comic.containerStyles.left;
+
+        isComicScrolledPastLeft  = Boolean(scrollLeft > (comic.containerStyles.left + VISUAL_BLOCK_SIZE));
+        isComicScrolledPastRight = Boolean(scrollRight < comic.containerStyles.left);
+
+        // the comic is out of the viewport, to the left
+        if (!isComicScrolledPastLeft && !isComicScrolledPastRight) {
+          comic.visible = true;
         }
       });
 
+      var selectedComic = currentComicId || vm.expandedComicId;
+
       // Exit early and force render if there is no comic expanded
-      if (!vm.expandedComicId) {
+      if (!selectedComic) {
         return $timeout();
       }
 
-      var expandedComic = _.find(comics, ['id', vm.expandedComicId]);
+      var expandedComic = _.find(comics, ['id', selectedComic]);
       if (!expandedComic) {
-        return $log.error('The comic ' + vm.expandedComicId + ' could not be found.');
+        return $log.error('The comic could not be found', selectedComic);
       }
 
       // Expanded panel positioning
@@ -721,8 +794,8 @@ angular.module('app', ['angular-md5'])
         anchorRightPosition  = stickyAnchorOffset.left + $expandedComic.width();
         anchorBottomPosition = stickyAnchorOffset.top  + $expandedComic.height();
 
-        scrollRight  = scrollLeft + $jqWindow.innerWidth();
-        scrollBottom = scrollTop  + $jqWindow.innerHeight();
+        scrollRight  = scrollLeft + window.innerWidth;
+        scrollBottom = scrollTop  + window.innerHeight;
 
         isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
         isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
@@ -744,6 +817,9 @@ angular.module('app', ['angular-md5'])
           expandedComic.styles.marginLeft = '';
           expandedComic.styles.marginTop = '';
         }
+
+        // Instruct Materialize to make the expanded cover fullscreen on click
+        $('.materialboxed').materialbox();
 
         if (doSpeedProfile) {
           var endTime = new Date();
@@ -863,7 +939,7 @@ angular.module('app', ['angular-md5'])
     });
 
     // Pass our transformed db objects to the view
-    vm.comics            = [];
+    vm.comics            = comics;
     vm.collections       = collections;
     vm.uniqueCollections = uniqueCollections;
     vm.series            = series;
@@ -874,89 +950,27 @@ angular.module('app', ['angular-md5'])
     vm.bodyStyles = bodyStyles;
     vm.seriesVolumeLabels = seriesVolumeLabels;
 
-    /**
-     * This chunk limits the flow of comics being added to the
-     * DOM, which prevents the browser from being unresponsive
-     * during the initial load.
-     */
-    {
-      // How many comics to add per loop
-      const COMIC_CHUNKS = 50;
-
-      // How many milliseconds delay between chunks
-      const COMIC_LOOP_DELAY = 1;
-
-      var comicsIterator = 0;
-      var pushComicChunkToVm = function() {
-        var currentChunkEnd = comicsIterator + COMIC_CHUNKS;
-        for (var currentChunkIterator = comicsIterator; currentChunkIterator < currentChunkEnd; currentChunkIterator++) {
-          if (comics[currentChunkIterator]) {
-            vm.comics.push(comics[currentChunkIterator]);
-            continue;
-          }
-
-          /**
-           * We get here if the comic doesn't exist, which means
-           * we reached the end of our comics. We set the comic
-           * iterator to the accurate number since it is currently
-           * chunked, then stop the loop.
-           */
-          comicsIterator = currentChunkIterator;
-          break;
-        }
-      };
-
-      var pushComicChunkToVmFactory = function() {
-        // If we have finished looping, toggle the loader
-        if (comicsIterator === comics.length) {
-          return finishedLoading();
-        }
-
-        // Update the loop iterator for the next chunk
-        comicsIterator += COMIC_CHUNKS;
-
-        // Run this function again after a delay
-        $timeout(pushComicChunkToVmFactory, COMIC_LOOP_DELAY);
-
-        // Push the next chunk of comics to the DOM
-        pushComicChunkToVm();
-      };
-
-      // Do this first comic chunk instantly
-      pushComicChunkToVm();
-
-      // Initialize the chunk pushing factory
-      pushComicChunkToVmFactory();
-    }
-
     var infoModalInstance;
-    var finishedLoading = function() {
-      $timeout(function() {
-        // Make room for the farthest-right expanded panel
-        vm.bodyStyles.width += $('.scroll-anchor').width();
+    $timeout(function() {
+      // Hide the initial data and display the real one
+      $('#app').fadeIn('slow');
+      $('#pre-app').fadeOut('slow');
 
-        // Make room for the farthest-bottom expanded panel
-        vm.bodyStyles.height = $(document).height() + $(window).height();
+      // Make room for the farthest-right expanded panel
+      vm.bodyStyles.width += $('.scroll-anchor').width();
 
-        // Init floating menu on the right
-        $('.fixed-action-btn').floatingActionButton({direction: 'left'});
+      // Make room for the farthest-bottom expanded panel
+      vm.bodyStyles.height = $(document).height() + $(window).height();
 
-        // Init "Info & Credits" modal
-        var infoModal = $('#info');
-        infoModalInstance = _.first(M.Modal.init(infoModal));
+      // Init floating menu on the right
+      $('.fixed-action-btn').floatingActionButton({direction: 'left'});
 
-        useGetParameters();
+      // Init "Info & Credits" modal
+      var infoModal = $('#info');
+      infoModalInstance = _.first(M.Modal.init(infoModal));
 
-        /**
-         * The extra timeout is here because without it,
-         * the tooltips initialization freezes the rest of the execution
-         */
-        $timeout(function() {
-          // Init tooltips
-          $('[data-toggle="tooltip"]').tooltip({container: 'body', placement: 'bottom'});
-        });
-      });
-    };
+      useGetParameters();
+    });
 
     vm.toggleInfoModal = function() {
       if (infoModalInstance.isOpen) {
@@ -964,6 +978,41 @@ angular.module('app', ['angular-md5'])
       } else {
         infoModalInstance.open();
       }
+    };
+
+    vm.toggleShowCollections = function(forcedState) {
+      var state;
+      if (forcedState) {
+        state = forcedState;
+      } else if (vm.isShowCollections) {
+        state = '';
+      } else {
+        state = '1';
+      }
+
+      $location.search('showCollections', state);
+
+      if (state === '1') {
+        vm.isShowCollections = true;
+      } else {
+        vm.isShowCollections = false;
+      }
+    };
+
+    vm.scrollToComic = function(comicId) {
+      var comicFromId = comics[_.findKey(comics, { 'id': comicId })];
+
+      $timeout(function() {
+        $('html, body').animate({
+          scrollLeft: comicFromId.containerStyles.left - LEFT_MARGIN,
+          scrollTop:  comicFromId.containerStyles.top
+        }, ANIMATION_DURATION, 'swing', function() {
+          // Expand the comic if it isn't already
+          if (vm.expandedComicId !== comicId) {
+            vm.toggleExpandComic(comicFromId);
+          }
+        });
+      });
     };
 
     // Toggle between table view and timeline view
@@ -990,15 +1039,11 @@ angular.module('app', ['angular-md5'])
         var searchParams = $location.search();
 
         if (searchParams.id) {
-          var comicFromUrl = comics[_.findKey(comics, { 'id': searchParams.id })];
-          vm.toggleExpandComic(comicFromUrl);
+          vm.scrollToComic(searchParams.id);
+        }
 
-          $timeout(function() {
-            $('html, body').animate({
-              scrollLeft: comicFromUrl.containerStyles.left - LEFT_MARGIN,
-              scrollTop:  comicFromUrl.containerStyles.top
-            });
-          });
+        if (searchParams.showCollections) {
+          vm.toggleShowCollections('1');
         }
 
         /**

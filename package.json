@@ -16,7 +16,8 @@
     ],
     "globals": {
       "_": true,
-      "M": true
+      "M": true,
+      "moment": true
     },
     "rules": {
       "angular/angularelement": "off",
@@ -60,15 +61,23 @@
     }
   },
   "devDependencies": {
-    "chromedriver": "^2.40.0",
-    "eslint": "^5.2.0",
+    "@wdio/cli": "5.7.8",
+    "@wdio/config": "^5.7.13",
+    "@wdio/local-runner": "^5.7.15",
+    "@wdio/logger": "^5.7.8",
+    "@wdio/mocha-framework": "^5.7.14",
+    "@wdio/repl": "^5.7.13",
+    "@wdio/runner": "^5.7.15",
+    "@wdio/selenium-standalone-service": "^5.7.8",
+    "@wdio/spec-reporter": "^5.7.13",
+    "@wdio/sync": "^5.7.13",
+    "@wdio/utils": "^5.7.8",
+    "chromedriver": "^2.46.0",
+    "eslint": "^5.16.0",
     "eslint-config-angular": "^0.5.0",
-    "eslint-plugin-angular": "^3.3.0",
-    "geckodriver": "^1.11.0",
-    "stylelint": "^9.4.0",
-    "wdio-mocha-framework": "^0.6.2",
-    "wdio-selenium-standalone-service": "^0.0.10",
-    "wdio-spec-reporter": "^0.1.5",
-    "webdriverio": "^4.13.1"
+    "eslint-plugin-angular": "^4.0.0",
+    "geckodriver": "^1.16.1",
+    "stylelint": "^9.10.1",
+    "webdriverio": "^5.7.15"
   }
 }

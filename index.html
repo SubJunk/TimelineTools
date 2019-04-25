@@ -1,12 +1,13 @@
 <html ng-app="app">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="images/x-men.ico" type="image/x-icon">
-  <title>TimelineTools</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <title>X-Men Timeline</title>
 </head>
 <body ng-style="main.bodyStyles" ng-controller="DataController as main">
   <div id="app" ng-cloak>
@@ -37,30 +38,39 @@
       <a class="btn-floating btn-large red"><i class="large material-icons">menu</i></a>
       <ul>
         <li>
-          <a title="Toggle table layout view" id="toggleTableTimeline" class="btn-floating green" ng-class="{green: main.isShowTable, grey: !main.isShowTable}" 
-            ng-click="main.isShowTable = !main.isShowTable" data-toggle="tooltip">
+          <div class="popover"><div>Toggle table layout view</div></div>
+          <a id="toggleTableTimeline" class="btn-floating green" ng-class="{green: main.isShowTable, grey: !main.isShowTable}" 
+            ng-click="main.isShowTable = !main.isShowTable">
             <i class="material-icons">view_list</i>
           </a>
         </li>
         <li>
-          <a title="Toggle collections view" class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}"
-            ng-click="main.isShowCollections = !main.isShowCollections" data-toggle="tooltip">
+          <div class="popover"><div>Toggle collections view</div></div>
+          <a class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}" ng-click="main.toggleShowCollections()">
             <i class="material-icons">library_books</i>
           </a>
         </li>
         <li>
-          <a title="View information and credits" ng-click="main.toggleInfoModal()" class="btn-floating blue" data-toggle="tooltip">
+          <div class="popover"><div>View information and credits</div></div>
+          <a ng-click="main.toggleInfoModal()" class="btn-floating blue">
             <i class="material-icons">info</i>
           </a>
         </li>
       </ul>
     </div>
-    <ul class="collections" ng-if="main.isShowCollections">
+    <ul class="collections" ng-if="main.isShowCollections" ng-cloak>
       <li ng-repeat="collection in ::main.uniqueCollections" class="collection-container" ng-class="{expanded: collection.id === main.expandedCollectionId}" ng-if="collection.title !== 'Uncollected'">
         <div class="comic-collection z-depth-5 hoverable" ng-style="collection.styles">
           <div class="panel-left">
-            <a title="{{::collection.title}} cover" ng-click="main.toggleExpandCollection(collection)" class="waves-effect cover-thumbnail">
-              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::collection.image}}.jpg"></img>
+            <a ng-click="main.toggleExpandCollection(collection)" class="waves-effect cover-thumbnail">
+              <img
+                  class="responsive-img"
+                  ng-if="comic.id === main.expandedComicId"
+                  ng-srcset="
+                      https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 2x,
+                      https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 1x"
+                  ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg"
+              >
             </a>
           </div>
           <div class="expanded-panel">
@@ -69,8 +79,16 @@
             <div class="collection-comics">
               <ul>
                 <li ng-repeat="comic in ::collection.allCollectionComics track by comic.id">
+                  <div class="popover"><div>{{::comic.series}} #{{::comic.issue}}</div></div>
                   <a title="{{::comic.series}} #{{::comic.issue}}" ng-click="main.toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
-                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::comic.image}}.jpg" ng-class="{current: comic.id === comicId}"></img>
+                    <img
+                        class="responsive-img"
+                        ng-class="{current: comic.id === comicId}"
+                        ng-srcset="
+                            https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
+                            https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 1x"
+                        ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+                    >
                   </a>
                 </li>
               </ul>
@@ -93,45 +111,76 @@
       </li>
       <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
         <div class="scroll-anchor"></div>
+        <div class="popover"><div>#{{::comic.issue}}</div></div>
         <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
           <div class="panel-left">
-            <a title="#{{::comic.issue}}" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" data-toggle="tooltip">
-              <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::comic.image}}.jpg"></img>
+            <a ng-if="comic.id !== main.expandedComicId" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
+              <img
+                  ng-if="comic.visible"
+                  class="responsive-img"
+                  ng-srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 1x"
+                  ng-src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+              >
             </a>
-            <ul class="pagination">
-              <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}" data-toggle="tooltip" title="{{main.prevCollection.title}}">
+            <span class="cover-thumbnail" ng-if="comic.id === main.expandedComicId">
+              <img
+                  class="responsive-img materialboxed"
+                  ng-src="https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+              >
+            </span>
+            <ul class="pagination" ng-if="comic.id === main.expandedComicId">
+              <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
+                <div class="popover" ng-if="main.prevCollectionFirstComic"><div>{{main.prevCollection.title}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
                   <i class="material-icons">arrow_backward</i>
                 </a>
-              </li>
-              <li class="waves-effect" ng-class="{disabled: !main.prevComic}" data-toggle="tooltip" title="{{main.prevComic.series}} #{{main.prevComic.issue}}">
-                <a ng-click="main.toggleExpandComic(main.prevComic)">
+              </li><!--
+              --><li class="waves-effect" ng-class="{disabled: !main.prevComic}">
+                <div class="popover" ng-if="main.prevComic"><div>{{main.prevComic.series}} #{{main.prevComic.issue}}</div></div>
+                <a ng-click="main.toggleExpandComic(main.prevComic)" class="button-previous-comic">
                   <i class="material-icons">chevron_left</i>
                 </a>
-              </li>
-              <li class="waves-effect" ng-class="{disabled: !main.nextComic }" data-toggle="tooltip" title="{{main.nextComic.series}} #{{main.nextComic.issue}}">
-                <a ng-click="main.toggleExpandComic(main.nextComic)">
+              </li><!--
+              --><li class="waves-effect" ng-class="{disabled: !main.nextComic}">
+                <div class="popover" ng-if="main.nextComic"><div>{{main.nextComic.series}} #{{main.nextComic.issue}}</div></div>
+                <a ng-click="main.toggleExpandComic(main.nextComic)" class="button-next-comic">
                   <i class="material-icons">chevron_right</i>
                 </a>
-              </li>
-              <li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic }" data-toggle="tooltip" title="{{main.nextCollection.title}}">
+              </li><!--
+              --><li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic}">
+                <div class="popover" ng-if="main.nextCollectionFirstComic"><div>{{main.nextCollection.title}}</div></div>
                 <a ng-click="main.toggleExpandComic(main.nextCollectionFirstComic)">
                   <i class="material-icons">arrow_forward</i>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="expanded-panel">
-            <a ng-if="comic.link" class="marvel-unlimited-link" ng-href="{{comic.link}}" title="Open in Marvel Unlimited"></a>
-            <div class="series">{{::comic.series}} #{{::comic.issue}}</div>
+          <div class="expanded-panel" ng-if="comic.id === main.expandedComicId">
+            <a ng-if="::comic.link" class="marvel-unlimited-link" ng-href="{{::comic.link}}" title="Open in Marvel Unlimited"></a>
+            <div class="series">
+              {{::comic.series}} #{{::comic.issue}}
+              <a ng-click="main.scrollToComic(comic.id)" tabindex="0" title="Scroll to this comic's position on the page" class="scroll-to-comic-button">
+                <i class="material-icons">near_me</i>
+              </a>
+            </div>
             <div class="title" ng-repeat="title in ::comic.titles">{{::title}}</div>
             <div class="date">{{::comic.yearPublished}} / {{::comic.monthPublished}}</div>
             <div class="collection-comics">
               <div class="collection-title">{{::comic.collection.title}}:</div>
               <ul>
                 <li ng-repeat="collectionComic in ::comic.collection.allCollectionComics track by collectionComic.id">
-                  <a title="{{::collectionComic.series}} #{{::collectionComic.issue}}" ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable" data-toggle="tooltip">
-                    <img class="responsive-img" ng-src="http://www.spirton.com/images/comics/{{::collectionComic.image}}.jpg" ng-class="{current: collectionComic.id === main.expandedComicId}"></img>
+                  <div class="popover"><div>{{::collectionComic.series}} #{{::collectionComic.issue}}</div></div>
+                  <a ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
+                    <img
+                        class="responsive-img"
+                        ng-class="{current: collectionComic.id === main.expandedComicId}"
+                        ng-srcset="
+                            https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg 2x,
+                            https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg 1x"
+                        ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg"
+                    >
                   </a>
                 </li>
               </ul>
@@ -140,18 +189,428 @@
         </div>
       </li>
     </ul>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/angular-md5@0.1.10/angular-md5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="database/comics.js" charset="utf-8"></script>
-    <script src="database/series.js" charset="utf-8"></script>
-    <script src="database/collections.js" charset="utf-8"></script>
-    <script src="config.js" charset="utf-8"></script>
-    <script src="app/app.js" charset="utf-8"></script>
   </div>
+
+  <div id="pre-app">
+    <ul class="years">
+      <li class="year">
+        1963
+        <ul>
+          <li class="month" style="width: 56px;">9</li>
+          <li class="month" style="width: 56px;">10</li>
+          <li class="month" style="width: 56px;">11</li>
+          <li class="month" style="width: 56px;">12</li>
+        </ul>
+      </li>
+      <li class="year">
+        1964
+        <ul>
+          <li class="month" style="width: 56px;">1</li>
+          <li class="month" style="width: 56px;">2</li>
+          <li class="month" style="width: 56px;">3</li>
+          <li class="month" style="width: 56px;">4</li>
+          <li class="month" style="width: 56px;">5</li>
+          <li class="month" style="width: 56px;">6</li>
+          <li class="month" style="width: 56px;">7</li>
+          <li class="month" style="width: 56px;">8</li>
+          <li class="month" style="width: 56px;">9</li>
+          <li class="month" style="width: 56px;">10</li>
+          <li class="month" style="width: 56px;">11</li>
+          <li class="month" style="width: 56px;">12</li>
+        </ul>
+      </li>
+      <li class="year">
+        1965
+        <ul>
+          <li class="month" style="width: 56px;">1</li>
+          <li class="month" style="width: 56px;">2</li>
+          <li class="month" style="width: 56px;">3</li>
+          <li class="month" style="width: 56px;">4</li>
+          <li class="month" style="width: 56px;">5</li>
+          <li class="month" style="width: 56px;">6</li>
+          <li class="month" style="width: 56px;">7</li>
+          <li class="month" style="width: 56px;">8</li>
+          <li class="month" style="width: 56px;">9</li>
+          <li class="month" style="width: 56px;">10</li>
+          <li class="month" style="width: 56px;">11</li>
+          <li class="month" style="width: 56px;">12</li>
+        </ul>
+      </li>
+      <li class="year">
+        1966
+        <ul>
+          <li class="month" style="width: 56px;">1</li>
+          <li class="month" style="width: 56px;">2</li>
+          <li class="month" style="width: 56px;">3</li>
+          <li class="month" style="width: 56px;">4</li>
+          <li class="month" style="width: 56px;">5</li>
+          <li class="month" style="width: 56px;">6</li>
+          <li class="month" style="width: 56px;">7</li>
+          <li class="month" style="width: 56px;">8</li>
+          <li class="month" style="width: 56px;">9</li>
+          <li class="month" style="width: 56px;">10</li>
+          <li class="month" style="width: 56px;">11</li>
+          <li class="month" style="width: 56px;">12</li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="comics">
+      <!-- <li class="series-volume-label-container" style="top: 0px; left: -126.25px;">
+        <div class="series-volume-label stickyLeft" title="Uncanny X-Men" id="label-0" style="margin-top: 0px; left: 0px;">Uncanny X-Men</div>
+      </li> -->
+      <li class="comic-container" style="left: 0px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#1</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_1.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_1.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_1.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 120px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#2</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_2.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_2.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_2.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 240px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#3</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_3.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_3.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_3.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 360px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#4</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_4.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_4.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_4.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 480px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#5</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_5.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_5.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_5.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 600px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#6</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_6.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_6.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_6.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 720px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#7</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_7.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_7.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_7.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 840px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#8</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_8.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_8.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_8.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 960px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#9</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_9.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_9.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_9.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1080px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#10</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_10.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_10.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_10.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1200px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#11</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_11.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_11.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_11.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1320px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#12</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_12.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_12.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_12.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1440px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#13</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_13.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_13.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_13.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1560px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#14</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_14.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_14.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_14.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1620px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#15</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_15.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_15.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_15.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1680px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#16</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_16.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_16.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_16.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1740px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#17</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_17.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_17.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_17.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1800px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#18</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_18.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_18.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_18.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="comic-container" style="left: 1860px; top: 0px;">
+        <div class="scroll-anchor"></div>
+        <div class="popover"><div>#19</div></div>
+        <div class="comic z-depth-5 hoverable" style="background: rgb(80, 80, 80); color: rgb(68, 68, 68);">
+          <div class="panel-left">
+            <a class="waves-effect cover-thumbnail">
+              <img class="responsive-img"
+                  src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_19.jpg"
+                  srcset="
+                      https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_19.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/Uncanny_X-Men_Vol_1_19.jpg 1x"
+              >
+              <div class="loader center"><span></span></div>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/angular-md5@0.1.10/angular-md5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="database/comics.js" charset="utf-8"></script>
+  <script src="database/series.js" charset="utf-8"></script>
+  <script src="database/collections.js" charset="utf-8"></script>
+  <script src="config.js" charset="utf-8"></script>
+  <script src="app/app.js" charset="utf-8"></script>
+
+  <!-- Matomo -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["setCookieDomain", "*.www.xmentimeline.com"]);
+    _paq.push(["setDomains", ["*.www.xmentimeline.com","*.www.xmentimeline.com"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//www.spirton.com/piwik/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '22']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
 </body>
 </html>
