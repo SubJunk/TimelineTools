@@ -47,6 +47,7 @@ angular.module('app', ['angular-md5'])
     var currentComicIndexInCollection;
     var currentCollectionIndexInCollections;
     vm.isShowCollections = false;
+    vm.isShowTabular = false;
 
     // API variables
     const apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
@@ -995,6 +996,27 @@ angular.module('app', ['angular-md5'])
         vm.isShowCollections = true;
       } else {
         vm.isShowCollections = false;
+      }
+    };
+
+    vm.toggleShowTabular = function(forcedState) {
+      var state;
+      if (forcedState) {
+        state = forcedState;
+      } else if (vm.isShowTabular) {
+        state = '';
+        $('body').removeClass('tabular-container');
+      } else {
+        state = '1';
+        $('body').addClass('tabular-container');
+      }
+
+      $location.search('showTabular', state);
+
+      if (state === '1') {
+        vm.isShowTabular = true;
+      } else {
+        vm.isShowTabular = false;
       }
     };
 

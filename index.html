@@ -44,6 +44,12 @@
           </a>
         </li>
         <li>
+          <div class="popover"><div>Toggle tabular view</div></div>
+          <a class="btn-floating green" ng-class="{green: main.isShowTabular, grey: !main.isShowTabular}" ng-click="main.toggleShowTabular()">
+            <i class="material-icons">view_list</i>
+          </a>
+        </li>
+        <li>
           <div class="popover"><div>View information and credits</div></div>
           <a ng-click="main.toggleInfoModal()" class="btn-floating blue">
             <i class="material-icons">info</i>

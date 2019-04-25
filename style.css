@@ -410,6 +410,79 @@ li:hover {
   background-color: unset;
 }
 
+.tabular-container > .expanded > .expanded-panel >
+.comic-container > .expanded-panel {
+  display: inline-block; /* this doesn't work */
+}
+
+.tabular-container, .date {
+  display: inline-block;
+}
+
+.tabular-container .series-volume-label{
+  display: none;
+}
+
+.tabular-container .comic-container {
+  position: unset;
+}
+
+.tabular-container .comic-container .series {
+  font-size: 110%;
+}
+
+.table-container, .series-volume-label-container
+.comic-container,
+.comic {
+  height: auto; /*this is bad and needs to change because it impacts the loading state*/
+}
+
+.tabular-container .comic{
+  width: max-content;
+  border-radius: unset;
+  background-color: firebrick;
+}
+
+.tabular-container .years {
+  display: none;
+}
+
+.tabular-container .title {
+display: block;
+}
+
+.tabular-container .comic-container .marvel-unlimited-link {
+  margin-top: 10px;
+}
+
+.tabular-container .collection-comics {
+  display: inline-block;
+  margin-left: 15px;
+  width: max-content;
+}
+
+.collection-comics {
+  display: inline-block;
+}
+
+.tabular-container .responsive-img {
+  display: inline-block;
+}
+
+.tabular-container .panel-left,
+.tabular-container .expanded-panel {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.tabular-container .panel-left {
+  margin: 10px;
+}
+
+.tabular-container .collection-comics li {
+  display: none;
+}
+
 .tooltip.show {
   opacity: 1;
 }
