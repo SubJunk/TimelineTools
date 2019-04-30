@@ -5273,6 +5273,35 @@ collections.push(
       'WolverineManifestDestinyVol14',
     ]
   ),
+  new Collection(
+    'Astonishing X-Men: Ghost Box',
+    '2009-9-2',
+    [
+      'AstonishingXMenVol325',
+      'AstonishingXMenVol326',
+      'AstonishingXMenVol327',
+      'AstonishingXMenGhostBoxesVol11',
+      'AstonishingXMenGhostBoxesVol12',
+      'AstonishingXMenVol328',
+      'AstonishingXMenVol329',
+      'AstonishingXMenVol330',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Manifest Destiny (Partial)',
+    '2009-10',
+    [
+      'UncannyXMenVol1500',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Sins of the Father',
+    '2009-3-11',
+    [
+      'XMenLegacyVol1215',
+      'XMenLegacyVol1216',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -5288,8 +5317,6 @@ collections.push(
     'X-Men: Legacy - Sins of the Father',
     '2009-3-11',
     [
-      'XMenLegacyVol1215',
-      'XMenLegacyVol1216',
       'XMenTheUnlikelySagaofXavierMagnetoandStanVol11',
       'XMenOddMenOutVol11',
     ]
@@ -5315,19 +5342,18 @@ collections.push(
       'XForceSexandViolenceVol13'
     ]
   ),
-  /**
-   * Big gap here, and in general the contents after here need to be reviewed.
-   */
   new Collection(
     'Uncanny X-Men: Manifest Destiny (Partial)',
     '2009-10',
     [
-      'UncannyXMenVol1500',
       'UncannyXMenVol1501',
       'UncannyXMenVol1502',
       'UncannyXMenVol1503',
     ]
   ),
+  /**
+   * Big gap here, and in general the contents after here need to be reviewed.
+   */
   new Collection(
     'X-Men: Second Coming',
     '2011-6',
