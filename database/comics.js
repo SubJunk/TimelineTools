@@ -130,6 +130,16 @@ addComicsInSeriesVolume('AstonishingXMenVol3', [
   [22, '2007-8-22'],
   [23, '2007-11-7'],
   [24, '2008-1-23'],
+  [25, '2008-7-2'],
+  [26, '2008-8-13'],
+  [27, '2008-10-15'],
+  [28, '2009-1-21'],
+  [29, '2009-4-22'],
+  [30, '2009-6-24'],
+]);
+addComicsInSeriesVolume('AstonishingXMenGhostBoxesVol1', [
+  [1, '2008-10-29'],
+  [2, '2008-12-10'],
 ]);
 addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']]);
 addComicsInSeriesVolume('AvengersTheInitiativeVol1', [

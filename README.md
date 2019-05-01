@@ -1,5 +1,5 @@
 # TimelineTools
-[![Build Status](https://travis-ci.com/SubJunk/TimelineTools.svg?branch=master)](https://travis-ci.org/UniversalMediaServer/UniversalMediaServer)
+[![Build Status](https://travis-ci.com/SubJunk/TimelineTools.svg?branch=master)](https://travis-ci.org/UniversalMediaServer/UniversalMediaServer) [![Greenkeeper badge](https://badges.greenkeeper.io/SubJunk/TimelineTools.svg)](https://greenkeeper.io/)
 
 ## General
 

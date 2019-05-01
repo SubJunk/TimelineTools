@@ -56,6 +56,7 @@ series.push(
   new Series('Amazing Adventures', {2: 1970}),
   new Series('Amazing X-Men', {1: 1995}),
   new Series('Astonishing X-Men', {1: 1995, 2: 1999, 3: 2004}),
+  new Series('Astonishing X-Men: Ghost Boxes', {1: 2008}),
   new Series('Avengers', {1: 1963}),
   new Series('Avengers: The Initiative', {1: 2007}),
   new Series('Avengers West Coast', {2: 1985}),
