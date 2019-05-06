@@ -190,10 +190,10 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@wdio/cli@5.8.1":
-  version "5.8.1"
-  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-5.8.1.tgz#a2965c5bd8557a3cfa46b7a33a90923e48bb7a64"
-  integrity sha512-C6Dk1+tIytYESqdYUbVNp0be7OuBxoU3viFDIvY1qdeVDnsaEtREa+K9QDuN7p2iYyUwW0b8XfXR5M3Y2TtByQ==
+"@wdio/cli@5.8.2":
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-5.8.2.tgz#6eadf940bf1d8d2e7089fe387bff54b156cfb562"
+  integrity sha512-iOSG7L0D3U/xaB9rk6yesTWo72WQlv2nFX0lkCNahgzV4gsrTZWzWrQ0IeC39DGNIfGj5zYDxyq1cEm6LzwgCg==
   dependencies:
     "@wdio/config" "^5.8.1"
     "@wdio/logger" "^5.8.0"
@@ -210,7 +210,7 @@
     lodash.pickby "^4.6.0"
     lodash.union "^4.6.0"
     log-update "^2.3.0"
-    webdriverio "^5.8.1"
+    webdriverio "^5.8.2"
     yargs "^11.1.0"
     yarn-install "^1.0.0"
 
@@ -4682,6 +4682,17 @@ webdriver@^5.8.1:
     lodash.merge "^4.6.1"
     request "^2.83.0"
 
+webdriver@^5.8.2:
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/webdriver/-/webdriver-5.8.2.tgz#a0ab776942451f657d83ab7feee81604765211a2"
+  integrity sha512-G6SVRl00Q+xqH2+Z6thuRrof1AcEs99rv6gKiKwklTcX2ATqkD/ySjC11QXex7A5HOC8GXc1ev1ONGua1d05HQ==
+  dependencies:
+    "@wdio/config" "^5.8.1"
+    "@wdio/logger" "^5.8.0"
+    deepmerge "^2.0.1"
+    lodash.merge "^4.6.1"
+    request "^2.83.0"
+
 webdriverio@5.8.1, webdriverio@^5.8.1:
   version "5.8.1"
   resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.8.1.tgz#6da3d7b888beca9297dc7730d22d274976191988"
@@ -4700,6 +4711,25 @@ webdriverio@5.8.1, webdriverio@^5.8.1:
     rgb2hex "^0.1.0"
     serialize-error "^3.0.0"
     webdriver "^5.8.1"
+
+webdriverio@^5.8.2:
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.8.2.tgz#02c877fa15ad1dc5d90132113a66ac0785461918"
+  integrity sha512-IDbsOnBRVhgm1YS3NBRpIvR8Vu4tkGOx6RgHpmzG6ATCCg4vnpXXe9d5YnEj11EamZEinnPzlQsvPdxjgwEzoQ==
+  dependencies:
+    "@wdio/config" "^5.8.1"
+    "@wdio/logger" "^5.8.0"
+    "@wdio/repl" "^5.8.1"
+    css-value "^0.0.1"
+    grapheme-splitter "^1.0.2"
+    lodash.isobject "^3.0.2"
+    lodash.isplainobject "^4.0.6"
+    lodash.merge "^4.6.1"
+    lodash.zip "^4.2.0"
+    resq "^1.4.0-rc.1"
+    rgb2hex "^0.1.0"
+    serialize-error "^3.0.0"
+    webdriver "^5.8.2"
 
 which-module@^2.0.0:
   version "2.0.0"
