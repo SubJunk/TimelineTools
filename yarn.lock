@@ -1287,10 +1287,10 @@ eslint-config-angular@0.5.0:
   resolved "https://registry.yarnpkg.com/eslint-config-angular/-/eslint-config-angular-0.5.0.tgz#e0aae0132e39e7467df3f7547fec81a44d3685c4"
   integrity sha1-4KrgEy4550Z98/dUf+yBpE02hcQ=
 
-eslint-plugin-angular@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-angular/-/eslint-plugin-angular-4.0.0.tgz#35b754e4a7600888cd676906799e549f231eb23f"
-  integrity sha512-+CIfHoyoxIj+wxqtxoOU2SsdFf8VtSX69/sgaMGkKQhLdDYMljnwBBB4nAxElotm2+/yA+xAV3o99v6vxfsR5g==
+eslint-plugin-angular@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-angular/-/eslint-plugin-angular-4.0.1.tgz#f6c01d2a1e549d603e29eceb8615b5a989863a5e"
+  integrity sha512-OaW5G461C2lIkOG+/bhnBoXB9UQm/r0Dj2Qf9uiIN0/ncvf2Llp30L0q1tqWkN8/CxyBwQKh1v0hpCLLDjaIKQ==
 
 eslint-scope@^4.0.3:
   version "4.0.3"
