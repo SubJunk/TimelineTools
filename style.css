@@ -33,6 +33,10 @@ body {
   height: 0;
 }
 
+.years {
+  margin-top: 100px;
+}
+
 .truncate {
   white-space: nowrap;
   overflow: hidden;
@@ -307,6 +311,29 @@ li:hover {
   cursor: pointer;
   display: inline-block;
   margin-left: 15px;
+}
+
+.searchContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: #fff;
+  opacity: 0.8;
+  z-index: 1;
+  padding: 10px 20px 12px 20px;
+  display: inline;
+  background-color: hsl(216, 8%, 25%);
+}
+
+.searchContainer:focus-within {
+  width: 100%;
+  display: block;
+  opacity: 0.8;
+  background-color: #000;
+}
+
+.searchContainer input {
+  color: #fff;
 }
 
 /**

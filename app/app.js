@@ -47,6 +47,7 @@ angular.module('app', ['angular-md5'])
     var currentComicIndexInCollection;
     var currentCollectionIndexInCollections;
     vm.isShowCollections = false;
+    vm.searchText = '';
 
     // API variables
     const apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
@@ -281,6 +282,12 @@ angular.module('app', ['angular-md5'])
       }
     };
 
+    vm.search = function(comic) {
+      let comicToSearch = _.find(comics, ['id', comic.id]);
+      vm.toggleExpandComic(comicToSearch, true);
+      vm.searchText = '';
+    };
+
     vm.toggleExpandCollection = function(collection) {
       vm.expandedCollectionId = vm.expandedCollectionId === collection.id ? null : collection.id;
     };
@@ -290,6 +297,7 @@ angular.module('app', ['angular-md5'])
 
     // Sort the data by date
     comics = _.sortBy(comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
+    let comicsToSearch = [];
 
     /**
      * This loop populates the dates object with an array of years
@@ -459,6 +467,13 @@ angular.module('app', ['angular-md5'])
       // Store the name of the series in the comic object
       comic.series = currentSeriesVolume.title;
       comic.image = getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
+
+      // Populate a smaller object just for filtering
+      comicsToSearch.push({
+        series: comic.series,
+        issue: comic.issue,
+        id: comic.id
+      });
 
       previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
@@ -943,6 +958,7 @@ angular.module('app', ['angular-md5'])
     vm.uniqueCollections = uniqueCollections;
     vm.series            = series;
     vm.seriesVolumes     = seriesVolumes;
+    vm.comicsToSearch    = comicsToSearch;
 
     // Pass the other things the view needs
     vm.dates = dates;

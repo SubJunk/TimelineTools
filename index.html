@@ -90,6 +90,16 @@
         </div>
       </li>
     </ul>
+    <div class="searchContainer">
+      <input type="text" ng-model="main.searchText" placeholder="Search" />
+      <ul class="searchResults" ng-if="main.searchText">
+        <li ng-repeat="comic in main.comicsToSearch | filter:main.searchText">
+          <a ng-click="main.search(comic)" class="waves-effect hoverable">
+            {{comic.series}} #{{comic.issue}}
+          </a>
+        </li>
+      </ul>
+    </div>
     <ul class="years">
       <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
         {{::year}}
