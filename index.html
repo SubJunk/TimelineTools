@@ -90,12 +90,19 @@
         </div>
       </li>
     </ul>
-    <div class="searchContainer">
+    <div class="search-container">
       <input type="text" ng-model="main.searchText" placeholder="Search" />
       <ul class="searchResults" ng-if="main.searchText">
-        <li ng-repeat="comic in main.comicsToSearch | filter:main.searchText">
-          <a ng-click="main.search(comic)" class="waves-effect hoverable">
-            {{comic.series}} #{{comic.issue}}
+        <li ng-repeat="item in main.itemsToSearch | filter:main.searchText | limitTo: 20 track by item.id">
+          <a ng-click="main.search(item)" class="waves-effect hoverable cover-thumbnail">
+            <img
+              class="responsive-img"
+              ng-srcset="
+                  https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{::item.image}}.jpg 2x,
+                  https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::item.image}}.jpg 1x"
+              ng-src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::item.image}}.jpg"
+            >
+            {{::item.displayText}}
           </a>
         </li>
       </ul>

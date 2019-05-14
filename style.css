@@ -29,10 +29,6 @@ body {
   top: 5px;
 }
 
-#years {
-  height: 0;
-}
-
 .years {
   margin-top: 100px;
 }
@@ -230,6 +226,11 @@ li:hover {
   margin: calc(var(--month-width) * 0.05);
 }
 
+.search-container .cover-thumbnail img {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 .expanded .comic .panel-left,
 .comic-collection .panel-left {
   display: inline-block;
@@ -313,7 +314,7 @@ li:hover {
   margin-left: 15px;
 }
 
-.searchContainer {
+.search-container {
   position: fixed;
   left: 0;
   top: 0;
@@ -325,14 +326,14 @@ li:hover {
   background-color: hsl(216, 8%, 25%);
 }
 
-.searchContainer:focus-within {
+.search-container:focus-within {
   width: 100%;
   display: block;
   opacity: 0.8;
   background-color: #000;
 }
 
-.searchContainer input {
+.search-container input {
   color: #fff;
 }
 

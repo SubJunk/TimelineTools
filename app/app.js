@@ -297,7 +297,9 @@ angular.module('app', ['angular-md5'])
 
     // Sort the data by date
     comics = _.sortBy(comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
-    let comicsToSearch = [];
+
+    // An array of objects that contain search results for comics and collections
+    let itemsToSearch = [];
 
     /**
      * This loop populates the dates object with an array of years
@@ -469,9 +471,11 @@ angular.module('app', ['angular-md5'])
       comic.image = getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
 
       // Populate a smaller object just for filtering
-      comicsToSearch.push({
-        series: comic.series,
-        issue: comic.issue,
+      itemsToSearch.push({
+        // comicSeries: comic.series,
+        // comicIssue: comic.issue,
+        displayText: comic.series + ' #' + comic.issue,
+        image: comic.image,
         id: comic.id
       });
 
@@ -891,11 +895,28 @@ angular.module('app', ['angular-md5'])
       // While we are here we add the image string for lookup
       collection.image = getSanitizedString(false, collection.title);
 
+      /*
+       * Populate the uniqueCollections object, which joins the
+       * collections since they are split in the database.
+       */
       if (uniqueCollections[collection.id]) {
+        // There are existing comics, so add the comics from this part to the end of the existing part
         uniqueCollections[collection.id].allCollectionComicIds = _.concat(uniqueCollections[collection.id].allCollectionComicIds, collection.comicIds);
       } else {
+        // Create the first entry in the object
         uniqueCollections[collection.id] = collection;
         uniqueCollections[collection.id].allCollectionComicIds = collection.comicIds;
+
+        /*
+         * Add this collection to the search results here because it is
+         * the first part of the collection, including the ID of the first
+         * comic in the collection.
+         */
+        itemsToSearch.push({
+          displayText: collection.title,
+          image: collection.image,
+          id: _.first(collection.comicIds)
+        });
       }
 
       _.each(collections, function(collectionInner) {
@@ -958,7 +979,7 @@ angular.module('app', ['angular-md5'])
     vm.uniqueCollections = uniqueCollections;
     vm.series            = series;
     vm.seriesVolumes     = seriesVolumes;
-    vm.comicsToSearch    = comicsToSearch;
+    vm.itemsToSearch     = itemsToSearch;
 
     // Pass the other things the view needs
     vm.dates = dates;
