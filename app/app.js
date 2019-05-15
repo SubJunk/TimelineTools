@@ -848,27 +848,30 @@ angular.module('app', ['angular-md5'])
     };
 
     /**
-     * Handle arrow keys.
+     * Handle keypresses.
      *
      * @link https://stackoverflow.com/questions/1402698/binding-arrow-keys-in-js-jquery
      */
-    const ESCAPE_KEYPRESS = 27;
-    const LEFT_KEYPRESS = 37;
-    const RIGHT_KEYPRESS = 39;
+    const KEYPRESSES = {
+      escape: 27,
+      left: 37,
+      right: 39
+    };
 
     $(document).keydown(function(e) {
       switch (e.which) {
-        case ESCAPE_KEYPRESS:
+        case KEYPRESSES.escape:
           vm.toggleExpandComic({});
+          vm.searchText = '';
           break;
 
-        case LEFT_KEYPRESS:
+        case KEYPRESSES.left:
           if (vm.prevComic) {
             vm.toggleExpandComic(vm.prevComic);
           }
           break;
 
-        case RIGHT_KEYPRESS:
+        case KEYPRESSES.right:
           if (vm.nextComic) {
             vm.toggleExpandComic(vm.nextComic);
           }

@@ -4,6 +4,7 @@
   --expanded-width-panel-left: 200px;
   --cover-aspect-ratio: 1.55;
   --expanded-cover-height: 310px;
+  --collection-cover-height: 250px;
   --collection-thumbnails-height: 97px;
   --initial-body-width: 4000px;
 }
@@ -29,8 +30,9 @@ body {
   top: 5px;
 }
 
-.years {
-  margin-top: 100px;
+.years,
+.collections {
+  margin-top: 70px;
 }
 
 .truncate {
@@ -152,7 +154,7 @@ li:hover {
 }
 
 .collection-container {
-  width: calc(var(--expanded-cover-height) / var(--cover-aspect-ratio));
+  width: calc(var(--collection-cover-height) / var(--cover-aspect-ratio));
   transition: width 1s;
   margin-right: 10px;
 }
@@ -241,8 +243,16 @@ li:hover {
 .expanded .comic .cover-thumbnail img,
 .comic-collection .cover-thumbnail img {
   border-radius: initial;
+}
+
+.expanded .comic .cover-thumbnail img {
   width: calc(var(--expanded-cover-height) / var(--cover-aspect-ratio));
   height: var(--expanded-cover-height);
+}
+
+.comic-collection .cover-thumbnail img {
+  width: calc(var(--collection-cover-height) / var(--cover-aspect-ratio));
+  height: var(--collection-cover-height);
 }
 
 .comic-container .expanded-panel {
@@ -262,8 +272,12 @@ li:hover {
 }
 
 .collection-container {
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
+}
+
+.collection-container.expanded {
+  overflow-y: visible;
 }
 
 .collection-container .expanded-panel {
