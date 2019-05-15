@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
   <title>X-Men Timeline</title>
 </head>
-<body ng-style="main.bodyStyles" ng-controller="DataController as main">
+<body ng-controller="DataController as main" ng-class="{'search-is-open': main.searchText}" ng-style="main.bodyStyles">
   <div id="app" ng-cloak>
     <div id="info" class="modal modal-fixed-footer">
       <div class="modal-content">

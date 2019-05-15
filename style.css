@@ -20,6 +20,10 @@ body {
   width: var(--initial-body-width);
 }
 
+body.search-is-open {
+  overflow: hidden;
+}
+
 #app {
   display: none;
 }
