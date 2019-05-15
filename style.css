@@ -30,11 +30,6 @@ body {
   top: 5px;
 }
 
-.years,
-.collections {
-  margin-top: 70px;
-}
-
 .truncate {
   white-space: nowrap;
   overflow: hidden;
@@ -233,6 +228,75 @@ li:hover {
   vertical-align: middle;
 }
 
+.search-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: #fff;
+  opacity: 0.8;
+  z-index: 1;
+  padding: 10px 20px 12px 20px;
+  background-color: hsl(216, 8%, 25%);
+  width: 70px;
+}
+
+.search-container.hasText,
+.search-container:focus-within {
+  width: 100%;
+  display: block;
+  opacity: 0.8;
+  background-color: #000;
+}
+
+.search-container.hasText {
+  height: 100vh;
+}
+
+.search-container input {
+  color: #fff;
+  width: 50px;
+  z-index: 1;
+  position: relative;
+}
+
+.search-container input::-webkit-input-placeholder { /* Edge */
+  color: transparent;
+}
+.search-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: transparent;
+}
+.search-container input::placeholder {
+  color: transparent;
+}
+
+.search-container:focus-within input::-webkit-input-placeholder { /* Edge */
+  color: lightgrey;
+}
+.search-container:focus-within input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: lightgrey;
+}
+.search-container:focus-within input::placeholder {
+  color: lightgrey;
+}
+
+.search-container.hasText input,
+.search-container:focus-within input {
+  width: 100%;
+  position: unset;
+  top: unset;
+}
+
+.search-toggle {
+  position: absolute;
+  font-size: 200%;
+  top: 20px;
+}
+
+.search-container.hasText .search-toggle,
+.search-container:focus-within .search-toggle {
+  display: none;
+}
+
 .expanded .comic .panel-left,
 .comic-collection .panel-left {
   display: inline-block;
@@ -326,29 +390,6 @@ li:hover {
   cursor: pointer;
   display: inline-block;
   margin-left: 15px;
-}
-
-.search-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  color: #fff;
-  opacity: 0.8;
-  z-index: 1;
-  padding: 10px 20px 12px 20px;
-  display: inline;
-  background-color: hsl(216, 8%, 25%);
-}
-
-.search-container:focus-within {
-  width: 100%;
-  display: block;
-  opacity: 0.8;
-  background-color: #000;
-}
-
-.search-container input {
-  color: #fff;
 }
 
 /**

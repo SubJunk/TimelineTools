@@ -90,10 +90,11 @@
         </div>
       </li>
     </ul>
-    <div class="search-container">
+    <div class="search-container" ng-class="{hasText: main.searchText}">
+      <i class="material-icons search-toggle">search</i>
       <input type="text" ng-model="main.searchText" placeholder="Search" />
       <ul class="searchResults" ng-if="main.searchText">
-        <li ng-repeat="item in main.itemsToSearch | filter:main.searchText | limitTo: 20 track by item.id">
+        <li ng-repeat="item in main.itemsToSearch | filter:main.searchText | limitTo: 20 track by item.image">
           <a ng-click="main.search(item)" class="waves-effect hoverable cover-thumbnail">
             <img
               class="responsive-img"

@@ -11,6 +11,8 @@ angular.module('app', ['angular-md5'])
     var series        = $window.series;
     var seriesVolumes = $window.seriesVolumes;
 
+    // The padding applied to the left, right, and bottom of the body
+    const BODY_PADDING_TOP = 80;
     const BODY_PADDING = 20;
     const LEFT_MARGIN = 200;
     const TOP_MARGIN = 300;
@@ -29,7 +31,7 @@ angular.module('app', ['angular-md5'])
     var globalVerticalPositionCounter = 0;
     var bodyStyles = {
       width: null,
-      padding: BODY_PADDING
+      padding: BODY_PADDING_TOP + ' ' + BODY_PADDING + ' ' + BODY_PADDING + ' ' + BODY_PADDING,
     };
     var seriesVolumeLabels = [];
 
@@ -472,8 +474,6 @@ angular.module('app', ['angular-md5'])
 
       // Populate a smaller object just for filtering
       itemsToSearch.push({
-        // comicSeries: comic.series,
-        // comicIssue: comic.issue,
         displayText: comic.series + ' #' + comic.issue,
         image: comic.image,
         id: comic.id
@@ -487,7 +487,7 @@ angular.module('app', ['angular-md5'])
        * comic thumbnail) and 2 body padding units to make up for the
        * left and right padding of the page.
        */
-      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (bodyStyles.padding * 2);
+      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
       if (newLabelNeeded) {
         seriesVolumeLabels.push({
           text: currentSeriesVolume.titleWithVolume,
@@ -826,7 +826,7 @@ angular.module('app', ['angular-md5'])
         expandedComic.classes.stickyLeft = isStickyLeft;
 
         if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-          expandedComic.styles.marginLeft = '-' + (scrollLeft + bodyStyles.padding);
+          expandedComic.styles.marginLeft = '-' + (scrollLeft + BODY_PADDING);
           expandedComic.styles.marginTop = '';
         } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
           expandedComic.styles.marginLeft = '';
