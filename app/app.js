@@ -148,6 +148,17 @@ angular.module('app', ['angular-md5'])
     var prevComicId;
     var nextComicId;
 
+    function clearComicClassesAndStyles(comic) {
+      comic = comic || vm.expandedCollection.comics[currentComicIndexInCollection];
+
+      comic.classes.stickyTop = false;
+      comic.classes.stickyRight = false;
+      comic.classes.stickyBottom = false;
+      comic.classes.stickyLeft = false;
+      comic.styles.marginTop = '';
+      comic.styles.marginLeft = '';
+    }
+
     /**
      * Toggles the expanded comic
      *
@@ -180,6 +191,10 @@ angular.module('app', ['angular-md5'])
        * the expanded box's position on the page by scrolling the viewport.
        */
       if (isForceScroll) {
+        if (vm.expandedCollection) {
+          clearComicClassesAndStyles();
+        }
+
         $('html, body').animate({
           scrollLeft: currentComic.containerStyles.left - LEFT_MARGIN,
           scrollTop:  currentComic.containerStyles.top + TOP_MARGIN
@@ -192,12 +207,7 @@ angular.module('app', ['angular-md5'])
         };
 
         // reset the styles for the previous comic
-        previouslyExpandedComic.classes.stickyTop = false;
-        previouslyExpandedComic.classes.stickyRight = false;
-        previouslyExpandedComic.classes.stickyBottom = false;
-        previouslyExpandedComic.classes.stickyLeft = false;
-        previouslyExpandedComic.styles.marginTop = false;
-        previouslyExpandedComic.styles.marginLeft = false;
+        clearComicClassesAndStyles(previouslyExpandedComic);
 
         $('html, body').animate({
           scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
