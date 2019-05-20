@@ -16,7 +16,7 @@
 body {
   background: hsl(216, 8%, 25%);
   overflow: auto;
-  padding: 20px;
+  padding: 80px 20px 20px;
   width: var(--initial-body-width);
 }
 
@@ -31,7 +31,7 @@ body.search-is-open {
 #pre-app {
   width: var(--initial-body-width);
   position: absolute;
-  top: 5px;
+  top: 65px;
 }
 
 .truncate {
@@ -294,6 +294,10 @@ li:hover {
   position: absolute;
   font-size: 200%;
   top: 20px;
+}
+
+#pre-app .search-toggle {
+  color: #999;
 }
 
 .search-container.hasText .search-toggle,
