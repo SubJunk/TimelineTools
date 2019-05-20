@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
   <title>X-Men Timeline</title>
 </head>
-<body ng-style="main.bodyStyles" ng-controller="DataController as main">
+<body ng-controller="DataController as main" ng-class="{'search-is-open': main.searchText}" ng-style="main.bodyStyles">
   <div id="app" ng-cloak>
     <div id="info" class="modal modal-fixed-footer">
       <div class="modal-content">
@@ -60,9 +60,9 @@
                   class="responsive-img"
                   ng-if="comic.id === main.expandedComicId"
                   ng-srcset="
-                      https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 2x,
-                      https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 1x"
-                  ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg"
+                      https://api.rethumb.com/v1/width/322/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 2x,
+                      https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 1x"
+                  ng-src="https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg"
               >
             </a>
           </div>
@@ -90,6 +90,24 @@
         </div>
       </li>
     </ul>
+    <div class="search-container" ng-class="{hasText: main.searchText}">
+      <i class="material-icons search-toggle">search</i>
+      <input type="text" ng-model="main.searchText" placeholder="Search" />
+      <ul class="searchResults" ng-if="main.searchText">
+        <li ng-repeat="item in main.itemsToSearch | filter:main.searchText | limitTo: 20 track by item.image">
+          <a ng-click="main.search(item)" class="waves-effect hoverable cover-thumbnail">
+            <img
+              class="responsive-img"
+              ng-srcset="
+                  https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{::item.image}}.jpg 2x,
+                  https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::item.image}}.jpg 1x"
+              ng-src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::item.image}}.jpg"
+            >
+            {{::item.displayText}}
+          </a>
+        </li>
+      </ul>
+    </div>
     <ul class="years">
       <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
         {{::year}}

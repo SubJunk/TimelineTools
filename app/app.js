@@ -11,6 +11,8 @@ angular.module('app', ['angular-md5'])
     var series        = $window.series;
     var seriesVolumes = $window.seriesVolumes;
 
+    // The padding applied to the left, right, and bottom of the body
+    const BODY_PADDING_TOP = 80;
     const BODY_PADDING = 20;
     const LEFT_MARGIN = 200;
     const TOP_MARGIN = 300;
@@ -29,7 +31,7 @@ angular.module('app', ['angular-md5'])
     var globalVerticalPositionCounter = 0;
     var bodyStyles = {
       width: null,
-      padding: BODY_PADDING
+      padding: BODY_PADDING_TOP + ' ' + BODY_PADDING + ' ' + BODY_PADDING + ' ' + BODY_PADDING,
     };
     var seriesVolumeLabels = [];
 
@@ -47,6 +49,7 @@ angular.module('app', ['angular-md5'])
     var currentComicIndexInCollection;
     var currentCollectionIndexInCollections;
     vm.isShowCollections = false;
+    vm.searchText = '';
 
     // API variables
     const apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
@@ -145,6 +148,17 @@ angular.module('app', ['angular-md5'])
     var prevComicId;
     var nextComicId;
 
+    function clearComicClassesAndStyles(comic) {
+      comic = comic || vm.expandedCollection.comics[currentComicIndexInCollection];
+
+      comic.classes.stickyTop = false;
+      comic.classes.stickyRight = false;
+      comic.classes.stickyBottom = false;
+      comic.classes.stickyLeft = false;
+      comic.styles.marginTop = '';
+      comic.styles.marginLeft = '';
+    }
+
     /**
      * Toggles the expanded comic
      *
@@ -165,6 +179,8 @@ angular.module('app', ['angular-md5'])
       if (_.isEmpty(currentComic) || vm.expandedComicId === currentComic.id) {
         $location.search('id', '');
 
+        clearComicClassesAndStyles();
+
         return $timeout(function() {
           vm.expandedComicId    = undefined;
           vm.expandedCollection = undefined;
@@ -177,6 +193,10 @@ angular.module('app', ['angular-md5'])
        * the expanded box's position on the page by scrolling the viewport.
        */
       if (isForceScroll) {
+        if (vm.expandedCollection) {
+          clearComicClassesAndStyles();
+        }
+
         $('html, body').animate({
           scrollLeft: currentComic.containerStyles.left - LEFT_MARGIN,
           scrollTop:  currentComic.containerStyles.top + TOP_MARGIN
@@ -189,12 +209,7 @@ angular.module('app', ['angular-md5'])
         };
 
         // reset the styles for the previous comic
-        previouslyExpandedComic.classes.stickyTop = false;
-        previouslyExpandedComic.classes.stickyRight = false;
-        previouslyExpandedComic.classes.stickyBottom = false;
-        previouslyExpandedComic.classes.stickyLeft = false;
-        previouslyExpandedComic.styles.marginTop = false;
-        previouslyExpandedComic.styles.marginLeft = false;
+        clearComicClassesAndStyles(previouslyExpandedComic);
 
         $('html, body').animate({
           scrollLeft: $jqWindow.scrollLeft() - positionDifference.left,
@@ -281,6 +296,12 @@ angular.module('app', ['angular-md5'])
       }
     };
 
+    vm.search = function(comic) {
+      let comicToSearch = _.find(comics, ['id', comic.id]);
+      vm.toggleExpandComic(comicToSearch, true);
+      vm.searchText = '';
+    };
+
     vm.toggleExpandCollection = function(collection) {
       vm.expandedCollectionId = vm.expandedCollectionId === collection.id ? null : collection.id;
     };
@@ -290,6 +311,9 @@ angular.module('app', ['angular-md5'])
 
     // Sort the data by date
     comics = _.sortBy(comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
+
+    // An array of objects that contain search results for comics and collections
+    let itemsToSearch = [];
 
     /**
      * This loop populates the dates object with an array of years
@@ -460,6 +484,13 @@ angular.module('app', ['angular-md5'])
       comic.series = currentSeriesVolume.title;
       comic.image = getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
 
+      // Populate a smaller object just for filtering
+      itemsToSearch.push({
+        displayText: comic.series + ' #' + comic.issue,
+        image: comic.image,
+        id: comic.id
+      });
+
       previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
       /**
@@ -468,7 +499,7 @@ angular.module('app', ['angular-md5'])
        * comic thumbnail) and 2 body padding units to make up for the
        * left and right padding of the page.
        */
-      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (bodyStyles.padding * 2);
+      bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
       if (newLabelNeeded) {
         seriesVolumeLabels.push({
           text: currentSeriesVolume.titleWithVolume,
@@ -807,7 +838,7 @@ angular.module('app', ['angular-md5'])
         expandedComic.classes.stickyLeft = isStickyLeft;
 
         if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-          expandedComic.styles.marginLeft = '-' + (scrollLeft + bodyStyles.padding);
+          expandedComic.styles.marginLeft = '-' + (scrollLeft + BODY_PADDING);
           expandedComic.styles.marginTop = '';
         } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
           expandedComic.styles.marginLeft = '';
@@ -829,27 +860,30 @@ angular.module('app', ['angular-md5'])
     };
 
     /**
-     * Handle arrow keys.
+     * Handle keypresses.
      *
      * @link https://stackoverflow.com/questions/1402698/binding-arrow-keys-in-js-jquery
      */
-    const ESCAPE_KEYPRESS = 27;
-    const LEFT_KEYPRESS = 37;
-    const RIGHT_KEYPRESS = 39;
+    const KEYPRESSES = {
+      escape: 27,
+      left: 37,
+      right: 39
+    };
 
     $(document).keydown(function(e) {
       switch (e.which) {
-        case ESCAPE_KEYPRESS:
+        case KEYPRESSES.escape:
           vm.toggleExpandComic({});
+          vm.searchText = '';
           break;
 
-        case LEFT_KEYPRESS:
+        case KEYPRESSES.left:
           if (vm.prevComic) {
             vm.toggleExpandComic(vm.prevComic);
           }
           break;
 
-        case RIGHT_KEYPRESS:
+        case KEYPRESSES.right:
           if (vm.nextComic) {
             vm.toggleExpandComic(vm.nextComic);
           }
@@ -876,11 +910,28 @@ angular.module('app', ['angular-md5'])
       // While we are here we add the image string for lookup
       collection.image = getSanitizedString(false, collection.title);
 
+      /*
+       * Populate the uniqueCollections object, which joins the
+       * collections since they are split in the database.
+       */
       if (uniqueCollections[collection.id]) {
+        // There are existing comics, so add the comics from this part to the end of the existing part
         uniqueCollections[collection.id].allCollectionComicIds = _.concat(uniqueCollections[collection.id].allCollectionComicIds, collection.comicIds);
       } else {
+        // Create the first entry in the object
         uniqueCollections[collection.id] = collection;
         uniqueCollections[collection.id].allCollectionComicIds = collection.comicIds;
+
+        /*
+         * Add this collection to the search results here because it is
+         * the first part of the collection, including the ID of the first
+         * comic in the collection.
+         */
+        itemsToSearch.push({
+          displayText: collection.title,
+          image: collection.image,
+          id: _.first(collection.comicIds)
+        });
       }
 
       _.each(collections, function(collectionInner) {
@@ -943,6 +994,7 @@ angular.module('app', ['angular-md5'])
     vm.uniqueCollections = uniqueCollections;
     vm.series            = series;
     vm.seriesVolumes     = seriesVolumes;
+    vm.itemsToSearch     = itemsToSearch;
 
     // Pass the other things the view needs
     vm.dates = dates;
