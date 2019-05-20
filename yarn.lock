@@ -223,6 +223,15 @@
     deepmerge "^2.0.1"
     glob "^7.1.2"
 
+"@wdio/config@^5.9.0":
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@wdio/config/-/config-5.9.0.tgz#1f5241deb54ff5f722b5126cf5fd3638f63a14fd"
+  integrity sha512-ei4tsR43V/xN9JZ0jUxdCwFA11Rp3KXw4GTBH2hqLBK0732t4MsxENFDhuQKT2BR9aY7Gxof0BNEQ6mvh89unA==
+  dependencies:
+    "@wdio/logger" "^5.9.0"
+    deepmerge "^2.0.1"
+    glob "^7.1.2"
+
 "@wdio/local-runner@5.8.6":
   version "5.8.6"
   resolved "https://registry.yarnpkg.com/@wdio/local-runner/-/local-runner-5.8.6.tgz#31609a3ad6715fb70bdb934d1156efa924f1b711"
@@ -238,6 +247,16 @@
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/@wdio/logger/-/logger-5.8.0.tgz#9d69dec2eaaee011c03de0f9239f8c520dfe8260"
   integrity sha512-YQ6fybKvWEZPBVf/rrhedohj6g4U1cb9w/6IkHOOhDYbiwwvmAVk7h7QTCsdVc1pxO7Y4/5gI46bmoASgPsrnw==
+  dependencies:
+    chalk "^2.3.0"
+    loglevel "^1.6.0"
+    loglevel-plugin-prefix "^0.5.3"
+    strip-ansi "^4.0.0"
+
+"@wdio/logger@^5.9.0":
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@wdio/logger/-/logger-5.9.0.tgz#e43b31dd40bcd9af0ff3dc35aace5d7457087fa7"
+  integrity sha512-L08MyO844LoTOnOZFxbupbTeqMAH7ZmrrNtN5AXpk3hJP7t4i5A+7eCiNWMpUpmOGHzM+04W27mYdaSei7imKg==
   dependencies:
     chalk "^2.3.0"
     loglevel "^1.6.0"
@@ -298,13 +317,13 @@
     chalk "^2.3.2"
     pretty-ms "^3.1.0"
 
-"@wdio/sync@5.8.6":
-  version "5.8.6"
-  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.8.6.tgz#d48607c327c2674c5b208884a58e28991a13a286"
-  integrity sha512-K7F8cKXbtXA2ljlLdQyCXAb7VYFdO/e9wmRoWEmwsE5TA8AVAD2ZPBRZ3BRl24aKAPukBp2j3vFD7u4noUEXyQ==
+"@wdio/sync@5.9.0":
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.9.0.tgz#2cffc081c39345fb9a28d75f6acaa16d1ede960d"
+  integrity sha512-89za2PiybCULGekZxnKeMeyx/j+EdCqsFFZzRjjbndQuzI7vYeZdzvywVSBYMl73QrfurmOnSUauxybhRz+zog==
   dependencies:
-    "@wdio/config" "^5.8.1"
-    "@wdio/logger" "^5.8.0"
+    "@wdio/config" "^5.9.0"
+    "@wdio/logger" "^5.9.0"
     fibers "^4.0.0"
 
 "@wdio/utils@^5.8.1":
