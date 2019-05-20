@@ -219,6 +219,7 @@ series.push(
   new Series('X-Men: Messiah Complex - Mutant Files', {1: 2007}),
   new Series('X-Men: Odd Men Out', {1: 2008}),
   new Series('X-Men: Omega', {1: 1995}),
+  new Series('X-Men: Original Sin', {1: 2008}),
   new Series('X-Men: Phoenix', {1: 1999}),
   new Series('X-Men: Phoenix - Endsong', {1: 2005}),
   new Series('X-Men: Phoenix - Warsong', {1: 2006}),

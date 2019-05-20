@@ -5302,6 +5302,27 @@ collections.push(
       'XMenLegacyVol1216',
     ]
   ),
+  new Collection(
+    'X-Men: Original Sin',
+    '2009-8-5',
+    [
+      'WolverineOriginsVol128',
+      'XMenOriginalSinVol11',
+      'XMenLegacyVol1217',
+      'WolverineOriginsVol129',
+      'XMenLegacyVol1218',
+      'WolverineOriginsVol130',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Manifest Destiny (Partial)',
+    '2009-10',
+    [
+      'UncannyXMenVol1501',
+      'UncannyXMenVol1502',
+      'UncannyXMenVol1503',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -5340,15 +5361,6 @@ collections.push(
       'XForceSexandViolenceVol11',
       'XForceSexandViolenceVol12',
       'XForceSexandViolenceVol13'
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men: Manifest Destiny (Partial)',
-    '2009-10',
-    [
-      'UncannyXMenVol1501',
-      'UncannyXMenVol1502',
-      'UncannyXMenVol1503',
     ]
   ),
   /**

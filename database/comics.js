@@ -1619,6 +1619,9 @@ addComicsInSeriesVolume('WolverineOriginsVol1', [
   [18, '2007-10-17'],
   [19, '2007-11-21'],
   [20, '2007-12-19'],
+  [28, '2008-9-24'],
+  [29, '2008-10-29'],
+  [30, '2008-11-26'],
 ]);
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
@@ -2407,9 +2410,11 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [214, '2008-7-23'],
   [215, '2008-8-27'],
   [216, '2008-9-24'],
-  [235, '2010-6', ['Second Coming (Chapter Four)']],
-  [236, '2010-7', ['Second Coming (Chapter Eight)']],
-  [237, '2010-8', ['Second Coming (Chapter Twelve)']],
+  [217, '2008-10-22'],
+  [218, '2008-11-19'],
+  [235, '2010-6'],
+  [236, '2010-7'],
+  [237, '2010-8'],
 ]);
 addComicsInSeriesVolume('XMenMagnetoTestamentVol1', [
   [1, '2008-9-10'],
@@ -2430,6 +2435,7 @@ addComicsInSeriesVolume('XMenMessiahComplexVol1', [[1, '2007-10-31']]);
 addComicsInSeriesVolume('XMenMessiahComplexMutantFilesVol1', [[1, '2007-12-28']]);
 addComicsInSeriesVolume('XMenOddMenOutVol1', [[1, '2008-7-30']]);
 addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']]);
+addComicsInSeriesVolume('XMenOriginalSinVol1', [[1, '2008-10-8']]);
 addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']]);
 addComicsInSeriesVolume('XMenPhoenixVol1', [
   [1, '1999-12'],
