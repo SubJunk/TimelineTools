@@ -179,6 +179,8 @@ angular.module('app', ['angular-md5'])
       if (_.isEmpty(currentComic) || vm.expandedComicId === currentComic.id) {
         $location.search('id', '');
 
+        clearComicClassesAndStyles();
+
         return $timeout(function() {
           vm.expandedComicId    = undefined;
           vm.expandedCollection = undefined;
