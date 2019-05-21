@@ -223,6 +223,15 @@
     deepmerge "^2.0.1"
     glob "^7.1.2"
 
+"@wdio/config@^5.9.1":
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/@wdio/config/-/config-5.9.1.tgz#a4337d4743e57def03064e0044c634a7120da413"
+  integrity sha512-u5dqcTpUk4eXILEy5ytKX+0s7vXVHAwU/GghhbWrbL3mDTvZ65Wn6IyDGtBLckY6lfa2KF5Tswk0cg9mCw0mnA==
+  dependencies:
+    "@wdio/logger" "^5.9.0"
+    deepmerge "^2.0.1"
+    glob "^7.1.2"
+
 "@wdio/local-runner@5.9.0":
   version "5.9.0"
   resolved "https://registry.yarnpkg.com/@wdio/local-runner/-/local-runner-5.9.0.tgz#661ebff30ef7bfee6b005920b057194b4e070fd6"
@@ -298,12 +307,12 @@
     chalk "^2.3.2"
     pretty-ms "^3.1.0"
 
-"@wdio/sync@5.9.0":
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.9.0.tgz#2cffc081c39345fb9a28d75f6acaa16d1ede960d"
-  integrity sha512-89za2PiybCULGekZxnKeMeyx/j+EdCqsFFZzRjjbndQuzI7vYeZdzvywVSBYMl73QrfurmOnSUauxybhRz+zog==
+"@wdio/sync@5.9.1":
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.9.1.tgz#37ecc49979b7496e86a7c96e97d820857509d2f1"
+  integrity sha512-l3ghY44iEePjcWDFdJw8zPQVeagpuxsZvFv/pzKQrZh0+IKpFavPxnnWn1aZ9B3GqBSrkShY2d94+y/GPFJdzA==
   dependencies:
-    "@wdio/config" "^5.9.0"
+    "@wdio/config" "^5.9.1"
     "@wdio/logger" "^5.9.0"
     fibers "^4.0.0"
 
