@@ -110,7 +110,7 @@
     </div>
     <ul class="years">
       <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
-        {{::year}}
+        <span>{{::year}}</span>
         <ul>
           <li ng-repeat="month in ::months track by month.number" class="month" ng-style='::month.styles'>{{::month.number}}</li>
         </ul>

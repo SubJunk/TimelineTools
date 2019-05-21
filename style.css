@@ -39,6 +39,12 @@ body.search-is-open {
   color: #ccc;
 }
 
+.year > span {
+  position: sticky;
+  left: 0;
+  padding-left: 20px;
+}
+
 .month {
   display: inline-block;
   text-indent: 22px;
