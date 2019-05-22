@@ -34,12 +34,6 @@ body.search-is-open {
   top: 65px;
 }
 
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .year {
   display: inline-block;
   color: #ccc;
@@ -75,6 +69,7 @@ body.search-is-open {
 .series-volume-label-container {
   margin-top: calc(var(--month-width) * 0.29);
   z-index: 2;
+  pointer-events: none;
 }
 
 .popover {
@@ -126,13 +121,9 @@ li:hover {
 
 .series-volume-label {
   display: inline-block;
-  text-align: right;
-}
-
-.series-volume-label.stickyLeft {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  text-align: left;
+  position: sticky;
+  left: 0;
+  white-space: nowrap;
 }
 
 .series-volume-label-container,

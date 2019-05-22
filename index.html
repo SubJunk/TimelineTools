@@ -118,7 +118,7 @@
     </ul>
     <ul class="comics">
       <li ng-repeat="(index, label) in ::main.seriesVolumeLabels" ng-style="label.containerStyles" class="series-volume-label-container">
-        <div class="series-volume-label truncate" ng-title="{{::label.text}}" id="{{::label.id}}" ng-style="label.labelStyles" ng-class="{stickyLeft: label.labelClasses.stickyLeft}" ng-if="label.visible">{{::label.text}}</div>
+        <div class="series-volume-label" id="{{::label.id}}">{{::label.text}}</div>
       </li>
       <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
         <div class="scroll-anchor"></div>
@@ -209,7 +209,7 @@
     </div>
     <ul class="years">
       <li class="year">
-        1963
+        <span>1963</span>
         <ul>
           <li class="month" style="width: 56px;">9</li>
           <li class="month" style="width: 56px;">10</li>
@@ -218,24 +218,7 @@
         </ul>
       </li>
       <li class="year">
-        1964
-        <ul>
-          <li class="month" style="width: 56px;">1</li>
-          <li class="month" style="width: 56px;">2</li>
-          <li class="month" style="width: 56px;">3</li>
-          <li class="month" style="width: 56px;">4</li>
-          <li class="month" style="width: 56px;">5</li>
-          <li class="month" style="width: 56px;">6</li>
-          <li class="month" style="width: 56px;">7</li>
-          <li class="month" style="width: 56px;">8</li>
-          <li class="month" style="width: 56px;">9</li>
-          <li class="month" style="width: 56px;">10</li>
-          <li class="month" style="width: 56px;">11</li>
-          <li class="month" style="width: 56px;">12</li>
-        </ul>
-      </li>
-      <li class="year">
-        1965
+        <span>1964</span>
         <ul>
           <li class="month" style="width: 56px;">1</li>
           <li class="month" style="width: 56px;">2</li>
@@ -252,7 +235,24 @@
         </ul>
       </li>
       <li class="year">
-        1966
+        <span>1965</span>
+        <ul>
+          <li class="month" style="width: 56px;">1</li>
+          <li class="month" style="width: 56px;">2</li>
+          <li class="month" style="width: 56px;">3</li>
+          <li class="month" style="width: 56px;">4</li>
+          <li class="month" style="width: 56px;">5</li>
+          <li class="month" style="width: 56px;">6</li>
+          <li class="month" style="width: 56px;">7</li>
+          <li class="month" style="width: 56px;">8</li>
+          <li class="month" style="width: 56px;">9</li>
+          <li class="month" style="width: 56px;">10</li>
+          <li class="month" style="width: 56px;">11</li>
+          <li class="month" style="width: 56px;">12</li>
+        </ul>
+      </li>
+      <li class="year">
+        <span>1966</span>
         <ul>
           <li class="month" style="width: 56px;">1</li>
           <li class="month" style="width: 56px;">2</li>

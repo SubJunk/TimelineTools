@@ -503,16 +503,12 @@ angular.module('app', ['angular-md5'])
       if (newLabelNeeded) {
         seriesVolumeLabels.push({
           text: currentSeriesVolume.titleWithVolume,
-          right: comic.containerStyles.left,
           id: 'label-' + seriesVolumeLabels.length,
           containerStyles: {
             top: comic.containerStyles.top,
             left: comic.containerStyles.left,
-            opacity: 0 // Hide it initially in a way that lets jQuery still get its width
+            width: -BODY_PADDING,
           },
-          labelClasses: {},
-          labelStyles: {},
-          visible: true
         });
 
         newLabelNeeded = false;
@@ -525,7 +521,7 @@ angular.module('app', ['angular-md5'])
           throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
         }
 
-        seriesVolumeLabels[seriesVolumeLabelIndex].right = comic.containerStyles.left;
+        seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles.width = comic.containerStyles.left - seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles.left - BODY_PADDING;
       }
     });
 
@@ -649,13 +645,13 @@ angular.module('app', ['angular-md5'])
         blue += lightnessAdjustment;
 
         rgbColor = [Math.round(red * RGB_MAX), Math.round(green * RGB_MAX), Math.round(blue * RGB_MAX)];
+
         /**
          * Given a color in RGB format, assign either a light
          * or dark color.
          *
          * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
          */
-
         const RGB_CUTOFF = 0.03928;  // See http://entropymine.com/imageworsener/srgbformula/
         const RGB_SLOPE = 0.055;
         const RGB_DENOMINATOR = 1.055;
@@ -696,15 +692,13 @@ angular.module('app', ['angular-md5'])
       };
     }
 
-    /**
+    /*
      * Use jQuery to manipulate classes and styles to make the expanded
-     * panels always fit in the viewport, and series volume labels stick
-     * to the left.
+     * panels always fit in the viewport.
      */
     var $expandedComic;
     var scrollLeft;
     var scrollTop;
-    var isLabelScrolledPastLeft;
     var isComicScrolledPastLeft;
     var isComicScrolledPastRight;
     var anchorTopPosition;
@@ -717,7 +711,6 @@ angular.module('app', ['angular-md5'])
     var isStickyLeft;
     var isStickyRight;
     var isStickyBottom;
-    var $jqLabel;
     var repositionStickyElements = function(currentComicId) {
       if (doSpeedProfile) var startTimeReposition = new Date();
 
@@ -733,53 +726,6 @@ angular.module('app', ['angular-md5'])
       scrollLeft = $jqWindow.scrollLeft() - BODY_PADDING;
       scrollTop  = $jqWindow.scrollTop();
       scrollRight = scrollLeft + $jqWindow.innerWidth();
-
-      // Label positioning:
-      _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
-        // Initial section where we cache information on the first loop
-        {
-          // We only know the width after the initial render, so store it
-          if (!seriesVolumeLabel.labelWidthFromDom) {
-            $jqLabel = $('#' + seriesVolumeLabel.id);
-            if ($jqLabel.length && $jqLabel.outerWidth() > 0) {
-              seriesVolumeLabel.labelWidthFromDom = $jqLabel.outerWidth() + BODY_PADDING;
-
-              // Subtract width of the label from the left position
-              seriesVolumeLabel.containerStyles.left = seriesVolumeLabel.containerStyles.left - seriesVolumeLabel.labelWidthFromDom;
-            }
-          }
-        }
-
-        seriesVolumeLabel.scrollDifference = scrollLeft - seriesVolumeLabel.right;
-
-        isLabelScrolledPastLeft = Boolean(scrollLeft > seriesVolumeLabel.containerStyles.left);
-
-        seriesVolumeLabel.labelClasses.stickyLeft = isLabelScrolledPastLeft;
-
-        if (isLabelScrolledPastLeft) {
-          seriesVolumeLabel.labelStyles.marginTop = '-' + scrollTop;
-
-          // If the browser is scrolled past the right, hide the label
-          if (
-            seriesVolumeLabel.scrollDifference > -seriesVolumeLabel.labelWidthFromDom &&
-            seriesVolumeLabel.scrollDifference < 0
-          ) {
-            seriesVolumeLabel.visible = true;
-            seriesVolumeLabel.labelStyles.left = (seriesVolumeLabel.right - scrollLeft - seriesVolumeLabel.labelWidthFromDom);
-          } else if (seriesVolumeLabel.right < (scrollLeft + seriesVolumeLabel.labelWidthFromDom)) {
-            delete seriesVolumeLabel.visible;
-          } else {
-            seriesVolumeLabel.visible = true;
-            seriesVolumeLabel.labelStyles.left = '0';
-          }
-        } else {
-          seriesVolumeLabel.visible = true;
-          delete seriesVolumeLabel.labelStyles.marginTop;
-        }
-
-        // Show the label after we have its correct position calculated
-        seriesVolumeLabel.containerStyles.opacity = 1;
-      });
 
       // Lazy-load thumbnails that aren't in the viewport
       _.each(vm.comics, function(comic) {
@@ -1001,6 +947,25 @@ angular.module('app', ['angular-md5'])
     vm.bodyStyles = bodyStyles;
     vm.seriesVolumeLabels = seriesVolumeLabels;
 
+    function subtractLabelWidthsFromLeftPositions() {
+      let $jqLabel;
+      let labelWidthFromDom;
+
+      _.each(vm.seriesVolumeLabels, function(seriesVolumeLabel) {
+        // We only know the width after the initial render, so store it
+        $jqLabel = $('#' + seriesVolumeLabel.id);
+        if ($jqLabel.length > -1) {
+          labelWidthFromDom = $jqLabel.outerWidth() + BODY_PADDING;
+
+          // Subtract width of the label from the left position, and add the width to the container
+          seriesVolumeLabel.containerStyles.left = seriesVolumeLabel.containerStyles.left - labelWidthFromDom;
+          seriesVolumeLabel.containerStyles.width += labelWidthFromDom;
+        } else {
+          $log.error('Failed to get width of label with ID ' + seriesVolumeLabel.id);
+        }
+      });
+    }
+
     var infoModalInstance;
     $timeout(function() {
       // Hide the initial data and display the real one
@@ -1021,6 +986,8 @@ angular.module('app', ['angular-md5'])
       infoModalInstance = _.first(M.Modal.init(infoModal));
 
       useGetParameters();
+
+      subtractLabelWidthsFromLeftPositions();
     });
 
     vm.toggleInfoModal = function() {
