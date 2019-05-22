@@ -503,12 +503,11 @@ angular.module('app', ['angular-md5'])
       if (newLabelNeeded) {
         seriesVolumeLabels.push({
           text: currentSeriesVolume.titleWithVolume,
-          right: comic.containerStyles.left,
           id: 'label-' + seriesVolumeLabels.length,
           containerStyles: {
             top: comic.containerStyles.top,
             left: comic.containerStyles.left,
-            width: 0,
+            width: -BODY_PADDING,
           },
         });
 
@@ -522,7 +521,6 @@ angular.module('app', ['angular-md5'])
           throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
         }
 
-        seriesVolumeLabels[seriesVolumeLabelIndex].right = comic.containerStyles.left;
         seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles.width = comic.containerStyles.left - seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles.left - BODY_PADDING;
       }
     });
