@@ -151,11 +151,6 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/mocha@^5.2.5":
-  version "5.2.6"
-  resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.2.6.tgz#b8622d50557dd155e9f2f634b7d68fd38de5e94b"
-  integrity sha512-1axi39YdtBI7z957vdqXI4Ac25e7YihYQtJa+Clnxg1zTJEaIRbndt71O3sP4GAMgiAm0pY26/b9BrY4MR/PMw==
-
 "@types/node@*":
   version "12.0.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.2.tgz#3452a24edf9fea138b48fad4a0a028a683da1e40"
@@ -253,12 +248,11 @@
     loglevel-plugin-prefix "^0.5.3"
     strip-ansi "^4.0.0"
 
-"@wdio/mocha-framework@5.9.1":
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/@wdio/mocha-framework/-/mocha-framework-5.9.1.tgz#1540325a71a367d808bf179d969fee85a8fbe9d3"
-  integrity sha512-6MtUACRuJsb/RatNjRXvyiFs8ZYXyqADCIKxuJiZOXQbEJcUjs+eyN+yjbFF5DmJGdxlos9sy26IHGLSgQ+YKg==
+"@wdio/mocha-framework@5.9.2":
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/@wdio/mocha-framework/-/mocha-framework-5.9.2.tgz#af1db35f37ad144328d0e6710aefdf7c80807c0f"
+  integrity sha512-7gjTJK+VUk6zuD/EVWtV+oaCx3nQON7qyyACksQpOiDkh97DR3rxRDnsn+5/N7hZls1VKK0sEq4Hy7Azphgp5Q==
   dependencies:
-    "@types/mocha" "^5.2.5"
     "@wdio/config" "^5.9.1"
     "@wdio/logger" "^5.9.0"
     mocha "^6.1.0"
