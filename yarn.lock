@@ -314,10 +314,10 @@
     chalk "^2.3.2"
     pretty-ms "^3.1.0"
 
-"@wdio/sync@5.9.1":
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.9.1.tgz#37ecc49979b7496e86a7c96e97d820857509d2f1"
-  integrity sha512-l3ghY44iEePjcWDFdJw8zPQVeagpuxsZvFv/pzKQrZh0+IKpFavPxnnWn1aZ9B3GqBSrkShY2d94+y/GPFJdzA==
+"@wdio/sync@5.9.2":
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.9.2.tgz#41e9e94ba31e8e7d4b4539542d7bbf641bd2f0f3"
+  integrity sha512-D79b/VQy2VVjtnGIS76A4IsUrNPvVMdSaajeMgfJdh1M9H7SUE5MrX3bkdGA3zzhpk0FfakC9PabmTo8M7Aj+Q==
   dependencies:
     "@wdio/config" "^5.9.1"
     "@wdio/logger" "^5.9.0"
