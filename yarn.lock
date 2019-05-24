@@ -284,7 +284,19 @@
   dependencies:
     fs-extra "^7.0.1"
 
-"@wdio/runner@5.9.0", "@wdio/runner@^5.9.0":
+"@wdio/runner@5.9.2":
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/@wdio/runner/-/runner-5.9.2.tgz#18ff60ab2ef4f9bd53bea4774e8546a0d32cb22c"
+  integrity sha512-DmMxcDBCfrvosbxZq8m5EuV1GSMDnXu6VK0UvMlY62FqeRyVLoFkk3Uub2zXHchIgYmtSyCS59fuDhVxpyLDFQ==
+  dependencies:
+    "@wdio/config" "^5.9.1"
+    "@wdio/logger" "^5.9.0"
+    "@wdio/utils" "^5.9.0"
+    deepmerge "^2.0.1"
+    gaze "^1.1.2"
+    webdriverio "^5.9.2"
+
+"@wdio/runner@^5.9.0":
   version "5.9.0"
   resolved "https://registry.yarnpkg.com/@wdio/runner/-/runner-5.9.0.tgz#b7abec5ca34579c0833350e3bd3bea56bb04e83c"
   integrity sha512-uuHDrp7mA5NthDwx4FXCd1Ow4JFJcUookWTlWs2YQGWQvgyZmKxw/iHzWC3jGb1PkyrskHffIkk2Mn7Qz5bzAA==
@@ -4783,6 +4795,25 @@ webdriverio@^5.9.0:
     rgb2hex "^0.1.0"
     serialize-error "^3.0.0"
     webdriver "^5.9.0"
+
+webdriverio@^5.9.2:
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.9.2.tgz#e0888e4a5782defaa8a1419c368dd54963d4643b"
+  integrity sha512-ub87P5+h4935jEXXxJ5b22sq5sx25LJC0W5oXmNQfHyYWvca+oS75iJS80jGQ6haDUfyvek1PBMBh7M2+ikeIw==
+  dependencies:
+    "@wdio/config" "^5.9.1"
+    "@wdio/logger" "^5.9.0"
+    "@wdio/repl" "^5.9.1"
+    css-value "^0.0.1"
+    grapheme-splitter "^1.0.2"
+    lodash.isobject "^3.0.2"
+    lodash.isplainobject "^4.0.6"
+    lodash.merge "^4.6.1"
+    lodash.zip "^4.2.0"
+    resq "^1.5.0"
+    rgb2hex "^0.1.0"
+    serialize-error "^3.0.0"
+    webdriver "^5.9.1"
 
 which-module@^2.0.0:
   version "2.0.0"
