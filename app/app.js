@@ -96,8 +96,16 @@ angular.module('app', ['angular-md5'])
           return;
         }
 
-        var firstAPIResult = _.first(response.data.data.results);
-        comic.link = firstAPIResult.digitalId ? 'https://read.marvel.com/#book/' + firstAPIResult.digitalId : null;
+        /*
+         * Sometimes the Marvel API returns variants with no ID or 0, so
+         * keep looping until we get a real ID.
+         */
+        _.each(response.data.data.results, function(result) {
+          if (result.digitalId && result.digitalId !== 0) {
+            comic.link = 'https://read.marvel.com/#book/' + result.digitalId;
+            return false;
+          }
+        });
       }, function errorCallback(err) {
         throw new Error(err);
       });
