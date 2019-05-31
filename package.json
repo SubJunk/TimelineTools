@@ -67,7 +67,7 @@
     "@wdio/runner": "5.9.0",
     "@wdio/selenium-standalone-service": "5.8.4",
     "@wdio/spec-reporter": "5.9.3",
-    "@wdio/sync": "5.9.1",
+    "@wdio/sync": "5.9.6",
     "chromedriver": "74.0.0",
     "eslint": "5.16.0",
     "eslint-config-angular": "0.5.0",
