@@ -5042,15 +5042,6 @@ collections.push(
     '2014-11-11',
     [
       'CableDeadpoolVol141',
-      'CableDeadpoolVol142',
-      'CableDeadpoolVol143',
-      'CableDeadpoolVol144',
-      'CableDeadpoolVol145',
-      'CableDeadpoolVol146',
-      'CableDeadpoolVol147',
-      'CableDeadpoolVol148',
-      'CableDeadpoolVol149',
-      'CableDeadpoolVol150',
     ]
   ),
   new Collection(
@@ -5066,6 +5057,19 @@ collections.push(
     [
       'XMenEndangeredSpeciesVol11',
       'XMenVol3200',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol142',
+    ]
+  ),
+  new Collection(
+    'X-Men: Endangered Species',
+    '2008-1-9',
+    [
       'UncannyXMenVol1488',
       'XFactorVol321',
       'NewXMenVol240',
@@ -5079,6 +5083,18 @@ collections.push(
       'NewXMenVol242',
       'XMenVol3203',
       'UncannyXMenVol1491',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol143',
+      'CableDeadpoolVol144',
+      'CableDeadpoolVol145',
+      'CableDeadpoolVol146',
+      'CableDeadpoolVol147',
+      'CableDeadpoolVol148',
     ]
   ),
   new Collection(
@@ -5131,6 +5147,14 @@ collections.push(
       'XFactorVol327',
       'NewXMenVol246',
       'XMenVol3207',
+    ]
+  ),
+  new Collection(
+    'Deadpool & Cable Omnibus',
+    '2014-11-11',
+    [
+      'CableDeadpoolVol149',
+      'CableDeadpoolVol150',
     ]
   ),
   new Collection(
