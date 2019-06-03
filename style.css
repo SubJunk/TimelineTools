@@ -24,10 +24,6 @@ body.search-is-open {
   overflow: hidden;
 }
 
-#app {
-  display: none;
-}
-
 #pre-app {
   width: var(--initial-body-width);
   position: absolute;
