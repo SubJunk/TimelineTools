@@ -1,3 +1,7 @@
+import _ from 'lodash';
+import angular from 'angular';
+import $ from 'jquery';
+
 angular
   .module('timelineTools', ['angular-md5'])
   .component('app', {
@@ -220,8 +224,9 @@ angular
 
       var globalVerticalPositionCounter = 0;
       let bodyStyles = {
-        width: null,
+        height: null,
         padding: BODY_PADDING_TOP + ' ' + BODY_PADDING + ' ' + BODY_PADDING + ' ' + BODY_PADDING,
+        width: null,
       };
       var seriesVolumeLabels = [];
 
@@ -323,7 +328,7 @@ angular
        *    in a row) and forward slashes with underscores.
        * Finally it appends the volume and issue.
        */
-      var getSanitizedString = function(isComic, seriesOrCollection, volume, issue) {
+      var getSanitizedString = function(isComic, seriesOrCollection, volume?, issue?) {
         seriesOrCollection = seriesOrCollection
           .replace(/[():&?'.,]/g, '')
           .replace(/\s+|\//g, '_');
@@ -346,7 +351,7 @@ angular
       var prevComicId;
       var nextComicId;
 
-      function clearComicClassesAndStyles(comic) {
+      function clearComicClassesAndStyles(comic?) {
         if (!comic && !vm.expandedCollection) {
           return;
         }
@@ -489,7 +494,8 @@ angular
           getAPISeriesVolume(expandedSeriesVolume)
             .then(function successCallback(response) {
               if (response.data.data.results.length) {
-                expandedSeriesVolume.marvelId = _.first(response.data.data.results).id;
+                const firstResult: MarvelAPISeries = _.first(response.data.data.results);
+                expandedSeriesVolume.marvelId = firstResult.id;
                 setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
               }
             }, function errorCallback(err) {
@@ -510,7 +516,7 @@ angular
       };
 
       var doSpeedProfile = false;
-      if (doSpeedProfile) var startTimeInitialLoad = new Date();
+      if (doSpeedProfile) var startTimeInitialLoad = new Date().getTime();
 
       // Sort the data by date
       comics = _.sortBy(comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
@@ -529,8 +535,8 @@ angular
        * that lets us reuse our magic number instead of having a duplicate
        * in the CSS.
        */
-      var lastComic = _.last(comics);
-      var firstComic = _.first(comics);
+      var lastComic: Comic = _.last(comics);
+      var firstComic: Comic = _.first(comics);
       var monthsSinceFirst;
       var finalYear = lastComic.yearPublished;
       var finalMonth = lastComic.monthPublished;
@@ -733,7 +739,7 @@ angular
       });
 
       if (doSpeedProfile) {
-        var endTime = new Date();
+        var endTime = new Date().getTime();
         var timeDiff = endTime - startTimeInitialLoad;
         $log.warn('Time to run initial db loop:', timeDiff + 'ms');
       }
@@ -918,8 +924,8 @@ angular
       var isStickyLeft;
       var isStickyRight;
       var isStickyBottom;
-      var repositionStickyElements = function(currentComicId) {
-        if (doSpeedProfile) var startTimeReposition = new Date();
+      var repositionStickyElements = function(currentComicId?) {
+        if (doSpeedProfile) var startTimeReposition = new Date().getTime();
 
         /*
           * jQuery passes an object when it triggers this function from a
@@ -1005,7 +1011,7 @@ angular
           $('.materialboxed').materialbox();
 
           if (doSpeedProfile) {
-            var endTime = new Date();
+            var endTime = new Date().getTime();
             var timeDiff = endTime - startTimeReposition;
             $log.warn('Time to run repositionStickyElements:', timeDiff + 'ms');
           }
@@ -1052,15 +1058,42 @@ angular
       $jqWindow.on('load scroll', repositionStickyElements);
 
       // Catch clicks
-      $jqWindow.on('click', function(data) {
+      $jqWindow.on('click', function(data: jQueryClickEvent) {
         // Close the expanded comic if the click happened on a blank area
         if (data.target.localName === 'body' && vm.expandedComicId) {
           vm.toggleExpandComic({});
         }
       });
 
+      // TODO Find a good place for interfaces
+      interface Comic {
+        monthPublished: number;
+        yearPublished: number;
+      }
+
+      interface MarvelAPISeries {
+        id: number;
+      }
+
+      interface UniqueCollection {
+        allCollectionComicIds: Array<string>;
+        allCollectionComics: Array<object>;
+        comicIds: Array<string>;
+        id: number;
+        image: string;
+        title: string;
+      }
+
+      // This is just a fake one to make TypeScript stop complaining
+      interface jQueryClickEvent {
+        target: jQueryClickEventTarget;
+      }
+      interface jQueryClickEventTarget {
+        localName: string;
+      }
+
       var uniqueCollections = {};
-      _.each(collections, function(collection) {
+      _.each(collections, function(collection: UniqueCollection) {
         // While we are here we add the image string for lookup
         collection.image = getSanitizedString(false, collection.title);
 
@@ -1101,7 +1134,7 @@ angular
        * expanded view and allow interaction with them, but still have the
        * arrow keys work chronologically.
        */
-      _.each(uniqueCollections, function(uniqueCollection) {
+      _.each(uniqueCollections, function(uniqueCollection: UniqueCollection) {
         uniqueCollection.allCollectionComics = [];
         _.each(uniqueCollection.allCollectionComicIds, function(comicId) {
           uniqueCollection.allCollectionComics.push(

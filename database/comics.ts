@@ -1,3 +1,6 @@
+import _ from 'lodash';
+import moment from 'moment';
+
 /**
  * The prototype for individual comics.
  *

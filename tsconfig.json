@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": ".",
+      "paths": {
+          "*": [ "./*" ],
+          "app/*": ["./app/*"],
+          "database/*": ["./database/*"],
+          "test/*": ["./test/*"],
+      },
+  },
+  "include": [
+      "./**/*.ts"
+  ]
+}

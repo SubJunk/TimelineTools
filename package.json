@@ -61,6 +61,10 @@
     }
   },
   "devDependencies": {
+    "@types/angular": "^1.6.54",
+    "@types/jquery": "^3.3.29",
+    "@types/lodash": "^4.14.133",
+    "@types/webdriverio": "^5.0.0",
     "@wdio/cli": "5.9.0",
     "@wdio/local-runner": "5.9.2",
     "@wdio/mocha-framework": "5.9.1",
@@ -74,6 +78,8 @@
     "eslint-plugin-angular": "4.0.1",
     "geckodriver": "1.16.2",
     "stylelint": "10.0.1",
+    "ts-node": "^8.2.0",
+    "tsconfig-paths": "^3.8.0",
     "webdriverio": "5.9.2"
   },
   "dependencies": {
