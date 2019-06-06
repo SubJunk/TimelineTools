@@ -4796,6 +4796,17 @@ vfile@^3.0.0:
     unist-util-stringify-position "^1.0.0"
     vfile-message "^1.0.0"
 
+webdriver@^5.10.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/webdriver/-/webdriver-5.10.0.tgz#13a450dba65e39c5eb691655001cb77ddf1c29c1"
+  integrity sha512-nUgPwBDh5FTBkYaUd1Vh4chQqJcJFFLdj1n+Yh2TKH5gxHmGYvQg5gJIsMA3z68crmxp4fNkXdFwiJculS8GIQ==
+  dependencies:
+    "@wdio/config" "^5.9.4"
+    "@wdio/logger" "^5.9.3"
+    deepmerge "^3.2.0"
+    lodash.merge "^4.6.1"
+    request "^2.83.0"
+
 webdriver@^5.9.0:
   version "5.9.0"
   resolved "https://registry.yarnpkg.com/webdriver/-/webdriver-5.9.0.tgz#16c65267ac8707288e5021c29356d3e15a64e7d2"
@@ -4829,14 +4840,14 @@ webdriver@^5.9.4:
     lodash.merge "^4.6.1"
     request "^2.83.0"
 
-webdriverio@5.9.2, webdriverio@^5.9.2:
-  version "5.9.2"
-  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.9.2.tgz#e0888e4a5782defaa8a1419c368dd54963d4643b"
-  integrity sha512-ub87P5+h4935jEXXxJ5b22sq5sx25LJC0W5oXmNQfHyYWvca+oS75iJS80jGQ6haDUfyvek1PBMBh7M2+ikeIw==
+webdriverio@5.10.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.10.0.tgz#6fd51965aa741f6d64a186dd17d4295f0d0f7d1c"
+  integrity sha512-/uNU/7rvv6TplMMRE8R+VKxXwUtbEsCXvx8NumstnJ/dR/bG88Xf0tP1X/KRlVXqku5YqPRfE5ay4rUSjUIYCg==
   dependencies:
-    "@wdio/config" "^5.9.1"
-    "@wdio/logger" "^5.9.0"
-    "@wdio/repl" "^5.9.1"
+    "@wdio/config" "^5.9.4"
+    "@wdio/logger" "^5.9.3"
+    "@wdio/repl" "^5.9.4"
     css-value "^0.0.1"
     grapheme-splitter "^1.0.2"
     lodash.isobject "^3.0.2"
@@ -4845,8 +4856,8 @@ webdriverio@5.9.2, webdriverio@^5.9.2:
     lodash.zip "^4.2.0"
     resq "^1.5.0"
     rgb2hex "^0.1.0"
-    serialize-error "^3.0.0"
-    webdriver "^5.9.1"
+    serialize-error "^4.1.0"
+    webdriver "^5.10.0"
 
 webdriverio@^5.9.0:
   version "5.9.0"
@@ -4866,6 +4877,25 @@ webdriverio@^5.9.0:
     rgb2hex "^0.1.0"
     serialize-error "^3.0.0"
     webdriver "^5.9.0"
+
+webdriverio@^5.9.2:
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.9.2.tgz#e0888e4a5782defaa8a1419c368dd54963d4643b"
+  integrity sha512-ub87P5+h4935jEXXxJ5b22sq5sx25LJC0W5oXmNQfHyYWvca+oS75iJS80jGQ6haDUfyvek1PBMBh7M2+ikeIw==
+  dependencies:
+    "@wdio/config" "^5.9.1"
+    "@wdio/logger" "^5.9.0"
+    "@wdio/repl" "^5.9.1"
+    css-value "^0.0.1"
+    grapheme-splitter "^1.0.2"
+    lodash.isobject "^3.0.2"
+    lodash.isplainobject "^4.0.6"
+    lodash.merge "^4.6.1"
+    lodash.zip "^4.2.0"
+    resq "^1.5.0"
+    rgb2hex "^0.1.0"
+    serialize-error "^3.0.0"
+    webdriver "^5.9.1"
 
 webdriverio@^5.9.5:
   version "5.9.5"
