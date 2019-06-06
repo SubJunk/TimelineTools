@@ -352,13 +352,13 @@
     chalk "^2.3.2"
     pretty-ms "^5.0.0"
 
-"@wdio/sync@5.9.1":
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.9.1.tgz#37ecc49979b7496e86a7c96e97d820857509d2f1"
-  integrity sha512-l3ghY44iEePjcWDFdJw8zPQVeagpuxsZvFv/pzKQrZh0+IKpFavPxnnWn1aZ9B3GqBSrkShY2d94+y/GPFJdzA==
+"@wdio/sync@5.10.0":
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-5.10.0.tgz#b8310d347cf4eb7bd322346c4fe1e11e60f7a00c"
+  integrity sha512-FCdbH2BUHDExrovTvI4kCnrwKaNlBpwuwEQYPRLzP2fqFl6W0++XSTsjPChYwS5zV2aiDVU9VUVZSfic8ct+Aw==
   dependencies:
-    "@wdio/config" "^5.9.1"
-    "@wdio/logger" "^5.9.0"
+    "@wdio/config" "^5.9.4"
+    "@wdio/logger" "^5.9.3"
     fibers "^4.0.0"
 
 "@wdio/utils@^5.9.0":
