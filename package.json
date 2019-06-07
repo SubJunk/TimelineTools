@@ -73,7 +73,7 @@
     "eslint-config-angular": "0.5.0",
     "eslint-plugin-angular": "4.0.1",
     "geckodriver": "1.16.2",
-    "stylelint": "10.0.1",
+    "stylelint": "10.1.0",
     "webdriverio": "5.10.0"
   },
   "dependencies": {
