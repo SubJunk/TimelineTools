@@ -1,0 +1,191 @@
+var appComponentHtml = `
+<div id="info" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Info & Credits</h4>
+    <p>This tool depends on data from others. Some of the most frequent sources of that data are:</p>
+    <ul>
+      <li>
+        <h5><a href="http://notahoaxnotadream.blogspot.co.nz/p/x-men-collected-editions-chart.html">NOT A HOAX! NOT A DREAM!</a></h5>
+        We rely on the reviews on this blog to know which order the comics appear in within collections.
+      </li>
+      <li>
+        <h5><a href="http://www.comicsbackissues.com/comic-book-reading-order/x-men-read-order-chronology/#order">Comics Back Issues</a></h5>
+        We rely on this to track and order crossovers.
+      </li>
+      <li>
+        <h5><a href="http://www.marvel.com">Marvel</a></h5>
+        We rely on the Marvel API to display the link to the online version of the comics.
+      </li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <a ng-click="main.toggleInfoModal()" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>
+<div class="fixed-action-btn" ng-cloak>
+  <a class="btn-floating btn-large red"><i class="large material-icons">menu</i></a>
+  <ul>
+    <li>
+      <div class="popover"><div>Toggle collections view</div></div>
+      <a class="btn-floating green" ng-class="{green: main.isShowCollections, grey: !main.isShowCollections}" ng-click="main.toggleShowCollections()">
+        <i class="material-icons">library_books</i>
+      </a>
+    </li>
+    <li>
+      <div class="popover"><div>View information and credits</div></div>
+      <a ng-click="main.toggleInfoModal()" class="btn-floating blue">
+        <i class="material-icons">info</i>
+      </a>
+    </li>
+  </ul>
+</div>
+<ul class="collections" ng-if="main.isShowCollections" ng-cloak>
+  <li ng-repeat="collection in ::main.uniqueCollections" class="collection-container" ng-class="{expanded: collection.id === main.expandedCollectionId}" ng-if="collection.title !== 'Uncollected'">
+    <div class="comic-collection z-depth-5 hoverable" ng-style="collection.styles">
+      <div class="panel-left">
+        <a ng-click="main.toggleExpandCollection(collection)" class="waves-effect cover-thumbnail">
+          <img
+              class="responsive-img"
+              ng-if="comic.id === main.expandedComicId"
+              ng-srcset="
+                  https://api.rethumb.com/v1/width/322/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 2x,
+                  https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg 1x"
+              ng-src="https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/{{::collection.image}}.jpg"
+          >
+        </a>
+      </div>
+      <div class="expanded-panel">
+        <div class="title">{{::collection.title}}</div>
+        <div class="date">{{::collection.yearPublished}} / {{::collection.monthPublished}}</div>
+        <div class="collection-comics">
+          <ul>
+            <li ng-repeat="comic in ::collection.allCollectionComics track by comic.id">
+              <div class="popover"><div>{{::comic.series}} #{{::comic.issue}}</div></div>
+              <a title="{{::comic.series}} #{{::comic.issue}}" ng-click="main.toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
+                <img
+                    class="responsive-img"
+                    ng-class="{current: comic.id === comicId}"
+                    ng-srcset="
+                        https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
+                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 1x"
+                    ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+<div class="search-container" ng-class="{hasText: main.searchText}">
+  <i class="material-icons search-toggle">search</i>
+  <input type="text" ng-model="main.searchText" ng-change="main.postSearchActions(main.searchText)" placeholder="Search" />
+  <ul class="searchResults" ng-if="main.searchText">
+    <li ng-repeat="item in main.itemsToSearch | filter:main.searchText | limitTo: 20 track by item.image">
+      <a ng-click="main.search(item)" class="waves-effect hoverable cover-thumbnail">
+        <img
+          class="responsive-img"
+          ng-srcset="
+              https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{::item.image}}.jpg 2x,
+              https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::item.image}}.jpg 1x"
+          ng-src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::item.image}}.jpg"
+        >
+        {{::item.displayText}}
+      </a>
+    </li>
+  </ul>
+</div>
+<ul class="years">
+  <li ng-repeat="(year, months) in ::main.dates track by year" class="year">
+    <span>{{::year}}</span>
+    <ul>
+      <li ng-repeat="month in ::months track by month.number" class="month" ng-style='::month.styles'>{{::month.number}}</li>
+    </ul>
+  </li>
+</ul>
+<ul class="comics">
+  <li ng-repeat="(index, label) in ::main.seriesVolumeLabels" ng-style="label.containerStyles" class="series-volume-label-container">
+    <div class="series-volume-label" id="{{::label.id}}">{{::label.text}}</div>
+  </li>
+  <li ng-repeat="comic in main.comics track by comic.id" class="comic-container" ng-class="{expanded: comic.id === main.expandedComicId}" ng-style="comic.containerStyles">
+    <div class="scroll-anchor"></div>
+    <div class="popover"><div>#{{::comic.issue}}</div></div>
+    <div class="comic z-depth-5 hoverable" ng-style="comic.styles" ng-class="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
+      <div class="panel-left">
+        <a ng-if="comic.id !== main.expandedComicId" ng-click="main.toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{::comic.id}}">
+          <img
+              ng-if="comic.visible"
+              class="responsive-img"
+              ng-srcset="
+                  https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 2x,
+                  https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg 1x"
+              ng-src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+          >
+        </a>
+        <span class="cover-thumbnail" ng-if="comic.id === main.expandedComicId">
+          <img
+              class="responsive-img materialboxed"
+              ng-src="https://www.xmentimeline.com/images/covers/{{::comic.image}}.jpg"
+          >
+        </span>
+        <ul class="pagination" ng-if="comic.id === main.expandedComicId">
+          <li class="waves-effect" ng-class="{disabled: !main.prevCollectionFirstComic}">
+            <div class="popover" ng-if="main.prevCollectionFirstComic"><div>{{main.prevCollection.title}}</div></div>
+            <a ng-click="main.toggleExpandComic(main.prevCollectionFirstComic)">
+              <i class="material-icons">arrow_backward</i>
+            </a>
+          </li><!--
+          --><li class="waves-effect" ng-class="{disabled: !main.prevComic}">
+            <div class="popover" ng-if="main.prevComic"><div>{{main.prevComic.series}} #{{main.prevComic.issue}}</div></div>
+            <a ng-click="main.toggleExpandComic(main.prevComic)" class="button-previous-comic">
+              <i class="material-icons">chevron_left</i>
+            </a>
+          </li><!--
+          --><li class="waves-effect" ng-class="{disabled: !main.nextComic}">
+            <div class="popover" ng-if="main.nextComic"><div>{{main.nextComic.series}} #{{main.nextComic.issue}}</div></div>
+            <a ng-click="main.toggleExpandComic(main.nextComic)" class="button-next-comic">
+              <i class="material-icons">chevron_right</i>
+            </a>
+          </li><!--
+          --><li class="waves-effect" ng-class="{disabled: !main.nextCollectionFirstComic}">
+            <div class="popover" ng-if="main.nextCollectionFirstComic"><div>{{main.nextCollection.title}}</div></div>
+            <a ng-click="main.toggleExpandComic(main.nextCollectionFirstComic)">
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="expanded-panel" ng-if="comic.id === main.expandedComicId">
+        <a ng-if="::comic.link" class="marvel-unlimited-link" ng-href="{{::comic.link}}" title="Open in Marvel Unlimited"></a>
+        <div class="series">
+          {{::comic.series}} #{{::comic.issue}}
+          <a ng-click="main.scrollToComic(comic.id)" tabindex="0" title="Scroll to this comic's position on the page" class="scroll-to-comic-button">
+            <i class="material-icons">near_me</i>
+          </a>
+        </div>
+        <div class="title" ng-repeat="title in ::comic.titles">{{::title}}</div>
+        <div class="date">{{::comic.yearPublished}} / {{::comic.monthPublished}}</div>
+        <div class="collection-comics">
+          <div class="collection-title">{{::comic.collection.title}}:</div>
+          <ul>
+            <li ng-repeat="collectionComic in ::comic.collection.allCollectionComics track by collectionComic.id">
+              <div class="popover"><div>{{::collectionComic.series}} #{{::collectionComic.issue}}</div></div>
+              <a ng-click="main.toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
+                <img
+                    class="responsive-img"
+                    ng-class="{current: collectionComic.id === main.expandedComicId}"
+                    ng-srcset="
+                        https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg 2x,
+                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg 1x"
+                    ng-src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{::collectionComic.image}}.jpg"
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+`;
