@@ -2,8 +2,11 @@ import _ from 'lodash';
 import $ from 'jQuery';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { Md5 } from 'ts-md5/dist/md5';
+
+import { Collections } from './../database/collections';
+import { Comics } from './../database/comics';
+import { SeriesVolumes } from './../database/series';
 
 // TODO Find a good place for interfaces
 interface ComicContainerStyles {
@@ -152,15 +155,14 @@ const COMPLETE_COLOR_WHEEL_DEGREES = 360;     // 360 degrees in colour wheel
 export class AppComponent implements OnInit {
   constructor(
     private http: HttpClient,
-    private router: Router,
   ) { }
 
   title = 'timeline-tools';
 
-  comics        = window.comics;
-  collections   = window.collections;
-  series        = window.series;
-  seriesVolumes: Array<SeriesVolume> = window.seriesVolumes;
+  comics: Array<Comic>;
+  collections: Array<Collection>;
+  series: Array<Series>;
+  seriesVolumes: Array<SeriesVolume>;
   uniqueCollections: Array<Collection>;
   dates;
 
@@ -331,11 +333,11 @@ export class AppComponent implements OnInit {
     // If these match, close the expanded box
     if (_.isEmpty(currentComic) || this.expandedComicId === currentComic.id) {
       // Clear the comic ID in the URL
-      const urlTree = this.router.createUrlTree([], {
-        queryParams: { id: '' },
-        queryParamsHandling: 'merge',
-        preserveFragment: true });
-      this.router.navigateByUrl(urlTree);
+      // const urlTree = this.router.createUrlTree([], {
+      //   queryParams: { id: '' },
+      //   queryParamsHandling: 'merge',
+      //   preserveFragment: true });
+      // this.router.navigateByUrl(urlTree);
 
       this.clearComicClassesAndStyles();
 
@@ -432,11 +434,11 @@ export class AppComponent implements OnInit {
     }
 
     // Set the comic ID in the URL
-    const urlTree = this.router.createUrlTree([], {
-      queryParams: { id: this.expandedComicId },
-      queryParamsHandling: 'merge',
-      preserveFragment: true });
-    this.router.navigateByUrl(urlTree);
+    // const urlTree = this.router.createUrlTree([], {
+    //   queryParams: { id: this.expandedComicId },
+    //   queryParamsHandling: 'merge',
+    //   preserveFragment: true });
+    // this.router.navigateByUrl(urlTree);
 
     // Get the series volume containing this comic
     this.expandedSeriesVolume = _.find(this.seriesVolumes, (seriesVolume) => {
@@ -494,6 +496,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.comics        = Comics.getComics();
+    this.collections   = Collections.getCollections();
+    this.series        = SeriesVolumes.getSeries();
+    this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
+
     // Sort the data by date
     this.comics = _.sortBy(this.comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
 
@@ -1188,11 +1195,11 @@ export class AppComponent implements OnInit {
     }
 
     // Set whether to show collections in the URL
-    const urlTree = this.router.createUrlTree([], {
-      queryParams: { showCollections: state },
-      queryParamsHandling: 'merge',
-      preserveFragment: true });
-    this.router.navigateByUrl(urlTree);
+    // const urlTree = this.router.createUrlTree([], {
+    //   queryParams: { showCollections: state },
+    //   queryParamsHandling: 'merge',
+    //   preserveFragment: true });
+    // this.router.navigateByUrl(urlTree);
 
     if (state === '1') {
       this.isShowCollections = true;
