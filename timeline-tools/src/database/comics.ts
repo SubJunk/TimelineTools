@@ -32,6 +32,7 @@ function Comic(issue, datePublished, seriesVolumeId, titles) {
   }
 
   // Create a Date object from the datePublished string
+  this.classes = {};
   this.date = moment(year + '-' + month + '-' + day);
   this.id = seriesVolumeId + issue;
   this.issue = issue;
