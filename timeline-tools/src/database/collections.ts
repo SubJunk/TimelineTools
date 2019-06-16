@@ -1,3 +1,5 @@
+const collections = [];
+
 /**
  * The prototype for collections.
  *
@@ -18,7 +20,6 @@ function Collection(title, datePublished, comicIds) {
 }
 
 // These should be in reading order
-var collections = [];
 collections.push(
   new Collection(
     'X-Men Epic Collection: Children of the Atom',

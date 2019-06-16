@@ -164,7 +164,7 @@ export class AppComponent implements OnInit {
   series: Array<Series>;
   seriesVolumes: Array<SeriesVolume>;
   uniqueCollections: Array<Collection>;
-  dates;
+  dates = [];
 
   // An array of objects that contain search results for comics and collections
   public itemsToSearch = [];

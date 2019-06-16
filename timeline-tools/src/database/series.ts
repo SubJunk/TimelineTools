@@ -1,3 +1,8 @@
+import _ from 'lodash';
+
+const series        = [];
+const seriesVolumes = [];
+
 /**
  * The prototype for comic series.
  * A series always contains at least one SeriesVolume.
@@ -8,14 +13,13 @@
  * @see SeriesVolume
  */
 function Series(title, volumes) {
-  var self = this;
-  self.id = title.replace(/[\W+]/g, '');
-  self.title = title;
+  this.id = title.replace(/[\W+]/g, '');
+  this.title = title;
 
-  _.each(volumes, function(startYear, volume) {
+  _.each(volumes, (startYear, volume) => {
     seriesVolumes.push(
       new SeriesVolume(
-        self.id,
+        this.id,
         volume,
         startYear,
         title
@@ -45,8 +49,6 @@ function SeriesVolume(seriesId, volume, startYear, title) {
   }
 }
 
-var series        = [];
-var seriesVolumes = [];
 series.push(
   new Series('Adventures of Cyclops & Phoenix', {1: 1994}),
   new Series('Age of Apocalypse: The Chosen', {1: 1995}),
