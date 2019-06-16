@@ -525,25 +525,32 @@ export class AppComponent implements OnInit {
     let yearIncrement: number;
     let monthIncrement: number;
 
+    let yearIterator = 0;
+    let monthIterator = 0;
     for (yearIncrement = firstYear; yearIncrement <= finalYear; yearIncrement++) {
-      this.dates[yearIncrement] = {};
+      monthIterator = 0;
+      this.dates[yearIterator] = { year: yearIncrement, months: [] };
 
       if (yearIncrement === finalYear) {
         // In this final year we stop the counter at the final month
         for (monthIncrement = 1; monthIncrement <= finalMonth; monthIncrement++) {
-          this.dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
+          this.dates[yearIterator].months[monthIterator] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
+          monthIterator++;
         }
       } else if (yearIncrement === firstYear) {
         // In this first year we start the counter at the first month
         for (monthIncrement = firstMonth; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
-          this.dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
+          this.dates[yearIterator].months[monthIterator] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
+          monthIterator++;
         }
       } else {
         // In this in-between year we always add 12 months
         for (monthIncrement = 1; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
-          this.dates[yearIncrement][monthIncrement] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
+          this.dates[yearIterator].months[monthIterator] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
+          monthIterator++;
         }
       }
+      yearIterator++;
     }
 
     let previousYearMonthVolume;
@@ -577,7 +584,10 @@ export class AppComponent implements OnInit {
        * by making the month wider.
        */
       if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
-        this.dates[comic.yearPublished][comic.monthPublished].styles.width += VISUAL_BLOCK_SIZE;
+        const publishedYearKey = _.findKey(this.dates, { year: comic.yearPublished });
+        const publishedMonthKey = _.findKey(this.dates[publishedYearKey].months, { number: comic.monthPublished });
+
+        this.dates[publishedYearKey].months[publishedMonthKey].styles.width += VISUAL_BLOCK_SIZE;
         comic.containerStyles.left += VISUAL_BLOCK_SIZE + globalHorizontalOffset;
         globalHorizontalOffset += VISUAL_BLOCK_SIZE;
       } else {

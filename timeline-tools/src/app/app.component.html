@@ -57,7 +57,7 @@
         <div class="date">{{collection.yearPublished}} / {{collection.monthPublished}}</div>
         <div class="collection-comics">
           <ul>
-            <li *ngFor="let comic of collection.allCollectionComics"> /** track by comic.id */
+            <li *ngFor="let comic of collection.allCollectionComics"> <!-- track by comic.id -->
               <div class="popover"><div>{{comic.series}} #{{comic.issue}}</div></div>
               <a title="{{comic.series}} #{{comic.issue}}" (click)="toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
                 <img
@@ -95,10 +95,10 @@
   </ul>
 </div>
 <ul class="years">
-  <li *ngFor="let year of dates; let months = index" class="year"> /** track by year */
-    <span>{{year}}</span>
+  <li *ngFor="let year of dates" class="year"> <!-- track by year -->
+    <span>{{year.year}}</span>
     <ul>
-      <li *ngFor="let month of months" class="month" [ngStyle]='month.styles'>{{month.number}}</li> /** track by month.number */
+      <li *ngFor="let month of year.months" class="month" [ngStyle]='month.styles'>{{month.number}}</li> <!-- track by month.number -->
     </ul>
   </li>
 </ul>
@@ -106,7 +106,7 @@
   <li *ngFor="let label of seriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
     <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
   </li>
-  <li *ngFor="let comic of comics" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles"> /** track by comic.id */
+  <li *ngFor="let comic of comics" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles"> <!-- track by comic.id -->
     <div class="scroll-anchor"></div>
     <div class="popover"><div>#{{comic.issue}}</div></div>
     <div class="comic z-depth-5 hoverable" [ngStyle]="comic.styles" [ngClass]="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
@@ -167,7 +167,7 @@
         <div class="collection-comics">
           <div class="collection-title">{{comic.collection.title}}:</div>
           <ul>
-            <li *ngFor="let collectionComic of comic.collection.allCollectionComics"> /** track by collectionComic.id */
+            <li *ngFor="let collectionComic of comic.collection.allCollectionComics"> <!-- track by collectionComic.id -->
               <div class="popover"><div>{{collectionComic.series}} #{{collectionComic.issue}}</div></div>
               <a (click)="toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
                 <img
