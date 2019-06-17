@@ -163,7 +163,7 @@ export class AppComponent implements OnInit {
   collections: Array<Collection>;
   series: Array<Series>;
   seriesVolumes: Array<SeriesVolume>;
-  uniqueCollections: Array<Collection>;
+  uniqueCollections: Array<Collection> = [];
   dates = [];
 
   // An array of objects that contain search results for comics and collections
@@ -872,7 +872,7 @@ export class AppComponent implements OnInit {
      * is the browser adding new things to the DOM, so we get a
      * big performance boost by always having everything in there.
      */
-    _.each(this.comics, function(comic) {
+    _.each(this.comics, (comic) => {
       // Get the collection containing this comic
       comic.collection = _.find(this.collections, (collection) => {
         return collection.comicIds.includes(comic.id);
@@ -1194,7 +1194,7 @@ export class AppComponent implements OnInit {
     }
   };
 
-  toggleShowCollections = (forcedState) => {
+  toggleShowCollections = (forcedState?: string) => {
     let state;
     if (forcedState) {
       state = forcedState;
