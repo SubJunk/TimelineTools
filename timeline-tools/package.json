@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
+    "jquery": "^3.4.1",
+    "materialize-css": "^1.0.0",
     "moment": "^2.24.0",
     "rxjs": "~6.4.0",
     "ts-md5": "^1.2.4",
