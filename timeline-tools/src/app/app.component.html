@@ -115,10 +115,10 @@
           <img
               *ngIf="comic.visible"
               class="responsive-img"
-              srcset="
-                  https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg 2x,
-                  https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg 1x"
-              src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg"
+              [srcset]="
+                  'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
+                  https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
+              [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
           >
         </a>
         <span class="cover-thumbnail" *ngIf="comic.id === expandedComicId">
@@ -173,10 +173,10 @@
                 <img
                     class="responsive-img"
                     [ngClass]="{current: collectionComic.id === expandedComicId}"
-                    srcset="
-                        https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{collectionComic.image}}.jpg 2x,
-                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{collectionComic.image}}.jpg 1x"
-                    src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{collectionComic.image}}.jpg"
+                    [srcset]="
+                        'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg 2x,
+                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg 1x'"
+                    [src]="'https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg'"
                 >
               </a>
             </li>
