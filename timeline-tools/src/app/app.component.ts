@@ -9,9 +9,10 @@ import { Comics } from './../database/comics';
 import { SeriesVolumes } from './../database/series';
 
 // TODO Find a good place for interfaces
-interface ComicContainerStyles {
-  left: number;
-  top: number;
+interface ContainerStyles {
+  'left.px': number;
+  'top.px': number;
+  'width.px': number;
 }
 
 interface Collection {
@@ -49,7 +50,7 @@ interface ComicStyles {
 interface Comic {
   classes?: ComicClasses;
   collection?: Collection;
-  containerStyles?: ComicContainerStyles;
+  containerStyles?: ContainerStyles;
   id?: string;
   image?: string;
   issue?: string;
@@ -72,14 +73,8 @@ interface SeriesVolume {
 interface Series {
 }
 
-interface SeriesVolumeLabelContainerStyles {
-  left: number;
-  width: number;
-  top: number;
-}
-
 interface SeriesVolumeLabel {
-  containerStyles: SeriesVolumeLabelContainerStyles;
+  containerStyles: ContainerStyles;
   id: string;
   text: string;
 }
@@ -358,14 +353,14 @@ export class AppComponent implements OnInit {
       }
 
       $('html, body').animate({
-        scrollLeft: currentComic.containerStyles.left - LEFT_MARGIN,
-        scrollTop:  currentComic.containerStyles.top + TOP_MARGIN
+        scrollLeft: currentComic.containerStyles['left.px'] - LEFT_MARGIN,
+        scrollTop:  currentComic.containerStyles['top.px'] + TOP_MARGIN
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
     } else if (this.expandedComicId) {
       const previouslyExpandedComic = this.expandedCollection.comics[this.currentComicIndexInCollection];
       const positionDifference = {
-        left: previouslyExpandedComic.containerStyles.left - currentComic.containerStyles.left,
-        top: previouslyExpandedComic.containerStyles.top  - currentComic.containerStyles.top
+        left: previouslyExpandedComic.containerStyles['left.px'] - currentComic.containerStyles['left.px'],
+        top: previouslyExpandedComic.containerStyles['top.px']  - currentComic.containerStyles['top.px']
       };
 
       // reset the styles for the previous comic
@@ -487,8 +482,8 @@ export class AppComponent implements OnInit {
         labelWidthFromDom = $jqLabel.outerWidth() + BODY_PADDING;
 
         // Subtract width of the label from the left position, and add the width to the container
-        seriesVolumeLabel.containerStyles.left = seriesVolumeLabel.containerStyles.left - labelWidthFromDom;
-        seriesVolumeLabel.containerStyles.width += labelWidthFromDom;
+        seriesVolumeLabel.containerStyles['left.px'] = seriesVolumeLabel.containerStyles['left.px'] - labelWidthFromDom;
+        seriesVolumeLabel.containerStyles['width.px'] += labelWidthFromDom;
       } else {
         console.error('Failed to get width of label with ID ' + seriesVolumeLabel.id);
       }
@@ -569,7 +564,7 @@ export class AppComponent implements OnInit {
       }
 
       // Initialize the comic values
-      comic.containerStyles = { left: null, top: null };
+      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
       comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
       comic.styles = { background: null, color: null, marginLeft: null, marginTop: null};
 
@@ -577,7 +572,7 @@ export class AppComponent implements OnInit {
       monthsSinceFirst = (comic.yearPublished - firstYear) * ONE_YEAR_IN_MONTHS;
       monthsSinceFirst -= firstMonth;
       monthsSinceFirst += comic.monthPublished;
-      comic.containerStyles.left = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
+      comic.containerStyles['left.px'] = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
 
       /**
        * Manage multiple releases of the same series in the same month
@@ -588,10 +583,10 @@ export class AppComponent implements OnInit {
         const publishedMonthKey = _.findKey(this.dates[publishedYearKey].months, { number: comic.monthPublished });
 
         this.dates[publishedYearKey].months[publishedMonthKey].styles.width += VISUAL_BLOCK_SIZE;
-        comic.containerStyles.left += VISUAL_BLOCK_SIZE + globalHorizontalOffset;
+        comic.containerStyles['left.px'] += VISUAL_BLOCK_SIZE + globalHorizontalOffset;
         globalHorizontalOffset += VISUAL_BLOCK_SIZE;
       } else {
-        comic.containerStyles.left += globalHorizontalOffset;
+        comic.containerStyles['left.px'] += globalHorizontalOffset;
       }
 
       /**
@@ -607,10 +602,10 @@ export class AppComponent implements OnInit {
        * Step two documented below.
        */
       if (currentSeriesVolume.verticalPosition) {
-        comic.containerStyles.top = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
+        comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
         currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
-        comic.containerStyles.top = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
+        comic.containerStyles['top.px'] = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
         this.globalVerticalPositionCounter++;
         newLabelNeeded = true;
       }
@@ -626,7 +621,7 @@ export class AppComponent implements OnInit {
        * The maximum horizontal offset allowed until we recycle the
        * vertical position.
        */
-      const horizontalClearanceLimit = comic.containerStyles.left - windowWidth;
+      const horizontalClearanceLimit = comic.containerStyles['left.px'] - windowWidth;
       if (
         !latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] ||
         (
@@ -647,7 +642,7 @@ export class AppComponent implements OnInit {
             latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
           ) {
             currentSeriesVolume.verticalPosition = i;
-            comic.containerStyles.top = i * VISUAL_BLOCK_SIZE;
+            comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
 
             /**
              * We are about to insert this seriesVolume into a vertical position
@@ -676,7 +671,7 @@ export class AppComponent implements OnInit {
        * by the vertical position currently used by this series volume.
        */
       latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] = {
-        offset: comic.containerStyles.left,
+        offset: comic.containerStyles['left.px'],
         seriesVolumeId: currentSeriesVolume.id
       };
 
@@ -699,7 +694,7 @@ export class AppComponent implements OnInit {
        * comic thumbnail) and 2 body padding units to make up for the
        * left and right padding of the page.
        */
-      this.bodyStyles.width = comic.containerStyles.left + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
+      this.bodyStyles.width = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
 
       // Setting this along the way here prevents a peakaboo effect
       $('body').width(this.bodyStyles.width);
@@ -709,9 +704,9 @@ export class AppComponent implements OnInit {
           text: currentSeriesVolume.titleWithVolume,
           id: 'label-' + this.seriesVolumeLabels.length,
           containerStyles: {
-            top: comic.containerStyles.top,
-            left: comic.containerStyles.left,
-            width: -BODY_PADDING,
+            'top.px': comic.containerStyles['top.px'],
+            'left.px': comic.containerStyles['left.px'],
+            'width.px': -BODY_PADDING,
           },
         });
 
@@ -725,7 +720,7 @@ export class AppComponent implements OnInit {
           throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
         }
 
-        this.seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles.width = comic.containerStyles.left - this.seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles.left - BODY_PADDING;
+        this.seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles['width.px'] = comic.containerStyles['left.px'] - this.seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles['left.px'] - BODY_PADDING;
       }
     });
 
@@ -736,7 +731,7 @@ export class AppComponent implements OnInit {
     }
 
     // Render collections as groups of comics
-    let comicIndex;
+    let comicIndex: string;
     _.each(this.collections, (collection) => {
       const collectionColor = this.getCollectionColors(collection.title);
 
@@ -1101,8 +1096,8 @@ export class AppComponent implements OnInit {
         return;
       }
 
-      isComicScrolledPastLeft  = Boolean(scrollLeft > (comic.containerStyles.left + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastRight = Boolean(scrollRight < comic.containerStyles.left);
+      isComicScrolledPastLeft  = Boolean(scrollLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastRight = Boolean(scrollRight < comic.containerStyles['left.px']);
 
       // the comic is out of the viewport, to the left
       if (!isComicScrolledPastLeft && !isComicScrolledPastRight) {
@@ -1219,12 +1214,12 @@ export class AppComponent implements OnInit {
   };
 
   scrollToComic = (comicId) => {
-    let comicFromId = this.comics[_.findKey(this.comics, { 'id': comicId })];
+    const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
 
     setTimeout(() => {
       $('html, body').animate({
-        scrollLeft: comicFromId.containerStyles.left - LEFT_MARGIN,
-        scrollTop:  comicFromId.containerStyles.top
+        scrollLeft: comicFromId.containerStyles['left.px'] - LEFT_MARGIN,
+        scrollTop:  comicFromId.containerStyles['top.px']
       }, ANIMATION_DURATION, 'swing', () => {
         // Expand the comic if it isn't already
         if (this.expandedComicId !== comicId) {
