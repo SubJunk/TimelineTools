@@ -84,12 +84,8 @@ interface MarvelAPISeriesResponseResult {
   id: number;
 }
 
-interface MarvelAPISeriesResponseResults {
-  results: Array<MarvelAPISeriesResponseResult>;
-}
-
 interface MarvelAPISeriesResponseData {
-  data: MarvelAPISeriesResponseResults;
+  results: Array<MarvelAPISeriesResponseResult>;
 }
 
 interface MarvelAPISeriesResponse {
@@ -233,7 +229,7 @@ export class AppComponent implements OnInit {
 
     return this.http.get(this.apiBaseUrl + 'comics' + this.getExtraAPIParamsString(), {params})
       .subscribe(function successCallback(response: MarvelAPISeriesResponse) {
-        if (_.isEmpty(response.data.data.results)) {
+        if (_.isEmpty(response.data.results)) {
           return;
         }
 
@@ -241,7 +237,7 @@ export class AppComponent implements OnInit {
         * Sometimes the Marvel API returns variants with no ID or 0, so
         * keep looping until we get a real ID.
         */
-        _.each(response.data.data.results, (result) => {
+        _.each(response.data.results, (result) => {
           if (result.digitalId && result.digitalId !== 0) {
             comic.link = 'https://read.marvel.com/#book/' + result.digitalId;
             return false;
@@ -377,7 +373,7 @@ export class AppComponent implements OnInit {
     this.expandedComicId = currentComic.id;
 
     // Get the collection containing this comic
-    this.expandedCollection = _.find(this.collections, function(collection, index) {
+    this.expandedCollection = _.find(this.collections, (collection, index) => {
       this.currentComicIndexInCollection = collection.comicIds.indexOf(currentComic.id);
       if (collection.comicIds.includes(currentComic.id)) {
         this.currentCollectionIndexInCollections = index;
@@ -447,11 +443,13 @@ export class AppComponent implements OnInit {
       this.getAPISeriesVolume(this.expandedSeriesVolume)
         .subscribe(
           (response: MarvelAPISeriesResponse) => {
-            if (response.data.data.results.length) {
-              const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.data.results);
-              this.expandedSeriesVolume.marvelId = firstResult.id;
-              this.setAPIComicData(expandedComic, this.expandedSeriesVolume.marvelId);
+            if (!response || !response.data || !response.data || !response.data.results.length) {
+              throw new Error('The response wasn\'t in the expected format ' + response);
             }
+
+            const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
+            this.expandedSeriesVolume.marvelId = firstResult.id;
+            this.setAPIComicData(expandedComic, this.expandedSeriesVolume.marvelId);
           },
           (err) => {
             throw new Error(err);
@@ -475,7 +473,7 @@ export class AppComponent implements OnInit {
     let $jqLabel;
     let labelWidthFromDom;
 
-    _.each(this.seriesVolumeLabels, function(seriesVolumeLabel) {
+    _.each(this.seriesVolumeLabels, (seriesVolumeLabel) => {
       // We only know the width after the initial render, so store it
       $jqLabel = $('#' + seriesVolumeLabel.id);
       if ($jqLabel.length > -1) {
@@ -800,13 +798,15 @@ export class AppComponent implements OnInit {
        * Populate the uniqueCollections object, which joins the
        * collections since they are split in the database.
        */
-      if (this.uniqueCollections[collection.id]) {
+      const uniqueCollection = _.find(this.uniqueCollections, ['id', collection.id]);
+      if (uniqueCollection) {
         // There are existing comics, so add the comics from this part to the end of the existing part
-        this.uniqueCollections[collection.id].allCollectionComicIds = _.concat(this.uniqueCollections[collection.id].allCollectionComicIds, collection.comicIds);
+        uniqueCollection.allCollectionComicIds = _.concat(uniqueCollection.allCollectionComicIds, collection.comicIds);
       } else {
         // Create the first entry in the object
-        this.uniqueCollections[collection.id] = collection;
-        this.uniqueCollections[collection.id].allCollectionComicIds = collection.comicIds;
+        const startOfUniqueCollection = _.cloneDeep(collection);
+        startOfUniqueCollection.allCollectionComicIds = startOfUniqueCollection.comicIds;
+        this.uniqueCollections.push(startOfUniqueCollection);
 
         /*
          * Add this collection to the search results here because it is
@@ -819,12 +819,6 @@ export class AppComponent implements OnInit {
           id: _.first(collection.comicIds)
         });
       }
-
-      _.each(this.collections, (collectionInner) => {
-        if (collectionInner.title === collection.title) {
-          collection.allCollectionComicIds = this.uniqueCollections[collection.id].allCollectionComicIds;
-        }
-      });
     });
 
     /**
@@ -833,7 +827,7 @@ export class AppComponent implements OnInit {
      * expanded view and allow interaction with them, but still have the
      * arrow keys work chronologically.
      */
-    _.each(this.uniqueCollections, (uniqueCollection: Collection) => {
+    _.each(this.uniqueCollections, (uniqueCollection) => {
       uniqueCollection.allCollectionComics = [];
       _.each(uniqueCollection.allCollectionComicIds, (comicId) => {
         uniqueCollection.allCollectionComics.push(
@@ -841,11 +835,8 @@ export class AppComponent implements OnInit {
         );
       });
 
-      _.each(this.collections, (collection) => {
-        if (collection.title === uniqueCollection.title) {
-          collection.allCollectionComics = uniqueCollection.allCollectionComics;
-        }
-      });
+      const collectionInAllCollections = _.find(this.collections, [ 'title', uniqueCollection.title ]);
+      collectionInAllCollections.allCollectionComics = uniqueCollection.allCollectionComics;
     });
 
     // Copy the comics into the collection objects on load

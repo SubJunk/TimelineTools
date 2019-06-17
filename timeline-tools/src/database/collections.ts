@@ -8,6 +8,7 @@ const collections = [];
  * @param {string[]} comicIds      the comics in the collection, in order
  */
 function Collection(title, datePublished, comicIds) {
+  this.allCollectionComicIds = [];
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
 
