@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "timeline-tools"
+    }
+  },
+  "defaultProject": "timeline-tools",
+  "cli": {
+    "packageManager": "yarn"
+  }
 }
