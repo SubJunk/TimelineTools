@@ -162,9 +162,9 @@ export class AppComponent implements OnInit {
 
   infoModalInstance;
   bodyStyles = {
-    height: null,
-    padding: BODY_PADDING_TOP + ' ' + BODY_PADDING + ' ' + BODY_PADDING + ' ' + BODY_PADDING,
-    width: null,
+    'height.px': null,
+    padding: BODY_PADDING_TOP + 'px ' + BODY_PADDING + 'px ' + BODY_PADDING + 'px ' + BODY_PADDING + 'px',
+    'width.px': null,
   };
 
   $jqWindow = $(window);
@@ -527,19 +527,19 @@ export class AppComponent implements OnInit {
       if (yearIncrement === finalYear) {
         // In this final year we stop the counter at the final month
         for (monthIncrement = 1; monthIncrement <= finalMonth; monthIncrement++) {
-          this.dates[yearIterator].months[monthIterator] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
+          this.dates[yearIterator].months[monthIterator] = { number: monthIncrement, styles: { 'width.px': VISUAL_BLOCK_SIZE } };
           monthIterator++;
         }
       } else if (yearIncrement === firstYear) {
         // In this first year we start the counter at the first month
         for (monthIncrement = firstMonth; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
-          this.dates[yearIterator].months[monthIterator] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
+          this.dates[yearIterator].months[monthIterator] = { number: monthIncrement, styles: { 'width.px': VISUAL_BLOCK_SIZE } };
           monthIterator++;
         }
       } else {
         // In this in-between year we always add 12 months
         for (monthIncrement = 1; monthIncrement <= ONE_YEAR_IN_MONTHS; monthIncrement++) {
-          this.dates[yearIterator].months[monthIterator] = { number: monthIncrement, styles: { width: VISUAL_BLOCK_SIZE } };
+          this.dates[yearIterator].months[monthIterator] = { number: monthIncrement, styles: { 'width.px': VISUAL_BLOCK_SIZE } };
           monthIterator++;
         }
       }
@@ -692,10 +692,10 @@ export class AppComponent implements OnInit {
        * comic thumbnail) and 2 body padding units to make up for the
        * left and right padding of the page.
        */
-      this.bodyStyles.width = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
+      this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
 
       // Setting this along the way here prevents a peakaboo effect
-      $('body').width(this.bodyStyles.width);
+      $('body').width(this.bodyStyles['width.px']);
 
       if (newLabelNeeded) {
         this.seriesVolumeLabels.push({
@@ -871,13 +871,13 @@ export class AppComponent implements OnInit {
       $('#pre-app').fadeOut('slow');
 
       // Make room for the farthest-right expanded panel
-      this.bodyStyles.width += $('.scroll-anchor').width();
+      this.bodyStyles['width.px'] += $('.scroll-anchor').width();
 
       // Make room for the farthest-bottom expanded panel
-      this.bodyStyles.height = $(document).height() + $(window).height();
+      this.bodyStyles['height.px'] = $(document).height() + $(window).height();
 
-      $('body').width(this.bodyStyles.width);
-      $('body').height(this.bodyStyles.height);
+      $('body').width(this.bodyStyles['width.px']);
+      $('body').height(this.bodyStyles['height.px']);
       $('body').css('padding', this.bodyStyles.padding);
 
       // Init floating menu on the right
