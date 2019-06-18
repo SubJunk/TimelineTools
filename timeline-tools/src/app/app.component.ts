@@ -43,8 +43,8 @@ interface ComicClasses {
 interface ComicStyles {
   background: string;
   color: string;
-  marginLeft: string;
-  marginTop: string;
+  'marginLeft.px': string;
+  'marginTop.px': string;
 }
 
 interface Comic {
@@ -183,8 +183,8 @@ export class AppComponent implements OnInit {
   expandedCollectionId: string;
   expandedCollection;
   expandedSeriesVolume;
-  prevComic;
-  nextComic;
+  prevComic: Comic;
+  nextComic: Comic;
   prevComicId: string;
   nextComicId: string;
   prevCollection;
@@ -301,8 +301,8 @@ export class AppComponent implements OnInit {
     comic.classes.stickyRight = false;
     comic.classes.stickyBottom = false;
     comic.classes.stickyLeft = false;
-    comic.styles.marginTop = '';
-    comic.styles.marginLeft = '';
+    comic.styles['marginTop.px'] = '';
+    comic.styles['marginLeft.px'] = '';
   }
 
   /**
@@ -332,7 +332,7 @@ export class AppComponent implements OnInit {
 
       this.clearComicClassesAndStyles();
 
-      return setTimeout(function() {
+      return setTimeout(() => {
         this.expandedComicId    = undefined;
         this.expandedCollection = undefined;
       });
@@ -564,7 +564,7 @@ export class AppComponent implements OnInit {
       // Initialize the comic values
       comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
       comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
-      comic.styles = { background: null, color: null, marginLeft: null, marginTop: null};
+      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
 
       // Horizontal positioning
       monthsSinceFirst = (comic.yearPublished - firstYear) * ONE_YEAR_IN_MONTHS;
@@ -804,9 +804,8 @@ export class AppComponent implements OnInit {
         uniqueCollection.allCollectionComicIds = _.concat(uniqueCollection.allCollectionComicIds, collection.comicIds);
       } else {
         // Create the first entry in the object
-        const startOfUniqueCollection = _.cloneDeep(collection);
-        startOfUniqueCollection.allCollectionComicIds = startOfUniqueCollection.comicIds;
-        this.uniqueCollections.push(startOfUniqueCollection);
+        collection.allCollectionComicIds = collection.comicIds;
+        this.uniqueCollections.push(collection);
 
         /*
          * Add this collection to the search results here because it is
@@ -835,8 +834,15 @@ export class AppComponent implements OnInit {
         );
       });
 
-      const collectionInAllCollections = _.find(this.collections, [ 'title', uniqueCollection.title ]);
-      collectionInAllCollections.allCollectionComics = uniqueCollection.allCollectionComics;
+      /*
+       * Copy the allCollectionComics node into every instance of this
+       * uniqueCollection within the collections object.
+       */
+      _.each(this.collections, (collection) => {
+        if (collection.title === uniqueCollection.title) {
+          collection.allCollectionComics = uniqueCollection.allCollectionComics;
+        }
+      });
     });
 
     // Copy the comics into the collection objects on load
@@ -1135,14 +1141,14 @@ export class AppComponent implements OnInit {
       expandedComic.classes.stickyLeft = isStickyLeft;
 
       if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-        expandedComic.styles.marginLeft = '-' + (scrollLeft + BODY_PADDING);
-        expandedComic.styles.marginTop = '';
+        expandedComic.styles['marginLeft.px'] = '-' + (scrollLeft + BODY_PADDING);
+        expandedComic.styles['marginTop.px'] = null;
       } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
-        expandedComic.styles.marginLeft = '';
-        expandedComic.styles.marginTop = '-' + scrollTop;
+        expandedComic.styles['marginLeft.px'] = null;
+        expandedComic.styles['marginTop.px'] = '-' + scrollTop;
       } else {
-        expandedComic.styles.marginLeft = '';
-        expandedComic.styles.marginTop = '';
+        expandedComic.styles['marginLeft.px'] = null;
+        expandedComic.styles['marginTop.px'] = null;
       }
 
       // Instruct Materialize to make the expanded cover fullscreen on click
