@@ -4,118 +4,21 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Md5 } from 'ts-md5/dist/md5';
 
+import { apiKeyPublic, apiKeyPrivate } from './config';
 import { Collections } from './../database/collections';
 import { Comics } from './../database/comics';
 import { SeriesVolumes } from './../database/series';
-
-// TODO Find a good place for interfaces
-interface ContainerStyles {
-  'left.px': number;
-  'top.px': number;
-  'width.px': number;
-}
-
-interface Collection {
-  allCollectionComicIds: Array<string>;
-  allCollectionComics: Array<Comic>;
-  comicIds: Array<string>;
-  comics: Array<Comic>;
-  id: string;
-  image: string;
-  monthPublished: number;
-  styles: object;
-  title: string;
-  yearPublished: number;
-}
-
-interface CollectionColor {
-  backgroundColor: string;
-  textColor: string;
-}
-
-interface ComicClasses {
-  stickyBottom: boolean;
-  stickyLeft: boolean;
-  stickyRight: boolean;
-  stickyTop: boolean;
-}
-
-interface ComicStyles {
-  background: string;
-  color: string;
-  'marginLeft.px': string;
-  'marginTop.px': string;
-}
-
-interface Comic {
-  classes?: ComicClasses;
-  collection?: Collection;
-  containerStyles?: ContainerStyles;
-  id?: string;
-  image?: string;
-  issue?: string;
-  link?: string;
-  monthPublished?: number;
-  yearPublished?: number;
-  series?: string;
-  seriesVolumeId?: string;
-  styles?: ComicStyles;
-  titles?: Array<string>;
-  visible?: boolean;
-}
-
-interface SeriesVolume {
-  id: string;
-  title: string;
-  startYear: string;
-}
-
-interface Series {
-}
-
-interface SeriesVolumeLabel {
-  containerStyles: ContainerStyles;
-  id: string;
-  text: string;
-}
-
-interface MarvelAPISeriesResponseResult {
-  digitalId: number;
-  id: number;
-}
-
-interface MarvelAPISeriesResponseData {
-  results: Array<MarvelAPISeriesResponseResult>;
-}
-
-interface MarvelAPISeriesResponse {
-  data: MarvelAPISeriesResponseData;
-}
-
-/**
- * Just specifies the things we expect to be attached
- * to the browser window.
- *
- * @todo stop using window to pass things along
- */
-declare global {
-  interface Window {
-    apiKeyPrivate: string;
-    apiKeyPublic: string;
-    comics: Array<Comic>;
-    collections: Array<Collection>;
-    series: Array<Series>;
-    seriesVolumes: Array<SeriesVolume>;
-  }
-}
-
-// This is just a fake one to make TypeScript stop complaining
-interface jQueryClickEvent {
-  target: jQueryClickEventTarget;
-}
-interface jQueryClickEventTarget {
-  localName: string;
-}
+import {
+  jQueryClickEvent,
+  Collection,
+  CollectionColor,
+  Comic,
+  MarvelAPISeriesResponse,
+  MarvelAPISeriesResponseResult,
+  Series,
+  SeriesVolume,
+  SeriesVolumeLabel,
+} from './models';
 
 // The padding applied to the left, right, and bottom of the body
 const BODY_PADDING_TOP = 80;
@@ -171,8 +74,8 @@ export class AppComponent implements OnInit {
 
   // API variables
   apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
-  apiKeyPublic = _.isEmpty(window.apiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : window.apiKeyPublic;
-  apiKeyPrivate = window.apiKeyPrivate;
+  apiKeyPublic = _.isEmpty(apiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : apiKeyPublic;
+  apiKeyPrivate = apiKeyPrivate;
 
   startTimeInitialLoad = new Date().getTime();
 
