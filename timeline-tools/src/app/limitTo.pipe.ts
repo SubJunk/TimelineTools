@@ -3,11 +3,15 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'limitTo'
 })
 export class LimitToPipe implements PipeTransform {
-  transform(items: any[], limit: number): any[] {
+  transform(items: any[], limit: number = 20): any[] {
     if (!items) {
       return [];
     }
-    items.length = limit || 20;
+
+    if (items.length > limit) {
+      items.length = limit;
+    }
+
     return items;
   }
 }

@@ -1178,7 +1178,7 @@ export class AppComponent implements OnInit {
     } else {
       this.infoModalInstance.open();
     }
-  };
+  }
 
   toggleShowCollections = (forcedState?: string) => {
     let state;
@@ -1202,7 +1202,7 @@ export class AppComponent implements OnInit {
     } else {
       this.isShowCollections = false;
     }
-  };
+  }
 
   scrollToComic = (comicId) => {
     const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
@@ -1218,7 +1218,11 @@ export class AppComponent implements OnInit {
         }
       });
     });
-  };
+  }
+
+  trackByItemId = (index, item) => {
+    return item.id;
+  }
 
   /*
    * Launches the initial expand and scroll on load, and the
@@ -1286,5 +1290,5 @@ export class AppComponent implements OnInit {
     //     }
     //   }
     // }
-  };
+  }
 }

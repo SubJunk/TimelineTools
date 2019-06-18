@@ -21,7 +21,7 @@
     <a (click)="toggleInfoModal()" class="modal-close waves-effect waves-green btn-flat">Close</a>
   </div>
 </div>
-<div class="fixed-action-btn" ng-cloak>
+<div class="fixed-action-btn">
   <a class="btn-floating btn-large red"><i class="large material-icons">menu</i></a>
   <ul>
     <li>
@@ -38,17 +38,17 @@
     </li>
   </ul>
 </div>
-<ul class="collections" *ngIf="isShowCollections" ng-cloak>
+<ul class="collections" *ngIf="isShowCollections">
   <li *ngFor="let collection of uniqueCollections" class="collection-container" [ngClass]="{expanded: collection.id === expandedCollectionId}">
     <div class="comic-collection z-depth-5 hoverable" [ngStyle]="collection.styles" *ngIf="collection.title !== 'Uncollected'">
       <div class="panel-left">
         <a (click)="toggleExpandCollection(collection)" class="waves-effect cover-thumbnail">
           <img
               class="responsive-img"
-              srcset="
-                  https://api.rethumb.com/v1/width/322/https://www.xmentimeline.com/images/covers/{{collection.image}}.jpg 2x,
-                  https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/{{collection.image}}.jpg 1x"
-              src="https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/{{collection.image}}.jpg"
+              [srcset]="
+                  'https://api.rethumb.com/v1/width/322/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 2x,
+                  https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 1x'"
+              [src]="'https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg'"
           >
         </a>
       </div>
@@ -57,16 +57,16 @@
         <div class="date">{{collection.yearPublished}} / {{collection.monthPublished}}</div>
         <div class="collection-comics">
           <ul>
-            <li *ngFor="let comic of collection.allCollectionComics"> <!-- track by comic.id -->
+            <li *ngFor="let comic of collection.allCollectionComics; trackBy: trackByItemId">
               <div class="popover"><div>{{comic.series}} #{{comic.issue}}</div></div>
               <a title="{{comic.series}} #{{comic.issue}}" (click)="toggleExpandComic(comic, true)" class="z-depth-5 waves-effect hoverable">
                 <img
                     class="responsive-img"
                     [ngClass]="{current: comic.id === comicId}"
-                    srcset="
-                        https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg 2x,
-                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg 1x"
-                    src="https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg"
+                    [srcset]="
+                        'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
+                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
+                    [src]="'https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
                 >
               </a>
             </li>
@@ -78,16 +78,16 @@
 </ul>
 <div class="search-container" [ngClass]="{hasText: searchText}">
   <i class="material-icons search-toggle">search</i>
-  <input type="text" ng-model="searchText" ng-change="postSearchActions(searchText)" placeholder="Search" />
+  <input type="text" [(ngModel)]="searchText" (ngModelChange)="postSearchActions(searchText)" placeholder="Search" />
   <ul class="searchResults" *ngIf="searchText">
-    <li *ngFor="let item of itemsToSearch | filter: searchText">
+    <li *ngFor="let item of itemsToSearch | filter: searchText | limitTo">
       <a (click)="search(item)" class="waves-effect hoverable cover-thumbnail">
         <img
           class="responsive-img"
-          srcset="
-              https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/{{item.image}}.jpg 2x,
-              https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{item.image}}.jpg 1x"
-          src="https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/{{item.image}}.jpg"
+          [srcset]="
+              'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 2x,
+              https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 1x'"
+          [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg'"
         >
         {{item.displayText}}
       </a>
@@ -106,7 +106,7 @@
   <li *ngFor="let label of seriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
     <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
   </li>
-  <li *ngFor="let comic of comics" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles"> <!-- track by comic.id -->
+  <li *ngFor="let comic of comics; trackBy: trackByItemId" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles">
     <div class="scroll-anchor"></div>
     <div class="popover"><div>#{{comic.issue}}</div></div>
     <div class="comic z-depth-5 hoverable" [ngStyle]="comic.styles" [ngClass]="{stickyTop: comic.classes.stickyTop, stickyRight: comic.classes.stickyRight, stickyBottom: comic.classes.stickyBottom, stickyLeft: comic.classes.stickyLeft}">
@@ -167,7 +167,7 @@
         <div class="collection-comics">
           <div class="collection-title">{{comic.collection.title}}:</div>
           <ul>
-            <li *ngFor="let collectionComic of comic.collection.allCollectionComics"> <!-- track by collectionComic.id -->
+            <li *ngFor="let collectionComic of comic.collection.allCollectionComics; trackBy: trackByItemId">
               <div class="popover"><div>{{collectionComic.series}} #{{collectionComic.issue}}</div></div>
               <a (click)="toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
                 <img

@@ -10,9 +10,11 @@ export class FilterPipe implements PipeTransform {
     if (!searchText) {
       return items;
     }
+
     searchText = searchText.toLowerCase();
+
     return items.filter( item => {
-      return item.toLowerCase().includes(searchText);
+      return item.displayText.toLowerCase().includes(searchText);
     });
    }
 }
