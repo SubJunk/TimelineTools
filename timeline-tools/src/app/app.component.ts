@@ -301,8 +301,8 @@ export class AppComponent implements OnInit {
     comic.classes.stickyRight = false;
     comic.classes.stickyBottom = false;
     comic.classes.stickyLeft = false;
-    comic.styles['marginTop.px'] = '';
-    comic.styles['marginLeft.px'] = '';
+    comic.styles['marginTop.px'] = null;
+    comic.styles['marginLeft.px'] = null;
   }
 
   /**
