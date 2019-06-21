@@ -4,12 +4,20 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --aot",
-    "build": "ng build",
+    "build": "ng build --prod -o --aot --buildOptimizer=true --serviceWorker=true",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "private": true,
+  "stylelint": {
+    "rules": {
+      "block-opening-brace-space-before": "always",
+      "declaration-block-semicolon-space-before": "never",
+      "declaration-colon-space-after": "always",
+      "indentation": 2
+    }
+  },
   "dependencies": {
     "@angular/animations": "~8.0.0",
     "@angular/common": "~8.0.0",
@@ -45,8 +53,11 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "postcss-less": "^3.1.4",
     "protractor": "~5.4.0",
+    "stylelint": "^10.1.0",
     "ts-node": "~7.0.0",
+    "tsconfig-paths": "^3.8.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   }

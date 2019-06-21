@@ -22,6 +22,7 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm config set spin false; fi
 script:
-  - node_modules/.bin/eslint .
-  - node_modules/.bin/stylelint "**/*.css"
+  - yarn lint
+  - node_modules/.bin/stylelint "**/*.less" --custom-syntax postcss-less
+  - yarn build
   - node_modules/.bin/wdio
