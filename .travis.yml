@@ -24,5 +24,4 @@ before_install:
 script:
   - yarn lint
   - node_modules/.bin/stylelint "**/*.less" --custom-syntax postcss-less
-  - yarn build
-  - node_modules/.bin/wdio
+  - yarn e2e
