@@ -3,22 +3,17 @@ import moment from 'moment';
 
 /**
  * The prototype for individual comics.
- *
- * @param {number}   issue
- * @param {string}   datePublished
- * @param {string}   seriesVolumeId
- * @param {string[]} [titles]
  */
-function Comic(issue, datePublished, seriesVolumeId, titles) {
+function Comic(issue: string, datePublished: string, seriesVolumeId: string, titles: string) {
   if (!_.isEmpty(titles) && !_.isArray(titles)) {
     throw new Error('Expected comic title to be an array, got' + titles);
   }
 
-  var year;
-  var month;
-  var day;
+  let year: string;
+  let month: string;
+  let day: string;
 
-  var datePublishedSplit = datePublished.split(/[^0-9]/);
+  const datePublishedSplit = datePublished.split(/[^0-9]/);
   year = datePublishedSplit[0];
   month = datePublishedSplit[1];
   day = datePublishedSplit[2] || '01';
@@ -42,16 +37,13 @@ function Comic(issue, datePublished, seriesVolumeId, titles) {
   this.titles = titles ? titles : [];
 }
 
-var comics = [];
+const comics = [];
 
 /**
  * Add multiple comics in a seriesVolume.
- *
- * @param {string}   seriesVolumeId
- * @param {string[][]} comicsInSeriesVolume
  */
 function addComicsInSeriesVolume(seriesVolumeId, comicsInSeriesVolume) {
-  _.each(comicsInSeriesVolume, function(comic) {
+  _.each(comicsInSeriesVolume, (comic) => {
     comics.push(
       new Comic(
         comic[0],
@@ -641,7 +633,7 @@ addComicsInSeriesVolume('GhostRiderVol5', [
 addComicsInSeriesVolume('GiantSizeAstonishingXMenVol1', [[1, '2008-5-26']]);
 addComicsInSeriesVolume('GiantSizeFantasticFourVol1', [[4, '1975-2-10']]);
 addComicsInSeriesVolume('GiantSizeWolverineVol1', [[1, '2006-10-4']]);
-addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5', ['Deadly Genesis!', 'Call Him...Cyclops', 'I, the Iceman', 'The Female of the Species!']]]);
+addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5']]);
 addComicsInSeriesVolume('GiantSizeXMenFirstClassVol1', [[1, '2008-10-29', ]]);
 addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']]);
 addComicsInSeriesVolume('HouseofMVol1', [

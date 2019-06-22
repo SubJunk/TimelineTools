@@ -1,9 +1,9 @@
 // This is just a fake one to make TypeScript stop complaining
-export interface jQueryClickEvent {
-  target: jQueryClickEventTarget;
+export interface JQueryClickEvent {
+  target: JQueryClickEventTarget;
 }
 
-interface jQueryClickEventTarget {
+interface JQueryClickEventTarget {
   localName: string;
 }
 
@@ -60,9 +60,6 @@ interface ComicStyles {
   color: string;
   'marginLeft.px': string;
   'marginTop.px': string;
-}
-
-export interface Series {
 }
 
 export interface SeriesVolume {

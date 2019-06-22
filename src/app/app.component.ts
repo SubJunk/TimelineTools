@@ -9,13 +9,12 @@ import { Collections } from './../database/collections';
 import { Comics } from './../database/comics';
 import { SeriesVolumes } from './../database/series';
 import {
-  jQueryClickEvent,
+  JQueryClickEvent,
   Collection,
   CollectionColor,
   Comic,
   MarvelAPISeriesResponse,
   MarvelAPISeriesResponseResult,
-  Series,
   SeriesVolume,
   SeriesVolumeLabel,
 } from './models';
@@ -55,7 +54,7 @@ export class AppComponent implements OnInit {
 
   comics: Array<Comic>;
   collections: Array<Collection>;
-  series: Array<Series>;
+  series: Array<object>;
   seriesVolumes: Array<SeriesVolume>;
   uniqueCollections: Array<Collection> = [];
   dates = [];
@@ -149,17 +148,19 @@ export class AppComponent implements OnInit {
       }, function errorCallback(err) {
         throw new Error(err);
       });
-  };
+  }
 
   getExtraAPIParamsString = () => {
     if (!_.isEmpty(this.apiKeyPrivate) && window.location.protocol === 'file') {
+      // TODO: Write this another way
+      // tslint:disable-next-line: no-bitwise
       this.timestamp = Date.now() / ONE_SECOND_IN_MILLISECONDS | 0;
       this.apiHash = Md5.hashStr(this.timestamp + this.apiKeyPrivate + this.apiKeyPublic);
       return '?ts=' + this.timestamp + '&hash=' + this.apiHash;
     }
 
     return '';
-  };
+  }
 
   /**
    * Figure out what the name of the image on the server will be
@@ -621,7 +622,10 @@ export class AppComponent implements OnInit {
           throw new Error(currentSeriesVolume.titleWithVolume + ' not found in the seriesVolumeLabelIndex');
         }
 
-        this.seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles['width.px'] = comic.containerStyles['left.px'] - this.seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles['left.px'] - BODY_PADDING;
+        const labelContainerLeft = this.seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles['left.px'];
+        const comicContainerLeft = comic.containerStyles['left.px'];
+        this.seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles['width.px'] = comicContainerLeft - labelContainerLeft;
+        this.seriesVolumeLabels[seriesVolumeLabelIndex].containerStyles['width.px'] -= BODY_PADDING;
       }
     });
 
@@ -658,6 +662,7 @@ export class AppComponent implements OnInit {
     };
 
     $('html').on('keydown', e => {
+      // tslint:disable-next-line: deprecation
       switch (e.which) {
         case KEYPRESSES.escape:
           this.toggleExpandComic({});
@@ -686,7 +691,8 @@ export class AppComponent implements OnInit {
     this.$jqWindow.on('load scroll', (data: JQuery.Event) => this.repositionStickyElements(data));
 
     // Catch clicks
-    this.$jqWindow.on('click', (data: jQueryClickEvent) => {
+    // tslint:disable-next-line: deprecation
+    this.$jqWindow.on('click', (data: JQueryClickEvent) => {
       // Close the expanded comic if the click happened on a blank area
       if (data.target.localName === 'body' && this.expandedComicId) {
         this.toggleExpandComic({});
@@ -793,7 +799,7 @@ export class AppComponent implements OnInit {
       // $('.fixed-action-btn').floatingActionButton({direction: 'left'});
 
       // Init "Info & Credits" modal
-      let infoModal = $('#info');
+      // let infoModal = $('#info');
       // this.infoModalInstance = _.first(M.Modal.init(infoModal));
 
       this.useGetParameters();
@@ -808,7 +814,7 @@ export class AppComponent implements OnInit {
    * converts it to RGB to find a light or dark contrasting color,
    * returns a background color and text color.
    *
-   * @param  collectionTitle
+   * @param  collectionTitle the title of the collection
    * @return background and text colors
    */
   getCollectionColors = (collectionTitle: string): CollectionColor => {
@@ -917,7 +923,7 @@ export class AppComponent implements OnInit {
       const LINEAR_RGB = 12.92;      // R, G, B * LINEAR_RBG = RGB_CUTTOFF
       const PERCEIVED_WEIGHTING_RED_LIGHT = 0.2126;
       const PERCEIVED_WEIGHTING_GREEN_LIGHT = 0.7152;
-      const PERCEIVED_WEIGHTING_BLUE_LIGHT = 0.0722; //Given equal quantities of RGB, humans perceive them in a weighted way
+      const PERCEIVED_WEIGHTING_BLUE_LIGHT = 0.0722; // Given equal quantities of RGB, humans perceive them in a weighted way
       const LIGHT_DARK_THRESHOLD = 0.179;
 
       for (let i = 0; i < rgbColor.length; ++i) {

@@ -7,12 +7,12 @@ const seriesVolumes = [];
  * The prototype for comic series.
  * A series always contains at least one SeriesVolume.
  *
- * @param {string} title   the title of the series
- * @param {object} volumes an object that maps volumes to start years
+ * @param title   the title of the series
+ * @param volumes an object that maps volumes to start years
  *                         e.g. { 1: 1978, 3: 2010 }
  * @see SeriesVolume
  */
-function Series(title, volumes) {
+function Series(title: string, volumes: object) {
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
 
@@ -32,19 +32,17 @@ function Series(title, volumes) {
  * The prototype for comic series volume.
  * A SeriesVolume always matches a Series.
  *
- * @param {string} seriesId
- * @param {number} volume
- * @param {number} startYear needed for Marvel API
+ * @param startYear needed for Marvel API
  * @see Series
  */
-function SeriesVolume(seriesId, volume, startYear, title) {
+function SeriesVolume(seriesId: string, volume: string, startYear: number, title) {
   this.id = seriesId + 'Vol' + volume;
   this.seriesId = seriesId;
   this.volume = volume;
   this.startYear = startYear;
   this.title = title;
   this.titleWithVolume = title;
-  if (volume > 1) {
+  if (Number(volume) > 1) {
     this.titleWithVolume += ' Vol. ' + volume;
   }
 }
