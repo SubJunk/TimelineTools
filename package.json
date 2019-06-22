@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --aot",
-    "build": "ng build --prod -o --aot --buildOptimizer=true --serviceWorker=true",
+    "build": "ng build --prod --aot --buildOptimizer=true --serviceWorker=true",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
