@@ -12,19 +12,17 @@ describe('Collections', () => {
       });
     });
 
-    // it('should create a collection image', async () => {
-    //   expect
-    //   // collections aren't working at the moment, change to .collections when they are
-    //   await element(by.css('.responsive-img')).isDisplayed()
-    // });
+    it('should create a collection image', async () => {
+      expect
+      // collections aren't working at the moment, change to .collections when they are
+      await element(by.css('.responsive-img')).isDisplayed()
+    });
 
     it ('should display the correct collection image', async () => {
-      // const firstCollectionSrc = element(by.css("img[src*=Uncanny]"));
-      // expect(firstCollectionSrc.isPresent()).toBe(true);
-      expect(
-        await element(by.classname('.responsive-img')).getAttribute('src')
-      ).toContain(
-        'Uncanny'
+        expect(
+        await element(by.css('.responsive-img')).getAttribute('src')
+        ).toContain(
+        'Uncanny_X-Men_Vol_1_1'
       );
     });
 });
