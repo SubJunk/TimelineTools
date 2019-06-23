@@ -64,6 +64,7 @@ interface ComicStyles {
 
 export interface SeriesVolume {
   id: string;
+  marvelId: string;
   title: string;
   startYear: string;
 }
@@ -76,7 +77,7 @@ export interface SeriesVolumeLabel {
 
 export interface MarvelAPISeriesResponseResult {
   digitalId: number;
-  id: number;
+  id: string;
 }
 
 interface MarvelAPISeriesResponseData {

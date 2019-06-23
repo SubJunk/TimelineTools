@@ -32,13 +32,13 @@ const ONE_YEAR_IN_MONTHS = 12;
 const ONE_SECOND_IN_MILLISECONDS = 1000;
 
 // Colour constants used in multiple functions
-const LIGHTNESS_MIN = 30;   // Lightness can be in the range 0-100
+const LIGHTNESS_MIN = 30; // Lightness can be in the range 0-100
 const LIGHTNESS_MAX = 85;
 const PERCENT_MULTIPLIER = 100;
-const SATURATION_MIN = 35;  // Saturation can be in the range 0-100
-const SATURATION_MAX = 75;  // We choose a mid range that's easy to see
-const STEP_CHANGE = 30;     // define how far to step around the colour wheel each time
-const COMPLETE_COLOR_WHEEL_DEGREES = 360;     // 360 degrees in colour wheel
+const SATURATION_MIN = 35; // Saturation can be in the range 0-100
+const SATURATION_MAX = 75; // We choose a mid range that's easy to see
+const STEP_CHANGE = 30; // define how far to step around the colour wheel each time
+const COMPLETE_COLOR_WHEEL_DEGREES = 360; // 360 degrees in colour wheel
 
 @Component({
   selector: 'app-root',
@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
   // An array of objects that contain search results for comics and collections
   public itemsToSearch = [];
 
-  infoModalInstance;
+  infoModalInstance: M.Modal;
   bodyStyles = {
     'height.px': null,
     padding: BODY_PADDING_TOP + 'px ' + BODY_PADDING + 'px ' + BODY_PADDING + 'px ' + BODY_PADDING + 'px',
@@ -84,8 +84,8 @@ export class AppComponent implements OnInit {
 
   expandedComicId: string;
   expandedCollectionId: string;
-  expandedCollection;
-  expandedSeriesVolume;
+  expandedCollection: Collection;
+  expandedSeriesVolume: SeriesVolume;
   prevComic: Comic;
   nextComic: Comic;
   prevComicId: string;
@@ -1063,8 +1063,9 @@ export class AppComponent implements OnInit {
         expandedComic.styles['marginTop.px'] = null;
       }
 
-      // Instruct Materialize to make the expanded cover fullscreen on click
-      $('.materialboxed').materialbox();
+      // Instruct Materialize-CSS to make the expanded cover fullscreen on click
+      const elems = document.querySelectorAll('.materialboxed');
+      const instances = M.Materialbox.init(elems);
 
       if (this.doSpeedProfile) {
         const endTime = new Date().getTime();
