@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import $ from 'jQuery';
+import M from 'materialize-css';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Md5 } from 'ts-md5/dist/md5';
@@ -797,10 +798,12 @@ export class AppComponent implements OnInit {
 
       // Init floating menu on the right
       // $('.fixed-action-btn').floatingActionButton({direction: 'left'});
+      const elems = document.querySelectorAll('.fixed-action-btn');
+      const instances = M.FloatingActionButton.init(elems, {direction: 'left'});
 
       // Init "Info & Credits" modal
-      // let infoModal = $('#info');
-      // this.infoModalInstance = _.first(M.Modal.init(infoModal));
+      const infoModal = $('#info');
+      this.infoModalInstance = _.first(M.Modal.init(infoModal));
 
       this.useGetParameters();
 
@@ -916,11 +919,11 @@ export class AppComponent implements OnInit {
        *
        * @see https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
        */
-      const RGB_CUTOFF = 0.03928;  // See http://entropymine.com/imageworsener/srgbformula/
+      const RGB_CUTOFF = 0.03928; // See http://entropymine.com/imageworsener/srgbformula/
       const RGB_SLOPE = 0.055;
       const RGB_DENOMINATOR = 1.055;
       const RGB_EXPONENT = 2.4;
-      const LINEAR_RGB = 12.92;      // R, G, B * LINEAR_RBG = RGB_CUTTOFF
+      const LINEAR_RGB = 12.92; // R, G, B * LINEAR_RBG = RGB_CUTTOFF
       const PERCEIVED_WEIGHTING_RED_LIGHT = 0.2126;
       const PERCEIVED_WEIGHTING_GREEN_LIGHT = 0.7152;
       const PERCEIVED_WEIGHTING_BLUE_LIGHT = 0.0722; // Given equal quantities of RGB, humans perceive them in a weighted way
@@ -983,9 +986,9 @@ export class AppComponent implements OnInit {
     }
 
     /*
-      * jQuery passes an object when it triggers this function from a
-      * page event, but we only care about strings we pass in.
-      */
+     * jQuery passes an object when it triggers this function from a
+     * page event, but we only care about strings we pass in.
+     */
     if (typeof currentComicId !== 'string') {
       currentComicId = undefined;
     }
@@ -1061,7 +1064,7 @@ export class AppComponent implements OnInit {
       }
 
       // Instruct Materialize to make the expanded cover fullscreen on click
-      // $('.materialboxed').materialbox();
+      $('.materialboxed').materialbox();
 
       if (this.doSpeedProfile) {
         const endTime = new Date().getTime();
@@ -1096,7 +1099,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleShowCollections = (forcedState?: string) => {
-    let state;
+    let state: string;
     if (forcedState) {
       state = forcedState;
     } else if (this.isShowCollections) {

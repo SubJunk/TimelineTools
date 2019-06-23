@@ -368,6 +368,11 @@
     semver "6.0.0"
     semver-intersect "1.4.0"
 
+"@types/cash@*":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/cash/-/cash-0.0.3.tgz#770d6382c605bb4f8572f17cea6f40cec5832496"
+  integrity sha512-gS24kdFuVwfo5h7IlStnXyBSIH4e9aFIhNHb4w+o5DwbYDeQJv+i9heh7u7nSvqnOP3v34tQMTe7VoJp2US08w==
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -394,7 +399,7 @@
   dependencies:
     "@types/jasmine" "*"
 
-"@types/jquery@^3.3.29":
+"@types/jquery@*", "@types/jquery@^3.3.29":
   version "3.3.29"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.29.tgz#680a2219ce3c9250483722fccf5570d1e2d08abd"
   integrity sha512-FhJvBninYD36v3k6c+bVk1DSZwh7B5Dpb/Pyk3HKVsiohn0nhbefZZ+3JXbWQhFyt0MxSl2jRDdGQPHeOHFXrQ==
@@ -410,6 +415,14 @@
   version "4.14.134"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.134.tgz#9032b440122db3a2a56200e91191996161dde5b9"
   integrity sha512-2/O0khFUCFeDlbi7sZ7ZFRCcT812fAeOLm7Ev4KbwASkZ575TDrDcY7YyaoHdTOzKcNbfiwLYZqPmoC4wadrsw==
+
+"@types/materialize-css@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@types/materialize-css/-/materialize-css-1.0.6.tgz#94ba0261b4d581f444dd5d543d5d73926ba3c5c7"
+  integrity sha512-H/QXdgih11880Rx+yhLU5mDCm3SVGF7CYyQjEmRYGrn/fGrPc+s2SQBwbB9gZCw2a/39bDkH/v+wyysj0nWXCQ==
+  dependencies:
+    "@types/cash" "*"
+    "@types/jquery" "*"
 
 "@types/minimatch@*":
   version "3.0.3"
