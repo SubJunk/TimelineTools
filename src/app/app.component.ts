@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import $ from 'jQuery';
 import M from 'materialize-css';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -19,6 +18,7 @@ import {
   SeriesVolume,
   SeriesVolumeLabel,
 } from './models';
+import { ActivatedRoute, Router } from '@angular/router';
 
 // The padding applied to the left, right, and bottom of the body
 const BODY_PADDING_TOP = 80;
@@ -49,6 +49,8 @@ const COMPLETE_COLOR_WHEEL_DEGREES = 360; // 360 degrees in colour wheel
 export class AppComponent implements OnInit {
   constructor(
     private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   title = 'timeline-tools';
@@ -225,15 +227,16 @@ export class AppComponent implements OnInit {
 
     this.prevComic = undefined;
     this.nextComic = undefined;
+    let urlTree;
 
     // If these match, close the expanded box
     if (_.isEmpty(currentComic) || this.expandedComicId === currentComic.id) {
       // Clear the comic ID in the URL
-      // const urlTree = this.router.createUrlTree([], {
-      //   queryParams: { id: '' },
-      //   queryParamsHandling: 'merge',
-      //   preserveFragment: true });
-      // this.router.navigateByUrl(urlTree);
+      urlTree = this.router.createUrlTree([], {
+        queryParams: { id: '' },
+        queryParamsHandling: 'merge',
+        preserveFragment: true });
+      this.router.navigateByUrl(urlTree);
 
       this.clearComicClassesAndStyles();
 
@@ -330,11 +333,11 @@ export class AppComponent implements OnInit {
     }
 
     // Set the comic ID in the URL
-    // const urlTree = this.router.createUrlTree([], {
-    //   queryParams: { id: this.expandedComicId },
-    //   queryParamsHandling: 'merge',
-    //   preserveFragment: true });
-    // this.router.navigateByUrl(urlTree);
+    urlTree = this.router.createUrlTree([], {
+      queryParams: { id: this.expandedComicId },
+      queryParamsHandling: 'merge',
+      preserveFragment: true });
+    this.router.navigateByUrl(urlTree);
 
     // Get the series volume containing this comic
     this.expandedSeriesVolume = _.find(this.seriesVolumes, (seriesVolume) => {
@@ -1110,11 +1113,11 @@ export class AppComponent implements OnInit {
     }
 
     // Set whether to show collections in the URL
-    // const urlTree = this.router.createUrlTree([], {
-    //   queryParams: { showCollections: state },
-    //   queryParamsHandling: 'merge',
-    //   preserveFragment: true });
-    // this.router.navigateByUrl(urlTree);
+    const urlTree = this.router.createUrlTree([], {
+      queryParams: { showCollections: state },
+      queryParamsHandling: 'merge',
+      preserveFragment: true });
+    this.router.navigateByUrl(urlTree);
 
     if (state === '1') {
       this.isShowCollections = true;
@@ -1149,65 +1152,63 @@ export class AppComponent implements OnInit {
    * specified (id and gc)
    */
   useGetParameters = () => {
-    // if ($location.search()) {
-    //   let searchParams = $location.search();
+      const searchParams = this.route.snapshot.queryParams;
 
-    //   if (searchParams.id) {
-    //     this.scrollToComic(searchParams.id);
-    //   }
+      if (searchParams.id) {
+        this.scrollToComic(searchParams.id);
+      }
 
-    //   if (searchParams.showCollections) {
-    //     this.toggleShowCollections('1');
-    //   }
+      if (searchParams.showCollections) {
+        this.toggleShowCollections('1');
+      }
 
-    //   /**
-    //    * The garbage collector.
-    //    *
-    //    * This picks up any orphaned comics and series that would
-    //    * not cause errors but just take up space.
-    //    *
-    //    * Note there is no need to check that the comicIds in
-    //    * collections map to comics, because that would cause big
-    //    * errors that we already watch out for.
-    //    */
-    //   if (searchParams.gc) {
-    //     let foundComic;
-    //     let isClean = true;
-    //     let gcConsolePrepend = 'Garbage Collector: ';
+      /**
+       * The garbage collector.
+       *
+       * This picks up any orphaned comics and series that would
+       * not cause errors but just take up space.
+       *
+       * Note there is no need to check that the comicIds in
+       * collections map to comics, because that would cause big
+       * errors that we already watch out for.
+       */
+      if (searchParams.gc) {
+        let foundComic;
+        let isClean = true;
+        const gcConsolePrepend = 'Garbage Collector: ';
 
-    //     // Check that each comic is referenced by a collection
-    //     _.each(this.comics, (comic) => {
-    //       foundComic = _.find(this.collections, function(collection) {
-    //         return collection.comicIds.includes(comic.id);
-    //       });
+        // Check that each comic is referenced by a collection
+        _.each(this.comics, (comic) => {
+          foundComic = _.find(this.collections, (collection) => {
+            return collection.comicIds.includes(comic.id);
+          });
 
-    //       if (!foundComic) {
-    //         isClean = false;
-    //         console.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
-    //       }
-    //     });
+          if (!foundComic) {
+            isClean = false;
+            console.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
+          }
+        });
 
-    //     if (isClean) {
-    //       console.info(gcConsolePrepend + 'All comics are referenced by collections.');
-    //     }
+        if (isClean) {
+          console.log(gcConsolePrepend + 'All comics are referenced by collections.');
+        }
 
-    //     // Check that each seriesVolume is referenced by a comic
-    //     isClean = true;
-    //     _.each(this.seriesVolumes, (seriesVolume) => {
-    //       foundComic = _.find(this.comics, function(comic) {
-    //         return comic.seriesVolumeId === seriesVolume.id;
-    //       });
+        // Check that each seriesVolume is referenced by a comic
+        isClean = true;
+        _.each(this.seriesVolumes, (seriesVolume) => {
+          foundComic = _.find(this.comics, (comic) => {
+            return comic.seriesVolumeId === seriesVolume.id;
+          });
 
-    //       if (!foundComic) {
-    //         isClean = false;
-    //         console.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
-    //       }
-    //     });
+          if (!foundComic) {
+            isClean = false;
+            console.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
+          }
+        });
 
-    //     if (isClean) {
-    //       console.info(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
-    //     }
-    //   }
-    // }
+        if (isClean) {
+          console.log(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
+        }
+      }
   }
 }

@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+
+import { AppRoutingModule } from './app-routing.module';
+
 import { FilterPipe } from './filter.pipe';
 import { LimitToPipe } from './limitTo.pipe';
 
@@ -14,6 +17,7 @@ import { LimitToPipe } from './limitTo.pipe';
     LimitToPipe,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
