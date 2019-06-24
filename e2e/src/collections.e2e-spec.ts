@@ -1,28 +1,51 @@
 import { AppPage } from './app.po';
-import { browser, by, element } from 'protractor';
+import { browser, by, element, logging } from 'protractor';
 
 describe('Collections', () => {
     let page: AppPage;
 
     beforeEach(() => {
       page = new AppPage();
-      // somehow need to update this to whatever should actually be appended to show collections
-      browser.getCurrentUrl().then((url) => {
-        browser.get(url + '?showCollections=1');
-      });
+ 
     });
 
-    it('should create a collection image', async () => {
-      expect
-      // collections aren't working at the moment, change to .collections when they are
-      await element(by.css('.responsive-img')).isDisplayed()
-    });
 
-    it ('should display the correct collection image', async () => {
+    it(
+        'should open the menu and toggle collections on\n' +
+        'should create a collection image with the correct value\n' +
+        'should expand and display the collection with the correct title', 
+      async () => {
+        await element(by.css('.btn-floating.btn-large.red')).click();
+        await element(by.css('.btn-floating.grey')).click();
+    
         expect(
-        await element(by.css('.responsive-img')).getAttribute('src')
-        ).toContain(
-        'Uncanny_X-Men_Vol_1_1'
-      );
-    });
+            await element(by.css('.responsive-img')).getAttribute('src')
+            ).toContain(
+            'X-Men_Epic_Collection_Children_of_the_Atom'
+            );
+            
+            await element(by.css('.waves-effect.cover-thumbnail')).click();
+            expect(
+                await element(by.css('.expanded-panel')).isDisplayed()
+            );
+
+            expect(
+                await element(by.css('div.title')).getText()
+              ).toContain(
+                'X-Men Epic Collection: Children of the Atom'
+              );
+
+            //Close collections so it doesn't interfere with the comics tests
+            await element(by.css('.btn-floating.btn-large.red')).click();
+            await element(by.css('.btn-floating.green')).click();
+
+              afterEach(async () => {
+                // Assert that there are no errors emitted from the browser
+                const logs = await browser.manage().logs().get(logging.Type.BROWSER);
+                expect(logs).not.toContain(jasmine.objectContaining({
+                  level: logging.Level.SEVERE,
+                } as logging.Entry));
+              });   
+    
+      });
 });
