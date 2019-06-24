@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import $ from 'jQuery';
 import M from 'materialize-css';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
