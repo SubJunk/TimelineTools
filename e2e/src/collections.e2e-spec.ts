@@ -17,32 +17,32 @@ describe('Collections', () => {
     await element(by.css('.btn-floating.grey')).click();
 
     expect(
-        await element(by.css('.responsive-img')).getAttribute('src')
-        ).toContain(
-        'X-Men_Epic_Collection_Children_of_the_Atom'
-        );
+      await element(by.css('.responsive-img')).getAttribute('src')
+    ).toContain(
+      'X-Men_Epic_Collection_Children_of_the_Atom'
+    );
 
     await element(by.css('.waves-effect.cover-thumbnail')).click();
     expect(
-        await element(by.css('.expanded-panel')).isDisplayed()
+      await element(by.css('.expanded-panel')).isDisplayed()
     );
 
     expect(
-        await element(by.css('div.title')).getText()
+      await element(by.css('div.title')).getText()
     ).toContain(
-        'X-Men Epic Collection: Children of the Atom'
+      'X-Men Epic Collection: Children of the Atom'
     );
 
     // Close collections so it doesn't interfere with the comics tests
     await element(by.css('.btn-floating.btn-large.red')).click();
     await element(by.css('.btn-floating.green')).click();
+  });
 
-    afterEach(async () => {
+  afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
     expect(logs).not.toContain(jasmine.objectContaining({
       level: logging.Level.SEVERE,
-      } as logging.Entry));
-    });
+    } as logging.Entry));
   });
 });
