@@ -1,11 +1,14 @@
+const collections = [];
+
 /**
  * The prototype for collections.
  *
- * @param {string}   title         the title of the collection
- * @param {string}   datePublished a string to be converted to a date object
- * @param {string[]} comicIds      the comics in the collection, in order
+ * @param title         the title of the collection
+ * @param datePublished a string to be converted to a date object
+ * @param comicIds      the comics in the collection, in order
  */
-function Collection(title, datePublished, comicIds) {
+function Collection(title: string, datePublished: string, comicIds: string[]) {
+  this.allCollectionComicIds = [];
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
 
@@ -18,7 +21,6 @@ function Collection(title, datePublished, comicIds) {
 }
 
 // These should be in reading order
-var collections = [];
 collections.push(
   new Collection(
     'X-Men Epic Collection: Children of the Atom',
@@ -5456,3 +5458,11 @@ collections.push(
     ]
   )
 );
+
+class Collections {
+  public static getCollections() {
+    return collections;
+  }
+}
+
+export { Collections };

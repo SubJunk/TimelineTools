@@ -1,57 +1,15 @@
 {
-  "name": "timelinetools",
-  "version": "1.0.0",
-  "main": "index.html",
-  "repository": "https://subjunk@github.com/SubJunk/TimelineTools.git",
-  "author": "SubJunk <subjunk@gmail.com>",
-  "license": "MIT",
-  "eslintConfig": {
-    "env": {
-      "jquery": true,
-      "browser": true
-    },
-    "extends": [
-      "angular",
-      "eslint:recommended"
-    ],
-    "globals": {
-      "_": true,
-      "M": true,
-      "moment": true
-    },
-    "rules": {
-      "angular/angularelement": "off",
-      "angular/controller-as-vm": "off",
-      "angular/window-service": "off",
-      "block-scoped-var": "error",
-      "brace-style": "error",
-      "eqeqeq": "error",
-      "indent": [
-        "error",
-        2,
-        {
-          "SwitchCase": 1
-        }
-      ],
-      "keyword-spacing": "error",
-      "no-else-return": "error",
-      "no-mixed-spaces-and-tabs": "error",
-      "no-trailing-spaces": "error",
-      "quotes": [
-        2,
-        "single"
-      ],
-      "semi": [
-        2,
-        "always"
-      ],
-      "space-before-blocks": "error",
-      "space-infix-ops": "error"
-    },
-    "parserOptions": {
-      "ecmaVersion": 6
-    }
+  "name": "timeline-tools",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
+  "private": true,
   "stylelint": {
     "rules": {
       "block-opening-brace-space-before": "always",
@@ -60,28 +18,47 @@
       "indentation": 2
     }
   },
-  "devDependencies": {
-    "@wdio/cli": "5.10.5",
-    "@wdio/local-runner": "5.9.2",
-    "@wdio/mocha-framework": "5.10.1",
-    "@wdio/runner": "5.10.5",
-    "@wdio/selenium-standalone-service": "5.8.4",
-    "@wdio/spec-reporter": "5.9.3",
-    "@wdio/sync": "5.10.0",
-    "chromedriver": "75.0.0",
-    "eslint": "5.16.0",
-    "eslint-config-angular": "0.5.0",
-    "eslint-plugin-angular": "4.0.1",
-    "geckodriver": "1.16.2",
-    "stylelint": "10.1.0",
-    "webdriverio": "5.10.5"
-  },
   "dependencies": {
-    "angular": "1.7.8",
-    "angular-md5": "0.1.10",
-    "jquery": "3.4.1",
-    "lodash": "4.17.11",
-    "materialize-css": "1.0.0",
-    "moment": "2.24.0"
+    "@angular/animations": "~8.0.0",
+    "@angular/common": "~8.0.0",
+    "@angular/compiler": "~8.0.0",
+    "@angular/core": "~8.0.0",
+    "@angular/forms": "~8.0.0",
+    "@angular/platform-browser": "~8.0.0",
+    "@angular/platform-browser-dynamic": "~8.0.0",
+    "@angular/router": "~8.0.0",
+    "materialize-css": "^1.0.0",
+    "moment": "^2.24.0",
+    "rxjs": "~6.5.2",
+    "ts-md5": "^1.2.4",
+    "tslib": "^1.9.0",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.800.0",
+    "@angular/cli": "^8.0.3",
+    "@angular/compiler-cli": "~8.0.0",
+    "@angular/language-service": "~8.0.0",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/lodash": "^4.14.134",
+    "@types/materialize-css": "^1.0.6",
+    "@types/node": "~8.9.4",
+    "codelyzer": "^5.0.0",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "jquery": "^3.4.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "postcss-less": "^3.1.4",
+    "protractor": "~5.4.0",
+    "stylelint": "^10.1.0",
+    "ts-node": "~7.0.0",
+    "tsconfig-paths": "^3.8.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.4.3"
   }
 }

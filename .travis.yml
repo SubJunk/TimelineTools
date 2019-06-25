@@ -21,7 +21,9 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm config set spin false; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export PATH="$HOME/.yarn/bin:$PATH"; fi
 script:
-  - node_modules/.bin/eslint .
-  - node_modules/.bin/stylelint "**/*.css"
-  - node_modules/.bin/wdio
+  - yarn lint
+  - node_modules/.bin/stylelint "**/*.less" --custom-syntax postcss-less
+  - yarn e2e
