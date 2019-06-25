@@ -1,7 +1,7 @@
 import { AppPage } from './app.po';
 import { browser, by, element, logging } from 'protractor';
 
-describe('Collections', () => {
+describe('Search', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('Collections', () => {
 
   it(
     'should display the search div\n' +
-    'should display correct search results\n',
+    'should display correct search results',
   async () => {
     await element(by.tagName('input')).sendKeys('Uncanny X-Men #100');
     expect(
