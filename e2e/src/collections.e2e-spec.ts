@@ -9,9 +9,9 @@ describe('Collections', () => {
   });
 
   it(
-      'should open the menu and toggle collections on\n' +
-      'should create a collection image with the correct value\n' +
-      'should expand and display the collection with the correct title',
+    'should open the menu and toggle collections on\n' +
+    'should create a collection image with the correct value\n' +
+    'should expand and display the collection with the correct title',
   async () => {
     await element(by.css('.btn-floating.btn-large.red')).click();
     await element(by.css('.btn-floating.grey')).click();
@@ -23,9 +23,9 @@ describe('Collections', () => {
     );
 
     await element(by.css('.waves-effect.cover-thumbnail')).click();
+
     expect(
-      await element(by.css('.expanded-panel')).isDisplayed()
-    );
+      await element(by.css('.expanded-panel')).isDisplayed()).toBeTruthy();
 
     expect(
       await element(by.css('div.title')).getText()
