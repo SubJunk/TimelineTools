@@ -16,9 +16,9 @@ describe('Info', () => {
     await element(by.css('.btn-floating.blue')).click();
 
     expect(
-      await  element(by.css('modal-content')).element(by.tagName('h4'))
+      await  element(by.css('.modal-content')).element(by.tagName('h4')).getText()
     ).toContain(
-      'Info'
+      'Info & Credits'
     );
 
     // Close the info box
