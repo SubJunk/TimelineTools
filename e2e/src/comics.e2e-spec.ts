@@ -8,6 +8,7 @@ describe('Comics', () => {
     page = new AppPage();
   });
 
+
   it(
     'should create a comic thumbnail with the correct value\n' +
     'should open the expanded panel with the correct title\n' +
