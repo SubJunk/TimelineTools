@@ -352,7 +352,7 @@ export class AppComponent implements OnInit {
         .subscribe(
           (response: MarvelAPISeriesResponse) => {
             if (!response || !response.data || !response.data || !response.data.results.length) {
-              throw new Error('The response wasn\'t in the expected format ' + response);
+              return console.warn('The response from Marvel API wasn\'t in the expected format ' + response);
             }
 
             const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
