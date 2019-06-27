@@ -30,7 +30,7 @@ describe('Comics', () => {
     );
   });
 
-  it(
+  it('should display the selected comic cover when zoomed', async () => {
     'should display the selected comic cover when zoomed',
   async () => {
     await element(by.css('.materialboxed')).click();
