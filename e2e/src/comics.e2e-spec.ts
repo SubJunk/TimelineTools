@@ -30,6 +30,16 @@ describe('Comics', () => {
     );
   });
 
+  it('should display the selected comic cover when zoomed', async () => {
+    await element(by.css('.materialboxed')).click();
+    expect(
+      await element(by.css('.materialboxed.active')).getAttribute('src')
+    ).toContain(
+      'Uncanny_X-Men_Vol_1_6'
+    );
+  });
+
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
