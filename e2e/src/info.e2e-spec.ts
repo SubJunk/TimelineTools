@@ -16,7 +16,7 @@ describe('Info', () => {
     await element(by.css('.btn-floating.blue')).click();
 
     expect(
-      await  element(by.css('.modal-content')).element(by.tagName('h4')).getText()
+      await element(by.css('.modal-content')).element(by.tagName('h4')).getText()
     ).toContain(
       'Info & Credits'
     );
