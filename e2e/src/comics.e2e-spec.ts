@@ -11,7 +11,8 @@ describe('Comics', () => {
   it(
     'should create a comic thumbnail with the correct value\n' +
     'should open the expanded panel with the correct title\n' +
-    'should use the arrow button to go to the next comic',
+    'should use the arrow button to go to the next comic\n' +
+    'should use the arrow button to go to the next collection',
   async () => {
     await element(by.css('#expand-UncannyXMenVol15')).click();
 
@@ -28,6 +29,14 @@ describe('Comics', () => {
     ).toContain(
       'Uncanny X-Men #6'
     );
+
+    await element(by.css('.button-next-collection')).click();
+
+    expect(
+      await element(by.css('div.collection-title')).getText()
+    ).toContain(
+      'X-Men: First Class, Vol. 1: Tomorrow'
+    );
   });
 
   it('should display the selected comic cover when zoomed', async () => {
@@ -35,7 +44,7 @@ describe('Comics', () => {
     expect(
       await element(by.css('.materialboxed.active')).getAttribute('src')
     ).toContain(
-      'Uncanny_X-Men_Vol_1_6'
+      'X-Men_First_Class_Vol_1_1'
     );
   });
 
