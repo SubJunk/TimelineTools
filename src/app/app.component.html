@@ -129,26 +129,26 @@
         </span>
         <ul class="pagination" *ngIf="comic.id === expandedComicId">
           <li class="waves-effect" [ngClass]="{disabled: !prevCollectionFirstComic}">
-            <div class="popover" *ngIf="prevCollectionFirstComic"><div>{{prevCollection.title}}</div></div>
-            <a (click)="toggleExpandComic(prevCollectionFirstComic)">
+            <div class="popover" *ngIf="prevCollectionFirstComic"><div class="previous-collection-title">{{prevCollection.title}}</div></div>
+            <a (click)="toggleExpandComic(prevCollectionFirstComic)" class=button-previous-collection>
               <i class="material-icons">arrow_backward</i>
             </a>
           </li><!--
           --><li class="waves-effect" [ngClass]="{disabled: !prevComic}">
-            <div class="popover" *ngIf="prevComic"><div>{{prevComic.series}} #{{prevComic.issue}}</div></div>
+            <div class="popover" *ngIf="prevComic"><div class="previous-comic-title">{{prevComic.series}} #{{prevComic.issue}}</div></div>
             <a (click)="toggleExpandComic(prevComic)" class="button-previous-comic">
               <i class="material-icons">chevron_left</i>
             </a>
           </li><!--
           --><li class="waves-effect" [ngClass]="{disabled: !nextComic}">
-            <div class="popover" *ngIf="nextComic"><div>{{nextComic.series}} #{{nextComic.issue}}</div></div>
+            <div class="popover" *ngIf="nextComic"><div class="next-comic-title">{{nextComic.series}} #{{nextComic.issue}}</div></div>
             <a (click)="toggleExpandComic(nextComic)" class="button-next-comic">
               <i class="material-icons">chevron_right</i>
             </a>
           </li><!--
           --><li class="waves-effect" [ngClass]="{disabled: !nextCollectionFirstComic}">
-            <div class="popover" *ngIf="nextCollectionFirstComic"><div>{{nextCollection.title}}</div></div>
-            <a (click)="toggleExpandComic(nextCollectionFirstComic)">
+            <div class="popover" *ngIf="nextCollectionFirstComic"><div class="next-collection-title">{{nextCollection.title}}</div></div>
+            <a (click)="toggleExpandComic(nextCollectionFirstComic)" class="button-next-collection">
               <i class="material-icons">arrow_forward</i>
             </a>
           </li>
