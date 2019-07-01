@@ -11,7 +11,8 @@ describe('Comics', () => {
   it(
     'should create a comic thumbnail with the correct value\n' +
     'should open the expanded panel with the correct title\n' +
-    'should use the arrow button to go to the next comic',
+    'should use the arrow button to go to the next comic\n' +
+    'should use correct style for currently selected comic',
   async () => {
     await element(by.css('#expand-UncannyXMenVol15')).click();
 
@@ -28,6 +29,10 @@ describe('Comics', () => {
     ).toContain(
       'Uncanny X-Men #6'
     );
+
+    expect(
+      await element(by.css('img.responsive-img.current')).isDisplayed()
+    ).toBeTruthy();
   });
 
   it('should display the selected comic cover when zoomed', async () => {
