@@ -11,7 +11,7 @@ describe('Comics', () => {
   it(
     'should create a comic thumbnail with the correct value\n' +
     'should open the expanded panel with the correct title\n' +
-    'should use the arrow button to go to the next comic\n',
+    'should use the arrow button to go to the next comic',
   async () => {
     await element(by.css('#expand-UncannyXMenVol15')).click();
 
