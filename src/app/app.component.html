@@ -147,7 +147,7 @@
             </a>
           </li><!--
           --><li class="waves-effect" [ngClass]="{disabled: !nextCollectionFirstComic}">
-            <div class="popover" *ngIf="nextCollectionFirstComic"><div class="next-collection-title">{{nextCollection.title}}</div></div>
+            <div class="popover" *ngIf="nextCollectionFirstComic && nextCollection.title"><div class="next-collection-title">{{nextCollection.title}}</div></div>
             <a (click)="toggleExpandComic(nextCollectionFirstComic)" class="button-next-collection">
               <i class="material-icons">arrow_forward</i>
             </a>
