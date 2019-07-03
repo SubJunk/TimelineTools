@@ -90,10 +90,7 @@ describe('Comics', () => {
     ).toContain(
       'X-Men_First_Class_Vol_2_2'
     );
-
-    // close the lightbox so the tests can continue
-    await element(by.css('.materialboxed.active')).click();
-});
+  });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
