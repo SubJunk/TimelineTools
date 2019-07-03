@@ -46,7 +46,7 @@ describe('Comics', () => {
   });
 
   it('should display the correct hover text on nav arrows for collections', async () => {
-      await browser.wait(EC.textToBePresentInElement($('.next-collection-title'), 'Mutant Mayhem'), 5000);
+      await browser.wait(EC.textToBePresentInElement($('.next-collection-title'), 'Mutant Mayhem'), 10000);
       expect(
         await element(by.css('.next-collection-title')).getText()
       ).toContain('Mutant Mayhem');
@@ -60,7 +60,7 @@ describe('Comics', () => {
 
   it('should display the correct hover text on nav arrows for comics', async () => {
     browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform();
-    browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 5000);
+    browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 10000);
     // Waits for the element to contain the text
 
     expect(
