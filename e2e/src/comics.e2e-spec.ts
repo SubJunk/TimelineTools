@@ -30,47 +30,43 @@ describe('Comics', () => {
     );
   });
 
-  it('should display the selected comic cover when zoomed', async () => {
-    await element(by.css('.materialboxed')).click();
-    expect(
-      await element(by.css('.materialboxed.active')).getAttribute('src')
-    ).toContain(
-      'Uncanny_X-Men_Vol_1_6'
-    );
-
-    // close the lightbox so the tests can continue
-    await element(by.css('.materialboxed.active')).click();
-  });
-
   it('should display the correct hover text on nav arrows for comics', async () => {
-    // needs this click or test can't read popover text
+    expect(
+      await element(by.css('.next-comic-title')).getText()
+    ).toContain('Uncanny X-Men #7');
+
+    // navigate forward and check the text updates
     await element(by.css('.button-next-comic')).click();
 
     expect(
-      await element(by.css('div.next-comic-title')).getText()
-  ).toContain('Uncanny X-Men #8');
-
-  // navigate forward and check the text updates
-    await element(by.css('.button-next-comic')).click();
-
-    expect(
-    await element(by.css('.next-comic-title')).getText()
-  ).toContain('Uncanny X-Men #9');
-    });
+      await element(by.css('.next-comic-title')).getText()
+    ).toContain('Uncanny X-Men #8');
+  });
 
   it('should display the correct hover text on nav arrows for collections', async () => {
     await element(by.css('.button-next-collection')).click();
 
     expect(
-  await element(by.css('.next-collection-title')).getText()
-  ).toContain('X-Men: First Class - Mutant Mayhem');
+      await element(by.css('.next-collection-title')).getText()
+    ).toContain('X-Men: First Class - Mutant Mayhem');
 
     await element(by.css('.button-next-collection')).click();
 
     expect(
-    await element(by.css('.next-collection-title')).getText()
-  ).toContain('X-Men: First Class - Band of Brothers');
+      await element(by.css('.next-collection-title')).getText()
+    ).toContain('X-Men: First Class - Band of Brothers');
+  });
 
+  it('should display the selected comic cover when zoomed', async () => {
+    await element(by.css('.materialboxed')).click();
+    expect(
+      await element(by.css('.materialboxed.active')).getAttribute('src')
+    ).toContain(
+      'X-Men_First_Class_Vol_2_1'
+  );
+
+    // close the lightbox so the tests can continue
+    await element(by.css('.materialboxed.active')).click();
 });
 
   afterEach(async () => {
