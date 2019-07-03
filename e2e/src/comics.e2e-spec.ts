@@ -45,34 +45,34 @@ describe('Comics', () => {
     await element(by.css('img.responsive-img.current')).isDisplayed();
   });
 
+  it('should display the correct hover text on nav arrows for collections', async () => {
+      await browser.wait(EC.textToBePresentInElement($('.next-collection-title'), 'Mutant Mayhem'), 5000);
+      expect(
+        await element(by.css('.next-collection-title')).getText()
+      ).toContain('Mutant Mayhem');
+
+      await element(by.css('.button-next-collection')).click();
+
+      expect(
+        await element(by.css('.next-collection-title')).getText()
+      ).toContain('X-Men: First Class - Band of Brothers');
+    });
+
   it('should display the correct hover text on nav arrows for comics', async () => {
-    // Waits for the element with id 'abc' to contain the text 'foo'.
-    await browser.wait(EC.textToBePresentInElement($('#next-comic-title'), 'Uncanny'), 5000);
+    browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform();
+    browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 5000);
+    // Waits for the element to contain the text
 
     expect(
-      await element(by.id('next-comic-title')).getText()
-    ).toContain('Uncanny X-Men #7');
+      await element(by.css('.next-comic-title')).getText()
+    ).toContain('X-Men: First Class #2');
 
     // navigate forward and check the text updates
     await element(by.css('.button-next-comic')).click();
 
     expect(
-      await element(by.id('next-comic-title')).getText()
-    ).toContain('Uncanny X-Men #8');
-  });
-
-  it('should display the correct hover text on nav arrows for collections', async () => {
-    await browser.actions().mouseMove(element(by.css('.button-next-collection'))).perform();
-    await browser.wait(EC.textToBePresentInElement($('#next-collection-title'), 'X-Men'), 5000);
-    expect(
-      await element(by.id('next-collection-title')).getText()
-    ).toContain('Tomorrow');
-
-    await element(by.css('.button-next-collection')).click();
-
-    expect(
-      await element(by.id('next-collection-title')).getText()
-    ).toContain('X-Men: First Class - Mutant Mayhem');
+      await element(by.css('.next-comic-title')).getText()
+    ).toContain('X-Men: First Class #3');
   });
 
   it('should display the selected comic cover when zoomed', async () => {
@@ -80,7 +80,7 @@ describe('Comics', () => {
     expect(
       await element(by.css('.materialboxed.active')).getAttribute('src')
     ).toContain(
-      'X-Men_First_Class_Vol_1_1'
+      'X-Men_First_Class_Vol_2_2'
   );
 
     // close the lightbox so the tests can continue
