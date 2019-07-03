@@ -39,14 +39,9 @@ describe('Comics', () => {
     ).toContain(
       'X-Men: First Class, Vol. 1: Tomorrow'
     );
-  });
 
-  it('should use correct style for currently selected comic', async () => {
     await element(by.css('img.responsive-img.current')).isDisplayed();
-  });
 
-  it('should display the correct hover text on nav arrows for collections', async () => {
-    await browser.wait(await EC.textToBePresentInElement($('.next-collection-title'), 'Mutant Mayhem'), 10000);
     expect(
       await element(by.css('.next-collection-title')).getText()
     ).toContain(
@@ -60,9 +55,7 @@ describe('Comics', () => {
     ).toContain(
       'X-Men: First Class - Band of Brothers'
     );
-  });
 
-  it('should display the correct hover text on nav arrows for comics', async () => {
     await browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform();
     await browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 10000);
     // Waits for the element to contain the text
@@ -81,10 +74,9 @@ describe('Comics', () => {
     ).toContain(
       'X-Men: First Class #3'
     );
-  });
 
-  it('should display the selected comic cover when zoomed', async () => {
     await element(by.css('.materialboxed')).click();
+
     expect(
       await element(by.css('.materialboxed.active')).getAttribute('src')
     ).toContain(
