@@ -39,6 +39,10 @@ describe('Comics', () => {
     );
   });
 
+  it('should use correct style for currently selected comic', async () => {
+    await element(by.css('img.responsive-img.current')).isDisplayed();
+  });
+
   it('should display the selected comic cover when zoomed', async () => {
     await element(by.css('.materialboxed')).click();
     expect(
