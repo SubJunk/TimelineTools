@@ -13,7 +13,8 @@ describe('Comics', () => {
   it(
     'should create a comic thumbnail with the correct value\n' +
     'should open the expanded panel with the correct title\n' +
-    'should use the arrow button to go to the next comic',
+    'should use the arrow button to go to the next comic\n' +
+    'should use the arrow button to go to the next collection',
   async () => {
     await element(by.css('#expand-UncannyXMenVol15')).click();
 
@@ -30,6 +31,18 @@ describe('Comics', () => {
     ).toContain(
       'Uncanny X-Men #6'
     );
+
+    await element(by.css('.button-next-collection')).click();
+
+    expect(
+      await element(by.css('div.collection-title')).getText()
+    ).toContain(
+      'X-Men: First Class, Vol. 1: Tomorrow'
+    );
+  });
+
+  it('should use correct style for currently selected comic', async () => {
+    await element(by.css('img.responsive-img.current')).isDisplayed();
   });
 
   it('should display the correct hover text on nav arrows for comics', async () => {

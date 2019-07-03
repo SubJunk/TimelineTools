@@ -24,9 +24,7 @@ describe('Collections', () => {
 
     await element(by.css('.waves-effect.cover-thumbnail')).click();
 
-    expect(
-      await element(by.css('.expanded-panel')).isDisplayed()
-    ).toBeTruthy();
+    await element(by.css('.expanded-panel')).isDisplayed();
 
     expect(
       await element(by.css('div.title')).getText()
