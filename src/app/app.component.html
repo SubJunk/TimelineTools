@@ -130,7 +130,7 @@
         <ul class="pagination" *ngIf="comic.id === expandedComicId">
           <li class="waves-effect" [ngClass]="{disabled: !prevCollectionFirstComic}">
             <div class="popover" *ngIf="prevCollectionFirstComic"><div class="previous-collection-title">{{prevCollection.title}}</div></div>
-            <a (click)="toggleExpandComic(prevCollectionFirstComic)" class=button-previous-collection>
+            <a (click)="toggleExpandComic(prevCollectionFirstComic)" class="button-previous-collection">
               <i class="material-icons">arrow_backward</i>
             </a>
           </li><!--
