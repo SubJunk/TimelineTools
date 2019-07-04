@@ -6,8 +6,9 @@ describe('Comics', () => {
   const EC = protractor.ExpectedConditions;
 
 
-  beforeEach(() => {
+  beforeAll(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
   it(
