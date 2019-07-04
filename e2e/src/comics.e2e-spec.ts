@@ -1,13 +1,14 @@
 import { AppPage } from './app.po';
-import { browser, by, element, logging, protractor, $ } from 'protractor';
+import { browser, by, element, logging } from 'protractor';
 
 describe('Comics', () => {
   let page: AppPage;
-  const EC = protractor.ExpectedConditions;
-
 
   beforeAll(() => {
     page = new AppPage();
+  });
+
+  beforeEach(() => {
     page.navigateTo();
   });
 
@@ -46,31 +47,15 @@ describe('Comics', () => {
     await element(by.css('img.responsive-img.current')).isDisplayed();
   });
 
-  it('should display the correct hover text on nav arrows for collections', async () => {
-    await browser.wait(EC.textToBePresentInElement($('.next-collection-title'), 'Mutant Mayhem'), 10000);
-
-    expect(
-      await element(by.css('.next-collection-title')).getText()
-    ).toContain('Mutant Mayhem');
-
-    await element(by.css('.button-next-collection')).click();
-
-    expect(
-      await element(by.css('.next-collection-title')).getText()
-    ).toContain('X-Men: First Class - Band of Brothers');
-  });
-
   it('should display the selected comic cover when zoomed', async () => {
     await element(by.css('.materialboxed')).click();
     expect(
       await element(by.css('.materialboxed.active')).getAttribute('src')
     ).toContain(
-      'X-Men_First_Class_Vol_2_2'
-  );
+      'X-Men_First_Class_Vol_1_1'
+    );
+  });
 
-    // close the lightbox so the tests can continue
-    await element(by.css('.materialboxed.active')).click();
-});
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

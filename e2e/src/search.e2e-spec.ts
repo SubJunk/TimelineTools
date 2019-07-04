@@ -4,8 +4,12 @@ import { browser, by, element, logging } from 'protractor';
 describe('Search', () => {
   let page: AppPage;
 
-  beforeEach(() => {
+  beforeAll(() => {
     page = new AppPage();
+  });
+
+  beforeEach(() => {
+    page.navigateTo();
   });
 
   it(
