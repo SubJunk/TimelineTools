@@ -507,7 +507,7 @@ export class AppComponent implements OnInit {
        * the last row.
        * Step two documented below.
        */
-      if (currentSeriesVolume.verticalPosition) {
+      if (typeof currentSeriesVolume.verticalPosition !== 'undefined') {
         comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
         currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
