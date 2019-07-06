@@ -5349,7 +5349,6 @@ collections.push(
       'UncannyXMenVol1503',
     ]
   ),
-
   new Collection(
     'NYX: No Way Home Vol 1',
     '2008-2009',
@@ -5360,6 +5359,17 @@ collections.push(
       'NYXNoWayHomeVol14',
       'NYXNoWayHomeVol15',
       'NYXNoWayHomeVol16',
+    ]
+  ),
+  new Collection(
+    'Cable Vol. 2: Waiting for the End of the World (Partial)',
+    '2008-2010',
+    [
+      'CableVol26',
+      'CableVol27',
+      'CableVol28',
+      'CableVol29',
+      'CableVol210',
     ]
   ),
   /**
