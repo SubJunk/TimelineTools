@@ -966,6 +966,14 @@ addComicsInSeriesVolume('NYXVol1', [
   [6, '2005-7-13'],
   [7, '2005-9-28'],
 ]);
+addComicsInSeriesVolume('NYXNoWayHomeVol1', [
+  [1, '2008-10'],
+  [2, '2008-11'],
+  [3, '2008-12'],
+  [4, '2009-2'],
+  [5, '2009-3'],
+  [6, '2009-4'],
+]);
 addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']]);
 addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']]);
 addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']]);

@@ -5349,6 +5349,19 @@ collections.push(
       'UncannyXMenVol1503',
     ]
   ),
+
+  new Collection(
+    'NYX: No Way Home Vol 1',
+    '2008-2009',
+    [
+      'NYXNoWayHomeVol11',
+      'NYXNoWayHomeVol12',
+      'NYXNoWayHomeVol13',
+      'NYXNoWayHomeVol14',
+      'NYXNoWayHomeVol15',
+      'NYXNoWayHomeVol16',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
