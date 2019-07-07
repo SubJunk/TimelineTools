@@ -8,8 +8,10 @@ describe('Comics', () => {
     page = new AppPage();
   });
 
-  beforeEach(() => {
-    page.navigateTo();
+  beforeEach(async () => {
+    await page.navigateTo();
+
+    await element(by.css('#expand-UncannyXMenVol15')).click();
   });
 
   it(
@@ -18,8 +20,6 @@ describe('Comics', () => {
     'should use the arrow button to go to the next comic\n' +
     'should use the arrow button to go to the next collection',
   async () => {
-    await element(by.css('#expand-UncannyXMenVol15')).click();
-
     expect(
       await element(by.css('div.series')).getText()
     ).toContain(
@@ -44,15 +44,12 @@ describe('Comics', () => {
   });
 
   it('should use correct style for currently selected comic', async () => {
-    await element(by.css('#expand-UncannyXMenVol15')).click();
-
     await element(by.css('img.responsive-img.current')).isDisplayed();
   });
 
   it('should display the selected comic cover when zoomed', async () => {
-    await element(by.css('#expand-UncannyXMenVol15')).click();
-
     await element(by.css('.materialboxed')).click();
+
     expect(
       await element(by.css('.materialboxed.active')).getAttribute('src')
     ).toContain(
