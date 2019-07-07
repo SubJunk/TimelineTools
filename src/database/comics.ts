@@ -1030,6 +1030,12 @@ addComicsInSeriesVolume('SabretoothVol2', [
 addComicsInSeriesVolume('SabretoothSpecialVol1', [[1, '1996-1']]);
 addComicsInSeriesVolume('SecondComingPrepareVol1', [[1, '2010-4', ['Where Were You?']]]);
 addComicsInSeriesVolume('SecretInvasionWarofKingsVol1', [[1, '2009-1-7']]);
+addComicsInSeriesVolume('SecretInvasionXMenVol1', [
+  [1, '2008-8-13'],
+  [2, '2008-9-10'],
+  [3, '2008-10-29'],
+  [4, '2008-11-26'],
+]);
 addComicsInSeriesVolume('SecretWarsVol1', [
   [1, '1984-5'],
   [2, '1984-6'],
