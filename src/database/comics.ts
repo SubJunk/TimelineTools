@@ -1045,6 +1045,7 @@ addComicsInSeriesVolume('SecretWarsVol1', [
   [12, '1985-4'],
 ]);
 addComicsInSeriesVolume('SecretsoftheHouseofMVol1', [[1, '2005-7-20']]);
+addComicsInSeriesVolume('SheHulkVol2', [[31, '2008-7-23']]);
 addComicsInSeriesVolume('SoldierXVol1', [
   [1, '2002-9'],
   [2, '2002-10'],
@@ -1916,6 +1917,12 @@ addComicsInSeriesVolume('XFactorVol3', [
   [30, '2008-4-16'],
   [31, '2008-5-21'],
   [32, '2008-6-18'],
+  [33, '2008-7-16'],
+  [34, '2008-8-20'],
+  [35, '2008-9-17'],
+  [36, '2008-10-22'],
+  [37, '2008-11-19'],
+  [38, '2008-12-17'],
 ]);
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],

@@ -149,6 +149,7 @@ series.push(
   new Series('Sabretooth', {1: 1993, 2: 2004}),
   new Series('Sabretooth Special', {1: 1995}),
   new Series('Secret Wars', {1: 1984}),
+  new Series('She-Hulk', {2: 2005}),
   new Series('Soldier X', {1: 2002}),
   new Series('Spider-Man', {1: 1990}),
   new Series('Stryfe\'s Strike File', {1: 1993}),

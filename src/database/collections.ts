@@ -5350,8 +5350,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'NYX: No Way Home Vol 1',
-    '2008-2009',
+    'NYX: No Way Home',
+    '2009-9-2',
     [
       'NYXNoWayHomeVol11',
       'NYXNoWayHomeVol12',
@@ -5363,7 +5363,7 @@ collections.push(
   ),
   new Collection(
     'Cable Vol. 2: Waiting for the End of the World (Partial)',
-    '2008-2010',
+    '2009-5-27',
     [
       'CableVol26',
       'CableVol27',
@@ -5372,9 +5372,28 @@ collections.push(
       'CableVol210',
     ]
   ),
+  new Collection(
+    'X-Factor Vol. 6: Secret Invasion',
+    '2009-5-27',
+    [
+      'XFactorVol333',
+      'SheHulkVol231',
+      'XFactorVol334',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Factor Vol. 6: Secret Invasion',
+    '2009-5-27',
+    [
+      'XFactorVol335',
+      'XFactorVol336',
+      'XFactorVol337',
+      'XFactorVol338',
+    ]
+  ),
   new Collection(
     'War of Kings: Road to War of Kings',
     '2009-6-3',
