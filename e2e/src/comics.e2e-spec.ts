@@ -44,15 +44,19 @@ describe('Comics', () => {
   });
 
   it('should use correct style for currently selected comic', async () => {
+    await element(by.css('#expand-UncannyXMenVol15')).click();
+
     await element(by.css('img.responsive-img.current')).isDisplayed();
   });
 
   it('should display the selected comic cover when zoomed', async () => {
+    await element(by.css('#expand-UncannyXMenVol15')).click();
+
     await element(by.css('.materialboxed')).click();
     expect(
       await element(by.css('.materialboxed.active')).getAttribute('src')
     ).toContain(
-      'X-Men_First_Class_Vol_1_1'
+      'Uncanny_X-Men_Vol_1_5'
     );
   });
 
