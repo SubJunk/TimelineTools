@@ -4,8 +4,14 @@ import { browser, by, element, logging } from 'protractor';
 describe('Comics', () => {
   let page: AppPage;
 
-  beforeEach(() => {
+  beforeAll(() => {
     page = new AppPage();
+  });
+
+  beforeEach(async () => {
+    await page.navigateTo();
+
+    await element(by.css('#expand-UncannyXMenVol15')).click();
   });
 
   it(
@@ -14,8 +20,6 @@ describe('Comics', () => {
     'should use the arrow button to go to the next comic\n' +
     'should use the arrow button to go to the next collection',
   async () => {
-    await element(by.css('#expand-UncannyXMenVol15')).click();
-
     expect(
       await element(by.css('div.series')).getText()
     ).toContain(
@@ -45,10 +49,11 @@ describe('Comics', () => {
 
   it('should display the selected comic cover when zoomed', async () => {
     await element(by.css('.materialboxed')).click();
+
     expect(
       await element(by.css('.materialboxed.active')).getAttribute('src')
     ).toContain(
-      'X-Men_First_Class_Vol_1_1'
+      'Uncanny_X-Men_Vol_1_5'
     );
   });
 
