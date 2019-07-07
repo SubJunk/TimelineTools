@@ -5398,6 +5398,17 @@ collections.push(
       'XFactorTheQuickandtheDeadVol11',
     ]
   ),
+  new Collection(
+    'X-Force Vol. 2: Old Ghosts',
+    '2014-6-10',
+    [
+      'XForceVol37',
+      'XForceVol38',
+      'XForceVol39',
+      'XForceVol310',
+      'XForceVol311',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
