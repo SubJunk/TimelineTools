@@ -5416,6 +5416,16 @@ collections.push(
       'XForceVol312',
     ]
   ),
+  new Collection(
+    'X-Men: Worlds Apart',
+    '2009-6-10',
+    [
+      'XMenWorldsApartVol11',
+      'XMenWorldsApartVol12',
+      'XMenWorldsApartVol13',
+      'XMenWorldsApartVol14',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -5423,7 +5433,6 @@ collections.push(
     'X-Force Vol. 3: Not Forgotten',
     '2010-4-7',
     [
-      'XForceVol313',
       'XForceVol317',
       'XForceVol318',
       'XForceVol319',

@@ -2553,6 +2553,12 @@ addComicsInSeriesVolume('XMenvstheAvengersVol1', [
   [3, '1987-6'],
   [4, '1987-7']
 ]);
+addComicsInSeriesVolume('XMenWorldsApartVol1', [
+  [1, '2008-10-15'],
+  [2, '2008-11-19'],
+  [3, '2008,12-31'],
+  [4, '2009-1-28']
+]);
 addComicsInSeriesVolume('XUniverseVol1', [
   [1, '1995-5'],
   [2, '1995-6']

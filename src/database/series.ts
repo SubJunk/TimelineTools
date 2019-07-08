@@ -235,6 +235,7 @@ series.push(
   new Series('X-MEN: THE MAGNETO WAR 1', {1: 1999}),
   new Series('X-Men: The Unlikely Saga of Xavier, Magneto and Stan', {1: 2006}),
   new Series('X-Men: The Wedding Album', {1: 1994}),
+  new Series('X-Men: Worlds Apart', {1: 2008}),
   new Series('X-Treme X-Men', {1: 2001}),
   new Series('X-Treme X-Men Annual', {1: 2002}),
   new Series('X-Treme X-Men: Mekanix', {1: 2001}),
