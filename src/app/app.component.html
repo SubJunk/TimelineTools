@@ -80,7 +80,7 @@
   <i class="material-icons search-toggle">search</i>
   <input type="text" [(ngModel)]="searchText" (ngModelChange)="postSearchActions(searchText)" placeholder="Search" />
   <ul class="searchResults" *ngIf="searchText">
-    <li *ngFor="let item of itemsToSearch | filter: searchText | limitTo">
+    <li *ngFor="let item of itemsToSearch | filter: searchText | limitTo" class="search-result">
       <a (click)="search(item)" class="waves-effect hoverable cover-thumbnail">
         <img
           class="responsive-img"
@@ -89,7 +89,7 @@
               https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 1x'"
           [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg'"
         >
-        <div class='search-result'>{{item.displayText}}</div>
+        {{item.displayText}}
       </a>
     </li>
   </ul>
