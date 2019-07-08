@@ -5381,6 +5381,34 @@ collections.push(
       'XFactorVol334',
     ]
   ),
+  new Collection(
+    'Secret Invasion: X-Men',
+    '2009-3-25',
+    [
+      'SecretInvasionXMenVol11',
+      'SecretInvasionXMenVol12',
+      'SecretInvasionXMenVol13',
+      'SecretInvasionXMenVol14',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
+    '2014-6-10',
+    [
+      'XFactorTheQuickandtheDeadVol11',
+    ]
+  ),
+  new Collection(
+    'X-Force Vol. 2: Old Ghosts',
+    '2014-6-10',
+    [
+      'XForceVol37',
+      'XForceVol38',
+      'XForceVol39',
+      'XForceVol310',
+      'XForceVol311',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -5415,7 +5443,6 @@ collections.push(
     '2014-6-10',
     [
       'XFactorLaylaMillerVol11',
-      'XFactorTheQuickandtheDeadVol11',
     ]
   ),
   new Collection(
