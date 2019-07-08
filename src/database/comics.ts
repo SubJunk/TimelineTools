@@ -972,7 +972,7 @@ addComicsInSeriesVolume('NYXVol1', [
   [7, '2005-9-28'],
 ]);
 addComicsInSeriesVolume('NYXNoWayHomeVol1', [
-  [1, '2008-10-6'],
+  [1, '2008-8-6'],
   [2, '2008-9-10'],
   [3, '2008-10-15'],
   [4, '2008-12-3'],
