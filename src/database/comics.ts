@@ -682,6 +682,9 @@ addComicsInSeriesVolume('KaZarVol1', [
   [2, '1970-12-1'],
   [3, '1971-3-1']
 ]);
+addComicsInSeriesVolume('KingSizeCableSpectacularVol1', [
+  [1, '2008-9-10'],
+]);
 addComicsInSeriesVolume('LoganVol1', [
   [1, '2008-3-5'],
   [2, '2008-4-2'],

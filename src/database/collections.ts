@@ -5362,7 +5362,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Cable Vol. 2: Waiting for the End of the World (Partial)',
+    'Cable Vol. 2: Waiting for the End of the World',
     '2009-5-27',
     [
       'CableVol26',
@@ -5433,6 +5433,7 @@ collections.push(
     'X-Force Vol. 3: Not Forgotten',
     '2010-4-7',
     [
+      'XForceVol313',
       'XForceVol317',
       'XForceVol318',
       'XForceVol319',

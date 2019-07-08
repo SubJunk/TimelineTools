@@ -113,6 +113,7 @@ series.push(
   new Series('Iron Man: Director of S.H.I.E.L.D.', {1: 2007}),
   new Series('Irredeemable Ant-Man', {1: 2006}),
   new Series('Ka-Zar', {1: 1970}),
+  new Series('King-Size Cable Spectacular', {1: 2008}),
   new Series('Logan', {1: 2008}),
   new Series('Machine Man/Bastion Annual', {1: 1998}),
   new Series('Madrox', {1: 2004}),
