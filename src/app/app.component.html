@@ -156,6 +156,7 @@
       </div>
       <div class="expanded-panel" *ngIf="comic.id === expandedComicId">
         <a *ngIf="comic.link" class="marvel-unlimited-link" href="{{comic.link}}" title="Open in Marvel Unlimited"></a>
+        <a *ngIf="expandedCollection.goodreadsId" class="goodreads-link" [href]="'https://www.goodreads.com/book/show/' + expandedCollection.goodreadsId" title="Open in Goodreads"></a>
         <div class="series">
           {{comic.series}} #{{comic.issue}}
           <a (click)="scrollToComic(comic.id)" tabindex="0" title="Scroll to this comic's position on the page" class="scroll-to-comic-button">

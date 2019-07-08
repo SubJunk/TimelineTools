@@ -1,4 +1,11 @@
-const apiKeyPublic  = '';
-const apiKeyPrivate = '';
+const marvelApiKeyPrivate = '';
+const marvelApiKeyPublic  = '';
+const goodreadsApiKeyPublic  = '';
+const goodreadsApiKeyPrivate = '';
 
-export { apiKeyPublic, apiKeyPrivate };
+export {
+  goodreadsApiKeyPrivate,
+  goodreadsApiKeyPublic,
+  marvelApiKeyPrivate,
+  marvelApiKeyPublic,
+};

@@ -18,6 +18,7 @@ export interface Collection {
   allCollectionComics: Array<Comic>;
   comicIds: Array<string>;
   comics: Array<Comic>;
+  goodreadsId: string;
   id: string;
   image: string;
   monthPublished: number;
