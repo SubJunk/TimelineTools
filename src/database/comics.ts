@@ -682,6 +682,9 @@ addComicsInSeriesVolume('KaZarVol1', [
   [2, '1970-12-1'],
   [3, '1971-3-1']
 ]);
+addComicsInSeriesVolume('KingSizeCableSpectacularVol1', [
+  [1, '2008-9-10'],
+]);
 addComicsInSeriesVolume('LoganVol1', [
   [1, '2008-3-5'],
   [2, '2008-4-2'],
@@ -2552,6 +2555,12 @@ addComicsInSeriesVolume('XMenvstheAvengersVol1', [
   [2, '1987-5'],
   [3, '1987-6'],
   [4, '1987-7']
+]);
+addComicsInSeriesVolume('XMenWorldsApartVol1', [
+  [1, '2008-10-15'],
+  [2, '2008-11-19'],
+  [3, '2008-12-31'],
+  [4, '2009-1-28']
 ]);
 addComicsInSeriesVolume('XUniverseVol1', [
   [1, '1995-5'],

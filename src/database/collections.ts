@@ -5362,7 +5362,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Cable Vol. 2: Waiting for the End of the World (Partial)',
+    'Cable Vol. 2: Waiting for the End of the World',
     '2009-5-27',
     [
       'CableVol26',
@@ -5370,6 +5370,7 @@ collections.push(
       'CableVol28',
       'CableVol29',
       'CableVol210',
+      'KingSizeCableSpectacularVol11',
     ]
   ),
   new Collection(
@@ -5414,6 +5415,16 @@ collections.push(
     '2010-4-7',
     [
       'XForceVol312',
+    ]
+  ),
+  new Collection(
+    'X-Men: Worlds Apart',
+    '2009-6-10',
+    [
+      'XMenWorldsApartVol11',
+      'XMenWorldsApartVol12',
+      'XMenWorldsApartVol13',
+      'XMenWorldsApartVol14',
     ]
   ),
   /**
