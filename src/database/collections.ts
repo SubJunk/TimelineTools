@@ -5370,6 +5370,7 @@ collections.push(
       'CableVol28',
       'CableVol29',
       'CableVol210',
+      'KingSizeCableSpectacularVol11',
     ]
   ),
   new Collection(
