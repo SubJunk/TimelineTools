@@ -163,6 +163,8 @@
             <i class="material-icons">near_me</i>
           </a>
         </div>
+        <!-- <a *ngIf="expandedCollection.goodreadsId" (click)="goodreadsMarkCollectionRead()">Mark read</a> -->
+        <div *ngIf="expandedCollection.goodreadsReadStatus">{{expandedCollection.goodreadsReadStatus ? expandedCollection.goodreadsReadStatus : 'Loading Goodreads status...'}}</div>
         <div class="title" *ngFor="let title of comic.titles">{{title}}</div>
         <div class="date">{{comic.yearPublished}} / {{comic.monthPublished}}</div>
         <div class="collection-comics">

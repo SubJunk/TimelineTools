@@ -108,6 +108,7 @@ export class AppComponent implements OnInit {
   isShowCollections = false;
   searchText = '';
   doSpeedProfile = false;
+  allGoodreadsReviewsByUser = [];
 
   // API variables
   timestamp: number;
@@ -139,6 +140,73 @@ export class AppComponent implements OnInit {
   }
 
   /**
+   * @returns up to 200 reviews from Goodreads
+   */
+  getGoodreadsReviewsPage = (page = 1, resultsPerPage = 200) => {
+    const userId = '56482868';
+    const url = 'https://www.goodreads.com/review/list/' + userId + '.xml';
+
+    const params = new HttpParams()
+      .set('id', userId)
+      .set('v', '2')
+      .set('per_page', resultsPerPage.toString())
+      .set('page', page.toString())
+      .set('key', this.goodreadsApiKeyPublic);
+
+    return this.http.get(this.corsAnywhereUrl + url, {params, responseType: 'text'});
+  }
+
+  /**
+   * @returns the collection data from the Goodreads API
+   */
+  getGoodreadsReviewList = () => {
+    const resultsPerPage = 200;
+
+    this.getGoodreadsReviewsPage(1, resultsPerPage)
+        .subscribe(
+          (response) => {
+            parseString(response, (err, result) => {
+              if (err) {
+                return console.error(err);
+              }
+
+              const reviewsFirstPage = result.GoodreadsResponse.reviews[0].review;
+              this.allGoodreadsReviewsByUser = this.allGoodreadsReviewsByUser.concat(reviewsFirstPage);
+
+              // Now we know how many reviews the user has done, we can request any extra pages in parallel
+              const reviewsTotalCount = result.GoodreadsResponse.reviews[0].$.total;
+              const additionalPagesToRequest = Math.floor(reviewsTotalCount / resultsPerPage);
+
+              // We already have page 1 results at this point, so skip them
+              const pageOffset = 1;
+              for (let pageIncrement = 1; pageIncrement <= additionalPagesToRequest; pageIncrement++) {
+                this.getGoodreadsReviewsPage(pageIncrement + pageOffset)
+                    .subscribe(
+                      (subsequentResolve) => {
+                        parseString(subsequentResolve, (subsequentErr, subsequentResult) => {
+                          if (subsequentErr) {
+                            return console.error(subsequentErr);
+                          }
+
+                          const reviewsSubsequentPage = subsequentResult.GoodreadsResponse.reviews[0].review;
+                          this.allGoodreadsReviewsByUser = this.allGoodreadsReviewsByUser.concat(reviewsSubsequentPage);
+                          console.log(3,this.allGoodreadsReviewsByUser);
+                        });
+                      },
+                      (subsequentErr) => {
+                        throw subsequentErr;
+                      }
+                    );
+              }
+            });
+          },
+          (err) => {
+            throw err;
+          }
+        );
+  }
+
+  /**
    * Writes a "link" value to the comic object, which is a URL to the
    * comic on Marvel Unlimited.
    *
@@ -158,9 +226,9 @@ export class AppComponent implements OnInit {
         }
 
         /*
-        * Sometimes the Marvel API returns variants with no ID or 0, so
-        * keep looping until we get a real ID.
-        */
+         * Sometimes the Marvel API returns variants with no ID or 0, so
+         * keep looping until we get a real ID.
+         */
         _.each(response.data.results, (result) => {
           if (result.digitalId && result.digitalId !== 0) {
             comic.link = 'https://read.marvel.com/#book/' + result.digitalId;
@@ -384,6 +452,9 @@ export class AppComponent implements OnInit {
         );
     }
 
+    /*
+     * Sets the Goodreads collection ID and its read status
+     */
     this.setGoodreadsCollectionData(this.expandedCollection)
         .subscribe(
           (response) => {
@@ -395,6 +466,16 @@ export class AppComponent implements OnInit {
               const collectionOnGoodreads = result.GoodreadsResponse.search[0].results[0].work[0].best_book[0];
 
               this.expandedCollection.goodreadsId = collectionOnGoodreads.id[0]._;
+
+              const goodreadsDataForThisCollection = _.find(this.allGoodreadsReviewsByUser, (review) => {
+                return review.book[0].id[0]._ ===  this.expandedCollection.goodreadsId;
+              });
+
+              if (goodreadsDataForThisCollection) {
+                this.expandedCollection.goodreadsReadStatus = goodreadsDataForThisCollection.read_count[0] > 0 ? 'read' : 'unread';
+              } else {
+                this.expandedCollection.goodreadsReadStatus = 'unread';
+              }
             });
           },
           (err) => {
@@ -849,6 +930,14 @@ export class AppComponent implements OnInit {
 
       this.subtractLabelWidthsFromLeftPositions();
     });
+
+    /*
+     * Go off and get the review list from Goodreads for this user.
+     * Note that this is done asynchronously with no callback because it
+     * will likely be finished before the user needs it. We can implement
+     * more stuff if it ends up taking too long and causing race conditions.
+     */
+    this.getGoodreadsReviewList();
   }
 
   /**
@@ -1189,63 +1278,63 @@ export class AppComponent implements OnInit {
    * specified (id and gc)
    */
   useGetParameters = () => {
-      const searchParams = this.route.snapshot.queryParams;
+    const searchParams = this.route.snapshot.queryParams;
 
-      if (searchParams.id) {
-        this.scrollToComic(searchParams.id);
-      }
+    if (searchParams.id) {
+      this.scrollToComic(searchParams.id);
+    }
 
-      if (searchParams.showCollections) {
-        this.toggleShowCollections('1');
-      }
+    if (searchParams.showCollections) {
+      this.toggleShowCollections('1');
+    }
 
-      /**
-       * The garbage collector.
-       *
-       * This picks up any orphaned comics and series that would
-       * not cause errors but just take up space.
-       *
-       * Note there is no need to check that the comicIds in
-       * collections map to comics, because that would cause big
-       * errors that we already watch out for.
-       */
-      if (searchParams.gc) {
-        let foundComic;
-        let isClean = true;
-        const gcConsolePrepend = 'Garbage Collector: ';
+    /**
+     * The garbage collector.
+     *
+     * This picks up any orphaned comics and series that would
+     * not cause errors but just take up space.
+     *
+     * Note there is no need to check that the comicIds in
+     * collections map to comics, because that would cause big
+     * errors that we already watch out for.
+     */
+    if (searchParams.gc) {
+      let foundComic;
+      let isClean = true;
+      const gcConsolePrepend = 'Garbage Collector: ';
 
-        // Check that each comic is referenced by a collection
-        _.each(this.comics, (comic) => {
-          foundComic = _.find(this.collections, (collection) => {
-            return collection.comicIds.includes(comic.id);
-          });
-
-          if (!foundComic) {
-            isClean = false;
-            console.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
-          }
+      // Check that each comic is referenced by a collection
+      _.each(this.comics, (comic) => {
+        foundComic = _.find(this.collections, (collection) => {
+          return collection.comicIds.includes(comic.id);
         });
 
-        if (isClean) {
-          console.log(gcConsolePrepend + 'All comics are referenced by collections.');
+        if (!foundComic) {
+          isClean = false;
+          console.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
         }
+      });
 
-        // Check that each seriesVolume is referenced by a comic
-        isClean = true;
-        _.each(this.seriesVolumes, (seriesVolume) => {
-          foundComic = _.find(this.comics, (comic) => {
-            return comic.seriesVolumeId === seriesVolume.id;
-          });
+      if (isClean) {
+        console.log(gcConsolePrepend + 'All comics are referenced by collections.');
+      }
 
-          if (!foundComic) {
-            isClean = false;
-            console.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
-          }
+      // Check that each seriesVolume is referenced by a comic
+      isClean = true;
+      _.each(this.seriesVolumes, (seriesVolume) => {
+        foundComic = _.find(this.comics, (comic) => {
+          return comic.seriesVolumeId === seriesVolume.id;
         });
 
-        if (isClean) {
-          console.log(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
+        if (!foundComic) {
+          isClean = false;
+          console.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
         }
+      });
+
+      if (isClean) {
+        console.log(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
       }
+    }
   }
 }
