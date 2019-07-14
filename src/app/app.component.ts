@@ -131,9 +131,9 @@ export class AppComponent implements OnInit {
    * @param collection the collection object
    * @returns the collection data from the Goodreads API
    */
-  setGoodreadsCollectionData = (collection: Collection) => {
+  setGoodreadsCollectionData = () => {
     const params = new HttpParams()
-      .set('q', collection.title)
+      .set('q', this.expandedCollection.title)
       .set('key', this.goodreadsApiKeyPublic);
 
     return this.http.get(this.corsAnywhereUrl + this.goodreadsApiBaseUrl, {params, responseType: 'text'});
@@ -190,7 +190,6 @@ export class AppComponent implements OnInit {
 
                           const reviewsSubsequentPage = subsequentResult.GoodreadsResponse.reviews[0].review;
                           this.allGoodreadsReviewsByUser = this.allGoodreadsReviewsByUser.concat(reviewsSubsequentPage);
-                          console.log(3,this.allGoodreadsReviewsByUser);
                         });
                       },
                       (subsequentErr) => {
@@ -455,7 +454,7 @@ export class AppComponent implements OnInit {
     /*
      * Sets the Goodreads collection ID and its read status
      */
-    this.setGoodreadsCollectionData(this.expandedCollection)
+    this.setGoodreadsCollectionData()
         .subscribe(
           (response) => {
             parseString(response, (err, result) => {
@@ -472,7 +471,7 @@ export class AppComponent implements OnInit {
               });
 
               if (goodreadsDataForThisCollection) {
-                this.expandedCollection.goodreadsReadStatus = goodreadsDataForThisCollection.read_count[0] > 0 ? 'read' : 'unread';
+                this.expandedCollection.goodreadsReadStatus = goodreadsDataForThisCollection.read_count[0] > 0 ? 'read' : 'wanttoread';
               } else {
                 this.expandedCollection.goodreadsReadStatus = 'unread';
               }
