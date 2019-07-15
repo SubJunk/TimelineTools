@@ -4225,6 +4225,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
+    [
+      'XMenUnlimitedVol29',
+    ]
+  ),
+  new Collection(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
@@ -5314,8 +5321,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Manifest Destiny (Partial)',
-    '2009-10',
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
     [
       'UncannyXMenVol1500',
     ]
@@ -5341,8 +5348,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Manifest Destiny (Partial)',
-    '2009-10',
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
     [
       'UncannyXMenVol1501',
       'UncannyXMenVol1502',
@@ -5427,9 +5434,30 @@ collections.push(
       'XMenWorldsApartVol14',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
+    [
+      'UncannyXMenVol1504',
+      'UncannyXMenVol1505',
+      'UncannyXMenAnnualVol42',
+      'UncannyXMenVol1506',
+      'UncannyXMenVol1507',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
+    [
+      'UncannyXMenVol1508',
+      'UncannyXMenVol1509',
+      'UncannyXMenVol1510',
+      'UncannyXMenVol1511',
+    ]
+  ),
   new Collection(
     'X-Force Vol. 3: Not Forgotten',
     '2010-4-7',
