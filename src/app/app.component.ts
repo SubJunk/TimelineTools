@@ -486,7 +486,6 @@ export class AppComponent implements OnInit {
        * by making the month wider.
        */
       if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
-        const that = this;
         const publishedYearKey = _.findKey(this.dates, { year: comic.yearPublished });
         const publishedMonthKey = _.findKey(this.dates[publishedYearKey].months, { number: comic.monthPublished });
         this.dates[publishedYearKey].months[publishedMonthKey].styles['width.px'] += VISUAL_BLOCK_SIZE;
