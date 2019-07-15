@@ -42,29 +42,42 @@ describe('Comics', () => {
 
     await element(by.css('img.responsive-img.current')).isDisplayed();
 
-    expect(
-      await element(by.css('.next-collection-title')).getText()
-    ).toContain(
-      'Mutant Mayhem'
-    );
-
+    browser.actions().mouseMove(element(by.css('.next-collection-title'))).perform().then(() => {
+      // perform another mousemove to try and trigger tooltip
+      browser.actions().mouseMove({x: 5, y: 5}).perform();
+      const tooltip = $('.next-collection-title');
+      // wait for present AND visible
+      const visible = EC.visibilityOf(tooltip);
+      const present = EC.presenceOf(tooltip);
+      browser.wait(EC.and(present, visible), 5000, 'Expected tooltip to appear').then(() => {
+          expect(tooltip.getText()).toContain('Mutant Mayhem');
+      });
+  });
+    // expect(
+    //   await element(by.css('.next-collection-title')).getText()
+    // ).toContain(
+    //   'Mutant Mayhem'
+    // );
     await element(by.css('.button-next-collection')).click();
 
-    expect(
-      await element(by.css('.next-collection-title')).getText()
-    ).toContain(
-      'X-Men: First Class - Band of Brothers'
-    );
+    browser.actions().mouseMove(element(by.css('.next-collection-title'))).perform().then(() => {
+      // perform another mousemove to try and trigger tooltip
+      browser.actions().mouseMove({x: 5, y: 5}).perform();
+      const tooltip = $('.next-collection-title');
+      // wait for present AND visible
+      const visible = EC.visibilityOf(tooltip);
+      const present = EC.presenceOf(tooltip);
+      browser.wait(EC.and(present, visible), 5000, 'Expected tooltip to appear').then(() => {
+          expect(tooltip.getText()).toContain('X-Men: First Class - Band of Brothers');
+      });
+  });
+    // expect(
+    //   await element(by.css('.next-collection-title')).getText()
+    // ).toContain(
+    //   'X-Men: First Class - Band of Brothers'
+    // );
 
-  //   it('Test modal dialog', function() {
-  //     browser.get(mainPage);
-  //     element(by.id('addNewClient')).click().then(function() {
-  //         browser.wait(element(by.id('newClientModal')).isDisplayed, 5000);
-  //     }).then(function() {
-  //         element(by.id('clientLastName')).sendKeys('Smith');
-  //     }).then(function() {
-  //         ...;
-  //     });
+
   // });
     // await browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform().then(function() {
     //   browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 5000);
