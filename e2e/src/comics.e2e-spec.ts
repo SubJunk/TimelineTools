@@ -83,11 +83,17 @@ describe('Comics', () => {
     // navigate forward and check the text updates
     await element(by.css('.button-next-comic')).click();
 
-    expect(
-      await element(by.css('.next-comic-title')).getText()
-    ).toContain(
-      'X-Men: First Class #3'
-    );
+    browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform().then(() => {
+      // perform another mousemove to try and trigger tooltip
+      browser.actions().mouseMove({x: 5, y: 5}).perform();
+      const tooltip = $('.next-comic-title');
+      // wait for present AND visible
+      const visible = EC.visibilityOf(tooltip);
+      const present = EC.presenceOf(tooltip);
+      browser.wait(EC.and(present, visible), 5000, 'Expected tooltip to appear').then(() => {
+        expect(tooltip.getText()).toContain('X-Men: First Class #3');
+      });
+  });
 
     await element(by.css('.materialboxed')).click();
 
