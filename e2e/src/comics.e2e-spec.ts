@@ -130,4 +130,4 @@ describe('Comics', () => {
       level: logging.Level.SEVERE,
     } as logging.Entry));
   });
-})
+});
