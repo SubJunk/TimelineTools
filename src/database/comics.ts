@@ -1561,13 +1561,21 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [497, '2008-4-23'],
   [498, '2008-5-29'],
   [499, '2008-6-25'],
+  [500, '2008-7-23'],
+  [501, '2008-8-20'],
+  [502, '2008-9-17'],
+  [503, '2008-10-15'],
+  [504, '2008-11-19'],
+  [505, '2008-12-17'],
+  [506, '2009-2-18'],
+  [507, '2009-3-18'],
+  [508, '2009-4-15'],
+  [509, '2009-4-29'],
+  [510, '2009-5-20'],
+  [511, '2009-6-10'],
   /**
    * Complete until here
    */
-  [500, '2008-9', ['SFX (1 of 3)']],
-  [501, '2008-10', ['SFX (2 of 3): All Tomorrow\'s Parties']],
-  [502, '2008-11', ['SFX (3 of 3) - Beginning to See the Light']],
-  [503, '2008-12', ['Beginning To See The Light']],
   [523, '2010-6', ['Second Coming (Chapter Two)']],
   [524, '2010-7', ['Second Coming (Chapter Six)']],
   [525, '2010-8', ['Second Coming (Chapter Ten)']],
@@ -1598,7 +1606,10 @@ addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
 ]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol2', [[1, '2000-2']]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol3', [[1, '2002-2']]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol4', [[1, '2006-6-21']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol4', [
+  [1, '2006-6-21'],
+  [2, '2009-1-21'],
+]);
 addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']]);
 addComicsInSeriesVolume('WarofKingsSagaVol1', [[1, '2008-12-16']]);
 addComicsInSeriesVolume('WeaponXVol1', [
@@ -2545,7 +2556,10 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [48, '2003-7-15'],
   [49, '2003-8'],
 ]);
-addComicsInSeriesVolume('XMenUnlimitedVol2', [[12, '2005-12-7']]);
+addComicsInSeriesVolume('XMenUnlimitedVol2', [
+  [9, '2005-8-1'],
+  [12, '2005-12-7'],
+]);
 addComicsInSeriesVolume('XMenvsBroodVol1', [
   [1, '1996-9'],
   [2, '1996-10'],
