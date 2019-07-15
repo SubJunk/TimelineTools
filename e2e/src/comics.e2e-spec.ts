@@ -66,15 +66,27 @@ describe('Comics', () => {
   //         ...;
   //     });
   // });
-    await browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform().then(function() {
-      browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 5000);
-    }).then(function() {
-      expect(
-        element(by.css('.next-comic-title')).getText()
-      ).toContain(
-        'X-Men: First Class #2'
-      );
-    });
+    // await browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform().then(function() {
+    //   browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 5000);
+    // }).then(function() {
+    //   expect(
+    //     element(by.css('.next-comic-title')).getText()
+    //   ).toContain(
+    //     'X-Men: First Class #2'
+    //   );
+    // });
+
+    browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform().then(() => {
+      // perform another mousemove to try and trigger tooltip
+      browser.actions().mouseMove({x: 5, y: 5}).perform();
+      const tooltip = $('.next-comic-title');
+      // wait for present AND visible
+      const visible = EC.visibilityOf(tooltip);
+      const present = EC.presenceOf(tooltip);
+      browser.wait(EC.and(present, visible), 5000, 'Expected tooltip to appear').then(() => {
+          expect(tooltip.getText()).toContain('X-Men: First Class #2');
+      });
+  });
    // await browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 10000);
     // Waits for the element to contain the text
 
