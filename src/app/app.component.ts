@@ -13,6 +13,7 @@ import {
   Collection,
   CollectionColor,
   Comic,
+  DateYear,
   MarvelAPISeriesResponse,
   MarvelAPISeriesResponseResult,
   SeriesVolume,
@@ -60,7 +61,7 @@ export class AppComponent implements OnInit {
   series: Array<object>;
   seriesVolumes: Array<SeriesVolume>;
   uniqueCollections: Array<Collection> = [];
-  dates = [];
+  dates: Array<DateYear> = [];
 
   // An array of objects that contain search results for comics and collections
   public itemsToSearch = [];
@@ -485,10 +486,10 @@ export class AppComponent implements OnInit {
        * by making the month wider.
        */
       if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
+        const that = this;
         const publishedYearKey = _.findKey(this.dates, { year: comic.yearPublished });
         const publishedMonthKey = _.findKey(this.dates[publishedYearKey].months, { number: comic.monthPublished });
-
-        this.dates[publishedYearKey].months[publishedMonthKey].styles.width += VISUAL_BLOCK_SIZE;
+        this.dates[publishedYearKey].months[publishedMonthKey].styles['width.px'] += VISUAL_BLOCK_SIZE;
         comic.containerStyles['left.px'] += VISUAL_BLOCK_SIZE + globalHorizontalOffset;
         globalHorizontalOffset += VISUAL_BLOCK_SIZE;
       } else {

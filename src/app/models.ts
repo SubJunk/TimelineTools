@@ -62,6 +62,19 @@ interface ComicStyles {
   'marginTop.px': string;
 }
 
+// The following three models are used to create the years and months
+export interface DateYear {
+  year: number;
+  months: Array<DateMonth>;
+}
+interface DateMonth {
+  number: number;
+  styles: DateStyles;
+}
+interface DateStyles {
+  'width.px': number;
+}
+
 export interface SeriesVolume {
   id: string;
   marvelId: string;
