@@ -42,7 +42,7 @@ describe('Comics', () => {
 
     await element(by.css('img.responsive-img.current')).isDisplayed();
 
-    browser.actions().mouseMove(element(by.css('.next-collection-title'))).perform().then(() => {
+    browser.actions().mouseMove(element(by.css('.button-next-collection'))).perform().then(() => {
       // perform another mousemove to try and trigger tooltip
       browser.actions().mouseMove({x: 5, y: 5}).perform();
       const tooltip = $('.next-collection-title');
@@ -50,7 +50,7 @@ describe('Comics', () => {
       const visible = EC.visibilityOf(tooltip);
       const present = EC.presenceOf(tooltip);
       browser.wait(EC.and(present, visible), 5000, 'Expected tooltip to appear').then(() => {
-          expect(tooltip.getText()).toContain('Mutant Mayhem');
+        expect(tooltip.getText()).toContain('Mutant Mayhem');
       });
   });
     // expect(
@@ -60,7 +60,7 @@ describe('Comics', () => {
     // );
     await element(by.css('.button-next-collection')).click();
 
-    browser.actions().mouseMove(element(by.css('.next-collection-title'))).perform().then(() => {
+    browser.actions().mouseMove(element(by.css('.button-next-collection'))).perform().then(() => {
       // perform another mousemove to try and trigger tooltip
       browser.actions().mouseMove({x: 5, y: 5}).perform();
       const tooltip = $('.next-collection-title');
@@ -68,7 +68,7 @@ describe('Comics', () => {
       const visible = EC.visibilityOf(tooltip);
       const present = EC.presenceOf(tooltip);
       browser.wait(EC.and(present, visible), 5000, 'Expected tooltip to appear').then(() => {
-          expect(tooltip.getText()).toContain('X-Men: First Class - Band of Brothers');
+        expect(tooltip.getText()).toContain('X-Men: First Class - Band of Brothers');
       });
   });
     // expect(
@@ -97,7 +97,7 @@ describe('Comics', () => {
       const visible = EC.visibilityOf(tooltip);
       const present = EC.presenceOf(tooltip);
       browser.wait(EC.and(present, visible), 5000, 'Expected tooltip to appear').then(() => {
-          expect(tooltip.getText()).toContain('X-Men: First Class #2');
+        expect(tooltip.getText()).toContain('X-Men: First Class #2');
       });
   });
    // await browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 10000);
