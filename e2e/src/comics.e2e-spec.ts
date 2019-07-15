@@ -56,15 +56,29 @@ describe('Comics', () => {
       'X-Men: First Class - Band of Brothers'
     );
 
-    await browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform();
-    await browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 10000);
+  //   it('Test modal dialog', function() {
+  //     browser.get(mainPage);
+  //     element(by.id('addNewClient')).click().then(function() {
+  //         browser.wait(element(by.id('newClientModal')).isDisplayed, 5000);
+  //     }).then(function() {
+  //         element(by.id('clientLastName')).sendKeys('Smith');
+  //     }).then(function() {
+  //         ...;
+  //     });
+  // });
+    await browser.actions().mouseMove(element(by.css('.button-next-comic'))).perform().then(function() {
+      browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 5000);
+    }).then(function() {
+      expect(
+        element(by.css('.next-comic-title')).getText()
+      ).toContain(
+        'X-Men: First Class #2'
+      );
+    });
+   // await browser.wait(EC.textToBePresentInElement($('.next-comic-title'), 'X-Men: First Class'), 10000);
     // Waits for the element to contain the text
 
-    expect(
-      await element(by.css('.next-comic-title')).getText()
-    ).toContain(
-      'X-Men: First Class #2'
-    );
+
 
     // navigate forward and check the text updates
     await element(by.css('.button-next-comic')).click();
@@ -91,4 +105,4 @@ describe('Comics', () => {
       level: logging.Level.SEVERE,
     } as logging.Entry));
   });
-});
+})
