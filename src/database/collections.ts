@@ -4225,7 +4225,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (partial)',
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
       'XMenUnlimitedVol29',
@@ -5321,7 +5321,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (partial)',
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
       'UncannyXMenVol1500',
@@ -5348,7 +5348,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (partial)',
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
       'UncannyXMenVol1501',
@@ -5435,7 +5435,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (partial)',
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
       'UncannyXMenVol1504',
@@ -5449,7 +5449,7 @@ collections.push(
    * Roughly ordered for flow of crossovers until here.
    */
   new Collection(
-    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (partial)',
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
       'UncannyXMenVol1508',
