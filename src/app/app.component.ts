@@ -802,8 +802,9 @@ export class AppComponent implements OnInit {
       // Init floating menu on the right
       // $('.fixed-action-btn').floatingActionButton({direction: 'left'});
       const elems = document.querySelectorAll('.fixed-action-btn');
-      const instances = M.FloatingActionButton.init(elems, {direction: 'left'});
-
+      const tooltips = document.querySelectorAll('.btn-floating.blue.tooltipped,\
+        .btn-floating.grey.tooltipped, .btn-floating.green.tooltipped');
+      const instances = [M.FloatingActionButton.init(elems, {direction: 'left'}), M.Tooltip.init(tooltips, {position: 'top'})];
       // Init "Info & Credits" modal
       const infoModal = $('#info');
       this.infoModalInstance = _.first(M.Modal.init(infoModal));
