@@ -20,14 +20,14 @@
     }
   },
   "dependencies": {
-    "@angular/animations": "~8.0.0",
-    "@angular/common": "~8.0.0",
-    "@angular/compiler": "~8.0.0",
-    "@angular/core": "~8.0.0",
-    "@angular/forms": "~8.0.0",
-    "@angular/platform-browser": "~8.0.0",
-    "@angular/platform-browser-dynamic": "~8.0.0",
-    "@angular/router": "~8.0.0",
+    "@angular/animations": "~8.1.2",
+    "@angular/common": "~8.1.2",
+    "@angular/compiler": "~8.1.2",
+    "@angular/core": "~8.1.2",
+    "@angular/forms": "~8.1.2",
+    "@angular/platform-browser": "~8.1.2",
+    "@angular/platform-browser-dynamic": "~8.1.2",
+    "@angular/router": "~8.1.2",
     "materialize-css": "^1.0.0",
     "moment": "^2.24.0",
     "rxjs": "~6.5.2",
@@ -38,8 +38,8 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.0",
     "@angular/cli": "^8.0.3",
-    "@angular/compiler-cli": "~8.0.0",
-    "@angular/language-service": "~8.0.0",
+    "@angular/compiler-cli": "~8.1.2",
+    "@angular/language-service": "~8.1.2",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/lodash": "^4.14.134",
@@ -50,15 +50,15 @@
     "jasmine-spec-reporter": "~4.2.1",
     "jquery": "^3.4.1",
     "karma": "~4.2.0",
-    "karma-chrome-launcher": "~2.2.0",
+    "karma-chrome-launcher": "~3.0.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "postcss-less": "^3.1.4",
     "protractor": "~5.4.0",
     "stylelint": "^10.1.0",
-    "ts-node": "~7.0.0",
+    "ts-node": "~8.3.0",
     "tsconfig-paths": "^3.8.0",
-    "tslint": "~5.15.0"
+    "tslint": "~5.18.0"
   }
 }
