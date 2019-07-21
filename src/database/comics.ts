@@ -2077,7 +2077,7 @@ addComicsInSeriesVolume('XInfernusVol1', [
   [1, '2008-12-3'],
   [2, '2009-1-14'],
   [3, '2009-2-11'],
-  [3, '2009-3-25'],
+  [4, '2009-3-25'],
 ]);
 addComicsInSeriesVolume('XInfernusSagaVol1', [[1, '2008-11-29']]);
 addComicsInSeriesVolume('XManVol1', [
