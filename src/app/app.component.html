@@ -103,8 +103,6 @@
     </li>
   </ul>
 </div>
-<!-- I don't think the class is the right way to do this -->
-<ng-container ng-class="{true: 'collection-order', false: 'reading-order'} [isShowReadingOrder === true]">
   <ul class="years" *ngIf=!isShowReadingOrder> <!-- hides years if in reading order -->
   <li *ngFor="let year of dates" class="year"> <!-- track by year -->
     <span>{{year.year}}</span>

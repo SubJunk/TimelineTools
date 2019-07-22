@@ -402,6 +402,13 @@ export class AppComponent implements OnInit {
     this.collections   = Collections.getCollections();
     this.series        = SeriesVolumes.getSeries();
     this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
+    const comicsInReadingOrder = _.cloneDeep(this.comics);
+
+    let positionIterator = 0;
+    _.each(comicsInReadingOrder, (comic) => {
+      positionIterator++;
+      comic['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
+    });
 
     // Sort the data by date
     this.comics = _.sortBy(this.comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
