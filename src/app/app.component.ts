@@ -13,7 +13,6 @@ import {
   Collection,
   CollectionColor,
   Comic,
-  DateYear,
   MarvelAPISeriesResponse,
   MarvelAPISeriesResponseResult,
   SeriesVolume,
@@ -61,7 +60,7 @@ export class AppComponent implements OnInit {
   series: Array<object>;
   seriesVolumes: Array<SeriesVolume>;
   uniqueCollections: Array<Collection> = [];
-  dates: Array<DateYear> = [];
+  dates = [];
 
   // An array of objects that contain search results for comics and collections
   public itemsToSearch = [];
@@ -100,6 +99,7 @@ export class AppComponent implements OnInit {
   currentComicIndexInCollection: number;
   currentCollectionIndexInCollections: number;
   isShowCollections = false;
+  isShowReadingOrder = false;
   searchText = '';
   doSpeedProfile = false;
 
@@ -488,7 +488,8 @@ export class AppComponent implements OnInit {
       if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
         const publishedYearKey = _.findKey(this.dates, { year: comic.yearPublished });
         const publishedMonthKey = _.findKey(this.dates[publishedYearKey].months, { number: comic.monthPublished });
-        this.dates[publishedYearKey].months[publishedMonthKey].styles['width.px'] += VISUAL_BLOCK_SIZE;
+
+        this.dates[publishedYearKey].months[publishedMonthKey].styles.width += VISUAL_BLOCK_SIZE;
         comic.containerStyles['left.px'] += VISUAL_BLOCK_SIZE + globalHorizontalOffset;
         globalHorizontalOffset += VISUAL_BLOCK_SIZE;
       } else {
@@ -507,7 +508,7 @@ export class AppComponent implements OnInit {
        * the last row.
        * Step two documented below.
        */
-      if (typeof currentSeriesVolume.verticalPosition !== 'undefined') {
+      if (currentSeriesVolume.verticalPosition) {
         comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
         currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
@@ -783,7 +784,6 @@ export class AppComponent implements OnInit {
         return collection.comicIds.includes(comic.id);
       });
     });
-
     setTimeout(() => {
       // Hide the initial data and display the real one
       $('app').fadeIn('slow');
@@ -1123,6 +1123,15 @@ export class AppComponent implements OnInit {
       this.isShowCollections = true;
     } else {
       this.isShowCollections = false;
+    }
+  }
+
+  toggleDisplayOrder = () => {
+    // Toggle display order to change classes for collection order or reading order
+    if (this.isShowReadingOrder === true) {
+      this.isShowReadingOrder = false;
+    } else {
+      this.isShowReadingOrder = true;
     }
   }
 

@@ -31,12 +31,14 @@
       </a>
     </li>
     <li>
+      <div class="chip">
         <div class="popover"><div>View reading or collection order</div></div>
-        <div class="chip">
-            <i class="material-icons" style=color:blue>scatter_plot</i>
-            <i class="material-icons">linear_scale</i>
+          <a class="btn-flat e4e4e4" (click)="toggleDisplayOrder()">
+            <i class="material-icons selected" [ngClass]="{selected: !isShowReadingOrder, unselected: isShowReadingOrder}">scatter_plot</i>
+            <i class="material-icons unselected" [ngClass]="{selected: isShowReadingOrder, unselected: !isShowReadingOrder}">linear_scale</i>
+          </a>
           </div>
-        </li>
+    </li>
     <li>
       <div class="popover"><div>View information and credits</div></div>
       <a (click)="toggleInfoModal()" class="btn-floating blue">
@@ -101,7 +103,8 @@
     </li>
   </ul>
 </div>
-<ul class="years">
+<ng-container ng-class="{true: 'collection-order', false: 'reading-order'} [isShowReadingOrder === true]">
+<ul class="years" *ngIf=!isShowReadingOrder>
   <li *ngFor="let year of dates" class="year"> <!-- track by year -->
     <span>{{year.year}}</span>
     <ul>
@@ -113,6 +116,7 @@
   <li *ngFor="let label of seriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
     <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
   </li>
+  <ng-container *ngIf=!isShowReadingOrder>
   <li *ngFor="let comic of comics; trackBy: trackByItemId" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles">
     <div class="scroll-anchor"></div>
     <div class="popover"><div>#{{comic.issue}}</div></div>
@@ -192,4 +196,6 @@
       </div>
     </div>
   </li>
+</ng-container>
 </ul>
+</ng-container>
