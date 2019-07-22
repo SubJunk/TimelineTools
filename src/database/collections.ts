@@ -5445,6 +5445,31 @@ collections.push(
       'UncannyXMenVol1507',
     ]
   ),
+  new Collection(
+    'Young X-Men - Volume 2: Books of Revelations (Partial)',
+    '2009-6-3',
+    [
+      'YoungXMenVol16',
+      'YoungXMenVol17',
+      'YoungXMenVol18',
+      'YoungXMenVol19',
+      'YoungXMenVol110',
+      'YoungXMenVol111',
+      'YoungXMenVol112',
+    ]
+  ),
+  new Collection(
+    'X-Infernus (Partial)',
+    '2009-7-1',
+    [
+      'XMenUnlimitedVol214',
+      'XInfernusVol11',
+      'XInfernusVol12',
+      'XInfernusVol13',
+      'XInfernusVol14',
+      'XInfernusSagaVol11',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */

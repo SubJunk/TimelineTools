@@ -2071,8 +2071,15 @@ addComicsInSeriesVolume('XForceCableAnnualVol1', [[1, '1995-12']]);
 addComicsInSeriesVolume('XForceSexandViolenceVol1', [
   [1, '2010-9'],
   [2, '2010-10'],
-  [3, '2010-11']
+  [3, '2010-11'],
 ]);
+addComicsInSeriesVolume('XInfernusVol1', [
+  [1, '2008-12-3'],
+  [2, '2009-1-14'],
+  [3, '2009-2-11'],
+  [4, '2009-3-25'],
+]);
+addComicsInSeriesVolume('XInfernusSagaVol1', [[1, '2008-11-29']]);
 addComicsInSeriesVolume('XManVol1', [
   [-1, '1997-7'],
   [1, '1995-3'],
@@ -2559,6 +2566,7 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
 addComicsInSeriesVolume('XMenUnlimitedVol2', [
   [9, '2005-8-1'],
   [12, '2005-12-7'],
+  [14, '2006-4-5'],
 ]);
 addComicsInSeriesVolume('XMenvsBroodVol1', [
   [1, '1996-9'],
@@ -2660,6 +2668,13 @@ addComicsInSeriesVolume('YoungXMenVol1', [
   [3, '2008-6-4'],
   [4, '2008-7-9'],
   [5, '2008-8-20'],
+  [6, '2008-9-17'],
+  [7, '2008-10-15'],
+  [8, '2008-11-19'],
+  [9, '2008-12-31'],
+  [10, '2009-1-28'],
+  [11, '2009-2-18'],
+  [12, '2009-3-18'],
 ]);
 
 class Comics {
