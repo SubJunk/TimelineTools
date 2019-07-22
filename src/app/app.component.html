@@ -34,8 +34,8 @@
       <div class="chip">
         <div class="popover"><div>View reading or collection order</div></div>
           <a class="btn-flat e4e4e4" (click)="toggleDisplayOrder()">
-            <i class="material-icons selected" [ngClass]="{selected: !isShowReadingOrder, unselected: isShowReadingOrder}">scatter_plot</i>
-            <i class="material-icons unselected" [ngClass]="{selected: isShowReadingOrder, unselected: !isShowReadingOrder}">linear_scale</i>
+            <i class="material-icons layout-choice" [ngClass]="{selected: !isShowReadingOrder}">scatter_plot</i>
+            <i class="material-icons layout-choice" [ngClass]="{selected: isShowReadingOrder}">linear_scale</i>
           </a>
           </div>
     </li>
@@ -103,8 +103,9 @@
     </li>
   </ul>
 </div>
+<!-- I don't think the class is the right way to do this -->
 <ng-container ng-class="{true: 'collection-order', false: 'reading-order'} [isShowReadingOrder === true]">
-<ul class="years" *ngIf=!isShowReadingOrder>
+  <ul class="years" *ngIf=!isShowReadingOrder> <!-- hides years if in reading order -->
   <li *ngFor="let year of dates" class="year"> <!-- track by year -->
     <span>{{year.year}}</span>
     <ul>
@@ -116,7 +117,7 @@
   <li *ngFor="let label of seriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
     <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
   </li>
-  <ng-container *ngIf=!isShowReadingOrder>
+  <ng-container *ngIf=!isShowReadingOrder> <!--I think this is where we want to rearrange things?-->
   <li *ngFor="let comic of comics; trackBy: trackByItemId" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles">
     <div class="scroll-anchor"></div>
     <div class="popover"><div>#{{comic.issue}}</div></div>

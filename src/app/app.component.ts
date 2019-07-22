@@ -488,8 +488,7 @@ export class AppComponent implements OnInit {
       if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
         const publishedYearKey = _.findKey(this.dates, { year: comic.yearPublished });
         const publishedMonthKey = _.findKey(this.dates[publishedYearKey].months, { number: comic.monthPublished });
-
-        this.dates[publishedYearKey].months[publishedMonthKey].styles.width += VISUAL_BLOCK_SIZE;
+        this.dates[publishedYearKey].months[publishedMonthKey].styles['width.px'] += VISUAL_BLOCK_SIZE;
         comic.containerStyles['left.px'] += VISUAL_BLOCK_SIZE + globalHorizontalOffset;
         globalHorizontalOffset += VISUAL_BLOCK_SIZE;
       } else {
@@ -508,7 +507,7 @@ export class AppComponent implements OnInit {
        * the last row.
        * Step two documented below.
        */
-      if (currentSeriesVolume.verticalPosition) {
+      if (typeof currentSeriesVolume.verticalPosition !== 'undefined') {
         comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
         currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
@@ -1128,11 +1127,7 @@ export class AppComponent implements OnInit {
 
   toggleDisplayOrder = () => {
     // Toggle display order to change classes for collection order or reading order
-    if (this.isShowReadingOrder === true) {
-      this.isShowReadingOrder = false;
-    } else {
-      this.isShowReadingOrder = true;
-    }
+    this.isShowReadingOrder = !this.isShowReadingOrder;
   }
 
   scrollToComic = (comicId) => {
