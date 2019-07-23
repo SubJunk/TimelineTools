@@ -26,6 +26,10 @@ body {
   font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 
+ol, ul {
+  padding: 0;
+}
+
 li {
   list-style-type: none;
 }
@@ -93,7 +97,7 @@ body.search-is-open {
   line-height: 1.5;
 }
 
-li:hover > .popover {
+*:hover > .popover {
   visibility: visible;
   opacity: 1;
   top: calc(100% + 5px);
@@ -112,7 +116,7 @@ li:hover {
 .popover > div {
   background-color: #222;
   color: #ccc;
-  padding: 3px 8px;
+  padding: 5px 8px;
   border-radius: 8px;
   font-size: 12px;
 }
@@ -172,27 +176,34 @@ li:hover {
 
 .comic-container .series {
   font-size: 130%;
-  margin-right: 50px;
+  margin: 0 100px 5px 0;
 }
 
-.comic-container .marvel-unlimited-link {
-  background-image: url('images/marvel-unlimited.png');
-  background-size: contain;
-  display: block;
-  width: 40px;
-  height: 40px;
-  float: right;
-  margin-right: 5px;
-}
+.comic-container {
+  .marvel-unlimited-link,
+  .scroll-to-comic-button {
+    float: right;
+    position: relative;
+  }
 
-.comic-container > a {
-  position: relative;
-  top: 0;
+  .marvel-unlimited-link {
+    background-image: url('images/marvel-unlimited.png');
+    background-size: contain;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  > a {
+    position: relative;
+    top: 0;
+  }
 }
 
 .collection-comics {
-  margin: 5px 5px 5px 0;
-  padding: 5px 5px 5px 10px;
+  margin: 5px 0 5px 0;
+  padding: 5px 0 5px 10px;
   background: hsla(0, 0%, 100%, 0.1);
 }
 
@@ -200,8 +211,7 @@ li:hover {
   position: relative;
   display: inline-block;
   padding: 5px 0;
-  line-height: 0;
-  margin-right: 10px;
+  margin-right: 9.8px;
 }
 
 .collection-comics img {
@@ -398,13 +408,6 @@ li:hover {
   width: var(--expanded-width);
 }
 
-.scroll-to-comic-button {
-  vertical-align: text-top;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 15px;
-}
-
 /**
  * Loader from https://codepen.io/rbv912/pen/dYbqLQ
  */
@@ -474,7 +477,7 @@ li:hover {
  * Override Bootstrap styles
  */
 .pagination {
-  margin: 8px 0 8px calc(var(--month-width) * 0.05);
+  margin: 0 0 8px calc(var(--month-width) * 0.05);
   display: none;
   cursor: default;
   width: var(--expanded-width-panel-left);
@@ -483,6 +486,8 @@ li:hover {
 .pagination > li {
   overflow: visible;
   width: 25%;
+  display: inline-block;
+  position: relative;
 }
 
 .pagination > li > a,
@@ -501,11 +506,6 @@ li:hover {
   display: block;
 }
 
-.pagination > .disabled > a,
-.pagination > .disabled > a:hover {
-  background-color: unset;
-}
-
 .tooltip.show {
   opacity: 1;
 }
@@ -515,9 +515,15 @@ li:hover {
 }
 
 /**
- * Override Materialize
+ * Override Angular Material
  */
 
-.material-placeholder {
-  z-index: 2;
+.collection-comics button {
+  min-height: unset;
+  padding: unset;
+}
+
+.pagination button {
+  min-width: unset;
+  padding: 0 13px;
 }
