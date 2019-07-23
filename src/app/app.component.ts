@@ -407,6 +407,7 @@ export class AppComponent implements OnInit {
 
     let positionIterator = 0;
     _.each(this.comicsInReadingOrder, (comic) => {
+      console.log('1 ', comic);
       positionIterator++;
       // initialise
       comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
@@ -419,6 +420,8 @@ export class AppComponent implements OnInit {
 
       // Horizontal positioning
       comic.containerStyles['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
+      console.log(comic);
+
     });
 
     // Sort the data by date
@@ -489,10 +492,6 @@ export class AppComponent implements OnInit {
       }
 
       // Initialize the comic values
-      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
-      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
-      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
-
       comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
       comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
       comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
