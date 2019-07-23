@@ -56,6 +56,7 @@ export class AppComponent implements OnInit {
   title = 'timeline-tools';
 
   comics: Array<Comic>;
+  comicsInReadingOrder: Array<Comic>;
   collections: Array<Collection>;
   series: Array<object>;
   seriesVolumes: Array<SeriesVolume>;
@@ -402,12 +403,22 @@ export class AppComponent implements OnInit {
     this.collections   = Collections.getCollections();
     this.series        = SeriesVolumes.getSeries();
     this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
-    const comicsInReadingOrder = _.cloneDeep(this.comics);
+    this.comicsInReadingOrder = _.cloneDeep(this.comics);
 
     let positionIterator = 0;
-    _.each(comicsInReadingOrder, (comic) => {
+    _.each(this.comicsInReadingOrder, (comic) => {
       positionIterator++;
-      comic['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
+      // initialise
+      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
+      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
+      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
+
+      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
+      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
+      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
+
+      // Horizontal positioning
+      comic.containerStyles['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
     });
 
     // Sort the data by date
@@ -478,6 +489,10 @@ export class AppComponent implements OnInit {
       }
 
       // Initialize the comic values
+      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
+      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
+      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
+
       comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
       comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
       comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};

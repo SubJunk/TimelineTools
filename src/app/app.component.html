@@ -115,7 +115,88 @@
   <li *ngFor="let label of seriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
     <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
   </li>
-  <ng-container *ngIf=!isShowReadingOrder> <!--I think this is where we want to rearrange things?-->
+  <ng-container *ngIf=isShowReadingOrder>
+      <li *ngFor="let comic of comicsInReadingOrder; trackBy: trackByItemId" class="comic-container">
+          <div class="scroll-anchor"></div>
+          <div class="popover"><div>#{{comic.issue}}</div></div>
+          <div class="comic z-depth-5 hoverable" [ngStyle]="comic.styles" [ngClass]="comic.classes">
+            <div class="panel-left">
+              <a *ngIf="comic.id !== expandedComicId" (click)="toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{comic.id}}">
+                <img
+                    *ngIf="comic.visible"
+                    class="responsive-img"
+                    [srcset]="
+                        'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
+                        https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
+                    [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
+                >
+              </a>
+              <span class="cover-thumbnail" *ngIf="comic.id === expandedComicId">
+                <img
+                    class="responsive-img materialboxed"
+                    src="https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg"
+                >
+              </span>
+              <ul class="pagination" *ngIf="comic.id === expandedComicId">
+                <li class="waves-effect" [ngClass]="{disabled: !prevCollectionFirstComic}">
+                  <div class="popover previous-collection-title" *ngIf="prevCollectionFirstComic"><div>{{prevCollection.title}}</div></div>
+                  <a (click)="toggleExpandComic(prevCollectionFirstComic)" class="button-previous-collection">
+                    <i class="material-icons">arrow_backward</i>
+                  </a>
+                </li><!--
+                --><li class="waves-effect" [ngClass]="{disabled: !prevComic}">
+                  <div class="popover previous-comic-title" *ngIf="prevComic"><div>{{prevComic.series}} #{{prevComic.issue}}</div></div>
+                  <a (click)="toggleExpandComic(prevComic)" class="button-previous-comic">
+                    <i class="material-icons">chevron_left</i>
+                  </a>
+                </li><!--
+                --><li class="waves-effect" [ngClass]="{disabled: !nextComic}">
+                  <div class="popover next-comic-title" *ngIf="nextComic"><div>{{nextComic.series}} #{{nextComic.issue}}</div></div>
+                  <a (click)="toggleExpandComic(nextComic)" class="button-next-comic">
+                    <i class="material-icons">chevron_right</i>
+                  </a>
+                </li><!--
+                --><li class="waves-effect" [ngClass]="{disabled: !nextCollectionFirstComic}">
+                  <div class="popover next-collection-title" *ngIf="nextCollectionFirstComic"><div>{{nextCollection.title}}</div></div>
+                  <a (click)="toggleExpandComic(nextCollectionFirstComic)" class="button-next-collection">
+                    <i class="material-icons">arrow_forward</i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="expanded-panel" *ngIf="comic.id === expandedComicId">
+              <a *ngIf="comic.link" class="marvel-unlimited-link" href="{{comic.link}}" title="Open in Marvel Unlimited"></a>
+              <div class="series">
+                {{comic.series}} #{{comic.issue}}
+                <a (click)="scrollToComic(comic.id)" tabindex="0" title="Scroll to this comic's position on the page" class="scroll-to-comic-button">
+                  <i class="material-icons">near_me</i>
+                </a>
+              </div>
+              <div class="title" *ngFor="let title of comic.titles">{{title}}</div>
+              <div class="date">{{comic.yearPublished}} / {{comic.monthPublished}}</div>
+              <div class="collection-comics">
+                <div class="collection-title">{{comic.collection.title}}:</div>
+                <ul>
+                  <li *ngFor="let collectionComic of comic.collection.allCollectionComics; trackBy: trackByItemId">
+                    <div class="popover"><div>{{collectionComic.series}} #{{collectionComic.issue}}</div></div>
+                    <a (click)="toggleExpandComic(collectionComic)" class="z-depth-5 waves-effect hoverable">
+                      <img
+                          class="responsive-img"
+                          [ngClass]="{current: collectionComic.id === expandedComicId}"
+                          [srcset]="
+                              'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg 2x,
+                              https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg 1x'"
+                          [src]="'https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg'"
+                      >
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+  </ng-container>
+  <ng-container *ngIf=!isShowReadingOrder>
   <li *ngFor="let comic of comics; trackBy: trackByItemId" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles">
     <div class="scroll-anchor"></div>
     <div class="popover"><div>#{{comic.issue}}</div></div>
@@ -197,4 +278,3 @@
   </li>
 </ng-container>
 </ul>
-</ng-container>
