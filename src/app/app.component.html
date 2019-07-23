@@ -1,43 +1,16 @@
-<div id="info" class="modal modal-fixed-footer">
-  <div class="modal-content">
-    <h4>Info & Credits</h4>
-    <p>This tool depends on data from others. Some of the most frequent sources of that data are:</p>
-    <ul>
-      <li>
-        <h5><a href="http://notahoaxnotadream.blogspot.co.nz/p/x-men-collected-editions-chart.html">NOT A HOAX! NOT A DREAM!</a></h5>
-        We rely on the reviews on this blog to know which order the comics appear in within collections.
-      </li>
-      <li>
-        <h5><a href="http://www.comicsbackissues.com/comic-book-reading-order/x-men-read-order-chronology/#order">Comics Back Issues</a></h5>
-        We rely on this to track and order crossovers.
-      </li>
-      <li>
-        <h5><a href="http://www.marvel.com">Marvel</a></h5>
-        We rely on the Marvel API to display the link to the online version of the comics.
-      </li>
-    </ul>
-  </div>
-  <div class="modal-footer">
-    <a (click)="toggleInfoModal()" class="modal-close waves-effect waves-green btn-flat">Close</a>
-  </div>
-</div>
-<div class="fixed-action-btn">
-  <a class="btn-floating btn-large red"><i class="large material-icons">menu</i></a>
-  <ul>
-    <li>
-      <div class="popover"><div>Toggle collections view</div></div>
-      <a class="btn-floating green" [ngClass]="{green: isShowCollections, grey: !isShowCollections}" (click)="toggleShowCollections()">
-        <i class="material-icons">library_books</i>
-      </a>
-    </li>
-    <li>
-      <div class="popover"><div>View information and credits</div></div>
-      <a (click)="toggleInfoModal()" class="btn-floating blue">
-        <i class="material-icons">info</i>
-      </a>
-    </li>
-  </ul>
-</div>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="toggleShowCollections()">
+    <mat-icon>library_books</mat-icon>
+    Toggle collections view
+  </button>
+  <button mat-menu-item (click)="toggleInfoModal()">
+    <mat-icon>info</mat-icon>
+    View information and credits
+  </button>
+</mat-menu>
+<button style="right: 20px; bottom: 20px; position: fixed;" mat-fab [matMenuTriggerFor]="menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
 <ul class="collections" *ngIf="isShowCollections">
   <li *ngFor="let collection of uniqueCollections" class="collection-container" [ngClass]="{expanded: collection.id === expandedCollectionId}">
     <div class="comic-collection z-depth-5 hoverable" [ngStyle]="collection.styles" *ngIf="collection.title !== 'Uncollected'">

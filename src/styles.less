@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~normalize.css';
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+
 :root {
   --month-width: 55px;
   --expanded-width: 900px;
@@ -20,6 +23,11 @@ body {
   overflow: auto;
   padding: 80px 20px 20px;
   width: var(--initial-body-width);
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+li {
+  list-style-type: none;
 }
 
 body.search-is-open {

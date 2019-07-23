@@ -1,7 +1,8 @@
+import $ from 'jquery';
 import _ from 'lodash';
-import M from 'materialize-css';
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
 import { Md5 } from 'ts-md5/dist/md5';
 
 import { apiKeyPublic, apiKeyPrivate } from './config';
@@ -20,6 +21,7 @@ import {
   SeriesVolumeLabel,
 } from './models';
 import { ActivatedRoute, Router } from '@angular/router';
+import { InfoModalComponent } from './info-modal/info-modal.component';
 
 // The padding applied to the left, right, and bottom of the body
 const BODY_PADDING_TOP = 80;
@@ -49,6 +51,7 @@ const COMPLETE_COLOR_WHEEL_DEGREES = 360; // 360 degrees in colour wheel
 @Injectable()
 export class AppComponent implements OnInit {
   constructor(
+    public dialog: MatDialog,
     private http: HttpClient,
     private route: ActivatedRoute,
     private router: Router,
@@ -66,7 +69,6 @@ export class AppComponent implements OnInit {
   // An array of objects that contain search results for comics and collections
   public itemsToSearch = [];
 
-  infoModalInstance: M.Modal;
   bodyStyles = {
     'height.px': null,
     padding: BODY_PADDING_TOP + 'px ' + BODY_PADDING + 'px ' + BODY_PADDING + 'px ' + BODY_PADDING + 'px',
@@ -802,11 +804,11 @@ export class AppComponent implements OnInit {
       // Init floating menu on the right
       // $('.fixed-action-btn').floatingActionButton({direction: 'left'});
       const elems = document.querySelectorAll('.fixed-action-btn');
-      const instances = M.FloatingActionButton.init(elems, {direction: 'left'});
+      // const instances = M.FloatingActionButton.init(elems, {direction: 'left'});
 
       // Init "Info & Credits" modal
       const infoModal = $('#info');
-      this.infoModalInstance = _.first(M.Modal.init(infoModal));
+      // this.infoModalInstance = _.first(M.Modal.init(infoModal));
 
       this.useGetParameters();
 
@@ -1068,7 +1070,7 @@ export class AppComponent implements OnInit {
 
       // Instruct Materialize-CSS to make the expanded cover fullscreen on click
       const elems = document.querySelectorAll('.materialboxed');
-      const instances = M.Materialbox.init(elems);
+      // const instances = M.Materialbox.init(elems);
 
       if (this.doSpeedProfile) {
         const endTime = new Date().getTime();
@@ -1095,11 +1097,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleInfoModal = () => {
-    if (this.infoModalInstance.isOpen) {
-      this.infoModalInstance.close();
-    } else {
-      this.infoModalInstance.open();
-    }
+    this.dialog.open(InfoModalComponent);
   }
 
   toggleShowCollections = (forcedState?: string) => {
