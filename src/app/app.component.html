@@ -116,10 +116,9 @@
     <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
   </li>
   <ng-container *ngIf=isShowReadingOrder>
-      <li *ngFor="let comic of comicsInReadingOrder; trackBy: trackByItemId" class="comic-container">
+      <li *ngFor="let comic of comicsInReadingOrder; trackBy: trackByItemId" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles">
           <div class="scroll-anchor"></div>
           <div class="popover"><div>#{{comic.issue}}</div></div>
-          <div>{{comic.id}} {{comic.image}} {{comic.styles}}</div><!--logging the data is there-->
           <div class="comic z-depth-5 hoverable" [ngStyle]="comic.styles" [ngClass]="comic.classes">
             <div class="panel-left">
               <a *ngIf="comic.id !== expandedComicId" (click)="toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{comic.id}}">

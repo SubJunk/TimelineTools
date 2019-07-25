@@ -407,21 +407,45 @@ export class AppComponent implements OnInit {
 
     let positionIterator = 0;
     _.each(this.comicsInReadingOrder, (comic) => {
-      console.log('1 ', comic);
+      let currentSeriesVolume = this.seriesVolumes[_.findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
+      if (!currentSeriesVolume) {
+        throw new Error(comic.seriesVolumeId + ' not found');
+      }
+
       positionIterator++;
       // initialise
       comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
       comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
       comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
 
-      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
-      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
-      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
-
       // Horizontal positioning
+      // This is creating a problem with double spacing
       comic.containerStyles['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
-      console.log(comic);
+      comic.styles['margin-left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
 
+      // Store the name of the series in the comic object
+      comic.series = currentSeriesVolume.title;
+      comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
+
+
+      // Set page width
+      this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
+
+      // at this point the comicsInReadingOrder object doesn't look the same as the comics object
+      // so this doesn't work
+      // Render collections as groups of comics
+//       let roComicIndex: string;
+//       _.each(this.collections, (collection) => {
+//         const collectionColor = this.getCollectionColors(collection.title);
+//         _.each(collection.comicIds, (comicId) => {
+//           roComicIndex = _.findKey(this.comicsInReadingOrder, { id: comicId });
+//           if (!roComicIndex) {
+//             throw new Error(comicId + ' not found in the comics db');
+//           }
+//          // this.comicsInReadingOrder[roComicIndex].styles.background = collectionColor.backgroundColor;
+//          // this.comicsInReadingOrder[roComicIndex].styles.color = collectionColor.textColor;
+//         });
+// });
     });
 
     // Sort the data by date
