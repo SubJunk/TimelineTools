@@ -419,8 +419,8 @@ export class AppComponent implements OnInit {
       comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
 
       // Horizontal positioning
-      comic.containerStyles['left.px'] = positionIterator * VISUAL_BLOCK_SIZE + 100;
-      comic.styles['margin-left.px'] = positionIterator * VISUAL_BLOCK_SIZE + 100;
+      comic.containerStyles['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
+      comic.styles['margin-left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
       // Store the name of the series in the comic object - not needed, already set
       //comic.series = currentSeriesVolume.title;
       //comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
