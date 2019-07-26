@@ -419,34 +419,38 @@ export class AppComponent implements OnInit {
       comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
 
       // Horizontal positioning
-      // This is creating a problem with double spacing
+      // Klaus This is creating a problem with double spacing and I can't figure out what to do
       comic.containerStyles['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
       comic.styles['margin-left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
-
+      comic.styles.background = 'rgb(78, 169, 208)';
       // Store the name of the series in the comic object
       comic.series = currentSeriesVolume.title;
+      // Klaus image is set here, but doesn't display, what am I doing wrong?
       comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
 
 
       // Set page width
       this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
 
-      // at this point the comicsInReadingOrder object doesn't look the same as the comics object
-      // so this doesn't work
+
       // Render collections as groups of comics
-//       let roComicIndex: string;
-//       _.each(this.collections, (collection) => {
-//         const collectionColor = this.getCollectionColors(collection.title);
-//         _.each(collection.comicIds, (comicId) => {
-//           roComicIndex = _.findKey(this.comicsInReadingOrder, { id: comicId });
-//           if (!roComicIndex) {
-//             throw new Error(comicId + ' not found in the comics db');
-//           }
-//          // this.comicsInReadingOrder[roComicIndex].styles.background = collectionColor.backgroundColor;
-//          // this.comicsInReadingOrder[roComicIndex].styles.color = collectionColor.textColor;
-//         });
-// });
+      let roComicIndex: string;
+      _.each(this.collections, (collection) => {
+        const collectionColor = this.getCollectionColors(collection.title);
+
+        _.each(collection.comicIds, (comicId) => {
+          roComicIndex = _.findKey(this.comicsInReadingOrder, { id: comicId });
+          if (!roComicIndex) {
+            throw new Error(comicId + ' not found in the comics db');
+          }
+          // Klaus:  this is undefined and I don't know why.
+          // this.comicsInReadingOrder[roComicIndex].styles.background = collectionColor.backgroundColor;
+          // this.comicsInReadingOrder[roComicIndex].styles.color = collectionColor.textColor;
+        });
+      });
     });
+
+
 
     // Sort the data by date
     this.comics = _.sortBy(this.comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
