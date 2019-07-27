@@ -405,30 +405,6 @@ export class AppComponent implements OnInit {
     this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
     this.comicsInReadingOrder = (this.comics);
 
-    let positionIterator = 0;
-    _.each(this.comicsInReadingOrder, (comic) => {
-      const currentSeriesVolume = this.seriesVolumes[_.findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
-      if (!currentSeriesVolume) {
-        throw new Error(comic.seriesVolumeId + ' not found');
-      }
-
-      positionIterator++;
-      // initialise
-      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
-      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
-      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
-
-      // Horizontal positioning
-      comic.containerStyles['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
-      comic.styles['margin-left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
-      // Store the name of the series in the comic object - not needed, already set
-      //comic.series = currentSeriesVolume.title;
-      //comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
-
-      // Set page width
-      this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
-    });
-
 
 
     // Sort the data by date
@@ -1156,6 +1132,31 @@ export class AppComponent implements OnInit {
   toggleDisplayOrder = () => {
     // Toggle display order to change classes for collection order or reading order
     this.isShowReadingOrder = !this.isShowReadingOrder;
+    if (this.isShowReadingOrder) {
+    let positionIterator = 0;
+    _.each(this.comicsInReadingOrder, (comic) => {
+      const currentSeriesVolume = this.seriesVolumes[_.findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
+      if (!currentSeriesVolume) {
+        throw new Error(comic.seriesVolumeId + ' not found');
+      }
+
+      positionIterator++;
+      // initialise
+      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
+      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
+      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
+
+      // Horizontal positioning
+      comic.containerStyles['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
+      comic.styles['margin-left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
+      // Store the name of the series in the comic object - not needed, already set
+      comic.series = currentSeriesVolume.title;
+      comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
+
+      // Set page width
+      this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
+    });
+  }
   }
 
   scrollToComic = (comicId) => {
