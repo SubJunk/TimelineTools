@@ -103,6 +103,13 @@ body.search-is-open {
   top: calc(100% + 5px);
 }
 
+.floating-menu {
+  position: fixed !important;
+  right: 20px;
+  bottom: 20px;
+  z-index: 4;
+}
+
 li:hover {
   z-index: 1;
 }
@@ -124,10 +131,6 @@ li:hover {
 .popover > div {
   max-width: 130px;
   display: inline-block;
-}
-
-.fixed-action-btn li {
-  position: relative;
 }
 
 .series-volume-label {
@@ -256,7 +259,8 @@ li:hover {
   z-index: 1;
   padding: 10px 20px 12px 20px;
   background-color: hsl(216, 8%, 25%);
-  width: 70px;
+  width: 30px;
+  border-bottom-right-radius: 8px;
 }
 
 .search-container.hasText,
@@ -276,16 +280,32 @@ li:hover {
   width: 50px;
   z-index: 1;
   position: relative;
+  background-color: transparent;
+  border: none;
+  height: 3rem;
+  font-size: 16px;
+  outline: none;
+
+  &::-webkit-input-placeholder { /* Edge */
+    color: transparent;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: transparent;
+  }
+  &::placeholder {
+    color: transparent;
+  }
 }
 
-.search-container input::-webkit-input-placeholder { /* Edge */
-  color: transparent;
-}
-.search-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: transparent;
-}
-.search-container input::placeholder {
-  color: transparent;
+.search-result button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover .search-result-text {
+    text-decoration: underline;
+  }
 }
 
 .search-container:focus-within input::-webkit-input-placeholder { /* Edge */

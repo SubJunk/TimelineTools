@@ -8,7 +8,7 @@
     View information and credits
   </button>
 </mat-menu>
-<button style="right: 20px; bottom: 20px; position: fixed;" mat-fab [matMenuTriggerFor]="menu">
+<button mat-fab [matMenuTriggerFor]="menu" class="floating-menu">
   <mat-icon>more_vert</mat-icon>
 </button>
 <ul class="collections" *ngIf="isShowCollections">
@@ -54,7 +54,7 @@
   <input type="text" [(ngModel)]="searchText" (ngModelChange)="postSearchActions(searchText)" placeholder="Search" />
   <ul class="searchResults" *ngIf="searchText">
     <li *ngFor="let item of itemsToSearch | filter: searchText | limitTo" class="search-result">
-      <a (click)="search(item)" class="cover-thumbnail">
+      <button (click)="search(item)" class="cover-thumbnail">
         <img
           class="responsive-img"
           [srcset]="
@@ -62,8 +62,8 @@
               https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 1x'"
           [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg'"
         >
-        {{item.displayText}}
-      </a>
+        <span class="search-result-text">{{item.displayText}}</span>
+      </button>
     </li>
   </ul>
 </div>
