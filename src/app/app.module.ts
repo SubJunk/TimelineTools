@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { FilterPipe } from './filter.pipe';
 import { LimitToPipe } from './limitTo.pipe';
-// import { InfoModalComponent } from './info-modal/info-modal.component';
+
 
 @NgModule({
   declarations: [

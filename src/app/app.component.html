@@ -1,9 +1,9 @@
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="toggleShowCollections()">
+  <button mat-menu-item (click)="toggleShowCollections()" class="toggle-collections-btn">
     <mat-icon>library_books</mat-icon>
     Toggle collections view
   </button>
-  <button mat-menu-item (click)="toggleInfoModal()">
+  <button mat-menu-item (click)="toggleInfoModal()" class="toggle-info-btn">
     <mat-icon>info</mat-icon>
     View information and credits
   </button>
@@ -96,7 +96,6 @@
         </a>
         <span class="cover-thumbnail" *ngIf="comic.id === expandedComicId">
           <img
-              class="responsive-img materialboxed"
               src="https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg"
           >
         </span>

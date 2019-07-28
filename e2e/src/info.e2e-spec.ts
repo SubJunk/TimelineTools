@@ -16,17 +16,14 @@ describe('Info', () => {
     'should open the info page from the menu\n' +
     'should display the credits information',
   async () => {
-    await element(by.css('.btn-floating.btn-large.red')).click();
-    await element(by.css('.btn-floating.blue')).click();
+    await element(by.css('.floating-menu')).click();
+    await browser.executeScript('$(".toggle-info-btn").click();');
 
     expect(
-      await element(by.css('.modal-content')).element(by.tagName('h4')).getText()
+      await element(by.css('.mat-dialog-title')).element(by.tagName('h1')).getText()
     ).toContain(
       'Info & Credits'
     );
-
-    // Close the info box
-    await element(by.css('.modal-close.waves-effect.waves-green.btn-flat')).click();
   });
 
   afterEach(async () => {
