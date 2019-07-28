@@ -186,6 +186,8 @@ series.push(
   new Series('X-Force/Cable Annual', {1: 1995}),
   new Series('X-Force: Sex and Violence', {1: 2010}),
   new Series('X-Force Annual', {1: 1992}),
+  new Series('X-Infernus', {1: 2008}),
+  new Series('X-Infernus Saga', {1: 2008}),
   new Series('X-Man', {1: 1995}),
   new Series('X-Man Annual', {1: 1996}),
   new Series('X-Men', {2: 1991, 3: 2004}),
