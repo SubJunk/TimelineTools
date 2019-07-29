@@ -403,7 +403,7 @@ export class AppComponent implements OnInit {
     this.collections   = Collections.getCollections();
     this.series        = SeriesVolumes.getSeries();
     this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
-    this.comicsInReadingOrder = (this.comics);
+    this.comicsInReadingOrder = _.cloneDeep(this.comics);
 
 
 
