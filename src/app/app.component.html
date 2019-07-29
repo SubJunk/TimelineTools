@@ -123,7 +123,6 @@
             <div class="panel-left">
               <a *ngIf="comic.id !== expandedComicId" (click)="toggleExpandComic(comic)" class="waves-effect cover-thumbnail" id="expand-{{comic.id}}">
                 <img
-                    *ngIf="comic.visible"
                     class="responsive-img"
                     [srcset]="
                         'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,

@@ -588,7 +588,6 @@ export class AppComponent implements OnInit {
       // Store the name of the series in the comic object
       comic.series = currentSeriesVolume.title;
       comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
-
       // Populate a smaller object just for filtering
       this.itemsToSearch.push({
         displayText: comic.series + ' #' + comic.issue,
@@ -637,6 +636,29 @@ export class AppComponent implements OnInit {
       }
     });
 
+    let horizontalPosition = 0;
+    _.each(this.comicsInReadingOrder, (comic) => {
+      const currentSeriesVolume = this.seriesVolumes[_.findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
+      if (!currentSeriesVolume) {
+        throw new Error(comic.seriesVolumeId + ' not found');
+      }
+
+      horizontalPosition++;
+      // initialise each comic
+      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
+      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
+      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
+
+      // Set horizontal positioning
+      comic.styles['left.px'] = horizontalPosition * VISUAL_BLOCK_SIZE;
+      comic.containerStyles['left.px'] = comic.styles['left.px'];
+
+
+      // Store the name of the series in the comic object
+      comic.series = currentSeriesVolume.title;
+      comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
+    });
+
     if (this.doSpeedProfile) {
       const endTime = new Date().getTime();
       const timeDiff = endTime - this.startTimeInitialLoad;
@@ -655,6 +677,8 @@ export class AppComponent implements OnInit {
         }
         this.comics[comicIndex].styles.background = collectionColor.backgroundColor;
         this.comics[comicIndex].styles.color = collectionColor.textColor;
+        this.comicsInReadingOrder[comicIndex].styles.background = collectionColor.backgroundColor;
+        this.comicsInReadingOrder[comicIndex].styles.color = collectionColor.textColor;
       });
     });
 
@@ -1133,29 +1157,8 @@ export class AppComponent implements OnInit {
     // Toggle display order to change classes for collection order or reading order
     this.isShowReadingOrder = !this.isShowReadingOrder;
     if (this.isShowReadingOrder) {
-    let positionIterator = 0;
-    _.each(this.comicsInReadingOrder, (comic) => {
-      const currentSeriesVolume = this.seriesVolumes[_.findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
-      if (!currentSeriesVolume) {
-        throw new Error(comic.seriesVolumeId + ' not found');
-      }
 
-      positionIterator++;
-      // initialise
-      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
-      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
-      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
 
-      // Horizontal positioning
-      comic.containerStyles['left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
-      comic.styles['margin-left.px'] = positionIterator * VISUAL_BLOCK_SIZE;
-      // Store the name of the series in the comic object - not needed, already set
-      comic.series = currentSeriesVolume.title;
-      comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
-
-      // Set page width
-      this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
-    });
   }
   }
 
