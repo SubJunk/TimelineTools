@@ -84,7 +84,7 @@
     <div class="popover"><div>#{{comic.issue}}</div></div>
     <div class="comic " [ngStyle]="comic.styles" [ngClass]="comic.classes">
       <div class="panel-left">
-        <a *ngIf="comic.id !== expandedComicId" (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
+        <button *ngIf="comic.id !== expandedComicId" (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
           <img
               *ngIf="comic.visible"
               class="responsive-img"
@@ -93,7 +93,7 @@
                   https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
               [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
           >
-        </a>
+        </button>
         <span class="cover-thumbnail" *ngIf="comic.id === expandedComicId">
           <button (click)="toggleFullscreen()" class="toggle-full-screen">
             <img src="https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg">
