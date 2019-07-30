@@ -403,8 +403,8 @@ export class AppComponent implements OnInit {
     this.collections   = Collections.getCollections();
     this.series        = SeriesVolumes.getSeries();
     this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
+    // Ah. Only the collections are in the right order.
     this.comicsInReadingOrder = _.cloneDeep(this.comics);
-
 
 
     // Sort the data by date
@@ -667,6 +667,7 @@ export class AppComponent implements OnInit {
 
     // Render collections as groups of comics
     let comicIndex: string;
+
     _.each(this.collections, (collection) => {
       const collectionColor = this.getCollectionColors(collection.title);
 
@@ -679,6 +680,7 @@ export class AppComponent implements OnInit {
         this.comics[comicIndex].styles.color = collectionColor.textColor;
         this.comicsInReadingOrder[comicIndex].styles.background = collectionColor.backgroundColor;
         this.comicsInReadingOrder[comicIndex].styles.color = collectionColor.textColor;
+        this.comicsInReadingOrder[comicIndex].comidId = comicIndex
       });
     });
 
