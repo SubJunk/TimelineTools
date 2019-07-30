@@ -475,7 +475,7 @@ export class AppComponent implements OnInit {
 
       // Initialize the comic values
       comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
-      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
+      comic.classes = { fullScreen: false, stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
       comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
 
       // Horizontal positioning
