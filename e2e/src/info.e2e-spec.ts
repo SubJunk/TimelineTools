@@ -20,7 +20,7 @@ describe('Info', () => {
     await browser.executeScript('$(".toggle-info-btn").click();');
 
     expect(
-      await element(by.css('.mat-dialog-title')).element(by.tagName('h1')).getText()
+      await element(by.css('.mat-dialog-title')).getText()
     ).toContain(
       'Info & Credits'
     );

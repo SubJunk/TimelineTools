@@ -17,7 +17,6 @@
       <div class="panel-left">
         <a (click)="toggleExpandCollection(collection)" class="cover-thumbnail">
           <img
-              class="responsive-img"
               [srcset]="
                   'https://api.rethumb.com/v1/width/322/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 2x,
                   https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 1x'"
@@ -34,7 +33,6 @@
               <div class="popover"><div>{{comic.series}} #{{comic.issue}}</div></div>
               <a title="{{comic.series}} #{{comic.issue}}" (click)="toggleExpandComic(comic, true)">
                 <img
-                    class="responsive-img"
                     [ngClass]="{current: comic.id === comicId}"
                     [srcset]="
                         'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
@@ -56,7 +54,6 @@
     <li *ngFor="let item of itemsToSearch | filter: searchText | limitTo" class="search-result">
       <button (click)="search(item)" class="cover-thumbnail">
         <img
-          class="responsive-img"
           [srcset]="
               'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 2x,
               https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 1x'"
@@ -87,7 +84,6 @@
         <button *ngIf="comic.id !== expandedComicId" (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
           <img
               *ngIf="comic.visible"
-              class="responsive-img"
               [srcset]="
                   'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
                   https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
@@ -146,7 +142,6 @@
               <div class="popover"><div>{{collectionComic.series}} #{{collectionComic.issue}}</div></div>
               <button (click)="toggleExpandComic(collectionComic)" mat-button>
                 <img
-                    class="responsive-img"
                     [ngClass]="{current: collectionComic.id === expandedComicId}"
                     [srcset]="
                         'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg 2x,

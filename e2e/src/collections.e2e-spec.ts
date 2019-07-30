@@ -21,7 +21,7 @@ describe('Collections', () => {
     await browser.executeScript('$(".toggle-collections-btn").click();');
 
     expect(
-      await element(by.css('.responsive-img')).getAttribute('src')
+      await element(by.css('.collections .cover-thumbnail img')).getAttribute('src')
     ).toContain(
       'X-Men_Epic_Collection_Children_of_the_Atom'
     );

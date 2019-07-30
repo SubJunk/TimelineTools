@@ -44,14 +44,14 @@ describe('Comics', () => {
   });
 
   it('should use correct style for currently selected comic', async () => {
-    await element(by.css('img.responsive-img.current')).isDisplayed();
+    await element(by.css('img.current')).isDisplayed();
   });
 
   it('should display the selected comic cover when zoomed', async () => {
     await element(by.css('.toggle-full-screen')).click();
 
     expect(
-      await element(by.css('.fullScreen img')).getAttribute('src')
+      await element(by.css('.fullScreen .cover-thumbnail img')).getAttribute('src')
     ).toContain(
       'Uncanny_X-Men_Vol_1_5'
     );
