@@ -95,9 +95,9 @@
           >
         </a>
         <span class="cover-thumbnail" *ngIf="comic.id === expandedComicId">
-          <img
-              src="https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg"
-          >
+          <button (click)="toggleFullscreen()" class="toggle-full-screen">
+            <img src="https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg">
+          </button>
         </span>
         <ol class="pagination" *ngIf="comic.id === expandedComicId">
           <li>

@@ -235,6 +235,31 @@ li:hover {
   display: block;
 }
 
+.cover-thumbnail button {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  cursor: zoom-in;
+}
+
+.fullScreen .cover-thumbnail button {
+  cursor: zoom-out;
+
+  img {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    height: 5000px !important;
+    width: auto !important;
+    max-width: 100vw;
+    max-height: 98vh;
+    margin: 1vh 0;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+}
+
 .cover-thumbnail img {
   overflow: hidden;
   object-fit: cover;

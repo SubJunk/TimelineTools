@@ -49,6 +49,7 @@ export interface Comic {
 }
 
 interface ComicClasses {
+  fullScreen: boolean;
   stickyBottom: boolean;
   stickyLeft: boolean;
   stickyRight: boolean;

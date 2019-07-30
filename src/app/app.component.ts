@@ -87,6 +87,7 @@ export class AppComponent implements OnInit {
   globalVerticalPositionCounter = 0;
   seriesVolumeLabels: Array<SeriesVolumeLabel> = [];
 
+  expandedComic: Comic;
   expandedComicId: string;
   expandedCollectionId: string;
   expandedCollection: Collection;
@@ -347,9 +348,9 @@ export class AppComponent implements OnInit {
       return seriesVolume.id === currentComic.seriesVolumeId;
     });
 
-    const expandedComic = _.find(this.comics, ['id', this.expandedComicId]);
+    this.expandedComic = _.find(this.comics, ['id', this.expandedComicId]);
     if (this.expandedSeriesVolume.marvelId) {
-      this.setAPIComicData(expandedComic, this.expandedSeriesVolume.marvelId);
+      this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
     } else {
       this.getAPISeriesVolume(this.expandedSeriesVolume)
         .subscribe(
@@ -360,7 +361,7 @@ export class AppComponent implements OnInit {
 
             const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
             this.expandedSeriesVolume.marvelId = firstResult.id;
-            this.setAPIComicData(expandedComic, this.expandedSeriesVolume.marvelId);
+            this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
           },
           (err) => {
             throw new Error(err);
@@ -1098,6 +1099,10 @@ export class AppComponent implements OnInit {
 
   toggleInfoModal = () => {
     this.dialog.open(InfoModalComponent);
+  }
+
+  toggleFullscreen = () => {
+    this.expandedComic.classes.fullScreen = !this.expandedComic.classes.fullScreen;
   }
 
   toggleShowCollections = (forcedState?: string) => {
