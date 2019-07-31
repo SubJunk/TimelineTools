@@ -802,14 +802,7 @@ export class AppComponent implements OnInit {
       $('body').height(this.bodyStyles['height.px']);
       $('body').css('padding', this.bodyStyles.padding);
 
-      // Init floating menu on the right
-      // $('.fixed-action-btn').floatingActionButton({direction: 'left'});
       const elems = document.querySelectorAll('.fixed-action-btn');
-      // const instances = M.FloatingActionButton.init(elems, {direction: 'left'});
-
-      // Init "Info & Credits" modal
-      const infoModal = $('#info');
-      // this.infoModalInstance = _.first(M.Modal.init(infoModal));
 
       this.useGetParameters();
 

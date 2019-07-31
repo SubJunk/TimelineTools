@@ -1,8 +1,9 @@
 import { AppPage } from './app.po';
-import { browser, by, element, logging } from 'protractor';
+import { $, browser, by, element, ExpectedConditions, logging } from 'protractor';
 
 describe('Info', () => {
   let page: AppPage;
+  const EC = ExpectedConditions;
 
   beforeAll(() => {
     page = new AppPage();
@@ -18,6 +19,8 @@ describe('Info', () => {
   async () => {
     await element(by.css('.floating-menu')).click();
     await browser.executeScript('$(".toggle-info-btn").click();');
+
+    await browser.wait(EC.textToBePresentInElement($('.mat-dialog-title'), 'Info & Credits'), 5000);
 
     expect(
       await element(by.css('.mat-dialog-title')).getText()
