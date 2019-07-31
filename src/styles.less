@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~normalize.css';
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+
 :root {
   --month-width: 55px;
   --expanded-width: 900px;
@@ -20,6 +23,15 @@ body {
   overflow: auto;
   padding: 80px 20px 20px;
   width: var(--initial-body-width);
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+ol, ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 body.search-is-open {
@@ -85,10 +97,17 @@ body.search-is-open {
   line-height: 1.5;
 }
 
-li:hover > .popover {
+*:hover > .popover {
   visibility: visible;
   opacity: 1;
   top: calc(100% + 5px);
+}
+
+.floating-menu {
+  position: fixed !important;
+  right: 20px;
+  bottom: 20px;
+  z-index: 4;
 }
 
 li:hover {
@@ -104,7 +123,7 @@ li:hover {
 .popover > div {
   background-color: #222;
   color: #ccc;
-  padding: 3px 8px;
+  padding: 5px 8px;
   border-radius: 8px;
   font-size: 12px;
 }
@@ -112,10 +131,6 @@ li:hover {
 .popover > div {
   max-width: 130px;
   display: inline-block;
-}
-
-.fixed-action-btn li {
-  position: relative;
 }
 
 .series-volume-label {
@@ -164,27 +179,34 @@ li:hover {
 
 .comic-container .series {
   font-size: 130%;
-  margin-right: 50px;
+  margin: 0 100px 5px 0;
 }
 
-.comic-container .marvel-unlimited-link {
-  background-image: url('images/marvel-unlimited.png');
-  background-size: contain;
-  display: block;
-  width: 40px;
-  height: 40px;
-  float: right;
-  margin-right: 5px;
-}
+.comic-container {
+  .marvel-unlimited-link,
+  .scroll-to-comic-button {
+    float: right;
+    position: relative;
+  }
 
-.comic-container > a {
-  position: relative;
-  top: 0;
+  .marvel-unlimited-link {
+    background-image: url('images/marvel-unlimited.png');
+    background-size: contain;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  > a {
+    position: relative;
+    top: 0;
+  }
 }
 
 .collection-comics {
-  margin: 5px 5px 5px 0;
-  padding: 5px 5px 5px 10px;
+  margin: 5px 0 5px 0;
+  padding: 5px 0 5px 10px;
   background: hsla(0, 0%, 100%, 0.1);
 }
 
@@ -192,8 +214,7 @@ li:hover {
   position: relative;
   display: inline-block;
   padding: 5px 0;
-  line-height: 0;
-  margin-right: 10px;
+  margin-right: 9.8px;
 }
 
 .collection-comics img {
@@ -212,6 +233,36 @@ li:hover {
 
 .cover-thumbnail {
   display: block;
+}
+
+.cover-thumbnail button,
+button.cover-thumbnail {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cover-thumbnail button {
+  cursor: zoom-in;
+}
+
+.fullScreen .cover-thumbnail button {
+  cursor: zoom-out;
+
+  img {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    height: 5000px !important;
+    width: auto !important;
+    max-width: 100vw;
+    max-height: 98vh;
+    margin: 1vh 0;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
 }
 
 .cover-thumbnail img {
@@ -238,7 +289,8 @@ li:hover {
   z-index: 1;
   padding: 10px 20px 12px 20px;
   background-color: hsl(216, 8%, 25%);
-  width: 70px;
+  width: 30px;
+  border-bottom-right-radius: 8px;
 }
 
 .search-container.hasText,
@@ -258,16 +310,32 @@ li:hover {
   width: 50px;
   z-index: 1;
   position: relative;
+  background-color: transparent;
+  border: none;
+  height: 3rem;
+  font-size: 16px;
+  outline: none;
+
+  &::-webkit-input-placeholder { /* Edge */
+    color: transparent;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: transparent;
+  }
+  &::placeholder {
+    color: transparent;
+  }
 }
 
-.search-container input::-webkit-input-placeholder { /* Edge */
-  color: transparent;
-}
-.search-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: transparent;
-}
-.search-container input::placeholder {
-  color: transparent;
+.search-result button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover .search-result-text {
+    text-decoration: underline;
+  }
 }
 
 .search-container:focus-within input::-webkit-input-placeholder { /* Edge */
@@ -390,13 +458,6 @@ li:hover {
   width: var(--expanded-width);
 }
 
-.scroll-to-comic-button {
-  vertical-align: text-top;
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 15px;
-}
-
 /**
  * Loader from https://codepen.io/rbv912/pen/dYbqLQ
  */
@@ -466,7 +527,7 @@ li:hover {
  * Override Bootstrap styles
  */
 .pagination {
-  margin: 8px 0 8px calc(var(--month-width) * 0.05);
+  margin: 0 0 8px calc(var(--month-width) * 0.05);
   display: none;
   cursor: default;
   width: var(--expanded-width-panel-left);
@@ -475,6 +536,8 @@ li:hover {
 .pagination > li {
   overflow: visible;
   width: 25%;
+  display: inline-block;
+  position: relative;
 }
 
 .pagination > li > a,
@@ -493,11 +556,6 @@ li:hover {
   display: block;
 }
 
-.pagination > .disabled > a,
-.pagination > .disabled > a:hover {
-  background-color: unset;
-}
-
 .tooltip.show {
   opacity: 1;
 }
@@ -507,9 +565,15 @@ li:hover {
 }
 
 /**
- * Override Materialize
+ * Override Angular Material
  */
 
-.material-placeholder {
-  z-index: 2;
+.collection-comics button {
+  min-height: unset;
+  padding: unset;
+}
+
+.pagination button {
+  min-width: unset;
+  padding: 0 13px;
 }
