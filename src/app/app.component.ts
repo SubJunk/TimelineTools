@@ -788,10 +788,6 @@ export class AppComponent implements OnInit {
     });
 
     setTimeout(() => {
-      // Hide the initial data and display the real one
-      $('app').fadeIn('slow');
-      $('#pre-app').fadeOut('slow');
-
       // Make room for the farthest-right expanded panel
       this.bodyStyles['width.px'] += $('.scroll-anchor').width();
 
@@ -801,8 +797,6 @@ export class AppComponent implements OnInit {
       $('body').width(this.bodyStyles['width.px']);
       $('body').height(this.bodyStyles['height.px']);
       $('body').css('padding', this.bodyStyles.padding);
-
-      const elems = document.querySelectorAll('.fixed-action-btn');
 
       this.useGetParameters();
 
