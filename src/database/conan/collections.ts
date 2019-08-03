@@ -27,6 +27,9 @@ collections.push(
     '1932-12',
     [
       'WeirdTalesVol206',
+      'WeirdTalesVol211',
+      'WeirdTalesVol213',
+      'WeirdTalesVol216',
     ]
   ),
 );

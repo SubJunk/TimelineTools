@@ -47,7 +47,10 @@ function SeriesVolume(seriesId: string, volume: string, startYear: number, title
   }
 }
 
-series.push(new Series('Weird Tales', {20: 1923}));
+series.push(new Series('Weird Tales', {
+  20: 1932,
+  21: 1933
+}));
 
 export class SeriesVolumesConan {
   public static getSeries() {

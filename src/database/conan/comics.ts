@@ -59,6 +59,12 @@ addComicsInSeriesVolume('WeirdTalesVol20', [
   [6, '1932-12', ['The Phoenix on the Sword']],
 ]);
 
+addComicsInSeriesVolume('WeirdTalesVol21', [
+  [1, '1933-1', ['The Scarlet Citadel']],
+  [3, '1933-3', ['The Tower of the Elephant']],
+  [6, '1933-6', ['Black Colossus']],
+]);
+
 export class ComicsConan {
   public static getComics() {
     return comics;
