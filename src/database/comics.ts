@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import moment from 'moment';
+import { ComicsConan } from './conan/comics';
 
 /**
  * The prototype for individual comics.
@@ -2677,10 +2678,13 @@ addComicsInSeriesVolume('YoungXMenVol1', [
   [12, '2009-3-18'],
 ]);
 
-class Comics {
-  public static getComics() {
+export class Comics {
+  public static getComics(database?: string) {
+    // If a database is specified, import that one instead of the default (X-Men) one
+    if (database) {
+      return ComicsConan.getComics();
+    }
+
     return comics;
   }
 }
-
-export { Comics };

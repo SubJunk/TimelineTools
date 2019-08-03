@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { Md5 } from 'ts-md5/dist/md5';
@@ -105,10 +105,17 @@ export class AppComponent implements OnInit {
   isShowCollections = false;
   searchText = '';
   doSpeedProfile = false;
+  databaseUrlSnippet: string;
 
   // API variables
   timestamp: number;
   apiHash: string | Int32Array;
+
+  static getUrlParam = (name: string) => {
+    const results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.search);
+
+    return (results !== null) ? results[1] || 0 : false;
+  }
 
   /**
    * @param seriesVolume the series volume object
@@ -401,10 +408,20 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.comics        = Comics.getComics();
-    this.collections   = Collections.getCollections();
-    this.series        = SeriesVolumes.getSeries();
-    this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
+    // Allow the user to specify which database in the URL using e.g. db=conan
+    const dbGetParam = AppComponent.getUrlParam('db');
+    let database = '';
+    if (dbGetParam) {
+      database = dbGetParam;
+    }
+
+    // The name of the desired database followed by a slash
+    this.databaseUrlSnippet = database + '/';
+
+    this.comics        = Comics.getComics(database);
+    this.collections   = Collections.getCollections(database);
+    this.series        = SeriesVolumes.getSeries(database);
+    this.seriesVolumes = SeriesVolumes.getSeriesVolumes(database);
 
     // Sort the data by date
     this.comics = _.sortBy(this.comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
@@ -1142,63 +1159,63 @@ export class AppComponent implements OnInit {
    * specified (id and gc)
    */
   useGetParameters = () => {
-      const searchParams = this.route.snapshot.queryParams;
+    const searchParams = this.route.snapshot.queryParams;
 
-      if (searchParams.id) {
-        this.scrollToComic(searchParams.id);
-      }
+    if (searchParams.id) {
+      this.scrollToComic(searchParams.id);
+    }
 
-      if (searchParams.showCollections) {
-        this.toggleShowCollections('1');
-      }
+    if (searchParams.showCollections) {
+      this.toggleShowCollections('1');
+    }
 
-      /**
-       * The garbage collector.
-       *
-       * This picks up any orphaned comics and series that would
-       * not cause errors but just take up space.
-       *
-       * Note there is no need to check that the comicIds in
-       * collections map to comics, because that would cause big
-       * errors that we already watch out for.
-       */
-      if (searchParams.gc) {
-        let foundComic;
-        let isClean = true;
-        const gcConsolePrepend = 'Garbage Collector: ';
+    /**
+     * The garbage collector.
+     *
+     * This picks up any orphaned comics and series that would
+     * not cause errors but just take up space.
+     *
+     * Note there is no need to check that the comicIds in
+     * collections map to comics, because that would cause big
+     * errors that we already watch out for.
+     */
+    if (searchParams.gc) {
+      let foundComic;
+      let isClean = true;
+      const gcConsolePrepend = 'Garbage Collector: ';
 
-        // Check that each comic is referenced by a collection
-        _.each(this.comics, (comic) => {
-          foundComic = _.find(this.collections, (collection) => {
-            return collection.comicIds.includes(comic.id);
-          });
-
-          if (!foundComic) {
-            isClean = false;
-            console.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
-          }
+      // Check that each comic is referenced by a collection
+      _.each(this.comics, (comic) => {
+        foundComic = _.find(this.collections, (collection) => {
+          return collection.comicIds.includes(comic.id);
         });
 
-        if (isClean) {
-          console.log(gcConsolePrepend + 'All comics are referenced by collections.');
+        if (!foundComic) {
+          isClean = false;
+          console.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
         }
+      });
 
-        // Check that each seriesVolume is referenced by a comic
-        isClean = true;
-        _.each(this.seriesVolumes, (seriesVolume) => {
-          foundComic = _.find(this.comics, (comic) => {
-            return comic.seriesVolumeId === seriesVolume.id;
-          });
+      if (isClean) {
+        console.log(gcConsolePrepend + 'All comics are referenced by collections.');
+      }
 
-          if (!foundComic) {
-            isClean = false;
-            console.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
-          }
+      // Check that each seriesVolume is referenced by a comic
+      isClean = true;
+      _.each(this.seriesVolumes, (seriesVolume) => {
+        foundComic = _.find(this.comics, (comic) => {
+          return comic.seriesVolumeId === seriesVolume.id;
         });
 
-        if (isClean) {
-          console.log(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
+        if (!foundComic) {
+          isClean = false;
+          console.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
         }
+      });
+
+      if (isClean) {
+        console.log(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
       }
+    }
   }
 }

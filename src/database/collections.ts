@@ -1,3 +1,5 @@
+import { CollectionsConan } from './conan/collections';
+
 const collections = [];
 
 /**
@@ -5610,10 +5612,13 @@ collections.push(
   )
 );
 
-class Collections {
-  public static getCollections() {
+export class Collections {
+  public static getCollections(database?: string) {
+    // If a database is specified, import that one instead of the default (X-Men) one
+    if (database) {
+      return CollectionsConan.getCollections();
+    }
+
     return collections;
   }
 }
-
-export { Collections };

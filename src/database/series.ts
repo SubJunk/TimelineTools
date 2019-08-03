@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { SeriesVolumesConan } from './conan/series';
 
 const series        = [];
 const seriesVolumes = [];
@@ -250,14 +251,22 @@ series.push(
   new Series('Young X-Men', {1: 2008})
 );
 
-class SeriesVolumes {
-  public static getSeries() {
+export class SeriesVolumes {
+  public static getSeries(database?: string) {
+    // If a database is specified, import that one instead of the default (X-Men) one
+    if (database) {
+      return SeriesVolumesConan.getSeries();
+    }
+
     return series;
   }
 
-  public static getSeriesVolumes() {
+  public static getSeriesVolumes(database?: string) {
+    // If a database is specified, import that one instead of the default (X-Men) one
+    if (database) {
+      return SeriesVolumesConan.getSeriesVolumes();
+    }
+
     return seriesVolumes;
   }
 }
-
-export { SeriesVolumes };

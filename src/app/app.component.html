@@ -18,9 +18,9 @@
         <a (click)="toggleExpandCollection(collection)" class="cover-thumbnail">
           <img
               [srcset]="
-                  'https://api.rethumb.com/v1/width/322/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 2x,
-                  https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 1x'"
-              [src]="'https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg'"
+                  'https://api.rethumb.com/v1/width/322/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + collection.image + '.jpg 2x,
+                  https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + collection.image + '.jpg 1x'"
+              [src]="'https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + collection.image + '.jpg'"
           >
         </a>
       </div>
@@ -35,9 +35,9 @@
                 <img
                     [ngClass]="{current: comic.id === comicId}"
                     [srcset]="
-                        'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
-                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
-                    [src]="'https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
+                        'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + comic.image + '.jpg 2x,
+                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + comic.image + '.jpg 1x'"
+                    [src]="'https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + comic.image + '.jpg'"
                 >
               </a>
             </li>
@@ -55,9 +55,9 @@
       <button (click)="search(item)" class="cover-thumbnail">
         <img
           [srcset]="
-              'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 2x,
-              https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 1x'"
-          [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg'"
+              'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + item.image + '.jpg 2x,
+              https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + item.image + '.jpg 1x'"
+          [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + item.image + '.jpg'"
         >
         <span class="search-result-text">{{item.displayText}}</span>
       </button>
@@ -85,14 +85,14 @@
           <img
               *ngIf="comic.visible"
               [srcset]="
-                  'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
-                  https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
-              [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
+                  'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + comic.image + '.jpg 2x,
+                  https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + comic.image + '.jpg 1x'"
+              [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + comic.image + '.jpg'"
           >
         </button>
         <span class="cover-thumbnail" *ngIf="comic.id === expandedComicId">
           <button (click)="toggleFullscreen()" class="toggle-full-screen">
-            <img src="https://www.xmentimeline.com/images/covers/{{comic.image}}.jpg">
+            <img src="https://www.xmentimeline.com/images/covers/{{databaseUrlSnippet + comic.image}}.jpg">
           </button>
         </span>
         <ol class="pagination" *ngIf="comic.id === expandedComicId">
@@ -144,9 +144,9 @@
                 <img
                     [ngClass]="{current: collectionComic.id === expandedComicId}"
                     [srcset]="
-                        'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg 2x,
-                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg 1x'"
-                    [src]="'https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg'"
+                        'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + collectionComic.image + '.jpg 2x,
+                        https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + collectionComic.image + '.jpg 1x'"
+                    [src]="'https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + databaseUrlSnippet + collectionComic.image + '.jpg'"
                 >
               </button>
             </li>
