@@ -356,24 +356,26 @@ export class AppComponent implements OnInit {
     });
 
     this.expandedComic = _.find(this.comics, ['id', this.expandedComicId]);
-    if (this.expandedSeriesVolume.marvelId) {
-      this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
-    } else {
-      this.getAPISeriesVolume(this.expandedSeriesVolume)
-        .subscribe(
-          (response: MarvelAPISeriesResponse) => {
-            if (!response || !response.data || !response.data || !response.data.results.length) {
-              return console.warn('The response from Marvel API wasn\'t in the expected format ' + response);
-            }
+    if (!this.databaseUrlSnippet) {
+      if (this.expandedSeriesVolume.marvelId) {
+        this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
+      } else {
+        this.getAPISeriesVolume(this.expandedSeriesVolume)
+          .subscribe(
+            (response: MarvelAPISeriesResponse) => {
+              if (!response || !response.data || !response.data || !response.data.results.length) {
+                return console.warn('The response from Marvel API wasn\'t in the expected format ' + response);
+              }
 
-            const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
-            this.expandedSeriesVolume.marvelId = firstResult.id;
-            this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
-          },
-          (err) => {
-            throw new Error(err);
-          }
-        );
+              const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
+              this.expandedSeriesVolume.marvelId = firstResult.id;
+              this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
+            },
+            (err) => {
+              throw new Error(err);
+            }
+          );
+      }
     }
   }
 
