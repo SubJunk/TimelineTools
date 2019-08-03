@@ -56,7 +56,7 @@ function addComicsInSeriesVolume(seriesVolumeId, comicsInSeriesVolume) {
 }
 
 addComicsInSeriesVolume('WeirdTalesVol20', [
-  [6, '1932-12'],
+  [6, '1932-12', ['The Phoenix on the Sword']],
 ]);
 
 export class ComicsConan {
