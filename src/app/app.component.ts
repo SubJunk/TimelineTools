@@ -1,12 +1,12 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { Md5 } from 'ts-md5/dist/md5';
 import { parseString } from 'xml2js';
 
-import { goodreadsApiKeyPublic, goodreadsApiKeyPrivate, marvelApiKeyPublic, marvelApiKeyPrivate } from './config';
+import { goodreadsApiKeyPublic, marvelApiKeyPublic, marvelApiKeyPrivate } from './config';
 import { Collections } from './../database/collections';
 import { Comics } from './../database/comics';
 import { SeriesVolumes } from './../database/series';
@@ -85,7 +85,6 @@ export class AppComponent implements OnInit {
 
   goodreadsApiBaseUrl = 'https://www.goodreads.com/search/index.xml';
   goodreadsApiKeyPublic = _.isEmpty(goodreadsApiKeyPublic) ? 'ruoM3jpamOVNpjOnfiAuYA' : goodreadsApiKeyPublic;
-  goodreadsApiKeyPrivate = goodreadsApiKeyPrivate;
 
   corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
 
