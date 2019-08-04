@@ -112,7 +112,6 @@ export class AppComponent implements OnInit {
   isShowCollections = false;
   searchText = '';
   doSpeedProfile = false;
-  allGoodreadsReviewsByUser = [];
 
   // API variables
   timestamp: number;
@@ -141,72 +140,6 @@ export class AppComponent implements OnInit {
       .set('key', this.goodreadsApiKeyPublic);
 
     return this.http.get(this.corsAnywhereUrl + this.goodreadsApiBaseUrl, {params, responseType: 'text'});
-  }
-
-  /**
-   * @returns up to 200 reviews from Goodreads
-   */
-  getGoodreadsReviewsPage = (page = 1, resultsPerPage = 200) => {
-    const userId = '56482868';
-    const url = 'https://www.goodreads.com/review/list/' + userId + '.xml';
-
-    const params = new HttpParams()
-      .set('id', userId)
-      .set('v', '2')
-      .set('per_page', resultsPerPage.toString())
-      .set('page', page.toString())
-      .set('key', this.goodreadsApiKeyPublic);
-
-    return this.http.get(this.corsAnywhereUrl + url, {params, responseType: 'text'});
-  }
-
-  /**
-   * @returns the collection data from the Goodreads API
-   */
-  getGoodreadsReviewList = () => {
-    const resultsPerPage = 200;
-
-    this.getGoodreadsReviewsPage(1, resultsPerPage)
-        .subscribe(
-          (response) => {
-            parseString(response, (err, result) => {
-              if (err) {
-                return console.error(err);
-              }
-
-              const reviewsFirstPage = result.GoodreadsResponse.reviews[0].review;
-              this.allGoodreadsReviewsByUser = this.allGoodreadsReviewsByUser.concat(reviewsFirstPage);
-
-              // Now we know how many reviews the user has done, we can request any extra pages in parallel
-              const reviewsTotalCount = result.GoodreadsResponse.reviews[0].$.total;
-              const additionalPagesToRequest = Math.floor(reviewsTotalCount / resultsPerPage);
-
-              // We already have page 1 results at this point, so skip them
-              const pageOffset = 1;
-              for (let pageIncrement = 1; pageIncrement <= additionalPagesToRequest; pageIncrement++) {
-                this.getGoodreadsReviewsPage(pageIncrement + pageOffset)
-                    .subscribe(
-                      (subsequentResolve) => {
-                        parseString(subsequentResolve, (subsequentErr, subsequentResult) => {
-                          if (subsequentErr) {
-                            return console.error(subsequentErr);
-                          }
-
-                          const reviewsSubsequentPage = subsequentResult.GoodreadsResponse.reviews[0].review;
-                          this.allGoodreadsReviewsByUser = this.allGoodreadsReviewsByUser.concat(reviewsSubsequentPage);
-                        });
-                      },
-                      (subsequentErr) => {
-                        throw subsequentErr;
-                      }
-                    );
-              }
-            });
-          },
-          (err) => {
-            throw err;
-          }
-        );
   }
 
   /**
@@ -456,7 +389,7 @@ export class AppComponent implements OnInit {
     }
 
     /*
-     * Sets the Goodreads collection ID and its read status
+     * Sets the Goodreads collection ID
      */
     this.setGoodreadsCollectionData()
         .subscribe(
@@ -469,16 +402,6 @@ export class AppComponent implements OnInit {
               const collectionOnGoodreads = result.GoodreadsResponse.search[0].results[0].work[0].best_book[0];
 
               this.expandedCollection.goodreadsId = collectionOnGoodreads.id[0]._;
-
-              const goodreadsDataForThisCollection = _.find(this.allGoodreadsReviewsByUser, (review) => {
-                return review.book[0].id[0]._ ===  this.expandedCollection.goodreadsId;
-              });
-
-              if (goodreadsDataForThisCollection) {
-                this.expandedCollection.goodreadsReadStatus = goodreadsDataForThisCollection.read_count[0] > 0 ? 'read' : 'wanttoread';
-              } else {
-                this.expandedCollection.goodreadsReadStatus = 'unread';
-              }
             });
           },
           (err) => {
@@ -919,14 +842,6 @@ export class AppComponent implements OnInit {
 
       this.subtractLabelWidthsFromLeftPositions();
     });
-
-    /*
-     * Go off and get the review list from Goodreads for this user.
-     * Note that this is done asynchronously with no callback because it
-     * will likely be finished before the user needs it. We can implement
-     * more stuff if it ends up taking too long and causing race conditions.
-     */
-    this.getGoodreadsReviewList();
   }
 
   /**
