@@ -55,6 +55,8 @@ function addComicsInSeriesVolume(seriesVolumeId, comicsInSeriesVolume) {
   });
 }
 
+addComicsInSeriesVolume('TheHowardCollectorVol1', [[7, '1965-6', ['Cimmeria']]]);
+addComicsInSeriesVolume('TheHyborianAgeVol1', [[1, '1938-1', ['The Hyborian Age']]]);
 addComicsInSeriesVolume('WeirdTalesVol20', [
   [6, '1932-12', ['The Phoenix on the Sword']],
 ]);

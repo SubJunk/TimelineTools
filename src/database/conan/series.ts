@@ -47,6 +47,8 @@ function SeriesVolume(seriesId: string, volume: string, startYear: number, title
   }
 }
 
+series.push(new Series('The Howard Collector', { 1: 1965 }));
+series.push(new Series('The Hyborian Age', { 1: 1938 }));
 series.push(new Series('Weird Tales', {
   20: 1932,
   21: 1933,

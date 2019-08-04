@@ -23,9 +23,11 @@ function Collection(title: string, datePublished: string, comicIds: string[]) {
 // These should be in reading order
 collections.push(
   new Collection(
-    'The Complete Chronicles of Conan: Centenary Edition',
-    '1932-12',
+    'The Complete Chronicles of Conan',
+    '2006-1',
     [
+      'TheHyborianAgeVol11',
+      'TheHowardCollectorVol17',
       'WeirdTalesVol206',
       'WeirdTalesVol211',
       'WeirdTalesVol213',
