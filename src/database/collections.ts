@@ -4225,6 +4225,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
+    [
+      'XMenUnlimitedVol29',
+    ]
+  ),
+  new Collection(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
@@ -5314,8 +5321,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Manifest Destiny (Partial)',
-    '2009-10',
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
     [
       'UncannyXMenVol1500',
     ]
@@ -5341,17 +5348,162 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Manifest Destiny (Partial)',
-    '2009-10',
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
     [
       'UncannyXMenVol1501',
       'UncannyXMenVol1502',
       'UncannyXMenVol1503',
     ]
   ),
+  new Collection(
+    'NYX: No Way Home',
+    '2009-9-2',
+    [
+      'NYXNoWayHomeVol11',
+      'NYXNoWayHomeVol12',
+      'NYXNoWayHomeVol13',
+      'NYXNoWayHomeVol14',
+      'NYXNoWayHomeVol15',
+      'NYXNoWayHomeVol16',
+    ]
+  ),
+  new Collection(
+    'Cable Vol. 2: Waiting for the End of the World',
+    '2009-5-27',
+    [
+      'CableVol26',
+      'CableVol27',
+      'CableVol28',
+      'CableVol29',
+      'CableVol210',
+      'KingSizeCableSpectacularVol11',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 6: Secret Invasion',
+    '2009-5-27',
+    [
+      'XFactorVol333',
+      'SheHulkVol231',
+      'XFactorVol334',
+    ]
+  ),
+  new Collection(
+    'Secret Invasion: X-Men',
+    '2009-3-25',
+    [
+      'SecretInvasionXMenVol11',
+      'SecretInvasionXMenVol12',
+      'SecretInvasionXMenVol13',
+      'SecretInvasionXMenVol14',
+    ]
+  ),
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
+    '2014-6-10',
+    [
+      'XFactorTheQuickandtheDeadVol11',
+    ]
+  ),
+  new Collection(
+    'X-Force Vol. 2: Old Ghosts',
+    '2014-6-10',
+    [
+      'XForceVol37',
+      'XForceVol38',
+      'XForceVol39',
+      'XForceVol310',
+      'XForceVol311',
+    ]
+  ),
+  new Collection(
+    'X-Force Vol. 3: Not Forgotten',
+    '2010-4-7',
+    [
+      'XForceVol312',
+    ]
+  ),
+  new Collection(
+    'X-Men: Worlds Apart',
+    '2009-6-10',
+    [
+      'XMenWorldsApartVol11',
+      'XMenWorldsApartVol12',
+      'XMenWorldsApartVol13',
+      'XMenWorldsApartVol14',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
+    [
+      'UncannyXMenVol1504',
+      'UncannyXMenVol1505',
+      'UncannyXMenAnnualVol42',
+      'UncannyXMenVol1506',
+      'UncannyXMenVol1507',
+    ]
+  ),
+  new Collection(
+    'Young X-Men - Volume 2: Books of Revelations (Partial)',
+    '2009-6-3',
+    [
+      'YoungXMenVol16',
+      'YoungXMenVol17',
+      'YoungXMenVol18',
+      'YoungXMenVol19',
+      'YoungXMenVol110',
+      'YoungXMenVol111',
+      'YoungXMenVol112',
+    ]
+  ),
+  new Collection(
+    'X-Infernus (Partial)',
+    '2009-7-1',
+    [
+      'XMenUnlimitedVol214',
+      'XInfernusVol11',
+      'XInfernusVol12',
+      'XInfernusVol13',
+      'XInfernusVol14',
+      'XInfernusSagaVol11',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
+    '2013-3-5',
+    [
+      'UncannyXMenVol1508',
+      'UncannyXMenVol1509',
+      'UncannyXMenVol1510',
+      'UncannyXMenVol1511',
+    ]
+  ),
+  new Collection(
+    'X-Force Vol. 3: Not Forgotten',
+    '2010-4-7',
+    [
+      'XForceVol313',
+      'XForceVol317',
+      'XForceVol318',
+      'XForceVol319',
+      'XForceVol320',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 6: Secret Invasion',
+    '2009-5-27',
+    [
+      'XFactorVol335',
+      'XFactorVol336',
+      'XFactorVol337',
+      'XFactorVol338',
+    ]
+  ),
   new Collection(
     'War of Kings: Road to War of Kings',
     '2009-6-3',
@@ -5373,7 +5525,6 @@ collections.push(
     '2014-6-10',
     [
       'XFactorLaylaMillerVol11',
-      'XFactorTheQuickandtheDeadVol11',
     ]
   ),
   new Collection(

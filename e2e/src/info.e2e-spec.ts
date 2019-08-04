@@ -1,8 +1,9 @@
 import { AppPage } from './app.po';
-import { browser, by, element, logging } from 'protractor';
+import { $, browser, by, element, ExpectedConditions, logging } from 'protractor';
 
 describe('Info', () => {
   let page: AppPage;
+  const EC = ExpectedConditions;
 
   beforeAll(() => {
     page = new AppPage();
@@ -16,17 +17,16 @@ describe('Info', () => {
     'should open the info page from the menu\n' +
     'should display the credits information',
   async () => {
-    await element(by.css('.btn-floating.btn-large.red')).click();
-    await element(by.css('.btn-floating.blue')).click();
+    await element(by.css('.floating-menu')).click();
+    await browser.executeScript('$(".toggle-info-btn").click();');
+
+    await browser.wait(EC.textToBePresentInElement($('.mat-dialog-title'), 'Info & Credits'), 5000);
 
     expect(
-      await element(by.css('.modal-content')).element(by.tagName('h4')).getText()
+      await element(by.css('.mat-dialog-title')).getText()
     ).toContain(
       'Info & Credits'
     );
-
-    // Close the info box
-    await element(by.css('.modal-close.waves-effect.waves-green.btn-flat')).click();
   });
 
   afterEach(async () => {

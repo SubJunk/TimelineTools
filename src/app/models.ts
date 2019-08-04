@@ -51,6 +51,7 @@ export interface Comic {
 }
 
 interface ComicClasses {
+  fullScreen: boolean;
   stickyBottom: boolean;
   stickyLeft: boolean;
   stickyRight: boolean;
@@ -62,6 +63,19 @@ interface ComicStyles {
   color: string;
   'marginLeft.px': string;
   'marginTop.px': string;
+}
+
+// The following three models are used to create the years and months
+export interface DateYear {
+  year: number;
+  months: Array<DateMonth>;
+}
+interface DateMonth {
+  number: number;
+  styles: DateStyles;
+}
+interface DateStyles {
+  'width.px': number;
 }
 
 export interface SeriesVolume {
