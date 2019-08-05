@@ -305,6 +305,14 @@ addComicsInSeriesVolume('DaredevilVol1', [
   [238, '1987-1'],
   [252, '1988-3'],
 ]);
+addComicsInSeriesVolume('DarkAvengersVol1', [
+  [7, '2009-7-15'],
+  [8, '2009-8-26'],
+]);
+addComicsInSeriesVolume('DarkAvengersUncannyXMenExodusVol1', [[1, '2009-9-10']]);
+addComicsInSeriesVolume('DarkAvengersUncannyXMenUtopiaVol1', [[1, '2009-6-24']]);
+addComicsInSeriesVolume('DarkReignTheCabalVol1', [[1, '2009-4-29']]);
+addComicsInSeriesVolume('DarkReignTheListXMenVol1', [[1, '2009-9-23']]);
 addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']]);
 addComicsInSeriesVolume('DeadpoolVol1', [
   [1, '1994-8'],
@@ -1573,6 +1581,14 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [509, '2009-4-29'],
   [510, '2009-5-20'],
   [511, '2009-6-10'],
+  [512, '2009-6-24'],
+  [513, '2009-7-1'],
+  [514, '2009-8-12'],
+  [515, '2009-9-23'],
+  [516, '2009-10-14'],
+  [517, '2009-11-25'],
+  [518, '2009-12-3'],
+  [519, '2009-12-23'],
   /**
    * Complete until here
    */
@@ -2677,10 +2693,8 @@ addComicsInSeriesVolume('YoungXMenVol1', [
   [12, '2009-3-18'],
 ]);
 
-class Comics {
+export class Comics {
   public static getComics() {
     return comics;
   }
 }
-
-export { Comics };

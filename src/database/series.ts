@@ -76,6 +76,11 @@ series.push(
   new Series('Civil War', {1: 2006}),
   new Series('Civil War: X-Men', {1: 2006}),
   new Series('Daredevil', {1: 1964}),
+  new Series('Dark Avengers', {1: 2009}),
+  new Series('Dark Avengers/Uncanny X-Men: Exodus', {1: 2009}),
+  new Series('Dark Avengers/Uncanny X-Men: Utopia', {1: 2009}),
+  new Series('Dark Reign: The Cabal', {1: 2009}),
+  new Series('Dark Reign: The List - X-Men', {1: 2009}),
   new Series('Deadpool', {1: 1994, 2: 1997}),
   new Series('Deadpool Team-Up', {1: 1998}),
   new Series('Defenders', {1: 1972}),
@@ -250,7 +255,7 @@ series.push(
   new Series('Young X-Men', {1: 2008})
 );
 
-class SeriesVolumes {
+export class SeriesVolumes {
   public static getSeries() {
     return series;
   }
@@ -259,5 +264,3 @@ class SeriesVolumes {
     return seriesVolumes;
   }
 }
-
-export { SeriesVolumes };

@@ -5470,9 +5470,6 @@ collections.push(
       'XInfernusSagaVol11',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
@@ -5481,6 +5478,35 @@ collections.push(
       'UncannyXMenVol1509',
       'UncannyXMenVol1510',
       'UncannyXMenVol1511',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
+      'UncannyXMenVol1512',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
+      'DarkAvengersUncannyXMenUtopiaVol11',
+      'UncannyXMenVol1513',
+      'DarkAvengersVol17',
+      'UncannyXMenVol1514',
+      'DarkAvengersVol18',
+      'DarkAvengersUncannyXMenExodusVol11',
+      'UncannyXMenVol1515',
+      'UncannyXMenVol1516',
+      'UncannyXMenVol1517',
+      'UncannyXMenVol1518',
+      'UncannyXMenVol1519',
+      'DarkReignTheListXMenVol11',
+      'DarkReignTheCabalVol11',
     ]
   ),
   new Collection(
@@ -5610,10 +5636,8 @@ collections.push(
   )
 );
 
-class Collections {
+export class Collections {
   public static getCollections() {
     return collections;
   }
 }
-
-export { Collections };
