@@ -1,11 +1,12 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { Md5 } from 'ts-md5/dist/md5';
+import { parseString } from 'xml2js';
 
-import { apiKeyPublic, apiKeyPrivate } from './config';
+import { goodreadsApiKeyPublic, marvelApiKeyPublic, marvelApiKeyPrivate } from './config';
 import { Collections } from './../database/collections';
 import { Comics } from './../database/comics';
 import { SeriesVolumes } from './../database/series';
@@ -78,9 +79,14 @@ export class AppComponent implements OnInit {
   $jqWindow = $(window);
 
   // API variables
-  apiBaseUrl = 'https://gateway.marvel.com/v1/public/';
-  apiKeyPublic = _.isEmpty(apiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : apiKeyPublic;
-  apiKeyPrivate = apiKeyPrivate;
+  marvelApiBaseUrl = 'https://gateway.marvel.com/v1/public/';
+  marvelApiKeyPublic = _.isEmpty(marvelApiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : marvelApiKeyPublic;
+  marvelApiKeyPrivate = marvelApiKeyPrivate;
+
+  goodreadsApiBaseUrl = 'https://www.goodreads.com/search/index.xml';
+  goodreadsApiKeyPublic = _.isEmpty(goodreadsApiKeyPublic) ? 'ruoM3jpamOVNpjOnfiAuYA' : goodreadsApiKeyPublic;
+
+  corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
 
   startTimeInitialLoad = new Date().getTime();
 
@@ -118,9 +124,21 @@ export class AppComponent implements OnInit {
     const params = new HttpParams()
       .set('title', seriesVolume.title)
       .set('startYear', seriesVolume.startYear)
-      .set('apikey', this.apiKeyPublic);
+      .set('apikey', this.marvelApiKeyPublic);
 
-    return this.http.get(this.apiBaseUrl + 'series' + this.getExtraAPIParamsString(), {params});
+    return this.http.get(this.marvelApiBaseUrl + 'series' + this.getExtraAPIParamsString(), {params});
+  }
+
+  /**
+   * @param collection the collection object
+   * @returns the collection data from the Goodreads API
+   */
+  setGoodreadsCollectionData = () => {
+    const params = new HttpParams()
+      .set('q', this.expandedCollection.title)
+      .set('key', this.goodreadsApiKeyPublic);
+
+    return this.http.get(this.corsAnywhereUrl + this.goodreadsApiBaseUrl, {params, responseType: 'text'});
   }
 
   /**
@@ -134,18 +152,18 @@ export class AppComponent implements OnInit {
     const params = new HttpParams()
       .set('issueNumber', comic.issue)
       .set('series', seriesVolumeMarvelID)
-      .set('apikey', this.apiKeyPublic);
+      .set('apikey', this.marvelApiKeyPublic);
 
-    return this.http.get(this.apiBaseUrl + 'comics' + this.getExtraAPIParamsString(), {params})
+    return this.http.get(this.marvelApiBaseUrl + 'comics' + this.getExtraAPIParamsString(), {params})
       .subscribe(function successCallback(response: MarvelAPISeriesResponse) {
         if (_.isEmpty(response.data.results)) {
           return;
         }
 
         /*
-        * Sometimes the Marvel API returns variants with no ID or 0, so
-        * keep looping until we get a real ID.
-        */
+         * Sometimes the Marvel API returns variants with no ID or 0, so
+         * keep looping until we get a real ID.
+         */
         _.each(response.data.results, (result) => {
           if (result.digitalId && result.digitalId !== 0) {
             comic.link = 'https://read.marvel.com/#book/' + result.digitalId;
@@ -158,11 +176,11 @@ export class AppComponent implements OnInit {
   }
 
   getExtraAPIParamsString = () => {
-    if (!_.isEmpty(this.apiKeyPrivate) && window.location.protocol === 'file') {
+    if (!_.isEmpty(this.marvelApiKeyPrivate) && window.location.protocol === 'file') {
       // TODO: Write this another way
       // tslint:disable-next-line: no-bitwise
       this.timestamp = Date.now() / ONE_SECOND_IN_MILLISECONDS | 0;
-      this.apiHash = Md5.hashStr(this.timestamp + this.apiKeyPrivate + this.apiKeyPublic);
+      this.apiHash = Md5.hashStr(this.timestamp + this.marvelApiKeyPrivate + this.marvelApiKeyPublic);
       return '?ts=' + this.timestamp + '&hash=' + this.apiHash;
     }
 
@@ -364,10 +382,31 @@ export class AppComponent implements OnInit {
             this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
           },
           (err) => {
-            throw new Error(err);
+            throw err;
           }
         );
     }
+
+    /*
+     * Sets the Goodreads collection ID
+     */
+    this.setGoodreadsCollectionData()
+        .subscribe(
+          (response) => {
+            parseString(response, (err, result) => {
+              if (err) {
+                return console.error(err);
+              }
+
+              const collectionOnGoodreads = result.GoodreadsResponse.search[0].results[0].work[0].best_book[0];
+
+              this.expandedCollection.goodreadsId = collectionOnGoodreads.id[0]._;
+            });
+          },
+          (err) => {
+            throw err;
+          }
+        );
   }
 
   search = (comic: Comic) => {
@@ -1142,63 +1181,63 @@ export class AppComponent implements OnInit {
    * specified (id and gc)
    */
   useGetParameters = () => {
-      const searchParams = this.route.snapshot.queryParams;
+    const searchParams = this.route.snapshot.queryParams;
 
-      if (searchParams.id) {
-        this.scrollToComic(searchParams.id);
-      }
+    if (searchParams.id) {
+      this.scrollToComic(searchParams.id);
+    }
 
-      if (searchParams.showCollections) {
-        this.toggleShowCollections('1');
-      }
+    if (searchParams.showCollections) {
+      this.toggleShowCollections('1');
+    }
 
-      /**
-       * The garbage collector.
-       *
-       * This picks up any orphaned comics and series that would
-       * not cause errors but just take up space.
-       *
-       * Note there is no need to check that the comicIds in
-       * collections map to comics, because that would cause big
-       * errors that we already watch out for.
-       */
-      if (searchParams.gc) {
-        let foundComic;
-        let isClean = true;
-        const gcConsolePrepend = 'Garbage Collector: ';
+    /**
+     * The garbage collector.
+     *
+     * This picks up any orphaned comics and series that would
+     * not cause errors but just take up space.
+     *
+     * Note there is no need to check that the comicIds in
+     * collections map to comics, because that would cause big
+     * errors that we already watch out for.
+     */
+    if (searchParams.gc) {
+      let foundComic;
+      let isClean = true;
+      const gcConsolePrepend = 'Garbage Collector: ';
 
-        // Check that each comic is referenced by a collection
-        _.each(this.comics, (comic) => {
-          foundComic = _.find(this.collections, (collection) => {
-            return collection.comicIds.includes(comic.id);
-          });
-
-          if (!foundComic) {
-            isClean = false;
-            console.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
-          }
+      // Check that each comic is referenced by a collection
+      _.each(this.comics, (comic) => {
+        foundComic = _.find(this.collections, (collection) => {
+          return collection.comicIds.includes(comic.id);
         });
 
-        if (isClean) {
-          console.log(gcConsolePrepend + 'All comics are referenced by collections.');
+        if (!foundComic) {
+          isClean = false;
+          console.warn(gcConsolePrepend + 'The comic ' + comic.id + ' is not referenced by any collections.');
         }
+      });
 
-        // Check that each seriesVolume is referenced by a comic
-        isClean = true;
-        _.each(this.seriesVolumes, (seriesVolume) => {
-          foundComic = _.find(this.comics, (comic) => {
-            return comic.seriesVolumeId === seriesVolume.id;
-          });
+      if (isClean) {
+        console.log(gcConsolePrepend + 'All comics are referenced by collections.');
+      }
 
-          if (!foundComic) {
-            isClean = false;
-            console.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
-          }
+      // Check that each seriesVolume is referenced by a comic
+      isClean = true;
+      _.each(this.seriesVolumes, (seriesVolume) => {
+        foundComic = _.find(this.comics, (comic) => {
+          return comic.seriesVolumeId === seriesVolume.id;
         });
 
-        if (isClean) {
-          console.log(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
+        if (!foundComic) {
+          isClean = false;
+          console.warn(gcConsolePrepend + 'The seriesVolume ' + seriesVolume.id + ' is not referenced by any comics.');
         }
+      });
+
+      if (isClean) {
+        console.log(gcConsolePrepend + 'All seriesVolumes are referenced by comics.');
       }
+    }
   }
 }

@@ -178,18 +178,27 @@ li:hover {
 
 .comic-container {
   .marvel-unlimited-link,
+  .goodreads-link,
   .scroll-to-comic-button {
     float: right;
     position: relative;
+    margin-left: 10px;
   }
 
-  .marvel-unlimited-link {
-    background-image: url('images/marvel-unlimited.png');
+  .marvel-unlimited-link,
+  .goodreads-link {
     background-size: contain;
     display: block;
     width: 40px;
     height: 40px;
-    margin-left: 10px;
+  }
+
+  .marvel-unlimited-link {
+    background-image: url('images/marvel-unlimited.png');
+  }
+
+  .goodreads-link {
+    background-image: url('images/goodreads.png');
   }
 
   > a {
