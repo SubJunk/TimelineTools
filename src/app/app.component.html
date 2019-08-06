@@ -123,10 +123,10 @@
         </ol>
       </div>
       <div class="expanded-panel" *ngIf="comic.id === expandedComicId">
-        <a *ngIf="comic.link" class="marvel-unlimited-link" href="{{comic.link}}">
+        <a [ngClass]="{disabled: !comic.link}" class="marvel-unlimited-link" [href]="comic.link">
           <div class="popover"><div>Open in Marvel Unlimited</div></div>
         </a>
-        <a *ngIf="expandedCollection.goodreadsId" class="goodreads-link" [href]="'https://www.goodreads.com/book/show/' + expandedCollection.goodreadsId">
+        <a [ngClass]="{disabled: !expandedCollection.goodreadsId}" class="goodreads-link" [href]="'https://www.goodreads.com/book/show/' + expandedCollection.goodreadsId">
           <div class="popover"><div>Open in Goodreads</div></div>
         </a>
         <button (click)="scrollToComic(comic.id)" class="scroll-to-comic-button" mat-mini-fab>
