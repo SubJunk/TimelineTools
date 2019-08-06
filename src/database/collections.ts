@@ -5463,11 +5463,11 @@ collections.push(
     '2009-7-1',
     [
       'XMenUnlimitedVol214',
+      'XInfernusSagaVol11',
       'XInfernusVol11',
       'XInfernusVol12',
       'XInfernusVol13',
       'XInfernusVol14',
-      'XInfernusSagaVol11',
     ]
   ),
   new Collection(
