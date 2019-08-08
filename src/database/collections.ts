@@ -5487,9 +5487,146 @@ collections.push(
       'UncannyXMenVol1512',
     ]
   ),
+  new Collection(
+    'Eternals: Manifest Destiny',
+    '2016-12-29',
+    [
+      'EternalsManifestDestinyVol17',
+      'EternalsManifestDestinyVol18',
+      'EternalsManifestDestinyVol19',
+      'EternalsAnnualVol21',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 6: Secret Invasion',
+    '2009-5-27',
+    [
+      'XFactorVol335',
+      'XFactorVol336',
+      'XFactorVol337',
+      'XFactorVol338',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 7: Time and a Half',
+    '2009-9-2',
+    [
+      'XFactorVol339',
+    ]
+  ),
+  new Collection(
+    'New Mutants Vol. 1: Return of Legion',
+    '2010-5-12',
+    [
+      'MarvelSpotlightVol341',
+      'NewMutantsVol31',
+      'NewMutantsVol32',
+      'NewMutantsVol33',
+      'NewMutantsVol34',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men Vol. 6: Exogenetic',
+    '2011-3-9',
+    [
+      'AstonishingXMenVol331',
+      'AstonishingXMenVol332',
+      'AstonishingXMenVol333',
+      'AstonishingXMenVol334',
+      'AstonishingXMenVol335',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Xenogenesis',
+    '2011-10-5',
+    [
+      'AstonishingXMenXenogenesisVol11',
+      'AstonishingXMenXenogenesisVol12',
+      'AstonishingXMenXenogenesisVol13',
+      'AstonishingXMenXenogenesisVol14',
+      'AstonishingXMenXenogenesisVol15',
+    ]
+  ),
+  new Collection(
+    'X-Force/Cable: Messiah War',
+    '2010-1-6',
+    [
+      'CableVol211',
+      'CableVol212',
+      'XMenTheLivesandTimesofLucasBishopVol11',
+      'XMenTheLivesandTimesofLucasBishopVol12',
+      'XMenTheLivesandTimesofLucasBishopVol13',
+    ]
+  ),
+  new Collection(
+    'X-Force Vol. 3: Not Forgotten',
+    '2010-4-7',
+    [
+      'XForceVol313',
+    ]
+  ),
+  new Collection(
+    'X-Force/Cable: Messiah War',
+    '2010-1-6',
+    [
+      'XForceCableMessiahWarPrologueVol11',
+      'CableVol213',
+      'XForceVol314',
+      'CableVol214',
+      'XForceVol315',
+      'CableVol215',
+      'XForceVol316',
+      'XMenFutureHistoryTheMessiahWarSourcebookVol11',
+    ]
+  ),
+  new Collection(
+    'X-Force Vol. 3: Not Forgotten',
+    '2010-4-7',
+    [
+      'XForceVol317',
+      'XForceVol318',
+      'XForceVol319',
+      'XForceVol320',
+    ]
+  ),
+  new Collection(
+    'X-Men: Domino',
+    '2018-4-25',
+    [
+      'XForceSexandViolenceVol11',
+      'XForceSexandViolenceVol12',
+      'XForceSexandViolenceVol13',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
+    '2014-6-10',
+    [
+      'XFactorLaylaMillerVol11',
+    ]
+  ),
+  new Collection(
+    'New Mutants Vol. 1: Return of Legion',
+    '2010-5-12',
+    [
+      'NewMutantsVol35',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 7: Time and a Half',
+    '2009-9-2',
+    [
+      'XFactorVol340',
+      'XFactorVol341',
+      'XFactorVol342',
+      'XFactorVol343',
+      'XFactorVol344',
+      'XFactorVol345',
+    ]
+  ),
   new Collection(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
@@ -5510,27 +5647,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Force Vol. 3: Not Forgotten',
-    '2010-4-7',
-    [
-      'XForceVol313',
-      'XForceVol317',
-      'XForceVol318',
-      'XForceVol319',
-      'XForceVol320',
-    ]
-  ),
-  new Collection(
-    'X-Factor Vol. 6: Secret Invasion',
-    '2009-5-27',
-    [
-      'XFactorVol335',
-      'XFactorVol336',
-      'XFactorVol337',
-      'XFactorVol338',
-    ]
-  ),
-  new Collection(
     'War of Kings: Road to War of Kings',
     '2009-6-3',
     [
@@ -5547,13 +5663,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
-    '2014-6-10',
-    [
-      'XFactorLaylaMillerVol11',
-    ]
-  ),
-  new Collection(
     'X-Men: Domino',
     '2018-4-25',
     [
@@ -5561,9 +5670,6 @@ collections.push(
       'DominoVol22',
       'DominoVol23',
       'DominoVol24',
-      'XForceSexandViolenceVol11',
-      'XForceSexandViolenceVol12',
-      'XForceSexandViolenceVol13'
     ]
   ),
   /**
