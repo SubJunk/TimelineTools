@@ -629,7 +629,7 @@ export class AppComponent implements OnInit {
 
       // Populate a smaller object just for filtering
       this.itemsToSearch.push({
-        displayText: comic.series + ' #' + comic.issue,
+        displayText: currentSeriesVolume.titleWithVolume + ' #' + comic.issue,
         image: comic.image,
         id: comic.id
       });
