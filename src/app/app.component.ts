@@ -626,6 +626,7 @@ export class AppComponent implements OnInit {
       // Store the name of the series in the comic object
       comic.series = currentSeriesVolume.title;
       comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
+
       // Populate a smaller object just for filtering
       this.itemsToSearch.push({
         displayText: currentSeriesVolume.searchTitleWithVolume + ' #' + comic.issue,
