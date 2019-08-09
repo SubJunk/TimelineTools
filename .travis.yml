@@ -10,6 +10,11 @@ cache:
     - node_modules
 addons:
   chrome: "stable"
+services:
+  - xvfb
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm config set spin false; fi
 script:
   - yarn lint
   - node_modules/.bin/stylelint "**/*.less" --custom-syntax postcss-less
