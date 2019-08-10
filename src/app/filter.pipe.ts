@@ -13,14 +13,13 @@ export class FilterPipe implements PipeTransform {
 
     searchText = searchText.toLowerCase();
     // split the search string into an array of individual words
-    const searchTextAsWords = searchText.match(/\s+/g) || [];
+    const searchTextAsWords = searchText.match(/\S+/g) || [];
 
     return items.filter( item => {
       // results should contain all search words
-      return searchTextAsWords.every(matchAll);
-      function matchAll(wordItem) {
-        return item.displayText.toLowerCase().includes(wordItem);
-      }
+      return searchTextAsWords.every(wordItem => {
+          return item.displayText.toLowerCase().includes(wordItem);
+        });
     });
   }
 }
