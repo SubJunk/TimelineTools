@@ -45,7 +45,7 @@ function SeriesVolume(seriesId: string, volume: string, startYear: number, title
   if (Number(volume) > 1) {
     this.titleWithVolume += ' Vol. ' + volume;
   }
-  this.searchTitleWithVolume = title += ' Vol. ' + volume;
+  this.searchTitleWithVolume = title + ' Vol. ' + volume;
 }
 
 series.push(
