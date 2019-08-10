@@ -1,17 +1,32 @@
 <h1 mat-dialog-title>Info & Credits</h1>
 <div mat-dialog-content>
+  <p>There are a few ways to use this website depending on what your goal is. Some of the most common goals are below:</p>
+  <ul>
+    <li>
+      <strong>Get an overview of the comics</strong><br>
+      You can scroll horizontally to travel through time.
+    </li>
+    <li>
+      <strong>Find a particular comic or series</strong><br>
+      You can search by clicking the icon on the upper left.
+    </li>
+    <li>
+      <strong>View the reading order</strong><br>
+      You can choose your starting point, expand the comic by clicking on the circular thumbnail, and then use the arrow keys on your keyboard or on the left part of the expanded panel. Going to the right will take you to the next comic in reading order, including across series.
+    </li>
+  </ul>
   <p>This tool depends on data from others. Some of the most frequent sources of that data are:</p>
   <ul>
     <li>
-      <h2><a href="http://notahoaxnotadream.blogspot.co.nz/p/x-men-collected-editions-chart.html">NOT A HOAX! NOT A DREAM!</a></h2>
+      <a mat-raised-button [href]="'http://notahoaxnotadream.blogspot.co.nz/p/x-men-collected-editions-chart.html'">NOT A HOAX! NOT A DREAM!</a><br>
       We rely on the reviews on this blog to know which order the comics appear in within collections.
     </li>
     <li>
-      <h2><a href="http://www.comicsbackissues.com/comic-book-reading-order/x-men-read-order-chronology/#order">Comics Back Issues</a></h2>
+      <a mat-raised-button [href]="'http://www.comicsbackissues.com/comic-book-reading-order/x-men-read-order-chronology/#order'">Comics Back Issues</a><br>
       We rely on this to track and order crossovers.
     </li>
     <li>
-      <h2><a href="http://www.marvel.com">Marvel</a></h2>
+      <a mat-raised-button [href]="'http://www.marvel.com'">Marvel</a><br>
       We rely on the Marvel API to display the link to the online version of the comics.
     </li>
   </ul>
