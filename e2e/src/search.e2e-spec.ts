@@ -16,11 +16,11 @@ describe('Search', () => {
     'should display the search div\n' +
     'should display correct search results',
   async () => {
-    await element(by.tagName('input')).sendKeys('Uncanny X-Men Vol. 1 #100');
+    await element(by.tagName('input')).sendKeys('Uncanny X-Men Vol. 1 #1');
     expect(
       await element(by.css('.search-result')).getText()
     ).toContain(
-      'Uncanny X-Men Vol. 1 #100'
+      'Uncanny X-Men Vol. 1 #1'
     );
   });
 
