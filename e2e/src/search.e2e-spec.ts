@@ -16,11 +16,22 @@ describe('Search', () => {
     'should display the search div\n' +
     'should display correct search results',
   async () => {
-    await element(by.tagName('input')).sendKeys('Uncanny X-Men #100');
+    await element(by.tagName('input')).sendKeys('Uncanny X-Men Vol. 1 #1');
     expect(
       await element(by.css('.search-result')).getText()
     ).toContain(
-      'Uncanny X-Men #100'
+      'Uncanny X-Men Vol. 1 #1'
+    );
+  });
+
+  it(
+    'should display correct partial search results',
+  async () => {
+    await element(by.tagName('input')).sendKeys('Cable met 2');
+    expect(
+      await element(by.css('.search-result')).getText()
+    ).toContain(
+      'Cable: Blood & Metal Vol. 1 #2'
     );
   });
 
