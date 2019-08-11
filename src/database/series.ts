@@ -195,7 +195,7 @@ series.push(
   new Series('X-Factor Annual', {1: 1986}),
   new Series('X-Force', {1: 1991, 2: 2004, 3: 2008}),
   new Series('X-Force/Cable Annual', {1: 1995}),
-  new Series('X-Force/Cable: Messiah War Prologue ', {1: 2009}),
+  new Series('X-Force/Cable: Messiah War Prologue', {1: 2009}),
   new Series('X-Force: Sex and Violence', {1: 2010}),
   new Series('X-Force Annual', {1: 1992}),
   new Series('X-Infernus', {1: 2008}),
