@@ -24,6 +24,17 @@ describe('Search', () => {
     );
   });
 
+  it(
+    'should display correct partial search results',
+  async () => {
+    await element(by.tagName('input')).sendKeys('Cable met 2');
+    expect(
+      await element(by.css('.search-result')).getText()
+    ).toContain(
+      'Cable: Blood & Metal Vol. 1 #2'
+    );
+  });
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
