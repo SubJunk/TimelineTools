@@ -18,8 +18,8 @@ export class FilterPipe implements PipeTransform {
     return items.filter( item => {
       // results should contain all search words
       return searchTextAsWords.every(wordItem => {
-          return item.displayText.toLowerCase().includes(wordItem);
-        });
+        return item.displayText.toLowerCase().includes(wordItem);
+      });
     });
   }
 }
