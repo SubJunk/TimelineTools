@@ -11,9 +11,6 @@
   },
   "name": "TimelineTools",
   "scripts": {
-    "postinstall": "ng build --prod --aot=true && mv dist/* .",
-    "preinstall": "npm install -g angular-cli http-server",
-    "start": "http-server"
   },
   "stack": "heroku-18"
 }
