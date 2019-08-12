@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "postinstall": "ng build --prod --aot=true && mv dist/* .",
     "preinstall": "npm install -g angular-cli http-server",
     "start": "ng serve -o",
     "startprod": "ng serve -o --prod --aot=true",
