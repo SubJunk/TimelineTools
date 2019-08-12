@@ -2,8 +2,11 @@
   "name": "timeline-tools",
   "version": "0.0.0",
   "scripts": {
+    "dev": "ng serve -o",
     "ng": "ng",
-    "start": "ng serve -o",
+    "postinstall": "ng build --prod --aot=true && mv dist/timeline-tools/* .",
+    "preinstall": "npm install -g angular-cli http-server",
+    "start": "http-server",
     "startprod": "ng serve -o --prod --aot=true",
     "build": "ng build --prod --aot=true",
     "test": "ng test",
