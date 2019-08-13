@@ -30,7 +30,7 @@ const BODY_PADDING = 20;
 const LEFT_MARGIN = 200;
 const TOP_MARGIN = 300;
 const VISUAL_BLOCK_SIZE = 60;
-const EXPANDED_COMIC_WIDTH = 900;
+const EXPANDED_PANEL_WIDTH = 900;
 
 const ANIMATION_DURATION = 400;
 const ONE_YEAR_IN_MONTHS = 12;
@@ -512,11 +512,6 @@ export class AppComponent implements OnInit {
       if (!currentSeriesVolume) {
         throw new Error(comic.seriesVolumeId + ' not found');
       }
-
-      // Initialize the comic values
-      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
-      comic.classes = { fullScreen: false, stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
-      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
 
       // Horizontal positioning
       monthsSinceFirst = (comic.yearPublished - firstYear) * ONE_YEAR_IN_MONTHS;
@@ -1074,6 +1069,7 @@ export class AppComponent implements OnInit {
       comicLeftPosition   = stickyAnchorOffset.left;
       comicRightPosition  = comicLeftPosition + EXPANDED_COMIC_WIDTH;
       comicBottomPosition = comicTopPosition  + $expandedComic.height();
+      comicRightPosition  = comicLeftPosition + EXPANDED_PANEL_WIDTH;
 
       scrollPositionRight  = scrollPositionLeft + window.innerWidth;
       scrollPositionBottom = scrollPositionTop  + window.innerHeight;

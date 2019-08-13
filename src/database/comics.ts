@@ -26,14 +26,15 @@ function Comic(issue: string, datePublished: string, seriesVolumeId: string, tit
     day = '0' + day;
   }
 
-  // Create a Date object from the datePublished string
-  this.classes = {};
+  this.classes = { fullScreen: false, stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
+  this.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
   this.date = moment(year + '-' + month + '-' + day);
   this.id = seriesVolumeId + issue;
   this.issue = issue;
   this.yearPublished = this.date.year();
   this.monthPublished = this.date.month() + 1;
   this.seriesVolumeId = seriesVolumeId;
+  this.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
   this.titles = titles ? titles : [];
 }
 
