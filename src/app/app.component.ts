@@ -30,6 +30,7 @@ const BODY_PADDING = 20;
 const LEFT_MARGIN = 200;
 const TOP_MARGIN = 300;
 const VISUAL_BLOCK_SIZE = 60;
+const EXPANDED_COMIC_WIDTH = 900;
 
 const ANIMATION_DURATION = 400;
 const ONE_YEAR_IN_MONTHS = 12;
@@ -827,9 +828,6 @@ export class AppComponent implements OnInit {
     });
 
     setTimeout(() => {
-      // Make room for the farthest-right expanded panel
-      this.bodyStyles['width.px'] += $('.scroll-anchor').width();
-
       // Make room for the farthest-bottom expanded panel
       this.bodyStyles['height.px'] = $(document).height() + $(window).height();
 
@@ -995,23 +993,23 @@ export class AppComponent implements OnInit {
    * Use jQuery to manipulate classes and styles to make the expanded
    * panels always fit in the viewport.
    */
-  repositionStickyElements = (currentComicId?) => {
-    let scrollLeft;
-    let scrollTop;
-    let isComicScrolledPastLeft;
-    let isComicScrolledPastRight;
-    let anchorTopPosition;
-    let anchorLeftPosition;
-    let anchorRightPosition;
-    let anchorBottomPosition;
-    let $expandedComic;
-    let scrollRight;
-    let scrollBottom;
-    let isStickyTop;
-    let isStickyLeft;
-    let isStickyRight;
-    let isStickyBottom;
-    let startTimeReposition;
+  repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
+    let scrollPositionLeft: number;
+    let scrollPositionTop: number;
+    let scrollPositionRight: number;
+    let scrollPositionBottom: number;
+    let isComicScrolledPastLeft: boolean;
+    let isComicScrolledPastRight: boolean;
+    let comicTopPosition: number;
+    let comicLeftPosition: number;
+    let comicRightPosition: number;
+    let comicBottomPosition: number;
+    let $expandedComic: JQuery;
+    let isStickyTop: boolean;
+    let isStickyLeft: boolean;
+    let isStickyRight: boolean;
+    let isStickyBottom: boolean;
+    let startTimeReposition: number;
 
     if (this.doSpeedProfile) {
       startTimeReposition = new Date().getTime();
@@ -1026,9 +1024,9 @@ export class AppComponent implements OnInit {
     }
 
     // The scroll position of the page, minus the main padding
-    scrollLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
-    scrollTop  = this.$jqWindow.scrollTop();
-    scrollRight = scrollLeft + this.$jqWindow.innerWidth();
+    scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
+    scrollPositionTop  = this.$jqWindow.scrollTop();
+    scrollPositionRight = scrollPositionLeft + this.$jqWindow.innerWidth();
 
     // Lazy-load thumbnails that aren't in the viewport
     _.each(this.comics, (comic) => {
@@ -1037,8 +1035,8 @@ export class AppComponent implements OnInit {
         return;
       }
 
-      isComicScrolledPastLeft  = Boolean(scrollLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastRight = Boolean(scrollRight < comic.containerStyles['left.px']);
+      isComicScrolledPastLeft  = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastRight = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
 
       // the comic is out of the viewport, to the left
       if (!isComicScrolledPastLeft && !isComicScrolledPastRight) {
@@ -1058,7 +1056,13 @@ export class AppComponent implements OnInit {
       return console.error('The comic could not be found', selectedComic);
     }
 
-    // Expanded panel positioning
+    /**
+     * Expanded panel positioning.
+     *
+     * We pass in expandedComic as a parameter to make sure that this works
+     * even if the function is called after expandedPanel has changed to another
+     * value (e.g. if the user is navigating very quickly)
+     */
     setTimeout(() => {
       $expandedComic = $('.expanded .comic');
       if (!$expandedComic.length) {
@@ -1066,18 +1070,18 @@ export class AppComponent implements OnInit {
       }
 
       const stickyAnchorOffset = $('.expanded .scroll-anchor').offset();
-      anchorTopPosition    = stickyAnchorOffset.top;
-      anchorLeftPosition   = stickyAnchorOffset.left;
-      anchorRightPosition  = stickyAnchorOffset.left + $expandedComic.width();
-      anchorBottomPosition = stickyAnchorOffset.top  + $expandedComic.height();
+      comicTopPosition    = stickyAnchorOffset.top;
+      comicLeftPosition   = stickyAnchorOffset.left;
+      comicRightPosition  = comicLeftPosition + EXPANDED_COMIC_WIDTH;
+      comicBottomPosition = comicTopPosition  + $expandedComic.height();
 
-      scrollRight  = scrollLeft + window.innerWidth;
-      scrollBottom = scrollTop  + window.innerHeight;
+      scrollPositionRight  = scrollPositionLeft + window.innerWidth;
+      scrollPositionBottom = scrollPositionTop  + window.innerHeight;
 
-      isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
-      isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
-      isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
-      isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
+      isStickyTop    = Boolean(scrollPositionTop  > comicTopPosition);
+      isStickyLeft   = Boolean(scrollPositionLeft > comicLeftPosition);
+      isStickyRight  = Boolean(scrollPositionRight  < comicRightPosition);
+      isStickyBottom = Boolean(scrollPositionBottom < comicBottomPosition);
 
       expandedComic.classes.stickyTop = isStickyTop;
       expandedComic.classes.stickyRight = isStickyRight;
@@ -1085,19 +1089,15 @@ export class AppComponent implements OnInit {
       expandedComic.classes.stickyLeft = isStickyLeft;
 
       if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-        expandedComic.styles['marginLeft.px'] = '-' + (scrollLeft + BODY_PADDING);
+        expandedComic.styles['marginLeft.px'] = '-' + (scrollPositionLeft + BODY_PADDING);
         expandedComic.styles['marginTop.px'] = null;
       } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
         expandedComic.styles['marginLeft.px'] = null;
-        expandedComic.styles['marginTop.px'] = '-' + scrollTop;
+        expandedComic.styles['marginTop.px'] = '-' + scrollPositionTop;
       } else {
         expandedComic.styles['marginLeft.px'] = null;
         expandedComic.styles['marginTop.px'] = null;
       }
-
-      // Instruct Materialize-CSS to make the expanded cover fullscreen on click
-      const elems = document.querySelectorAll('.materialboxed');
-      // const instances = M.Materialbox.init(elems);
 
       if (this.doSpeedProfile) {
         const endTime = new Date().getTime();
@@ -1155,7 +1155,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  scrollToComic = (comicId) => {
+  scrollToComic = (comicId: string) => {
     const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
 
     setTimeout(() => {
