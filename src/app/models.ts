@@ -50,12 +50,15 @@ export interface Comic {
   visible?: boolean;
 }
 
-interface ComicClasses {
-  fullScreen: boolean;
+export interface StickyClasses {
   stickyBottom: boolean;
   stickyLeft: boolean;
   stickyRight: boolean;
   stickyTop: boolean;
+}
+
+interface ComicClasses {
+  fullScreen: boolean;
 }
 
 interface ComicStyles {

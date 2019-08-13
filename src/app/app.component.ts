@@ -20,6 +20,7 @@ import {
   MarvelAPISeriesResponseResult,
   SeriesVolume,
   SeriesVolumeLabel,
+  StickyClasses,
 } from './models';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InfoModalComponent } from './info-modal/info-modal.component';
@@ -96,6 +97,7 @@ export class AppComponent implements OnInit {
 
   expandedComic: Comic;
   expandedComicId: string;
+  expandedComicStickyClasses: StickyClasses;
   expandedCollectionId: string;
   expandedCollection: Collection;
   expandedSeriesVolume: SeriesVolume;
@@ -220,6 +222,24 @@ export class AppComponent implements OnInit {
     return seriesOrCollection;
   }
 
+  /**
+   * Returns the classes to use for the comic.
+   *
+   * If this is not the expanded comic, it simply returns the classes
+   * node. If this is the expanded comic, it also returns the sticky
+   * classes.
+   */
+  public getComicClasses = (comic: Comic) => {
+    let comicClasses = comic.classes;
+
+    if (comic.id === this.expandedComicId) {
+      comicClasses = _.clone(comic.classes);
+      comicClasses = _.assign(comicClasses, this.expandedComicStickyClasses);
+    }
+
+    return comicClasses;
+  }
+
   clearComicClassesAndStyles = (comic?: Comic) => {
     if (!comic && !this.expandedCollection) {
       return;
@@ -227,10 +247,13 @@ export class AppComponent implements OnInit {
 
     comic = comic || this.expandedCollection.comics[this.currentComicIndexInCollection];
 
-    comic.classes.stickyTop = false;
-    comic.classes.stickyRight = false;
-    comic.classes.stickyBottom = false;
-    comic.classes.stickyLeft = false;
+    this.expandedComicStickyClasses = {
+      stickyBottom: false,
+      stickyLeft: false,
+      stickyRight: false,
+      stickyTop: false,
+    };
+
     comic.styles['marginTop.px'] = null;
     comic.styles['marginLeft.px'] = null;
   }
@@ -1067,7 +1090,6 @@ export class AppComponent implements OnInit {
       const stickyAnchorOffset = $('.expanded .scroll-anchor').offset();
       comicTopPosition    = stickyAnchorOffset.top;
       comicLeftPosition   = stickyAnchorOffset.left;
-      comicRightPosition  = comicLeftPosition + EXPANDED_COMIC_WIDTH;
       comicBottomPosition = comicTopPosition  + $expandedComic.height();
       comicRightPosition  = comicLeftPosition + EXPANDED_PANEL_WIDTH;
 
@@ -1079,10 +1101,12 @@ export class AppComponent implements OnInit {
       isStickyRight  = Boolean(scrollPositionRight  < comicRightPosition);
       isStickyBottom = Boolean(scrollPositionBottom < comicBottomPosition);
 
-      expandedComic.classes.stickyTop = isStickyTop;
-      expandedComic.classes.stickyRight = isStickyRight;
-      expandedComic.classes.stickyBottom = isStickyBottom;
-      expandedComic.classes.stickyLeft = isStickyLeft;
+      this.expandedComicStickyClasses = {
+        stickyBottom: isStickyBottom,
+        stickyLeft: isStickyLeft,
+        stickyRight: isStickyRight,
+        stickyTop: isStickyTop,
+      };
 
       if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
         expandedComic.styles['marginLeft.px'] = '-' + (scrollPositionLeft + BODY_PADDING);
