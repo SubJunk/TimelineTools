@@ -79,7 +79,7 @@
   <li *ngFor="let comic of comics; trackBy: trackByItemId" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles">
     <div class="scroll-anchor"></div>
     <div class="popover"><div>#{{comic.issue}}</div></div>
-    <div class="comic " [ngStyle]="comic.styles" [ngClass]="getComicClasses(comic)">
+    <div class="comic " [ngStyle]="getComicStyles(comic)" [ngClass]="getComicClasses(comic)">
       <div class="panel-left">
         <button *ngIf="comic.id !== expandedComicId" (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
           <img

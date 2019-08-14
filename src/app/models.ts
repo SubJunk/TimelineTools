@@ -50,11 +50,21 @@ export interface Comic {
   visible?: boolean;
 }
 
-export interface StickyClasses {
+interface ExpandedComicClasses {
   stickyBottom: boolean;
   stickyLeft: boolean;
   stickyRight: boolean;
   stickyTop: boolean;
+}
+
+interface ExpandedComicStyles {
+  'marginLeft.px': string;
+  'marginTop.px': string;
+}
+
+export interface ExpandedComicCSS {
+  classes: ExpandedComicClasses;
+  styles: ExpandedComicStyles;
 }
 
 interface ComicClasses {
@@ -64,8 +74,6 @@ interface ComicClasses {
 interface ComicStyles {
   background: string;
   color: string;
-  'marginLeft.px': string;
-  'marginTop.px': string;
 }
 
 // The following three models are used to create the years and months

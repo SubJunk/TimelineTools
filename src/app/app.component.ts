@@ -16,11 +16,11 @@ import {
   CollectionColor,
   Comic,
   DateYear,
+  ExpandedComicCSS,
   MarvelAPISeriesResponse,
   MarvelAPISeriesResponseResult,
   SeriesVolume,
   SeriesVolumeLabel,
-  StickyClasses,
 } from './models';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InfoModalComponent } from './info-modal/info-modal.component';
@@ -97,7 +97,7 @@ export class AppComponent implements OnInit {
 
   expandedComic: Comic;
   expandedComicId: string;
-  expandedComicStickyClasses: StickyClasses;
+  expandedComicCSS: ExpandedComicCSS;
   expandedCollectionId: string;
   expandedCollection: Collection;
   expandedSeriesVolume: SeriesVolume;
@@ -232,12 +232,29 @@ export class AppComponent implements OnInit {
   public getComicClasses = (comic: Comic) => {
     let comicClasses = comic.classes;
 
-    if (comic.id === this.expandedComicId) {
+    if (comic.id === this.expandedComicId && this.expandedComicCSS) {
       comicClasses = _.clone(comic.classes);
-      comicClasses = _.assign(comicClasses, this.expandedComicStickyClasses);
+      comicClasses = _.assign(comicClasses, this.expandedComicCSS.classes);
     }
 
     return comicClasses;
+  }
+
+  /**
+   * Returns the styles to use for the comic.
+   *
+   * If this is not the expanded comic, it simply returns the styles
+   * node. If this is the expanded comic, it also returns the margins.
+   */
+  public getComicStyles = (comic: Comic) => {
+    let comicStyles = comic.styles;
+
+    if (comic.id === this.expandedComicId && this.expandedComicCSS) {
+      comicStyles = _.clone(comic.styles);
+      comicStyles = _.assign(comicStyles, this.expandedComicCSS.styles);
+    }
+
+    return comicStyles;
   }
 
   clearComicClassesAndStyles = (comic?: Comic) => {
@@ -247,15 +264,18 @@ export class AppComponent implements OnInit {
 
     comic = comic || this.expandedCollection.comics[this.currentComicIndexInCollection];
 
-    this.expandedComicStickyClasses = {
-      stickyBottom: false,
-      stickyLeft: false,
-      stickyRight: false,
-      stickyTop: false,
+    this.expandedComicCSS = {
+      classes: {
+        stickyBottom: false,
+        stickyLeft: false,
+        stickyRight: false,
+        stickyTop: false,
+      },
+      styles: {
+        'marginTop.px': null,
+        'marginLeft.px': null,
+      }
     };
-
-    comic.styles['marginTop.px'] = null;
-    comic.styles['marginLeft.px'] = null;
   }
 
   /**
@@ -302,7 +322,7 @@ export class AppComponent implements OnInit {
         this.clearComicClassesAndStyles();
       }
 
-      $('html, body').animate({
+      $('html, body').stop().animate({
         scrollLeft: currentComic.containerStyles['left.px'] - LEFT_MARGIN,
         scrollTop:  currentComic.containerStyles['top.px'] + TOP_MARGIN
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
@@ -316,7 +336,7 @@ export class AppComponent implements OnInit {
       // reset the styles for the previous comic
       this.clearComicClassesAndStyles(previouslyExpandedComic);
 
-      $('html, body').animate({
+      $('html, body').stop().animate({
         scrollLeft: this.$jqWindow.scrollLeft() - positionDifference.left,
         scrollTop:  this.$jqWindow.scrollTop()  - positionDifference.top
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
@@ -1101,7 +1121,7 @@ export class AppComponent implements OnInit {
       isStickyRight  = Boolean(scrollPositionRight  < comicRightPosition);
       isStickyBottom = Boolean(scrollPositionBottom < comicBottomPosition);
 
-      this.expandedComicStickyClasses = {
+      this.expandedComicCSS.classes = {
         stickyBottom: isStickyBottom,
         stickyLeft: isStickyLeft,
         stickyRight: isStickyRight,
@@ -1109,14 +1129,20 @@ export class AppComponent implements OnInit {
       };
 
       if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-        expandedComic.styles['marginLeft.px'] = '-' + (scrollPositionLeft + BODY_PADDING);
-        expandedComic.styles['marginTop.px'] = null;
+        this.expandedComicCSS.styles = {
+          'marginLeft.px': '-' + (scrollPositionLeft + BODY_PADDING),
+          'marginTop.px': null,
+        };
       } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
-        expandedComic.styles['marginLeft.px'] = null;
-        expandedComic.styles['marginTop.px'] = '-' + scrollPositionTop;
+        this.expandedComicCSS.styles = {
+          'marginLeft.px': null,
+          'marginTop.px': '-' + scrollPositionTop,
+        };
       } else {
-        expandedComic.styles['marginLeft.px'] = null;
-        expandedComic.styles['marginTop.px'] = null;
+        this.expandedComicCSS.styles = {
+          'marginLeft.px': null,
+          'marginTop.px': null,
+        };
       }
 
       if (this.doSpeedProfile) {
@@ -1179,7 +1205,7 @@ export class AppComponent implements OnInit {
     const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
 
     setTimeout(() => {
-      $('html, body').animate({
+      $('html, body').stop().animate({
         scrollLeft: comicFromId.containerStyles['left.px'] - LEFT_MARGIN,
         scrollTop:  comicFromId.containerStyles['top.px']
       }, ANIMATION_DURATION, 'swing', () => {
