@@ -16,6 +16,7 @@ import {
   CollectionColor,
   Comic,
   DateYear,
+  ExpandedComicCSS,
   MarvelAPISeriesResponse,
   MarvelAPISeriesResponseResult,
   SeriesVolume,
@@ -30,6 +31,7 @@ const BODY_PADDING = 20;
 const LEFT_MARGIN = 200;
 const TOP_MARGIN = 300;
 const VISUAL_BLOCK_SIZE = 60;
+const EXPANDED_PANEL_WIDTH = 900;
 
 const ANIMATION_DURATION = 400;
 const ONE_YEAR_IN_MONTHS = 12;
@@ -93,11 +95,22 @@ export class AppComponent implements OnInit {
   globalVerticalPositionCounter = 0;
   seriesVolumeLabels: Array<SeriesVolumeLabel> = [];
 
-  expandedComic: Comic;
   expandedComicId: string;
+  expandedComicCSS: ExpandedComicCSS = {
+    classes: {
+      fullScreen: false,
+      stickyBottom: false,
+      stickyLeft: false,
+      stickyRight: false,
+      stickyTop: false,
+    },
+    styles: {
+      'marginTop.px': null,
+      'marginLeft.px': null,
+    }
+  };
   expandedCollectionId: string;
   expandedCollection: Collection;
-  expandedSeriesVolume: SeriesVolume;
   prevComic: Comic;
   nextComic: Comic;
   prevComicId: string;
@@ -133,9 +146,9 @@ export class AppComponent implements OnInit {
    * @param collection the collection object
    * @returns the collection data from the Goodreads API
    */
-  setGoodreadsCollectionData = () => {
+  getGoodreadsCollectionData = (collectionTitle: string) => {
     const params = new HttpParams()
-      .set('q', this.expandedCollection.title)
+      .set('q', collectionTitle)
       .set('key', this.goodreadsApiKeyPublic);
 
     return this.http.get(this.corsAnywhereUrl + this.goodreadsApiBaseUrl, {params, responseType: 'text'});
@@ -219,19 +232,43 @@ export class AppComponent implements OnInit {
     return seriesOrCollection;
   }
 
-  clearComicClassesAndStyles = (comic?: Comic) => {
-    if (!comic && !this.expandedCollection) {
-      return;
+  /**
+   * Returns the classes to use for the comic.
+   *
+   * If this is not the expanded comic, it simply returns the classes
+   * node. If this is the expanded comic, it also returns the sticky
+   * classes.
+   */
+  public getComicClasses = (comic: Comic) => {
+    let comicClasses = {};
+
+    if (comic.id === this.expandedComicId) {
+      comicClasses = this.expandedComicCSS.classes;
     }
 
-    comic = comic || this.expandedCollection.comics[this.currentComicIndexInCollection];
+    return comicClasses;
+  }
 
-    comic.classes.stickyTop = false;
-    comic.classes.stickyRight = false;
-    comic.classes.stickyBottom = false;
-    comic.classes.stickyLeft = false;
-    comic.styles['marginTop.px'] = null;
-    comic.styles['marginLeft.px'] = null;
+  /**
+   * Returns the styles to use for the comic.
+   *
+   * If this is not the expanded comic, it simply returns the styles
+   * node. If this is the expanded comic, it also returns the margins.
+   */
+  public getComicStyles = (comic: Comic) => {
+    let comicStyles = comic.styles;
+
+    if (comic.id === this.expandedComicId) {
+      comicStyles = _.clone(comic.styles);
+      comicStyles = _.assign(comicStyles, this.expandedComicCSS.styles);
+    }
+
+    return comicStyles;
+  }
+
+  clearComicClassesAndStyles = () => {
+    this.expandedComicId    = undefined;
+    this.expandedCollection = undefined;
   }
 
   /**
@@ -242,7 +279,7 @@ export class AppComponent implements OnInit {
    *                      instead of using a relative one.
    *                      Used when clicking on a comic from the collections view
    */
-  toggleExpandComic = (currentComic: Comic, isForceScroll?: boolean) => {
+  toggleExpandComic = async (currentComic: Comic, isForceScroll?: boolean) => {
     if (typeof currentComic !== 'object') {
       return;
     }
@@ -260,12 +297,7 @@ export class AppComponent implements OnInit {
         preserveFragment: true });
       this.router.navigateByUrl(urlTree);
 
-      this.clearComicClassesAndStyles();
-
-      return setTimeout(() => {
-        this.expandedComicId    = undefined;
-        this.expandedCollection = undefined;
-      });
+      return this.clearComicClassesAndStyles();
     }
 
     /**
@@ -278,7 +310,7 @@ export class AppComponent implements OnInit {
         this.clearComicClassesAndStyles();
       }
 
-      $('html, body').animate({
+      $('html, body').stop().animate({
         scrollLeft: currentComic.containerStyles['left.px'] - LEFT_MARGIN,
         scrollTop:  currentComic.containerStyles['top.px'] + TOP_MARGIN
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
@@ -290,9 +322,9 @@ export class AppComponent implements OnInit {
       };
 
       // reset the styles for the previous comic
-      this.clearComicClassesAndStyles(previouslyExpandedComic);
+      this.clearComicClassesAndStyles();
 
-      $('html, body').animate({
+      $('html, body').stop().animate({
         scrollLeft: this.$jqWindow.scrollLeft() - positionDifference.left,
         scrollTop:  this.$jqWindow.scrollTop()  - positionDifference.top
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
@@ -356,41 +388,56 @@ export class AppComponent implements OnInit {
 
     // Set the comic ID in the URL
     urlTree = this.router.createUrlTree([], {
-      queryParams: { id: this.expandedComicId },
+      queryParams: { id: currentComic.id },
       queryParamsHandling: 'merge',
       preserveFragment: true });
     this.router.navigateByUrl(urlTree);
 
     // Get the series volume containing this comic
-    this.expandedSeriesVolume = _.find(this.seriesVolumes, (seriesVolume) => {
-      return seriesVolume.id === currentComic.seriesVolumeId;
-    });
-
-    this.expandedComic = _.find(this.comics, ['id', this.expandedComicId]);
-    if (this.expandedSeriesVolume.marvelId) {
-      this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
-    } else {
-      this.getAPISeriesVolume(this.expandedSeriesVolume)
-        .subscribe(
-          (response: MarvelAPISeriesResponse) => {
-            if (!response || !response.data || !response.data || !response.data.results.length) {
-              return console.warn('The response from Marvel API wasn\'t in the expected format ' + response);
-            }
-
-            const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
-            this.expandedSeriesVolume.marvelId = firstResult.id;
-            this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
-          },
-          (err) => {
-            throw err;
-          }
-        );
+    const expandedSeriesVolume = _.find(this.seriesVolumes, ['id', currentComic.seriesVolumeId]);
+    if (!expandedSeriesVolume) {
+      return console.error('The expanded series volume could not be found', currentComic.seriesVolumeId);
     }
 
-    /*
-     * Sets the Goodreads collection ID
-     */
-    this.setGoodreadsCollectionData()
+    const expandedComic = _.find(this.comics, ['id', currentComic.id]);
+
+    this.setGoodreadsCollectionId(this.expandedCollection);
+
+    if (!expandedSeriesVolume.marvelId) {
+      // We await this because setAPIComicData depends on having a marvel ID set
+      expandedSeriesVolume.marvelId = await this.getMarvelSeriesVolumeId(expandedSeriesVolume);
+    }
+
+    this.setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+  }
+
+  /*
+   * Sets the Marvel ID for a seriesVolume
+   */
+  getMarvelSeriesVolumeId = (seriesVolume: SeriesVolume): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      this.getAPISeriesVolume(seriesVolume)
+          .subscribe(
+            (response: MarvelAPISeriesResponse) => {
+              if (!response || !response.data || !response.data || !response.data.results.length) {
+                return console.warn('The response from Marvel API wasn\'t in the expected format ' + response);
+              }
+
+              const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
+              return resolve(firstResult.id);
+            },
+            (err) => {
+              return reject(err);
+            }
+          );
+    });
+  }
+
+  /*
+   * Sets the Goodreads collection ID
+   */
+  setGoodreadsCollectionId = (collection: Collection): void => {
+    this.getGoodreadsCollectionData(collection.title)
         .subscribe(
           (response) => {
             parseString(response, (err, result) => {
@@ -400,7 +447,7 @@ export class AppComponent implements OnInit {
 
               const collectionOnGoodreads = result.GoodreadsResponse.search[0].results[0].work[0].best_book[0];
 
-              this.expandedCollection.goodreadsId = collectionOnGoodreads.id[0]._;
+              collection.goodreadsId = collectionOnGoodreads.id[0]._;
             });
           },
           (err) => {
@@ -511,11 +558,6 @@ export class AppComponent implements OnInit {
       if (!currentSeriesVolume) {
         throw new Error(comic.seriesVolumeId + ' not found');
       }
-
-      // Initialize the comic values
-      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
-      comic.classes = { fullScreen: false, stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
-      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
 
       // Horizontal positioning
       monthsSinceFirst = (comic.yearPublished - firstYear) * ONE_YEAR_IN_MONTHS;
@@ -827,9 +869,6 @@ export class AppComponent implements OnInit {
     });
 
     setTimeout(() => {
-      // Make room for the farthest-right expanded panel
-      this.bodyStyles['width.px'] += $('.scroll-anchor').width();
-
       // Make room for the farthest-bottom expanded panel
       this.bodyStyles['height.px'] = $(document).height() + $(window).height();
 
@@ -995,23 +1034,23 @@ export class AppComponent implements OnInit {
    * Use jQuery to manipulate classes and styles to make the expanded
    * panels always fit in the viewport.
    */
-  repositionStickyElements = (currentComicId?) => {
-    let scrollLeft;
-    let scrollTop;
-    let isComicScrolledPastLeft;
-    let isComicScrolledPastRight;
-    let anchorTopPosition;
-    let anchorLeftPosition;
-    let anchorRightPosition;
-    let anchorBottomPosition;
-    let $expandedComic;
-    let scrollRight;
-    let scrollBottom;
-    let isStickyTop;
-    let isStickyLeft;
-    let isStickyRight;
-    let isStickyBottom;
-    let startTimeReposition;
+  repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
+    let scrollPositionLeft: number;
+    let scrollPositionTop: number;
+    let scrollPositionRight: number;
+    let scrollPositionBottom: number;
+    let isComicScrolledPastLeft: boolean;
+    let isComicScrolledPastRight: boolean;
+    let comicTopPosition: number;
+    let comicLeftPosition: number;
+    let comicRightPosition: number;
+    let comicBottomPosition: number;
+    let $expandedComic: JQuery;
+    let isStickyTop: boolean;
+    let isStickyLeft: boolean;
+    let isStickyRight: boolean;
+    let isStickyBottom: boolean;
+    let startTimeReposition: number;
 
     if (this.doSpeedProfile) {
       startTimeReposition = new Date().getTime();
@@ -1026,9 +1065,9 @@ export class AppComponent implements OnInit {
     }
 
     // The scroll position of the page, minus the main padding
-    scrollLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
-    scrollTop  = this.$jqWindow.scrollTop();
-    scrollRight = scrollLeft + this.$jqWindow.innerWidth();
+    scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
+    scrollPositionTop  = this.$jqWindow.scrollTop();
+    scrollPositionRight = scrollPositionLeft + this.$jqWindow.innerWidth();
 
     // Lazy-load thumbnails that aren't in the viewport
     _.each(this.comics, (comic) => {
@@ -1037,8 +1076,8 @@ export class AppComponent implements OnInit {
         return;
       }
 
-      isComicScrolledPastLeft  = Boolean(scrollLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastRight = Boolean(scrollRight < comic.containerStyles['left.px']);
+      isComicScrolledPastLeft  = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastRight = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
 
       // the comic is out of the viewport, to the left
       if (!isComicScrolledPastLeft && !isComicScrolledPastRight) {
@@ -1066,38 +1105,43 @@ export class AppComponent implements OnInit {
       }
 
       const stickyAnchorOffset = $('.expanded .scroll-anchor').offset();
-      anchorTopPosition    = stickyAnchorOffset.top;
-      anchorLeftPosition   = stickyAnchorOffset.left;
-      anchorRightPosition  = stickyAnchorOffset.left + $expandedComic.width();
-      anchorBottomPosition = stickyAnchorOffset.top  + $expandedComic.height();
+      comicTopPosition    = stickyAnchorOffset.top;
+      comicLeftPosition   = stickyAnchorOffset.left;
+      comicBottomPosition = comicTopPosition  + $expandedComic.height();
+      comicRightPosition  = comicLeftPosition + EXPANDED_PANEL_WIDTH;
 
-      scrollRight  = scrollLeft + window.innerWidth;
-      scrollBottom = scrollTop  + window.innerHeight;
+      scrollPositionRight  = scrollPositionLeft + window.innerWidth;
+      scrollPositionBottom = scrollPositionTop  + window.innerHeight;
 
-      isStickyTop    = Boolean(scrollTop  > anchorTopPosition);
-      isStickyLeft   = Boolean(scrollLeft > anchorLeftPosition);
-      isStickyRight  = Boolean(scrollRight  < anchorRightPosition);
-      isStickyBottom = Boolean(scrollBottom < anchorBottomPosition);
+      isStickyTop    = Boolean(scrollPositionTop  > comicTopPosition);
+      isStickyLeft   = Boolean(scrollPositionLeft > comicLeftPosition);
+      isStickyRight  = Boolean(scrollPositionRight  < comicRightPosition);
+      isStickyBottom = Boolean(scrollPositionBottom < comicBottomPosition);
 
-      expandedComic.classes.stickyTop = isStickyTop;
-      expandedComic.classes.stickyRight = isStickyRight;
-      expandedComic.classes.stickyBottom = isStickyBottom;
-      expandedComic.classes.stickyLeft = isStickyLeft;
+      this.expandedComicCSS.classes = {
+        fullScreen: false,
+        stickyBottom: isStickyBottom,
+        stickyLeft: isStickyLeft,
+        stickyRight: isStickyRight,
+        stickyTop: isStickyTop,
+      };
 
       if ((isStickyTop || isStickyBottom) && !isStickyLeft && !isStickyRight) {
-        expandedComic.styles['marginLeft.px'] = '-' + (scrollLeft + BODY_PADDING);
-        expandedComic.styles['marginTop.px'] = null;
+        this.expandedComicCSS.styles = {
+          'marginLeft.px': '-' + (scrollPositionLeft + BODY_PADDING),
+          'marginTop.px': null,
+        };
       } else if ((isStickyLeft || isStickyRight) && !isStickyTop && !isStickyBottom) {
-        expandedComic.styles['marginLeft.px'] = null;
-        expandedComic.styles['marginTop.px'] = '-' + scrollTop;
+        this.expandedComicCSS.styles = {
+          'marginLeft.px': null,
+          'marginTop.px': '-' + scrollPositionTop,
+        };
       } else {
-        expandedComic.styles['marginLeft.px'] = null;
-        expandedComic.styles['marginTop.px'] = null;
+        this.expandedComicCSS.styles = {
+          'marginLeft.px': null,
+          'marginTop.px': null,
+        };
       }
-
-      // Instruct Materialize-CSS to make the expanded cover fullscreen on click
-      const elems = document.querySelectorAll('.materialboxed');
-      // const instances = M.Materialbox.init(elems);
 
       if (this.doSpeedProfile) {
         const endTime = new Date().getTime();
@@ -1128,7 +1172,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleFullscreen = () => {
-    this.expandedComic.classes.fullScreen = !this.expandedComic.classes.fullScreen;
+    this.expandedComicCSS.classes.fullScreen = !this.expandedComicCSS.classes.fullScreen;
   }
 
   toggleShowCollections = (forcedState?: string) => {
@@ -1155,11 +1199,11 @@ export class AppComponent implements OnInit {
     }
   }
 
-  scrollToComic = (comicId) => {
+  scrollToComic = (comicId: string) => {
     const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
 
     setTimeout(() => {
-      $('html, body').animate({
+      $('html, body').stop().animate({
         scrollLeft: comicFromId.containerStyles['left.px'] - LEFT_MARGIN,
         scrollTop:  comicFromId.containerStyles['top.px']
       }, ANIMATION_DURATION, 'swing', () => {
