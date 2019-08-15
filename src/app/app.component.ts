@@ -95,12 +95,22 @@ export class AppComponent implements OnInit {
   globalVerticalPositionCounter = 0;
   seriesVolumeLabels: Array<SeriesVolumeLabel> = [];
 
-  expandedComic: Comic;
   expandedComicId: string;
-  expandedComicCSS: ExpandedComicCSS;
+  expandedComicCSS: ExpandedComicCSS = {
+    classes: {
+      fullScreen: false,
+      stickyBottom: false,
+      stickyLeft: false,
+      stickyRight: false,
+      stickyTop: false,
+    },
+    styles: {
+      'marginTop.px': null,
+      'marginLeft.px': null,
+    }
+  };
   expandedCollectionId: string;
   expandedCollection: Collection;
-  expandedSeriesVolume: SeriesVolume;
   prevComic: Comic;
   nextComic: Comic;
   prevComicId: string;
@@ -136,9 +146,9 @@ export class AppComponent implements OnInit {
    * @param collection the collection object
    * @returns the collection data from the Goodreads API
    */
-  setGoodreadsCollectionData = () => {
+  getGoodreadsCollectionData = (collectionTitle: string) => {
     const params = new HttpParams()
-      .set('q', this.expandedCollection.title)
+      .set('q', collectionTitle)
       .set('key', this.goodreadsApiKeyPublic);
 
     return this.http.get(this.corsAnywhereUrl + this.goodreadsApiBaseUrl, {params, responseType: 'text'});
@@ -230,11 +240,10 @@ export class AppComponent implements OnInit {
    * classes.
    */
   public getComicClasses = (comic: Comic) => {
-    let comicClasses = comic.classes;
+    let comicClasses = {};
 
-    if (comic.id === this.expandedComicId && this.expandedComicCSS) {
-      comicClasses = _.clone(comic.classes);
-      comicClasses = _.assign(comicClasses, this.expandedComicCSS.classes);
+    if (comic.id === this.expandedComicId) {
+      comicClasses = this.expandedComicCSS.classes;
     }
 
     return comicClasses;
@@ -249,7 +258,7 @@ export class AppComponent implements OnInit {
   public getComicStyles = (comic: Comic) => {
     let comicStyles = comic.styles;
 
-    if (comic.id === this.expandedComicId && this.expandedComicCSS) {
+    if (comic.id === this.expandedComicId) {
       comicStyles = _.clone(comic.styles);
       comicStyles = _.assign(comicStyles, this.expandedComicCSS.styles);
     }
@@ -257,25 +266,9 @@ export class AppComponent implements OnInit {
     return comicStyles;
   }
 
-  clearComicClassesAndStyles = (comic?: Comic) => {
-    if (!comic && !this.expandedCollection) {
-      return;
-    }
-
-    comic = comic || this.expandedCollection.comics[this.currentComicIndexInCollection];
-
-    this.expandedComicCSS = {
-      classes: {
-        stickyBottom: false,
-        stickyLeft: false,
-        stickyRight: false,
-        stickyTop: false,
-      },
-      styles: {
-        'marginTop.px': null,
-        'marginLeft.px': null,
-      }
-    };
+  clearComicClassesAndStyles = () => {
+    this.expandedComicId    = undefined;
+    this.expandedCollection = undefined;
   }
 
   /**
@@ -286,7 +279,7 @@ export class AppComponent implements OnInit {
    *                      instead of using a relative one.
    *                      Used when clicking on a comic from the collections view
    */
-  toggleExpandComic = (currentComic: Comic, isForceScroll?: boolean) => {
+  toggleExpandComic = async (currentComic: Comic, isForceScroll?: boolean) => {
     if (typeof currentComic !== 'object') {
       return;
     }
@@ -304,12 +297,7 @@ export class AppComponent implements OnInit {
         preserveFragment: true });
       this.router.navigateByUrl(urlTree);
 
-      this.clearComicClassesAndStyles();
-
-      return setTimeout(() => {
-        this.expandedComicId    = undefined;
-        this.expandedCollection = undefined;
-      });
+      return this.clearComicClassesAndStyles();
     }
 
     /**
@@ -334,7 +322,7 @@ export class AppComponent implements OnInit {
       };
 
       // reset the styles for the previous comic
-      this.clearComicClassesAndStyles(previouslyExpandedComic);
+      this.clearComicClassesAndStyles();
 
       $('html, body').stop().animate({
         scrollLeft: this.$jqWindow.scrollLeft() - positionDifference.left,
@@ -400,41 +388,56 @@ export class AppComponent implements OnInit {
 
     // Set the comic ID in the URL
     urlTree = this.router.createUrlTree([], {
-      queryParams: { id: this.expandedComicId },
+      queryParams: { id: currentComic.id },
       queryParamsHandling: 'merge',
       preserveFragment: true });
     this.router.navigateByUrl(urlTree);
 
     // Get the series volume containing this comic
-    this.expandedSeriesVolume = _.find(this.seriesVolumes, (seriesVolume) => {
-      return seriesVolume.id === currentComic.seriesVolumeId;
-    });
-
-    this.expandedComic = _.find(this.comics, ['id', this.expandedComicId]);
-    if (this.expandedSeriesVolume.marvelId) {
-      this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
-    } else {
-      this.getAPISeriesVolume(this.expandedSeriesVolume)
-        .subscribe(
-          (response: MarvelAPISeriesResponse) => {
-            if (!response || !response.data || !response.data || !response.data.results.length) {
-              return console.warn('The response from Marvel API wasn\'t in the expected format ' + response);
-            }
-
-            const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
-            this.expandedSeriesVolume.marvelId = firstResult.id;
-            this.setAPIComicData(this.expandedComic, this.expandedSeriesVolume.marvelId);
-          },
-          (err) => {
-            throw err;
-          }
-        );
+    const expandedSeriesVolume = _.find(this.seriesVolumes, ['id', currentComic.seriesVolumeId]);
+    if (!expandedSeriesVolume) {
+      return console.error('The expanded series volume could not be found', currentComic.seriesVolumeId);
     }
 
-    /*
-     * Sets the Goodreads collection ID
-     */
-    this.setGoodreadsCollectionData()
+    const expandedComic = _.find(this.comics, ['id', currentComic.id]);
+
+    this.setGoodreadsCollectionId(this.expandedCollection);
+
+    if (!expandedSeriesVolume.marvelId) {
+      // We await this because setAPIComicData depends on having a marvel ID set
+      expandedSeriesVolume.marvelId = await this.getMarvelSeriesVolumeId(expandedSeriesVolume);
+    }
+
+    this.setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+  }
+
+  /*
+   * Sets the Marvel ID for a seriesVolume
+   */
+  getMarvelSeriesVolumeId = (seriesVolume: SeriesVolume): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      this.getAPISeriesVolume(seriesVolume)
+          .subscribe(
+            (response: MarvelAPISeriesResponse) => {
+              if (!response || !response.data || !response.data || !response.data.results.length) {
+                return console.warn('The response from Marvel API wasn\'t in the expected format ' + response);
+              }
+
+              const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
+              return resolve(firstResult.id);
+            },
+            (err) => {
+              return reject(err);
+            }
+          );
+    });
+  }
+
+  /*
+   * Sets the Goodreads collection ID
+   */
+  setGoodreadsCollectionId = (collection: Collection): void => {
+    this.getGoodreadsCollectionData(collection.title)
         .subscribe(
           (response) => {
             parseString(response, (err, result) => {
@@ -444,7 +447,7 @@ export class AppComponent implements OnInit {
 
               const collectionOnGoodreads = result.GoodreadsResponse.search[0].results[0].work[0].best_book[0];
 
-              this.expandedCollection.goodreadsId = collectionOnGoodreads.id[0]._;
+              collection.goodreadsId = collectionOnGoodreads.id[0]._;
             });
           },
           (err) => {
@@ -1094,13 +1097,7 @@ export class AppComponent implements OnInit {
       return console.error('The comic could not be found', selectedComic);
     }
 
-    /**
-     * Expanded panel positioning.
-     *
-     * We pass in expandedComic as a parameter to make sure that this works
-     * even if the function is called after expandedPanel has changed to another
-     * value (e.g. if the user is navigating very quickly)
-     */
+    // Expanded panel positioning
     setTimeout(() => {
       $expandedComic = $('.expanded .comic');
       if (!$expandedComic.length) {
@@ -1122,6 +1119,7 @@ export class AppComponent implements OnInit {
       isStickyBottom = Boolean(scrollPositionBottom < comicBottomPosition);
 
       this.expandedComicCSS.classes = {
+        fullScreen: false,
         stickyBottom: isStickyBottom,
         stickyLeft: isStickyLeft,
         stickyRight: isStickyRight,
@@ -1174,7 +1172,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleFullscreen = () => {
-    this.expandedComic.classes.fullScreen = !this.expandedComic.classes.fullScreen;
+    this.expandedComicCSS.classes.fullScreen = !this.expandedComicCSS.classes.fullScreen;
   }
 
   toggleShowCollections = (forcedState?: string) => {

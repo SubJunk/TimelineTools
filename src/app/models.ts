@@ -34,7 +34,6 @@ export interface CollectionColor {
 }
 
 export interface Comic {
-  classes?: ComicClasses;
   collection?: Collection;
   containerStyles?: ContainerStyles;
   id?: string;
@@ -51,6 +50,7 @@ export interface Comic {
 }
 
 interface ExpandedComicClasses {
+  fullScreen: boolean;
   stickyBottom: boolean;
   stickyLeft: boolean;
   stickyRight: boolean;
@@ -65,10 +65,6 @@ interface ExpandedComicStyles {
 export interface ExpandedComicCSS {
   classes: ExpandedComicClasses;
   styles: ExpandedComicStyles;
-}
-
-interface ComicClasses {
-  fullScreen: boolean;
 }
 
 interface ComicStyles {
