@@ -13,10 +13,11 @@
 </button>
 <ul class="collections" *ngIf="isShowCollections">
   <li *ngFor="let collection of uniqueCollections" class="collection-container" [ngClass]="{expanded: collection.id === expandedCollectionId}">
-    <div class="comic-collection " [ngStyle]="collection.styles" *ngIf="collection.title !== 'Uncollected'">
+    <div class="comic-collection" [ngStyle]="collection.styles" *ngIf="collection.title !== 'Uncollected'">
       <div class="panel-left">
-        <button (click)="toggleExpandCollection(collection)" class="cover-thumbnail">
+        <button (click)="toggleExpandCollection(collection)" class="cover-thumbnail" id="expand-{{collection.id}}">
           <img
+              *ngIf="isCollectionVisible(collection)"
               [srcset]="
                   'https://api.rethumb.com/v1/width/322/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 2x,
                   https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 1x'"
@@ -24,7 +25,7 @@
           >
         </button>
       </div>
-      <div class="expanded-panel">
+      <div class="expanded-panel" *ngIf="collection.id === expandedCollectionId">
         <div class="title">{{collection.title}}</div>
         <div class="date">{{collection.yearPublished}} / {{collection.monthPublished}}</div>
         <div class="collection-comics">
@@ -79,7 +80,7 @@
   <li *ngFor="let comic of comics; trackBy: trackByItemId" class="comic-container" [ngClass]="{expanded: comic.id === expandedComicId}" [ngStyle]="comic.containerStyles">
     <div class="scroll-anchor"></div>
     <div class="popover"><div>#{{comic.issue}}</div></div>
-    <div class="comic " [ngStyle]="getComicStyles(comic)" [ngClass]="getComicClasses(comic)">
+    <div class="comic" [ngStyle]="getComicStyles(comic)" [ngClass]="getComicClasses(comic)">
       <div class="panel-left">
         <button *ngIf="comic.id !== expandedComicId" (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
           <img
