@@ -25,6 +25,7 @@ export interface Collection {
   monthPublished: number;
   styles: object;
   title: string;
+  visible: boolean;
   yearPublished: number;
 }
 

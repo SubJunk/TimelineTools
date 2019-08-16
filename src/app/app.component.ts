@@ -436,7 +436,7 @@ export class AppComponent implements OnInit {
   /*
    * Sets the Goodreads collection ID
    */
-  setGoodreadsCollectionId = (collection: Collection): void => {
+  private setGoodreadsCollectionId = (collection: Collection): void => {
     this.getGoodreadsCollectionData(collection.title)
         .subscribe(
           (response) => {
@@ -456,18 +456,7 @@ export class AppComponent implements OnInit {
         );
   }
 
-  search = (comic: Comic) => {
-    const comicToSearch: Comic = _.find(this.comics, ['id', comic.id]);
-    this.toggleExpandComic(comicToSearch, true);
-    this.searchText = '';
-    this.postSearchActions();
-  }
-
-  toggleExpandCollection = (collection: Collection) => {
-    this.expandedCollectionId = this.expandedCollectionId === collection.id ? null : collection.id;
-  }
-
-  subtractLabelWidthsFromLeftPositions = () => {
+  private subtractLabelWidthsFromLeftPositions = () => {
     let $jqLabel: JQuery<HTMLElement>;
     let labelWidthFromDom: number;
 
@@ -548,7 +537,7 @@ export class AppComponent implements OnInit {
     let globalHorizontalOffset = 0;
     const latestVerticalHorizontalOffsets = {};
     let newLabelNeeded = false;
-    const windowWidth = this.$jqWindow.innerWidth();
+    const windowWidth = window.innerWidth;
     _.each(this.comics, (comic) => {
       /*
        * Look up the volume and series for this comic and
@@ -882,6 +871,44 @@ export class AppComponent implements OnInit {
     });
   }
 
+  public search = (comic: Comic) => {
+    const comicToSearch: Comic = _.find(this.comics, ['id', comic.id]);
+    this.toggleExpandComic(comicToSearch, true);
+    this.searchText = '';
+    this.postSearchActions();
+  }
+
+  public toggleExpandCollection = (collection: Collection) => {
+    this.expandedCollectionId = this.expandedCollectionId === collection.id ? null : collection.id;
+  }
+
+  public isCollectionVisible = (collection: Collection) => {
+    // Return early if it has already been visible before
+    if (collection.visible) {
+      return true;
+    }
+
+    const $collectionButton = $('#expand-' + collection.id);
+    if (!$collectionButton.length) {
+      return;
+    }
+
+    const scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
+    const scrollPositionRight = scrollPositionLeft + window.innerWidth;
+
+    const collectionLeftPosition = $collectionButton.offset().left;
+
+    const isCollectionScrolledPastLeft  = Boolean(scrollPositionLeft > collectionLeftPosition);
+    const isCollectionScrolledPastRight = Boolean(scrollPositionRight < collectionLeftPosition);
+
+    if (!isCollectionScrolledPastLeft && !isCollectionScrolledPastRight) {
+      collection.visible = true;
+      return true;
+    }
+
+    return false;
+  }
+
   /**
    * Returns either the existing color for the collection, or
    * generates a color in HSL format, e.g. hsl(1, 2, 3)
@@ -891,7 +918,7 @@ export class AppComponent implements OnInit {
    * @param  collectionTitle the title of the collection
    * @return background and text colors
    */
-  getCollectionColors = (collectionTitle: string): CollectionColor => {
+  private getCollectionColors = (collectionTitle: string): CollectionColor => {
     let backgroundLightness: number;
     let hue: number;
     let saturation: number;
@@ -1067,7 +1094,7 @@ export class AppComponent implements OnInit {
     // The scroll position of the page, minus the main padding
     scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
     scrollPositionTop  = this.$jqWindow.scrollTop();
-    scrollPositionRight = scrollPositionLeft + this.$jqWindow.innerWidth();
+    scrollPositionRight = scrollPositionLeft + window.innerWidth;
 
     // Lazy-load thumbnails that aren't in the viewport
     _.each(this.comics, (comic) => {
@@ -1079,7 +1106,6 @@ export class AppComponent implements OnInit {
       isComicScrolledPastLeft  = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
       isComicScrolledPastRight = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
 
-      // the comic is out of the viewport, to the left
       if (!isComicScrolledPastLeft && !isComicScrolledPastRight) {
         comic.visible = true;
       }
