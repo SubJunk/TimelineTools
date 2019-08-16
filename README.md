@@ -3,22 +3,13 @@
 
 ## General
 
-This is a web page for displaying the order of comics in the Uncanny X-Men series including some tie-ins and spin-offs, mostly ones from collections.
-
-## Marvel API integration
-
-This project is designed to interact with the Marvel API to let you click the "Read online" link on comics and read them using your Marvel Unlimited subscription.
-
-If you are browsing online (URL starts with `http://` or `https://`), this will work with no configuration.
-
-If you are viewing the project locally (URL starts with `file://`) you will need to use your own Marvel API keys by adding them to `config.js`. The keys are free and can be retrieved from https://developer.marvel.com/account
+This is a web page for displaying the order of comics in the Uncanny X-Men series including most tie-ins and spin-offs, mostly ones from collections.
 
 ## Developer notes
 
-There's no build/compile step and no development packages are needed.
+To run it locally, you need to have `yarn` installed. See instructions for installing it at https://yarnpkg.com/en/docs/install
+You can then install the dependencies by running `yarn`, then launch the server locally with `yarn dev`. It will open itself in your default web browser.
 
-Each push will trigger a Travis build which will run ESLint and stylelint. If either of them report errors, any Pull Request related to the branch will be prevented from being merged.
+Each push will trigger a Travis build which will run ESLint and stylelint. If either of them report errors, any Pull Request related to the branch will be prevented from being merged. A Heroku Review App is created for each Pull Request.
 
-Optionally you can also run them locally to help with development. To do this, run `yarn install` to install the tools, and you will probably also want to install the relevant extensions in your IDE.
-
-There is a garbage collection functionality built-in to check the database for orphans. It can be run by adding `gc` to the URL, e.g. `index.html#!?id=ThorVol1373&gc` and looking in the browser console.
+There is a garbage collection functionality built-in to check the database for orphans. It can be run by adding `gc=1` to the URL, e.g. `http://localhost:4200/?gc=1` and looking in the browser console.

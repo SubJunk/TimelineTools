@@ -45,6 +45,7 @@ function SeriesVolume(seriesId: string, volume: string, startYear: number, title
   if (Number(volume) > 1) {
     this.titleWithVolume += ' Vol. ' + volume;
   }
+  this.searchTitleWithVolume = title + ' Vol. ' + volume;
 }
 
 series.push(
@@ -57,6 +58,7 @@ series.push(
   new Series('Amazing X-Men', {1: 1995}),
   new Series('Astonishing X-Men', {1: 1995, 2: 1999, 3: 2004}),
   new Series('Astonishing X-Men: Ghost Boxes', {1: 2008}),
+  new Series('Astonishing X-Men: Xenogenesis', {1: 2010}),
   new Series('Avengers', {1: 1963}),
   new Series('Avengers: The Initiative', {1: 2007}),
   new Series('Avengers West Coast', {2: 1985}),
@@ -76,6 +78,11 @@ series.push(
   new Series('Civil War', {1: 2006}),
   new Series('Civil War: X-Men', {1: 2006}),
   new Series('Daredevil', {1: 1964}),
+  new Series('Dark Avengers', {1: 2009}),
+  new Series('Dark Avengers/Uncanny X-Men: Exodus', {1: 2009}),
+  new Series('Dark Avengers/Uncanny X-Men: Utopia', {1: 2009}),
+  new Series('Dark Reign: The Cabal', {1: 2009}),
+  new Series('Dark Reign: The List - X-Men', {1: 2009}),
   new Series('Deadpool', {1: 1994, 2: 1997}),
   new Series('Deadpool Team-Up', {1: 1998}),
   new Series('Defenders', {1: 1972}),
@@ -87,6 +94,8 @@ series.push(
   new Series('District X', {1: 2004}),
   new Series('Domino', {1: 1997, 2: 2003}),
   new Series('Emma Frost', {1: 2003}),
+  new Series('Eternals Annual', {2: 2008}),
+  new Series('Eternals: Manifest Destiny', {1: 2008}),
   new Series('Excalibur', {1: 1988, 3: 2004}),
   new Series('Factor X', {1: 1995}),
   new Series('Fantastic Four', {1: 1961}),
@@ -120,6 +129,7 @@ series.push(
   new Series('Magik', {1: 1983}),
   new Series('Magneto Rex', {1: 1999}),
   new Series('Marvel Graphic Novel', {1: 1982}),
+  new Series('Marvel Spotlight', {3: 2005}),
   new Series('Marvel Tales', {2: 1964}),
   new Series('Marvel Team-Up', {1: 1972}),
   new Series('Mystic Arcana', {1: 2007}),
@@ -164,6 +174,7 @@ series.push(
   new Series('Uncanny X-Men Annual', {1: 1996, 2: 1999, 3: 2001, 4: 2006}),
   new Series('War of Kings Saga', {1: 2008}),
   new Series('Weapon X', {1: 1995}),
+  new Series('Weapon X: First Class', {1: 2008}),
   new Series('What If?', {2: 1989}),
   new Series('Wolverine', {1: 1982, 2: 1988, 3: 2003}),
   new Series('Wolverine: Knight of Terra', {1: 1995}),
@@ -184,8 +195,11 @@ series.push(
   new Series('X-Factor Annual', {1: 1986}),
   new Series('X-Force', {1: 1991, 2: 2004, 3: 2008}),
   new Series('X-Force/Cable Annual', {1: 1995}),
+  new Series('X-Force/Cable: Messiah War Prologue', {1: 2009}),
   new Series('X-Force: Sex and Violence', {1: 2010}),
   new Series('X-Force Annual', {1: 1992}),
+  new Series('X-Infernus', {1: 2008}),
+  new Series('X-Infernus Saga', {1: 2008}),
   new Series('X-Man', {1: 1995}),
   new Series('X-Man Annual', {1: 1996}),
   new Series('X-Men', {2: 1991, 3: 2004}),
@@ -214,6 +228,7 @@ series.push(
   new Series('X-Men: First Class', {1: 2006, 2: 2007}),
   new Series('X-Men: First Class Finals', {1: 2009}),
   new Series('X-Men: First Class Special', {1: 2007}),
+  new Series('X-Men: Future History - The Messiah War Sourcebook', {1: 2009}),
   new Series('X-Men: Kingbreaker', {1: 2008}),
   new Series('X-Men: Kitty Pryde- Shadow & Flame', {1: 2005}),
   new Series('X-Men: Magneto Testament', {1: 2008}),
@@ -233,6 +248,7 @@ series.push(
   new Series('X-Men: Second Coming', {1: 2010}),
   new Series('X-Men: The 198', {1: 2006}),
   new Series('X-Men: The Hidden Years', {1: 1999}),
+  new Series('X-Men: The Lives and Times of Lucas Bishop', {1: 2009}),
   new Series('X-MEN: THE MAGNETO WAR 1', {1: 1999}),
   new Series('X-Men: The Unlikely Saga of Xavier, Magneto and Stan', {1: 2006}),
   new Series('X-Men: The Wedding Album', {1: 1994}),
@@ -248,7 +264,7 @@ series.push(
   new Series('Young X-Men', {1: 2008})
 );
 
-class SeriesVolumes {
+export class SeriesVolumes {
   public static getSeries() {
     return series;
   }
@@ -257,5 +273,3 @@ class SeriesVolumes {
     return seriesVolumes;
   }
 }
-
-export { SeriesVolumes };

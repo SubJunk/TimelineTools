@@ -26,14 +26,15 @@ function Comic(issue: string, datePublished: string, seriesVolumeId: string, tit
     day = '0' + day;
   }
 
-  // Create a Date object from the datePublished string
-  this.classes = {};
+  this.classes = { fullScreen: false, stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
+  this.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
   this.date = moment(year + '-' + month + '-' + day);
   this.id = seriesVolumeId + issue;
   this.issue = issue;
   this.yearPublished = this.date.year();
   this.monthPublished = this.date.month() + 1;
   this.seriesVolumeId = seriesVolumeId;
+  this.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
   this.titles = titles ? titles : [];
 }
 
@@ -132,10 +133,22 @@ addComicsInSeriesVolume('AstonishingXMenVol3', [
   [28, '2009-1-21'],
   [29, '2009-4-22'],
   [30, '2009-6-24'],
+  [31, '2009-10-7'],
+  [32, '2009-11-4'],
+  [33, '2009-12-16'],
+  [34, '2010-6-30'],
+  [35, '2010-8-25'],
 ]);
 addComicsInSeriesVolume('AstonishingXMenGhostBoxesVol1', [
   [1, '2008-10-29'],
   [2, '2008-12-10'],
+]);
+addComicsInSeriesVolume('AstonishingXMenXenogenesisVol1', [
+  [1, '2010-5-12'],
+  [2, '2010-6-9'],
+  [3, '2010-9-22'],
+  [4, '2010-12-29'],
+  [5, '2011-2-16'],
 ]);
 addComicsInSeriesVolume('AvengersAnnualVol1', [[10, '1981-10']]);
 addComicsInSeriesVolume('AvengersTheInitiativeVol1', [
@@ -175,11 +188,6 @@ addComicsInSeriesVolume('BlinkVol1', [
   [3, '2001-5'],
   [4, '2001-6'],
 ]);
-addComicsInSeriesVolume('CableBloodMetalVol1', [
-  [1, '1992-10'],
-  [2, '1992-11'],
-]);
-addComicsInSeriesVolume('CableMachineManAnnualVol1', [[1, '1998-5']]);
 addComicsInSeriesVolume('CableVol1', [
   [-1, '1997-7'],
   [1,  '1993-5'],
@@ -280,7 +288,6 @@ addComicsInSeriesVolume('CableVol1', [
   [106, '2002-8'],
   [107, '2002-9'],
 ]);
-addComicsInSeriesVolume('CableAnnualVol1', [[1, '1999-4']]);
 addComicsInSeriesVolume('CableVol2', [
   [1, '2008-3-5'],
   [2, '2008-4-2'],
@@ -292,7 +299,70 @@ addComicsInSeriesVolume('CableVol2', [
   [8, '2008-11-5'],
   [9, '2008-12-3'],
   [10, '2009-1-7'],
+  [11, '2009-2-4'],
+  [12, '2009-3-4'],
+  [13, '2009-4-1'],
+  [14, '2009-5-6'],
+  [15, '2009-6-17'],
 ]);
+addComicsInSeriesVolume('CableAnnualVol1', [[1, '1999-4']]);
+addComicsInSeriesVolume('CableBloodMetalVol1', [
+  [1, '1992-10'],
+  [2, '1992-11'],
+]);
+addComicsInSeriesVolume('CableDeadpoolVol1', [
+  [1, '2004-3-24'],
+  [2, '2004-4-21'],
+  [3, '2004-5-19'],
+  [4, '2004-6-16'],
+  [5, '2004-7-21'],
+  [6, '2004-8-18'],
+  [7, '2004-9-15'],
+  [8, '2004-10-20'],
+  [9, '2004-11-17'],
+  [10, '2004-12-15'],
+  [11, '2005-1-19'],
+  [12, '2005-2-16'],
+  [13, '2005-3-16'],
+  [14, '2005-4-20'],
+  [15, '2005-5-18'],
+  [16, '2005-6-15'],
+  [17, '2005-7-20'],
+  [18, '2005-8-17'],
+  [19, '2005-9-7'],
+  [20, '2005-9-28'],
+  [21, '2005-10-12'],
+  [22, '2005-11-9'],
+  [23, '2005-12-14'],
+  [24, '2006-1-11'],
+  [25, '2006-2-8'],
+  [26, '2006-3-8'],
+  [27, '2006-4-12'],
+  [28, '2006-5-10'],
+  [29, '2006-6-14'],
+  [30, '2006-7-19'],
+  [31, '2006-8-30'],
+  [32, '2006-9-27'],
+  [33, '2006-10-18'],
+  [34, '2006-11-15'],
+  [35, '2006-12-20'],
+  [36, '2007-1-17'],
+  [37, '2007-2-21'],
+  [38, '2007-3-21'],
+  [39, '2007-4-18'],
+  [40, '2007-5-16'],
+  [41, '2007-6-13'],
+  [42, '2007-6-27'],
+  [43, '2007-7-25'],
+  [44, '2007-8-22'],
+  [45, '2007-9-26'],
+  [46, '2007-10-24'],
+  [47, '2007-11-29'],
+  [48, '2007-12-19'],
+  [49, '2008-1-16'],
+  [50, '2008-2-20'],
+]);
+addComicsInSeriesVolume('CableMachineManAnnualVol1', [[1, '1998-5']]);
 addComicsInSeriesVolume('CaptainAmericaVol1', [
   [172, '1974-4-10'],
   [173, '1974-5-10'],
@@ -301,10 +371,33 @@ addComicsInSeriesVolume('CaptainAmericaVol1', [
   [339, '1988-3-10'],
 ]);
 addComicsInSeriesVolume('CerebrosGuidetotheXMenVol1', [[1, '1998-1']]);
+addComicsInSeriesVolume('CivilWarVol1', [
+  [1, '2006-5-3'],
+  [2, '2006-6-14'],
+  [3, '2006-7-19'],
+  [4, '2006-9-20'],
+  [5, '2006-11-15'],
+  [6, '2007-1-3'],
+  [7, '2007-2-21'],
+]);
+addComicsInSeriesVolume('CivilWarXMenVol1', [
+  [1, '2006-7-19'],
+  [2, '2006-8-16'],
+  [3, '2006-9-20'],
+  [4, '2006-10-18'],
+]);
 addComicsInSeriesVolume('DaredevilVol1', [
   [238, '1987-1'],
   [252, '1988-3'],
 ]);
+addComicsInSeriesVolume('DarkAvengersVol1', [
+  [7, '2009-7-15'],
+  [8, '2009-8-26'],
+]);
+addComicsInSeriesVolume('DarkAvengersUncannyXMenExodusVol1', [[1, '2009-9-10']]);
+addComicsInSeriesVolume('DarkAvengersUncannyXMenUtopiaVol1', [[1, '2009-6-24']]);
+addComicsInSeriesVolume('DarkReignTheCabalVol1', [[1, '2009-4-29']]);
+addComicsInSeriesVolume('DarkReignTheListXMenVol1', [[1, '2009-9-23']]);
 addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']]);
 addComicsInSeriesVolume('DeadpoolVol1', [
   [1, '1994-8'],
@@ -364,73 +457,6 @@ addComicsInSeriesVolume('DeadpoolVol2', [
   [58, '2001-11'],
   [59, '2001-12'],
   [60, '2002-1'],
-]);
-addComicsInSeriesVolume('CableDeadpoolVol1', [
-  [1, '2004-3-24'],
-  [2, '2004-4-21'],
-  [3, '2004-5-19'],
-  [4, '2004-6-16'],
-  [5, '2004-7-21'],
-  [6, '2004-8-18'],
-  [7, '2004-9-15'],
-  [8, '2004-10-20'],
-  [9, '2004-11-17'],
-  [10, '2004-12-15'],
-  [11, '2005-1-19'],
-  [12, '2005-2-16'],
-  [13, '2005-3-16'],
-  [14, '2005-4-20'],
-  [15, '2005-5-18'],
-  [16, '2005-6-15'],
-  [17, '2005-7-20'],
-  [18, '2005-8-17'],
-  [19, '2005-9-7'],
-  [20, '2005-9-28'],
-  [21, '2005-10-12'],
-  [22, '2005-11-9'],
-  [23, '2005-12-14'],
-  [24, '2006-1-11'],
-  [25, '2006-2-8'],
-  [26, '2006-3-8'],
-  [27, '2006-4-12'],
-  [28, '2006-5-10'],
-  [29, '2006-6-14'],
-  [30, '2006-7-19'],
-  [31, '2006-8-30'],
-  [32, '2006-9-27'],
-  [33, '2006-10-18'],
-  [34, '2006-11-15'],
-  [35, '2006-12-20'],
-  [36, '2007-1-17'],
-  [37, '2007-2-21'],
-  [38, '2007-3-21'],
-  [39, '2007-4-18'],
-  [40, '2007-5-16'],
-  [41, '2007-6-13'],
-  [42, '2007-6-27'],
-  [43, '2007-7-25'],
-  [44, '2007-8-22'],
-  [45, '2007-9-26'],
-  [46, '2007-10-24'],
-  [47, '2007-11-29'],
-  [48, '2007-12-19'],
-  [49, '2008-1-16'],
-  [50, '2008-2-20'],
-]);
-addComicsInSeriesVolume('CivilWarVol1', [
-  [1, '2006-5-3'],
-  [2, '2006-6-14'],
-  [3, '2006-7-19'],
-  [4, '2006-9-20'],
-  [5, '2006-11-15'],
-  [6, '2007-1-3'],
-  [7, '2007-2-21'],
-]);
-addComicsInSeriesVolume('CivilWarXMenVol1', [
-  [1, '2006-7-19'],
-  [2, '2006-8-16'],
-  [3, '2006-9-20'],
-  [4, '2006-10-18'],
 ]);
 addComicsInSeriesVolume('DecimationHouseofMTheDayAfterVol1', [[1, '2005-11-9']]);
 addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']]);
@@ -497,6 +523,12 @@ addComicsInSeriesVolume('EmmaFrostVol1', [
   [16, '2004-12-1'],
   [17, '2005-1-1'],
   [18, '2005-2-1'],
+]);
+addComicsInSeriesVolume('EternalsAnnualVol2', [[1, '2008-11-12']]);
+addComicsInSeriesVolume('EternalsManifestDestinyVol1', [
+  [7, '2009-1-7'],
+  [8, '2009-2-11'],
+  [9, '2009-3-18'],
 ]);
 addComicsInSeriesVolume('ExcaliburVol1', [
   [71, '1993-11'],
@@ -710,6 +742,7 @@ addComicsInSeriesVolume('MagnetoRexVol1', [
   [3, '1999-7']
 ]);
 addComicsInSeriesVolume('MarvelGraphicNovelVol1', [[5, '1983-1']]);
+addComicsInSeriesVolume('MarvelSpotlightVol3', [[41, '2009-5-6']]);
 addComicsInSeriesVolume('MarvelTalesVol2', [[30, '1971-4-1']]);
 addComicsInSeriesVolume('MarvelTeamUpVol1', [
   [4, '1972-9-10'],
@@ -834,9 +867,14 @@ addComicsInSeriesVolume('NewMutantsVol2', [
   [13, '2004-4-21'],
 ]);
 addComicsInSeriesVolume('NewMutantsVol3', [
-  [12, '2010-6', ['Second Coming (Chapter Three)']],
-  [13, '2010-7', ['Second Coming (Chapter Seven)']],
-  [14, '2010-8', ['Second Coming (Chapter Eleven)']],
+  [1, '2009-5-6'],
+  [2, '2009-6-3'],
+  [3, '2009-7-15'],
+  [4, '2009-8-26'],
+  [5, '2009-9-30'],
+  [12, '2010-6'],
+  [13, '2010-7'],
+  [14, '2010-8'],
 ]);
 addComicsInSeriesVolume('NewMutantsAnnualVol1', [
   [4, '1988-9'],
@@ -1573,6 +1611,14 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [509, '2009-4-29'],
   [510, '2009-5-20'],
   [511, '2009-6-10'],
+  [512, '2009-6-24'],
+  [513, '2009-7-1'],
+  [514, '2009-8-12'],
+  [515, '2009-9-23'],
+  [516, '2009-10-14'],
+  [517, '2009-11-25'],
+  [518, '2009-12-3'],
+  [519, '2009-12-23'],
   /**
    * Complete until here
    */
@@ -1943,6 +1989,13 @@ addComicsInSeriesVolume('XFactorVol3', [
   [36, '2008-10-22'],
   [37, '2008-11-19'],
   [38, '2008-12-17'],
+  [39, '2009-1-21'],
+  [40, '2009-2-18'],
+  [41, '2009-3-18'],
+  [42, '2009-4-15'],
+  [43, '2009-5-13'],
+  [44, '2009-6-10'],
+  [45, '2009-6-24'],
 ]);
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],
@@ -2054,6 +2107,9 @@ addComicsInSeriesVolume('XForceVol3', [
   [11, '2009-1-28'],
   [12, '2009-2-25'],
   [13, '2009-3-18'],
+  [14, '2009-4-22'],
+  [15, '2009-5-28'],
+  [16, '2009-6-24'],
   [17, '2009-7-22'],
   [18, '2009-8-26'],
   [19, '2009-9-30'],
@@ -2068,11 +2124,19 @@ addComicsInSeriesVolume('XForceAnnualVol1', [
   [3, '1994-10'],
 ]);
 addComicsInSeriesVolume('XForceCableAnnualVol1', [[1, '1995-12']]);
+addComicsInSeriesVolume('XForceCableMessiahWarPrologueVol1', [[1, '2009-3-25']]);
 addComicsInSeriesVolume('XForceSexandViolenceVol1', [
   [1, '2010-9'],
   [2, '2010-10'],
-  [3, '2010-11']
+  [3, '2010-11'],
 ]);
+addComicsInSeriesVolume('XInfernusVol1', [
+  [1, '2008-12-3'],
+  [2, '2009-1-14'],
+  [3, '2009-2-11'],
+  [4, '2009-3-25'],
+]);
+addComicsInSeriesVolume('XInfernusSagaVol1', [[1, '2008-11-29']]);
 addComicsInSeriesVolume('XManVol1', [
   [-1, '1997-7'],
   [1, '1995-3'],
@@ -2102,87 +2166,6 @@ addComicsInSeriesVolume('XManVol1', [
   [54, '1999-8']
 ]);
 addComicsInSeriesVolume('XManAnnualVol1', [[1, '1996-12']]);
-addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']]);
-addComicsInSeriesVolume('XMenDiebytheSwordVol1', [
-  [1, '2007-10-17'],
-  [2, '2007-10-24'],
-  [3, '2007-11-14'],
-  [4, '2007-12-5'],
-  [5, '2007-12-12'],
-]);
-addComicsInSeriesVolume('XMenEmperorVulcanVol1', [
-  [1, '2007-9-12'],
-  [2, '2007-10-17'],
-  [3, '2007-11-21'],
-  [4, '2007-12-28'],
-  [5, '2008-1-30'],
-]);
-addComicsInSeriesVolume('XMenFirstClassFinalsVol1', [
-  [1, '2009-2-4'],
-  [2, '2009-3-4'],
-  [3, '2009-4-1'],
-  [4, '2009-5-6'],
-]);
-addComicsInSeriesVolume('XMenFirstClassSpecialVol1', [[1, '2007-7-1']]);
-addComicsInSeriesVolume('XMenFirstClassVol1', [
-  [1, '2006-9-20'],
-  [2, '2006-10-18'],
-  [3, '2006-11-15'],
-  [4, '2006-12-20'],
-  [5, '2007-1-17'],
-  [6, '2007-2-21'],
-  [7, '2007-3-21'],
-  [8, '2007-4-25'],
-]);
-addComicsInSeriesVolume('XMenFirstClassVol2', [
-  [1, '2007-5-16'],
-  [2, '2007-7-25'],
-  [3, '2007-8-22'],
-  [4, '2007-9-26'],
-  [5, '2007-10-24'],
-  [6, '2007-11-29'],
-  [7, '2007-12-28'],
-  [8, '2008-1-23'],
-  [9, '2008-2-27'],
-  [10, '2008-3-26'],
-  [11, '2008-4-23'],
-  [12, '2008-5-29'],
-  [13, '2008-6-25'],
-  [14, '2008-7-30'],
-  [15, '2008-8-20'],
-  [16, '2008-9-17'],
-]);
-addComicsInSeriesVolume('XMenThe198Vol1', [
-  [1, '2006-1-11'],
-  [2, '2006-2-8'],
-  [3, '2006-3-8'],
-  [4, '2006-4-12'],
-  [5, '2006-5-10'],
-]);
-addComicsInSeriesVolume('XMenTheHiddenYearsVol1', [
-  [1, '2007-5-16'],
-  [2, '2007-7-25'],
-  [3, '2007-8-22'],
-  [4, '2007-9-26'],
-  [5, '2007-10-24'],
-  [6, '2007-11-29'],
-  [7, '2007-12-28'],
-  [8, '2008-1-23'],
-  [9, '2008-2-27'],
-  [10, '2008-3-26'],
-  [11, '2008-4-23'],
-  [12, '2008-5-29'],
-  [13, '2008-6-25'],
-  [14, '2008-7-30'],
-  [15, '2008-8-20'],
-  [16, '2008-9-17'],
-  [17, '2008-9-17'],
-  [18, '2008-9-17'],
-  [19, '2008-9-17'],
-  [20, '2008-9-17'],
-  [21, '2008-9-17'],
-  [22, '2008-9-17'],
-]);
 addComicsInSeriesVolume('XMenVol2', [
   [-1, '1997-7'],
   [0.5, '1998-1'],
@@ -2352,6 +2335,93 @@ addComicsInSeriesVolume('XMenVol3', [
   [205, '2007-11-29'],
   [206, '2007-12-28'],
   [207, '2008-1-23'],
+]);
+addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']]);
+addComicsInSeriesVolume('XMenDiebytheSwordVol1', [
+  [1, '2007-10-17'],
+  [2, '2007-10-24'],
+  [3, '2007-11-14'],
+  [4, '2007-12-5'],
+  [5, '2007-12-12'],
+]);
+addComicsInSeriesVolume('XMenEmperorVulcanVol1', [
+  [1, '2007-9-12'],
+  [2, '2007-10-17'],
+  [3, '2007-11-21'],
+  [4, '2007-12-28'],
+  [5, '2008-1-30'],
+]);
+addComicsInSeriesVolume('XMenFirstClassFinalsVol1', [
+  [1, '2009-2-4'],
+  [2, '2009-3-4'],
+  [3, '2009-4-1'],
+  [4, '2009-5-6'],
+]);
+addComicsInSeriesVolume('XMenFirstClassSpecialVol1', [[1, '2007-7-1']]);
+addComicsInSeriesVolume('XMenFirstClassVol1', [
+  [1, '2006-9-20'],
+  [2, '2006-10-18'],
+  [3, '2006-11-15'],
+  [4, '2006-12-20'],
+  [5, '2007-1-17'],
+  [6, '2007-2-21'],
+  [7, '2007-3-21'],
+  [8, '2007-4-25'],
+]);
+addComicsInSeriesVolume('XMenFirstClassVol2', [
+  [1, '2007-5-16'],
+  [2, '2007-7-25'],
+  [3, '2007-8-22'],
+  [4, '2007-9-26'],
+  [5, '2007-10-24'],
+  [6, '2007-11-29'],
+  [7, '2007-12-28'],
+  [8, '2008-1-23'],
+  [9, '2008-2-27'],
+  [10, '2008-3-26'],
+  [11, '2008-4-23'],
+  [12, '2008-5-29'],
+  [13, '2008-6-25'],
+  [14, '2008-7-30'],
+  [15, '2008-8-20'],
+  [16, '2008-9-17'],
+]);
+addComicsInSeriesVolume('XMenFutureHistoryTheMessiahWarSourcebookVol1', [[1, '2009-5-28']]);
+addComicsInSeriesVolume('XMenThe198Vol1', [
+  [1, '2006-1-11'],
+  [2, '2006-2-8'],
+  [3, '2006-3-8'],
+  [4, '2006-4-12'],
+  [5, '2006-5-10'],
+]);
+addComicsInSeriesVolume('XMenTheHiddenYearsVol1', [
+  [1, '2007-5-16'],
+  [2, '2007-7-25'],
+  [3, '2007-8-22'],
+  [4, '2007-9-26'],
+  [5, '2007-10-24'],
+  [6, '2007-11-29'],
+  [7, '2007-12-28'],
+  [8, '2008-1-23'],
+  [9, '2008-2-27'],
+  [10, '2008-3-26'],
+  [11, '2008-4-23'],
+  [12, '2008-5-29'],
+  [13, '2008-6-25'],
+  [14, '2008-7-30'],
+  [15, '2008-8-20'],
+  [16, '2008-9-17'],
+  [17, '2008-9-17'],
+  [18, '2008-9-17'],
+  [19, '2008-9-17'],
+  [20, '2008-9-17'],
+  [21, '2008-9-17'],
+  [22, '2008-9-17'],
+]);
+addComicsInSeriesVolume('XMenTheLivesandTimesofLucasBishopVol1', [
+  [1, '2009-2-4'],
+  [2, '2009-3-25'],
+  [3, '2009-4-22'],
 ]);
 addComicsInSeriesVolume('XMenAgeofApocalypseVol1', [
   [1, '2005-3-2'],
@@ -2559,6 +2629,7 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
 addComicsInSeriesVolume('XMenUnlimitedVol2', [
   [9, '2005-8-1'],
   [12, '2005-12-7'],
+  [14, '2006-4-5'],
 ]);
 addComicsInSeriesVolume('XMenvsBroodVol1', [
   [1, '1996-9'],
@@ -2660,12 +2731,17 @@ addComicsInSeriesVolume('YoungXMenVol1', [
   [3, '2008-6-4'],
   [4, '2008-7-9'],
   [5, '2008-8-20'],
+  [6, '2008-9-17'],
+  [7, '2008-10-15'],
+  [8, '2008-11-19'],
+  [9, '2008-12-31'],
+  [10, '2009-1-28'],
+  [11, '2009-2-18'],
+  [12, '2009-3-18'],
 ]);
 
-class Comics {
+export class Comics {
   public static getComics() {
     return comics;
   }
 }
-
-export { Comics };

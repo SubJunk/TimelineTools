@@ -18,6 +18,8 @@ export interface Collection {
   allCollectionComics: Array<Comic>;
   comicIds: Array<string>;
   comics: Array<Comic>;
+  goodreadsId: string;
+  goodreadsReadStatus: string;
   id: string;
   image: string;
   monthPublished: number;
@@ -32,7 +34,6 @@ export interface CollectionColor {
 }
 
 export interface Comic {
-  classes?: ComicClasses;
   collection?: Collection;
   containerStyles?: ContainerStyles;
   id?: string;
@@ -48,18 +49,27 @@ export interface Comic {
   visible?: boolean;
 }
 
-interface ComicClasses {
+interface ExpandedComicClasses {
+  fullScreen: boolean;
   stickyBottom: boolean;
   stickyLeft: boolean;
   stickyRight: boolean;
   stickyTop: boolean;
 }
 
+interface ExpandedComicStyles {
+  'marginLeft.px': string;
+  'marginTop.px': string;
+}
+
+export interface ExpandedComicCSS {
+  classes: ExpandedComicClasses;
+  styles: ExpandedComicStyles;
+}
+
 interface ComicStyles {
   background: string;
   color: string;
-  'marginLeft.px': string;
-  'marginTop.px': string;
 }
 
 // The following three models are used to create the years and months
