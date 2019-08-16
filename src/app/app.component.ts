@@ -115,8 +115,8 @@ export class AppComponent implements OnInit {
   nextComic: Comic;
   prevComicId: string;
   nextComicId: string;
-  prevCollection;
-  nextCollection;
+  prevCollection: Collection;
+  nextCollection: Collection;
   prevCollectionFirstComic: Comic;
   nextCollectionFirstComic: Comic;
   currentComicIndexInCollection: number;
@@ -200,7 +200,7 @@ export class AppComponent implements OnInit {
     return '';
   }
 
-  /**
+  /*
    * Figure out what the name of the image on the server will be
    * based on the series, volume and issue.
    *
@@ -232,7 +232,7 @@ export class AppComponent implements OnInit {
     return seriesOrCollection;
   }
 
-  /**
+  /*
    * Returns the classes to use for the comic.
    *
    * If this is not the expanded comic, it simply returns the classes
@@ -249,7 +249,7 @@ export class AppComponent implements OnInit {
     return comicClasses;
   }
 
-  /**
+  /*
    * Returns the styles to use for the comic.
    *
    * If this is not the expanded comic, it simply returns the styles
@@ -300,7 +300,7 @@ export class AppComponent implements OnInit {
       return this.clearComicClassesAndStyles();
     }
 
-    /**
+    /*
      * If there is already a comic expanded, and we have already confirmed
      * above that we want to expand a different one, this block maintains
      * the expanded box's position on the page by scrolling the viewport.
@@ -378,7 +378,7 @@ export class AppComponent implements OnInit {
     if (this.collections[this.currentCollectionIndexInCollections].comics[this.currentComicIndexInCollection + 1]) {
       this.nextComic = this.collections[this.currentCollectionIndexInCollections].comics[this.currentComicIndexInCollection + 1];
     } else if (this.nextCollection) {
-      /**
+      /*
        * The expanded comic is the last one in a collection, so we need to find out
        * the first comic in the next collection.
        */
@@ -468,8 +468,8 @@ export class AppComponent implements OnInit {
   }
 
   subtractLabelWidthsFromLeftPositions = () => {
-    let $jqLabel;
-    let labelWidthFromDom;
+    let $jqLabel: JQuery<HTMLElement>;
+    let labelWidthFromDom: number;
 
     _.each(this.seriesVolumeLabels, (seriesVolumeLabel) => {
       // We only know the width after the initial render, so store it
@@ -544,13 +544,13 @@ export class AppComponent implements OnInit {
       yearIterator++;
     }
 
-    let previousYearMonthVolume;
+    let previousYearMonthVolume: string;
     let globalHorizontalOffset = 0;
     const latestVerticalHorizontalOffsets = {};
     let newLabelNeeded = false;
     const windowWidth = this.$jqWindow.innerWidth();
     _.each(this.comics, (comic) => {
-      /**
+      /*
        * Look up the volume and series for this comic and
        * throw errors for obvious problems before proceeding.
        */
@@ -565,7 +565,7 @@ export class AppComponent implements OnInit {
       monthsSinceFirst += comic.monthPublished;
       comic.containerStyles['left.px'] = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
 
-      /**
+      /*
        * Manage multiple releases of the same series in the same month
        * by making the month wider.
        */
@@ -579,7 +579,7 @@ export class AppComponent implements OnInit {
         comic.containerStyles['left.px'] += globalHorizontalOffset;
       }
 
-      /**
+      /*
        * Vertical positioning ensures that each seriesVolume gets
        * its own row on the page. The exception is if a seriesVolume
        * has not had any new issues for a whole page width, then we
@@ -600,14 +600,14 @@ export class AppComponent implements OnInit {
         newLabelNeeded = true;
       }
 
-      /**
+      /*
        * Step two of vertical positioning:
        * At this point, the seriesVolume has a row to use, but in this
        * block we check if there is a row further up the page to slot into
        * so we take up less vertical space.
        */
 
-      /**
+      /*
        * The maximum horizontal offset allowed until we recycle the
        * vertical position.
        */
@@ -619,7 +619,7 @@ export class AppComponent implements OnInit {
           latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition].offset < horizontalClearanceLimit
         )
       ) {
-        /**
+        /*
          * It has been a while (if ever) since the last issue of this
          * series appeared in the timeline so let's put this one on a
          * higher row if possible.
@@ -634,7 +634,7 @@ export class AppComponent implements OnInit {
             currentSeriesVolume.verticalPosition = i;
             comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
 
-            /**
+            /*
              * We are about to insert this seriesVolume into a vertical position
              * that has already been used before, so we remove the reference to
              * that position in the previous seriesVolume. This allows a new vertical
@@ -656,7 +656,7 @@ export class AppComponent implements OnInit {
         }
       }
 
-      /**
+      /*
        * Store a reference to the last horizontal position used
        * by the vertical position currently used by this series volume.
        */
@@ -678,7 +678,7 @@ export class AppComponent implements OnInit {
 
       previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
-      /**
+      /*
        * Match the width of the page to the width of the content, which
        * includes one horizontal increment (the width of the current
        * comic thumbnail) and 2 body padding units to make up for the
@@ -817,7 +817,7 @@ export class AppComponent implements OnInit {
       }
     });
 
-    /**
+    /*
      * Copy all of the comicIds from other parts of the same collection
      * into allCollectionComics so we can display them within the
      * expanded view and allow interaction with them, but still have the
@@ -853,7 +853,7 @@ export class AppComponent implements OnInit {
       });
     });
 
-    /**
+    /*
      * Add a copy of the comic collection to each comic node.
      *
      * This is super inefficient from a memory perspective but
@@ -892,22 +892,22 @@ export class AppComponent implements OnInit {
    * @return background and text colors
    */
   getCollectionColors = (collectionTitle: string): CollectionColor => {
-    let backgroundLightness;
-    let hue;
-    let saturation;
-    let lightness;
-    let chroma;
-    let huePrime;
-    let secondComponent;
-    let red;
-    let green;
-    let blue;
-    let lightnessAdjustment;
-    let rgbColor;
+    let backgroundLightness: number;
+    let hue: number;
+    let saturation: number;
+    let lightness: number;
+    let chroma: number;
+    let huePrime: number;
+    let secondComponent: number;
+    let red: number;
+    let green: number;
+    let blue: number;
+    let lightnessAdjustment: number;
+    let rgbColor: number[];
     const collectionColorsIndex = {};
 
     if (!collectionColorsIndex[collectionTitle]) {
-      let startColor;
+      let startColor: number;
       collectionColorsIndex[collectionTitle] = {};
       collectionColorsIndex[collectionTitle].collectionTitle = collectionTitle;
       collectionColorsIndex[collectionTitle].hslColor = 'hsl(';
@@ -1215,7 +1215,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  trackByItemId = (index, item) => {
+  trackByItemId = (index: number, item: Comic) => {
     return item.id;
   }
 
@@ -1246,7 +1246,7 @@ export class AppComponent implements OnInit {
      * errors that we already watch out for.
      */
     if (searchParams.gc) {
-      let foundComic;
+      let foundComic: Comic | Collection;
       let isClean = true;
       const gcConsolePrepend = 'Garbage Collector: ';
 
