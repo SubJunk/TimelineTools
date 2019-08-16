@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import { Component, Injectable, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { Md5 } from 'ts-md5/dist/md5';
@@ -52,8 +52,9 @@ const COMPLETE_COLOR_WHEEL_DEGREES = 360; // 360 degrees in colour wheel
   styleUrls: ['./app.component.less']
 })
 @Injectable()
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewChecked, OnInit {
   constructor(
+    private changeDetector: ChangeDetectorRef,
     public dialog: MatDialog,
     private http: HttpClient,
     private route: ActivatedRoute,
@@ -871,6 +872,16 @@ export class AppComponent implements OnInit {
     });
   }
 
+  /**
+   * This is needed for https://stackoverflow.com/questions/43375532/expressionchangedafterithasbeencheckederror-explained
+   * because in isCollectionVisible does a jQuery thing at the wrnog moment in the lifecycle.
+   *
+   * @todo do a better fix for that error
+   */
+  ngAfterViewChecked() {
+    this.changeDetector.detectChanges();
+  }
+
   public search = (comic: Comic) => {
     const comicToSearch: Comic = _.find(this.comics, ['id', comic.id]);
     this.toggleExpandComic(comicToSearch, true);
@@ -882,7 +893,7 @@ export class AppComponent implements OnInit {
     this.expandedCollectionId = this.expandedCollectionId === collection.id ? null : collection.id;
   }
 
-  public isCollectionVisible = (collection: Collection) => {
+  public isCollectionVisible = (collection: Collection): boolean => {
     // Return early if it has already been visible before
     if (collection.visible) {
       return true;
@@ -890,7 +901,7 @@ export class AppComponent implements OnInit {
 
     const $collectionButton = $('#expand-' + collection.id);
     if (!$collectionButton.length) {
-      return;
+      return false;
     }
 
     const scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
