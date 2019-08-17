@@ -32,6 +32,7 @@ const LEFT_MARGIN = 200;
 const TOP_MARGIN = 300;
 const VISUAL_BLOCK_SIZE = 60;
 const EXPANDED_PANEL_WIDTH = 900;
+const COLLECTIONS_VIEW_COVER_WIDTH = 250;
 
 const ANIMATION_DURATION = 400;
 const ONE_YEAR_IN_MONTHS = 12;
@@ -909,7 +910,7 @@ export class AppComponent implements OnInit {
 
         const collectionLeftPosition = $collectionButton.offset().left;
 
-        const isCollectionScrolledPastLeft  = Boolean(scrollPositionLeft > collectionLeftPosition);
+        const isCollectionScrolledPastLeft  = Boolean(scrollPositionLeft > (collectionLeftPosition + COLLECTIONS_VIEW_COVER_WIDTH));
         const isCollectionScrolledPastRight = Boolean(scrollPositionRight < collectionLeftPosition);
 
         if (!isCollectionScrolledPastLeft && !isCollectionScrolledPastRight) {
