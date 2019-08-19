@@ -5,7 +5,7 @@
     "dev": "ng serve -o",
     "ng": "ng",
     "postinstall": "ng build --prod --aot=true && mv dist/timeline-tools/* .",
-    "preinstall": "yarn global add angular-cli http-server",
+    "preinstall": "npm install -g @angular/cli http-server",
     "start": "http-server",
     "startprod": "ng serve -o --prod --aot=true",
     "build": "ng build --prod --aot=true",
