@@ -47,6 +47,10 @@ const SATURATION_MAX = 75; // We choose a mid range that's easy to see
 const STEP_CHANGE = 30; // define how far to step around the colour wheel each time
 const COMPLETE_COLOR_WHEEL_DEGREES = 360; // 360 degrees in colour wheel
 
+const DATES_CONTAINER_HEIGHT = 68;
+const COLLECTIONS_CONTAINER_HEIGHT = 298;
+const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_HEIGHT;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -1079,6 +1083,8 @@ export class AppComponent implements OnInit {
     let scrollPositionBottom: number;
     let isComicScrolledPastLeft: boolean;
     let isComicScrolledPastRight: boolean;
+    let isComicScrolledPastTop: boolean;
+    let isComicScrolledPastBottom: boolean;
     let comicTopPosition: number;
     let comicLeftPosition: number;
     let comicRightPosition: number;
@@ -1106,6 +1112,16 @@ export class AppComponent implements OnInit {
     scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
     scrollPositionTop  = this.$jqWindow.scrollTop();
     scrollPositionRight = scrollPositionLeft + window.innerWidth;
+    scrollPositionBottom = scrollPositionTop  + window.innerHeight;
+
+    // This is the amount of pixels the topmost comic thumbnails are offset by vertically
+    let scrollPositionVerticalOffset = DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP;
+    if (this.isShowCollections) {
+      scrollPositionVerticalOffset += COLLECTIONS_CONTAINER_HEIGHT;
+    }
+
+    const scrollPositionTopWithOffset    = scrollPositionTop - scrollPositionVerticalOffset;
+    const scrollPositionBottomWithOffset = scrollPositionBottom - scrollPositionVerticalOffset;
 
     // Lazy-load thumbnails that aren't in the viewport
     _.each(this.comics, (comic) => {
@@ -1114,10 +1130,12 @@ export class AppComponent implements OnInit {
         return;
       }
 
-      isComicScrolledPastLeft  = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastRight = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
+      isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastRight  = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
+      isComicScrolledPastTop    = Boolean(scrollPositionTopWithOffset > (comic.containerStyles['top.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastBottom = Boolean(scrollPositionBottomWithOffset < comic.containerStyles['top.px']);
 
-      if (!isComicScrolledPastLeft && !isComicScrolledPastRight) {
+      if (!isComicScrolledPastLeft && !isComicScrolledPastRight && !isComicScrolledPastTop && !isComicScrolledPastBottom) {
         comic.visible = true;
       }
     });
@@ -1146,9 +1164,6 @@ export class AppComponent implements OnInit {
       comicLeftPosition   = stickyAnchorOffset.left;
       comicBottomPosition = comicTopPosition  + $expandedComic.height();
       comicRightPosition  = comicLeftPosition + EXPANDED_PANEL_WIDTH;
-
-      scrollPositionRight  = scrollPositionLeft + window.innerWidth;
-      scrollPositionBottom = scrollPositionTop  + window.innerHeight;
 
       isStickyTop    = Boolean(scrollPositionTop  > comicTopPosition);
       isStickyLeft   = Boolean(scrollPositionLeft > comicLeftPosition);
