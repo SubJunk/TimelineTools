@@ -14,10 +14,6 @@
   --initial-body-width: 4000px;
 }
 
-* {
-  z-index: 0;
-}
-
 body {
   background: hsl(216, 8%, 25%);
   overflow: auto;
@@ -74,7 +70,7 @@ body.search-is-open {
 
 .series-volume-label-container {
   margin-top: calc(var(--month-width) * 0.29);
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -106,7 +102,9 @@ body.search-is-open {
   z-index: 4;
 }
 
-li:hover {
+/* Popover layering */
+li:hover,
+.expanded-panel > a {
   z-index: 1;
 }
 
