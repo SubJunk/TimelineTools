@@ -896,6 +896,7 @@ export class AppComponent implements OnInit {
      * reveal hidden collections.
      */
     if (this.expandedCollectionId === null) {
+      this.changeDetector.detectChanges();
       this.setCollectionsViewImageVisibility();
     }
   }
