@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import { AfterViewChecked, Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { Md5 } from 'ts-md5/dist/md5';
@@ -32,6 +32,7 @@ const LEFT_MARGIN = 200;
 const TOP_MARGIN = 300;
 const VISUAL_BLOCK_SIZE = 60;
 const EXPANDED_PANEL_WIDTH = 900;
+const COLLECTIONS_VIEW_COVER_WIDTH = 250;
 
 const ANIMATION_DURATION = 400;
 const ONE_YEAR_IN_MONTHS = 12;
@@ -56,7 +57,7 @@ const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_H
   styleUrls: ['./app.component.less']
 })
 @Injectable()
-export class AppComponent implements AfterViewChecked, OnInit {
+export class AppComponent implements OnInit {
   constructor(
     private changeDetector: ChangeDetectorRef,
     public dialog: MatDialog,
@@ -770,7 +771,10 @@ export class AppComponent implements AfterViewChecked, OnInit {
     });
 
     // Reposition the expanded panel when the user scrolls the viewport
-    this.$jqWindow.on('load scroll', (data: JQuery.Event) => this.repositionStickyElements(data));
+    this.$jqWindow.on('load scroll', (data: JQuery.Event) => {
+      this.repositionStickyElements(data);
+      this.setCollectionsViewImageVisibility();
+    });
 
     // Catch clicks
     // tslint:disable-next-line: deprecation
@@ -876,16 +880,6 @@ export class AppComponent implements AfterViewChecked, OnInit {
     });
   }
 
-  /**
-   * This is needed for https://stackoverflow.com/questions/43375532/expressionchangedafterithasbeencheckederror-explained
-   * because in isCollectionVisible does a jQuery thing at the wrnog moment in the lifecycle.
-   *
-   * @todo do a better fix for that error
-   */
-  ngAfterViewChecked() {
-    this.changeDetector.detectChanges();
-  }
-
   public search = (comic: Comic) => {
     const comicToSearch: Comic = _.find(this.comics, ['id', comic.id]);
     this.toggleExpandComic(comicToSearch, true);
@@ -895,33 +889,50 @@ export class AppComponent implements AfterViewChecked, OnInit {
 
   public toggleExpandCollection = (collection: Collection) => {
     this.expandedCollectionId = this.expandedCollectionId === collection.id ? null : collection.id;
+
+    /*
+     * If we just closed an expanded collection panel, as opposed to
+     * opening a new one, we detect visibility again since that may
+     * reveal hidden collections.
+     */
+    if (this.expandedCollectionId === null) {
+      setTimeout(() => {
+        this.setCollectionsViewImageVisibility();
+      }, ANIMATION_DURATION);
+    }
   }
 
-  public isCollectionVisible = (collection: Collection): boolean => {
-    // Return early if it has already been visible before
-    if (collection.visible) {
-      return true;
+  /*
+   * Sets whether each collection is currently visible in the browser window.
+   * Will never change from true to false, only false to true.
+   * Used to lazy-load the cover images.
+   */
+  private setCollectionsViewImageVisibility() {
+    if (this.isShowCollections) {
+      _.each(this.uniqueCollections, (collection: Collection) => {
+        // Return early if it has already been visible before
+        if (collection.visible) {
+          return;
+        }
+
+        const $collectionButton = $('#expand-' + collection.id);
+        if (!$collectionButton.length) {
+          return;
+        }
+
+        const scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
+        const scrollPositionRight = scrollPositionLeft + window.innerWidth;
+
+        const collectionLeftPosition = $collectionButton.offset().left;
+
+        const isCollectionScrolledPastLeft  = Boolean(scrollPositionLeft > (collectionLeftPosition + COLLECTIONS_VIEW_COVER_WIDTH));
+        const isCollectionScrolledPastRight = Boolean(scrollPositionRight < collectionLeftPosition);
+
+        if (!isCollectionScrolledPastLeft && !isCollectionScrolledPastRight) {
+          collection.visible = true;
+        }
+      });
     }
-
-    const $collectionButton = $('#expand-' + collection.id);
-    if (!$collectionButton.length) {
-      return false;
-    }
-
-    const scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
-    const scrollPositionRight = scrollPositionLeft + window.innerWidth;
-
-    const collectionLeftPosition = $collectionButton.offset().left;
-
-    const isCollectionScrolledPastLeft  = Boolean(scrollPositionLeft > collectionLeftPosition);
-    const isCollectionScrolledPastRight = Boolean(scrollPositionRight < collectionLeftPosition);
-
-    if (!isCollectionScrolledPastLeft && !isCollectionScrolledPastRight) {
-      collection.visible = true;
-      return true;
-    }
-
-    return false;
   }
 
   /**
@@ -1219,15 +1230,15 @@ export class AppComponent implements AfterViewChecked, OnInit {
     }
   }
 
-  toggleInfoModal = () => {
+  public toggleInfoModal = () => {
     this.dialog.open(InfoModalComponent);
   }
 
-  toggleFullscreen = () => {
+  public toggleFullscreen = () => {
     this.expandedComicCSS.classes.fullScreen = !this.expandedComicCSS.classes.fullScreen;
   }
 
-  toggleShowCollections = (forcedState?: string) => {
+  public toggleShowCollections = (forcedState?: string) => {
     let state: string;
     if (forcedState) {
       state = forcedState;
@@ -1246,12 +1257,17 @@ export class AppComponent implements AfterViewChecked, OnInit {
 
     if (state === '1') {
       this.isShowCollections = true;
+
+      // This makes the page display the collections view before we check visibility
+      this.changeDetector.detectChanges();
+
+      this.setCollectionsViewImageVisibility();
     } else {
       this.isShowCollections = false;
     }
   }
 
-  scrollToComic = (comicId: string) => {
+  public scrollToComic = (comicId: string) => {
     const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
 
     setTimeout(() => {
@@ -1267,7 +1283,7 @@ export class AppComponent implements AfterViewChecked, OnInit {
     });
   }
 
-  trackByItemId = (index: number, item: Comic) => {
+  public trackByItemId = (index: number, item: Comic) => {
     return item.id;
   }
 

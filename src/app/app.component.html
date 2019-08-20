@@ -17,7 +17,7 @@
       <div class="panel-left">
         <button (click)="toggleExpandCollection(collection)" class="cover-thumbnail" id="expand-{{collection.id}}">
           <img
-              *ngIf="isCollectionVisible(collection)"
+              *ngIf="collection.visible"
               [srcset]="
                   'https://api.rethumb.com/v1/width/322/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 2x,
                   https://api.rethumb.com/v1/width/161/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 1x'"
@@ -32,15 +32,14 @@
           <ul>
             <li *ngFor="let comic of collection.allCollectionComics; trackBy: trackByItemId">
               <div class="popover"><div>{{comic.series}} #{{comic.issue}}</div></div>
-              <a title="{{comic.series}} #{{comic.issue}}" (click)="toggleExpandComic(comic, true)">
+              <button (click)="toggleExpandComic(comic, true)" mat-button>
                 <img
-                    [ngClass]="{current: comic.id === comicId}"
                     [srcset]="
                         'https://api.rethumb.com/v1/width/400/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
                         https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
                     [src]="'https://api.rethumb.com/v1/width/200/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
                 >
-              </a>
+              </button>
             </li>
           </ul>
         </div>
