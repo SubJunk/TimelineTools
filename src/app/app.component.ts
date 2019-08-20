@@ -889,6 +889,15 @@ export class AppComponent implements OnInit {
 
   public toggleExpandCollection = (collection: Collection) => {
     this.expandedCollectionId = this.expandedCollectionId === collection.id ? null : collection.id;
+
+    /*
+     * If we just closed an expanded collection panel, as opposed to
+     * opening a new one, we detect visibility again since that may
+     * reveal hidden collections.
+     */
+    if (this.expandedCollectionId === null) {
+      this.setCollectionsViewImageVisibility();
+    }
   }
 
   /*
