@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { Md5 } from 'ts-md5/dist/md5';
@@ -32,6 +32,7 @@ const LEFT_MARGIN = 200;
 const TOP_MARGIN = 300;
 const VISUAL_BLOCK_SIZE = 60;
 const EXPANDED_PANEL_WIDTH = 900;
+const COLLECTIONS_VIEW_COVER_WIDTH = 250;
 
 const ANIMATION_DURATION = 400;
 const ONE_YEAR_IN_MONTHS = 12;
@@ -46,6 +47,10 @@ const SATURATION_MAX = 75; // We choose a mid range that's easy to see
 const STEP_CHANGE = 30; // define how far to step around the colour wheel each time
 const COMPLETE_COLOR_WHEEL_DEGREES = 360; // 360 degrees in colour wheel
 
+const DATES_CONTAINER_HEIGHT = 68;
+const COLLECTIONS_CONTAINER_HEIGHT = 298;
+const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_HEIGHT;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -54,6 +59,7 @@ const COMPLETE_COLOR_WHEEL_DEGREES = 360; // 360 degrees in colour wheel
 @Injectable()
 export class AppComponent implements OnInit {
   constructor(
+    private changeDetector: ChangeDetectorRef,
     public dialog: MatDialog,
     private http: HttpClient,
     private route: ActivatedRoute,
@@ -68,7 +74,7 @@ export class AppComponent implements OnInit {
   series: Array<object>;
   seriesVolumes: Array<SeriesVolume>;
   uniqueCollections: Array<Collection> = [];
-  dates = [];
+  dates: Array<DateYear> = [];
 
   // An array of objects that contain search results for comics and collections
   public itemsToSearch = [];
@@ -116,8 +122,8 @@ export class AppComponent implements OnInit {
   nextComic: Comic;
   prevComicId: string;
   nextComicId: string;
-  prevCollection;
-  nextCollection;
+  prevCollection: Collection;
+  nextCollection: Collection;
   prevCollectionFirstComic: Comic;
   nextCollectionFirstComic: Comic;
   currentComicIndexInCollection: number;
@@ -202,7 +208,7 @@ export class AppComponent implements OnInit {
     return '';
   }
 
-  /**
+  /*
    * Figure out what the name of the image on the server will be
    * based on the series, volume and issue.
    *
@@ -234,7 +240,7 @@ export class AppComponent implements OnInit {
     return seriesOrCollection;
   }
 
-  /**
+  /*
    * Returns the classes to use for the comic.
    *
    * If this is not the expanded comic, it simply returns the classes
@@ -251,7 +257,7 @@ export class AppComponent implements OnInit {
     return comicClasses;
   }
 
-  /**
+  /*
    * Returns the styles to use for the comic.
    *
    * If this is not the expanded comic, it simply returns the styles
@@ -302,7 +308,7 @@ export class AppComponent implements OnInit {
       return this.clearComicClassesAndStyles();
     }
 
-    /**
+    /*
      * If there is already a comic expanded, and we have already confirmed
      * above that we want to expand a different one, this block maintains
      * the expanded box's position on the page by scrolling the viewport.
@@ -380,7 +386,7 @@ export class AppComponent implements OnInit {
     if (this.collections[this.currentCollectionIndexInCollections].comics[this.currentComicIndexInCollection + 1]) {
       this.nextComic = this.collections[this.currentCollectionIndexInCollections].comics[this.currentComicIndexInCollection + 1];
     } else if (this.nextCollection) {
-      /**
+      /*
        * The expanded comic is the last one in a collection, so we need to find out
        * the first comic in the next collection.
        */
@@ -438,7 +444,7 @@ export class AppComponent implements OnInit {
   /*
    * Sets the Goodreads collection ID
    */
-  setGoodreadsCollectionId = (collection: Collection): void => {
+  private setGoodreadsCollectionId = (collection: Collection): void => {
     this.getGoodreadsCollectionData(collection.title)
         .subscribe(
           (response) => {
@@ -458,20 +464,9 @@ export class AppComponent implements OnInit {
         );
   }
 
-  search = (comic: Comic) => {
-    const comicToSearch: Comic = _.find(this.comics, ['id', comic.id]);
-    this.toggleExpandComic(comicToSearch, true);
-    this.searchText = '';
-    this.postSearchActions();
-  }
-
-  toggleExpandCollection = (collection: Collection) => {
-    this.expandedCollectionId = this.expandedCollectionId === collection.id ? null : collection.id;
-  }
-
-  subtractLabelWidthsFromLeftPositions = () => {
-    let $jqLabel;
-    let labelWidthFromDom;
+  private subtractLabelWidthsFromLeftPositions = () => {
+    let $jqLabel: JQuery<HTMLElement>;
+    let labelWidthFromDom: number;
 
     _.each(this.seriesVolumeLabels, (seriesVolumeLabel) => {
       // We only know the width after the initial render, so store it
@@ -493,8 +488,7 @@ export class AppComponent implements OnInit {
     this.collections   = Collections.getCollections();
     this.series        = SeriesVolumes.getSeries();
     this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
-    // Ah. Only the collections are in the right order.
-    this.comicsInReadingOrder = _.cloneDeep(this.comics);
+    this.comicsInReadingOrder = [];
 
 
     // Sort the data by date
@@ -549,13 +543,13 @@ export class AppComponent implements OnInit {
       yearIterator++;
     }
 
-    let previousYearMonthVolume;
+    let previousYearMonthVolume: string;
     let globalHorizontalOffset = 0;
     const latestVerticalHorizontalOffsets = {};
     let newLabelNeeded = false;
-    const windowWidth = this.$jqWindow.innerWidth();
+    const windowWidth = window.innerWidth;
     _.each(this.comics, (comic) => {
-      /**
+      /*
        * Look up the volume and series for this comic and
        * throw errors for obvious problems before proceeding.
        */
@@ -570,7 +564,7 @@ export class AppComponent implements OnInit {
       monthsSinceFirst += comic.monthPublished;
       comic.containerStyles['left.px'] = (monthsSinceFirst <= 0 ? 0 : monthsSinceFirst) * VISUAL_BLOCK_SIZE;
 
-      /**
+      /*
        * Manage multiple releases of the same series in the same month
        * by making the month wider.
        */
@@ -584,7 +578,7 @@ export class AppComponent implements OnInit {
         comic.containerStyles['left.px'] += globalHorizontalOffset;
       }
 
-      /**
+      /*
        * Vertical positioning ensures that each seriesVolume gets
        * its own row on the page. The exception is if a seriesVolume
        * has not had any new issues for a whole page width, then we
@@ -605,14 +599,14 @@ export class AppComponent implements OnInit {
         newLabelNeeded = true;
       }
 
-      /**
+      /*
        * Step two of vertical positioning:
        * At this point, the seriesVolume has a row to use, but in this
        * block we check if there is a row further up the page to slot into
        * so we take up less vertical space.
        */
 
-      /**
+      /*
        * The maximum horizontal offset allowed until we recycle the
        * vertical position.
        */
@@ -624,7 +618,7 @@ export class AppComponent implements OnInit {
           latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition].offset < horizontalClearanceLimit
         )
       ) {
-        /**
+        /*
          * It has been a while (if ever) since the last issue of this
          * series appeared in the timeline so let's put this one on a
          * higher row if possible.
@@ -639,7 +633,7 @@ export class AppComponent implements OnInit {
             currentSeriesVolume.verticalPosition = i;
             comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
 
-            /**
+            /*
              * We are about to insert this seriesVolume into a vertical position
              * that has already been used before, so we remove the reference to
              * that position in the previous seriesVolume. This allows a new vertical
@@ -661,7 +655,7 @@ export class AppComponent implements OnInit {
         }
       }
 
-      /**
+      /*
        * Store a reference to the last horizontal position used
        * by the vertical position currently used by this series volume.
        */
@@ -673,6 +667,7 @@ export class AppComponent implements OnInit {
       // Store the name of the series in the comic object
       comic.series = currentSeriesVolume.title;
       comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
+
       // Populate a smaller object just for filtering
       this.itemsToSearch.push({
         displayText: currentSeriesVolume.searchTitleWithVolume + ' #' + comic.issue,
@@ -682,7 +677,7 @@ export class AppComponent implements OnInit {
 
       previousYearMonthVolume = comic.yearPublished + comic.monthPublished + comic.seriesVolumeId;
 
-      /**
+      /*
        * Match the width of the page to the width of the content, which
        * includes one horizontal increment (the width of the current
        * comic thumbnail) and 2 body padding units to make up for the
@@ -721,29 +716,6 @@ export class AppComponent implements OnInit {
       }
     });
 
-    let horizontalPosition = 0;
-    _.each(this.comicsInReadingOrder, (comic) => {
-      const currentSeriesVolume = this.seriesVolumes[_.findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
-      if (!currentSeriesVolume) {
-        throw new Error(comic.seriesVolumeId + ' not found');
-      }
-
-      horizontalPosition++;
-      // initialise each comic
-      comic.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
-      comic.classes = { stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
-      comic.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
-
-      // Set horizontal positioning
-      comic.styles['left.px'] = horizontalPosition * VISUAL_BLOCK_SIZE;
-      comic.containerStyles['left.px'] = comic.styles['left.px'];
-
-
-      // Store the name of the series in the comic object
-      comic.series = currentSeriesVolume.title;
-      comic.image = this.getSanitizedString(true, comic.series, currentSeriesVolume.volume, comic.issue);
-    });
-
     if (this.doSpeedProfile) {
       const endTime = new Date().getTime();
       const timeDiff = endTime - this.startTimeInitialLoad;
@@ -752,7 +724,6 @@ export class AppComponent implements OnInit {
 
     // Render collections as groups of comics
     let comicIndex: string;
-
     _.each(this.collections, (collection) => {
       const collectionColor = this.getCollectionColors(collection.title);
 
@@ -763,12 +734,18 @@ export class AppComponent implements OnInit {
         }
         this.comics[comicIndex].styles.background = collectionColor.backgroundColor;
         this.comics[comicIndex].styles.color = collectionColor.textColor;
-        this.comicsInReadingOrder[comicIndex].styles.background = collectionColor.backgroundColor;
-        this.comicsInReadingOrder[comicIndex].styles.color = collectionColor.textColor;
-        this.comicsInReadingOrder[comicIndex].comidId = comicIndex
+
+        //  while we are here store the comics in order
+        this.comicsInReadingOrder.push(_.cloneDeep(this.comics[comicIndex]));
       });
     });
-
+    //  reposition the comics
+    let horizontalReadingOrderPosition = 0;
+    _.each(this.comicsInReadingOrder, (comic) => {
+      horizontalReadingOrderPosition += VISUAL_BLOCK_SIZE;
+      comic.containerStyles['left.px'] = horizontalReadingOrderPosition;
+      console.log(comic.id, comic.containerStyles);
+    });
     /**
      * Handle keypresses.
      *
@@ -807,7 +784,10 @@ export class AppComponent implements OnInit {
     });
 
     // Reposition the expanded panel when the user scrolls the viewport
-    this.$jqWindow.on('load scroll', (data: JQuery.Event) => this.repositionStickyElements(data));
+    this.$jqWindow.on('load scroll', (data: JQuery.Event) => {
+      this.repositionStickyElements(data);
+      this.setCollectionsViewImageVisibility();
+    });
 
     // Catch clicks
     // tslint:disable-next-line: deprecation
@@ -848,7 +828,7 @@ export class AppComponent implements OnInit {
       }
     });
 
-    /**
+    /*
      * Copy all of the comicIds from other parts of the same collection
      * into allCollectionComics so we can display them within the
      * expanded view and allow interaction with them, but still have the
@@ -884,7 +864,7 @@ export class AppComponent implements OnInit {
       });
     });
 
-    /**
+    /*
      * Add a copy of the comic collection to each comic node.
      *
      * This is super inefficient from a memory perspective but
@@ -898,6 +878,7 @@ export class AppComponent implements OnInit {
         return collection.comicIds.includes(comic.id);
       });
     });
+
     setTimeout(() => {
       // Make room for the farthest-bottom expanded panel
       this.bodyStyles['height.px'] = $(document).height() + $(window).height();
@@ -912,6 +893,61 @@ export class AppComponent implements OnInit {
     });
   }
 
+  public search = (comic: Comic) => {
+    const comicToSearch: Comic = _.find(this.comics, ['id', comic.id]);
+    this.toggleExpandComic(comicToSearch, true);
+    this.searchText = '';
+    this.postSearchActions();
+  }
+
+  public toggleExpandCollection = (collection: Collection) => {
+    this.expandedCollectionId = this.expandedCollectionId === collection.id ? null : collection.id;
+
+    /*
+     * If we just closed an expanded collection panel, as opposed to
+     * opening a new one, we detect visibility again since that may
+     * reveal hidden collections.
+     */
+    if (this.expandedCollectionId === null) {
+      setTimeout(() => {
+        this.setCollectionsViewImageVisibility();
+      }, ANIMATION_DURATION);
+    }
+  }
+
+  /*
+   * Sets whether each collection is currently visible in the browser window.
+   * Will never change from true to false, only false to true.
+   * Used to lazy-load the cover images.
+   */
+  private setCollectionsViewImageVisibility() {
+    if (this.isShowCollections) {
+      _.each(this.uniqueCollections, (collection: Collection) => {
+        // Return early if it has already been visible before
+        if (collection.visible) {
+          return;
+        }
+
+        const $collectionButton = $('#expand-' + collection.id);
+        if (!$collectionButton.length) {
+          return;
+        }
+
+        const scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
+        const scrollPositionRight = scrollPositionLeft + window.innerWidth;
+
+        const collectionLeftPosition = $collectionButton.offset().left;
+
+        const isCollectionScrolledPastLeft  = Boolean(scrollPositionLeft > (collectionLeftPosition + COLLECTIONS_VIEW_COVER_WIDTH));
+        const isCollectionScrolledPastRight = Boolean(scrollPositionRight < collectionLeftPosition);
+
+        if (!isCollectionScrolledPastLeft && !isCollectionScrolledPastRight) {
+          collection.visible = true;
+        }
+      });
+    }
+  }
+
   /**
    * Returns either the existing color for the collection, or
    * generates a color in HSL format, e.g. hsl(1, 2, 3)
@@ -921,23 +957,23 @@ export class AppComponent implements OnInit {
    * @param  collectionTitle the title of the collection
    * @return background and text colors
    */
-  getCollectionColors = (collectionTitle: string): CollectionColor => {
-    let backgroundLightness;
-    let hue;
-    let saturation;
-    let lightness;
-    let chroma;
-    let huePrime;
-    let secondComponent;
-    let red;
-    let green;
-    let blue;
-    let lightnessAdjustment;
-    let rgbColor;
+  private getCollectionColors = (collectionTitle: string): CollectionColor => {
+    let backgroundLightness: number;
+    let hue: number;
+    let saturation: number;
+    let lightness: number;
+    let chroma: number;
+    let huePrime: number;
+    let secondComponent: number;
+    let red: number;
+    let green: number;
+    let blue: number;
+    let lightnessAdjustment: number;
+    let rgbColor: number[];
     const collectionColorsIndex = {};
 
     if (!collectionColorsIndex[collectionTitle]) {
-      let startColor;
+      let startColor: number;
       collectionColorsIndex[collectionTitle] = {};
       collectionColorsIndex[collectionTitle].collectionTitle = collectionTitle;
       collectionColorsIndex[collectionTitle].hslColor = 'hsl(';
@@ -1071,6 +1107,8 @@ export class AppComponent implements OnInit {
     let scrollPositionBottom: number;
     let isComicScrolledPastLeft: boolean;
     let isComicScrolledPastRight: boolean;
+    let isComicScrolledPastTop: boolean;
+    let isComicScrolledPastBottom: boolean;
     let comicTopPosition: number;
     let comicLeftPosition: number;
     let comicRightPosition: number;
@@ -1097,7 +1135,17 @@ export class AppComponent implements OnInit {
     // The scroll position of the page, minus the main padding
     scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
     scrollPositionTop  = this.$jqWindow.scrollTop();
-    scrollPositionRight = scrollPositionLeft + this.$jqWindow.innerWidth();
+    scrollPositionRight = scrollPositionLeft + window.innerWidth;
+    scrollPositionBottom = scrollPositionTop  + window.innerHeight;
+
+    // This is the amount of pixels the topmost comic thumbnails are offset by vertically
+    let scrollPositionVerticalOffset = DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP;
+    if (this.isShowCollections) {
+      scrollPositionVerticalOffset += COLLECTIONS_CONTAINER_HEIGHT;
+    }
+
+    const scrollPositionTopWithOffset    = scrollPositionTop - scrollPositionVerticalOffset;
+    const scrollPositionBottomWithOffset = scrollPositionBottom - scrollPositionVerticalOffset;
 
     // Lazy-load thumbnails that aren't in the viewport
     _.each(this.comics, (comic) => {
@@ -1106,11 +1154,12 @@ export class AppComponent implements OnInit {
         return;
       }
 
-      isComicScrolledPastLeft  = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastRight = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
+      isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastRight  = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
+      isComicScrolledPastTop    = Boolean(scrollPositionTopWithOffset > (comic.containerStyles['top.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastBottom = Boolean(scrollPositionBottomWithOffset < comic.containerStyles['top.px']);
 
-      // the comic is out of the viewport, to the left
-      if (!isComicScrolledPastLeft && !isComicScrolledPastRight) {
+      if (!isComicScrolledPastLeft && !isComicScrolledPastRight && !isComicScrolledPastTop && !isComicScrolledPastBottom) {
         comic.visible = true;
       }
     });
@@ -1139,9 +1188,6 @@ export class AppComponent implements OnInit {
       comicLeftPosition   = stickyAnchorOffset.left;
       comicBottomPosition = comicTopPosition  + $expandedComic.height();
       comicRightPosition  = comicLeftPosition + EXPANDED_PANEL_WIDTH;
-
-      scrollPositionRight  = scrollPositionLeft + window.innerWidth;
-      scrollPositionBottom = scrollPositionTop  + window.innerHeight;
 
       isStickyTop    = Boolean(scrollPositionTop  > comicTopPosition);
       isStickyLeft   = Boolean(scrollPositionLeft > comicLeftPosition);
@@ -1181,6 +1227,15 @@ export class AppComponent implements OnInit {
     });
   }
 
+  toggleDisplayOrder = () => {
+    // Toggle display order to change classes for collection order or reading order
+    if (this.isShowReadingOrder === true) {
+      this.isShowReadingOrder = false;
+    } else {
+      this.isShowReadingOrder = true;
+    }
+  }
+
   /**
    * Handles manual actions that need to happen after searchText has been
    * set.
@@ -1197,15 +1252,15 @@ export class AppComponent implements OnInit {
     }
   }
 
-  toggleInfoModal = () => {
+  public toggleInfoModal = () => {
     this.dialog.open(InfoModalComponent);
   }
 
-  toggleFullscreen = () => {
+  public toggleFullscreen = () => {
     this.expandedComicCSS.classes.fullScreen = !this.expandedComicCSS.classes.fullScreen;
   }
 
-  toggleShowCollections = (forcedState?: string) => {
+  public toggleShowCollections = (forcedState?: string) => {
     let state: string;
     if (forcedState) {
       state = forcedState;
@@ -1224,20 +1279,17 @@ export class AppComponent implements OnInit {
 
     if (state === '1') {
       this.isShowCollections = true;
+
+      // This makes the page display the collections view before we check visibility
+      this.changeDetector.detectChanges();
+
+      this.setCollectionsViewImageVisibility();
     } else {
       this.isShowCollections = false;
     }
   }
 
-  toggleDisplayOrder = () => {
-    // Toggle display order to change classes for collection order or reading order
-    this.isShowReadingOrder = !this.isShowReadingOrder;
-    if (this.isShowReadingOrder) {
-
-
-  }
-  }
-  scrollToComic = (comicId: string) => {
+  public scrollToComic = (comicId: string) => {
     const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
 
     setTimeout(() => {
@@ -1253,7 +1305,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  trackByItemId = (index, item) => {
+  public trackByItemId = (index: number, item: Comic) => {
     return item.id;
   }
 
@@ -1284,7 +1336,7 @@ export class AppComponent implements OnInit {
      * errors that we already watch out for.
      */
     if (searchParams.gc) {
-      let foundComic;
+      let foundComic: Comic | Collection;
       let isClean = true;
       const gcConsolePrepend = 'Garbage Collector: ';
 

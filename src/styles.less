@@ -43,17 +43,17 @@ body.search-is-open {
 .year {
   display: inline-block;
   color: #ccc;
-}
 
-.year > span {
-  position: sticky;
-  left: 0;
-  padding-left: 20px;
-}
+  &> span {
+    position: sticky;
+    left: 0;
+    padding-left: 20px;
+  }
 
-.month {
-  display: inline-block;
-  text-indent: 22px;
+  .month {
+    display: inline-block;
+    text-indent: 22px;
+  }
 }
 
 .collections {
@@ -74,7 +74,7 @@ body.search-is-open {
 
 .series-volume-label-container {
   margin-top: calc(var(--month-width) * 0.29);
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -106,7 +106,9 @@ body.search-is-open {
   z-index: 4;
 }
 
-li:hover {
+/* Popover layering */
+li:hover,
+.expanded-panel > a {
   z-index: 1;
 }
 
@@ -161,7 +163,7 @@ li:hover {
 
 .collection-container {
   width: calc(var(--collection-cover-height) / var(--cover-aspect-ratio));
-  transition: width 1s;
+  transition: width 0.4s;
   margin-right: 10px;
 }
 
