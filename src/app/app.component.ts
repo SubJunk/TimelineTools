@@ -1164,6 +1164,23 @@ export class AppComponent implements OnInit {
       }
     });
 
+    // do the same for reading order comics
+    _.each(this.comicsInReadingOrder, (comic) => {
+      // skip this calculation if the comic has been previously displayed
+      if (comic.visible === true) {
+        return;
+      }
+
+      isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastRight  = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
+      isComicScrolledPastTop    = Boolean(scrollPositionTopWithOffset > (comic.containerStyles['top.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastBottom = Boolean(scrollPositionBottomWithOffset < comic.containerStyles['top.px']);
+
+      if (!isComicScrolledPastLeft && !isComicScrolledPastRight && !isComicScrolledPastTop && !isComicScrolledPastBottom) {
+        comic.visible = true;
+      }
+    });
+
     const selectedComic = currentComicId || this.expandedComicId;
 
     // Exit early and force render if there is no comic expanded
