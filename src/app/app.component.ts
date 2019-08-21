@@ -739,12 +739,12 @@ export class AppComponent implements OnInit {
         this.comicsInReadingOrder.push(_.cloneDeep(this.comics[comicIndex]));
       });
     });
+
     //  reposition the comics
     let horizontalReadingOrderPosition = 0;
     _.each(this.comicsInReadingOrder, (comic) => {
       horizontalReadingOrderPosition += VISUAL_BLOCK_SIZE;
       comic.containerStyles['left.px'] = horizontalReadingOrderPosition;
-      console.log(comic.id, comic.containerStyles);
     });
     /**
      * Handle keypresses.
