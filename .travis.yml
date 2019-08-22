@@ -13,9 +13,13 @@ addons:
 services:
   - xvfb
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm config set spin false; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DISPLAY=:99.0; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then npm config set spin false; fi
 script:
   - yarn lint
   - node_modules/.bin/stylelint "**/*.less" --custom-syntax postcss-less
   - yarn e2e
+after_success:
+- if [ ${TRAVIS_PULL_REQUEST} == "false" ] && [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_OS_NAME" == "linux" ]; then
+  find dist/timeline-tools/ -exec curl  -k "sftp://xmentimeline.com/testing-ftp/" --user "${SFTP_USER}:${SFTP_PASSWORD}" --ftp-create-dirs \;
+  fi
