@@ -20,6 +20,6 @@ script:
   - node_modules/.bin/stylelint "**/*.less" --custom-syntax postcss-less
   - yarn e2e
 after_success:
-- if [ ${TRAVIS_PULL_REQUEST} == "false" ] && [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_OS_NAME" == "linux" ]; then
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then
   find dist/timeline-tools/ -exec curl  -k "sftp://xmentimeline.com/testing-ftp/" --user "${SFTP_USER}:${SFTP_PASSWORD}" --ftp-create-dirs \;
   fi
