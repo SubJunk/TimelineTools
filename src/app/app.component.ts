@@ -735,17 +735,87 @@ export class AppComponent implements OnInit {
         this.comics[comicIndex].styles.background = collectionColor.backgroundColor;
         this.comics[comicIndex].styles.color = collectionColor.textColor;
 
-        //  while we are here store the comics in order
+        //  while we are here store the comics in reading order
         this.comicsInReadingOrder.push(_.cloneDeep(this.comics[comicIndex]));
       });
     });
 
-    //  reposition the comics
+    //  reposition the reading order comics horizontally
     let horizontalReadingOrderPosition = 0;
     _.each(this.comicsInReadingOrder, (comic) => {
       horizontalReadingOrderPosition += VISUAL_BLOCK_SIZE;
       comic.containerStyles['left.px'] = horizontalReadingOrderPosition;
+
+      /*
+       * Look up the volume and series for this comic and
+       * throw errors for obvious problems before proceeding.
+       */
+      const currentSeriesVolume = this.seriesVolumes[_.findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
+      if (!currentSeriesVolume) {
+        throw new Error(comic.seriesVolumeId + ' not found');
+      }
+
+      /*
+       * Vertical positioning ensures that each seriesVolume gets
+       * its own row on the page. The exception is if a seriesVolume
+       * has not had any new issues for a whole page width, then we
+       * allow the next seriesVolume that is looking for a row, to slot in.
+       *
+       * This is a two-step process.
+       * First, in this block, we either use the current position for the
+       * seriesVolume or we use the globalVerticalPositionCounter to go onto
+       * the last row.
+       * Step two documented below.
+       */
+
+       // TO-DO: Paulene really needs to understand what's happening here
+      this.globalVerticalPositionCounter = 1;
+      if (typeof currentSeriesVolume.verticalPosition !== 'undefined') {
+        comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
+      } else {
+        currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
+        comic.containerStyles['top.px'] = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
+        this.globalVerticalPositionCounter++;
+        newLabelNeeded = true;
+      }
+      //   /*
+      //    * It has been a while (if ever) since the last issue of this
+      //    * series appeared in the timeline so let's put this one on a
+      //    * higher row if possible.
+      //    *
+      //    * Counter starts at 1 to keep Uncanny always at the top.
+      //    */
+      // const horizontalClearanceLimit = 1;
+      // for (let i = 1; i < this.globalVerticalPositionCounter; i++) {
+      //     if (
+      //       !latestVerticalHorizontalOffsets[i] ||
+      //       latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
+      //     ) {
+      //       currentSeriesVolume.verticalPosition = i;
+      //       comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
+
+      //       /*
+      //        * We are about to insert this seriesVolume into a vertical position
+      //        * that has already been used before, so we remove the reference to
+      //        * that position in the previous seriesVolume. This allows a new vertical
+      //        * position to be generated for that previous seriesVolume if one appears.
+      //        */
+      //       if (latestVerticalHorizontalOffsets[i]) {
+      //         const previousSeriesVolume = this.seriesVolumes[
+      //           _.findKey(this.seriesVolumes, { id: latestVerticalHorizontalOffsets[i].seriesVolumeId })
+      //         ];
+      //         if (!previousSeriesVolume) {
+      //           throw new Error(comic.seriesVolumeId + ' not found');
+      //         }
+      //         previousSeriesVolume.verticalPosition = null;
+      //       }
+      //       newLabelNeeded = true;
+
+      //       break;
+      //     }
+      //   }
     });
+
     /**
      * Handle keypresses.
      *
