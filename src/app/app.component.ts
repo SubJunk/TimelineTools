@@ -315,8 +315,7 @@ export class AppComponent implements OnInit {
       if (this.expandedCollection) {
         this.clearComicClassesAndStyles();
       }
-
-      $('html, body').stop().animate({
+      $('html').stop().animate({
         scrollLeft: currentComic.containerStyles['left.px'] - LEFT_MARGIN,
         scrollTop:  currentComic.containerStyles['top.px'] + TOP_MARGIN
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
@@ -329,8 +328,7 @@ export class AppComponent implements OnInit {
 
       // reset the styles for the previous comic
       this.clearComicClassesAndStyles();
-
-      $('html, body').stop().animate({
+      $('html').stop().animate({
         scrollLeft: this.$jqWindow.scrollLeft() - positionDifference.left,
         scrollTop:  this.$jqWindow.scrollTop()  - positionDifference.top
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
@@ -772,8 +770,10 @@ export class AppComponent implements OnInit {
 
     // Reposition the expanded panel when the user scrolls the viewport
     this.$jqWindow.on('load scroll', (data: JQuery.Event) => {
-      this.repositionStickyElements(data);
-      this.setCollectionsViewImageVisibility();
+      _.debounce(() => {
+        this.repositionStickyElements(data);
+        this.setCollectionsViewImageVisibility();
+      }, ANIMATION_DURATION);
     });
 
     // Catch clicks
@@ -1123,7 +1123,7 @@ export class AppComponent implements OnInit {
     scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
     scrollPositionTop  = this.$jqWindow.scrollTop();
     scrollPositionRight = scrollPositionLeft + window.innerWidth;
-    scrollPositionBottom = scrollPositionTop  + window.innerHeight;
+    scrollPositionBottom = scrollPositionTop + window.innerHeight;
 
     // This is the amount of pixels the topmost comic thumbnails are offset by vertically
     let scrollPositionVerticalOffset = DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP;
