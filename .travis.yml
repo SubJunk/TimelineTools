@@ -18,4 +18,4 @@ before_install:
 script:
   - yarn lint
 after_success:
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then find dist/timeline-tools/ -exec curl -k ftp://65.23.155.8/home/xmentimeline/public_html/testftp --user ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs \; ; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then find dist/timeline-tools/ -exec curl -k ftp://65.23.155.8/public_html/testftp --user ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs \; ; fi
