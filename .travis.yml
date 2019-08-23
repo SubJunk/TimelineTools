@@ -15,5 +15,7 @@ services:
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DISPLAY=:99.0; fi
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then npm config set spin false; fi
+script:
+  - yarn lint
 after_success:
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then find dist/timeline-tools/ -exec curl -k ftp://65.23.155.8/home/xmentimeline/public_html/testftp --user ${SFTP_USER}:${SFTP_PASSWORD} --ftp-create-dirs \; ; fi
