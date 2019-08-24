@@ -315,8 +315,7 @@ export class AppComponent implements OnInit {
       if (this.expandedCollection) {
         this.clearComicClassesAndStyles();
       }
-
-      $('html, body').stop().animate({
+      $('html').stop().animate({
         scrollLeft: currentComic.containerStyles['left.px'] - LEFT_MARGIN,
         scrollTop:  currentComic.containerStyles['top.px'] + TOP_MARGIN
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
@@ -329,8 +328,7 @@ export class AppComponent implements OnInit {
 
       // reset the styles for the previous comic
       this.clearComicClassesAndStyles();
-
-      $('html, body').stop().animate({
+      $('html').stop().animate({
         scrollLeft: this.$jqWindow.scrollLeft() - positionDifference.left,
         scrollTop:  this.$jqWindow.scrollTop()  - positionDifference.top
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
@@ -771,10 +769,11 @@ export class AppComponent implements OnInit {
     });
 
     // Reposition the expanded panel when the user scrolls the viewport
-    this.$jqWindow.on('load scroll', (data: JQuery.Event) => {
-      this.repositionStickyElements(data);
+    this.$jqWindow.on('load scroll', _.throttle(() => {
+      this.repositionStickyElements();
       this.setCollectionsViewImageVisibility();
-    });
+      this.setComicsViewImageVisibility();
+    }, ANIMATION_DURATION));
 
     // Catch clicks
     // tslint:disable-next-line: deprecation
@@ -935,6 +934,50 @@ export class AppComponent implements OnInit {
     }
   }
 
+  /*
+   * Sets whether each comic is currently visible in the browser window.
+   * Will never change from true to false, only false to true.
+   * Used to lazy-load the cover images.
+   */
+  private setComicsViewImageVisibility() {
+    let isComicScrolledPastLeft: boolean;
+    let isComicScrolledPastRight: boolean;
+    let isComicScrolledPastTop: boolean;
+    let isComicScrolledPastBottom: boolean;
+
+    // The scroll position of the page, minus the main padding
+    const scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
+    const scrollPositionTop  = this.$jqWindow.scrollTop();
+    const scrollPositionRight = scrollPositionLeft + window.innerWidth;
+    const scrollPositionBottom = scrollPositionTop + window.innerHeight;
+
+    // This is the amount of pixels the topmost comic thumbnails are offset by vertically
+    let scrollPositionVerticalOffset = DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP;
+    if (this.isShowCollections) {
+      scrollPositionVerticalOffset += COLLECTIONS_CONTAINER_HEIGHT;
+    }
+
+    const scrollPositionTopWithOffset    = scrollPositionTop - scrollPositionVerticalOffset;
+    const scrollPositionBottomWithOffset = scrollPositionBottom - scrollPositionVerticalOffset;
+
+    // Lazy-load thumbnails that aren't in the viewport
+    _.each(this.comics, (comic) => {
+      // skip this calculation if the comic has been previously displayed
+      if (comic.visible === true) {
+        return;
+      }
+
+      isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastRight  = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
+      isComicScrolledPastTop    = Boolean(scrollPositionTopWithOffset > (comic.containerStyles['top.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastBottom = Boolean(scrollPositionBottomWithOffset < comic.containerStyles['top.px']);
+
+      if (!isComicScrolledPastLeft && !isComicScrolledPastRight && !isComicScrolledPastTop && !isComicScrolledPastBottom) {
+        comic.visible = true;
+      }
+    });
+  }
+
   /**
    * Returns either the existing color for the collection, or
    * generates a color in HSL format, e.g. hsl(1, 2, 3)
@@ -1092,10 +1135,6 @@ export class AppComponent implements OnInit {
     let scrollPositionTop: number;
     let scrollPositionRight: number;
     let scrollPositionBottom: number;
-    let isComicScrolledPastLeft: boolean;
-    let isComicScrolledPastRight: boolean;
-    let isComicScrolledPastTop: boolean;
-    let isComicScrolledPastBottom: boolean;
     let comicTopPosition: number;
     let comicLeftPosition: number;
     let comicRightPosition: number;
@@ -1110,46 +1149,6 @@ export class AppComponent implements OnInit {
     if (this.doSpeedProfile) {
       startTimeReposition = new Date().getTime();
     }
-
-    /*
-     * jQuery passes an object when it triggers this function from a
-     * page event, but we only care about strings we pass in.
-     */
-    if (typeof currentComicId !== 'string') {
-      currentComicId = undefined;
-    }
-
-    // The scroll position of the page, minus the main padding
-    scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
-    scrollPositionTop  = this.$jqWindow.scrollTop();
-    scrollPositionRight = scrollPositionLeft + window.innerWidth;
-    scrollPositionBottom = scrollPositionTop  + window.innerHeight;
-
-    // This is the amount of pixels the topmost comic thumbnails are offset by vertically
-    let scrollPositionVerticalOffset = DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP;
-    if (this.isShowCollections) {
-      scrollPositionVerticalOffset += COLLECTIONS_CONTAINER_HEIGHT;
-    }
-
-    const scrollPositionTopWithOffset    = scrollPositionTop - scrollPositionVerticalOffset;
-    const scrollPositionBottomWithOffset = scrollPositionBottom - scrollPositionVerticalOffset;
-
-    // Lazy-load thumbnails that aren't in the viewport
-    _.each(this.comics, (comic) => {
-      // skip this calculation if the comic has been previously displayed
-      if (comic.visible === true) {
-        return;
-      }
-
-      isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastRight  = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
-      isComicScrolledPastTop    = Boolean(scrollPositionTopWithOffset > (comic.containerStyles['top.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastBottom = Boolean(scrollPositionBottomWithOffset < comic.containerStyles['top.px']);
-
-      if (!isComicScrolledPastLeft && !isComicScrolledPastRight && !isComicScrolledPastTop && !isComicScrolledPastBottom) {
-        comic.visible = true;
-      }
-    });
 
     const selectedComic = currentComicId || this.expandedComicId;
 
@@ -1169,6 +1168,12 @@ export class AppComponent implements OnInit {
       if (!$expandedComic.length) {
         return;
       }
+
+      // The scroll position of the page, minus the main padding
+      scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
+      scrollPositionTop  = this.$jqWindow.scrollTop();
+      scrollPositionRight = scrollPositionLeft + window.innerWidth;
+      scrollPositionBottom = scrollPositionTop + window.innerHeight;
 
       const stickyAnchorOffset = $('.expanded .scroll-anchor').offset();
       comicTopPosition    = stickyAnchorOffset.top;
