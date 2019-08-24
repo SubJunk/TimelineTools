@@ -22,7 +22,7 @@ import {
   SeriesVolume,
   SeriesVolumeLabel,
 } from './models';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, UrlTree } from '@angular/router';
 import { InfoModalComponent } from './info-modal/info-modal.component';
 
 // The padding applied to the left, right, and bottom of the body
@@ -101,8 +101,8 @@ export class AppComponent implements OnInit {
   globalVerticalPositionCounter = 0;
   seriesVolumeLabels: Array<SeriesVolumeLabel> = [];
 
-  expandedComicId: string;
-  expandedComicCSS: ExpandedComicCSS = {
+  public expandedComicId: string;
+  private expandedComicCSS: ExpandedComicCSS = {
     classes: {
       fullScreen: false,
       stickyBottom: false,
@@ -115,31 +115,28 @@ export class AppComponent implements OnInit {
       'marginLeft.px': null,
     }
   };
-  expandedCollectionId: string;
-  expandedCollection: Collection;
-  prevComic: Comic;
-  nextComic: Comic;
-  prevComicId: string;
-  nextComicId: string;
-  prevCollection: Collection;
-  nextCollection: Collection;
-  prevCollectionFirstComic: Comic;
-  nextCollectionFirstComic: Comic;
-  currentComicIndexInCollection: number;
-  currentCollectionIndexInCollections: number;
-  isShowCollections = false;
-  searchText = '';
-  doSpeedProfile = false;
+  public expandedCollectionId: string;
+  public expandedCollection: Collection;
+  public prevComic: Comic;
+  public nextComic: Comic;
+  public prevCollection: Collection;
+  public nextCollection: Collection;
+  public prevCollectionFirstComic: Comic;
+  public nextCollectionFirstComic: Comic;
+  private currentCollectionIndexInCollections: number;
+  public isShowCollections = false;
+  public searchText = '';
+  private doSpeedProfile = false;
 
   // API variables
-  timestamp: number;
-  apiHash: string | Int32Array;
+  private timestamp: number;
+  private apiHash: string | Int32Array;
 
   /**
    * @param seriesVolume the series volume object
    * @returns the series data from the Marvel API
    */
-  getAPISeriesVolume = (seriesVolume: SeriesVolume) => {
+  private getAPISeriesVolume = (seriesVolume: SeriesVolume) => {
     const params = new HttpParams()
       .set('title', seriesVolume.title)
       .set('startYear', seriesVolume.startYear)
@@ -152,7 +149,7 @@ export class AppComponent implements OnInit {
    * @param collection the collection object
    * @returns the collection data from the Goodreads API
    */
-  getGoodreadsCollectionData = (collectionTitle: string) => {
+  private getGoodreadsCollectionData = (collectionTitle: string) => {
     const params = new HttpParams()
       .set('q', collectionTitle)
       .set('key', this.goodreadsApiKeyPublic);
@@ -167,7 +164,7 @@ export class AppComponent implements OnInit {
    * @param comic                the comic object
    * @param seriesVolumeMarvelID the series ID in the Marvel API
    */
-  setAPIComicData = (comic: Comic, seriesVolumeMarvelID: string) => {
+  private setAPIComicData = (comic: Comic, seriesVolumeMarvelID: string) => {
     const params = new HttpParams()
       .set('issueNumber', comic.issue)
       .set('series', seriesVolumeMarvelID)
@@ -194,7 +191,7 @@ export class AppComponent implements OnInit {
       });
   }
 
-  getExtraAPIParamsString = () => {
+  private getExtraAPIParamsString = () => {
     if (!_.isEmpty(this.marvelApiKeyPrivate) && window.location.protocol === 'file') {
       // TODO: Write this another way
       // tslint:disable-next-line: no-bitwise
@@ -218,7 +215,7 @@ export class AppComponent implements OnInit {
    *    in a row) and forward slashes with underscores.
    * Finally it appends the volume and issue.
    */
-  getSanitizedString = (isComic: boolean, seriesOrCollection: string, volume?: string, issue?: string) => {
+  private getSanitizedString = (isComic: boolean, seriesOrCollection: string, volume?: string, issue?: string) => {
     seriesOrCollection = seriesOrCollection
       .replace(/[():&?'.,]/g, '')
       .replace(/\s+|\//g, '_');
@@ -286,13 +283,22 @@ export class AppComponent implements OnInit {
    *                      Used when clicking on a comic from the collections view
    */
   toggleExpandComic = async (currentComic: Comic, isForceScroll?: boolean) => {
+    let currentComicIndexInCollection: number;
+    let prevComicId: string;
+    let nextComicId: string;
+
+    let startTimeExpand: number;
+    if (this.doSpeedProfile) {
+      startTimeExpand = new Date().getTime();
+    }
+
     if (typeof currentComic !== 'object') {
       return;
     }
 
     this.prevComic = undefined;
     this.nextComic = undefined;
-    let urlTree;
+    let urlTree: UrlTree;
 
     // If these match, close the expanded box
     if (_.isEmpty(currentComic) || this.expandedComicId === currentComic.id) {
@@ -320,7 +326,7 @@ export class AppComponent implements OnInit {
         scrollTop:  currentComic.containerStyles['top.px'] + TOP_MARGIN
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
     } else if (this.expandedComicId) {
-      const previouslyExpandedComic = this.expandedCollection.comics[this.currentComicIndexInCollection];
+      const previouslyExpandedComic = this.expandedCollection.comics[currentComicIndexInCollection];
       const positionDifference = {
         left: previouslyExpandedComic.containerStyles['left.px'] - currentComic.containerStyles['left.px'],
         top: previouslyExpandedComic.containerStyles['top.px']  - currentComic.containerStyles['top.px']
@@ -340,7 +346,7 @@ export class AppComponent implements OnInit {
 
     // Get the collection containing this comic
     this.expandedCollection = _.find(this.collections, (collection, index) => {
-      this.currentComicIndexInCollection = collection.comicIds.indexOf(currentComic.id);
+      currentComicIndexInCollection = collection.comicIds.indexOf(currentComic.id);
       if (collection.comicIds.includes(currentComic.id)) {
         this.currentCollectionIndexInCollections = index;
         return true;
@@ -367,27 +373,27 @@ export class AppComponent implements OnInit {
     }
 
     // Find the previous comic
-    if (this.currentComicIndexInCollection > 0) {
-      this.prevComic = this.collections[this.currentCollectionIndexInCollections].comics[this.currentComicIndexInCollection - 1];
+    if (currentComicIndexInCollection > 0) {
+      this.prevComic = this.collections[this.currentCollectionIndexInCollections].comics[currentComicIndexInCollection - 1];
     } else if (this.prevCollection) {
       /**
        * The expanded comic is the first one in a collection, so we need to find out
        * the last comic in the previous collection.
        */
-      this.prevComicId = this.prevCollection.comicIds[this.prevCollection.comicIds.length - 1];
-      this.prevComic = _.find(this.comics, ['id', this.prevComicId]);
+      prevComicId = this.prevCollection.comicIds[this.prevCollection.comicIds.length - 1];
+      this.prevComic = _.find(this.comics, ['id', prevComicId]);
     }
 
     // Find the next comic
-    if (this.collections[this.currentCollectionIndexInCollections].comics[this.currentComicIndexInCollection + 1]) {
-      this.nextComic = this.collections[this.currentCollectionIndexInCollections].comics[this.currentComicIndexInCollection + 1];
+    if (this.collections[this.currentCollectionIndexInCollections].comics[currentComicIndexInCollection + 1]) {
+      this.nextComic = this.collections[this.currentCollectionIndexInCollections].comics[currentComicIndexInCollection + 1];
     } else if (this.nextCollection) {
       /*
        * The expanded comic is the last one in a collection, so we need to find out
        * the first comic in the next collection.
        */
-      this.nextComicId = this.nextCollection.comicIds[0];
-      this.nextComic = _.find(this.comics, ['id', this.nextComicId]);
+      nextComicId = this.nextCollection.comicIds[0];
+      this.nextComic = _.find(this.comics, ['id', nextComicId]);
     }
 
     // Set the comic ID in the URL
@@ -413,6 +419,12 @@ export class AppComponent implements OnInit {
     }
 
     this.setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+
+    if (this.doSpeedProfile) {
+      const endTime = new Date().getTime();
+      const timeDiff = endTime - startTimeExpand;
+      console.warn('Time to run expand function:', timeDiff + 'ms');
+    }
   }
 
   /*
@@ -1276,7 +1288,7 @@ export class AppComponent implements OnInit {
     const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
 
     setTimeout(() => {
-      $('html, body').stop().animate({
+      $('html').stop().animate({
         scrollLeft: comicFromId.containerStyles['left.px'] - LEFT_MARGIN,
         scrollTop:  comicFromId.containerStyles['top.px']
       }, ANIMATION_DURATION, 'swing', () => {
