@@ -22,7 +22,7 @@ import {
   SeriesVolume,
   SeriesVolumeLabel,
 } from './models';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, UrlTree } from '@angular/router';
 import { InfoModalComponent } from './info-modal/info-modal.component';
 
 // The padding applied to the left, right, and bottom of the body
@@ -101,6 +101,7 @@ export class AppComponent implements OnInit {
   globalVerticalPositionCounter = 0;
   seriesVolumeLabels: Array<SeriesVolumeLabel> = [];
 
+  expandedComic: Comic;
   expandedComicId: string;
   expandedComicCSS: ExpandedComicCSS = {
     classes: {
@@ -292,7 +293,7 @@ export class AppComponent implements OnInit {
 
     this.prevComic = undefined;
     this.nextComic = undefined;
-    let urlTree;
+    let urlTree: UrlTree;
 
     // If these match, close the expanded box
     if (_.isEmpty(currentComic) || this.expandedComicId === currentComic.id) {
@@ -337,6 +338,7 @@ export class AppComponent implements OnInit {
     }
 
     this.expandedComicId = currentComic.id;
+    this.expandedComic = currentComic;
 
     // Get the collection containing this comic
     this.expandedCollection = _.find(this.collections, (collection, index) => {
