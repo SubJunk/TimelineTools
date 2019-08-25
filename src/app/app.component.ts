@@ -791,6 +791,8 @@ export class AppComponent implements OnInit {
         // a new label.  also wondering if newLabel should be a function.
         newLabelNeeded = true;
       }
+      // I have all of this commented out at the moment because I'm trying to keep it simple.
+      // This code comment is very helpful and I understand that this is to recycle vertical space
       //   /*
       //    * It has been a while (if ever) since the last issue of this
       //    * series appeared in the timeline so let's put this one on a
@@ -798,7 +800,13 @@ export class AppComponent implements OnInit {
       //    *
       //    * Counter starts at 1 to keep Uncanny always at the top.
       //    */
+      // I think I tried to set this because I had massive gaps and figured it was left over 
+      // from setting the original comics
       // const horizontalClearanceLimit = 1;
+      // here we loop through horizontal offsets which confused me because I don't think I need this
+      // since all my reading order comics are just exactly one visual block size apart
+      // but it seems as though we're looking for the viewport size and resetting the top position
+      // if it's within the total viewport, so I probably do need this.
       // for (let i = 1; i < this.globalVerticalPositionCounter; i++) {
       //     if (
       //       !latestVerticalHorizontalOffsets[i] ||
@@ -813,6 +821,8 @@ export class AppComponent implements OnInit {
       //        * that position in the previous seriesVolume. This allows a new vertical
       //        * position to be generated for that previous seriesVolume if one appears.
       //        */
+      // this is nested within the above so we know we can position it in a higher position
+      // but here we don't position anything, we just revoke the previous series from that position
       //       if (latestVerticalHorizontalOffsets[i]) {
       //         const previousSeriesVolume = this.seriesVolumes[
       //           _.findKey(this.seriesVolumes, { id: latestVerticalHorizontalOffsets[i].seriesVolumeId })
