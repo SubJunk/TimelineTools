@@ -131,6 +131,7 @@ export class AppComponent implements OnInit {
   isShowCollections = false;
   searchText = '';
   doSpeedProfile = false;
+  isRunningAnimation = false;
 
   // API variables
   timestamp: number;
@@ -316,6 +317,7 @@ export class AppComponent implements OnInit {
       if (this.expandedCollection) {
         this.clearComicClassesAndStyles();
       }
+      this.isRunningAnimation = true;
       $('html').stop().animate({
         scrollLeft: currentComic.containerStyles['left.px'] - LEFT_MARGIN,
         scrollTop:  currentComic.containerStyles['top.px'] + TOP_MARGIN
@@ -329,6 +331,7 @@ export class AppComponent implements OnInit {
 
       // reset the styles for the previous comic
       this.clearComicClassesAndStyles();
+      this.isRunningAnimation = true;
       $('html').stop().animate({
         scrollLeft: this.$jqWindow.scrollLeft() - positionDifference.left,
         scrollTop:  this.$jqWindow.scrollTop()  - positionDifference.top
@@ -772,7 +775,9 @@ export class AppComponent implements OnInit {
 
     // Reposition the expanded panel when the user scrolls the viewport
     this.$jqWindow.on('load scroll', _.throttle(() => {
-      this.repositionStickyElements();
+      if (!this.isRunningAnimation) {
+        this.repositionStickyElements();
+      }
       this.setCollectionsViewImageVisibility();
       this.setComicsViewImageVisibility();
     }, ANIMATION_DURATION));
@@ -1133,6 +1138,8 @@ export class AppComponent implements OnInit {
    * panels always fit in the viewport.
    */
   repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
+    this.isRunningAnimation = false;
+
     let scrollPositionLeft: number;
     let scrollPositionTop: number;
     let scrollPositionRight: number;
@@ -1278,10 +1285,12 @@ export class AppComponent implements OnInit {
     const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
 
     setTimeout(() => {
-      $('html, body').stop().animate({
+      this.isRunningAnimation = true;
+      $('html').stop().animate({
         scrollLeft: comicFromId.containerStyles['left.px'] - LEFT_MARGIN,
         scrollTop:  comicFromId.containerStyles['top.px']
       }, ANIMATION_DURATION, 'swing', () => {
+        this.isRunningAnimation = false;
         // Expand the comic if it isn't already
         if (this.expandedComicId !== comicId) {
           this.toggleExpandComic(comicFromId);
