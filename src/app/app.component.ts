@@ -754,7 +754,7 @@ export class AppComponent implements OnInit {
       if (!currentSeriesVolume) {
         throw new Error(comic.seriesVolumeId + ' not found');
       }
-
+      // this is a copy of the other positioning
       /*
        * Vertical positioning ensures that each seriesVolume gets
        * its own row on the page. The exception is if a seriesVolume
@@ -769,10 +769,18 @@ export class AppComponent implements OnInit {
        */
 
        // TO-DO: Paulene really needs to understand what's happening here
+       // so I added this line because I couldn't get things to line up.  Unsure what it should be reset to.
       this.globalVerticalPositionCounter = 1;
+      // this if statement checks that the vertical position attribute of the currentSeriesVolume is not undefined
+      // I'm wondering when it would be undefined.
       if (typeof currentSeriesVolume.verticalPosition !== 'undefined') {
+        // here we set the vertical position for this comic.
+        // this must be a counting integer since we multiply it by the visual block size
         comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
+        // if the vertical position is undefined (does this mean that it's not set?)
+        // we set the vertical position to the global position.
+        // so I'm assuming this holds the "next" position?
         currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
         comic.containerStyles['top.px'] = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
         this.globalVerticalPositionCounter++;
