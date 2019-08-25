@@ -782,8 +782,13 @@ export class AppComponent implements OnInit {
         // we set the vertical position to the global position.
         // so I'm assuming this holds the "next" position?
         currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
+        // so here I'm wondering why we set the currentSeriesVolume.verticalPosition and what that does
+        // since here we set the top to the global counter * the constant block size
         comic.containerStyles['top.px'] = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
+        // we increment the global counter since it's been used so this makes sense.
         this.globalVerticalPositionCounter++;
+        // I still haven't looked at the next code, but presuming we check this for when to produce
+        // a new label.  also wondering if newLabel should be a function.
         newLabelNeeded = true;
       }
       //   /*
