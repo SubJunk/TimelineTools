@@ -768,31 +768,15 @@ export class AppComponent implements OnInit {
        * Step two documented below.
        */
 
-       // TO-DO: Paulene really needs to understand what's happening here
-       // so I added this line because I couldn't get things to line up.  Unsure what it should be reset to.
       this.globalVerticalPositionCounter = 1;
-      // this if statement checks that the vertical position attribute of the currentSeriesVolume is not undefined
-      // I'm wondering when it would be undefined.
       if (typeof currentSeriesVolume.verticalPosition !== 'undefined') {
-        // here we set the vertical position for this comic.
-        // this must be a counting integer since we multiply it by the visual block size
         comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
-        // if the vertical position is undefined (does this mean that it's not set?)
-        // we set the vertical position to the global position.
-        // so I'm assuming this holds the "next" position?
         currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
-        // so here I'm wondering why we set the currentSeriesVolume.verticalPosition and what that does
-        // since here we set the top to the global counter * the constant block size
         comic.containerStyles['top.px'] = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
-        // we increment the global counter since it's been used so this makes sense.
         this.globalVerticalPositionCounter++;
-        // I still haven't looked at the next code, but presuming we check this for when to produce
-        // a new label.  also wondering if newLabel should be a function.
         newLabelNeeded = true;
       }
-      // I have all of this commented out at the moment because I'm trying to keep it simple.
-      // This code comment is very helpful and I understand that this is to recycle vertical space
       //   /*
       //    * It has been a while (if ever) since the last issue of this
       //    * series appeared in the timeline so let's put this one on a
@@ -800,43 +784,34 @@ export class AppComponent implements OnInit {
       //    *
       //    * Counter starts at 1 to keep Uncanny always at the top.
       //    */
-      // I think I tried to set this because I had massive gaps and figured it was left over 
-      // from setting the original comics
-      // const horizontalClearanceLimit = 1;
-      // here we loop through horizontal offsets which confused me because I don't think I need this
-      // since all my reading order comics are just exactly one visual block size apart
-      // but it seems as though we're looking for the viewport size and resetting the top position
-      // if it's within the total viewport, so I probably do need this.
-      // for (let i = 1; i < this.globalVerticalPositionCounter; i++) {
-      //     if (
-      //       !latestVerticalHorizontalOffsets[i] ||
-      //       latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
-      //     ) {
-      //       currentSeriesVolume.verticalPosition = i;
-      //       comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
+      for (let i = 1; i < this.globalVerticalPositionCounter; i++) {
+          if (
+            !latestVerticalHorizontalOffsets[i] ||
+            latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
+          ) {
+            currentSeriesVolume.verticalPosition = i;
+            comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
 
-      //       /*
-      //        * We are about to insert this seriesVolume into a vertical position
-      //        * that has already been used before, so we remove the reference to
-      //        * that position in the previous seriesVolume. This allows a new vertical
-      //        * position to be generated for that previous seriesVolume if one appears.
-      //        */
-      // this is nested within the above so we know we can position it in a higher position
-      // but here we don't position anything, we just revoke the previous series from that position
-      //       if (latestVerticalHorizontalOffsets[i]) {
-      //         const previousSeriesVolume = this.seriesVolumes[
-      //           _.findKey(this.seriesVolumes, { id: latestVerticalHorizontalOffsets[i].seriesVolumeId })
-      //         ];
-      //         if (!previousSeriesVolume) {
-      //           throw new Error(comic.seriesVolumeId + ' not found');
-      //         }
-      //         previousSeriesVolume.verticalPosition = null;
-      //       }
-      //       newLabelNeeded = true;
+            /*
+             * We are about to insert this seriesVolume into a vertical position
+             * that has already been used before, so we remove the reference to
+             * that position in the previous seriesVolume. This allows a new vertical
+             * position to be generated for that previous seriesVolume if one appears.
+             */
+            if (latestVerticalHorizontalOffsets[i]) {
+              const previousSeriesVolume = this.seriesVolumes[
+                _.findKey(this.seriesVolumes, { id: latestVerticalHorizontalOffsets[i].seriesVolumeId })
+              ];
+              if (!previousSeriesVolume) {
+                throw new Error(comic.seriesVolumeId + ' not found');
+              }
+              previousSeriesVolume.verticalPosition = null;
+            }
+            newLabelNeeded = true;
 
-      //       break;
-      //     }
-      //   }
+            break;
+          }
+        }
     });
 
     /**
