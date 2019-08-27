@@ -78,9 +78,9 @@
       <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
     </li>
     <li *ngFor="let comic of comics; trackBy: trackByItemId" class="comic-container" [ngStyle]="comic.containerStyles">
-      <div class="scroll-anchor"></div>
+      <div class="scroll-anchor" id="scroll-anchor-{{comic.id}}"></div>
       <div class="popover"><div>#{{comic.issue}}</div></div>
-      <div class="comic" [ngStyle]="getComicStyles(comic)" [ngClass]="getComicClasses(comic)">
+      <div class="comic" [ngStyle]="comic.styles" [ngClass]="getComicClasses(comic)">
         <div class="panel-left">
           <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
             <img
@@ -95,8 +95,7 @@
       </div>
     </li>
   </ul>
-  <div *ngIf="expandedComicId" class="comic-container" [ngClass]="{expanded: expandedComicId}" [ngStyle]="expandedComic.containerStyles">
-    <div class="scroll-anchor"></div>
+  <div *ngIf="expandedComicId" class="comic-container expanded" [ngStyle]="expandedComic.containerStyles" [ngClass]="expandedComicCSS.containerClasses">
     <div class="comic" [ngStyle]="getComicStyles(expandedComic)" [ngClass]="getComicClasses(expandedComic)">
       <div class="panel-left">
         <span class="cover-thumbnail">

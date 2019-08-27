@@ -153,7 +153,12 @@ li:hover,
   z-index: 3;
   width: unset;
   height: unset;
-  transition: top 0.4s, left 0.4s;
+  transition: top 0.4s, left 0.4s, margin 0.4s;
+
+  // Do not use CSS animations on expanded panel when its position is fixed
+  &.isFixed {
+    transition: unset;
+  }
 }
 
 .comic {

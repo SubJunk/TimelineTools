@@ -15,8 +15,8 @@ import {
   Collection,
   CollectionColor,
   Comic,
+  ComicClasses,
   DateYear,
-  ExpandedComicCSS,
   MarvelAPISeriesResponse,
   MarvelAPISeriesResponseResult,
   SeriesVolume,
@@ -29,7 +29,6 @@ import { InfoModalComponent } from './info-modal/info-modal.component';
 const BODY_PADDING_TOP = 80;
 const BODY_PADDING = 20;
 const LEFT_MARGIN = 200;
-const TOP_MARGIN = 300;
 const VISUAL_BLOCK_SIZE = 60;
 const EXPANDED_PANEL_WIDTH = 900;
 const COLLECTIONS_VIEW_COVER_WIDTH = 250;
@@ -103,13 +102,16 @@ export class AppComponent implements OnInit {
 
   expandedComic: Comic;
   expandedComicId: string;
-  expandedComicCSS: ExpandedComicCSS = {
+  expandedComicCSS: Comic = {
     classes: {
       fullScreen: false,
       stickyBottom: false,
       stickyLeft: false,
       stickyRight: false,
       stickyTop: false,
+    },
+    containerClasses: {
+      isFixed: false,
     },
     styles: {
       'marginTop.px': null,
@@ -248,7 +250,7 @@ export class AppComponent implements OnInit {
    * classes.
    */
   public getComicClasses = (comic: Comic) => {
-    let comicClasses = {};
+    let comicClasses: ComicClasses;
 
     if (comic.id === this.expandedComicId) {
       comicClasses = this.expandedComicCSS.classes;
@@ -292,12 +294,10 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    this.prevComic = undefined;
-    this.nextComic = undefined;
     let urlTree: UrlTree;
 
     // If these match, close the expanded box
-    if (_.isEmpty(currentComic) || this.expandedComicId === currentComic.id) {
+    if (_.isEmpty(currentComic) || this.expandedComicId === currentComic.id && !isForceScroll) {
       // Clear the comic ID in the URL
       urlTree = this.router.createUrlTree([], {
         queryParams: { id: '' },
@@ -306,6 +306,20 @@ export class AppComponent implements OnInit {
       this.router.navigateByUrl(urlTree);
 
       return this.clearComicClassesAndStyles();
+    }
+
+    /*
+     * Create a transition comic object that will be used during the
+     * animation to make it visually reposition more smoothly.
+     * It is the new comic, but with the old containerStyles if sticky
+     * classes are being used, so that it stays in place while animating.
+     */
+    const comicTransition = _.cloneDeep(currentComic);
+    if (this.expandedComicCSS.classes.stickyBottom || this.expandedComicCSS.classes.stickyTop) {
+      comicTransition.containerStyles['left.px'] = this.expandedComic.containerStyles['left.px'];
+    }
+    if (this.expandedComicCSS.classes.stickyLeft || this.expandedComicCSS.classes.stickyRight) {
+      comicTransition.containerStyles['top.px'] = this.expandedComic.containerStyles['top.px'];
     }
 
     /*
@@ -320,8 +334,9 @@ export class AppComponent implements OnInit {
       this.isRunningAnimation = true;
       $('html').stop().animate({
         scrollLeft: currentComic.containerStyles['left.px'] - LEFT_MARGIN,
-        scrollTop:  currentComic.containerStyles['top.px'] + TOP_MARGIN
+        scrollTop:  currentComic.containerStyles['top.px']
       }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
+      this.expandedComic = currentComic;
     } else if (this.expandedComicId) {
       const previouslyExpandedComic = this.expandedCollection.comics[this.currentComicIndexInCollection];
       const positionDifference = {
@@ -331,17 +346,20 @@ export class AppComponent implements OnInit {
 
       // reset the styles for the previous comic
       this.clearComicClassesAndStyles();
+      this.expandedComic = comicTransition;
       this.isRunningAnimation = true;
       $('html').stop().animate({
         scrollLeft: this.$jqWindow.scrollLeft() - positionDifference.left,
         scrollTop:  this.$jqWindow.scrollTop()  - positionDifference.top
-      }, ANIMATION_DURATION, 'swing', this.repositionStickyElements);
+      }, ANIMATION_DURATION, 'swing', () => {
+        this.repositionStickyElements(currentComic.id);
+      });
     } else {
       this.repositionStickyElements(currentComic.id);
+      this.expandedComic = currentComic;
     }
 
     this.expandedComicId = currentComic.id;
-    this.expandedComic = currentComic;
 
     // Get the collection containing this comic
     this.expandedCollection = _.find(this.collections, (collection, index) => {
@@ -774,13 +792,13 @@ export class AppComponent implements OnInit {
     });
 
     // Reposition the expanded panel when the user scrolls the viewport
-    this.$jqWindow.on('load scroll', _.throttle(() => {
+    this.$jqWindow.on('load scroll', () => {
       if (!this.isRunningAnimation) {
         this.repositionStickyElements();
       }
       this.setCollectionsViewImageVisibility();
       this.setComicsViewImageVisibility();
-    }, ANIMATION_DURATION));
+    });
 
     // Catch clicks
     // tslint:disable-next-line: deprecation
@@ -1138,8 +1156,6 @@ export class AppComponent implements OnInit {
    * panels always fit in the viewport.
    */
   repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
-    this.isRunningAnimation = false;
-
     let scrollPositionLeft: number;
     let scrollPositionTop: number;
     let scrollPositionRight: number;
@@ -1148,7 +1164,7 @@ export class AppComponent implements OnInit {
     let comicLeftPosition: number;
     let comicRightPosition: number;
     let comicBottomPosition: number;
-    let $expandedComic: JQuery;
+    let $expandedComicPanel: JQuery;
     let isStickyTop: boolean;
     let isStickyLeft: boolean;
     let isStickyRight: boolean;
@@ -1159,23 +1175,27 @@ export class AppComponent implements OnInit {
       startTimeReposition = new Date().getTime();
     }
 
-    const selectedComic = currentComicId || this.expandedComicId;
+    const selectedComicId = currentComicId || this.expandedComicId;
 
     // Exit early and force render if there is no comic expanded
-    if (!selectedComic) {
+    if (!selectedComicId) {
       return setTimeout(() => {});
     }
 
-    const expandedComic = _.find(this.comics, ['id', selectedComic]);
+    const expandedComic = _.find(this.comics, ['id', selectedComicId]);
     if (!expandedComic) {
-      return console.error('The comic could not be found', selectedComic);
+      return console.error('The comic could not be found', selectedComicId);
     }
+
+    this.changeDetector.detectChanges();
+
+    this.isRunningAnimation = false;
 
     // Expanded panel positioning
     setTimeout(() => {
-      $expandedComic = $('.expanded .comic');
-      if (!$expandedComic.length) {
-        return;
+      $expandedComicPanel = $('.expanded .comic');
+      if (!$expandedComicPanel.length) {
+        throw new Error('Failed to find expanded panel in DOM');
       }
 
       // The scroll position of the page, minus the main padding
@@ -1184,10 +1204,10 @@ export class AppComponent implements OnInit {
       scrollPositionRight = scrollPositionLeft + window.innerWidth;
       scrollPositionBottom = scrollPositionTop + window.innerHeight;
 
-      const stickyAnchorOffset = $('.expanded .scroll-anchor').offset();
+      const stickyAnchorOffset = $('#scroll-anchor-' + selectedComicId).offset();
       comicTopPosition    = stickyAnchorOffset.top;
       comicLeftPosition   = stickyAnchorOffset.left;
-      comicBottomPosition = comicTopPosition  + $expandedComic.height();
+      comicBottomPosition = comicTopPosition  + $expandedComicPanel.height();
       comicRightPosition  = comicLeftPosition + EXPANDED_PANEL_WIDTH;
 
       isStickyTop    = Boolean(scrollPositionTop  > comicTopPosition);
@@ -1219,6 +1239,9 @@ export class AppComponent implements OnInit {
           'marginTop.px': null,
         };
       }
+
+      this.expandedComicCSS.containerClasses.isFixed = (isStickyTop || isStickyBottom || isStickyLeft || isStickyRight);
+      this.expandedComic = expandedComic;
 
       if (this.doSpeedProfile) {
         const endTime = new Date().getTime();
@@ -1283,20 +1306,7 @@ export class AppComponent implements OnInit {
 
   public scrollToComic = (comicId: string) => {
     const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
-
-    setTimeout(() => {
-      this.isRunningAnimation = true;
-      $('html').stop().animate({
-        scrollLeft: comicFromId.containerStyles['left.px'] - LEFT_MARGIN,
-        scrollTop:  comicFromId.containerStyles['top.px']
-      }, ANIMATION_DURATION, 'swing', () => {
-        this.isRunningAnimation = false;
-        // Expand the comic if it isn't already
-        if (this.expandedComicId !== comicId) {
-          this.toggleExpandComic(comicFromId);
-        }
-      });
-    });
+    this.toggleExpandComic(comicFromId, true);
   }
 
   public trackByItemId = (index: number, item: Comic) => {
