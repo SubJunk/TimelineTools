@@ -61,7 +61,7 @@ export interface ComicClasses {
 }
 
 interface ComicContainerClasses {
-  'isFixed': boolean;
+  isFixed: boolean;
 }
 
 interface ComicStyles {
