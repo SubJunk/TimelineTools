@@ -615,7 +615,7 @@ export class AppComponent implements OnInit {
         comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
         currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
-        comic.containerStyles['top.px'] = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
+        comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
         this.globalVerticalPositionCounter++;
         newLabelNeeded = true;
       }
