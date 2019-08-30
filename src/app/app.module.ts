@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { FilterPipe } from './filter.pipe';
 import { LimitToPipe } from './limitTo.pipe';
+import { ApiInteractions } from './api-interactions';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { LimitToPipe } from './limitTo.pipe';
     MatIconModule,
     MatMenuModule,
   ],
-  providers: [],
+  providers: [ApiInteractions],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
