@@ -60,8 +60,7 @@ body.search-is-open {
   margin-bottom: 20px;
 }
 
-.comics,
-.series-volume-labels,
+.comics-container,
 .collections {
   position: relative;
   display: block;
@@ -154,6 +153,12 @@ li:hover,
   z-index: 3;
   width: unset;
   height: unset;
+  transition: top 0.4s, left 0.4s, margin 0.4s;
+
+  // Do not use CSS animations on expanded panel when its position is fixed
+  &.isFixed {
+    transition: unset;
+  }
 }
 
 .comic {
