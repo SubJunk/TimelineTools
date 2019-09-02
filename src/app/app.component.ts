@@ -1,12 +1,11 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import { Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { Md5 } from 'ts-md5/dist/md5';
 import { parseString } from 'xml2js';
 
-import { goodreadsApiKeyPublic, marvelApiKeyPublic, marvelApiKeyPrivate } from './config';
+import { ApiInteractions } from './api-interactions';
 import { Collections } from './../database/collections';
 import { Comics } from './../database/comics';
 import { SeriesVolumes } from './../database/series';
@@ -58,6 +57,7 @@ const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_H
 @Injectable()
 export class AppComponent implements OnInit {
   constructor(
+    private apiInteractions: ApiInteractions,
     private changeDetector: ChangeDetectorRef,
     public dialog: MatDialog,
     private http: HttpClient,
@@ -84,16 +84,6 @@ export class AppComponent implements OnInit {
   };
 
   $jqWindow = $(window);
-
-  // API variables
-  marvelApiBaseUrl = 'https://gateway.marvel.com/v1/public/';
-  marvelApiKeyPublic = _.isEmpty(marvelApiKeyPublic) ? '46a863fa31f601aacb87dae9cb8f7c45' : marvelApiKeyPublic;
-  marvelApiKeyPrivate = marvelApiKeyPrivate;
-
-  goodreadsApiBaseUrl = 'https://www.goodreads.com/search/index.xml';
-  goodreadsApiKeyPublic = _.isEmpty(goodreadsApiKeyPublic) ? 'ruoM3jpamOVNpjOnfiAuYA' : goodreadsApiKeyPublic;
-
-  corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
 
   startTimeInitialLoad = new Date().getTime();
 
@@ -134,81 +124,6 @@ export class AppComponent implements OnInit {
   searchText = '';
   doSpeedProfile = false;
   isRunningAnimation = false;
-
-  // API variables
-  timestamp: number;
-  apiHash: string | Int32Array;
-
-  /**
-   * @param seriesVolume the series volume object
-   * @returns the series data from the Marvel API
-   */
-  getAPISeriesVolume = (seriesVolume: SeriesVolume) => {
-    const params = new HttpParams()
-      .set('title', seriesVolume.title)
-      .set('startYear', seriesVolume.startYear)
-      .set('apikey', this.marvelApiKeyPublic);
-
-    return this.http.get(this.marvelApiBaseUrl + 'series' + this.getExtraAPIParamsString(), {params});
-  }
-
-  /**
-   * @param collection the collection object
-   * @returns the collection data from the Goodreads API
-   */
-  getGoodreadsCollectionData = (collectionTitle: string) => {
-    const params = new HttpParams()
-      .set('q', collectionTitle)
-      .set('key', this.goodreadsApiKeyPublic);
-
-    return this.http.get(this.corsAnywhereUrl + this.goodreadsApiBaseUrl, {params, responseType: 'text'});
-  }
-
-  /**
-   * Writes a "link" value to the comic object, which is a URL to the
-   * comic on Marvel Unlimited.
-   *
-   * @param comic                the comic object
-   * @param seriesVolumeMarvelID the series ID in the Marvel API
-   */
-  setAPIComicData = (comic: Comic, seriesVolumeMarvelID: string) => {
-    const params = new HttpParams()
-      .set('issueNumber', comic.issue)
-      .set('series', seriesVolumeMarvelID)
-      .set('apikey', this.marvelApiKeyPublic);
-
-    return this.http.get(this.marvelApiBaseUrl + 'comics' + this.getExtraAPIParamsString(), {params})
-      .subscribe(function successCallback(response: MarvelAPISeriesResponse) {
-        if (_.isEmpty(response.data.results)) {
-          return;
-        }
-
-        /*
-         * Sometimes the Marvel API returns variants with no ID or 0, so
-         * keep looping until we get a real ID.
-         */
-        _.each(response.data.results, (result) => {
-          if (result.digitalId && result.digitalId !== 0) {
-            comic.link = 'https://read.marvel.com/#book/' + result.digitalId;
-            return false;
-          }
-        });
-      }, function errorCallback(err) {
-        throw new Error(err);
-      });
-  }
-
-  getExtraAPIParamsString = () => {
-    if (!_.isEmpty(this.marvelApiKeyPrivate) && window.location.protocol === 'file') {
-      // TODO: Write this another way
-      // tslint:disable-next-line: no-bitwise
-      this.timestamp = Date.now() / ONE_SECOND_IN_MILLISECONDS | 0;
-      this.apiHash = Md5.hashStr(this.timestamp + this.marvelApiKeyPrivate + this.marvelApiKeyPublic);
-      return '?ts=' + this.timestamp + '&hash=' + this.apiHash;
-    }
-
-    return '';
-  }
 
   /*
    * Figure out what the name of the image on the server will be
@@ -435,7 +350,7 @@ export class AppComponent implements OnInit {
       expandedSeriesVolume.marvelId = await this.getMarvelSeriesVolumeId(expandedSeriesVolume);
     }
 
-    this.setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+    this.apiInteractions.setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
   }
 
   /*
@@ -443,7 +358,7 @@ export class AppComponent implements OnInit {
    */
   getMarvelSeriesVolumeId = (seriesVolume: SeriesVolume): Promise<string> => {
     return new Promise((resolve, reject) => {
-      this.getAPISeriesVolume(seriesVolume)
+      this.apiInteractions.getAPISeriesVolume(seriesVolume)
           .subscribe(
             (response: MarvelAPISeriesResponse) => {
               if (!response || !response.data || !response.data || !response.data.results.length) {
@@ -464,7 +379,7 @@ export class AppComponent implements OnInit {
    * Sets the Goodreads collection ID
    */
   private setGoodreadsCollectionId = (collection: Collection): void => {
-    this.getGoodreadsCollectionData(collection.title)
+    this.apiInteractions.getGoodreadsCollectionData(collection.title)
         .subscribe(
           (response) => {
             parseString(response, (err, result) => {
