@@ -72,6 +72,7 @@ export class AppComponent implements OnInit {
   collections: Array<Collection>;
   series: Array<object>;
   seriesVolumes: Array<SeriesVolume>;
+  readingOrderSeriesVolumes: Array<SeriesVolume>;
   uniqueCollections: Array<Collection> = [];
   dates: Array<DateYear> = [];
 
@@ -510,6 +511,7 @@ export class AppComponent implements OnInit {
     this.series        = SeriesVolumes.getSeries();
     this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
     this.comicsInReadingOrder = [];
+    this.readingOrderSeriesVolumes = _.cloneDeep(this.seriesVolumes);
 
 
     // Sort the data by date
@@ -763,6 +765,8 @@ export class AppComponent implements OnInit {
 
     //  reposition the reading order comics horizontally
     let horizontalReadingOrderPosition = 0;
+    this.globalVerticalPositionCounter = 1;
+    const latestReadingOrderVerticalHorizontalOffsets = {};
     _.each(this.comicsInReadingOrder, (comic) => {
       horizontalReadingOrderPosition += VISUAL_BLOCK_SIZE;
       comic.containerStyles['left.px'] = horizontalReadingOrderPosition;
@@ -771,8 +775,9 @@ export class AppComponent implements OnInit {
        * Look up the volume and series for this comic and
        * throw errors for obvious problems before proceeding.
        */
-      const currentSeriesVolume = this.seriesVolumes[_.findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
-      if (!currentSeriesVolume) {
+      // tslint:disable-next-line: max-line-length
+      const currentReadingOrderSeriesVolume = this.readingOrderSeriesVolumes[_.findKey(this.readingOrderSeriesVolumes, { id: comic.seriesVolumeId })];
+      if (!currentReadingOrderSeriesVolume) {
         throw new Error(comic.seriesVolumeId + ' not found');
       }
       // this is a copy of the other positioning
@@ -788,16 +793,38 @@ export class AppComponent implements OnInit {
        * the last row.
        * Step two documented below.
        */
-
-      this.globalVerticalPositionCounter = 1;
-      if (typeof currentSeriesVolume.verticalPosition !== 'undefined') {
-        comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
+      const isVerticalPositionAlreadyDefined = typeof currentReadingOrderSeriesVolume.verticalPosition !== 'undefined';
+      if (isVerticalPositionAlreadyDefined) {
+        comic.containerStyles['top.px'] = currentReadingOrderSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
-        currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
+        currentReadingOrderSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
         comic.containerStyles['top.px'] = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
         this.globalVerticalPositionCounter++;
         newLabelNeeded = true;
       }
+
+       /*
+       * Step two of vertical positioning:
+       * At this point, the seriesVolume has a row to use, but in this
+       * block we check if there is a row further up the page to slot into
+       * so we take up less vertical space.
+       */
+
+      /*
+       * The maximum horizontal offset allowed until we recycle the
+       * vertical position.
+       */
+      const horizontalClearanceLimit = comic.containerStyles['left.px'] - windowWidth;
+      if (
+        !latestReadingOrderVerticalHorizontalOffsets[currentReadingOrderSeriesVolume.verticalPosition] ||
+        (
+          // tslint:disable-next-line: max-line-length
+          latestReadingOrderVerticalHorizontalOffsets[currentReadingOrderSeriesVolume.verticalPosition].seriesVolumeId !== currentReadingOrderSeriesVolume.id &&
+          latestReadingOrderVerticalHorizontalOffsets[currentReadingOrderSeriesVolume.verticalPosition].offset < horizontalClearanceLimit
+        )
+      ) {
+
+
       //   /*
       //    * It has been a while (if ever) since the last issue of this
       //    * series appeared in the timeline so let's put this one on a
@@ -805,23 +832,23 @@ export class AppComponent implements OnInit {
       //    *
       //    * Counter starts at 1 to keep Uncanny always at the top.
       //    */
-      for (let i = 1; i < this.globalVerticalPositionCounter; i++) {
+            for (let i = 0; i < this.globalVerticalPositionCounter; i++) {
           if (
-            !latestVerticalHorizontalOffsets[i] ||
-            latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
+            !latestReadingOrderVerticalHorizontalOffsets[i] ||
+            latestReadingOrderVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
           ) {
-            currentSeriesVolume.verticalPosition = i;
+            currentReadingOrderSeriesVolume.verticalPosition = i;
             comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
-
-            /*
-             * We are about to insert this seriesVolume into a vertical position
-             * that has already been used before, so we remove the reference to
-             * that position in the previous seriesVolume. This allows a new vertical
-             * position to be generated for that previous seriesVolume if one appears.
-             */
-            if (latestVerticalHorizontalOffsets[i]) {
-              const previousSeriesVolume = this.seriesVolumes[
-                _.findKey(this.seriesVolumes, { id: latestVerticalHorizontalOffsets[i].seriesVolumeId })
+            console.log(comic.containerStyles['top.px']);
+          //   /*
+          //    * We are about to insert this seriesVolume into a vertical position
+          //    * that has already been used before, so we remove the reference to
+          //    * that position in the previous seriesVolume. This allows a new vertical
+          //    * position to be generated for that previous seriesVolume if one appears.
+          //    */
+            if (latestReadingOrderVerticalHorizontalOffsets[i]) {
+              const previousSeriesVolume = this.readingOrderSeriesVolumes[
+                _.findKey(this.readingOrderSeriesVolumes, { id: latestReadingOrderVerticalHorizontalOffsets[i].seriesVolumeId })
               ];
               if (!previousSeriesVolume) {
                 throw new Error(comic.seriesVolumeId + ' not found');
@@ -833,7 +860,9 @@ export class AppComponent implements OnInit {
             break;
           }
         }
+      }
     });
+
 
     /**
      * Handle keypresses.
@@ -850,30 +879,30 @@ export class AppComponent implements OnInit {
       // tslint:disable-next-line: deprecation
       switch (e.which) {
         case KEYPRESSES.escape:
-          this.toggleExpandComic({});
-          this.searchText = '';
-          this.postSearchActions();
-          break;
+             this.toggleExpandComic({});
+             this.searchText = '';
+             this.postSearchActions();
+             break;
 
         case KEYPRESSES.left:
-          if (this.prevComic) {
+             if (this.prevComic) {
             this.toggleExpandComic(this.prevComic);
           }
-          break;
+             break;
 
         case KEYPRESSES.right:
-          if (this.nextComic) {
+             if (this.nextComic) {
             this.toggleExpandComic(this.nextComic);
           }
-          break;
+             break;
 
         default:
-          return; // exit this handler for other keys
+             return; // exit this handler for other keys
       }
     });
 
     // Reposition the expanded panel when the user scrolls the viewport
-    this.$jqWindow.on('load scroll', () => {
+this.$jqWindow.on('load scroll', () => {
       if (!this.isRunningAnimation) {
         this.repositionStickyElements();
       }
@@ -883,14 +912,14 @@ export class AppComponent implements OnInit {
 
     // Catch clicks
     // tslint:disable-next-line: deprecation
-    this.$jqWindow.on('click', (data: JQueryClickEvent) => {
+this.$jqWindow.on('click', (data: JQueryClickEvent) => {
       // Close the expanded comic if the click happened on a blank area
       if (data.target.localName === 'body' && this.expandedComicId) {
         this.toggleExpandComic({});
       }
     });
 
-    _.each(this.collections, (collection: Collection) => {
+_.each(this.collections, (collection: Collection) => {
       // While we are here we add the image string for lookup
       collection.image = this.getSanitizedString(false, collection.title);
 
@@ -926,7 +955,7 @@ export class AppComponent implements OnInit {
      * expanded view and allow interaction with them, but still have the
      * arrow keys work chronologically.
      */
-    _.each(this.uniqueCollections, (uniqueCollection) => {
+_.each(this.uniqueCollections, (uniqueCollection) => {
       uniqueCollection.allCollectionComics = [];
       _.each(uniqueCollection.allCollectionComicIds, (comicId) => {
         uniqueCollection.allCollectionComics.push(
@@ -946,7 +975,7 @@ export class AppComponent implements OnInit {
     });
 
     // Copy the comics into the collection objects on load
-    _.each(this.collections, (collection) => {
+_.each(this.collections, (collection) => {
       collection.comics = [];
 
       _.each(collection.comicIds, (comicId) => {
@@ -964,14 +993,14 @@ export class AppComponent implements OnInit {
      * is the browser adding new things to the DOM, so we get a
      * big performance boost by always having everything in there.
      */
-    _.each(this.comics, (comic) => {
+_.each(this.comics, (comic) => {
       // Get the collection containing this comic
       comic.collection = _.find(this.collections, (collection) => {
         return collection.comicIds.includes(comic.id);
       });
     });
 
-    setTimeout(() => {
+setTimeout(() => {
       // Make room for the farthest-bottom expanded panel
       this.bodyStyles['height.px'] = $(document).height() + $(window).height();
 
@@ -1254,7 +1283,7 @@ export class AppComponent implements OnInit {
    * Use jQuery to manipulate classes and styles to make the expanded
    * panels always fit in the viewport.
    */
-  repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
+repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
     let scrollPositionLeft: number;
     let scrollPositionTop: number;
     let scrollPositionRight: number;
@@ -1350,7 +1379,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  toggleDisplayOrder = () => {
+toggleDisplayOrder = () => {
     // Toggle display order to change classes for collection order or reading order
     this.isShowReadingOrder = !this.isShowReadingOrder;
   }
@@ -1363,7 +1392,7 @@ export class AppComponent implements OnInit {
    * controller, but it does from the template, so there are manual calls
    * from inside the controller to handle after keypresses.
    */
-  postSearchActions = (value?: string) => {
+postSearchActions = (value?: string) => {
     if (value) {
       $('body').addClass('search-is-open');
     } else {
@@ -1422,7 +1451,7 @@ export class AppComponent implements OnInit {
    * garbage collector, if the relevant GET parameters are
    * specified (id and gc)
    */
-  useGetParameters = () => {
+useGetParameters = () => {
     const searchParams = this.route.snapshot.queryParams;
 
     if (searchParams.id) {
