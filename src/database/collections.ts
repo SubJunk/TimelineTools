@@ -5599,6 +5599,16 @@ collections.push(
       'XForceSexandViolenceVol13',
     ]
   ),
+  new Collection(
+    'Dark Reign: Deadpool / Thunderbolts',
+    '2009-6-24',
+    [
+      'DeadpoolVol38',
+      'ThunderboltsVol2130',
+      'DeadpoolVol39',
+      'ThunderboltsVol2131',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */

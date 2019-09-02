@@ -458,7 +458,10 @@ addComicsInSeriesVolume('DeadpoolVol2', [
   [59, '2001-12'],
   [60, '2002-1'],
 ]);
-addComicsInSeriesVolume('DecimationHouseofMTheDayAfterVol1', [[1, '2005-11-9']]);
+addComicsInSeriesVolume('DeadpoolVol3', [
+  [8, '2009-3-4'],
+  [9, '2009-4-1'],
+]);
 addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']]);
 addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']]);
 addComicsInSeriesVolume('DeadpoolTheCircleChaseVol1', [
@@ -473,6 +476,7 @@ addComicsInSeriesVolume('DeadpoolvsXForceVol1', [
   [3, '2014-8-20'],
   [4, '2014-9-3'],
 ]);
+addComicsInSeriesVolume('DecimationHouseofMTheDayAfterVol1', [[1, '2005-11-9']]);
 addComicsInSeriesVolume('DefendersVol1', [
   [15, '1974-9-10'],
   [16, '1974-10-10'],
@@ -1124,6 +1128,10 @@ addComicsInSeriesVolume('ThorVol1', [
   [377, '1987-3'],
   [378, '1987-4'],
   [502, '1996-9']
+]);
+addComicsInSeriesVolume('ThunderboltsVol2', [
+  [130, '2009-3-25'],
+  [131, '2009-4-29'],
 ]);
 addComicsInSeriesVolume('UncannyXMenVol1', [
   [-1, '1997-7'],
