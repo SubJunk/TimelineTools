@@ -101,6 +101,7 @@ export class AppComponent implements OnInit {
 
   globalVerticalPositionCounter = 0;
   seriesVolumeLabels: Array<SeriesVolumeLabel> = [];
+  readingOrderSeriesVolumeLabels: Array<SeriesVolumeLabel> = [];
 
   expandedComic: Comic;
   expandedComicId: string;
@@ -486,11 +487,11 @@ export class AppComponent implements OnInit {
         );
   }
 
-  private subtractLabelWidthsFromLeftPositions = () => {
+  private subtractLabelWidthsFromLeftPositions = (seriesVolumeLabels) => {
     let $jqLabel: JQuery<HTMLElement>;
     let labelWidthFromDom: number;
 
-    _.each(this.seriesVolumeLabels, (seriesVolumeLabel) => {
+    _.each(seriesVolumeLabels, (seriesVolumeLabel) => {
       // We only know the width after the initial render, so store it
       $jqLabel = $('#' + seriesVolumeLabel.id);
       if ($jqLabel.length > -1) {
@@ -765,7 +766,7 @@ export class AppComponent implements OnInit {
 
     //  reposition the reading order comics horizontally
     let horizontalReadingOrderPosition = 0;
-    this.globalVerticalPositionCounter = 1;
+    this.globalVerticalPositionCounter = 0;
     const latestReadingOrderVerticalHorizontalOffsets = {};
     _.each(this.comicsInReadingOrder, (comic) => {
       horizontalReadingOrderPosition += VISUAL_BLOCK_SIZE;
@@ -832,14 +833,13 @@ export class AppComponent implements OnInit {
       //    *
       //    * Counter starts at 1 to keep Uncanny always at the top.
       //    */
-            for (let i = 0; i < this.globalVerticalPositionCounter; i++) {
+        for (let i = 0; i < this.globalVerticalPositionCounter; i++) {
           if (
             !latestReadingOrderVerticalHorizontalOffsets[i] ||
             latestReadingOrderVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
           ) {
             currentReadingOrderSeriesVolume.verticalPosition = i;
             comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
-            console.log(comic.containerStyles['top.px']);
           //   /*
           //    * We are about to insert this seriesVolume into a vertical position
           //    * that has already been used before, so we remove the reference to
@@ -861,6 +861,15 @@ export class AppComponent implements OnInit {
           }
         }
       }
+
+      /*
+       * Store a reference to the last horizontal position used
+       * by the vertical position currently used by this series volume.
+       */
+      latestReadingOrderVerticalHorizontalOffsets[currentReadingOrderSeriesVolume.verticalPosition] = {
+        offset: comic.containerStyles['left.px'],
+        seriesVolumeId: currentReadingOrderSeriesVolume.id
+      };
     });
 
 
@@ -902,7 +911,7 @@ export class AppComponent implements OnInit {
     });
 
     // Reposition the expanded panel when the user scrolls the viewport
-this.$jqWindow.on('load scroll', () => {
+    this.$jqWindow.on('load scroll', () => {
       if (!this.isRunningAnimation) {
         this.repositionStickyElements();
       }
@@ -912,14 +921,14 @@ this.$jqWindow.on('load scroll', () => {
 
     // Catch clicks
     // tslint:disable-next-line: deprecation
-this.$jqWindow.on('click', (data: JQueryClickEvent) => {
+    this.$jqWindow.on('click', (data: JQueryClickEvent) => {
       // Close the expanded comic if the click happened on a blank area
       if (data.target.localName === 'body' && this.expandedComicId) {
         this.toggleExpandComic({});
       }
     });
 
-_.each(this.collections, (collection: Collection) => {
+    _.each(this.collections, (collection: Collection) => {
       // While we are here we add the image string for lookup
       collection.image = this.getSanitizedString(false, collection.title);
 
@@ -955,7 +964,7 @@ _.each(this.collections, (collection: Collection) => {
      * expanded view and allow interaction with them, but still have the
      * arrow keys work chronologically.
      */
-_.each(this.uniqueCollections, (uniqueCollection) => {
+    _.each(this.uniqueCollections, (uniqueCollection) => {
       uniqueCollection.allCollectionComics = [];
       _.each(uniqueCollection.allCollectionComicIds, (comicId) => {
         uniqueCollection.allCollectionComics.push(
@@ -975,7 +984,7 @@ _.each(this.uniqueCollections, (uniqueCollection) => {
     });
 
     // Copy the comics into the collection objects on load
-_.each(this.collections, (collection) => {
+    _.each(this.collections, (collection) => {
       collection.comics = [];
 
       _.each(collection.comicIds, (comicId) => {
@@ -993,14 +1002,14 @@ _.each(this.collections, (collection) => {
      * is the browser adding new things to the DOM, so we get a
      * big performance boost by always having everything in there.
      */
-_.each(this.comics, (comic) => {
+    _.each(this.comics, (comic) => {
       // Get the collection containing this comic
       comic.collection = _.find(this.collections, (collection) => {
         return collection.comicIds.includes(comic.id);
       });
     });
 
-setTimeout(() => {
+    setTimeout(() => {
       // Make room for the farthest-bottom expanded panel
       this.bodyStyles['height.px'] = $(document).height() + $(window).height();
 
@@ -1010,7 +1019,8 @@ setTimeout(() => {
 
       this.useGetParameters();
 
-      this.subtractLabelWidthsFromLeftPositions();
+      this.subtractLabelWidthsFromLeftPositions(this.seriesVolumeLabels);
+      this.subtractLabelWidthsFromLeftPositions(this.readingOrderSeriesVolumeLabels);
     });
   }
 
