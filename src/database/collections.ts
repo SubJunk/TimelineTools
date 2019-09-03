@@ -5609,6 +5609,36 @@ collections.push(
       'ThunderboltsVol2131',
     ]
   ),
+  new Collection(
+    'New Exiles Vol. 4: Away We Go',
+    '2009-5-27',
+    [
+      'NewExilesVol116',
+      'NewExilesVol117',
+      'NewExilesVol118',
+      'XMenSwordoftheBraddocksVol11',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Salvage',
+    '2009-11-25',
+    [
+      'XMenLegacyVol1219',
+      'XMenLegacyVol1220',
+      'XMenLegacyVol1221',
+      'XMenLegacyVol1222',
+      'XMenLegacyVol1223',
+      'XMenLegacyVol1224',
+      'XMenLegacyVol1225',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
+      'DarkAvengersUncannyXMenUtopiaVol11',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -5642,7 +5672,6 @@ collections.push(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
-      'DarkAvengersUncannyXMenUtopiaVol11',
       'UncannyXMenVol1513',
       'DarkAvengersVol17',
       'UncannyXMenVol1514',

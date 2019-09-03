@@ -815,6 +815,11 @@ addComicsInSeriesVolume('NewExcaliburVol1', [
   [23, '2007-9-6'],
   [24, '2007-10-17'],
 ]);
+addComicsInSeriesVolume('NewExilesVol1', [
+  [16, '2008-12-17'],
+  [17, '2009-1-21'],
+  [18, '2009-2-18'],
+]);
 addComicsInSeriesVolume('NewMutantsVol1', [
   [26, '1985-4'],
   [27, '1985-5'],
@@ -2537,6 +2542,13 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [216, '2008-9-24'],
   [217, '2008-10-22'],
   [218, '2008-11-19'],
+  [219, '2008-12-17'],
+  [220, '2009-1-21'],
+  [221, '2009-2-18'],
+  [222, '2009-3-18'],
+  [223, '2009-4-15'],
+  [224, '2009-5-28'],
+  [225, '2009-6-17'],
   [235, '2010-6'],
   [236, '2010-7'],
   [237, '2010-8'],
@@ -2598,6 +2610,7 @@ addComicsInSeriesVolume('XMenSpiderManVol1', [
   [3, '2009-1-14'],
   [4, '2009-3-4'],
 ]);
+addComicsInSeriesVolume('XMenSwordoftheBraddocksVol1', [[1, '2009-3-25']]);
 addComicsInSeriesVolume('XMenTheUnlikelySagaofXavierMagnetoandStanVol1', [[1, '2006-9']]);
 addComicsInSeriesVolume('XMenTheWeddingAlbumVol1', [[1, '1994-1-1']]);
 addComicsInSeriesVolume('XMenUnlimitedVol1', [
