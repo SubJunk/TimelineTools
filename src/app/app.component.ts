@@ -1413,7 +1413,12 @@ repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
   }
 
   public scrollToComic = (comicId: string) => {
-    const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
+    let comicFromId;
+    if (this.isShowReadingOrder){
+      comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
+    } else {
+      comicFromId = this.comicsInReadingOrder[_.findKey(this.comicsInReadingOrder, { id: comicId })];
+    }
     this.toggleExpandComic(comicFromId, true);
   }
 
