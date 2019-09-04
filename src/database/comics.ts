@@ -458,7 +458,10 @@ addComicsInSeriesVolume('DeadpoolVol2', [
   [59, '2001-12'],
   [60, '2002-1'],
 ]);
-addComicsInSeriesVolume('DecimationHouseofMTheDayAfterVol1', [[1, '2005-11-9']]);
+addComicsInSeriesVolume('DeadpoolVol3', [
+  [8, '2009-3-4'],
+  [9, '2009-4-1'],
+]);
 addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']]);
 addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']]);
 addComicsInSeriesVolume('DeadpoolTheCircleChaseVol1', [
@@ -473,6 +476,7 @@ addComicsInSeriesVolume('DeadpoolvsXForceVol1', [
   [3, '2014-8-20'],
   [4, '2014-9-3'],
 ]);
+addComicsInSeriesVolume('DecimationHouseofMTheDayAfterVol1', [[1, '2005-11-9']]);
 addComicsInSeriesVolume('DefendersVol1', [
   [15, '1974-9-10'],
   [16, '1974-10-10'],
@@ -811,6 +815,11 @@ addComicsInSeriesVolume('NewExcaliburVol1', [
   [23, '2007-9-6'],
   [24, '2007-10-17'],
 ]);
+addComicsInSeriesVolume('NewExilesVol1', [
+  [16, '2008-12-17'],
+  [17, '2009-1-21'],
+  [18, '2009-2-18'],
+]);
 addComicsInSeriesVolume('NewMutantsVol1', [
   [26, '1985-4'],
   [27, '1985-5'],
@@ -1124,6 +1133,10 @@ addComicsInSeriesVolume('ThorVol1', [
   [377, '1987-3'],
   [378, '1987-4'],
   [502, '1996-9']
+]);
+addComicsInSeriesVolume('ThunderboltsVol2', [
+  [130, '2009-3-25'],
+  [131, '2009-4-29'],
 ]);
 addComicsInSeriesVolume('UncannyXMenVol1', [
   [-1, '1997-7'],
@@ -2529,6 +2542,13 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [216, '2008-9-24'],
   [217, '2008-10-22'],
   [218, '2008-11-19'],
+  [219, '2008-12-17'],
+  [220, '2009-1-21'],
+  [221, '2009-2-18'],
+  [222, '2009-3-18'],
+  [223, '2009-4-15'],
+  [224, '2009-5-28'],
+  [225, '2009-6-17'],
   [235, '2010-6'],
   [236, '2010-7'],
   [237, '2010-8'],
@@ -2590,6 +2610,7 @@ addComicsInSeriesVolume('XMenSpiderManVol1', [
   [3, '2009-1-14'],
   [4, '2009-3-4'],
 ]);
+addComicsInSeriesVolume('XMenSwordoftheBraddocksVol1', [[1, '2009-3-25']]);
 addComicsInSeriesVolume('XMenTheUnlikelySagaofXavierMagnetoandStanVol1', [[1, '2006-9']]);
 addComicsInSeriesVolume('XMenTheWeddingAlbumVol1', [[1, '1994-1-1']]);
 addComicsInSeriesVolume('XMenUnlimitedVol1', [
