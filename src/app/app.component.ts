@@ -1241,7 +1241,7 @@ export class AppComponent implements OnInit {
    * Use jQuery to manipulate classes and styles to make the expanded
    * panels always fit in the viewport.
    */
-repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
+  repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
     let scrollPositionLeft: number;
     let scrollPositionTop: number;
     let scrollPositionRight: number;
@@ -1268,7 +1268,12 @@ repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
       return setTimeout(() => {});
     }
 
-    const expandedComic = _.find(this.comics, ['id', selectedComicId]);
+    let expandedComic: Comic;
+    if (this.isShowReadingOrder) {
+      expandedComic = _.find(this.comicsInReadingOrder, ['id', selectedComicId]);
+    } else {
+      expandedComic = _.find(this.comics, ['id', selectedComicId]);
+    }
     if (!expandedComic) {
       return console.error('The comic could not be found', selectedComicId);
     }
@@ -1413,11 +1418,11 @@ repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
   }
 
   public scrollToComic = (comicId: string) => {
-    let comicFromId;
-    if (this.isShowReadingOrder){
+    let comicFromId: Comic;
+    if (this.isShowReadingOrder) {
       comicFromId = this.comicsInReadingOrder[_.findKey(this.comicsInReadingOrder, { id: comicId })];
     } else {
-      comicFromId = this.comics[_.findKey(this.comics, { id: comicId })]; 
+      comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
     }
     this.toggleExpandComic(comicFromId, true);
   }

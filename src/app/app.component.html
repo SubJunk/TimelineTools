@@ -90,42 +90,42 @@
       </li>
     </ng-container>
     <ng-container *ngIf="isShowReadingOrder">
-    <li *ngFor="let comic of comicsInReadingOrder; trackBy: trackByItemId" class="comic-container" [ngStyle]="comic.containerStyles">
-      <div class="scroll-anchor" id="scroll-anchor-{{comic.id}}"></div>
-      <div class="popover"><div>#{{comic.issue}}</div></div>
-      <div class="comic" [ngStyle]="comic.styles" [ngClass]="getComicClasses(comic)">
-        <div class="panel-left">
-          <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
-            <img
-                *ngIf="comic.visible"
-                [srcset]="
-                    'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
-                    https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
-                [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
-            >
-          </button>
+      <li *ngFor="let comic of comicsInReadingOrder; trackBy: trackByItemId" class="comic-container" [ngStyle]="comic.containerStyles">
+        <div class="scroll-anchor" id="scroll-anchor-{{comic.id}}"></div>
+        <div class="popover"><div>#{{comic.issue}}</div></div>
+        <div class="comic" [ngStyle]="comic.styles" [ngClass]="getComicClasses(comic)">
+          <div class="panel-left">
+            <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
+              <img
+                  *ngIf="comic.visible"
+                  [srcset]="
+                      'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
+                  [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
+              >
+            </button>
+          </div>
         </div>
-      </div>
-    </li>
-  </ng-container>
-  <ng-container *ngIf="!isShowReadingOrder">
-    <li *ngFor="let comic of comics; trackBy: trackByItemId" class="comic-container" [ngStyle]="comic.containerStyles">
-      <div class="scroll-anchor" id="scroll-anchor-{{comic.id}}"></div>
-      <div class="popover"><div>#{{comic.issue}}</div></div>
-      <div class="comic" [ngStyle]="comic.styles" [ngClass]="getComicClasses(comic)">
-        <div class="panel-left">
-          <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
-            <img
-                *ngIf="comic.visible"
-                [srcset]="
-                    'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
-                    https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
-                [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
-            >
-          </button>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="!isShowReadingOrder">
+      <li *ngFor="let comic of comics; trackBy: trackByItemId" class="comic-container" [ngStyle]="comic.containerStyles">
+        <div class="scroll-anchor" id="scroll-anchor-{{comic.id}}"></div>
+        <div class="popover"><div>#{{comic.issue}}</div></div>
+        <div class="comic" [ngStyle]="comic.styles" [ngClass]="getComicClasses(comic)">
+          <div class="panel-left">
+            <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
+              <img
+                  *ngIf="comic.visible"
+                  [srcset]="
+                      'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
+                      https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
+                  [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
+              >
+            </button>
+          </div>
         </div>
-      </div>
-    </li>
+      </li>
     </ng-container>
   </ul>
   <div *ngIf="expandedComicId" class="comic-container expanded" [ngStyle]="expandedComic.containerStyles" [ngClass]="expandedComicCSS.containerClasses">
