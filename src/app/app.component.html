@@ -80,12 +80,12 @@
 <div class="comics-container">
   <ul class="comics">
     <ng-container *ngIf="!isShowReadingOrder">
-      <li  *ngFor="let label of seriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
+      <li *ngFor="let label of seriesVolumeLabels" [ngStyle]="label.containerStyles" class="series-volume-label-container">
         <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
       </li>
     </ng-container>
     <ng-container *ngIf="isShowReadingOrder">
-      <li *ngFor="let label of readingOrderSeriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
+      <li *ngFor="let label of readingOrderSeriesVolumeLabels" [ngStyle]="label.containerStyles" class="series-volume-label-container">
         <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
       </li>
     </ng-container>

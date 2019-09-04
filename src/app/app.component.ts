@@ -793,11 +793,11 @@ export class AppComponent implements OnInit {
        * left and right padding of the page.
        */
       this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
-      
+
       if (newLabelNeeded) {
         this.readingOrderSeriesVolumeLabels.push({
           text: currentReadingOrderSeriesVolume.titleWithVolume,
-          id: 'label-' + this.seriesVolumeLabels.length,
+          id: 'label-' + this.readingOrderSeriesVolumeLabels.length,
           containerStyles: {
             'top.px': comic.containerStyles['top.px'],
             'left.px': comic.containerStyles['left.px'],
@@ -817,11 +817,10 @@ export class AppComponent implements OnInit {
 
         const readingOrderLabelContainerLeft = this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['left.px'];
         const readingOrderComicContainerLeft = comic.containerStyles['left.px'];
-        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] = readingOrderComicContainerLeft - readingOrderLabelContainerLeft;      
-        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] -= BODY_PADDING;      
+        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] = readingOrderComicContainerLeft - readingOrderLabelContainerLeft;
+        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] -= BODY_PADDING;
       }
     });
-
 
     /**
      * Handle keypresses.
@@ -970,7 +969,6 @@ export class AppComponent implements OnInit {
       this.useGetParameters();
 
       this.subtractLabelWidthsFromLeftPositions(this.seriesVolumeLabels);
-      this.subtractLabelWidthsFromLeftPositions(this.readingOrderSeriesVolumeLabels);
     });
   }
 
@@ -1339,9 +1337,26 @@ repositionStickyElements = (currentComicId?: string | JQuery.Event) => {
     });
   }
 
-toggleDisplayOrder = () => {
+  toggleDisplayOrder = (isForceReadingOrder: boolean) => {
     // Toggle display order to change classes for collection order or reading order
-    this.isShowReadingOrder = !this.isShowReadingOrder;
+    if (isForceReadingOrder) {
+      this.isShowReadingOrder = true;
+    } else {
+      this.isShowReadingOrder = !this.isShowReadingOrder;
+    }
+
+    // Set whether to show collections in the URL
+    const urlTree = this.router.createUrlTree([], {
+      queryParams: { readingOrder: this.isShowReadingOrder === true ? 'yes' : '' },
+      queryParamsHandling: 'merge',
+      preserveFragment: true });
+    this.router.navigateByUrl(urlTree);
+
+    if (this.isShowReadingOrder) {
+      setTimeout(() => {
+        this.subtractLabelWidthsFromLeftPositions(this.readingOrderSeriesVolumeLabels);
+      });
+    }
   }
 
   /**
@@ -1352,7 +1367,7 @@ toggleDisplayOrder = () => {
    * controller, but it does from the template, so there are manual calls
    * from inside the controller to handle after keypresses.
    */
-postSearchActions = (value?: string) => {
+  postSearchActions = (value?: string) => {
     if (value) {
       $('body').addClass('search-is-open');
     } else {
@@ -1411,7 +1426,7 @@ postSearchActions = (value?: string) => {
    * garbage collector, if the relevant GET parameters are
    * specified (id and gc)
    */
-useGetParameters = () => {
+  useGetParameters = () => {
     const searchParams = this.route.snapshot.queryParams;
 
     if (searchParams.id) {
@@ -1420,6 +1435,10 @@ useGetParameters = () => {
 
     if (searchParams.showCollections) {
       this.toggleShowCollections('1');
+    }
+
+    if (searchParams.readingOrder) {
+      this.toggleDisplayOrder(true);
     }
 
     /**
