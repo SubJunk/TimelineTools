@@ -870,6 +870,41 @@ export class AppComponent implements OnInit {
         offset: comic.containerStyles['left.px'],
         seriesVolumeId: currentReadingOrderSeriesVolume.id
       };
+
+      /*
+       * Match the width of the page to the width of the content, which
+       * includes one horizontal increment (the width of the current
+       * comic thumbnail) and 2 body padding units to make up for the
+       * left and right padding of the page.
+       */
+      this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
+      
+      if (newLabelNeeded) {
+        this.readingOrderSeriesVolumeLabels.push({
+          text: currentReadingOrderSeriesVolume.titleWithVolume,
+          id: 'label-' + this.seriesVolumeLabels.length,
+          containerStyles: {
+            'top.px': comic.containerStyles['top.px'],
+            'left.px': comic.containerStyles['left.px'],
+            'width.px': -BODY_PADDING,
+          },
+        });
+
+        newLabelNeeded = false;
+      } else {
+        const readingOrderSeriesVolumeLabelIndex = _.findLastIndex(this.readingOrderSeriesVolumeLabels, (seriesVolumeLabel) => {
+          return seriesVolumeLabel.text === currentReadingOrderSeriesVolume.titleWithVolume;
+        });
+
+        if (readingOrderSeriesVolumeLabelIndex === -1) {
+          throw new Error(currentReadingOrderSeriesVolume.titleWithVolume + ' not found in the readingOrderSeriesVolumeLabelIndex');
+        }
+
+        const readingOrderLabelContainerLeft = this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['left.px'];
+        const readingOrderComicContainerLeft = comic.containerStyles['left.px'];
+        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] = readingOrderComicContainerLeft - readingOrderLabelContainerLeft;      
+        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] -= BODY_PADDING;      
+      }
     });
 
 

@@ -79,9 +79,16 @@
 </ul>
 <div class="comics-container">
   <ul class="comics">
-    <li *ngFor="let label of seriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
-      <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
-    </li>
+    <ng-container *ngIf="!isShowReadingOrder">
+      <li  *ngFor="let label of seriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
+        <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="isShowReadingOrder">
+      <li *ngFor="let label of readingOrderSeriesVolumeLabels; let index = index" [ngStyle]="label.containerStyles" class="series-volume-label-container">
+        <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
+      </li>
+    </ng-container>
     <ng-container *ngIf="isShowReadingOrder">
     <li *ngFor="let comic of comicsInReadingOrder; trackBy: trackByItemId" class="comic-container" [ngStyle]="comic.containerStyles">
       <div class="scroll-anchor" id="scroll-anchor-{{comic.id}}"></div>
