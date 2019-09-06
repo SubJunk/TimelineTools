@@ -815,9 +815,11 @@ export class AppComponent implements OnInit {
           throw new Error(currentReadingOrderSeriesVolume.titleWithVolume + ' not found in the readingOrderSeriesVolumeLabelIndex');
         }
 
-        const readingOrderLabelContainerLeft = this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['left.px'];
+        const readingOrderLabelContainerLeft =
+          this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['left.px'];
         const readingOrderComicContainerLeft = comic.containerStyles['left.px'];
-        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] = readingOrderComicContainerLeft - readingOrderLabelContainerLeft;
+        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] =
+         readingOrderComicContainerLeft - readingOrderLabelContainerLeft;
         this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] -= BODY_PADDING;
       }
     });
@@ -952,6 +954,14 @@ export class AppComponent implements OnInit {
      * big performance boost by always having everything in there.
      */
     _.each(this.comics, (comic) => {
+      // Get the collection containing this comic
+      comic.collection = _.find(this.collections, (collection) => {
+        return collection.comicIds.includes(comic.id);
+      });
+    });
+
+      // do the same for reading order comics
+    _.each(this.comicsInReadingOrder, (comic) => {
       // Get the collection containing this comic
       comic.collection = _.find(this.collections, (collection) => {
         return collection.comicIds.includes(comic.id);
