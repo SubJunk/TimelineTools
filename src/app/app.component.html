@@ -6,7 +6,8 @@
   <button mat-menu-item (click)="toggleDisplayOrder()" class="toggle-display-order-btn">
     <mat-icon [ngClass]="{selected: !isShowReadingOrder}">scatter_plot</mat-icon>
     <mat-icon [ngClass]="{selected: isShowReadingOrder}">linear_scale</mat-icon>
-    View reading or collection order
+      <span [ngClass]="{unselected: !isShowReadingOrder}">View collection order</span>
+      <span [ngClass]="{unselected: isShowReadingOrder}">View reading order</span>
   </button>
   <button mat-menu-item (click)="toggleInfoModal()" class="toggle-info-btn">
     <mat-icon>info</mat-icon>
