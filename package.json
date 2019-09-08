@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "ng serve -o",
     "ng": "ng",
-    "postinstall": "ng build --prod --aot=true && mv dist/timeline-tools/* .",
+    "postinstall": "ng build --prod --aot=true && cp dist/timeline-tools/* .",
     "preinstall": "npm install -g @angular/cli http-server",
     "start": "http-server",
     "startprod": "ng serve -o --prod --aot=true",
