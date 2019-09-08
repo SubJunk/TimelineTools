@@ -1,17 +1,26 @@
 import { AppPage } from './app.po';
-import { browser, by, $$, element, logging } from 'protractor';
-import { async } from 'q';
+import { browser, by, element, logging } from 'protractor';
+
+/**
+ * Vertically scroll top-left corner of the given element (y-direction) into viewport.
+ * @param scrollToElement element to be scrolled into visible area
+ */
+function scrollToX(scrollToElement) {
+  const wd = browser.driver;
+  return scrollToElement.getLocation().then((loc: { x: any; }) => {
+    return wd.executeScript('window.scrollTo(arguments[0], 0);', loc.x);
+  });
+}
 
 describe('Reading Order Comics', () => {
   let page: AppPage;
 
   beforeAll(() => {
-      page = new AppPage();
+    page = new AppPage();
   });
 
   beforeEach(async () => {
     await page.navigateTo();
-
   });
 
   it(
@@ -23,7 +32,7 @@ describe('Reading Order Comics', () => {
     await browser.executeScript('$(".toggle-display-order-btn").click();');
     // const firstRearrangedComic = $$('button')[23];
     // const firstRearrangedComic = element(by.css('#expand-XMenFirstClassVol11'));
-    await element(by.css('#expand-XMenFirstClassVol11')).isVisible();
+    await scrollToX(element(by.css('#expand-XMenFirstClassVol11')));
     await element(by.css('#expand-XMenFirstClassVol11')).click();
     expect(
     await element(by.css('div.series')).getText()
