@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, by, element, logging } from 'protractor';
+import { browser, by, $, element, logging } from 'protractor';
 
 /**
  * Vertically scroll top-left corner of the given element (y-direction) into viewport.
@@ -30,27 +30,27 @@ describe('Reading Order Comics', () => {
   async () => {
     await element(by.css('.floating-menu')).click();
     await browser.executeScript('$(".toggle-display-order-btn").click();');
-    // const firstRearrangedComic = $$('button')[23];
-    // const firstRearrangedComic = element(by.css('#expand-XMenFirstClassVol11'));
-    await scrollToX(element(by.css('#expand-XMenFirstClassVol11')));
-    await element(by.css('#expand-XMenFirstClassVol11')).click();
+    const firstRearrangedComic = $('.comics:nth-child(23) .panel-left').$('.cover-thumbnail');
+    // await scrollToX(element(by.css('#expand-XMenFirstClassVol11')));
+    await scrollToX(element(firstRearrangedComic));
+    await element(firstRearrangedComic).click();
     expect(
     await element(by.css('div.series')).getText()
     ).toContain(
-      'X-Men First Class'
+      'X-Men: First Class #1'
     );
 
     expect(
       await element(by.css('.cover-thumbnail img')).getAttribute('src')
     ).toContain(
-      'Men_First_Class_Vol_1_1'
+      'X-Men_Vol_1_1'
     );
     await element(by.css('cover-thumbnail')).isDisplayed();
 
     expect(
       await element(by.css('.cover-thumbnail img')).getAttribute('src')
     ).toContain(
-      'Men_First_Class_Vol_1_1'
+      'X-Men_Vol_1_1'
     );
 
     // it('should correctly order the collections', async () => {
