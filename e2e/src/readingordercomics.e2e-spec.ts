@@ -30,21 +30,14 @@ describe('Reading Order Comics', () => {
   async () => {
     await element(by.css('.floating-menu')).click();
     await browser.executeScript('$(".toggle-display-order-btn").click();');
-    const firstRearrangedComic = element(by.css('.comic-container:nth-child(378)'));
+    const firstRearrangedComic = element(by.css('.comic-container:nth-child(24)'));
     await scrollToX(firstRearrangedComic);
     await firstRearrangedComic.click();
     expect(
-    await element(by.css('div.series')).getText()
+      await element(by.css('div.series')).getText()
     ).toContain(
       'X-Men: First Class #1'
     );
-
-    expect(
-      await element(by.css('.cover-thumbnail img')).getAttribute('src')
-    ).toContain(
-      'X-Men_Vol_1_1'
-    );
-    await element(by.css('cover-thumbnail')).isDisplayed();
 
     expect(
       await element(by.css('.cover-thumbnail img')).getAttribute('src')
