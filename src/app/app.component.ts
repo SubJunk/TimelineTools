@@ -355,6 +355,7 @@ export class AppComponent implements OnInit {
     }
 
     this.apiInteractions.setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+    console.log(expandedComic);
   }
 
   /*

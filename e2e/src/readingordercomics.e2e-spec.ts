@@ -57,7 +57,7 @@ describe('Reading Order Comics', () => {
     expect(
       await element(by.css('div.collection-title')).getText()
     ).toContain(
-      'X-Men: First Class, Vol. 1: Tomorrow\'s Brightest'
+      'X-Men: First Class - Mutant Mayhem'
     );
   });
 
