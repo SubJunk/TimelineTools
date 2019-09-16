@@ -44,28 +44,22 @@ describe('Reading Order Comics', () => {
     ).toContain(
       'X-Men_Vol_1_1'
     );
-
-    // it('should correctly order the collections', async () => {
-    //   await element(by.css('.button-next-collection')).click();
-
-    //   expect(
-    //     await element(by.css('div.collection-title')).getText()
-    //   ).toContain(
-    //     'X-Men: First Class - Mutant Mayhem'
-    //   );
-    // });
   });
 
-  // it('should display the selected comic cover when zoomed', async () => {
-  //   await element(by.css('.toggle-full-screen')).click();
+  it('collections should still be correctly ordered', async () => {
+    await element(by.css('.floating-menu')).click();
+    await browser.executeScript('$(".toggle-display-order-btn").click();');
+    const firstRearrangedComic = element(by.css('.comic-container:nth-child(24)'));
+    await scrollToX(firstRearrangedComic);
+    await firstRearrangedComic.click();
+    await element(by.css('.button-next-collection')).click();
 
-  //   expect(
-  //     await element(by.css('.fullScreen .cover-thumbnail img')).getAttribute('src')
-  //   ).toContain(
-  //     'X-Men_First_Class_Vol_2_1'
-  //   );
-  // });
-
+    expect(
+      await element(by.css('div.collection-title')).getText()
+    ).toContain(
+      'X-Men: First Class - Mutant Mayhem'
+    );
+  });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
