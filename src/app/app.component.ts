@@ -345,8 +345,6 @@ export class AppComponent implements OnInit {
       return console.error('The expanded series volume could not be found', currentComic.seriesVolumeId);
     }
 
-    const expandedComic = _.find(this.comics, ['id', currentComic.id]);
-
     this.setGoodreadsCollectionId(this.expandedCollection);
 
     if (!expandedSeriesVolume.marvelId) {
@@ -354,8 +352,7 @@ export class AppComponent implements OnInit {
       expandedSeriesVolume.marvelId = await this.getMarvelSeriesVolumeId(expandedSeriesVolume);
     }
 
-    this.apiInteractions.setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
-    console.log(expandedComic);
+    this.apiInteractions.setAPIComicData(currentComic, expandedSeriesVolume.marvelId);
   }
 
   /*
