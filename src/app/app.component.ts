@@ -689,8 +689,9 @@ export class AppComponent implements OnInit {
        * Look up the volume and series for this comic and
        * throw errors for obvious problems before proceeding.
        */
-      // tslint:disable-next-line: max-line-length
-      const currentReadingOrderSeriesVolume = this.readingOrderSeriesVolumes[_.findKey(this.readingOrderSeriesVolumes, { id: comic.seriesVolumeId })];
+      const currentReadingOrderSeriesVolume = this.readingOrderSeriesVolumes[
+        _.findKey(this.readingOrderSeriesVolumes, { id: comic.seriesVolumeId })
+      ];
       if (!currentReadingOrderSeriesVolume) {
         throw new Error(comic.seriesVolumeId + ' not found');
       }
@@ -717,7 +718,7 @@ export class AppComponent implements OnInit {
         newLabelNeeded = true;
       }
 
-       /*
+      /*
        * Step two of vertical positioning:
        * At this point, the seriesVolume has a row to use, but in this
        * block we check if there is a row further up the page to slot into
@@ -732,20 +733,26 @@ export class AppComponent implements OnInit {
       if (
         !latestReadingOrderVerticalHorizontalOffsets[currentReadingOrderSeriesVolume.verticalPosition] ||
         (
-          // tslint:disable-next-line: max-line-length
-          latestReadingOrderVerticalHorizontalOffsets[currentReadingOrderSeriesVolume.verticalPosition].seriesVolumeId !== currentReadingOrderSeriesVolume.id &&
-          latestReadingOrderVerticalHorizontalOffsets[currentReadingOrderSeriesVolume.verticalPosition].offset < horizontalClearanceLimit
+          latestReadingOrderVerticalHorizontalOffsets
+          [
+            currentReadingOrderSeriesVolume.verticalPosition
+          ].seriesVolumeId !== currentReadingOrderSeriesVolume.id
+          &&
+          latestReadingOrderVerticalHorizontalOffsets
+          [
+            currentReadingOrderSeriesVolume.verticalPosition
+          ].offset < horizontalClearanceLimit
         )
       ) {
 
 
-      //   /*
-      //    * It has been a while (if ever) since the last issue of this
-      //    * series appeared in the timeline so let's put this one on a
-      //    * higher row if possible.
-      //    *
-      //    * Counter starts at 1 to keep Uncanny always at the top.
-      //    */
+        /*
+         * It has been a while (if ever) since the last issue of this
+         * series appeared in the timeline so let's put this one on a
+         * higher row if possible.
+         *
+         * Counter starts at 1 to keep Uncanny always at the top.
+         */
         for (let i = 0; i < this.globalVerticalPositionCounter; i++) {
           if (
             !latestReadingOrderVerticalHorizontalOffsets[i] ||
@@ -753,12 +760,12 @@ export class AppComponent implements OnInit {
           ) {
             currentReadingOrderSeriesVolume.verticalPosition = i;
             comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
-          //   /*
-          //    * We are about to insert this seriesVolume into a vertical position
-          //    * that has already been used before, so we remove the reference to
-          //    * that position in the previous seriesVolume. This allows a new vertical
-          //    * position to be generated for that previous seriesVolume if one appears.
-          //    */
+            /*
+             * We are about to insert this seriesVolume into a vertical position
+             * that has already been used before, so we remove the reference to
+             * that position in the previous seriesVolume. This allows a new vertical
+             * position to be generated for that previous seriesVolume if one appears.
+             */
             if (latestReadingOrderVerticalHorizontalOffsets[i]) {
               const previousSeriesVolume = this.readingOrderSeriesVolumes[
                 _.findKey(this.readingOrderSeriesVolumes, { id: latestReadingOrderVerticalHorizontalOffsets[i].seriesVolumeId })
@@ -837,25 +844,25 @@ export class AppComponent implements OnInit {
       // tslint:disable-next-line: deprecation
       switch (e.which) {
         case KEYPRESSES.escape:
-             this.toggleExpandComic({});
-             this.searchText = '';
-             this.postSearchActions();
-             break;
+          this.toggleExpandComic({});
+          this.searchText = '';
+          this.postSearchActions();
+          break;
 
         case KEYPRESSES.left:
-             if (this.prevComic) {
+          if (this.prevComic) {
             this.toggleExpandComic(this.prevComic);
           }
-             break;
+          break;
 
         case KEYPRESSES.right:
-             if (this.nextComic) {
+          if (this.nextComic) {
             this.toggleExpandComic(this.nextComic);
           }
-             break;
+          break;
 
         default:
-             return; // exit this handler for other keys
+          return; // exit this handler for other keys
       }
     });
 
