@@ -26,6 +26,7 @@ describe('Reading Order Comics', () => {
   it(
     'should open the menu and change to reading order\n' +
     'should arrange the comics in reading order\n' +
+    'should open the expanded panel\n' +
     'should assign the correct thumbnail',
   async () => {
     await element(by.css('.floating-menu')).click();
