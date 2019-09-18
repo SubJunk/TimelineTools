@@ -482,7 +482,7 @@ export class AppComponent implements OnInit {
 
     let previousYearMonthVolume: string;
     let globalHorizontalOffset = 0;
-    const latestVerticalHorizontalOffsets = {};
+    const latestVerticalOffsets = {};
     let newLabelNeeded = false;
     const windowWidth = window.innerWidth;
     _.each(this.comics, (comic) => {
@@ -549,10 +549,10 @@ export class AppComponent implements OnInit {
        */
       const horizontalClearanceLimit = comic.containerStyles['left.px'] - windowWidth;
       if (
-        !latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] ||
+        !latestVerticalOffsets[currentSeriesVolume.verticalPosition] ||
         (
-          latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition].seriesVolumeId !== currentSeriesVolume.id &&
-          latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition].offset < horizontalClearanceLimit
+          latestVerticalOffsets[currentSeriesVolume.verticalPosition].seriesVolumeId !== currentSeriesVolume.id &&
+          latestVerticalOffsets[currentSeriesVolume.verticalPosition].offset < horizontalClearanceLimit
         )
       ) {
         /*
@@ -564,8 +564,8 @@ export class AppComponent implements OnInit {
          */
         for (let i = 1; i < this.globalVerticalPositionCounter; i++) {
           if (
-            !latestVerticalHorizontalOffsets[i] ||
-            latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
+            !latestVerticalOffsets[i] ||
+            latestVerticalOffsets[i].offset < horizontalClearanceLimit
           ) {
             currentSeriesVolume.verticalPosition = i;
             comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
@@ -576,9 +576,9 @@ export class AppComponent implements OnInit {
              * that position in the previous seriesVolume. This allows a new vertical
              * position to be generated for that previous seriesVolume if one appears.
              */
-            if (latestVerticalHorizontalOffsets[i]) {
+            if (latestVerticalOffsets[i]) {
               const previousSeriesVolume = this.seriesVolumes[
-                _.findKey(this.seriesVolumes, { id: latestVerticalHorizontalOffsets[i].seriesVolumeId })
+                _.findKey(this.seriesVolumes, { id: latestVerticalOffsets[i].seriesVolumeId })
               ];
               if (!previousSeriesVolume) {
                 throw new Error(comic.seriesVolumeId + ' not found');
@@ -596,7 +596,7 @@ export class AppComponent implements OnInit {
        * Store a reference to the last horizontal position used
        * by the vertical position currently used by this series volume.
        */
-      latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] = {
+      latestVerticalOffsets[currentSeriesVolume.verticalPosition] = {
         offset: comic.containerStyles['left.px'],
         seriesVolumeId: currentSeriesVolume.id
       };
@@ -680,7 +680,7 @@ export class AppComponent implements OnInit {
     //  reposition the reading order comics horizontally
     let horizontalReadingOrderPosition = 0;
     this.globalVerticalPositionCounter = 0;
-    const latestReadingOrderVerticalHorizontalOffsets = {};
+    const latestReadingOrderVerticalOffsets = {};
     _.each(this.comicsInReadingOrder, (comic) => {
       horizontalReadingOrderPosition += VISUAL_BLOCK_SIZE;
       comic.containerStyles['left.px'] = horizontalReadingOrderPosition;
@@ -729,22 +729,16 @@ export class AppComponent implements OnInit {
        * The maximum horizontal offset allowed until we recycle the
        * vertical position.
        */
+      const currentVerticalOffset = currentReadingOrderSeriesVolume.verticalPosition;
       const horizontalClearanceLimit = comic.containerStyles['left.px'] - windowWidth;
+      const isVerticalPositionAlreadyUsed = Boolean(latestReadingOrderVerticalOffsets[currentVerticalOffset]);
       if (
-        !latestReadingOrderVerticalHorizontalOffsets[currentReadingOrderSeriesVolume.verticalPosition] ||
+        !isVerticalPositionAlreadyUsed ||
         (
-          latestReadingOrderVerticalHorizontalOffsets
-          [
-            currentReadingOrderSeriesVolume.verticalPosition
-          ].seriesVolumeId !== currentReadingOrderSeriesVolume.id
-          &&
-          latestReadingOrderVerticalHorizontalOffsets
-          [
-            currentReadingOrderSeriesVolume.verticalPosition
-          ].offset < horizontalClearanceLimit
+          latestReadingOrderVerticalOffsets[currentVerticalOffset].seriesVolumeId !== currentReadingOrderSeriesVolume.id &&
+          latestReadingOrderVerticalOffsets[currentVerticalOffset].offset < horizontalClearanceLimit
         )
       ) {
-
 
         /*
          * It has been a while (if ever) since the last issue of this
@@ -755,8 +749,8 @@ export class AppComponent implements OnInit {
          */
         for (let i = 0; i < this.globalVerticalPositionCounter; i++) {
           if (
-            !latestReadingOrderVerticalHorizontalOffsets[i] ||
-            latestReadingOrderVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
+            !latestReadingOrderVerticalOffsets[i] ||
+            latestReadingOrderVerticalOffsets[i].offset < horizontalClearanceLimit
           ) {
             currentReadingOrderSeriesVolume.verticalPosition = i;
             comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
@@ -766,9 +760,9 @@ export class AppComponent implements OnInit {
              * that position in the previous seriesVolume. This allows a new vertical
              * position to be generated for that previous seriesVolume if one appears.
              */
-            if (latestReadingOrderVerticalHorizontalOffsets[i]) {
+            if (latestReadingOrderVerticalOffsets[i]) {
               const previousSeriesVolume = this.readingOrderSeriesVolumes[
-                _.findKey(this.readingOrderSeriesVolumes, { id: latestReadingOrderVerticalHorizontalOffsets[i].seriesVolumeId })
+                _.findKey(this.readingOrderSeriesVolumes, { id: latestReadingOrderVerticalOffsets[i].seriesVolumeId })
               ];
               if (!previousSeriesVolume) {
                 throw new Error(comic.seriesVolumeId + ' not found');
@@ -786,7 +780,7 @@ export class AppComponent implements OnInit {
        * Store a reference to the last horizontal position used
        * by the vertical position currently used by this series volume.
        */
-      latestReadingOrderVerticalHorizontalOffsets[currentReadingOrderSeriesVolume.verticalPosition] = {
+      latestReadingOrderVerticalOffsets[currentReadingOrderSeriesVolume.verticalPosition] = {
         offset: comic.containerStyles['left.px'],
         seriesVolumeId: currentReadingOrderSeriesVolume.id
       };
