@@ -55,6 +55,7 @@ describe('Reading Order Comics', () => {
     await firstRearrangedComic.click();
     await element(by.css('.button-next-collection')).click();
 
+    await element(by.css('div.collection-title')).isDisplayed();
     expect(
       await element(by.css('div.collection-title')).getText()
     ).toContain(
