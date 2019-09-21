@@ -53,8 +53,8 @@ describe('Reading Order Comics', () => {
     const firstRearrangedComic = element(by.css('.comic-container:nth-child(24)'));
     await scrollToX(firstRearrangedComic);
     await firstRearrangedComic.click();
+    await element(by.css('.button-next-collection')).isDisplayed();
     await element(by.css('.button-next-collection')).click();
-
     await element(by.css('div.collection-title')).isDisplayed();
     expect(
       await element(by.css('div.collection-title')).getText()
