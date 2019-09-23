@@ -930,6 +930,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Legacy - Sins of the Father',
+    '2009-3-11',
+    [
+      'XMenTheUnlikelySagaofXavierMagnetoandStanVol11',
+      'XMenOddMenOutVol11',
+    ]
+  ),
+  new Collection(
     'X-Men: Fatal Attractions',
     '2016-9-21',
     [
@@ -5285,6 +5293,14 @@ collections.push(
     'War of Kings: Road to War of Kings',
     '2009-6-3',
     [
+      'WarofKingsSagaVol11',
+      'SecretInvasionWarofKingsVol11',
+    ]
+  ),
+  new Collection(
+    'War of Kings: Road to War of Kings',
+    '2009-6-3',
+    [
       'XMenKingbreakerVol11',
       'XMenKingbreakerVol12',
       'XMenKingbreakerVol13',
@@ -5636,7 +5652,69 @@ collections.push(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
+      'DarkReignTheCabalVol11',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
       'DarkAvengersUncannyXMenUtopiaVol11',
+    ]
+  ),
+  new Collection(
+    'Avengers/X-Men: Utopia (Partial)',
+    '2011-12-15',
+    [
+      'DarkXMenTheBeginningVol11',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
+      'UncannyXMenVol1513',
+      'DarkAvengersVol17',
+    ]
+  ),
+  new Collection(
+    'Avengers/X-Men: Utopia (Partial)',
+    '2011-12-15',
+    [
+      'DarkXMenTheBeginningVol12',
+      'XMenLegacyVol1226',
+      'XMenLegacyVol1227',
+      'DarkXMenTheBeginningVol13',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
+      'UncannyXMenVol1514',
+      'DarkAvengersVol18',
+      'DarkAvengersUncannyXMenExodusVol11',
+    ]
+  ),
+  new Collection(
+    'Avengers/X-Men: Utopia (Partial)',
+    '2011-12-15',
+    [
+      'DarkXMenTheConfessionVol11',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
+      'DarkReignTheListXMenVol11',
+    ]
+  ),
+  new Collection(
+    'New Mutants Vol. 1: Return of Legion',
+    '2010-5-12',
+    [
+      'NewMutantsVol35',
     ]
   ),
   /**
@@ -5647,13 +5725,6 @@ collections.push(
     '2014-6-10',
     [
       'XFactorLaylaMillerVol11',
-    ]
-  ),
-  new Collection(
-    'New Mutants Vol. 1: Return of Legion',
-    '2010-5-12',
-    [
-      'NewMutantsVol35',
     ]
   ),
   new Collection(
@@ -5672,34 +5743,11 @@ collections.push(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
-      'UncannyXMenVol1513',
-      'DarkAvengersVol17',
-      'UncannyXMenVol1514',
-      'DarkAvengersVol18',
-      'DarkAvengersUncannyXMenExodusVol11',
       'UncannyXMenVol1515',
       'UncannyXMenVol1516',
       'UncannyXMenVol1517',
       'UncannyXMenVol1518',
       'UncannyXMenVol1519',
-      'DarkReignTheListXMenVol11',
-      'DarkReignTheCabalVol11',
-    ]
-  ),
-  new Collection(
-    'War of Kings: Road to War of Kings',
-    '2009-6-3',
-    [
-      'SecretInvasionWarofKingsVol11',
-      'WarofKingsSagaVol11',
-    ]
-  ),
-  new Collection(
-    'X-Men: Legacy - Sins of the Father',
-    '2009-3-11',
-    [
-      'XMenTheUnlikelySagaofXavierMagnetoandStanVol11',
-      'XMenOddMenOutVol11',
     ]
   ),
   new Collection(

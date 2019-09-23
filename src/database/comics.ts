@@ -399,6 +399,12 @@ addComicsInSeriesVolume('DarkAvengersUncannyXMenUtopiaVol1', [[1, '2009-6-24']])
 addComicsInSeriesVolume('DarkReignTheCabalVol1', [[1, '2009-4-29']]);
 addComicsInSeriesVolume('DarkReignTheListXMenVol1', [[1, '2009-9-23']]);
 addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']]);
+addComicsInSeriesVolume('DarkXMenTheBeginningVol1', [
+  [1, '2009-7-8'],
+  [2, '2009-7-29'],
+  [3, '2009-8-26'],
+]);
+addComicsInSeriesVolume('DarkXMenTheConfessionVol1', [[1, '2009-9-23']]);
 addComicsInSeriesVolume('DeadpoolVol1', [
   [1, '1994-8'],
   [2, '1994-9'],
@@ -2549,6 +2555,8 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [223, '2009-4-15'],
   [224, '2009-5-28'],
   [225, '2009-6-17'],
+  [226, '2009-7-8'],
+  [227, '2009-8-19'],
   [235, '2010-6'],
   [236, '2010-7'],
   [237, '2010-8'],
