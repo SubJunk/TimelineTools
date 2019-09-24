@@ -3,7 +3,7 @@
     <mat-icon>library_books</mat-icon>
     Toggle collections view
   </button>
-  <button mat-menu-item (click)="toggleDisplayOrder()" class="toggle-display-order-btn">
+  <button mat-menu-item (click)="toggleReadingOrder()" class="toggle-display-order-btn">
     <mat-icon [ngClass]="!isShowReadingOrder ? 'selected' : 'unselected'">scatter_plot</mat-icon>
     <mat-icon [ngClass]="isShowReadingOrder ? 'selected' : 'unselected'">linear_scale</mat-icon>
       <span [ngClass]="{unselected: !isShowReadingOrder}">View collection order</span>

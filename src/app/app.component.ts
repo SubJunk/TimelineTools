@@ -1351,7 +1351,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  toggleDisplayOrder = (isForceReadingOrder?: boolean) => {
+  toggleReadingOrder = (isForceReadingOrder?: boolean) => {
     // Toggle display order to change classes for collection order or reading order
     if (isForceReadingOrder) {
       this.isShowReadingOrder = true;
@@ -1457,7 +1457,7 @@ export class AppComponent implements OnInit {
     }
 
     if (searchParams.readingOrder) {
-      this.toggleDisplayOrder(true);
+      this.toggleReadingOrder(true);
     }
 
     /**
