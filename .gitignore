@@ -1,13 +1,3 @@
 /dist
 node_modules
 images/covers
-
-/3rdpartylicenses.txt
-/favicon.ico
-/goodreads.*.png
-/index.html
-/main-*.js
-/marvel-unlimited.*.png
-/polyfills*.js
-/runtime-es*.js
-/styles.*.css
