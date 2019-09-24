@@ -5717,14 +5717,15 @@ collections.push(
       'NewMutantsVol35',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
-    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
-    '2014-6-10',
+    'Dark X-Men',
+    '2010-11-24',
     [
-      'XFactorLaylaMillerVol11',
+      'DarkXMenVol11',
+      'DarkXMenVol12',
+      'DarkXMenVol13',
+      'DarkXMenVol14',
+      'DarkXMenVol15',
     ]
   ),
   new Collection(
@@ -5737,6 +5738,16 @@ collections.push(
       'XFactorVol343',
       'XFactorVol344',
       'XFactorVol345',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
+  new Collection(
+    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
+    '2014-6-10',
+    [
+      'XFactorLaylaMillerVol11',
     ]
   ),
   new Collection(
