@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, by, $, element, logging } from 'protractor';
+import { $, ExpectedConditions, browser, by, element, logging } from 'protractor';
 
 /**
  * Vertically scroll top-left corner of the given element (y-direction) into viewport.
@@ -14,6 +14,7 @@ function scrollToX(scrollToElement) {
 
 describe('Reading Order Comics', () => {
   let page: AppPage;
+  const EC = ExpectedConditions;
 
   beforeAll(() => {
     page = new AppPage();
@@ -34,12 +35,7 @@ describe('Reading Order Comics', () => {
     const firstRearrangedComic = element(by.css('.comic-container:nth-child(24)'));
     await scrollToX(firstRearrangedComic);
     await firstRearrangedComic.click();
-    await element(by.css('div.series')).isDisplayed();
-    expect(
-      await element(by.css('div.series')).getText()
-    ).toContain(
-      'X-Men: First Class #1'
-    );
+    await browser.wait(EC.textToBePresentInElement($('div.series'), 'X-Men: First Class #1'), 5000);
 
     expect(
       await element(by.css('.cover-thumbnail img')).getAttribute('src')
