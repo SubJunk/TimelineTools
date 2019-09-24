@@ -52,12 +52,7 @@ describe('Reading Order Comics', () => {
     await firstRearrangedComic.click();
     await element(by.css('.button-next-collection')).isEnabled();
     await element(by.css('.button-next-collection')).click();
-    await element(by.css('div.collection-title')).isDisplayed();
-    expect(
-      await element(by.css('div.collection-title')).getText()
-    ).toContain(
-      'X-Men: First Class - Mutant Mayhem'
-    );
+    await browser.wait(EC.textToBePresentInElement($('div.collection-title'), 'X-Men: First Class - Mutant Mayhem'), 5000);
   });
 
   afterEach(async () => {
