@@ -68,9 +68,11 @@ export class AppComponent implements OnInit {
   title = 'timeline-tools';
 
   comics: Array<Comic>;
+  comicsInReadingOrder: Array<Comic>;
   collections: Array<Collection>;
   series: Array<object>;
   seriesVolumes: Array<SeriesVolume>;
+  readingOrderSeriesVolumes: Array<SeriesVolume>;
   uniqueCollections: Array<Collection> = [];
   dates: Array<DateYear> = [];
 
@@ -89,6 +91,7 @@ export class AppComponent implements OnInit {
 
   globalVerticalPositionCounter = 0;
   seriesVolumeLabels: Array<SeriesVolumeLabel> = [];
+  readingOrderSeriesVolumeLabels: Array<SeriesVolumeLabel> = [];
 
   expandedComic: Comic;
   expandedComicId: string;
@@ -121,6 +124,7 @@ export class AppComponent implements OnInit {
   currentComicIndexInCollection: number;
   currentCollectionIndexInCollections: number;
   isShowCollections = false;
+  isShowReadingOrder = false;
   searchText = '';
   doSpeedProfile = false;
   isRunningAnimation = false;
@@ -341,8 +345,6 @@ export class AppComponent implements OnInit {
       return console.error('The expanded series volume could not be found', currentComic.seriesVolumeId);
     }
 
-    const expandedComic = _.find(this.comics, ['id', currentComic.id]);
-
     this.setGoodreadsCollectionId(this.expandedCollection);
 
     if (!expandedSeriesVolume.marvelId) {
@@ -350,7 +352,7 @@ export class AppComponent implements OnInit {
       expandedSeriesVolume.marvelId = await this.getMarvelSeriesVolumeId(expandedSeriesVolume);
     }
 
-    this.apiInteractions.setAPIComicData(expandedComic, expandedSeriesVolume.marvelId);
+    this.apiInteractions.setAPIComicData(currentComic, expandedSeriesVolume.marvelId);
   }
 
   /*
@@ -398,11 +400,11 @@ export class AppComponent implements OnInit {
         );
   }
 
-  private subtractLabelWidthsFromLeftPositions = () => {
+  private subtractLabelWidthsFromLeftPositions = (seriesVolumeLabels) => {
     let $jqLabel: JQuery<HTMLElement>;
     let labelWidthFromDom: number;
 
-    _.each(this.seriesVolumeLabels, (seriesVolumeLabel) => {
+    _.each(seriesVolumeLabels, (seriesVolumeLabel) => {
       // We only know the width after the initial render, so store it
       $jqLabel = $('#' + seriesVolumeLabel.id);
       if ($jqLabel.length > -1) {
@@ -422,6 +424,9 @@ export class AppComponent implements OnInit {
     this.collections   = Collections.getCollections();
     this.series        = SeriesVolumes.getSeries();
     this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
+    this.comicsInReadingOrder = [];
+    this.readingOrderSeriesVolumes = _.cloneDeep(this.seriesVolumes);
+
 
     // Sort the data by date
     this.comics = _.sortBy(this.comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
@@ -477,7 +482,7 @@ export class AppComponent implements OnInit {
 
     let previousYearMonthVolume: string;
     let globalHorizontalOffset = 0;
-    const latestVerticalHorizontalOffsets = {};
+    const latestVerticalOffsets = {};
     let newLabelNeeded = false;
     const windowWidth = window.innerWidth;
     _.each(this.comics, (comic) => {
@@ -526,7 +531,7 @@ export class AppComponent implements OnInit {
         comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
       } else {
         currentSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
-        comic.containerStyles['top.px'] = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
+        comic.containerStyles['top.px'] = currentSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
         this.globalVerticalPositionCounter++;
         newLabelNeeded = true;
       }
@@ -544,10 +549,10 @@ export class AppComponent implements OnInit {
        */
       const horizontalClearanceLimit = comic.containerStyles['left.px'] - windowWidth;
       if (
-        !latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] ||
+        !latestVerticalOffsets[currentSeriesVolume.verticalPosition] ||
         (
-          latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition].seriesVolumeId !== currentSeriesVolume.id &&
-          latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition].offset < horizontalClearanceLimit
+          latestVerticalOffsets[currentSeriesVolume.verticalPosition].seriesVolumeId !== currentSeriesVolume.id &&
+          latestVerticalOffsets[currentSeriesVolume.verticalPosition].offset < horizontalClearanceLimit
         )
       ) {
         /*
@@ -559,8 +564,8 @@ export class AppComponent implements OnInit {
          */
         for (let i = 1; i < this.globalVerticalPositionCounter; i++) {
           if (
-            !latestVerticalHorizontalOffsets[i] ||
-            latestVerticalHorizontalOffsets[i].offset < horizontalClearanceLimit
+            !latestVerticalOffsets[i] ||
+            latestVerticalOffsets[i].offset < horizontalClearanceLimit
           ) {
             currentSeriesVolume.verticalPosition = i;
             comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
@@ -571,9 +576,9 @@ export class AppComponent implements OnInit {
              * that position in the previous seriesVolume. This allows a new vertical
              * position to be generated for that previous seriesVolume if one appears.
              */
-            if (latestVerticalHorizontalOffsets[i]) {
+            if (latestVerticalOffsets[i]) {
               const previousSeriesVolume = this.seriesVolumes[
-                _.findKey(this.seriesVolumes, { id: latestVerticalHorizontalOffsets[i].seriesVolumeId })
+                _.findKey(this.seriesVolumes, { id: latestVerticalOffsets[i].seriesVolumeId })
               ];
               if (!previousSeriesVolume) {
                 throw new Error(comic.seriesVolumeId + ' not found');
@@ -591,7 +596,7 @@ export class AppComponent implements OnInit {
        * Store a reference to the last horizontal position used
        * by the vertical position currently used by this series volume.
        */
-      latestVerticalHorizontalOffsets[currentSeriesVolume.verticalPosition] = {
+      latestVerticalOffsets[currentSeriesVolume.verticalPosition] = {
         offset: comic.containerStyles['left.px'],
         seriesVolumeId: currentSeriesVolume.id
       };
@@ -666,7 +671,156 @@ export class AppComponent implements OnInit {
         }
         this.comics[comicIndex].styles.background = collectionColor.backgroundColor;
         this.comics[comicIndex].styles.color = collectionColor.textColor;
+
+        //  while we are here store the comics in reading order
+        this.comicsInReadingOrder.push(_.cloneDeep(this.comics[comicIndex]));
       });
+    });
+
+    //  reposition the reading order comics horizontally
+    let horizontalReadingOrderPosition = 0;
+    this.globalVerticalPositionCounter = 0;
+    const latestReadingOrderVerticalOffsets = {};
+    _.each(this.comicsInReadingOrder, (comic) => {
+      horizontalReadingOrderPosition += VISUAL_BLOCK_SIZE;
+      comic.containerStyles['left.px'] = horizontalReadingOrderPosition;
+
+      /*
+       * Look up the volume and series for this comic and
+       * throw errors for obvious problems before proceeding.
+       */
+      const currentReadingOrderSeriesVolume = this.readingOrderSeriesVolumes[
+        _.findKey(this.readingOrderSeriesVolumes, { id: comic.seriesVolumeId })
+      ];
+      if (!currentReadingOrderSeriesVolume) {
+        throw new Error(comic.seriesVolumeId + ' not found');
+      }
+      // this is a copy of the other positioning
+      /*
+       * Vertical positioning ensures that each seriesVolume gets
+       * its own row on the page. The exception is if a seriesVolume
+       * has not had any new issues for a whole page width, then we
+       * allow the next seriesVolume that is looking for a row, to slot in.
+       *
+       * This is a two-step process.
+       * First, in this block, we either use the current position for the
+       * seriesVolume or we use the globalVerticalPositionCounter to go onto
+       * the last row.
+       * Step two documented below.
+       */
+      const isVerticalPositionAlreadyDefined = typeof currentReadingOrderSeriesVolume.verticalPosition !== 'undefined';
+      if (isVerticalPositionAlreadyDefined) {
+        comic.containerStyles['top.px'] = currentReadingOrderSeriesVolume.verticalPosition * VISUAL_BLOCK_SIZE;
+      } else {
+        currentReadingOrderSeriesVolume.verticalPosition = this.globalVerticalPositionCounter;
+        comic.containerStyles['top.px'] = this.globalVerticalPositionCounter * VISUAL_BLOCK_SIZE;
+        this.globalVerticalPositionCounter++;
+        newLabelNeeded = true;
+      }
+
+      /*
+       * Step two of vertical positioning:
+       * At this point, the seriesVolume has a row to use, but in this
+       * block we check if there is a row further up the page to slot into
+       * so we take up less vertical space.
+       */
+
+      /*
+       * The maximum horizontal offset allowed until we recycle the
+       * vertical position.
+       */
+      const currentVerticalOffset = currentReadingOrderSeriesVolume.verticalPosition;
+      const horizontalClearanceLimit = comic.containerStyles['left.px'] - windowWidth;
+      const isVerticalPositionAlreadyUsed = Boolean(latestReadingOrderVerticalOffsets[currentVerticalOffset]);
+      if (
+        !isVerticalPositionAlreadyUsed ||
+        (
+          latestReadingOrderVerticalOffsets[currentVerticalOffset].seriesVolumeId !== currentReadingOrderSeriesVolume.id &&
+          latestReadingOrderVerticalOffsets[currentVerticalOffset].offset < horizontalClearanceLimit
+        )
+      ) {
+
+        /*
+         * It has been a while (if ever) since the last issue of this
+         * series appeared in the timeline so let's put this one on a
+         * higher row if possible.
+         *
+         * Counter starts at 1 to keep Uncanny always at the top.
+         */
+        for (let i = 0; i < this.globalVerticalPositionCounter; i++) {
+          if (
+            !latestReadingOrderVerticalOffsets[i] ||
+            latestReadingOrderVerticalOffsets[i].offset < horizontalClearanceLimit
+          ) {
+            currentReadingOrderSeriesVolume.verticalPosition = i;
+            comic.containerStyles['top.px'] = i * VISUAL_BLOCK_SIZE;
+            /*
+             * We are about to insert this seriesVolume into a vertical position
+             * that has already been used before, so we remove the reference to
+             * that position in the previous seriesVolume. This allows a new vertical
+             * position to be generated for that previous seriesVolume if one appears.
+             */
+            if (latestReadingOrderVerticalOffsets[i]) {
+              const previousSeriesVolume = this.readingOrderSeriesVolumes[
+                _.findKey(this.readingOrderSeriesVolumes, { id: latestReadingOrderVerticalOffsets[i].seriesVolumeId })
+              ];
+              if (!previousSeriesVolume) {
+                throw new Error(comic.seriesVolumeId + ' not found');
+              }
+              previousSeriesVolume.verticalPosition = null;
+            }
+            newLabelNeeded = true;
+
+            break;
+          }
+        }
+      }
+
+      /*
+       * Store a reference to the last horizontal position used
+       * by the vertical position currently used by this series volume.
+       */
+      latestReadingOrderVerticalOffsets[currentReadingOrderSeriesVolume.verticalPosition] = {
+        offset: comic.containerStyles['left.px'],
+        seriesVolumeId: currentReadingOrderSeriesVolume.id
+      };
+
+      /*
+       * Match the width of the page to the width of the content, which
+       * includes one horizontal increment (the width of the current
+       * comic thumbnail) and 2 body padding units to make up for the
+       * left and right padding of the page.
+       */
+      this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
+
+      if (newLabelNeeded) {
+        this.readingOrderSeriesVolumeLabels.push({
+          text: currentReadingOrderSeriesVolume.titleWithVolume,
+          id: 'label-' + this.readingOrderSeriesVolumeLabels.length,
+          containerStyles: {
+            'top.px': comic.containerStyles['top.px'],
+            'left.px': comic.containerStyles['left.px'],
+            'width.px': -BODY_PADDING,
+          },
+        });
+
+        newLabelNeeded = false;
+      } else {
+        const readingOrderSeriesVolumeLabelIndex = _.findLastIndex(this.readingOrderSeriesVolumeLabels, (seriesVolumeLabel) => {
+          return seriesVolumeLabel.text === currentReadingOrderSeriesVolume.titleWithVolume;
+        });
+
+        if (readingOrderSeriesVolumeLabelIndex === -1) {
+          throw new Error(currentReadingOrderSeriesVolume.titleWithVolume + ' not found in the readingOrderSeriesVolumeLabelIndex');
+        }
+
+        const readingOrderLabelContainerLeft =
+          this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['left.px'];
+        const readingOrderComicContainerLeft = comic.containerStyles['left.px'];
+        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] =
+         readingOrderComicContainerLeft - readingOrderLabelContainerLeft;
+        this.readingOrderSeriesVolumeLabels[readingOrderSeriesVolumeLabelIndex].containerStyles['width.px'] -= BODY_PADDING;
+      }
     });
 
     /**
@@ -805,6 +959,14 @@ export class AppComponent implements OnInit {
       });
     });
 
+      // do the same for reading order comics
+    _.each(this.comicsInReadingOrder, (comic) => {
+      // Get the collection containing this comic
+      comic.collection = _.find(this.collections, (collection) => {
+        return collection.comicIds.includes(comic.id);
+      });
+    });
+
     setTimeout(() => {
       // Make room for the farthest-bottom expanded panel
       this.bodyStyles['height.px'] = $(document).height() + $(window).height();
@@ -815,7 +977,7 @@ export class AppComponent implements OnInit {
 
       this.useGetParameters();
 
-      this.subtractLabelWidthsFromLeftPositions();
+      this.subtractLabelWidthsFromLeftPositions(this.seriesVolumeLabels);
     });
   }
 
@@ -902,6 +1064,24 @@ export class AppComponent implements OnInit {
 
     // Lazy-load thumbnails that aren't in the viewport
     _.each(this.comics, (comic) => {
+      // skip this calculation if the comic has been previously displayed
+      if (comic.visible === true) {
+        return;
+      }
+
+      isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastRight  = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
+      isComicScrolledPastTop    = Boolean(scrollPositionTopWithOffset > (comic.containerStyles['top.px'] + VISUAL_BLOCK_SIZE));
+      isComicScrolledPastBottom = Boolean(scrollPositionBottomWithOffset < comic.containerStyles['top.px']);
+
+      if (!isComicScrolledPastLeft && !isComicScrolledPastRight && !isComicScrolledPastTop && !isComicScrolledPastBottom) {
+        comic.visible = true;
+      }
+    });
+
+
+    // do the same for reading order comics
+    _.each(this.comicsInReadingOrder, (comic) => {
       // skip this calculation if the comic has been previously displayed
       if (comic.visible === true) {
         return;
@@ -1097,7 +1277,12 @@ export class AppComponent implements OnInit {
       return setTimeout(() => {});
     }
 
-    const expandedComic = _.find(this.comics, ['id', selectedComicId]);
+    let expandedComic: Comic;
+    if (this.isShowReadingOrder) {
+      expandedComic = _.find(this.comicsInReadingOrder, ['id', selectedComicId]);
+    } else {
+      expandedComic = _.find(this.comics, ['id', selectedComicId]);
+    }
     if (!expandedComic) {
       return console.error('The comic could not be found', selectedComicId);
     }
@@ -1166,6 +1351,28 @@ export class AppComponent implements OnInit {
     });
   }
 
+  toggleReadingOrder = (isForceReadingOrder?: boolean) => {
+    // Toggle display order to change classes for collection order or reading order
+    if (isForceReadingOrder) {
+      this.isShowReadingOrder = true;
+    } else {
+      this.isShowReadingOrder = !this.isShowReadingOrder;
+    }
+
+    // Set whether to show collections in the URL
+    const urlTree = this.router.createUrlTree([], {
+      queryParams: { readingOrder: this.isShowReadingOrder === true ? 'yes' : '' },
+      queryParamsHandling: 'merge',
+      preserveFragment: true });
+    this.router.navigateByUrl(urlTree);
+
+    if (this.isShowReadingOrder) {
+      setTimeout(() => {
+        this.subtractLabelWidthsFromLeftPositions(this.readingOrderSeriesVolumeLabels);
+      });
+    }
+  }
+
   /**
    * Handles manual actions that need to happen after searchText has been
    * set.
@@ -1220,7 +1427,12 @@ export class AppComponent implements OnInit {
   }
 
   public scrollToComic = (comicId: string) => {
-    const comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
+    let comicFromId: Comic;
+    if (this.isShowReadingOrder) {
+      comicFromId = this.comicsInReadingOrder[_.findKey(this.comicsInReadingOrder, { id: comicId })];
+    } else {
+      comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
+    }
     this.toggleExpandComic(comicFromId, true);
   }
 
@@ -1242,6 +1454,10 @@ export class AppComponent implements OnInit {
 
     if (searchParams.showCollections) {
       this.toggleShowCollections('1');
+    }
+
+    if (searchParams.readingOrder) {
+      this.toggleReadingOrder(true);
     }
 
     /**
