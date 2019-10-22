@@ -28,7 +28,8 @@ describe('Reading Order Comics', () => {
     'should open the menu and change to reading order\n' +
     'should arrange the comics in reading order\n' +
     'should open the expanded panel\n' +
-    'should assign the correct thumbnail',
+    'should assign the correct thumbnail\n' +
+    'collections should still be correctly ordered',
   async () => {
     await element(by.css('.floating-menu')).click();
     await browser.executeScript('$(".toggle-display-order-btn").click();');
@@ -42,14 +43,7 @@ describe('Reading Order Comics', () => {
     ).toContain(
       'X-Men_Vol_1_1'
     );
-  });
 
-  it('collections should still be correctly ordered', async () => {
-    await element(by.css('.floating-menu')).click();
-    await browser.executeScript('$(".toggle-display-order-btn").click();');
-    const firstRearrangedComic = element(by.css('.comic-container:nth-child(24)'));
-    await scrollToX(firstRearrangedComic);
-    await firstRearrangedComic.click();
     await element(by.css('.button-next-collection')).isEnabled();
     await element(by.css('.button-next-collection')).click();
     await browser.wait(EC.textToBePresentInElement($('div.collection-title'), 'X-Men: First Class - Mutant Mayhem'), 5000);

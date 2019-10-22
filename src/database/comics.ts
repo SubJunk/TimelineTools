@@ -2022,6 +2022,18 @@ addComicsInSeriesVolume('XFactorVol3', [
   [43, '2009-5-13'],
   [44, '2009-6-10'],
   [45, '2009-6-24'],
+  [46, '2009-7-15'],
+  [47, '2009-8-19'],
+  [48, '2009-9-16'],
+  [49, '2009-9-30'],
+  [50, '2009-10-28'],
+  [200, '2009-12-16'],
+  [201, '2010-1-27'],
+  [202, '2010-2-24'],
+  [203, '2010-3-24'],
+  [204, '2010-4-21'],
+  [205, '2010-5-19'],
+  [206, '2010-6-23'],
 ]);
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],
@@ -2413,6 +2425,7 @@ addComicsInSeriesVolume('XMenFirstClassVol2', [
   [16, '2008-9-17'],
 ]);
 addComicsInSeriesVolume('XMenFutureHistoryTheMessiahWarSourcebookVol1', [[1, '2009-5-28']]);
+addComicsInSeriesVolume('XMenHopeVol1', [[1, '2010-3-3']]);
 addComicsInSeriesVolume('XMenThe198Vol1', [
   [1, '2006-1-11'],
   [2, '2006-2-8'],
@@ -2530,6 +2543,11 @@ addComicsInSeriesVolume('XMenDividedWeStandVol1', [
 addComicsInSeriesVolume('XMenDrDoomAnnualVol1', [[1, '1998-6']]);
 addComicsInSeriesVolume('XMenEndangeredSpeciesVol1', [[1, '2007-6-20']]);
 addComicsInSeriesVolume('XMenFreeComicBookDayVol2008', [[1, '2008-4-16']]);
+addComicsInSeriesVolume('XMenHellboundVol1', [
+  [1, '2010-5-5'],
+  [2, '2010-6-9'],
+  [3, '2010-7-14'],
+]);
 addComicsInSeriesVolume('XMenKingbreakerVol1', [
   [1, '2008-12-17'],
   [2, '2009-1-21'],
@@ -2613,6 +2631,7 @@ addComicsInSeriesVolume('XMenSecondComingVol1', [
   [1, '2010-5', ['Second Coming, Chapter One']],
   [2, '2010-9', ['Second Coming Chapter XIV']],
 ]);
+addComicsInSeriesVolume('XMenSecondComingRevelationsBlindScienceVol1', [[1, '2010-5-26']]);
 addComicsInSeriesVolume('XMenSearchforCyclopsVol1', [
   [1, '2000-12'],
   [2, '2001-1'],

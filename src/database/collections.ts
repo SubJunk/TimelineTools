@@ -5740,14 +5740,49 @@ collections.push(
       'XFactorVol345',
     ]
   ),
+  new Collection(
+    'X-Factor Vol. 8: Overtime',
+    '2010-5-5',
+    [
+      'XFactorVol346',
+      'XFactorVol347',
+      'XFactorVol348',
+      'XFactorVol349',
+      'XFactorVol350',
+      'XFactorLaylaMillerVol11',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Invisible Woman Has Vanished',
+    '2010-6-2',
+    [
+      'XFactorVol3200',
+      'XFactorVol3201',
+      'XFactorVol3202',
+      'XFactorVol3203',
+    ]
+  ),
+  new Collection(
+    'X-Men: Second Coming Revelations',
+    '2011-7-6',
+    [
+      'XFactorVol3204',
+      'XFactorVol3205',
+      'XFactorVol3206',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
   new Collection(
-    'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
-    '2014-6-10',
+    'X-Men: Second Coming Revelations',
+    '2010-6-2',
     [
-      'XFactorLaylaMillerVol11',
+      'XMenHopeVol11',
+      'XMenSecondComingRevelationsBlindScienceVol11',
+      'XMenHellboundVol11',
+      'XMenHellboundVol12',
+      'XMenHellboundVol13',
     ]
   ),
   new Collection(
