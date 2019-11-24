@@ -156,6 +156,7 @@ series.push(
   new Series('Origin', {1: 2001}),
   new Series('Ororo: Before the Storm', {1: 2005}),
   new Series('Power Pack', {1: 1984}),
+  new Series('Psylocke', {1: 2009}),
   new Series('Punisher', {3: 1995}),
   new Series('Rogue', {1: 1995, 3: 2004}),
   new Series('Sabretooth', {1: 1993, 2: 2004}),

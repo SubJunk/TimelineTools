@@ -5771,6 +5771,25 @@ collections.push(
       'XFactorVol3206',
     ]
   ),
+  new Collection(
+    'X-Men: Psylocke',
+    '2010-6-9',
+    [
+      'PsylockeVol11',
+      'PsylockeVol12',
+      'PsylockeVol13',
+      'PsylockeVol14',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
+      'UncannyXMenVol1515',
+      'UncannyXMenVol1516',
+      'UncannyXMenVol1517',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -5789,9 +5808,6 @@ collections.push(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
-      'UncannyXMenVol1515',
-      'UncannyXMenVol1516',
-      'UncannyXMenVol1517',
       'UncannyXMenVol1518',
       'UncannyXMenVol1519',
     ]

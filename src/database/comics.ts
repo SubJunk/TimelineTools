@@ -1063,6 +1063,12 @@ addComicsInSeriesVolume('PowerPackVol1', [
   [27, '1986-12'],
   [35, '1988-2'],
 ]);
+addComicsInSeriesVolume('PsylockeVol1', [
+  [1, '2009-11-4'],
+  [2, '2009-12-3'],
+  [3, '2010-1-13'],
+  [4, '2010-2-17'],
+]);
 addComicsInSeriesVolume('PunisherVol3', [[11, '1996-9']]);
 addComicsInSeriesVolume('RogueVol1', [
   [1, '1995-1'],
