@@ -5711,6 +5711,14 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Vol. 3: X Marks the Spot',
+    '2010-5-19',
+    [
+      'DeadpoolVol313',
+      'DeadpoolVol314',
+    ]
+  ),
+  new Collection(
     'New Mutants Vol. 1: Return of Legion',
     '2010-5-12',
     [
@@ -5782,12 +5790,80 @@ collections.push(
     ]
   ),
   new Collection(
+    'Deadpool Vol. 3: X Marks the Spot',
+    '2010-5-19',
+    [
+      'DeadpoolVol315',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Emplate',
+    '2010-7-28',
+    [
+      'XMenLegacyAnnualVol11',
+    ]
+  ),
+  new Collection(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
       'UncannyXMenVol1515',
+    ]
+  ),
+  new Collection(
+    'Deadpool Vol. 3: X Marks the Spot',
+    '2010-5-19',
+    [
+      'DeadpoolVol316',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
       'UncannyXMenVol1516',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Emplate',
+    '2010-7-28',
+    [
+      'XMenLegacyVol1228',
+    ]
+  ),
+  new Collection(
+    'Deadpool Vol. 3: X Marks the Spot',
+    '2010-5-19',
+    [
+      'DeadpoolVol317',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Emplate',
+    '2010-7-28',
+    [
+      'XMenLegacyVol1229',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
       'UncannyXMenVol1517',
+    ]
+  ),
+  new Collection(
+    'Deadpool Vol. 3: X Marks the Spot',
+    '2010-5-19',
+    [
+      'DeadpoolVol318',
+    ]
+  ),
+  new Collection(
+    'X-Men: Legacy - Emplate',
+    '2010-7-28',
+    [
+      'XMenLegacyVol1230',
     ]
   ),
   /**

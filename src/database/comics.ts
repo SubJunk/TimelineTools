@@ -474,6 +474,12 @@ addComicsInSeriesVolume('DeadpoolVol2', [
 addComicsInSeriesVolume('DeadpoolVol3', [
   [8, '2009-3-4'],
   [9, '2009-4-1'],
+  [13, '2009-8-12'],
+  [14, '2009-8-26'],
+  [15, '2009-9-2'],
+  [16, '2009-10-7'],
+  [17, '2009-11-11'],
+  [18, '2009-12-9'],
 ]);
 addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']]);
 addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']]);
@@ -2567,6 +2573,7 @@ addComicsInSeriesVolume('XMenKittyPrydeShadowFlameVol1', [
   [4, '2005-9-28'],
   [5, '2005-11-30'],
 ]);
+addComicsInSeriesVolume('XMenLegacyAnnualVol1', [[1, '2009-9-16']]);
 addComicsInSeriesVolume('XMenLegacyVol1', [
   [208, '2008-2-27'],
   [209, '2008-3-26'],
@@ -2588,6 +2595,9 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [225, '2009-6-17'],
   [226, '2009-7-8'],
   [227, '2009-8-19'],
+  [228, '2009-10-21'],
+  [229, '2009-11-18'],
+  [230, '2009-12-16'],
   [235, '2010-6'],
   [236, '2010-7'],
   [237, '2010-8'],
