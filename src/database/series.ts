@@ -239,6 +239,7 @@ series.push(
   new Series('X-Men: Hope', {1: 2010}),
   new Series('X-Men: Kingbreaker', {1: 2008}),
   new Series('X-Men: Kitty Pryde- Shadow & Flame', {1: 2005}),
+  new Series('X-Men: Legacy Annual', {1: 2009}),
   new Series('X-Men: Magneto Testament', {1: 2008}),
   new Series('X-Men: Manifest Destiny', {1: 2008}),
   new Series('X-Men: Manifest Destiny - Nightcrawler', {1: 2009}),
