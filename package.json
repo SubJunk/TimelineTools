@@ -39,7 +39,7 @@
     "stream": "^0.0.2",
     "timers": "^0.1.1",
     "ts-md5": "^1.2.7",
-    "zone.js": "^0.10.2"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.20",
