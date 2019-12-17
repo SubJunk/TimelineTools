@@ -17,7 +17,6 @@ import { FilterPipe } from './filter.pipe';
 import { LimitToPipe } from './limitTo.pipe';
 import { ApiInteractions } from './api-interactions';
 
-
 @NgModule({
   declarations: [
     AppComponent,
