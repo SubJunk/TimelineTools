@@ -5771,15 +5771,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Second Coming Revelations',
-    '2011-7-6',
-    [
-      'XFactorVol3204',
-      'XFactorVol3205',
-      'XFactorVol3206',
-    ]
-  ),
-  new Collection(
     'X-Men: Psylocke',
     '2010-6-9',
     [
@@ -5871,8 +5862,11 @@ collections.push(
    */
   new Collection(
     'X-Men: Second Coming Revelations',
-    '2010-6-2',
+    '2011-7-6',
     [
+      'XFactorVol3204',
+      'XFactorVol3205',
+      'XFactorVol3206',
       'XMenHopeVol11',
       'XMenSecondComingRevelationsBlindScienceVol11',
       'XMenHellboundVol11',

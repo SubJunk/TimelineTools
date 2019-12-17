@@ -8,8 +8,8 @@ describe('Search', () => {
     page = new AppPage();
   });
 
-  beforeEach(() => {
-    page.navigateTo();
+  beforeEach(async () => {
+    await page.navigateTo();
   });
 
   it(
