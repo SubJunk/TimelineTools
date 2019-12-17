@@ -8,8 +8,8 @@ describe('Labels', () => {
     page = new AppPage();
   });
 
-  beforeEach(() => {
-    page.navigateTo();
+  beforeEach(async () => {
+    await page.navigateTo();
   });
 
   it('should create a series label with the correct value', async () => {
