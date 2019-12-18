@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import { SeriesVolume, Comic, MarvelAPISeriesResponse } from './models';
 import { HttpParams, HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 const MARVEL_API_BASE_URL = 'https://gateway.marvel.com/v1/public/';
 const MARVEL_API_KEY_PUBLIC = '46a863fa31f601aacb87dae9cb8f7c45';
@@ -10,6 +11,7 @@ const GOODREADS_API_KEY_PUBLIC = 'ruoM3jpamOVNpjOnfiAuYA';
 
 const CORS_ANYWHERE_URL = 'https://cors-anywhere.herokuapp.com/';
 
+@Injectable()
 export class ApiInteractions {
   constructor(
     public http: HttpClient,

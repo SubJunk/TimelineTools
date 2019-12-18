@@ -1,10 +1,11 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import { Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router, UrlTree } from '@angular/router';
 import { parseString } from 'xml2js';
 
+import { InfoModalComponent } from './info-modal/info-modal.component';
 import { ApiInteractions } from './api-interactions';
 import { Collections } from './../database/collections';
 import { Comics } from './../database/comics';
@@ -21,8 +22,6 @@ import {
   SeriesVolume,
   SeriesVolumeLabel,
 } from './models';
-import { ActivatedRoute, Router, UrlTree } from '@angular/router';
-import { InfoModalComponent } from './info-modal/info-modal.component';
 
 // The padding applied to the left, right, and bottom of the body
 const BODY_PADDING_TOP = 80;
@@ -34,7 +33,6 @@ const COLLECTIONS_VIEW_COVER_WIDTH = 250;
 
 const ANIMATION_DURATION = 400;
 const ONE_YEAR_IN_MONTHS = 12;
-const ONE_SECOND_IN_MILLISECONDS = 1000;
 
 // Colour constants used in multiple functions
 const LIGHTNESS_MIN = 30; // Lightness can be in the range 0-100
@@ -60,7 +58,6 @@ export class AppComponent implements OnInit {
     private apiInteractions: ApiInteractions,
     private changeDetector: ChangeDetectorRef,
     public dialog: MatDialog,
-    private http: HttpClient,
     private route: ActivatedRoute,
     private router: Router,
   ) { }
