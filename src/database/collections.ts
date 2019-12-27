@@ -5719,13 +5719,6 @@ collections.push(
     ]
   ),
   new Collection(
-    'New Mutants Vol. 1: Return of Legion',
-    '2010-5-12',
-    [
-      'NewMutantsVol35',
-    ]
-  ),
-  new Collection(
     'Dark X-Men',
     '2010-11-24',
     [
@@ -5841,6 +5834,14 @@ collections.push(
     '2013-3-5',
     [
       'UncannyXMenVol1517',
+      'UncannyXMenVol1518',
+    ]
+  ),
+  new Collection(
+    'X-Men: Nation X (Partial)',
+    '2010-10-27',
+    [
+      'NationXVol11',
     ]
   ),
   new Collection(
@@ -5857,9 +5858,69 @@ collections.push(
       'XMenLegacyVol1230',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
+    '2013-3-5',
+    [
+      'UncannyXMenVol1519',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Second Coming (Partial)',
+    '2010-9-1',
+    [
+      'NationXXFactorVol11',
+    ]
+  ),
+  new Collection(
+    'X-Men: Nation X (Partial)',
+    '2010-10-27',
+    [
+      'NationXVol12',
+      'UncannyXMenVol1520',
+      'UncannyXMenVol1521',
+      'NationXVol13',
+      'NationXVol14',
+      'UncannyXMenVol1522',
+    ]
+  ),
+  new Collection(
+    'New Mutants Vol. 1: Return of Legion',
+    '2010-5-12',
+    [
+      'NewMutantsVol35',
+    ]
+  ),
+  new Collection(
+    'X-Necrosha (Partial)',
+    '2010-12-29',
+    [
+      'XNecroshaTheGatheringVol11',
+      'XNecroshaVol11',
+      'NewMutantsVol36',
+      'XForceVol321',
+      'NewMutantsVol37',
+      'XForceAnnualVol21',
+      'XForceVol322',
+      'NewMutantsVol38',
+      'XForceVol323',
+      'XMenLegacyVol1231',
+      'XMenLegacyVol1232',
+      'XForceVol324',
+      'XMenLegacyVol1233',
+      'XForceVol325',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
+  new Collection(
+    'X-Necrosha (Partial)',
+    '2010-12-29',
+    [
+      'XMenLegacyVol1234',
+    ]
+  ),
   new Collection(
     'X-Men: Second Coming Revelations',
     '2011-7-6',
@@ -5872,14 +5933,6 @@ collections.push(
       'XMenHellboundVol11',
       'XMenHellboundVol12',
       'XMenHellboundVol13',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
-    '2013-3-5',
-    [
-      'UncannyXMenVol1518',
-      'UncannyXMenVol1519',
     ]
   ),
   new Collection(
