@@ -808,6 +808,13 @@ addComicsInSeriesVolume('MystiqueVol1', [
   [23, '2005-1-26'],
   [24, '2005-2-23'],
 ]);
+addComicsInSeriesVolume('NationXVol1', [
+  [1, '2009-12-9'],
+  [2, '2010-1-13'],
+  [3, '2010-2-24'],
+  [4, '2010-3-17'],
+]);
+addComicsInSeriesVolume('NationXXFactorVol1', [[1, '2010-1-6']]);
 addComicsInSeriesVolume('NewExcaliburVol1', [
   [1, '2005-11-9'],
   [2, '2005-12-7'],
@@ -900,6 +907,10 @@ addComicsInSeriesVolume('NewMutantsVol3', [
   [3, '2009-7-15'],
   [4, '2009-8-26'],
   [5, '2009-9-30'],
+  [6, '2009-10-28'],
+  [7, '2009-11-25'],
+  [8, '2009-12-23'],
+  // review after here
   [12, '2010-6'],
   [13, '2010-7'],
   [14, '2010-8'],
@@ -1657,6 +1668,9 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [517, '2009-11-25'],
   [518, '2009-12-3'],
   [519, '2009-12-23'],
+  [520, '2010-1-20'],
+  [521, '2010-2-17'],
+  [522, '2010-3-24'],
   /**
    * Complete until here
    */
@@ -2164,6 +2178,12 @@ addComicsInSeriesVolume('XForceVol3', [
   [18, '2009-8-26'],
   [19, '2009-9-30'],
   [20, '2009-10-28'],
+  [21, '2009-11-11'],
+  [22, '2009-12-16'],
+  [23, '2010-1-27'],
+  [24, '2010-2-24'],
+  [25, '2010-3-31'],
+  // review after here
   [26, '2010-6', ['Second Coming (Chapter Five)']],
   [27, '2010-7', ['Second Coming (Chapter Nine)']],
   [28, '2010-9', ['Second Coming, Chapter 13']],
@@ -2173,6 +2193,7 @@ addComicsInSeriesVolume('XForceAnnualVol1', [
   [2, '1993-10'],
   [3, '1994-10'],
 ]);
+addComicsInSeriesVolume('XForceAnnualVol2', [[1, '2009-12-3']]);
 addComicsInSeriesVolume('XForceCableAnnualVol1', [[1, '1995-12']]);
 addComicsInSeriesVolume('XForceCableMessiahWarPrologueVol1', [[1, '2009-3-25']]);
 addComicsInSeriesVolume('XForceSexandViolenceVol1', [
@@ -2598,6 +2619,10 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [228, '2009-10-21'],
   [229, '2009-11-18'],
   [230, '2009-12-16'],
+  [231, '2009-12-23'],
+  [232, '2010-1-27'],
+  [233, '2010-2-24'],
+  [234, '2010-3-17'],
   [235, '2010-6'],
   [236, '2010-7'],
   [237, '2010-8'],
@@ -2619,6 +2644,8 @@ addComicsInSeriesVolume('XMenManifestDestinyVol1', [
 ]);
 addComicsInSeriesVolume('XMenMessiahComplexVol1', [[1, '2007-10-31']]);
 addComicsInSeriesVolume('XMenMessiahComplexMutantFilesVol1', [[1, '2007-12-28']]);
+addComicsInSeriesVolume('XNecroshaVol1', [[1, '2009-10-28']]);
+addComicsInSeriesVolume('XNecroshaTheGatheringVol1', [[1, '2009-12-9']]);
 addComicsInSeriesVolume('XMenOddMenOutVol1', [[1, '2008-7-30']]);
 addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']]);
 addComicsInSeriesVolume('XMenOriginalSinVol1', [[1, '2008-10-8']]);

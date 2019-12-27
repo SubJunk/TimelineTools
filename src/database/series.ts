@@ -137,6 +137,8 @@ series.push(
   new Series('Marvel Team-Up', {1: 1972}),
   new Series('Mystic Arcana', {1: 2007}),
   new Series('Mystique', {1: 2003}),
+  new Series('Nation X', {1: 2009}),
+  new Series('Nation X: X-Factor', {1: 2010}),
   new Series('New Excalibur', {1: 2005}),
   new Series('New Exiles', {1: 2008}),
   new Series('New Mutants', {1: 1983, 2: 2003, 3: 2009}),
@@ -203,7 +205,7 @@ series.push(
   new Series('X-Force/Cable Annual', {1: 1995}),
   new Series('X-Force/Cable: Messiah War Prologue', {1: 2009}),
   new Series('X-Force: Sex and Violence', {1: 2010}),
-  new Series('X-Force Annual', {1: 1992}),
+  new Series('X-Force Annual', {1: 1992, 2: 2009}),
   new Series('X-Infernus', {1: 2008}),
   new Series('X-Infernus Saga', {1: 2008}),
   new Series('X-Man', {1: 1995}),
@@ -271,6 +273,8 @@ series.push(
   new Series('X-Treme X-Men: X-Pose', {1: 2003}),
   new Series('X-Universe', {1: 1995}),
   new Series('X-Terminators', {1: 1988}),
+  new Series('X Necrosha', {1: 2009}),
+  new Series('X Necrosha: The Gathering', {1: 2009}),
   new Series('Xavier Institute Alumni Yearbook', {1: 1996}),
   new Series('Young X-Men', {1: 2008})
 );
