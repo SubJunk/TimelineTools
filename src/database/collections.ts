@@ -1,7 +1,7 @@
 const collections = [];
 
 /**
- * The prototype for collections.
+ * The prototype for collections
  *
  * @param title         the title of the collection
  * @param datePublished a string to be converted to a date object
