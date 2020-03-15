@@ -123,6 +123,7 @@
   },
   "defaultProject": "timeline-tools",
   "cli": {
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "analytics": "4548fde3-7ce7-43ba-8fd4-4cc0bf8c4630"
   }
 }
