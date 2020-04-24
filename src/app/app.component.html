@@ -17,7 +17,7 @@
 <button mat-fab [matMenuTriggerFor]="menu" class="floating-menu">
   <mat-icon>more_vert</mat-icon>
 </button>
-<ul class="collections" *ngIf="isShowCollections">
+<ul class="collections" *ngIf="uniqueCollections && isShowCollections">
   <li *ngFor="let collection of uniqueCollections" class="collection-container" [ngClass]="{expanded: collection.id === expandedCollectionId}">
     <div class="comic-collection" [ngStyle]="collection.styles" *ngIf="collection.title !== 'Uncollected'">
       <div class="panel-left">
@@ -70,7 +70,7 @@
     </li>
   </ul>
 </div>
-<ul class="years" *ngIf=!isShowReadingOrder>
+<ul class="years" *ngIf="dates && !isShowReadingOrder">
   <li *ngFor="let year of dates" class="year"> <!-- track by year -->
     <span>{{year.year}}</span>
     <ul>
@@ -78,7 +78,7 @@
     </ul>
   </li>
 </ul>
-<ol class="comics-container">
+<ol class="comics-container" *ngIf="comics">
   <li *ngFor="let comic of (isShowReadingOrder ? comicsInReadingOrder : comics); trackBy: trackByItemId" class="comic-container" [ngStyle]="comic.containerStyles">
     <div class="scroll-anchor" id="scroll-anchor-{{comic.id}}"></div>
     <div class="popover"><div>#{{comic.issue}}</div></div>
@@ -97,7 +97,7 @@
     </div>
   </li>
 </ol>
-<ol class="labels-container">
+<ol class="labels-container" *ngIf="seriesVolumeLabels">
   <li *ngFor="let label of (isShowReadingOrder ? readingOrderSeriesVolumeLabels : seriesVolumeLabels)" [ngStyle]="label.containerStyles" class="series-volume-label-container">
     <div class="series-volume-label" id="{{label.id}}">{{label.text}}</div>
   </li>
