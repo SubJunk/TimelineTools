@@ -65,7 +65,7 @@
     "postcss-less": "^3.1.4",
     "protractor": "^5.4.3",
     "stylelint": "^13.2.1",
-    "ts-node": "^8.6.2",
+    "ts-node": "^8.9.0",
     "tsconfig-paths": "^3.9.0",
     "tslint": "5",
     "typescript": "3.7"
