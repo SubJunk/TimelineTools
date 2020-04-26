@@ -1,9 +1,8 @@
 import { AppPage } from './app.po';
-import { $, ExpectedConditions, browser, by, element, logging } from 'protractor';
+import { browser, by, element, logging } from 'protractor';
 
 describe('Comics', () => {
   let page: AppPage;
-  const EC = ExpectedConditions;
 
   beforeAll(() => {
     page = new AppPage();
@@ -12,7 +11,6 @@ describe('Comics', () => {
   beforeEach(async () => {
     await page.navigateTo();
 
-    await browser.wait(EC.elementToBeClickable($('#expand-UncannyXMenVol15')));
     await element(by.css('#expand-UncannyXMenVol15')).click();
   });
 
