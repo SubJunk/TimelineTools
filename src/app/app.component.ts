@@ -385,7 +385,12 @@ export class AppComponent implements OnInit {
               if (err) {
                 return console.error(err);
               }
-
+              
+              const noResults = result.GoodreadsResponse.search[0]["total-results"][0];
+              if (noResults < 1) {
+                return
+              }
+              
               const collectionOnGoodreads = result.GoodreadsResponse.search[0].results[0].work[0].best_book[0];
 
               collection.goodreadsId = collectionOnGoodreads.id[0]._;
