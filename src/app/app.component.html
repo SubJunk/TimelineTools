@@ -61,9 +61,9 @@
       <button (click)="search(item)" class="cover-thumbnail">
         <img
           [srcset]="
-              'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 2x,
-              https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 1x'"
-          [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg'"
+              'https://api.rethumb.com/v1/square/100/version/1/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 2x,
+              https://api.rethumb.com/v1/square/50/version/1/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 1x'"
+          [src]="'https://api.rethumb.com/v1/square/50/version/1/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg'"
         >
         <span class="search-result-text">{{item.displayText}}</span>
       </button>
@@ -88,9 +88,9 @@
           <img
               *ngIf="comic.visible"
               [srcset]="
-                  'https://api.rethumb.com/v1/square/100/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
-                  https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
-              [src]="'https://api.rethumb.com/v1/square/50/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
+                  'https://api.rethumb.com/v1/square/100/version/1/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
+                  https://api.rethumb.com/v1/square/50/version/1/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
+              [src]="'https://api.rethumb.com/v1/square/50/version/1/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg'"
           >
         </button>
       </div>
