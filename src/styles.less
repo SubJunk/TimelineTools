@@ -267,7 +267,16 @@ button.cover-thumbnail {
   cursor: zoom-in;
 }
 
-.fullScreen .cover-thumbnail button .overlay {
+.fullScreen .cover-thumbnail button {
+  z-index: 4;
+  display: block;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
   cursor: zoom-out;
 
   img {
@@ -281,18 +290,6 @@ button.cover-thumbnail {
     margin: 1vh 0;
     transform: translateX(-50%);
     z-index: 5;
-  }
-
-  .overlay {
-    z-index: 0;
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
   }
 }
 
