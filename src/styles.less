@@ -267,7 +267,7 @@ button.cover-thumbnail {
   cursor: zoom-in;
 }
 
-.fullScreen .cover-thumbnail button {
+.fullScreen .cover-thumbnail button, .overlay {
   cursor: zoom-out;
 
   img {
@@ -282,6 +282,18 @@ button.cover-thumbnail {
     transform: translateX(-50%);
     z-index: 5;
   }
+
+  .overlay {
+    z-index: 0;
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .cover-thumbnail img {
@@ -292,18 +304,6 @@ button.cover-thumbnail {
   width: calc(var(--month-width) * 0.9);
   height: calc(var(--month-width) * 0.9);
   margin: calc(var(--month-width) * 0.05);
-}
-
-.overlay{
-  z-index: 0;
-  display: block;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
 }
 
 .search-container .cover-thumbnail img {
