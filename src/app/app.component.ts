@@ -125,6 +125,7 @@ export class AppComponent implements OnInit {
   searchText = '';
   doSpeedProfile = false;
   isRunningAnimation = false;
+  showOverlay = false;
 
   /*
    * Figure out what the name of the image on the server will be
@@ -1397,6 +1398,7 @@ export class AppComponent implements OnInit {
 
   public toggleFullscreen = () => {
     this.expandedComicCSS.classes.fullScreen = !this.expandedComicCSS.classes.fullScreen;
+    this.showOverlay = this.expandedComicCSS.classes.fullScreen;
   }
 
   public toggleShowCollections = (forcedState?: string) => {

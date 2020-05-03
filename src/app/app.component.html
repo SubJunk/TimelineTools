@@ -105,39 +105,41 @@
 <div class="expanded-comic-container" *ngIf="expandedComicId && expandedComicCSS.classes">
   <div class="comic-container expanded" [ngStyle]="expandedComic.containerStyles" [ngClass]="expandedComicCSS.containerClasses">
     <div class="comic" [ngStyle]="getComicStyles(expandedComic)" [ngClass]="getComicClasses(expandedComic)">
-      <div class="panel-left">
-        <span class="cover-thumbnail">
-          <button (click)="toggleFullscreen()" class="toggle-full-screen">
-            <img src="https://www.xmentimeline.com/images/covers/{{expandedComic.image}}.jpg">
-          </button>
-        </span>
-        <ol class="pagination">
-          <li>
-            <div class="popover previous-collection-title" *ngIf="prevCollectionFirstComic"><div>{{prevCollection.title}}</div></div>
-            <button (click)="toggleExpandComic(prevCollectionFirstComic)" class="button-previous-collection" mat-button [disabled]="!prevCollectionFirstComic">
-              <mat-icon>arrow_backward</mat-icon>
+      <div class="overlay" *ngIf="showOverlay">
+        <div class="panel-left">
+          <span class="cover-thumbnail">
+            <button (click)="toggleFullscreen()" class="toggle-full-screen">
+              <img src="https://www.xmentimeline.com/images/covers/{{expandedComic.image}}.jpg">
             </button>
-          </li><!--
-          --><li>
-            <div class="popover previous-comic-title" *ngIf="prevComic"><div>{{prevComic.series}} #{{prevComic.issue}}</div></div>
-            <button (click)="toggleExpandComic(prevComic)" class="button-previous-comic" mat-button [disabled]="!prevComic">
-              <mat-icon>chevron_left</mat-icon>
-            </button>
-          </li><!--
-          --><li>
-            <div class="popover next-comic-title" *ngIf="nextComic"><div>{{nextComic.series}} #{{nextComic.issue}}</div></div>
-            <button (click)="toggleExpandComic(nextComic)" class="button-next-comic" mat-button [disabled]="!nextComic">
-              <mat-icon>chevron_right</mat-icon>
-            </button>
-          </li><!--
-          --><li>
-            <div class="popover next-collection-title" *ngIf="nextCollectionFirstComic"><div>{{nextCollection.title}}</div></div>
-            <button (click)="toggleExpandComic(nextCollectionFirstComic)" class="button-next-collection" mat-button [disabled]="!nextCollectionFirstComic">
-              <mat-icon>arrow_forward</mat-icon>
-            </button>
-          </li>
-        </ol>
-      </div>
+          </span>
+          <ol class="pagination">
+            <li>
+              <div class="popover previous-collection-title" *ngIf="prevCollectionFirstComic"><div>{{prevCollection.title}}</div></div>
+              <button (click)="toggleExpandComic(prevCollectionFirstComic)" class="button-previous-collection" mat-button [disabled]="!prevCollectionFirstComic">
+                <mat-icon>arrow_backward</mat-icon>
+              </button>
+            </li><!--
+            --><li>
+              <div class="popover previous-comic-title" *ngIf="prevComic"><div>{{prevComic.series}} #{{prevComic.issue}}</div></div>
+              <button (click)="toggleExpandComic(prevComic)" class="button-previous-comic" mat-button [disabled]="!prevComic">
+                <mat-icon>chevron_left</mat-icon>
+              </button>
+            </li><!--
+            --><li>
+              <div class="popover next-comic-title" *ngIf="nextComic"><div>{{nextComic.series}} #{{nextComic.issue}}</div></div>
+              <button (click)="toggleExpandComic(nextComic)" class="button-next-comic" mat-button [disabled]="!nextComic">
+                <mat-icon>chevron_right</mat-icon>
+              </button>
+            </li><!--
+            --><li>
+              <div class="popover next-collection-title" *ngIf="nextCollectionFirstComic"><div>{{nextCollection.title}}</div></div>
+              <button (click)="toggleExpandComic(nextCollectionFirstComic)" class="button-next-collection" mat-button [disabled]="!nextCollectionFirstComic">
+                <mat-icon>arrow_forward</mat-icon>
+              </button>
+            </li>
+          </ol>
+        </div>
+    </div>
       <div class="expanded-panel">
         <a [ngClass]="{disabled: !expandedComic.link}" class="marvel-unlimited-link" [href]="expandedComic.link">
           <div class="popover"><div>Open in Marvel Unlimited</div></div>
