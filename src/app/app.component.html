@@ -105,11 +105,13 @@
 <div class="expanded-comic-container" *ngIf="expandedComicId && expandedComicCSS.classes">
   <div class="comic-container expanded" [ngStyle]="expandedComic.containerStyles" [ngClass]="expandedComicCSS.containerClasses">
     <div class="comic" [ngStyle]="getComicStyles(expandedComic)" [ngClass]="getComicClasses(expandedComic)">
-      <div class="overlay" *ngIf="showOverlay">
+      
         <div class="panel-left">
           <span class="cover-thumbnail">
             <button (click)="toggleFullscreen()" class="toggle-full-screen">
-              <img src="https://www.xmentimeline.com/images/covers/{{expandedComic.image}}.jpg">
+              <div class="overlay" *ngIf="showOverlay">
+                <img src="https://www.xmentimeline.com/images/covers/{{expandedComic.image}}.jpg">
+              </div>
             </button>
           </span>
           <ol class="pagination">
@@ -139,7 +141,6 @@
             </li>
           </ol>
         </div>
-    </div>
       <div class="expanded-panel">
         <a [ngClass]="{disabled: !expandedComic.link}" class="marvel-unlimited-link" [href]="expandedComic.link">
           <div class="popover"><div>Open in Marvel Unlimited</div></div>
