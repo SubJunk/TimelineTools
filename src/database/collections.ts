@@ -5834,7 +5834,6 @@ collections.push(
     '2013-3-5',
     [
       'UncannyXMenVol1517',
-      'UncannyXMenVol1518',
     ]
   ),
   new Collection(
@@ -5859,9 +5858,36 @@ collections.push(
     ]
   ),
   new Collection(
+    'New Mutants Vol. 1: Return of Legion',
+    '2010-5-12',
+    [
+      'NewMutantsVol35',
+    ]
+  ),
+  new Collection(
+    'X-Necrosha (Partial)',
+    '2010-12-29',
+    [
+      'XNecroshaTheGatheringVol11',
+      'XNecroshaVol11',
+      'NewMutantsVol36',
+      'XForceVol321',
+      'NewMutantsVol37',
+      'XForceVol322',
+      'NewMutantsVol38',
+      'XForceVol323',
+      'XMenLegacyVol1231',
+      'XMenLegacyVol1232',
+      'XForceVol324',
+      'XMenLegacyVol1233',
+      'XForceVol325',
+    ]
+  ),
+  new Collection(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
+      'UncannyXMenVol1518',
       'UncannyXMenVol1519',
     ]
   ),
@@ -5885,35 +5911,12 @@ collections.push(
     ]
   ),
   new Collection(
-    'New Mutants Vol. 1: Return of Legion',
-    '2010-5-12',
-    [
-      'NewMutantsVol35',
-    ]
-  ),
-  new Collection(
     'X-Necrosha (Partial)',
     '2010-12-29',
     [
-      'XNecroshaTheGatheringVol11',
-      'XNecroshaVol11',
-      'NewMutantsVol36',
-      'XForceVol321',
-      'NewMutantsVol37',
       'XForceAnnualVol21',
-      'XForceVol322',
-      'NewMutantsVol38',
-      'XForceVol323',
-      'XMenLegacyVol1231',
-      'XMenLegacyVol1232',
-      'XForceVol324',
-      'XMenLegacyVol1233',
-      'XForceVol325',
     ]
   ),
-  /**
-   * Roughly ordered for flow of crossovers until here.
-   */
   new Collection(
     'X-Necrosha (Partial)',
     '2010-12-29',
@@ -5921,6 +5924,29 @@ collections.push(
       'XMenLegacyVol1234',
     ]
   ),
+  new Collection(
+    'New Mutants: Necrosha (Partial)',
+    '2010-11-24',
+    [
+      'NewMutantsVol39',
+      'NewMutantsVol310',
+      'NewMutantsVol311',
+    ]
+  ),
+  new Collection(
+    'Cable Vol. 3: Stranded',
+    '2010-5-19',
+    [
+      'CableVol216',
+      'CableVol217',
+      'CableVol218',
+      'CableVol219',
+      'CableVol220',
+    ]
+  ),
+  /**
+   * Roughly ordered for flow of crossovers until here.
+   */
   new Collection(
     'X-Men: Second Coming Revelations',
     '2011-7-6',
