@@ -304,6 +304,11 @@ addComicsInSeriesVolume('CableVol2', [
   [13, '2009-4-1'],
   [14, '2009-5-6'],
   [15, '2009-6-17'],
+  [16, '2009-7-1'],
+  [17, '2009-8-12'],
+  [18, '2009-9-2'],
+  [19, '2009-10-7'],
+  [20, '2009-11-11'],
 ]);
 addComicsInSeriesVolume('CableAnnualVol1', [[1, '1999-4']]);
 addComicsInSeriesVolume('CableBloodMetalVol1', [
@@ -910,6 +915,9 @@ addComicsInSeriesVolume('NewMutantsVol3', [
   [6, '2009-10-28'],
   [7, '2009-11-25'],
   [8, '2009-12-23'],
+  [9, '2010-1-6'],
+  [10, '2010-2-10'],
+  [11, '2010-3-31'],
   // review after here
   [12, '2010-6'],
   [13, '2010-7'],
