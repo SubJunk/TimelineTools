@@ -309,6 +309,10 @@ addComicsInSeriesVolume('CableVol2', [
   [18, '2009-9-2'],
   [19, '2009-10-7'],
   [20, '2009-11-11'],
+  [21, '2009-12-16'],
+  [22, '2010-1-6'],
+  [23, '2010-2-3'],
+  [24, '2010-3-10'],
 ]);
 addComicsInSeriesVolume('CableAnnualVol1', [[1, '1999-4']]);
 addComicsInSeriesVolume('CableBloodMetalVol1', [
@@ -417,6 +421,9 @@ addComicsInSeriesVolume('DarkXMenTheBeginningVol1', [
   [3, '2009-8-26'],
 ]);
 addComicsInSeriesVolume('DarkXMenTheConfessionVol1', [[1, '2009-9-23']]);
+addComicsInSeriesVolume('DeadpoolCableVol1', [
+  [25, '2010-4-7'],
+]);
 addComicsInSeriesVolume('DeadpoolVol1', [
   [1, '1994-8'],
   [2, '1994-9'],
@@ -918,10 +925,9 @@ addComicsInSeriesVolume('NewMutantsVol3', [
   [9, '2010-1-6'],
   [10, '2010-2-10'],
   [11, '2010-3-31'],
-  // review after here
-  [12, '2010-6'],
-  [13, '2010-7'],
-  [14, '2010-8'],
+  [12, '2010-4-14'],
+  [13, '2010-5-12'],
+  [14, '2010-6-16'],
 ]);
 addComicsInSeriesVolume('NewMutantsAnnualVol1', [
   [4, '1988-9'],
@@ -1122,7 +1128,7 @@ addComicsInSeriesVolume('SabretoothVol2', [
   [4, '2005-2-1']
 ]);
 addComicsInSeriesVolume('SabretoothSpecialVol1', [[1, '1996-1']]);
-addComicsInSeriesVolume('SecondComingPrepareVol1', [[1, '2010-4', ['Where Were You?']]]);
+addComicsInSeriesVolume('SecondComingPrepareVol1', [[1, '2010-2-24']]);
 addComicsInSeriesVolume('SecretInvasionWarofKingsVol1', [[1, '2009-1-7']]);
 addComicsInSeriesVolume('SecretInvasionXMenVol1', [
   [1, '2008-8-13'],
@@ -1679,32 +1685,32 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [520, '2010-1-20'],
   [521, '2010-2-17'],
   [522, '2010-3-24'],
+  [523, '2010-4-7'],
+  [524, '2010-5-5'],
+  [525, '2010-6-9'],
   /**
    * Complete until here
    */
-  [523, '2010-6', ['Second Coming (Chapter Two)']],
-  [524, '2010-7', ['Second Coming (Chapter Six)']],
-  [525, '2010-8', ['Second Coming (Chapter Ten)']],
-  [540, '2011-9', ['Uncanny X-Men Vol 1 #540']],
-  [541, '2011-9', ['Uncanny X-Men Vol 1 #541']],
-  [542, '2011-10', ['Uncanny X-Men Vol 1 #542']],
-  [543, '2011-11', ['Uncanny X-Men Vol 1 #543']],
-  [544, '2011-12', ['Uncanny']],
-  [534.1, '2011-6', ['Uncanny X-Men Vol 1 #534.1']],
-  [535, '2011-6', ['Breaking Point (Part One)']],
-  [536, '2011-6', ['Breaking Point: Part Two']],
-  [537, '2011-7', ['Breaking Point (Part 3)']],
-  [538, '2011-8', ['Breaking Point (Conclusion)']],
-  [539, '2011-8', ['Losing Hope']],
-  [530, '2011-1', ['Quarantine: Part 1']],
-  [531, '2011-2', ['Quarantine (Part Two)']],
-  [532, '2011-3', ['Quarantine (Part Three)']],
-  [533, '2011-4', ['Quarantine (Part Four)']],
-  [534, '2011-5', ['Quarantine (Part Five)']],
-  [526, '2010-9', ['The Five Lights (Part 1): Freak Like Me', 'Rebuilding']],
-  [527, '2010-10', ['The Five Lights (Part 2) - Velocidad']],
-  [528, '2010-11', ['The Five Lights (Part 3)']],
-  [529, '2010-12', ['The Five Lights (Part Four)']],
+  [540, '2011-9'],
+  [541, '2011-9'],
+  [542, '2011-10'],
+  [543, '2011-11'],
+  [544, '2011-12'],
+  [534.1, '2011-6'],
+  [535, '2011-6'],
+  [536, '2011-6'],
+  [537, '2011-7'],
+  [538, '2011-8'],
+  [539, '2011-8'],
+  [530, '2011-1'],
+  [531, '2011-2'],
+  [532, '2011-3'],
+  [533, '2011-4'],
+  [534, '2011-5'],
+  [526, '2010-9'],
+  [527, '2010-10'],
+  [528, '2010-11'],
+  [529, '2010-12'],
 ]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
   [1, '1996-9'],
@@ -2191,10 +2197,9 @@ addComicsInSeriesVolume('XForceVol3', [
   [23, '2010-1-27'],
   [24, '2010-2-24'],
   [25, '2010-3-31'],
-  // review after here
-  [26, '2010-6', ['Second Coming (Chapter Five)']],
-  [27, '2010-7', ['Second Coming (Chapter Nine)']],
-  [28, '2010-9', ['Second Coming, Chapter 13']],
+  [26, '2010-4-28'],
+  [27, '2010-5-26'],
+  [28, '2010-7-8'],
 ]);
 addComicsInSeriesVolume('XForceAnnualVol1', [
   [1, '1992-5'],
@@ -2631,9 +2636,9 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [232, '2010-1-27'],
   [233, '2010-2-24'],
   [234, '2010-3-17'],
-  [235, '2010-6'],
-  [236, '2010-7'],
-  [237, '2010-8'],
+  [235, '2010-4-21'],
+  [236, '2010-5-19'],
+  [237, '2010-6-23'],
 ]);
 addComicsInSeriesVolume('XMenMagnetoTestamentVol1', [
   [1, '2008-9-10'],
@@ -2679,8 +2684,8 @@ addComicsInSeriesVolume('XMenPhoenixWarsongVol1', [
 ]);
 addComicsInSeriesVolume('XMenRoadtoOnslaughtVol1', [[1, '1996-10']]);
 addComicsInSeriesVolume('XMenSecondComingVol1', [
-  [1, '2010-5', ['Second Coming, Chapter One']],
-  [2, '2010-9', ['Second Coming Chapter XIV']],
+  [1, '2010-3-31'],
+  [2, '2010-7-14'],
 ]);
 addComicsInSeriesVolume('XMenSecondComingRevelationsBlindScienceVol1', [[1, '2010-5-26']]);
 addComicsInSeriesVolume('XMenSearchforCyclopsVol1', [

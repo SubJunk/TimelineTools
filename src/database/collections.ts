@@ -5944,6 +5944,61 @@ collections.push(
       'CableVol220',
     ]
   ),
+  new Collection(
+    'Cable Vol. 4: Homecoming (Partial)',
+    '2010-5-19',
+    [
+      'CableVol221',
+      'CableVol222',
+      'CableVol223',
+      'CableVol224',
+      'DeadpoolCableVol125',
+    ]
+  ),
+  new Collection(
+    'X-Men: Second Coming',
+    '2011-6-22',
+    [
+      'SecondComingPrepareVol11',
+    ]
+  ),
+  new Collection(
+    'X-Men: Second Coming Revelations',
+    '2011-7-6',
+    [
+      'XMenHopeVol11',
+    ]
+  ),
+  new Collection(
+    'X-Men: Second Coming',
+    '2011-6-22',
+    [
+      'XMenSecondComingVol11',
+      'UncannyXMenVol1523',
+      'NewMutantsVol312',
+      'XMenLegacyVol1235',
+      'XForceVol326',
+      'UncannyXMenVol1524',
+      'NewMutantsVol313',
+      'XMenLegacyVol1236',
+      'XForceVol327',
+      'UncannyXMenVol1525',
+      'NewMutantsVol314',
+      'XMenLegacyVol1237',
+      'XForceVol328',
+      'XMenSecondComingVol12',
+    ]
+  ),
+  new Collection(
+    'X-Men: Second Coming Revelations',
+    '2011-7-6',
+    [
+      'XMenHellboundVol11',
+      'XMenSecondComingRevelationsBlindScienceVol11',
+      'XMenHellboundVol12',
+      'XMenHellboundVol13',
+    ]
+  ),
   /**
    * Roughly ordered for flow of crossovers until here.
    */
@@ -5954,11 +6009,6 @@ collections.push(
       'XFactorVol3204',
       'XFactorVol3205',
       'XFactorVol3206',
-      'XMenHopeVol11',
-      'XMenSecondComingRevelationsBlindScienceVol11',
-      'XMenHellboundVol11',
-      'XMenHellboundVol12',
-      'XMenHellboundVol13',
     ]
   ),
   new Collection(
@@ -5974,27 +6024,6 @@ collections.push(
   /**
    * Big gap here, and in general the contents after here need to be reviewed.
    */
-  new Collection(
-    'X-Men: Second Coming',
-    '2011-6',
-    [
-      'SecondComingPrepareVol11',
-      'XMenSecondComingVol11',
-      'XMenSecondComingVol12',
-      'UncannyXMenVol1523',
-      'UncannyXMenVol1524',
-      'UncannyXMenVol1525',
-      'NewMutantsVol312',
-      'NewMutantsVol313',
-      'NewMutantsVol314',
-      'XMenLegacyVol1235',
-      'XMenLegacyVol1236',
-      'XMenLegacyVol1237',
-      'XForceVol326',
-      'XForceVol327',
-      'XForceVol328'
-    ]
-  ),
   new Collection(
     'Uncanny X-Men: The Birth of Generation Hope',
     '2010-12',
