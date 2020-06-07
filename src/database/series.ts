@@ -87,6 +87,7 @@ series.push(
   new Series('Dark X-Men: The Beginning', {1: 2009}),
   new Series('Dark X-Men: The Confession', {1: 2009}),
   new Series('Deadpool', {1: 1994, 2: 1997, 3: 2008}),
+  new Series('Deadpool & Cable', {1: 2010}),
   new Series('Deadpool Team-Up', {1: 1998}),
   new Series('Defenders', {1: 1972}),
   new Series('Daredevil/Deadpool Annual', {1: 1997}),
