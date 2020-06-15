@@ -37,9 +37,11 @@ export class ApiInteractions {
   public getGoodreadsCollectionData = (collectionTitle: string) => {
     const params = new HttpParams()
       .set('q', collectionTitle)
-      .set('key', GOODREADS_API_KEY_PUBLIC);
+      .set('key', GOODREADS_API_KEY_PUBLIC)
+      .set('responseType', 'text')
+      .set('X-Requested-With', 'XMLHttpRequest');
 
-    return this.http.get(CORS_ANYWHERE_URL + GOODREADS_API_BASE_URL, {params, responseType: 'text'});
+    return this.http.get(CORS_ANYWHERE_URL + GOODREADS_API_BASE_URL, { params });
   }
 
   /**
