@@ -38,10 +38,9 @@ export class ApiInteractions {
     const params = new HttpParams()
       .set('q', collectionTitle)
       .set('key', GOODREADS_API_KEY_PUBLIC)
-      .set('responseType', 'text')
       .set('X-Requested-With', 'XMLHttpRequest');
 
-    return this.http.get(CORS_ANYWHERE_URL + GOODREADS_API_BASE_URL, { params });
+    return this.http.get(CORS_ANYWHERE_URL + GOODREADS_API_BASE_URL, { params, responseType: 'text' });
   }
 
   /**
