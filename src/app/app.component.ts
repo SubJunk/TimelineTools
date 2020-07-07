@@ -397,7 +397,8 @@ export class AppComponent implements OnInit {
             });
           },
           (err) => {
-            throw err;
+            // We don't want to lose the information but also don't care enough to throw
+            console.log(err);
           }
         );
   }
