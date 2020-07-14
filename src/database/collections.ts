@@ -2572,7 +2572,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Magneto War',
+    'X-Men: The Magneto War (Partial)',
     '2018-10-23',
     [
       'XMenVol285',
@@ -2603,7 +2603,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Magneto War',
+    'X-Men: The Magneto War (Partial)',
     '2018-10-23',
     [
       'XMenUnlimitedVol123',
