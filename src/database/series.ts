@@ -105,7 +105,7 @@ series.push(
   new Series('Fantastic Four', {1: 1961}),
   new Series('Fantastic Four vs. the X-Men', {1: 1987}),
   new Series('Further Adventures of Cyclops & Phoenix', {1: 1996}),
-  new Series('Gambit', {1: 1993, 2: 1997, 4: 2004}),
+  new Series('Gambit', {1: 1993, 2: 1997, 3: 1999, 4: 2004}),
   new Series('Gambit and the X-Ternals', {1: 1995}),
   new Series('Generation M', {1: 2005}),
   new Series('Generation Next', {1: 1995}),

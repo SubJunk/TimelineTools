@@ -2624,12 +2624,18 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Magneto War',
+    'X-Men: The Magneto War (Partial)',
     '2018-10-23',
     [
       'XMenVol289',
       'UncannyXMenVol1370',
       'XMenVol290',
+    ]
+  ),
+  new Collection(
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-02-18',
+    [
       'UncannyXMenVol1371',
       'XMenVol291',
       'XMenAnnualVol41'
@@ -2651,8 +2657,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Magneto War',
-    '2018-10-23',
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-02-18',
     [
       'XMenUnlimitedVol124'
     ]
@@ -2684,11 +2690,14 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Shattering',
-    '2009-7-8',
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-02-18',
     [
+      'CableVol171',
       'UncannyXMenVol1372',
       'XMenVol292',
+      'GambitVol38',
+      'GambitVol39',
       'AstonishingXMenVol21',
       'AstonishingXMenVol22',
       'AstonishingXMenVol23',
@@ -2709,10 +2718,11 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men vs. Apocalypse Vol. 1: The Twelve',
-    '2008-3-5',
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-02-18',
     [
       'WolverineVol2145',
+      'CableVol172',
       'CableVol173',
       'CableVol174'
     ]
@@ -2742,9 +2752,10 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men vs. Apocalypse Vol. 1: The Twelve',
-    '2008-3-5',
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-02-18',
     [
+      'XMenUnlimitedVol125',
       'UncannyXMenVol1376',
       'CableVol175',
       'XMenVol296',
@@ -2764,8 +2775,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
-    '2008-9-10',
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-02-18',
     [
       'UncannyXMenAnnualVol21',
       'UncannyXMenVol1378',
@@ -2773,13 +2784,7 @@ collections.push(
       'X51Vol18',
       'XMenUnlimitedVol126',
       'WolverineVol2148',
-      'XMenVol298'
-    ]
-  ),
-  new Collection(
-    'X-Men: Powerless',
-    '2010-8',
-    [
+      'XMenVol298',
       'UncannyXMenVol1379',
       'XForceVol1101',
       'CableVol178',
