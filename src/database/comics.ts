@@ -783,12 +783,18 @@ addComicsInSeriesVolume('MagikVol1', [
   [1, '1983-12'],
   [2, '1984-1'],
   [3, '1984-2'],
-  [4, '1984-3']
+  [4, '1984-3'],
+]);
+addComicsInSeriesVolume('MagnetoDarkSeductionVol1', [
+  [1, '2000-6-1'],
+  [2, '2000-7-1'],
+  [3, '2000-8-1'],
+  [4, '2000-9-1'],
 ]);
 addComicsInSeriesVolume('MagnetoRexVol1', [
   [1, '1999-5'],
   [2, '1999-6'],
-  [3, '1999-7']
+  [3, '1999-7'],
 ]);
 addComicsInSeriesVolume('MarvelGraphicNovelVol1', [[5, '1983-1']]);
 addComicsInSeriesVolume('MarvelSpotlightVol3', [[41, '2009-5-6']]);

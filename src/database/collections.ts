@@ -2806,6 +2806,16 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
+    [
+      'MagnetoDarkSeductionVol11',
+      'MagnetoDarkSeductionVol12',
+      'MagnetoDarkSeductionVol13',
+      'MagnetoDarkSeductionVol14',
+    ]
+  ),
+  new Collection(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
     [

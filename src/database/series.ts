@@ -132,6 +132,7 @@ series.push(
   new Series('Machine Man/Bastion Annual', {1: 1998}),
   new Series('Madrox', {1: 2004}),
   new Series('Magik', {1: 1983}),
+  new Series('Magneto: Dark Seduction', {1: 2000}),
   new Series('Magneto Rex', {1: 1999}),
   new Series('Marvel Graphic Novel', {1: 1982}),
   new Series('Marvel Spotlight', {3: 2005}),
