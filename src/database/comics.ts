@@ -755,7 +755,7 @@ addComicsInSeriesVolume('KaZarVol1', [
   [2, '1970-12-1'],
   [3, '1971-3-1'],
 ]);
-addComicsInSeriesVolume('KittyPrydeAndWolverineVol1', [
+addComicsInSeriesVolume('KittyPrydeandWolverineVol1', [
   [1, '1984-11-10'],
   [2, '1984-12-1'],
   [3, '1985-1-1'],
@@ -2437,6 +2437,7 @@ addComicsInSeriesVolume('XMenVol3', [
   [207, '2008-1-23'],
 ]);
 addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']]);
+addComicsInSeriesVolume('XMenDeclassifiedVol1', [[1, '2000-10']]);
 addComicsInSeriesVolume('XMenDiebytheSwordVol1', [
   [1, '2007-10-17'],
   [2, '2007-10-24'],
@@ -2485,6 +2486,14 @@ addComicsInSeriesVolume('XMenFirstClassVol2', [
   [14, '2008-7-30'],
   [15, '2008-8-20'],
   [16, '2008-9-17'],
+]);
+addComicsInSeriesVolume('XMenForeverVol1', [
+  [1, '2001-1'],
+  [2, '2001-2'],
+  [3, '2001-3'],
+  [4, '2001-4'],
+  [5, '2001-5'],
+  [6, '2001-6'],
 ]);
 addComicsInSeriesVolume('XMenFutureHistoryTheMessiahWarSourcebookVol1', [[1, '2009-5-28']]);
 addComicsInSeriesVolume('XMenHopeVol1', [[1, '2010-3-3']]);
@@ -2744,7 +2753,10 @@ addComicsInSeriesVolume('XMenUnlimitedVol1', [
   [27, '2000-6-1'],
   [28, '2000-9-1'],
   [29, '2000-12-1'],
+  [30, '2001-1-24'],
   [31, '2001-4-25'],
+  [32, '2001-7-25'],
+  [33, '2001-10-31'],
   [35, '2002-4-24'],
   [36, '2002-5-29'],
   [40, '2003-1-1'],

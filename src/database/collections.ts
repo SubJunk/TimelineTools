@@ -440,12 +440,12 @@ collections.push(
       'UncannyXMenVol1186',
       'UncannyXMenVol1187',
       'UncannyXMenVol1188',
-      'KittyPrydeAndWolverineVol11',
-      'KittyPrydeAndWolverineVol12',
-      'KittyPrydeAndWolverineVol13',
-      'KittyPrydeAndWolverineVol14',
-      'KittyPrydeAndWolverineVol15',
-      'KittyPrydeAndWolverineVol16',
+      'KittyPrydeandWolverineVol11',
+      'KittyPrydeandWolverineVol12',
+      'KittyPrydeandWolverineVol13',
+      'KittyPrydeandWolverineVol14',
+      'KittyPrydeandWolverineVol15',
+      'KittyPrydeandWolverineVol16',
       'UncannyXMenVol1189',
       'UncannyXMenVol1190',
       'UncannyXMenVol1191',
@@ -2640,7 +2640,7 @@ collections.push(
   ),
   new Collection(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
-    '2020-02-18',
+    '2020-2-18',
     [
       'UncannyXMenVol1371',
       'XMenVol291',
@@ -2664,7 +2664,7 @@ collections.push(
   ),
   new Collection(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
-    '2020-02-18',
+    '2020-2-18',
     [
       'XMenUnlimitedVol124'
     ]
@@ -2697,7 +2697,7 @@ collections.push(
   ),
   new Collection(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
-    '2020-02-18',
+    '2020-2-18',
     [
       'CableVol171',
       'UncannyXMenVol1372',
@@ -2725,7 +2725,7 @@ collections.push(
   ),
   new Collection(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
-    '2020-02-18',
+    '2020-2-18',
     [
       'WolverineVol2145',
       'CableVol172',
@@ -2759,7 +2759,7 @@ collections.push(
   ),
   new Collection(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
-    '2020-02-18',
+    '2020-2-18',
     [
       'XMenUnlimitedVol125',
       'UncannyXMenVol1376',
@@ -2781,10 +2781,16 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Vs. Apocalypse: The Twelve Omnibus',
-    '2020-02-18',
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
     [
       'UncannyXMenAnnualVol21',
+    ]
+  ),
+  new Collection(
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-2-18',
+    [
       'UncannyXMenVol1378',
       'CableVol177',
       'X51Vol18',
@@ -2902,6 +2908,19 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
+    [
+      'XMenForeverVol11',
+      'XMenForeverVol12',
+      'XMenForeverVol13',
+      'XMenForeverVol14',
+      'XMenForeverVol15',
+      'XMenForeverVol16',
+      'XMenDeclassifiedVol11',
+    ]
+  ),
+  new Collection(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
     [
@@ -2994,6 +3013,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
+    [
+      'XMenUnlimitedVol133',
+    ]
+  ),
+  new Collection(
     'Cable: Revolution',
     '2018-4-28',
     [
@@ -3017,13 +3043,13 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
-    '2008-9-10',
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
     [
       'XMenSearchforCyclopsVol11',
       'XMenSearchforCyclopsVol12',
       'XMenSearchforCyclopsVol13',
-      'XMenSearchforCyclopsVol14'
+      'XMenSearchforCyclopsVol14',
     ]
   ),
   new Collection(
@@ -3040,17 +3066,12 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Dream\'s End (Partial)',
-    '2005-1-12',
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
     [
       'UncannyXMenVol1390',
       'XMenVol2110',
-    ]
-  ),
-  new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
-    '2003-12-3',
-    [
+      'XMenUnlimitedVol130',
       'XMenUnlimitedVol131',
     ]
   ),
@@ -3080,7 +3101,7 @@ collections.push(
   ),
   new Collection(
     'X-Men: Eve of Destruction',
-    '2005-5-4',
+    '2019-7-9',
     [
       'UncannyXMenVol1391',
     ]
@@ -3094,13 +3115,14 @@ collections.push(
   ),
   new Collection(
     'X-Men: Eve of Destruction',
-    '2005-5-4',
+    '2019-7-9',
     [
       'XMenVol2111',
       'UncannyXMenVol1392',
       'XMenVol2112',
       'UncannyXMenVol1393',
       'XMenVol2113',
+      'XMenUnlimitedVol132',
     ]
   ),
   new Collection(
@@ -3323,7 +3345,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
+    'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
       'XMenUnlimitedVol135',
@@ -3399,7 +3421,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
+    'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
       'XMenUnlimitedVol140',
@@ -3559,7 +3581,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
+    'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
       'XMenUnlimitedVol146',
@@ -3589,7 +3611,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
+    'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
       'XMenUnlimitedVol149',
