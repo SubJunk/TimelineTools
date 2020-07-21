@@ -738,7 +738,7 @@ addComicsInSeriesVolume('IncredibleHulkVol1', [
   [181, '1974-11-1'],
   [340, '1988-2-1'],
   [444, '1996-8-10'],
-  [445, '1996-9-10']
+  [445, '1996-9-10'],
 ]);
 addComicsInSeriesVolume('IncredibleHulkVol2', [[8, '1999-11']]);
 addComicsInSeriesVolume('IronFistVol1', [
@@ -753,7 +753,15 @@ addComicsInSeriesVolume('IronManDirectorofSHIELDVol1', [
 addComicsInSeriesVolume('IrredeemableAntManVol1', [[10, '2007-7-5']]);
 addComicsInSeriesVolume('KaZarVol1', [
   [2, '1970-12-1'],
-  [3, '1971-3-1']
+  [3, '1971-3-1'],
+]);
+addComicsInSeriesVolume('KittyPrydeAndWolverineVol1', [
+  [1, '1984-11-10'],
+  [2, '1984-12-1'],
+  [3, '1985-1-1'],
+  [4, '1985-2-1'],
+  [5, '1985-3-1'],
+  [6, '1985-4-1'],
 ]);
 addComicsInSeriesVolume('KingSizeCableSpectacularVol1', [
   [1, '2008-9-10'],

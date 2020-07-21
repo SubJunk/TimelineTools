@@ -390,13 +390,19 @@ collections.push(
     ]
   ),
   new Collection(
-    'Marvel Masterworks: The Uncanny X-Men Vol. 10',
+    'Marvel Masterworks: The Uncanny X-Men Vol. 10 (Partial)',
     '2017-2',
     [
       'MagikVol11',
       'MagikVol12',
       'MagikVol13',
       'MagikVol14',
+    ]
+  ),
+  new Collection(
+    'The Uncanny X-Men Omnibus Vol. 4',
+    '2021-3-2',
+    [
       'UncannyXMenVol1176',
       'UncannyXMenVol1177',
       'UncannyXMenVol1178',
@@ -423,8 +429,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Marvel Masterworks: The Uncanny X-Men Vol. 10',
-    '2017-2',
+    'The Uncanny X-Men Omnibus Vol. 4',
+    '2021-3-2',
     [
       'UncannyXMenVol1181',
       'UncannyXMenVol1182',
@@ -433,13 +439,13 @@ collections.push(
       'UncannyXMenVol1185',
       'UncannyXMenVol1186',
       'UncannyXMenVol1187',
-      'UncannyXMenVol1188'
-    ]
-  ),
-  new Collection(
-    'X-Men Epic Collection Vol. 12: The Gift',
-    '2016-1',
-    [
+      'UncannyXMenVol1188',
+      'KittyPrydeAndWolverineVol11',
+      'KittyPrydeAndWolverineVol12',
+      'KittyPrydeAndWolverineVol13',
+      'KittyPrydeAndWolverineVol14',
+      'KittyPrydeAndWolverineVol15',
+      'KittyPrydeAndWolverineVol16',
       'UncannyXMenVol1189',
       'UncannyXMenVol1190',
       'UncannyXMenVol1191',
@@ -460,7 +466,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Epic Collection Vol. 12: The Gift',
+    'X-Men Epic Collection Vol. 12: The Gift (Partial)',
     '2016-1',
     [
       'UncannyXMenVol1194',

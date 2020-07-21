@@ -127,6 +127,7 @@ series.push(
   new Series('Irredeemable Ant-Man', {1: 2006}),
   new Series('Ka-Zar', {1: 1970}),
   new Series('King-Size Cable Spectacular', {1: 2008}),
+  new Series('Kitty Pryde and Wolverine', {1: 1984}),
   new Series('Logan', {1: 2008}),
   new Series('Machine Man/Bastion Annual', {1: 1998}),
   new Series('Madrox', {1: 2004}),
