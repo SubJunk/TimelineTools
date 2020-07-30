@@ -390,13 +390,19 @@ collections.push(
     ]
   ),
   new Collection(
-    'Marvel Masterworks: The Uncanny X-Men Vol. 10',
+    'Marvel Masterworks: The Uncanny X-Men Vol. 10 (Partial)',
     '2017-2',
     [
       'MagikVol11',
       'MagikVol12',
       'MagikVol13',
       'MagikVol14',
+    ]
+  ),
+  new Collection(
+    'The Uncanny X-Men Omnibus Vol. 4',
+    '2021-3-2',
+    [
       'UncannyXMenVol1176',
       'UncannyXMenVol1177',
       'UncannyXMenVol1178',
@@ -423,8 +429,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Marvel Masterworks: The Uncanny X-Men Vol. 10',
-    '2017-2',
+    'The Uncanny X-Men Omnibus Vol. 4',
+    '2021-3-2',
     [
       'UncannyXMenVol1181',
       'UncannyXMenVol1182',
@@ -433,13 +439,13 @@ collections.push(
       'UncannyXMenVol1185',
       'UncannyXMenVol1186',
       'UncannyXMenVol1187',
-      'UncannyXMenVol1188'
-    ]
-  ),
-  new Collection(
-    'X-Men Epic Collection Vol. 12: The Gift',
-    '2016-1',
-    [
+      'UncannyXMenVol1188',
+      'KittyPrydeandWolverineVol11',
+      'KittyPrydeandWolverineVol12',
+      'KittyPrydeandWolverineVol13',
+      'KittyPrydeandWolverineVol14',
+      'KittyPrydeandWolverineVol15',
+      'KittyPrydeandWolverineVol16',
       'UncannyXMenVol1189',
       'UncannyXMenVol1190',
       'UncannyXMenVol1191',
@@ -460,7 +466,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Epic Collection Vol. 12: The Gift',
+    'X-Men Epic Collection Vol. 12: The Gift (Partial)',
     '2016-1',
     [
       'UncannyXMenVol1194',
@@ -2572,7 +2578,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Magneto War',
+    'X-Men: The Magneto War (Partial)',
     '2018-10-23',
     [
       'XMenVol285',
@@ -2603,7 +2609,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Magneto War',
+    'X-Men: The Magneto War (Partial)',
     '2018-10-23',
     [
       'XMenUnlimitedVol123',
@@ -2624,12 +2630,18 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Magneto War',
+    'X-Men: The Magneto War (Partial)',
     '2018-10-23',
     [
       'XMenVol289',
       'UncannyXMenVol1370',
       'XMenVol290',
+    ]
+  ),
+  new Collection(
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-2-18',
+    [
       'UncannyXMenVol1371',
       'XMenVol291',
       'XMenAnnualVol41'
@@ -2651,8 +2663,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Magneto War',
-    '2018-10-23',
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-2-18',
     [
       'XMenUnlimitedVol124'
     ]
@@ -2684,11 +2696,14 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: The Shattering',
-    '2009-7-8',
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-2-18',
     [
+      'CableVol171',
       'UncannyXMenVol1372',
       'XMenVol292',
+      'GambitVol38',
+      'GambitVol39',
       'AstonishingXMenVol21',
       'AstonishingXMenVol22',
       'AstonishingXMenVol23',
@@ -2709,10 +2724,11 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men vs. Apocalypse Vol. 1: The Twelve',
-    '2008-3-5',
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-2-18',
     [
       'WolverineVol2145',
+      'CableVol172',
       'CableVol173',
       'CableVol174'
     ]
@@ -2742,9 +2758,10 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men vs. Apocalypse Vol. 1: The Twelve',
-    '2008-3-5',
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-2-18',
     [
+      'XMenUnlimitedVol125',
       'UncannyXMenVol1376',
       'CableVol175',
       'XMenVol296',
@@ -2764,28 +2781,38 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
-    '2008-9-10',
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
     [
       'UncannyXMenAnnualVol21',
+    ]
+  ),
+  new Collection(
+    'X-Men Vs. Apocalypse: The Twelve Omnibus',
+    '2020-2-18',
+    [
       'UncannyXMenVol1378',
       'CableVol177',
       'X51Vol18',
       'XMenUnlimitedVol126',
       'WolverineVol2148',
-      'XMenVol298'
-    ]
-  ),
-  new Collection(
-    'X-Men: Powerless',
-    '2010-8',
-    [
+      'XMenVol298',
       'UncannyXMenVol1379',
       'XForceVol1101',
       'CableVol178',
       'WolverineVol2149',
       'XMenVol299',
       'UncannyXMenVol1380',
+    ]
+  ),
+  new Collection(
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
+    [
+      'MagnetoDarkSeductionVol11',
+      'MagnetoDarkSeductionVol12',
+      'MagnetoDarkSeductionVol13',
+      'MagnetoDarkSeductionVol14',
     ]
   ),
   new Collection(
@@ -2891,6 +2918,19 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
+    [
+      'XMenForeverVol11',
+      'XMenForeverVol12',
+      'XMenForeverVol13',
+      'XMenForeverVol14',
+      'XMenForeverVol15',
+      'XMenForeverVol16',
+      'XMenDeclassifiedVol11',
+    ]
+  ),
+  new Collection(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
     [
@@ -2983,6 +3023,13 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
+    [
+      'XMenUnlimitedVol133',
+    ]
+  ),
+  new Collection(
     'Cable: Revolution',
     '2018-4-28',
     [
@@ -3006,13 +3053,13 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men vs. Apocalypse Vol. 2: Ages of Apocalypse',
-    '2008-9-10',
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
     [
       'XMenSearchforCyclopsVol11',
       'XMenSearchforCyclopsVol12',
       'XMenSearchforCyclopsVol13',
-      'XMenSearchforCyclopsVol14'
+      'XMenSearchforCyclopsVol14',
     ]
   ),
   new Collection(
@@ -3029,17 +3076,12 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men: Dream\'s End (Partial)',
-    '2005-1-12',
+    'X-Men: Eve of Destruction',
+    '2019-7-9',
     [
       'UncannyXMenVol1390',
       'XMenVol2110',
-    ]
-  ),
-  new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
-    '2003-12-3',
-    [
+      'XMenUnlimitedVol130',
       'XMenUnlimitedVol131',
     ]
   ),
@@ -3069,7 +3111,7 @@ collections.push(
   ),
   new Collection(
     'X-Men: Eve of Destruction',
-    '2005-5-4',
+    '2019-7-9',
     [
       'UncannyXMenVol1391',
     ]
@@ -3083,13 +3125,14 @@ collections.push(
   ),
   new Collection(
     'X-Men: Eve of Destruction',
-    '2005-5-4',
+    '2019-7-9',
     [
       'XMenVol2111',
       'UncannyXMenVol1392',
       'XMenVol2112',
       'UncannyXMenVol1393',
       'XMenVol2113',
+      'XMenUnlimitedVol132',
     ]
   ),
   new Collection(
@@ -3312,7 +3355,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
+    'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
       'XMenUnlimitedVol135',
@@ -3388,7 +3431,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
+    'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
       'XMenUnlimitedVol140',
@@ -3548,7 +3591,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
+    'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
       'XMenUnlimitedVol146',
@@ -3578,7 +3621,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'X-Men Legends Vol. IV: Hated & Feared',
+    'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
       'XMenUnlimitedVol149',
