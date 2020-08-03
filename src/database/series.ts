@@ -183,6 +183,7 @@ series.push(
   new Series('Uncanny X-Men', {1: 1963}),
   new Series('Uncanny X-Men/Fantastic Four Annual', {1: 1998}),
   new Series('Uncanny X-Men Annual', {1: 1996, 2: 1999, 3: 2001, 4: 2006}),
+  new Series('Uncanny X-Men: The Heroic Age', {1: 2010}),
   new Series('War of Kings Saga', {1: 2008}),
   new Series('Weapon X', {1: 1995}),
   new Series('Weapon X: First Class', {1: 2008}),

@@ -6064,6 +6064,13 @@ collections.push(
       'DominoVol24',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men: The Birth of Generation Hope',
+    '2010-12',
+    [
+      'UncannyXMenTheHeroicAgeVol11',
+    ]
+  ),
   /**
    * Big gap here, and in general the contents after here need to be reviewed.
    */
@@ -6074,7 +6081,7 @@ collections.push(
       'UncannyXMenVol1526',
       'UncannyXMenVol1527',
       'UncannyXMenVol1528',
-      'UncannyXMenVol1529'
+      'UncannyXMenVol1529',
     ]
   ),
   new Collection(
@@ -6085,7 +6092,7 @@ collections.push(
       'UncannyXMenVol1531',
       'UncannyXMenVol1532',
       'UncannyXMenVol1533',
-      'UncannyXMenVol1534'
+      'UncannyXMenVol1534',
     ]
   ),
   new Collection(
@@ -6097,7 +6104,7 @@ collections.push(
       'UncannyXMenVol1536',
       'UncannyXMenVol1537',
       'UncannyXMenVol1538',
-      'UncannyXMenVol1539'
+      'UncannyXMenVol1539',
     ]
   ),
   new Collection(
