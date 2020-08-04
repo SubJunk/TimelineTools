@@ -1743,6 +1743,7 @@ addComicsInSeriesVolume('UncannyXMenAnnualVol4', [
   [2, '2009-1-21'],
 ]);
 addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']]);
+addComicsInSeriesVolume('UncannyXMenTheHeroicAgeVol1', [[1, '2010-7-14']]);
 addComicsInSeriesVolume('WarofKingsSagaVol1', [[1, '2008-12-16']]);
 addComicsInSeriesVolume('WeaponXVol1', [
   [1, '1995-3'],
