@@ -6086,9 +6086,26 @@ collections.push(
       'NewMutantsVol319',
     ]
   ),
+  new Collection(
+    'Generation Hope: The Future\'s a Four-Lettered Word',
+    '2011-6-22',
+    [
+      'GenerationHopeVol11',
+      'GenerationHopeVol12',
+      'GenerationHopeVol13',
+      'GenerationHopeVol14',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Generation Hope: The Future\'s a Four-Lettered Word',
+    '2011-6-22',
+    [
+      'GenerationHopeVol15',
+    ]
+  ),
   new Collection(
     'New Mutants: Fall of the New Mutants',
     '2011-10-5',

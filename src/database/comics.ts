@@ -654,6 +654,13 @@ addComicsInSeriesVolume('GambitandtheXTernalsVol1', [
   [3, '1995-5'],
   [4, '1995-6']
 ]);
+addComicsInSeriesVolume('GenerationHopeVol1', [
+  [1, '2010-11-3'],
+  [2, '2010-12-2'],
+  [3, '2011-2-2'],
+  [4, '2011-2-28'],
+  [5, '2011-3-16'],
+]);
 addComicsInSeriesVolume('GenerationMVol1', [
   [1, '2006-1-10'],
   [2, '2006-2-1'],
