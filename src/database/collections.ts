@@ -6096,24 +6096,6 @@ collections.push(
       'GenerationHopeVol14',
     ]
   ),
-  /**
-   * Gap here, and in general the contents after here need to be reviewed.
-   */
-  new Collection(
-    'Generation Hope: The Future\'s a Four-Lettered Word',
-    '2011-6-22',
-    [
-      'GenerationHopeVol15',
-    ]
-  ),
-  new Collection(
-    'New Mutants: Fall of the New Mutants',
-    '2011-10-5',
-    [
-      'NewMutantsVol320',
-      'NewMutantsVol321',
-    ]
-  ),
   new Collection(
     'Uncanny X-Men: Quarantine',
     '2011-6',
@@ -6123,6 +6105,24 @@ collections.push(
       'UncannyXMenVol1532',
       'UncannyXMenVol1533',
       'UncannyXMenVol1534',
+    ]
+  ),
+  new Collection(
+    'Generation Hope: The Future\'s a Four-Lettered Word',
+    '2011-6-22',
+    [
+      'GenerationHopeVol15',
+    ]
+  ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
+  new Collection(
+    'New Mutants: Fall of the New Mutants',
+    '2011-10-5',
+    [
+      'NewMutantsVol320',
+      'NewMutantsVol321',
     ]
   ),
   new Collection(
