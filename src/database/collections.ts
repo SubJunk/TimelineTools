@@ -6069,19 +6069,32 @@ collections.push(
     '2010-12',
     [
       'UncannyXMenTheHeroicAgeVol11',
-    ]
-  ),
-  /**
-   * Big gap here, and in general the contents after here need to be reviewed.
-   */
-  new Collection(
-    'Uncanny X-Men: The Birth of Generation Hope',
-    '2010-12',
-    [
       'UncannyXMenVol1526',
       'UncannyXMenVol1527',
       'UncannyXMenVol1528',
       'UncannyXMenVol1529',
+    ]
+  ),
+  new Collection(
+    'New Mutants: Fall of the New Mutants',
+    '2011-10-5',
+    [
+      'NewMutantsVol315',
+      'NewMutantsVol316',
+      'NewMutantsVol317',
+      'NewMutantsVol318',
+      'NewMutantsVol319',
+    ]
+  ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
+  new Collection(
+    'New Mutants: Fall of the New Mutants',
+    '2011-10-5',
+    [
+      'NewMutantsVol320',
+      'NewMutantsVol321',
     ]
   ),
   new Collection(
