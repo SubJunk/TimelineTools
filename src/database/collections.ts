@@ -6114,9 +6114,27 @@ collections.push(
       'GenerationHopeVol15',
     ]
   ),
+  new Collection(
+    'Wolverine: Goes to Hell',
+    '2011-3-16',
+    [
+      'WolverineRoadtoHellVol11',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Wolverine: Goes to Hell',
+    '2011-3-16',
+    [
+      'WolverineVol41',
+      'WolverineVol42',
+      'WolverineVol43',
+      'WolverineVol44',
+      'WolverineVol45',
+    ]
+  ),
   new Collection(
     'New Mutants: Fall of the New Mutants',
     '2011-10-5',
