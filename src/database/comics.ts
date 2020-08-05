@@ -1951,9 +1951,9 @@ addComicsInSeriesVolume('WolverineVol3', [
 addComicsInSeriesVolume('WolverineVol4', [
   [1, '2010-9-1'],
   [2, '2010-10-6'],
-  [1, '2010-11-3'],
-  [1, '2010-12-15'],
-  [1, '2011-1-19'],
+  [3, '2010-11-3'],
+  [4, '2010-12-15'],
+  [5, '2011-1-19'],
 ]);
 addComicsInSeriesVolume('WolverineKnightofTerraVol1', [[1, '1995-8']]);
 addComicsInSeriesVolume('WolverineCableGutsandGloryVol1', [[1, '1999-10']]);
