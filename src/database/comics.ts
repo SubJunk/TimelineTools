@@ -1222,6 +1222,12 @@ addComicsInSeriesVolume('ThunderboltsVol2', [
   [130, '2009-3-25'],
   [131, '2009-4-29'],
 ]);
+addComicsInSeriesVolume('UncannyXForceVol1', [
+  [1, '2010-10-6'],
+  [2, '2010-11-24'],
+  [3, '2010-12-15'],
+  [4, '2011-1-26'],
+]);
 addComicsInSeriesVolume('UncannyXMenVol1', [
   [-1, '1997-7'],
   [1, '1963-9-10'],

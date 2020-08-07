@@ -181,6 +181,7 @@ series.push(
   new Series('Tales from the Age of Apocalypse: Sinster Bloodlines', {1: 1997}),
   new Series('Tales from the Age of Apocalypse: By the Light', {1: 1996}),
   new Series('Thor', {1: 1966}),
+  new Series('Uncanny X-Force', {1: 2010}),
   new Series('Uncanny X-Men', {1: 1963}),
   new Series('Uncanny X-Men/Fantastic Four Annual', {1: 1998}),
   new Series('Uncanny X-Men Annual', {1: 1996, 2: 1999, 3: 2001, 4: 2006}),

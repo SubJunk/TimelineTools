@@ -6121,6 +6121,16 @@ collections.push(
       'WolverineRoadtoHellVol11',
     ]
   ),
+  new Collection(
+    'Uncanny X-Force Vol. 1: The Apocalypse Solution',
+    '2011-3-16',
+    [
+      'UncannyXForceVol11',
+      'UncannyXForceVol12',
+      'UncannyXForceVol13',
+      'UncannyXForceVol14',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
