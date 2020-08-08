@@ -6131,6 +6131,65 @@ collections.push(
       'UncannyXForceVol14',
     ]
   ),
+  new Collection(
+    'X-Men: Curse of the Mutants',
+    '2011-8-31',
+    [
+      'XMenVol41',
+      'XMenVol42',
+      'XMenVol43',
+      'XMenVol44',
+      'XMenVol45',
+      'XMenVol46',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Collision',
+    '2011-9-7',
+    [
+      'XMenLegacyVol1238',
+      'XMenLegacyVol1239',
+      'XMenLegacyVol1240',
+      'XMenLegacyVol1241',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 11: Happenings in Vegas',
+    '2011-7-6',
+    [
+      'XFactorVol3207',
+      'XFactorVol3208',
+      'XFactorVol3209',
+      'XFactorVol3210',
+      'XFactorVol3211',
+      'XFactorVol3212',
+    ]
+  ),
+  new Collection(
+    'X-Factor Vol. 12: Scar Tissue',
+    '2011-7-27',
+    [
+      'XFactorVol3213',
+      'XFactorVol3214',
+      'XFactorVol3215',
+      'XFactorVol3216',
+      'XFactorVol3217',
+      'XFactorVol3218',
+      'XFactorVol3219',
+    ]
+  ),
+  new Collection(
+    'X-23 Vol. 1: The Killing Dream',
+    '2011-11-2',
+    [
+      'X23Vol31',
+      'X23Vol32',
+      'X23Vol33',
+      'X23Vol34',
+      'X23Vol35',
+      'X23Vol36',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */

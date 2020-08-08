@@ -1983,6 +1983,14 @@ addComicsInSeriesVolume('X23Vol1', [
   [5, '2005-4-20'],
   [6, '2005-5-25'],
 ]);
+addComicsInSeriesVolume('X23Vol3', [
+  [1, '2010-9-15'],
+  [2, '2010-10-20'],
+  [3, '2010-11-17'],
+  [4, '2010-12-29'],
+  [5, '2010-1-19'],
+  [6, '2010-2-23'],
+]);
 addComicsInSeriesVolume('X23TargetXVol1', [
   [1, '2006-12-13'],
   [2, '2007-1-3'],
@@ -2123,6 +2131,19 @@ addComicsInSeriesVolume('XFactorVol3', [
   [204, '2010-4-21'],
   [205, '2010-5-19'],
   [206, '2010-6-23'],
+  [207, '2010-7-21'],
+  [208, '2010-8-25'],
+  [209, '2010-9-15'],
+  [210, '2010-10-20'],
+  [211, '2010-11-17'],
+  [212, '2010-12-15'],
+  [213, '2011-1-19'],
+  [214, '2011-1-30'],
+  [215, '2011-2-9'],
+  [216, '2011-3-2'],
+  [217, '2011-3-16'],
+  [218, '2011-4-20'],
+  [219, '2011-5-18'],
 ]);
 addComicsInSeriesVolume('XFactorAnnualVol1', [
   [2, '1987-10'],
@@ -2471,6 +2492,14 @@ addComicsInSeriesVolume('XMenVol3', [
   [206, '2007-12-28'],
   [207, '2008-1-23'],
 ]);
+addComicsInSeriesVolume('XMenVol4', [
+  [1, '2010-7-8'],
+  [2, '2010-8-11'],
+  [3, '2010-9-9'],
+  [4, '2010-10-13'],
+  [5, '2010-11-17'],
+  [6, '2010-12-22'],
+]);
 addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']]);
 addComicsInSeriesVolume('XMenDeclassifiedVol1', [[1, '2000-10']]);
 addComicsInSeriesVolume('XMenDiebytheSwordVol1', [
@@ -2699,6 +2728,10 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [235, '2010-4-21'],
   [236, '2010-5-19'],
   [237, '2010-6-23'],
+  [238, '2010-7-21'],
+  [239, '2010-8-25'],
+  [240, '2010-9-29'],
+  [241, '2010-10-27'],
 ]);
 addComicsInSeriesVolume('XMenMagnetoTestamentVol1', [
   [1, '2008-9-10'],
