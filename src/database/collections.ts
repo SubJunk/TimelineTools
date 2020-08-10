@@ -6190,9 +6190,6 @@ collections.push(
       'X23Vol36',
     ]
   ),
-  /**
-   * Gap here, and in general the contents after here need to be reviewed.
-   */
   new Collection(
     'Wolverine: Goes to Hell',
     '2011-3-16',
@@ -6204,6 +6201,75 @@ collections.push(
       'WolverineVol45',
     ]
   ),
+  new Collection(
+    'Wolverine: Wolverine vs. The X-Men',
+    '2012-2-8',
+    [
+      'WolverineVol45.1',
+      'WolverineVol46',
+      'WolverineVol47',
+      'WolverineVol48',
+      'WolverineVol49',
+    ]
+  ),
+  new Collection(
+    'X-Men: With Great Power',
+    '2011-7-6',
+    [
+      'XMenVol47',
+      'XMenVol48',
+      'XMenVol49',
+      'XMenVol410',
+      'XMenVol411',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Force Vol. 2: Deathlok Nation',
+    '2011-3-16',
+    [
+      'AstonishingTalesVol125',
+      'UncannyXForceVol15',
+      'UncannyXForceVol15.1',
+      'UncannyXForceVol16',
+      'UncannyXForceVol17',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Hard Labor',
+    '2011-11-2',
+    [
+      'XFactorVol3220',
+      'XFactorVol3221',
+      'XFactorVol3222',
+      'XFactorVol3223',
+      'XFactorVol3224',
+    ]
+  ),
+  new Collection(
+    'X-Men: First to Last',
+    '2012-4-4',
+    [
+      'XMenGiantSizeVol11',
+      'XMenVol412',
+      'XMenVol413',
+      'XMenVol414',
+      'XMenVol415',
+    ]
+  ),
+  new Collection(
+    'X-Men: FF',
+    '2012-8-15',
+    [
+      'XMenVol415.1',
+      'XMenVol416',
+      'XMenVol417',
+      'XMenVol418',
+      'XMenVol419',
+    ]
+  ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
   new Collection(
     'New Mutants: Fall of the New Mutants',
     '2011-10-5',
