@@ -6267,15 +6267,46 @@ collections.push(
       'XMenVol419',
     ]
   ),
-  /**
-   * Gap here, and in general the contents after here need to be reviewed.
-   */
+  new Collection(
+    'Daken/X-23: Collision',
+    '2012-2-1',
+    [
+      'DakenDarkWolverineVol15',
+      'DakenDarkWolverineVol16',
+      'X23Vol37',
+      'DakenDarkWolverineVol17',
+      'X23Vol38',
+      'DakenDarkWolverineVol18',
+      'X23Vol39',
+      'DakenDarkWolverineVol19',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Aftermath',
+    '2012-2-8',
+    [
+      'XMenLegacyVol1242',
+      'XMenLegacyVol1243',
+      'XMenLegacyVol1244',
+    ]
+  ),
   new Collection(
     'New Mutants: Fall of the New Mutants',
     '2011-10-5',
     [
       'NewMutantsVol320',
       'NewMutantsVol321',
+    ]
+  ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
+  new Collection(
+    'X-Men Legacy: Aftermath',
+    '2012-2-8',
+    [
+      'XMenLegacyVol1248',
+      'XMenLegacyVol1249',
     ]
   ),
   new Collection(

@@ -91,7 +91,7 @@ addComicsInSeriesVolume('AskanisonVol1', [
   [3, '1996-5'],
   [4, '1996-6']
 ]);
-addComicsInSeriesVolume('AstonishingTalesVol125', [[1, '1974-8-1']]);
+addComicsInSeriesVolume('AstonishingTalesVol1', [[25, '1974-8-1']]);
 addComicsInSeriesVolume('AstonishingXMenVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
@@ -397,6 +397,13 @@ addComicsInSeriesVolume('CivilWarXMenVol1', [
   [2, '2006-8-16'],
   [3, '2006-9-20'],
   [4, '2006-10-18'],
+]);
+addComicsInSeriesVolume('DakenDarkWolverineVol1', [
+  [5, '2011-2-2'],
+  [6, '2011-3-2'],
+  [7, '2011-3-23'],
+  [8, '2011-4-13'],
+  [9, '2011-5-11'],
 ]);
 addComicsInSeriesVolume('DaredevilVol1', [
   [238, '1987-1'],
@@ -1994,8 +2001,11 @@ addComicsInSeriesVolume('X23Vol3', [
   [2, '2010-10-20'],
   [3, '2010-11-17'],
   [4, '2010-12-29'],
-  [5, '2010-1-19'],
-  [6, '2010-2-23'],
+  [5, '2011-1-19'],
+  [6, '2011-2-23'],
+  [7, '2011-3-9'],
+  [8, '2011-3-30'],
+  [9, '2011-4-27'],
 ]);
 addComicsInSeriesVolume('X23TargetXVol1', [
   [1, '2006-12-13'],
@@ -2758,6 +2768,11 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [239, '2010-8-25'],
   [240, '2010-9-29'],
   [241, '2010-10-27'],
+  [242, '2010-11-24'],
+  [243, '2010-12-22'],
+  [244, '2011-1-26'],
+  [248, '2011-5-11'],
+  [249, '2011-5-25'],
 ]);
 addComicsInSeriesVolume('XMenMagnetoTestamentVol1', [
   [1, '2008-9-10'],
