@@ -6115,16 +6115,10 @@ collections.push(
     ]
   ),
   new Collection(
-    'Wolverine: Goes to Hell',
-    '2011-3-16',
+    'Uncanny X-Force by Rick Remender Omnibus',
+    '2014-3-25',
     [
       'WolverineRoadtoHellVol11',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Force Vol. 1: The Apocalypse Solution',
-    '2011-3-16',
-    [
       'UncannyXForceVol11',
       'UncannyXForceVol12',
       'UncannyXForceVol13',
@@ -6191,7 +6185,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Wolverine: Goes to Hell',
+    'Wolverine: Goes to Hell (Partial)',
     '2011-3-16',
     [
       'WolverineVol41',
@@ -6224,10 +6218,16 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Force Vol. 2: Deathlok Nation',
+    'Uncanny X-Force Vol. 2: Deathlok Nation (Partial)',
     '2011-3-16',
     [
       'AstonishingTalesVol125',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Force by Rick Remender Omnibus',
+    '2014-3-25',
+    [
       'UncannyXForceVol15',
       'UncannyXForceVol15.1',
       'UncannyXForceVol16',
@@ -6301,6 +6301,41 @@ collections.push(
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Uncanny X-Force by Rick Remender Omnibus',
+    '2014-3-25',
+    [
+      'UncannyXForceVol18',
+      'UncannyXForceVol19',
+      'UncannyXForceVol110',
+      'UncannyXForceVol111',
+      'UncannyXForceVol112',
+      'UncannyXForceVol113',
+      'UncannyXForceVol114',
+      'UncannyXForceVol115',
+      'UncannyXForceVol116',
+      'UncannyXForceVol117',
+      'UncannyXForceVol118',
+      'UncannyXForceVol119',
+      'UncannyXForceVol119.1',
+      'UncannyXForceVol120',
+      'UncannyXForceVol121',
+      'UncannyXForceVol122',
+      'UncannyXForceVol123',
+      'UncannyXForceVol124',
+      'UncannyXForceVol125',
+      'UncannyXForceVol126',
+      'UncannyXForceVol127',
+      'UncannyXForceVol128',
+      'UncannyXForceVol129',
+      'UncannyXForceVol130',
+      'UncannyXForceVol131',
+      'UncannyXForceVol132',
+      'UncannyXForceVol133',
+      'UncannyXForceVol134',
+      'UncannyXForceVol135',
+    ]
+  ),
   new Collection(
     'X-Men Legacy: Aftermath',
     '2012-2-8',
