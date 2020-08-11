@@ -78,6 +78,7 @@ series.push(
   new Series('Cerebro\'s Guide to the X-Men', {1: 1998}),
   new Series('Civil War', {1: 2006}),
   new Series('Civil War: X-Men', {1: 2006}),
+  new Series('Daken: Dark Wolverine', {1: 2010}),
   new Series('Daredevil', {1: 1964}),
   new Series('Dark Avengers', {1: 2009}),
   new Series('Dark Avengers/Uncanny X-Men: Exodus', {1: 2009}),
