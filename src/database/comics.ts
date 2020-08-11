@@ -1235,6 +1235,10 @@ addComicsInSeriesVolume('UncannyXForceVol1', [
   [2, '2010-11-24'],
   [3, '2010-12-15'],
   [4, '2011-1-26'],
+  [5, '2011-2-16'],
+  [5.1, '2011-3-16'],
+  [6, '2011-3-23'],
+  [7, '2011-4-13'],
 ]);
 addComicsInSeriesVolume('UncannyXMenVol1', [
   [-1, '1997-7'],
