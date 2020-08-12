@@ -643,6 +643,22 @@ addComicsInSeriesVolume('FearItselfVol1', [
   [6, '2011-9-14'],
   [7, '2011-10-19'],
 ]);
+addComicsInSeriesVolume('FearItselfTheDeepVol1', [
+  [1, '2011-6-1'],
+  [2, '2011-7-27'],
+  [3, '2011-8-31'],
+  [4, '2011-9-28'],
+]);
+addComicsInSeriesVolume('FearItselfUncannyXForceVol1', [
+  [1, '2011-7-6'],
+  [2, '2011-8-10'],
+  [3, '2011-9-21'],
+]);
+addComicsInSeriesVolume('FearItselfWolverineVol1', [
+  [1, '2011-7-6'],
+  [2, '2011-8-3'],
+  [3, '2011-9-7'],
+]);
 addComicsInSeriesVolume('FurtherAdventuresofCyclopsPhoenixVol1', [
   [1, '1996-6'],
   [2, '1996-7'],
@@ -1007,6 +1023,10 @@ addComicsInSeriesVolume('NewMutantsVol3', [
   [26, '2011-6-22'],
   [27, '2011-7-13'],
   [28, '2011-7-27'],
+  [29, '2011-8-10'],
+  [30, '2011-8-24'],
+  [31, '2011-9-28'],
+  [32, '2011-10-26'],
 ]);
 addComicsInSeriesVolume('NewMutantsAnnualVol1', [
   [4, '1988-9'],
@@ -1821,14 +1841,11 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [537, '2011-5-25'],
   [538, '2011-6-15'],
   [539, '2011-6-29'],
-  /**
-   * Complete until here
-   */
-  [540, '2011-9'],
-  [541, '2011-9'],
-  [542, '2011-10'],
-  [543, '2011-11'],
-  [544, '2011-12'],
+  [540, '2011-7-6'],
+  [541, '2011-7-20'],
+  [542, '2011-8-17'],
+  [543, '2011-9-21'],
+  [544, '2011-10-19'],
 ]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
   [1, '1996-9'],

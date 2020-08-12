@@ -6452,20 +6452,110 @@ collections.push(
       'FearItselfVol12',
     ]
   ),
-  /**
-   * Gap here, and in general the contents after here need to be reviewed.
-   */
+  new Collection(
+    'Fear Itself: Wolverine / New Mutants',
+    '2012-5-9',
+    [
+      'FearItselfWolverineVol11',
+      'FearItselfWolverineVol12',
+    ]
+  ),
   new Collection(
     'Fear Itself',
     '2012-9-5',
     [
       'FearItselfVol13',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Wolverine / New Mutants',
+    '2012-5-9',
+    [
+      'FearItselfWolverineVol13',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Uncanny X-Force / The Deep',
+    '2012-5-9',
+    [
+      'FearItselfUncannyXForceVol11',
+    ]
+  ),
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
       'FearItselfVol14',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Fear Itself',
+    '2012-3-7',
+    [
+      'UncannyXMenVol1540',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Uncanny X-Force / The Deep',
+    '2012-5-9',
+    [
+      'FearItselfUncannyXForceVol12',
+      'FearItselfUncannyXForceVol13',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Fear Itself',
+    '2012-3-7',
+    [
+      'UncannyXMenVol1541',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Wolverine / New Mutants',
+    '2012-5-9',
+    [
+      'NewMutantsVol329',
+      'NewMutantsVol330',
+      'NewMutantsVol331',
+      'NewMutantsVol332',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Fear Itself',
+    '2012-3-7',
+    [
+      'UncannyXMenVol1542',
+      'UncannyXMenVol1543',
+    ]
+  ),
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
       'FearItselfVol15',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Uncanny X-Force / The Deep',
+    '2012-5-9',
+    [
+      'FearItselfTheDeepVol11',
+      'FearItselfTheDeepVol12',
+      'FearItselfTheDeepVol13',
+      'FearItselfTheDeepVol14',
+    ]
+  ),
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
       'FearItselfVol16',
       'FearItselfVol17',
     ]
   ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
   new Collection(
     'Astonishing X-Men: Children of the Brood (Partial)',
     '2012-2-22',
@@ -6518,15 +6608,11 @@ collections.push(
   ),
   new Collection(
     'Uncanny X-Men: Fear Itself',
-    '2012-3',
+    '2012-3-7',
     [
-      'UncannyXMenVol1540',
-      'UncannyXMenVol1541',
-      'UncannyXMenVol1542',
-      'UncannyXMenVol1543',
       'UncannyXMenVol1544'
     ]
-  )
+  ),
 );
 
 export class Collections {
