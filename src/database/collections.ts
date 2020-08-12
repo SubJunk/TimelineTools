@@ -6610,7 +6610,7 @@ collections.push(
     'Uncanny X-Men: Fear Itself',
     '2012-3-7',
     [
-      'UncannyXMenVol1544'
+      'UncannyXMenVol1544',
     ]
   ),
 );
