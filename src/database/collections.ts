@@ -6298,9 +6298,146 @@ collections.push(
       'NewMutantsVol321',
     ]
   ),
+  new Collection(
+    'X-Men: Age of X',
+    '2012-1-11',
+    [
+      'AgeofXAlphaVol11',
+      'XMenLegacyVol1245',
+      'NewMutantsVol322',
+      'XMenLegacyVol1246',
+      'NewMutantsVol323',
+      'AgeofXUniverseVol11',
+      'XMenLegacyVol1247',
+      'NewMutantsVol324',
+      'AgeofXUniverseVol12',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Aftermath',
+    '2012-2-8',
+    [
+      'XMenLegacyVol1248',
+      'XMenLegacyVol1249',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Lost Legions',
+    '2012-4-25',
+    [
+      'XMenLegacyVol1250',
+      'XMenLegacyVol1251',
+      'XMenLegacyVol1252',
+      'XMenLegacyVol1253',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Five Miles South of the Universe',
+    '2012-3-14',
+    [
+      'XMenLegacyVol1254',
+      'XMenLegacyVol1255',
+      'XMenLegacyVol1256',
+      'XMenLegacyVol1257',
+      'XMenLegacyVol1258',
+    ]
+  ),
+  new Collection(
+    'New Mutants: Unfinished Business',
+    '2012-4-25',
+    [
+      'NewMutantsVol325',
+      'NewMutantsVol326',
+      'NewMutantsVol327',
+      'NewMutantsVol328',
+    ]
+  ),
+  new Collection(
+    'Generation Hope: Schism',
+    '2012-1-11',
+    [
+      'GenerationHopeVol16',
+      'GenerationHopeVol17',
+      'GenerationHopeVol18',
+      'GenerationHopeVol19',
+      'GenerationHopeVol110',
+      'GenerationHopeVol111',
+      'GenerationHopeVol112',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Monstrous',
+    '2011-12-14',
+    [
+      'AstonishingXMenVol336',
+      'AstonishingXMenVol337',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Children of the Brood (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol338',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Monstrous',
+    '2011-12-14',
+    [
+      'AstonishingXMenVol339',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Children of the Brood (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol340',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Monstrous',
+    '2011-12-14',
+    [
+      'AstonishingXMenVol341',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Children of the Brood (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol342',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Breaking Point',
+    '2011-9-28',
+    [
+      'UncannyXMenVol1534.1',
+      'UncannyXMenVol1535',
+      'UncannyXMenVol1536',
+      'UncannyXMenVol1537',
+      'UncannyXMenVol1538',
+      'UncannyXMenVol1539',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Astonishing X-Men: Children of the Brood (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol343',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Five Miles South of the Universe',
+    '2012-3-14',
+    [
+      'XMenLegacyVol1259',
+      'XMenLegacyVol1260',
+    ]
+  ),
   new Collection(
     'Uncanny X-Force by Rick Remender Omnibus',
     '2014-3-25',
@@ -6334,26 +6471,6 @@ collections.push(
       'UncannyXForceVol133',
       'UncannyXForceVol134',
       'UncannyXForceVol135',
-    ]
-  ),
-  new Collection(
-    'X-Men Legacy: Aftermath',
-    '2012-2-8',
-    [
-      'XMenLegacyVol1248',
-      'XMenLegacyVol1249',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men: Breaking Point',
-    '2011-9',
-    [
-      'UncannyXMenVol1534.1',
-      'UncannyXMenVol1535',
-      'UncannyXMenVol1536',
-      'UncannyXMenVol1537',
-      'UncannyXMenVol1538',
-      'UncannyXMenVol1539',
     ]
   ),
   new Collection(

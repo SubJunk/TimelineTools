@@ -51,6 +51,8 @@ function SeriesVolume(seriesId: string, volume: string, startYear: number, title
 series.push(
   new Series('Adventures of Cyclops & Phoenix', {1: 1994}),
   new Series('Age of Apocalypse: The Chosen', {1: 1995}),
+  new Series('Age of X: Alpha', {1: 2010}),
+  new Series('Age of X: Universe', {1: 2011}),
   new Series('Angel: Revelations', {1: 2008}),
   new Series('Archangel', {1: 1996}),
   new Series('Askani\'son', {1: 1996}),
