@@ -6420,9 +6420,52 @@ collections.push(
       'UncannyXMenVol1539',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men: Breaking Point',
+    '2012-7-25',
+    [
+      'X23Vol310',
+      'X23Vol311',
+      'X23Vol312',
+      'X23Vol313',
+      'X23Vol314',
+      'X23Vol315',
+      'X23Vol316',
+    ]
+  ),
+  new Collection(
+    'X-Men: Prelude to Schism',
+    '2012-3-14',
+    [
+      'XMenPreludetoSchismVol11',
+      'XMenPreludetoSchismVol12',
+      'XMenPreludetoSchismVol13',
+      'XMenPreludetoSchismVol14',
+    ]
+  ),
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
+      'FearItselfTheBookoftheSkullVol11',
+      'FearItselfVol11',
+      'FearItselfVol12',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
+      'FearItselfVol13',
+      'FearItselfVol14',
+      'FearItselfVol15',
+      'FearItselfVol16',
+      'FearItselfVol17',
+    ]
+  ),
   new Collection(
     'Astonishing X-Men: Children of the Brood (Partial)',
     '2012-2-22',

@@ -625,35 +625,45 @@ addComicsInSeriesVolume('FantasticFourVol1', [
   [286, '1986-1-10'],
   [312, '1988-3'],
   [415, '1996-8'],
-  [416, '1996-9']
+  [416, '1996-9'],
 ]);
 addComicsInSeriesVolume('FantasticFourvstheXMenVol1', [
   [1, '1987-2'],
   [2, '1987-3'],
   [3, '1987-4'],
-  [4, '1987-6']
+  [4, '1987-6'],
+]);
+addComicsInSeriesVolume('FearItselfTheBookoftheSkullVol1', [[1, '2011-3-16']]);
+addComicsInSeriesVolume('FearItselfVol1', [
+  [1, '2011-4-6'],
+  [2, '2011-5-4'],
+  [3, '2011-6-1'],
+  [4, '2011-7-6'],
+  [5, '2011-8-10'],
+  [6, '2011-9-14'],
+  [7, '2011-10-19'],
 ]);
 addComicsInSeriesVolume('FurtherAdventuresofCyclopsPhoenixVol1', [
   [1, '1996-6'],
   [2, '1996-7'],
   [3, '1996-8'],
-  [4, '1996-9']
+  [4, '1996-9'],
 ]);
 addComicsInSeriesVolume('GambitVol1', [
   [1, '1993-12'],
   [2, '1994-1'],
   [3, '1994-2'],
-  [4, '1994-3']
+  [4, '1994-3'],
 ]);
 addComicsInSeriesVolume('GambitVol2', [
   [1, '1997-9'],
   [2, '1997-10'],
   [3, '1997-11'],
-  [4, '1997-12']
+  [4, '1997-12'],
 ]);
 addComicsInSeriesVolume('GambitVol3', [
   [8, '1999-9-1'],
-  [9, '1999-10-1']
+  [9, '1999-10-1'],
 ]);
 addComicsInSeriesVolume('GambitVol4', [
   [1, '2004-9-1'],
@@ -2865,12 +2875,9 @@ addComicsInSeriesVolume('XMenManifestDestinyVol1', [
 ]);
 addComicsInSeriesVolume('XMenMessiahComplexVol1', [[1, '2007-10-31']]);
 addComicsInSeriesVolume('XMenMessiahComplexMutantFilesVol1', [[1, '2007-12-28']]);
-addComicsInSeriesVolume('XNecroshaVol1', [[1, '2009-10-28']]);
-addComicsInSeriesVolume('XNecroshaTheGatheringVol1', [[1, '2009-12-9']]);
 addComicsInSeriesVolume('XMenOddMenOutVol1', [[1, '2008-7-30']]);
 addComicsInSeriesVolume('XMenOmegaVol1', [[1, '1995-6']]);
 addComicsInSeriesVolume('XMenOriginalSinVol1', [[1, '2008-10-8']]);
-addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']]);
 addComicsInSeriesVolume('XMenPhoenixVol1', [
   [1, '1999-12'],
   [2, '2000-1'],
@@ -2889,6 +2896,13 @@ addComicsInSeriesVolume('XMenPhoenixWarsongVol1', [
   [3, '2006-11-1'],
   [4, '2006-12-13'],
   [5, '2007-2-7'],
+]);
+addComicsInSeriesVolume('XMenPrimeVol1', [[1, '1995-7']]);
+addComicsInSeriesVolume('XMenPreludetoSchismVol1', [
+  [1, '2011-5-4'],
+  [2, '2011-5-18'],
+  [3, '2011-6-15'],
+  [4, '2011-6-29'],
 ]);
 addComicsInSeriesVolume('XMenRoadtoOnslaughtVol1', [[1, '1996-10']]);
 addComicsInSeriesVolume('XMenSecondComingVol1', [
@@ -2970,6 +2984,8 @@ addComicsInSeriesVolume('XMenWorldsApartVol1', [
   [3, '2008-12-31'],
   [4, '2009-1-28']
 ]);
+addComicsInSeriesVolume('XNecroshaVol1', [[1, '2009-10-28']]);
+addComicsInSeriesVolume('XNecroshaTheGatheringVol1', [[1, '2009-12-9']]);
 addComicsInSeriesVolume('XUniverseVol1', [
   [1, '1995-5'],
   [2, '1995-6']
