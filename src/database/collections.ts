@@ -6115,16 +6115,10 @@ collections.push(
     ]
   ),
   new Collection(
-    'Wolverine: Goes to Hell',
-    '2011-3-16',
+    'Uncanny X-Force by Rick Remender Omnibus',
+    '2014-3-25',
     [
       'WolverineRoadtoHellVol11',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Force Vol. 1: The Apocalypse Solution',
-    '2011-3-16',
-    [
       'UncannyXForceVol11',
       'UncannyXForceVol12',
       'UncannyXForceVol13',
@@ -6190,18 +6184,116 @@ collections.push(
       'X23Vol36',
     ]
   ),
-  /**
-   * Gap here, and in general the contents after here need to be reviewed.
-   */
   new Collection(
-    'Wolverine: Goes to Hell',
-    '2011-3-16',
+    'Wolverine Goes to Hell Omnibus',
+    '2018-5-15',
     [
       'WolverineVol41',
       'WolverineVol42',
       'WolverineVol43',
       'WolverineVol44',
       'WolverineVol45',
+      'WolverineVol45.1',
+      'WolverineVol46',
+      'WolverineVol47',
+      'WolverineVol48',
+      'WolverineVol49',
+    ]
+  ),
+  new Collection(
+    'X-Men: With Great Power',
+    '2011-7-6',
+    [
+      'XMenVol47',
+      'XMenVol48',
+      'XMenVol49',
+      'XMenVol410',
+      'XMenVol411',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Force Vol. 2: Deathlok Nation (Partial)',
+    '2011-3-16',
+    [
+      'AstonishingTalesVol125',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Force by Rick Remender Omnibus',
+    '2014-3-25',
+    [
+      'UncannyXForceVol15',
+      'UncannyXForceVol15.1',
+      'UncannyXForceVol16',
+      'UncannyXForceVol17',
+    ]
+  ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'AstonishingSpiderManWolverineVol11',
+      'AstonishingSpiderManWolverineVol12',
+      'AstonishingSpiderManWolverineVol13',
+      'AstonishingSpiderManWolverineVol14',
+      'AstonishingSpiderManWolverineVol15',
+      'AstonishingSpiderManWolverineVol16',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Hard Labor',
+    '2011-11-2',
+    [
+      'XFactorVol3220',
+      'XFactorVol3221',
+      'XFactorVol3222',
+      'XFactorVol3223',
+      'XFactorVol3224',
+    ]
+  ),
+  new Collection(
+    'X-Men: First to Last',
+    '2012-4-4',
+    [
+      'XMenGiantSizeVol11',
+      'XMenVol412',
+      'XMenVol413',
+      'XMenVol414',
+      'XMenVol415',
+    ]
+  ),
+  new Collection(
+    'X-Men: FF',
+    '2012-8-15',
+    [
+      'XMenVol415.1',
+      'XMenVol416',
+      'XMenVol417',
+      'XMenVol418',
+      'XMenVol419',
+    ]
+  ),
+  new Collection(
+    'Daken/X-23: Collision',
+    '2012-2-1',
+    [
+      'DakenDarkWolverineVol15',
+      'DakenDarkWolverineVol16',
+      'X23Vol37',
+      'DakenDarkWolverineVol17',
+      'X23Vol38',
+      'DakenDarkWolverineVol18',
+      'X23Vol39',
+      'DakenDarkWolverineVol19',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Aftermath',
+    '2012-2-8',
+    [
+      'XMenLegacyVol1242',
+      'XMenLegacyVol1243',
+      'XMenLegacyVol1244',
     ]
   ),
   new Collection(
@@ -6213,8 +6305,115 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Men: Age of X',
+    '2012-1-11',
+    [
+      'AgeofXAlphaVol11',
+      'XMenLegacyVol1245',
+      'NewMutantsVol322',
+      'XMenLegacyVol1246',
+      'NewMutantsVol323',
+      'AgeofXUniverseVol11',
+      'XMenLegacyVol1247',
+      'NewMutantsVol324',
+      'AgeofXUniverseVol12',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Aftermath',
+    '2012-2-8',
+    [
+      'XMenLegacyVol1248',
+      'XMenLegacyVol1249',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Lost Legions',
+    '2012-4-25',
+    [
+      'XMenLegacyVol1250',
+      'XMenLegacyVol1251',
+      'XMenLegacyVol1252',
+      'XMenLegacyVol1253',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Five Miles South of the Universe',
+    '2012-3-14',
+    [
+      'XMenLegacyVol1254',
+      'XMenLegacyVol1255',
+      'XMenLegacyVol1256',
+      'XMenLegacyVol1257',
+      'XMenLegacyVol1258',
+    ]
+  ),
+  new Collection(
+    'New Mutants: Unfinished Business',
+    '2012-4-25',
+    [
+      'NewMutantsVol325',
+      'NewMutantsVol326',
+      'NewMutantsVol327',
+      'NewMutantsVol328',
+    ]
+  ),
+  new Collection(
+    'Generation Hope: Schism',
+    '2012-1-11',
+    [
+      'GenerationHopeVol16',
+      'GenerationHopeVol17',
+      'GenerationHopeVol18',
+      'GenerationHopeVol19',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Monstrous',
+    '2011-12-14',
+    [
+      'AstonishingXMenVol336',
+      'AstonishingXMenVol337',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Children of the Brood (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol338',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Monstrous',
+    '2011-12-14',
+    [
+      'AstonishingXMenVol339',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Children of the Brood (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol340',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Monstrous',
+    '2011-12-14',
+    [
+      'AstonishingXMenVol341',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Children of the Brood (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol342',
+    ]
+  ),
+  new Collection(
     'Uncanny X-Men: Breaking Point',
-    '2011-9',
+    '2011-9-28',
     [
       'UncannyXMenVol1534.1',
       'UncannyXMenVol1535',
@@ -6225,16 +6424,264 @@ collections.push(
     ]
   ),
   new Collection(
+    'Uncanny X-Men: Breaking Point',
+    '2012-7-25',
+    [
+      'X23Vol310',
+      'X23Vol311',
+      'X23Vol312',
+      'X23Vol313',
+      'X23Vol314',
+      'X23Vol315',
+      'X23Vol316',
+    ]
+  ),
+  new Collection(
+    'X-Men: Prelude to Schism',
+    '2012-3-14',
+    [
+      'XMenPreludetoSchismVol11',
+      'XMenPreludetoSchismVol12',
+      'XMenPreludetoSchismVol13',
+      'XMenPreludetoSchismVol14',
+    ]
+  ),
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
+      'FearItselfTheBookoftheSkullVol11',
+      'FearItselfVol11',
+      'FearItselfVol12',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Wolverine / New Mutants',
+    '2012-5-9',
+    [
+      'FearItselfWolverineVol11',
+      'FearItselfWolverineVol12',
+    ]
+  ),
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
+      'FearItselfVol13',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Wolverine / New Mutants',
+    '2012-5-9',
+    [
+      'FearItselfWolverineVol13',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Uncanny X-Force / The Deep',
+    '2012-5-9',
+    [
+      'FearItselfUncannyXForceVol11',
+    ]
+  ),
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
+      'FearItselfVol14',
+    ]
+  ),
+  new Collection(
     'Uncanny X-Men: Fear Itself',
-    '2012-3',
+    '2012-3-7',
     [
       'UncannyXMenVol1540',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Uncanny X-Force / The Deep',
+    '2012-5-9',
+    [
+      'FearItselfUncannyXForceVol12',
+      'FearItselfUncannyXForceVol13',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Fear Itself',
+    '2012-3-7',
+    [
       'UncannyXMenVol1541',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Wolverine / New Mutants',
+    '2012-5-9',
+    [
+      'NewMutantsVol329',
+      'NewMutantsVol330',
+      'NewMutantsVol331',
+      'NewMutantsVol332',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Fear Itself',
+    '2012-3-7',
+    [
       'UncannyXMenVol1542',
       'UncannyXMenVol1543',
-      'UncannyXMenVol1544'
     ]
-  )
+  ),
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
+      'FearItselfVol15',
+    ]
+  ),
+  new Collection(
+    'Fear Itself: Uncanny X-Force / The Deep',
+    '2012-5-9',
+    [
+      'FearItselfTheDeepVol11',
+      'FearItselfTheDeepVol12',
+      'FearItselfTheDeepVol13',
+      'FearItselfTheDeepVol14',
+    ]
+  ),
+  new Collection(
+    'Fear Itself',
+    '2012-9-5',
+    [
+      'FearItselfVol16',
+      'FearItselfVol17',
+    ]
+  ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'WolverineVol410',
+      'WolverineVol411',
+      'WolverineVol412',
+      'WolverineVol413',
+      'WolverineVol414',
+      'WolverineVol415',
+      'WolverineVol416',
+      'XMenSchismVol11',
+      'XMenSchismVol12',
+      'XMenSchismVol13',
+    ]
+  ),
+  new Collection(
+    'Generation Hope: Schism',
+    '2012-1-11',
+    [
+      'GenerationHopeVol110',
+    ]
+  ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'XMenSchismVol14',
+    ]
+  ),
+  new Collection(
+    'Generation Hope: Schism',
+    '2012-1-11',
+    [
+      'GenerationHopeVol111',
+    ]
+  ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'XMenSchismVol15',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Fear Itself',
+    '2012-3-7',
+    [
+      'UncannyXMenVol1544',
+    ]
+  ),
+  new Collection(
+    'Generation Hope: Schism',
+    '2012-1-11',
+    [
+      'GenerationHopeVol112',
+    ]
+  ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'WolverineVol417',
+      'WolverineVol418',
+      'WolverineVol419',
+      'WolverineVol420',
+      'WolverineVol4300',
+      'WolverineVol4301',
+      'WolverineVol4302',
+      'WolverineVol4303',
+      'WolverineVol4304',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Children of the Brood (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol343',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Five Miles South of the Universe',
+    '2012-3-14',
+    [
+      'XMenLegacyVol1259',
+      'XMenLegacyVol1260',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Force by Rick Remender Omnibus',
+    '2014-3-25',
+    [
+      'UncannyXForceVol18',
+      'UncannyXForceVol19',
+      'UncannyXForceVol110',
+      'UncannyXForceVol111',
+      'UncannyXForceVol112',
+      'UncannyXForceVol113',
+      'UncannyXForceVol114',
+      'UncannyXForceVol115',
+      'UncannyXForceVol116',
+      'UncannyXForceVol117',
+      'UncannyXForceVol118',
+      'UncannyXForceVol119',
+      'UncannyXForceVol119.1',
+      'UncannyXForceVol120',
+      'UncannyXForceVol121',
+      'UncannyXForceVol122',
+      'UncannyXForceVol123',
+      'UncannyXForceVol124',
+      'UncannyXForceVol125',
+      'UncannyXForceVol126',
+      'UncannyXForceVol127',
+      'UncannyXForceVol128',
+      'UncannyXForceVol129',
+      'UncannyXForceVol130',
+      'UncannyXForceVol131',
+      'UncannyXForceVol132',
+      'UncannyXForceVol133',
+      'UncannyXForceVol134',
+      'UncannyXForceVol135',
+    ]
+  ),
 );
 
 export class Collections {
