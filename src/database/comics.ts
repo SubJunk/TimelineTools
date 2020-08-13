@@ -80,7 +80,7 @@ addComicsInSeriesVolume('AmazingXMenVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
-  [4, '1995-6']
+  [4, '1995-6'],
 ]);
 addComicsInSeriesVolume('AngelRevelationsVol1', [
   [1, '2008-5-29'],
@@ -94,19 +94,27 @@ addComicsInSeriesVolume('AskanisonVol1', [
   [1, '1996-1'],
   [2, '1996-4'],
   [3, '1996-5'],
-  [4, '1996-6']
+  [4, '1996-6'],
 ]);
 addComicsInSeriesVolume('AstonishingTalesVol1', [[25, '1974-8-1']]);
+addComicsInSeriesVolume('AstonishingSpiderManWolverineVol1', [
+  [1, '2010-5-5'],
+  [2, '2010-7-14'],
+  [3, '2010-9-15'],
+  [4, '2010-12-29'],
+  [5, '2011-3-23'],
+  [6, '2011-5-25'],
+]);
 addComicsInSeriesVolume('AstonishingXMenVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
-  [4, '1995-6']
+  [4, '1995-6'],
 ]);
 addComicsInSeriesVolume('AstonishingXMenVol2', [
   [1, '1999-9'],
   [2, '1999-10'],
-  [3, '1999-11']
+  [3, '1999-11'],
 ]);
 addComicsInSeriesVolume('AstonishingXMenVol3', [
   [1, '2004-5-26'],
@@ -2934,6 +2942,13 @@ addComicsInSeriesVolume('XMenSecondComingVol1', [
   [2, '2010-7-14'],
 ]);
 addComicsInSeriesVolume('XMenSecondComingRevelationsBlindScienceVol1', [[1, '2010-5-26']]);
+addComicsInSeriesVolume('XMenSchismVol1', [
+  [1, '2011-7-13'],
+  [2, '2011-7-27'],
+  [3, '2011-8-17'],
+  [4, '2011-9-21'],
+  [5, '2011-10-5'],
+]);
 addComicsInSeriesVolume('XMenSearchforCyclopsVol1', [
   [1, '2000-12'],
   [2, '2001-1'],

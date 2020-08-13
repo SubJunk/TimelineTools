@@ -6185,20 +6185,14 @@ collections.push(
     ]
   ),
   new Collection(
-    'Wolverine: Goes to Hell (Partial)',
-    '2011-3-16',
+    'Wolverine Goes to Hell Omnibus',
+    '2018-5-15',
     [
       'WolverineVol41',
       'WolverineVol42',
       'WolverineVol43',
       'WolverineVol44',
       'WolverineVol45',
-    ]
-  ),
-  new Collection(
-    'Wolverine: Wolverine vs. The X-Men',
-    '2012-2-8',
-    [
       'WolverineVol45.1',
       'WolverineVol46',
       'WolverineVol47',
@@ -6232,6 +6226,18 @@ collections.push(
       'UncannyXForceVol15.1',
       'UncannyXForceVol16',
       'UncannyXForceVol17',
+    ]
+  ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'AstonishingSpiderManWolverineVol11',
+      'AstonishingSpiderManWolverineVol12',
+      'AstonishingSpiderManWolverineVol13',
+      'AstonishingSpiderManWolverineVol14',
+      'AstonishingSpiderManWolverineVol15',
+      'AstonishingSpiderManWolverineVol16',
     ]
   ),
   new Collection(
@@ -6360,9 +6366,6 @@ collections.push(
       'GenerationHopeVol17',
       'GenerationHopeVol18',
       'GenerationHopeVol19',
-      'GenerationHopeVol110',
-      'GenerationHopeVol111',
-      'GenerationHopeVol112',
     ]
   ),
   new Collection(
@@ -6553,9 +6556,82 @@ collections.push(
       'FearItselfVol17',
     ]
   ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'WolverineVol410',
+      'WolverineVol411',
+      'WolverineVol412',
+      'WolverineVol413',
+      'WolverineVol414',
+      'WolverineVol415',
+      'WolverineVol416',
+      'XMenSchismVol11',
+      'XMenSchismVol12',
+      'XMenSchismVol13',
+    ]
+  ),
+  new Collection(
+    'Generation Hope: Schism',
+    '2012-1-11',
+    [
+      'GenerationHopeVol110',
+    ]
+  ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'XMenSchismVol14',
+    ]
+  ),
+  new Collection(
+    'Generation Hope: Schism',
+    '2012-1-11',
+    [
+      'GenerationHopeVol111',
+    ]
+  ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'XMenSchismVol15',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men: Fear Itself',
+    '2012-3-7',
+    [
+      'UncannyXMenVol1544',
+    ]
+  ),
+  new Collection(
+    'Generation Hope: Schism',
+    '2012-1-11',
+    [
+      'GenerationHopeVol112',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'WolverineVol417',
+      'WolverineVol418',
+      'WolverineVol419',
+      'WolverineVol420',
+      'WolverineVol4300',
+      'WolverineVol4301',
+      'WolverineVol4302',
+      'WolverineVol4303',
+      'WolverineVol4304',
+    ]
+  ),
   new Collection(
     'Astonishing X-Men: Children of the Brood (Partial)',
     '2012-2-22',
@@ -6604,13 +6680,6 @@ collections.push(
       'UncannyXForceVol133',
       'UncannyXForceVol134',
       'UncannyXForceVol135',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men: Fear Itself',
-    '2012-3-7',
-    [
-      'UncannyXMenVol1544',
     ]
   ),
 );
