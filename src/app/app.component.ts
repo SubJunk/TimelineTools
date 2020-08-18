@@ -788,14 +788,6 @@ export class AppComponent implements OnInit {
         seriesVolumeId: currentReadingOrderSeriesVolume.id
       };
 
-      /*
-       * Match the width of the page to the width of the content, which
-       * includes one horizontal increment (the width of the current
-       * comic thumbnail) and 2 body padding units to make up for the
-       * left and right padding of the page.
-       */
-      this.bodyStyles['width.px'] = comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE + (BODY_PADDING * 2);
-
       if (newLabelNeeded) {
         this.readingOrderSeriesVolumeLabels.push({
           text: currentReadingOrderSeriesVolume.titleWithVolume,
