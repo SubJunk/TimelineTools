@@ -23,7 +23,6 @@
       <div class="panel-left">
         <button (click)="toggleExpandCollection(collection)" class="cover-thumbnail" id="expand-{{collection.id}}">
           <img
-              loading="lazy"
               [srcset]="
                   'https://api.rethumb.com/v1/width/322/version/3/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 2x,
                   https://api.rethumb.com/v1/width/161/version/3/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 1x'"
