@@ -860,8 +860,6 @@ export class AppComponent implements OnInit {
       if (!this.isRunningAnimation) {
         this.repositionStickyElements();
       }
-      this.setCollectionsViewImageVisibility();
-      this.setComicsViewImageVisibility();
     });
 
     // Catch clicks
@@ -985,112 +983,6 @@ export class AppComponent implements OnInit {
 
   public toggleExpandCollection = (collection: Collection) => {
     this.expandedCollectionId = this.expandedCollectionId === collection.id ? null : collection.id;
-
-    /*
-     * If we just closed an expanded collection panel, as opposed to
-     * opening a new one, we detect visibility again since that may
-     * reveal hidden collections.
-     */
-    if (this.expandedCollectionId === null) {
-      setTimeout(() => {
-        this.setCollectionsViewImageVisibility();
-      }, ANIMATION_DURATION);
-    }
-  }
-
-  /*
-   * Sets whether each collection is currently visible in the browser window.
-   * Will never change from true to false, only false to true.
-   * Used to lazy-load the cover images.
-   */
-  private setCollectionsViewImageVisibility() {
-    if (this.isShowCollections) {
-      _.each(this.uniqueCollections, (collection: Collection) => {
-        // Return early if it has already been visible before
-        if (collection.visible) {
-          return;
-        }
-
-        const $collectionButton = $('#expand-' + collection.id);
-        if (!$collectionButton.length) {
-          return;
-        }
-
-        const scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
-        const scrollPositionRight = scrollPositionLeft + window.innerWidth;
-
-        const collectionLeftPosition = $collectionButton.offset().left;
-
-        const isCollectionScrolledPastLeft  = Boolean(scrollPositionLeft > (collectionLeftPosition + COLLECTIONS_VIEW_COVER_WIDTH));
-        const isCollectionScrolledPastRight = Boolean(scrollPositionRight < collectionLeftPosition);
-
-        if (!isCollectionScrolledPastLeft && !isCollectionScrolledPastRight) {
-          collection.visible = true;
-        }
-      });
-    }
-  }
-
-  /*
-   * Sets whether each comic is currently visible in the browser window.
-   * Will never change from true to false, only false to true.
-   * Used to lazy-load the cover images.
-   */
-  private setComicsViewImageVisibility() {
-    let isComicScrolledPastLeft: boolean;
-    let isComicScrolledPastRight: boolean;
-    let isComicScrolledPastTop: boolean;
-    let isComicScrolledPastBottom: boolean;
-
-    // The scroll position of the page, minus the main padding
-    const scrollPositionLeft = this.$jqWindow.scrollLeft() - BODY_PADDING;
-    const scrollPositionTop  = this.$jqWindow.scrollTop();
-    const scrollPositionRight = scrollPositionLeft + window.innerWidth;
-    const scrollPositionBottom = scrollPositionTop + window.innerHeight;
-
-    // This is the amount of pixels the topmost comic thumbnails are offset by vertically
-    let scrollPositionVerticalOffset = DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP;
-    if (this.isShowCollections) {
-      scrollPositionVerticalOffset += COLLECTIONS_CONTAINER_HEIGHT;
-    }
-
-    const scrollPositionTopWithOffset    = scrollPositionTop - scrollPositionVerticalOffset;
-    const scrollPositionBottomWithOffset = scrollPositionBottom - scrollPositionVerticalOffset;
-
-    // Lazy-load thumbnails that aren't in the viewport
-    _.each(this.comics, (comic) => {
-      // skip this calculation if the comic has been previously displayed
-      if (comic.visible === true) {
-        return;
-      }
-
-      isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastRight  = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
-      isComicScrolledPastTop    = Boolean(scrollPositionTopWithOffset > (comic.containerStyles['top.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastBottom = Boolean(scrollPositionBottomWithOffset < comic.containerStyles['top.px']);
-
-      if (!isComicScrolledPastLeft && !isComicScrolledPastRight && !isComicScrolledPastTop && !isComicScrolledPastBottom) {
-        comic.visible = true;
-      }
-    });
-
-
-    // do the same for reading order comics
-    _.each(this.comicsInReadingOrder, (comic) => {
-      // skip this calculation if the comic has been previously displayed
-      if (comic.visible === true) {
-        return;
-      }
-
-      isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastRight  = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
-      isComicScrolledPastTop    = Boolean(scrollPositionTopWithOffset > (comic.containerStyles['top.px'] + VISUAL_BLOCK_SIZE));
-      isComicScrolledPastBottom = Boolean(scrollPositionBottomWithOffset < comic.containerStyles['top.px']);
-
-      if (!isComicScrolledPastLeft && !isComicScrolledPastRight && !isComicScrolledPastTop && !isComicScrolledPastBottom) {
-        comic.visible = true;
-      }
-    });
   }
 
   /**
@@ -1414,8 +1306,6 @@ export class AppComponent implements OnInit {
 
       // This makes the page display the collections view before we check visibility
       this.changeDetector.detectChanges();
-
-      this.setCollectionsViewImageVisibility();
     } else {
       this.isShowCollections = false;
     }

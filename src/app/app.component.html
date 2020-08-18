@@ -23,7 +23,7 @@
       <div class="panel-left">
         <button (click)="toggleExpandCollection(collection)" class="cover-thumbnail" id="expand-{{collection.id}}">
           <img
-              *ngIf="collection.visible"
+              loading="lazy"
               [srcset]="
                   'https://api.rethumb.com/v1/width/322/version/3/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 2x,
                   https://api.rethumb.com/v1/width/161/version/3/https://www.xmentimeline.com/images/covers/' + collection.image + '.jpg 1x'"
@@ -40,6 +40,7 @@
               <div class="popover"><div>{{comic.series}} #{{comic.issue}}</div></div>
               <button (click)="toggleExpandComic(comic, true)" mat-button>
                 <img
+                    loading="lazy"
                     [srcset]="
                         'https://api.rethumb.com/v1/width/400/version/3/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
                         https://api.rethumb.com/v1/width/200/version/3/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
@@ -60,10 +61,11 @@
     <li *ngFor="let item of itemsToSearch | filter: searchText | limitTo" class="search-result">
       <button (click)="search(item)" class="cover-thumbnail">
         <img
-          [srcset]="
-              'https://api.rethumb.com/v1/square/100/version/3/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 2x,
-              https://api.rethumb.com/v1/square/50/version/3/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 1x'"
-          [src]="'https://api.rethumb.com/v1/square/50/version/3/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg'"
+            loading="lazy"
+            [srcset]="
+                'https://api.rethumb.com/v1/square/100/version/3/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 2x,
+                https://api.rethumb.com/v1/square/50/version/3/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg 1x'"
+            [src]="'https://api.rethumb.com/v1/square/50/version/3/https://www.xmentimeline.com/images/covers/' + item.image + '.jpg'"
         >
         <span class="search-result-text">{{item.displayText}}</span>
       </button>
@@ -86,7 +88,7 @@
       <div class="panel-left">
         <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
           <img
-              *ngIf="comic.visible"
+              loading="lazy"
               [srcset]="
                   'https://api.rethumb.com/v1/square/100/version/3/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 2x,
                   https://api.rethumb.com/v1/square/50/version/3/https://www.xmentimeline.com/images/covers/' + comic.image + '.jpg 1x'"
@@ -108,7 +110,7 @@
       <div class="panel-left">
         <span class="cover-thumbnail">
           <button (click)="toggleFullscreen()" class="toggle-full-screen">
-            <img src="https://www.xmentimeline.com/images/covers/{{expandedComic.image}}.jpg">
+            <img loading="lazy" src="https://www.xmentimeline.com/images/covers/{{expandedComic.image}}.jpg">
           </button>
         </span>
         <ol class="pagination">
@@ -161,6 +163,7 @@
               <div class="popover"><div>{{collectionComic.series}} #{{collectionComic.issue}}</div></div>
               <button (click)="toggleExpandComic(collectionComic)" mat-button>
                 <img
+                    loading="lazy"
                     [ngClass]="{current: collectionComic.id === expandedComicId}"
                     [srcset]="
                         'https://api.rethumb.com/v1/width/400/version/3/https://www.xmentimeline.com/images/covers/' + collectionComic.image + '.jpg 2x,

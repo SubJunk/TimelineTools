@@ -25,7 +25,6 @@ export interface Collection {
   monthPublished: number;
   styles: object;
   title: string;
-  visible: boolean;
   yearPublished: number;
 }
 
@@ -49,7 +48,6 @@ export interface Comic {
   seriesVolumeId?: string;
   styles?: ComicStyles;
   titles?: Array<string>;
-  visible?: boolean;
 }
 
 export interface ComicClasses {

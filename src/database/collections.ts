@@ -18,7 +18,6 @@ function Collection(title: string, datePublished: string, comicIds: string[]) {
   this.yearPublished = this.date.getFullYear();
   this.monthPublished = this.date.getMonth() + 1;
   this.comicIds = comicIds;
-  this.visible = false;
 }
 
 // These should be in reading order
