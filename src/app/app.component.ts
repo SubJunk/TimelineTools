@@ -29,7 +29,6 @@ const BODY_PADDING = 20;
 const LEFT_MARGIN = 200;
 const VISUAL_BLOCK_SIZE = 60;
 const EXPANDED_PANEL_WIDTH = 900;
-const COLLECTIONS_VIEW_COVER_WIDTH = 250;
 
 const ANIMATION_DURATION = 400;
 const ONE_YEAR_IN_MONTHS = 12;
@@ -42,10 +41,6 @@ const SATURATION_MIN = 35; // Saturation can be in the range 0-100
 const SATURATION_MAX = 75; // We choose a mid range that's easy to see
 const STEP_CHANGE = 30; // define how far to step around the colour wheel each time
 const COMPLETE_COLOR_WHEEL_DEGREES = 360; // 360 degrees in colour wheel
-
-const DATES_CONTAINER_HEIGHT = 68;
-const COLLECTIONS_CONTAINER_HEIGHT = 298;
-const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_HEIGHT;
 
 @Component({
   selector: 'app-root',
