@@ -53,7 +53,7 @@
     "@types/lodash": "^4.14.161",
     "@types/node": "14",
     "@types/xml2js": "^0.4.5",
-    "codelyzer": "^6.0.0",
+    "codelyzer": "^6.0.1",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~6.0.0",
     "jquery": "^3.5.1",
