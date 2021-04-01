@@ -6414,8 +6414,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Breaking Point',
-    '2011-9-28',
+    'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
+    '2019-2-20',
     [
       'UncannyXMenVol1534.1',
       'UncannyXMenVol1535',
@@ -6426,7 +6426,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Breaking Point',
+    'X-23, Vol. 2: Chaos Theory',
     '2012-7-25',
     [
       'X23Vol310',
@@ -6494,8 +6494,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Fear Itself',
-    '2012-3-7',
+    'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
+    '2019-2-20',
     [
       'UncannyXMenVol1540',
     ]
@@ -6509,8 +6509,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Fear Itself',
-    '2012-3-7',
+    'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
+    '2019-2-20',
     [
       'UncannyXMenVol1541',
     ]
@@ -6526,8 +6526,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Fear Itself',
-    '2012-3-7',
+    'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
+    '2019-2-20',
     [
       'UncannyXMenVol1542',
       'UncannyXMenVol1543',
@@ -6603,8 +6603,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Uncanny X-Men: Fear Itself',
-    '2012-3-7',
+    'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
+    '2019-2-20',
     [
       'UncannyXMenVol1544',
     ]
@@ -6616,9 +6616,30 @@ collections.push(
       'GenerationHopeVol112',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
+    '2019-2-20',
+    [
+      'XMenRegenesisVol11',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
+    '2019-2-20',
+    [
+      'SWORDVol11',
+      'SWORDVol12',
+      'SWORDVol13',
+      'SWORDVol14',
+      'SWORDVol15',
+      'UncannyXMenVol21',
+      'UncannyXMenVol22',
+      'UncannyXMenVol23',
+    ]
+  ),
   new Collection(
     'Wolverine Goes to Hell Omnibus',
     '208-5-15',
