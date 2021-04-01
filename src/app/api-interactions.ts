@@ -6,11 +6,6 @@ import { Injectable } from '@angular/core';
 const MARVEL_API_BASE_URL = 'https://gateway.marvel.com/v1/public/';
 const MARVEL_API_KEY_PUBLIC = '46a863fa31f601aacb87dae9cb8f7c45';
 
-const GOODREADS_API_BASE_URL = 'https://www.goodreads.com/search/index.xml';
-const GOODREADS_API_KEY_PUBLIC = 'ruoM3jpamOVNpjOnfiAuYA';
-
-const CORS_ANYWHERE_URL = 'https://cors-anywhere.herokuapp.com/';
-
 @Injectable()
 export class ApiInteractions {
   constructor(
@@ -28,19 +23,6 @@ export class ApiInteractions {
       .set('apikey', MARVEL_API_KEY_PUBLIC);
 
     return this.http.get(MARVEL_API_BASE_URL + 'series', {params});
-  }
-
-  /**
-   * @param collection the collection object
-   * @returns the collection data from the Goodreads API
-   */
-  public getGoodreadsCollectionData = (collectionTitle: string) => {
-    const params = new HttpParams()
-      .set('q', collectionTitle)
-      .set('key', GOODREADS_API_KEY_PUBLIC)
-      .set('X-Requested-With', 'XMLHttpRequest');
-
-    return this.http.get(CORS_ANYWHERE_URL + GOODREADS_API_BASE_URL, { params, responseType: 'text' });
   }
 
   /**
