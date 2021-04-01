@@ -3,7 +3,6 @@ import _ from 'lodash';
 import { Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
-import { parseString } from 'xml2js';
 
 import { InfoModalComponent } from './info-modal/info-modal.component';
 import { ApiInteractions } from './api-interactions';
@@ -342,8 +341,6 @@ export class AppComponent implements OnInit {
       return console.error('The expanded series volume could not be found', currentComic.seriesVolumeId);
     }
 
-    this.setGoodreadsCollectionId(this.expandedCollection);
-
     if (!expandedSeriesVolume.marvelId) {
       // We await this because setAPIComicData depends on having a marvel ID set
       expandedSeriesVolume.marvelId = await this.getMarvelSeriesVolumeId(expandedSeriesVolume);
@@ -372,35 +369,6 @@ export class AppComponent implements OnInit {
             }
           );
     });
-  }
-
-  /*
-   * Sets the Goodreads collection ID
-   */
-  private setGoodreadsCollectionId = (collection: Collection): void => {
-    this.apiInteractions.getGoodreadsCollectionData(collection.title)
-        .subscribe(
-          (response) => {
-            parseString(response, (err, result) => {
-              if (err) {
-                return console.error(err);
-              }
-
-              const totalResultsCount = result.GoodreadsResponse.search[0]['total-results'][0];
-              if (totalResultsCount < 1) {
-                return;
-              }
-
-              const collectionOnGoodreads = result.GoodreadsResponse.search[0].results[0].work[0].best_book[0];
-
-              collection.goodreadsId = collectionOnGoodreads.id[0]._;
-            });
-          },
-          (err) => {
-            // We don't want to lose the information but also don't care enough to throw
-            console.log(err);
-          }
-        );
   }
 
   private subtractLabelWidthsFromLeftPositions = (seriesVolumeLabels) => {
