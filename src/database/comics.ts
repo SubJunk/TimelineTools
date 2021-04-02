@@ -1275,9 +1275,16 @@ addComicsInSeriesVolume('SoldierXVol1', [
 ]);
 addComicsInSeriesVolume('SpiderManVol1', [
   [16, '1991-11'],
-  [72, '1996-9']
+  [72, '1996-9'],
 ]);
 addComicsInSeriesVolume('StryfesStrikeFileVol1', [[1, '1993-1-1']]);
+addComicsInSeriesVolume('SWORDVol1', [
+  [1, '2009-11-11'],
+  [2, '2009-12-9'],
+  [3, '2010-1-13'],
+  [4, '2010-2-10'],
+  [5, '2010-3-10'],
+]);
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseBytheLightVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']]);
 addComicsInSeriesVolume('TheAmazingSpiderManVol1', [
@@ -1854,6 +1861,11 @@ addComicsInSeriesVolume('UncannyXMenVol1', [
   [542, '2011-8-17'],
   [543, '2011-9-21'],
   [544, '2011-10-19'],
+]);
+addComicsInSeriesVolume('UncannyXMenVol2', [
+  [1, '2011-11-2'],
+  [2, '2011-11-30'],
+  [3, '2011-12-28'],
 ]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
   [1, '1996-9'],
@@ -2953,6 +2965,7 @@ addComicsInSeriesVolume('XMenPreludetoSchismVol1', [
   [4, '2011-6-29'],
 ]);
 addComicsInSeriesVolume('XMenRoadtoOnslaughtVol1', [[1, '1996-10']]);
+addComicsInSeriesVolume('XMenRegenesisVol1', [[1, '2011-11-16']]);
 addComicsInSeriesVolume('XMenSecondComingVol1', [
   [1, '2010-3-31'],
   [2, '2010-7-14'],
