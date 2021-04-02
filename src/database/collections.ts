@@ -6623,6 +6623,23 @@ collections.push(
       'XMenRegenesisVol11',
     ]
   ),
+  new Collection(
+    'Uncanny X-Force by Rick Remender Omnibus',
+    '2014-3-25',
+    [
+      'UncannyXForceVol18',
+      'UncannyXForceVol19',
+      'UncannyXForceVol110',
+      'UncannyXForceVol111',
+      'UncannyXForceVol112',
+      'UncannyXForceVol113',
+      'UncannyXForceVol114',
+      'UncannyXForceVol115',
+      'UncannyXForceVol116',
+      'UncannyXForceVol117',
+      'UncannyXForceVol118',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
@@ -6674,17 +6691,6 @@ collections.push(
     'Uncanny X-Force by Rick Remender Omnibus',
     '2014-3-25',
     [
-      'UncannyXForceVol18',
-      'UncannyXForceVol19',
-      'UncannyXForceVol110',
-      'UncannyXForceVol111',
-      'UncannyXForceVol112',
-      'UncannyXForceVol113',
-      'UncannyXForceVol114',
-      'UncannyXForceVol115',
-      'UncannyXForceVol116',
-      'UncannyXForceVol117',
-      'UncannyXForceVol118',
       'UncannyXForceVol119',
       'UncannyXForceVol119.1',
       'UncannyXForceVol120',
