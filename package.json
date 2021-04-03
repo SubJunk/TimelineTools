@@ -35,7 +35,7 @@
     "@angular/router": "^11.0.3",
     "moment": "^2.29.0",
     "normalize.css": "^8.0.1",
-    "rxjs": "^6.6.3",
+    "rxjs": "^6.6.7",
     "stream": "^0.0.2",
     "timers": "^0.1.1",
     "ts-md5": "^1.2.7",
