@@ -6662,6 +6662,17 @@ collections.push(
       'XFactorVol3228',
     ]
   ),
+  new Collection(
+    'X-23, Vol. 3: Don\'t Look Back',
+    '2012-12-12',
+    [
+      'X23Vol317',
+      'X23Vol318',
+      'X23Vol319',
+      'X23Vol320',
+      'X23Vol321',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
