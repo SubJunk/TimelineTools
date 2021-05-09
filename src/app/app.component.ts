@@ -1,5 +1,19 @@
 import $ from 'jquery';
-import _ from 'lodash';
+import {
+  assign,
+  clone,
+  cloneDeep,
+  concat,
+  each,
+  find,
+  findKey,
+  findLastIndex,
+  first,
+  isEmpty,
+  isEqual,
+  last,
+  sortBy
+} from 'lodash-es';
 import { Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
@@ -184,8 +198,8 @@ export class AppComponent implements OnInit {
     let comicStyles = comic.styles;
 
     if (comic.id === this.expandedComicId) {
-      comicStyles = _.clone(comic.styles);
-      comicStyles = _.assign(comicStyles, this.expandedComicCSS.styles);
+      comicStyles = clone(comic.styles);
+      comicStyles = assign(comicStyles, this.expandedComicCSS.styles);
     }
 
     return comicStyles;
@@ -212,7 +226,7 @@ export class AppComponent implements OnInit {
     let urlTree: UrlTree;
 
     // If these match, close the expanded box
-    if (_.isEmpty(currentComic) || this.expandedComicId === currentComic.id && !isForceScroll) {
+    if (isEmpty(currentComic) || this.expandedComicId === currentComic.id && !isForceScroll) {
       // Clear the comic ID in the URL
       urlTree = this.router.createUrlTree([], {
         queryParams: { id: '' },
@@ -229,7 +243,7 @@ export class AppComponent implements OnInit {
      * It is the new comic, but with the old containerStyles if sticky
      * classes are being used, so that it stays in place while animating.
      */
-    const comicTransition = _.cloneDeep(currentComic);
+    const comicTransition = cloneDeep(currentComic);
     if (this.expandedComicCSS.classes.stickyBottom || this.expandedComicCSS.classes.stickyTop) {
       comicTransition.containerStyles['left.px'] = this.expandedComic.containerStyles['left.px'];
     }
@@ -277,7 +291,7 @@ export class AppComponent implements OnInit {
     this.expandedComicId = currentComic.id;
 
     // Get the collection containing this comic
-    this.expandedCollection = _.find(this.collections, (collection, index) => {
+    this.expandedCollection = find(this.collections, (collection, index) => {
       this.currentComicIndexInCollection = collection.comicIds.indexOf(currentComic.id);
       if (collection.comicIds.includes(currentComic.id)) {
         this.currentCollectionIndexInCollections = index;
@@ -287,21 +301,21 @@ export class AppComponent implements OnInit {
     });
 
     // if this is the first collection
-    if (_.isEqual(this.collections[this.currentCollectionIndexInCollections], _.first(this.collections))) {
+    if (isEqual(this.collections[this.currentCollectionIndexInCollections], first(this.collections))) {
       this.prevCollection = undefined;
       this.prevCollectionFirstComic = undefined;
     } else  {
       this.prevCollection = this.collections[this.currentCollectionIndexInCollections - 1];
-      this.prevCollectionFirstComic = _.find(this.comics, ['id', _.first(this.prevCollection.comicIds)]);
+      this.prevCollectionFirstComic = find(this.comics, ['id', first(this.prevCollection.comicIds)]);
     }
 
     // check for the last collection
-    if (_.isEqual(this.collections[this.currentCollectionIndexInCollections], _.last(this.collections))) {
+    if (isEqual(this.collections[this.currentCollectionIndexInCollections], last(this.collections))) {
       this.nextCollection = undefined;
       this.nextCollectionFirstComic = undefined;
     } else {
       this.nextCollection = this.collections[this.currentCollectionIndexInCollections + 1];
-      this.nextCollectionFirstComic = _.find(this.comics, ['id', _.first(this.nextCollection.comicIds)]);
+      this.nextCollectionFirstComic = find(this.comics, ['id', first(this.nextCollection.comicIds)]);
     }
 
     // Find the previous comic
@@ -313,7 +327,7 @@ export class AppComponent implements OnInit {
        * the last comic in the previous collection.
        */
       this.prevComicId = this.prevCollection.comicIds[this.prevCollection.comicIds.length - 1];
-      this.prevComic = _.find(this.comics, ['id', this.prevComicId]);
+      this.prevComic = find(this.comics, ['id', this.prevComicId]);
     }
 
     // Find the next comic
@@ -325,7 +339,7 @@ export class AppComponent implements OnInit {
        * the first comic in the next collection.
        */
       this.nextComicId = this.nextCollection.comicIds[0];
-      this.nextComic = _.find(this.comics, ['id', this.nextComicId]);
+      this.nextComic = find(this.comics, ['id', this.nextComicId]);
     }
 
     // Set the comic ID in the URL
@@ -336,7 +350,7 @@ export class AppComponent implements OnInit {
     this.router.navigateByUrl(urlTree);
 
     // Get the series volume containing this comic
-    const expandedSeriesVolume = _.find(this.seriesVolumes, ['id', currentComic.seriesVolumeId]);
+    const expandedSeriesVolume = find(this.seriesVolumes, ['id', currentComic.seriesVolumeId]);
     if (!expandedSeriesVolume) {
       return console.error('The expanded series volume could not be found', currentComic.seriesVolumeId);
     }
@@ -361,7 +375,7 @@ export class AppComponent implements OnInit {
                 return console.warn('The response from Marvel API wasn\'t in the expected format ' + response);
               }
 
-              const firstResult: MarvelAPISeriesResponseResult = _.first(response.data.results);
+              const firstResult: MarvelAPISeriesResponseResult = first(response.data.results);
               return resolve(firstResult.id);
             },
             (err) => {
@@ -375,7 +389,7 @@ export class AppComponent implements OnInit {
     let $jqLabel: JQuery<HTMLElement>;
     let labelWidthFromDom: number;
 
-    _.each(seriesVolumeLabels, (seriesVolumeLabel) => {
+    each(seriesVolumeLabels, (seriesVolumeLabel) => {
       // We only know the width after the initial render, so store it
       $jqLabel = $('#' + seriesVolumeLabel.id);
       if ($jqLabel.length > -1) {
@@ -396,11 +410,11 @@ export class AppComponent implements OnInit {
     this.series        = SeriesVolumes.getSeries();
     this.seriesVolumes = SeriesVolumes.getSeriesVolumes();
     this.comicsInReadingOrder = [];
-    this.readingOrderSeriesVolumes = _.cloneDeep(this.seriesVolumes);
+    this.readingOrderSeriesVolumes = cloneDeep(this.seriesVolumes);
 
 
     // Sort the data by date
-    this.comics = _.sortBy(this.comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
+    this.comics = sortBy(this.comics, ['yearPublished', 'monthPublished', 'seriesVolume']);
 
     /**
      * This loop populates the dates object with an array of years
@@ -413,8 +427,8 @@ export class AppComponent implements OnInit {
      * that lets us reuse our magic number instead of having a duplicate
      * in the CSS.
      */
-    const lastComic = _.last(this.comics);
-    const firstComic = _.first(this.comics);
+    const lastComic = last(this.comics);
+    const firstComic = first(this.comics);
     let monthsSinceFirst: number;
     const finalYear = lastComic.yearPublished;
     const finalMonth = lastComic.monthPublished;
@@ -456,12 +470,12 @@ export class AppComponent implements OnInit {
     const latestVerticalOffsets = {};
     let newLabelNeeded = false;
     const windowWidth = window.innerWidth;
-    _.each(this.comics, (comic) => {
+    each(this.comics, (comic) => {
       /*
        * Look up the volume and series for this comic and
        * throw errors for obvious problems before proceeding.
        */
-      const currentSeriesVolume = this.seriesVolumes[_.findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
+      const currentSeriesVolume = this.seriesVolumes[findKey(this.seriesVolumes, { id: comic.seriesVolumeId })];
       if (!currentSeriesVolume) {
         throw new Error(comic.seriesVolumeId + ' not found');
       }
@@ -477,8 +491,8 @@ export class AppComponent implements OnInit {
        * by making the month wider.
        */
       if (previousYearMonthVolume === (comic.yearPublished + comic.monthPublished + comic.seriesVolumeId)) {
-        const publishedYearKey = _.findKey(this.dates, { year: comic.yearPublished });
-        const publishedMonthKey = _.findKey(this.dates[publishedYearKey].months, { number: comic.monthPublished });
+        const publishedYearKey = findKey(this.dates, { year: comic.yearPublished });
+        const publishedMonthKey = findKey(this.dates[publishedYearKey].months, { number: comic.monthPublished });
         this.dates[publishedYearKey].months[publishedMonthKey].styles['width.px'] += VISUAL_BLOCK_SIZE;
         comic.containerStyles['left.px'] += VISUAL_BLOCK_SIZE + globalHorizontalOffset;
         globalHorizontalOffset += VISUAL_BLOCK_SIZE;
@@ -549,7 +563,7 @@ export class AppComponent implements OnInit {
              */
             if (latestVerticalOffsets[i]) {
               const previousSeriesVolume = this.seriesVolumes[
-                _.findKey(this.seriesVolumes, { id: latestVerticalOffsets[i].seriesVolumeId })
+                findKey(this.seriesVolumes, { id: latestVerticalOffsets[i].seriesVolumeId })
               ];
               if (!previousSeriesVolume) {
                 throw new Error(comic.seriesVolumeId + ' not found');
@@ -609,7 +623,7 @@ export class AppComponent implements OnInit {
 
         newLabelNeeded = false;
       } else {
-        const seriesVolumeLabelIndex = _.findLastIndex(this.seriesVolumeLabels, (seriesVolumeLabel) => {
+        const seriesVolumeLabelIndex = findLastIndex(this.seriesVolumeLabels, (seriesVolumeLabel) => {
           return seriesVolumeLabel.text === currentSeriesVolume.titleWithVolume;
         });
 
@@ -632,11 +646,11 @@ export class AppComponent implements OnInit {
 
     // Render collections as groups of comics
     let comicIndex: string;
-    _.each(this.collections, (collection) => {
+    each(this.collections, (collection) => {
       const collectionColor = this.getCollectionColors(collection.title);
 
-      _.each(collection.comicIds, (comicId) => {
-        comicIndex = _.findKey(this.comics, { id: comicId });
+      each(collection.comicIds, (comicId) => {
+        comicIndex = findKey(this.comics, { id: comicId });
         if (!comicIndex) {
           throw new Error(comicId + ' not found in the comics db');
         }
@@ -644,7 +658,7 @@ export class AppComponent implements OnInit {
         this.comics[comicIndex].styles.color = collectionColor.textColor;
 
         //  while we are here store the comics in reading order
-        this.comicsInReadingOrder.push(_.cloneDeep(this.comics[comicIndex]));
+        this.comicsInReadingOrder.push(cloneDeep(this.comics[comicIndex]));
       });
     });
 
@@ -652,7 +666,7 @@ export class AppComponent implements OnInit {
     let horizontalReadingOrderPosition = 0;
     this.globalVerticalPositionCounter = 0;
     const latestReadingOrderVerticalOffsets = {};
-    _.each(this.comicsInReadingOrder, (comic) => {
+    each(this.comicsInReadingOrder, (comic) => {
       horizontalReadingOrderPosition += VISUAL_BLOCK_SIZE;
       comic.containerStyles['left.px'] = horizontalReadingOrderPosition;
 
@@ -661,7 +675,7 @@ export class AppComponent implements OnInit {
        * throw errors for obvious problems before proceeding.
        */
       const currentReadingOrderSeriesVolume = this.readingOrderSeriesVolumes[
-        _.findKey(this.readingOrderSeriesVolumes, { id: comic.seriesVolumeId })
+        findKey(this.readingOrderSeriesVolumes, { id: comic.seriesVolumeId })
       ];
       if (!currentReadingOrderSeriesVolume) {
         throw new Error(comic.seriesVolumeId + ' not found');
@@ -733,7 +747,7 @@ export class AppComponent implements OnInit {
              */
             if (latestReadingOrderVerticalOffsets[i]) {
               const previousSeriesVolume = this.readingOrderSeriesVolumes[
-                _.findKey(this.readingOrderSeriesVolumes, { id: latestReadingOrderVerticalOffsets[i].seriesVolumeId })
+                findKey(this.readingOrderSeriesVolumes, { id: latestReadingOrderVerticalOffsets[i].seriesVolumeId })
               ];
               if (!previousSeriesVolume) {
                 throw new Error(comic.seriesVolumeId + ' not found');
@@ -769,7 +783,7 @@ export class AppComponent implements OnInit {
 
         newLabelNeeded = false;
       } else {
-        const readingOrderSeriesVolumeLabelIndex = _.findLastIndex(this.readingOrderSeriesVolumeLabels, (seriesVolumeLabel) => {
+        const readingOrderSeriesVolumeLabelIndex = findLastIndex(this.readingOrderSeriesVolumeLabels, (seriesVolumeLabel) => {
           return seriesVolumeLabel.text === currentReadingOrderSeriesVolume.titleWithVolume;
         });
 
@@ -841,7 +855,7 @@ export class AppComponent implements OnInit {
       }
     });
 
-    _.each(this.collections, (collection: Collection) => {
+    each(this.collections, (collection: Collection) => {
       // While we are here we add the image string for lookup
       collection.image = this.getSanitizedString(false, collection.title);
 
@@ -849,10 +863,10 @@ export class AppComponent implements OnInit {
        * Populate the uniqueCollections object, which joins the
        * collections since they are split in the database.
        */
-      const uniqueCollection = _.find(this.uniqueCollections, ['id', collection.id]);
+      const uniqueCollection = find(this.uniqueCollections, ['id', collection.id]);
       if (uniqueCollection) {
         // There are existing comics, so add the comics from this part to the end of the existing part
-        uniqueCollection.allCollectionComicIds = _.concat(uniqueCollection.allCollectionComicIds, collection.comicIds);
+        uniqueCollection.allCollectionComicIds = concat(uniqueCollection.allCollectionComicIds, collection.comicIds);
       } else {
         // Create the first entry in the object
         collection.allCollectionComicIds = collection.comicIds;
@@ -866,7 +880,7 @@ export class AppComponent implements OnInit {
         this.itemsToSearch.push({
           displayText: collection.title,
           image: collection.image,
-          id: _.first(collection.comicIds)
+          id: first(collection.comicIds)
         });
       }
     });
@@ -877,11 +891,11 @@ export class AppComponent implements OnInit {
      * expanded view and allow interaction with them, but still have the
      * arrow keys work chronologically.
      */
-    _.each(this.uniqueCollections, (uniqueCollection) => {
+    each(this.uniqueCollections, (uniqueCollection) => {
       uniqueCollection.allCollectionComics = [];
-      _.each(uniqueCollection.allCollectionComicIds, (comicId) => {
+      each(uniqueCollection.allCollectionComicIds, (comicId) => {
         uniqueCollection.allCollectionComics.push(
-          _.find(this.comics, ['id', comicId])
+          find(this.comics, ['id', comicId])
         );
       });
 
@@ -889,7 +903,7 @@ export class AppComponent implements OnInit {
        * Copy the allCollectionComics node into every instance of this
        * uniqueCollection within the collections object.
        */
-      _.each(this.collections, (collection) => {
+      each(this.collections, (collection) => {
         if (collection.title === uniqueCollection.title) {
           collection.allCollectionComics = uniqueCollection.allCollectionComics;
         }
@@ -897,12 +911,12 @@ export class AppComponent implements OnInit {
     });
 
     // Copy the comics into the collection objects on load
-    _.each(this.collections, (collection) => {
+    each(this.collections, (collection) => {
       collection.comics = [];
 
-      _.each(collection.comicIds, (comicId) => {
+      each(collection.comicIds, (comicId) => {
         collection.comics.push(
-          _.find(this.comics, ['id', comicId])
+          find(this.comics, ['id', comicId])
         );
       });
     });
@@ -915,17 +929,17 @@ export class AppComponent implements OnInit {
      * is the browser adding new things to the DOM, so we get a
      * big performance boost by always having everything in there.
      */
-    _.each(this.comics, (comic) => {
+    each(this.comics, (comic) => {
       // Get the collection containing this comic
-      comic.collection = _.find(this.collections, (collection) => {
+      comic.collection = find(this.collections, (collection) => {
         return collection.comicIds.includes(comic.id);
       });
     });
 
       // do the same for reading order comics
-    _.each(this.comicsInReadingOrder, (comic) => {
+    each(this.comicsInReadingOrder, (comic) => {
       // Get the collection containing this comic
-      comic.collection = _.find(this.collections, (collection) => {
+      comic.collection = find(this.collections, (collection) => {
         return collection.comicIds.includes(comic.id);
       });
     });
@@ -945,7 +959,7 @@ export class AppComponent implements OnInit {
   }
 
   public search = (comic: Comic) => {
-    const comicToSearch: Comic = _.find(this.comics, ['id', comic.id]);
+    const comicToSearch: Comic = find(this.comics, ['id', comic.id]);
     this.toggleExpandComic(comicToSearch, true);
     this.searchText = '';
     this.postSearchActions();
@@ -973,7 +987,7 @@ export class AppComponent implements OnInit {
    */
   private setCollectionsViewImageVisibility() {
     if (this.isShowCollections) {
-      _.each(this.uniqueCollections, (collection: Collection) => {
+      each(this.uniqueCollections, (collection: Collection) => {
         // Return early if it has already been visible before
         if (collection.visible) {
           return;
@@ -1026,7 +1040,7 @@ export class AppComponent implements OnInit {
     const scrollPositionBottomWithOffset = scrollPositionBottom - scrollPositionVerticalOffset;
 
     // Lazy-load thumbnails that aren't in the viewport
-    _.each(this.comics, (comic) => {
+    each(this.comics, (comic) => {
       // skip this calculation if the comic has been previously displayed
       if (comic.visible === true) {
         return;
@@ -1044,7 +1058,7 @@ export class AppComponent implements OnInit {
 
 
     // do the same for reading order comics
-    _.each(this.comicsInReadingOrder, (comic) => {
+    each(this.comicsInReadingOrder, (comic) => {
       // skip this calculation if the comic has been previously displayed
       if (comic.visible === true) {
         return;
@@ -1242,9 +1256,9 @@ export class AppComponent implements OnInit {
 
     let expandedComic: Comic;
     if (this.isShowReadingOrder) {
-      expandedComic = _.find(this.comicsInReadingOrder, ['id', selectedComicId]);
+      expandedComic = find(this.comicsInReadingOrder, ['id', selectedComicId]);
     } else {
-      expandedComic = _.find(this.comics, ['id', selectedComicId]);
+      expandedComic = find(this.comics, ['id', selectedComicId]);
     }
     if (!expandedComic) {
       return console.error('The comic could not be found', selectedComicId);
@@ -1392,9 +1406,9 @@ export class AppComponent implements OnInit {
   public scrollToComic = (comicId: string) => {
     let comicFromId: Comic;
     if (this.isShowReadingOrder) {
-      comicFromId = this.comicsInReadingOrder[_.findKey(this.comicsInReadingOrder, { id: comicId })];
+      comicFromId = this.comicsInReadingOrder[findKey(this.comicsInReadingOrder, { id: comicId })];
     } else {
-      comicFromId = this.comics[_.findKey(this.comics, { id: comicId })];
+      comicFromId = this.comics[findKey(this.comics, { id: comicId })];
     }
     this.toggleExpandComic(comicFromId, true);
   }
@@ -1439,8 +1453,8 @@ export class AppComponent implements OnInit {
       const gcConsolePrepend = 'Garbage Collector: ';
 
       // Check that each comic is referenced by a collection
-      _.each(this.comics, (comic) => {
-        foundComic = _.find(this.collections, (collection) => {
+      each(this.comics, (comic) => {
+        foundComic = find(this.collections, (collection) => {
           return collection.comicIds.includes(comic.id);
         });
 
@@ -1456,8 +1470,8 @@ export class AppComponent implements OnInit {
 
       // Check that each seriesVolume is referenced by a comic
       isClean = true;
-      _.each(this.seriesVolumes, (seriesVolume) => {
-        foundComic = _.find(this.comics, (comic) => {
+      each(this.seriesVolumes, (seriesVolume) => {
+        foundComic = find(this.comics, (comic) => {
           return comic.seriesVolumeId === seriesVolume.id;
         });
 
