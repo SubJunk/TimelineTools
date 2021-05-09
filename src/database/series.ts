@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { each } from 'lodash-es';
 
 const series        = [];
 const seriesVolumes = [];
@@ -16,7 +16,7 @@ function Series(title: string, volumes: object) {
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
 
-  _.each(volumes, (startYear, volume) => {
+  each(volumes, (startYear, volume) => {
     seriesVolumes.push(
       new SeriesVolume(
         this.id,

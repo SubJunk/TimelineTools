@@ -1,11 +1,11 @@
-import _ from 'lodash';
+import { each, isArray, isEmpty } from 'lodash-es';
 import moment from 'moment';
 
 /**
  * The prototype for individual comics.
  */
 function Comic(issue: string, datePublished: string, seriesVolumeId: string, titles: string) {
-  if (!_.isEmpty(titles) && !_.isArray(titles)) {
+  if (!isEmpty(titles) && !isArray(titles)) {
     throw new Error('Expected comic title to be an array, got' + titles);
   }
 
@@ -44,7 +44,7 @@ const comics = [];
  * Add multiple comics in a seriesVolume.
  */
 function addComicsInSeriesVolume(seriesVolumeId, comicsInSeriesVolume) {
-  _.each(comicsInSeriesVolume, (comic) => {
+  each(comicsInSeriesVolume, (comic) => {
     comics.push(
       new Comic(
         comic[0],
