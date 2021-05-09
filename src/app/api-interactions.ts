@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { each, isEmpty } from 'lodash-es';
 import { SeriesVolume, Comic, MarvelAPISeriesResponse } from './models';
 import { HttpParams, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -40,15 +40,15 @@ export class ApiInteractions {
 
     return this.http.get(MARVEL_API_BASE_URL + 'comics', {params})
       .subscribe(function successCallback(response: MarvelAPISeriesResponse) {
-        if (_.isEmpty(response.data.results)) {
+        if (isEmpty(response.data.results)) {
           return;
         }
 
         /*
-          * Sometimes the Marvel API returns variants with no ID or 0, so
-          * keep looping until we get a real ID.
-          */
-        _.each(response.data.results, (result) => {
+         * Sometimes the Marvel API returns variants with no ID or 0, so
+         * keep looping until we get a real ID.
+         */
+        each(response.data.results, (result) => {
           if (result.digitalId && result.digitalId !== 0) {
             comic.link = 'https://read.marvel.com/#book/' + result.digitalId;
             return false;
