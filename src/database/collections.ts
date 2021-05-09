@@ -5979,6 +5979,17 @@ collections.push(
     ]
   ),
   new Collection(
+    'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
+    '2019-2-20',
+    [
+      'SWORDVol11',
+      'SWORDVol12',
+      'SWORDVol13',
+      'SWORDVol14',
+      'SWORDVol15',
+    ]
+  ),
+  new Collection(
     'Cable Vol. 3: Stranded',
     '2010-5-19',
     [
@@ -6640,6 +6651,17 @@ collections.push(
       'UncannyXForceVol118',
     ]
   ),
+  new Collection(
+    'X-Factor: Super Unnatural',
+    '2012-2-15',
+    [
+      'XFactorVol3224.1',
+      'XFactorVol3225',
+      'XFactorVol3226',
+      'XFactorVol3227',
+      'XFactorVol3228',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
@@ -6647,11 +6669,6 @@ collections.push(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
     [
-      'SWORDVol11',
-      'SWORDVol12',
-      'SWORDVol13',
-      'SWORDVol14',
-      'SWORDVol15',
       'UncannyXMenVol21',
       'UncannyXMenVol22',
       'UncannyXMenVol23',
