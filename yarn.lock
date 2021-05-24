@@ -8495,10 +8495,10 @@ trough@^1.0.0:
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.5.tgz#b8b639cefad7d0bb2abd37d433ff8293efa5f406"
   integrity sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==
 
-ts-md5@^1.2.7:
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/ts-md5/-/ts-md5-1.2.7.tgz#b76471fc2fd38f0502441f6c3b9494ed04537401"
-  integrity sha512-emODogvKGWi1KO1l9c6YxLMBn6CEH3VrH5mVPIyOtxBG52BvV4jP3GWz6bOZCz61nLgBc3ffQYE4+EHfCD+V7w==
+ts-md5@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/ts-md5/-/ts-md5-1.2.8.tgz#919a47277b748db2a49181a346ec90497026cb6c"
+  integrity sha512-Vt4J3CeMoYKkAArpvLZiPAN5x8GrnII1zJ5EaLfxqmgdK4apAAUGtKL+mXt+bsMhl+euQUdxS9ulDlIPvPo+rA==
 
 ts-node@^9.1.1:
   version "9.1.1"
