@@ -6673,9 +6673,15 @@ collections.push(
       'X23Vol321',
     ]
   ),
-  /**
-   * Gap here, and in general the contents after here need to be reviewed.
-   */
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'WolverineVol417',
+      'WolverineVol418',
+      'WolverineVol419',
+    ]
+  ),
   new Collection(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
@@ -6686,12 +6692,46 @@ collections.push(
     ]
   ),
   new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol24',
+    ]
+  ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol25',
+      'UncannyXMenVol26',
+      'UncannyXMenVol27',
+      'UncannyXMenVol28',
+      'UncannyXMenVol29',
+      'UncannyXMenVol210',
+      'UncannyXMenVol211',
+      'UncannyXMenVol212',
+      'UncannyXMenVol213',
+      'UncannyXMenVol214',
+      'UncannyXMenVol215',
+      'UncannyXMenVol216',
+      'UncannyXMenVol217',
+      'UncannyXMenVol218',
+      'UncannyXMenVol219',
+      'UncannyXMenVol220',
+      'AvengersVsXMenConsequencesVol11',
+      'AvengersVsXMenConsequencesVol12',
+      'AvengersVsXMenConsequencesVol13',
+      'AvengersVsXMenConsequencesVol14',
+      'AvengersVsXMenConsequencesVol15',
+    ]
+  ),
+  new Collection(
     'Wolverine Goes to Hell Omnibus',
     '208-5-15',
     [
-      'WolverineVol417',
-      'WolverineVol418',
-      'WolverineVol419',
       'WolverineVol420',
       'WolverineVol4300',
       'WolverineVol4301',
