@@ -6698,6 +6698,16 @@ collections.push(
       'UncannyXMenVol24',
     ]
   ),
+  new Collection(
+    'Wolverine & The X-Men, Vol. 1',
+    '2012-11-7',
+    [
+      'WolverinetheXMenVol11',
+      'WolverinetheXMenVol12',
+      'WolverinetheXMenVol13',
+      'WolverinetheXMenVol14',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
