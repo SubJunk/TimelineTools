@@ -6705,12 +6705,47 @@ collections.push(
       'WolverinetheXMenVol11',
       'WolverinetheXMenVol12',
       'WolverinetheXMenVol13',
-      'WolverinetheXMenVol14',
+    ]
+  ),
+  new Collection(
+    'X-Men: War Machines (Partial)',
+    '2012-9-26',
+    [
+      'XMenVol420',
+      'XMenVol421',
+      'XMenVol422',
+      'XMenVol423',
+    ]
+  ),
+  new Collection(
+    'New Mutants: A Date with the Devil',
+    '2012-9-12',
+    [
+      'NewMutantsVol333',
+      'NewMutantsVol334',
+      'NewMutantsVol335',
+      'NewMutantsVol336',
+      'NewMutantsVol337',
+    ]
+  ),
+  new Collection(
+    'X-Men Legacy: Five Miles South of the Universe',
+    '2012-3-14',
+    [
+      'XMenLegacyVol1259',
+      'XMenLegacyVol1260',
     ]
   ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Wolverine & The X-Men, Vol. 1',
+    '2012-11-7',
+    [
+      'WolverinetheXMenVol14',
+    ]
+  ),
   new Collection(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
@@ -6755,14 +6790,6 @@ collections.push(
     '2012-2-22',
     [
       'AstonishingXMenVol343',
-    ]
-  ),
-  new Collection(
-    'X-Men Legacy: Five Miles South of the Universe',
-    '2012-3-14',
-    [
-      'XMenLegacyVol1259',
-      'XMenLegacyVol1260',
     ]
   ),
   new Collection(
