@@ -1042,6 +1042,11 @@ addComicsInSeriesVolume('NewMutantsVol3', [
   [30, '2011-8-24'],
   [31, '2011-9-28'],
   [32, '2011-10-26'],
+  [33, '2011-11-2'],
+  [34, '2011-11-16'],
+  [35, '2011-12-21'],
+  [36, '2012-1-18'],
+  [37, '2012-2-8'],
 ]);
 addComicsInSeriesVolume('NewMutantsAnnualVol1', [
   [4, '1988-9'],
@@ -2704,6 +2709,10 @@ addComicsInSeriesVolume('XMenVol4', [
   [17, '2011-9-7'],
   [18, '2011-9-21'],
   [19, '2011-10-5'],
+  [20, '2011-11-2'],
+  [21, '2011-11-16'],
+  [22, '2011-12-7'],
+  [23, '2012-1-4'],
 ]);
 addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']]);
 addComicsInSeriesVolume('XMenDeclassifiedVol1', [[1, '2000-10']]);
