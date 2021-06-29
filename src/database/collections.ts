@@ -6736,6 +6736,27 @@ collections.push(
       'XMenLegacyVol1260',
     ]
   ),
+  new Collection(
+    'Generation Hope: The End of a Generation',
+    '2012-5-16',
+    [
+      'GenerationHopeVol113',
+      'GenerationHopeVol114',
+      'GenerationHopeVol115',
+      'GenerationHopeVol116',
+      'GenerationHopeVol117',
+    ]
+  ),
+  new Collection(
+    'Avengers: X-Sanction',
+    '2012-12-19',
+    [
+      'AvengersXSanctionVol11',
+      'AvengersXSanctionVol12',
+      'AvengersXSanctionVol13',
+      'AvengersXSanctionVol14',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */

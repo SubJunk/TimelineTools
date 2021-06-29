@@ -194,6 +194,12 @@ addComicsInSeriesVolume('AvengersVsXMenConsequencesVol1', [
   [4, '2012-10-31'],
   [5, '2012-11-7'],
 ]);
+addComicsInSeriesVolume('AvengersXSanctionVol1', [
+  [1, '2011-12-14'],
+  [2, '2012-1-4'],
+  [3, '2012-2-1'],
+  [4, '2012-3-21'],
+]);
 addComicsInSeriesVolume('AvengersWestCoastVol2', [[101, '1993-12']]);
 addComicsInSeriesVolume('BabysFirstDeadpoolBookVol1', [[1, '1998-12']]);
 addComicsInSeriesVolume('BishopVol1', [
@@ -729,6 +735,11 @@ addComicsInSeriesVolume('GenerationHopeVol1', [
   [10, '2011-8-17'],
   [11, '2011-9-21'],
   [12, '2011-10-12'],
+  [13, '2011-11-16'],
+  [14, '2011-12-21'],
+  [15, '2012-1-18'],
+  [16, '2012-2-15'],
+  [17, '2012-3-21'],
 ]);
 addComicsInSeriesVolume('GenerationMVol1', [
   [1, '2006-1-10'],

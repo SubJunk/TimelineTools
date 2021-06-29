@@ -65,6 +65,7 @@ series.push(
   new Series('Astonishing X-Men: Xenogenesis', {1: 2010}),
   new Series('Avengers', {1: 1963}),
   new Series('Avengers: The Initiative', {1: 2007}),
+  new Series('Avengers: X-Sanction', {1: 2011}),
   new Series('Avengers Annual', {1: 1967}),
   new Series('Avengers Vs. X-Men: Consequences', {1: 2012}),
   new Series('Avengers West Coast', {2: 1985}),
