@@ -52,7 +52,7 @@
     "@types/jasminewd2": "^2.0.8",
     "@types/jquery": "^3.5.4",
     "@types/lodash-es": "^4.17.4",
-    "@types/node": "15",
+    "@types/node": "16",
     "codelyzer": "^6.0.1",
     "jasmine-core": "~3.7.1",
     "jasmine-spec-reporter": "~7.0.0",
