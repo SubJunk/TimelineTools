@@ -67,6 +67,10 @@ addComicsInSeriesVolume('AgeofXUniverseVol1', [
   [1, '2011-3-30'],
   [2, '2011-4-27'],
 ]);
+addComicsInSeriesVolume('AgeofApocalypseVol1', [
+  [13, '2013-3-6'],
+  [14, '2013-4-3'],
+]);
 addComicsInSeriesVolume('AgeofApocalypseTheChosenVol1', [[1, '1995-4']]);
 addComicsInSeriesVolume('AmazingAdventuresVol2', [
   [11, '1972-3-10'],
@@ -160,7 +164,33 @@ addComicsInSeriesVolume('AstonishingXMenVol3', [
   [41, '2011-8-24'],
   [42, '2011-9-28'],
   [43, '2011-10-26'],
+  [44, '2011-11-23'],
+  [45, '2011-12-28'],
+  [46, '2012-1-25'],
+  [47, '2012-2-29'],
+  [48, '2012-3-28'],
+  [49, '2012-4-25'],
+  [50, '2012-5-23'],
+  [51, '2012-6-20'],
+  [52, '2012-7-25'],
+  [53, '2012-8-22'],
+  [54, '2012-9-26'],
+  [55, '2012-10-24'],
+  [56, '2012-11-21'],
+  [57, '2012-12-19'],
+  [58, '2013-1-23'],
+  [59, '2013-2-27'],
+  [60, '2013-3-27'],
+  [61, '2013-4-17'],
+  [62, '2013-5-8'],
+  [63, '2013-6-12'],
+  [64, '2013-7-10'],
+  [65, '2013-8-14'],
+  [66, '2013-8-28'],
+  [67, '2013-9-11'],
+  [68, '2013-10-9'],
 ]);
+addComicsInSeriesVolume('AstonishingXMenAnnualVol1', [[1, '2012-11-28']]);
 addComicsInSeriesVolume('AstonishingXMenGhostBoxesVol1', [
   [1, '2008-10-29'],
   [2, '2008-12-10'],
@@ -3104,26 +3134,30 @@ addComicsInSeriesVolume('XMenvstheAvengersVol1', [
   [1, '1987-4'],
   [2, '1987-5'],
   [3, '1987-6'],
-  [4, '1987-7']
+  [4, '1987-7'],
 ]);
 addComicsInSeriesVolume('XMenWorldsApartVol1', [
   [1, '2008-10-15'],
   [2, '2008-11-19'],
   [3, '2008-12-31'],
-  [4, '2009-1-28']
+  [4, '2009-1-28'],
 ]);
 addComicsInSeriesVolume('XNecroshaVol1', [[1, '2009-10-28']]);
 addComicsInSeriesVolume('XNecroshaTheGatheringVol1', [[1, '2009-12-9']]);
 addComicsInSeriesVolume('XUniverseVol1', [
   [1, '1995-5'],
-  [2, '1995-6']
+  [2, '1995-6'],
 ]);
 addComicsInSeriesVolume('XavierInstituteAlumniYearbookVol1', [[1, '1996-12']]);
+addComicsInSeriesVolume('XTerminationVol1', [
+  [1, '2013-3-20'],
+  [2, '2013-4-24'],
+]);
 addComicsInSeriesVolume('XTerminatorsVol1', [
   [1, '1988-10'],
   [2, '1988-11'],
   [3, '1988-12'],
-  [4, '1989-1']
+  [4, '1989-1'],
 ]);
 addComicsInSeriesVolume('XTremeXMenAnnualVol1', [[1, '2002-2']]);
 addComicsInSeriesVolume('XTremeXMenMekanixVol1', [
@@ -3181,6 +3215,10 @@ addComicsInSeriesVolume('XTremeXMenVol1', [
   [44, '2004-11'],
   [45, '2004-12-1'],
   [46, '2004-12-30'],
+]);
+addComicsInSeriesVolume('XTremeXMenVol2', [
+  [12, '2013-3-13'],
+  [13, '2013-4-10'],
 ]);
 addComicsInSeriesVolume('XTremeXMenTheSavageLandVol1', [
   [1, '2001-11'],

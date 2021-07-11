@@ -6757,9 +6757,78 @@ collections.push(
       'AvengersXSanctionVol14',
     ]
   ),
+  new Collection(
+    'Astonishing X-Men: Children of the Brood (Partial)',
+    '2012-2-22',
+    [
+      'AstonishingXMenVol343',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Exalted',
+    '2012-4-25',
+    [
+      'AstonishingXMenVol344',
+      'AstonishingXMenVol345',
+      'AstonishingXMenVol346',
+      'AstonishingXMenVol347',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Astonishing X-Men: Northstar',
+    '2012-9-5',
+    [
+      'AstonishingXMenVol348',
+      'AstonishingXMenVol349',
+      'AstonishingXMenVol350',
+      'AstonishingXMenVol351',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Weaponized',
+    '2013-3-27',
+    [
+      'AstonishingXMenVol352',
+      'AstonishingXMenVol353',
+      'AstonishingXMenVol354',
+      'AstonishingXMenVol355',
+      'AstonishingXMenVol356',
+      'AstonishingXMenAnnualVol11',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Unmasked',
+    '2013-12-11',
+    [
+      'AstonishingXMenVol357',
+      'AstonishingXMenVol358',
+      'AstonishingXMenVol359',
+      'AstonishingXMenVol362',
+      'AstonishingXMenVol363',
+      'AstonishingXMenVol364',
+      'AstonishingXMenVol365',
+      'AstonishingXMenVol366',
+      'AstonishingXMenVol367',
+      'AstonishingXMenVol368',
+    ]
+  ),
+  new Collection(
+    'X-Men: X-Termination',
+    '2013-7-24',
+    [
+      'AstonishingXMenVol360',
+      'AstonishingXMenVol361',
+      'XTremeXMenVol212',
+      'XTremeXMenVol213',
+      'AgeofApocalypseVol113',
+      'AgeofApocalypseVol114',
+      'XTerminationVol11',
+      'XTerminationVol12',
+    ]
+  ),
   new Collection(
     'Wolverine & The X-Men, Vol. 1',
     '2012-11-7',
@@ -6804,13 +6873,6 @@ collections.push(
       'WolverineVol4302',
       'WolverineVol4303',
       'WolverineVol4304',
-    ]
-  ),
-  new Collection(
-    'Astonishing X-Men: Children of the Brood (Partial)',
-    '2012-2-22',
-    [
-      'AstonishingXMenVol343',
     ]
   ),
   new Collection(
