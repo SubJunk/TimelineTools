@@ -2182,6 +2182,13 @@ addComicsInSeriesVolume('WolverinetheXMenVol1', [
   [3, '2011-12-21'],
   [4, '2012-1-11'],
 ]);
+addComicsInSeriesVolume('WolverinetheXMenAlphaOmegaVol1', [
+  [1, '2012-1-4'],
+  [2, '2012-2-8'],
+  [3, '2012-3-7'],
+  [4, '2012-4-4'],
+  [5, '2012-5-2'],
+]);
 addComicsInSeriesVolume('WorldWarHulkXMenVol1', [
   [1, '2007-6-27'],
   [2, '2007-7-25'],

@@ -6774,6 +6774,17 @@ collections.push(
       'AstonishingXMenVol347',
     ]
   ),
+  new Collection(
+    'Wolverine and the X-Men: Alpha & Omega',
+    '2013-2-5',
+    [
+      'WolverinetheXMenAlphaOmegaVol11',
+      'WolverinetheXMenAlphaOmegaVol12',
+      'WolverinetheXMenAlphaOmegaVol13',
+      'WolverinetheXMenAlphaOmegaVol14',
+      'WolverinetheXMenAlphaOmegaVol15',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
