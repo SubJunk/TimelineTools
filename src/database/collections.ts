@@ -6785,6 +6785,35 @@ collections.push(
       'WolverinetheXMenAlphaOmegaVol15',
     ]
   ),
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol25',
+      'UncannyXMenVol26',
+      'UncannyXMenVol27',
+      'UncannyXMenVol28',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Force by Rick Remender Omnibus',
+    '2014-3-25',
+    [
+      'UncannyXForceVol119',
+      'UncannyXForceVol119.1',
+      'UncannyXForceVol120',
+      'UncannyXForceVol121',
+      'UncannyXForceVol122',
+      'UncannyXForceVol123',
+    ]
+  ),
+  new Collection(
+    'Wolverine & The X-Men, Vol. 1',
+    '2012-11-7',
+    [
+      'WolverinetheXMenVol14',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
@@ -6841,20 +6870,9 @@ collections.push(
     ]
   ),
   new Collection(
-    'Wolverine & The X-Men, Vol. 1',
-    '2012-11-7',
-    [
-      'WolverinetheXMenVol14',
-    ]
-  ),
-  new Collection(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
-      'UncannyXMenVol25',
-      'UncannyXMenVol26',
-      'UncannyXMenVol27',
-      'UncannyXMenVol28',
       'UncannyXMenVol29',
       'UncannyXMenVol210',
       'UncannyXMenVol211',
@@ -6890,12 +6908,6 @@ collections.push(
     'Uncanny X-Force by Rick Remender Omnibus',
     '2014-3-25',
     [
-      'UncannyXForceVol119',
-      'UncannyXForceVol119.1',
-      'UncannyXForceVol120',
-      'UncannyXForceVol121',
-      'UncannyXForceVol122',
-      'UncannyXForceVol123',
       'UncannyXForceVol124',
       'UncannyXForceVol125',
       'UncannyXForceVol126',
