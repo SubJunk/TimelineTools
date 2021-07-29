@@ -213,6 +213,7 @@ series.push(
   new Series('Wolverine: Road to Hell', {1: 2010}),
   new Series('Wolverine & Gambit: Victims', {1: 1995}),
   new Series('Wolverine & the X-Men', {1: 2011}),
+  new Series('Wolverine & the X-Men Annual', {1: 2013}),
   new Series('Wolverine & the X-Men: Alpha & Omega', {1: 2011}),
   new Series('Wolverine Origins', {1: 2006}),
   new Series('Wolverine Annual', {1: 1995, 2: 1999}),
