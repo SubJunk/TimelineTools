@@ -72,6 +72,10 @@ addComicsInSeriesVolume('AgeofApocalypseVol1', [
   [14, '2013-4-3'],
 ]);
 addComicsInSeriesVolume('AgeofApocalypseTheChosenVol1', [[1, '1995-4']]);
+addComicsInSeriesVolume('AllNewXMenVol1', [
+  [16, '2013-9-4'],
+  [17, '2013-10-2'],
+]);
 addComicsInSeriesVolume('AmazingAdventuresVol2', [
   [11, '1972-3-10'],
   [12, '1972-5-10'],
@@ -1937,6 +1941,10 @@ addComicsInSeriesVolume('UncannyXMenVol2', [
   [19, '2012-10-3'],
   [20, '2012-1-18'],
 ]);
+addComicsInSeriesVolume('UncannyXMenVol3', [
+  [12, '2013-9-18'],
+  [13, '2013-10-16'],
+]);
 addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
   [1, '1996-9'],
   [2, '1997-10'],
@@ -2181,6 +2189,44 @@ addComicsInSeriesVolume('WolverinetheXMenVol1', [
   [2, '2011-11-23'],
   [3, '2011-12-21'],
   [4, '2012-1-11'],
+  [5, '2012-2-8'],
+  [6, '2012-2-22'],
+  [7, '2012-3-14'],
+  [8, '2012-4-4'],
+  [9, '2012-4-18'],
+  [10, '2012-5-9'],
+  [11, '2011-5-23'],
+  [12, '2011-6-27'],
+  [13, '2011-7-11'],
+  [14, '2012-7-25'],
+  [15, '2012-8-29'],
+  [16, '2012-9-12'],
+  [17, '2012-9-26'],
+  [18, '2012-10-10'],
+  [19, '2012-10-31'],
+  [20, '2012-11-14'],
+  [21, '2012-11-21'],
+  [22, '2012-12-19'],
+  [23, '2013-1-9'],
+  [24, '2013-1-23'],
+  [25, '2013-2-13'],
+  [26, '2013-3-13'],
+  [27, '2013-3-27'],
+  [28, '2013-4-24'],
+  [29, '2013-5-15'],
+  [30, '2013-5-29'],
+  [31, '2013-6-12'],
+  [32, '2013-6-26'],
+  [33, '2013-7-24'],
+  [34, '2013-8-14'],
+  [35, '2013-8-28'],
+  [36, '2013-9-25'],
+  [37, '2013-10-23'],
+  [38, '2013-11-27'],
+  [39, '2013-12-11'],
+  [40, '2014-1-22'],
+  [41, '2014-2-12'],
+  [42, '2014-2-26'],
 ]);
 addComicsInSeriesVolume('WolverinetheXMenAlphaOmegaVol1', [
   [1, '2012-1-4'],
@@ -2189,6 +2235,7 @@ addComicsInSeriesVolume('WolverinetheXMenAlphaOmegaVol1', [
   [4, '2012-4-4'],
   [5, '2012-5-2'],
 ]);
+addComicsInSeriesVolume('WolverinetheXMenAnnualVol1', [[1, '2013-11-27']]);
 addComicsInSeriesVolume('WorldWarHulkXMenVol1', [
   [1, '2007-6-27'],
   [2, '2007-7-25'],
@@ -2762,7 +2809,15 @@ addComicsInSeriesVolume('XMenVol4', [
   [22, '2011-12-7'],
   [23, '2012-1-4'],
 ]);
+addComicsInSeriesVolume('XMenVol5', [
+  [5, '2013-9-11'],
+  [6, '2013-10-9'],
+]);
 addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']]);
+addComicsInSeriesVolume('XMenBattleoftheAtomVol1', [
+  [1, '2013-9-4'],
+  [2, '2013-10-30'],
+]);
 addComicsInSeriesVolume('XMenDeclassifiedVol1', [[1, '2000-10']]);
 addComicsInSeriesVolume('XMenDiebytheSwordVol1', [
   [1, '2007-10-17'],
