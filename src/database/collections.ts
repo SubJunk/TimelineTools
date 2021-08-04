@@ -6699,8 +6699,8 @@ collections.push(
     ]
   ),
   new Collection(
-    'Wolverine & The X-Men, Vol. 1',
-    '2012-11-7',
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
     [
       'WolverinetheXMenVol11',
       'WolverinetheXMenVol12',
@@ -6808,15 +6808,74 @@ collections.push(
     ]
   ),
   new Collection(
-    'Wolverine & The X-Men, Vol. 1',
-    '2012-11-7',
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
     [
       'WolverinetheXMenVol14',
+      'WolverinetheXMenVol15',
+      'WolverinetheXMenVol16',
+      'WolverinetheXMenVol17',
+      'WolverinetheXMenVol18',
     ]
   ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol19',
+      'WolverinetheXMenVol110',
+      'WolverinetheXMenVol111',
+      'WolverinetheXMenVol112',
+      'WolverinetheXMenVol113',
+      'WolverinetheXMenVol114',
+      'WolverinetheXMenVol115',
+      'WolverinetheXMenVol116',
+      'WolverinetheXMenVol117',
+      'WolverinetheXMenVol118',
+      'WolverinetheXMenVol119',
+      'WolverinetheXMenVol120',
+      'WolverinetheXMenVol121',
+      'WolverinetheXMenVol122',
+      'WolverinetheXMenVol123',
+      'WolverinetheXMenVol124',
+      'WolverinetheXMenVol125',
+      'WolverinetheXMenVol126',
+      'WolverinetheXMenVol127',
+      'WolverinetheXMenVol128',
+      'WolverinetheXMenVol129',
+      'WolverinetheXMenVol130',
+      'WolverinetheXMenVol131',
+      'WolverinetheXMenVol132',
+      'WolverinetheXMenVol133',
+      'WolverinetheXMenVol134',
+      'WolverinetheXMenVol135',
+      'WolverinetheXMenAnnualVol11',
+      'WolverinetheXMenVol138',
+      'WolverinetheXMenVol139',
+      'WolverinetheXMenVol140',
+      'WolverinetheXMenVol141',
+      'WolverinetheXMenVol142',
+    ]
+  ),
+  new Collection(
+    'X-Men: Battle of the Atom',
+    '2014-1-21',
+    [
+      'XMenBattleoftheAtomVol11',
+      'XMenBattleoftheAtomVol12',
+      'AllNewXMenVol116',
+      'AllNewXMenVol117',
+      'XMenVol55',
+      'XMenVol56',
+      'UncannyXMenVol312',
+      'UncannyXMenVol313',
+      'WolverinetheXMenVol136',
+      'WolverinetheXMenVol137',
+    ]
+  ),
   new Collection(
     'Astonishing X-Men: Northstar',
     '2012-9-5',
