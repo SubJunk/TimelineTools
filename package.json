@@ -62,7 +62,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.1",
     "karma-jasmine-html-reporter": "^1.7.0",
-    "postcss-less": "^4.0.1",
+    "postcss-less": "^5.0.0",
     "protractor": "~7.0.0",
     "stylelint": "^13.13.1",
     "ts-node": "^10.2.0",
