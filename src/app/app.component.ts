@@ -65,7 +65,6 @@ const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_H
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-@Injectable()
 export class AppComponent implements OnInit {
   constructor(
     private apiInteractions: ApiInteractions,
@@ -812,7 +811,6 @@ export class AppComponent implements OnInit {
     };
 
     $('html').on('keydown', e => {
-      // tslint:disable-next-line: deprecation
       switch (e.which) {
         case KEYPRESSES.escape:
           this.toggleExpandComic({});
@@ -847,7 +845,6 @@ export class AppComponent implements OnInit {
     });
 
     // Catch clicks
-    // tslint:disable-next-line: deprecation
     this.$jqWindow.on('click', (data: JQueryClickEvent) => {
       // Close the expanded comic if the click happened on a blank area
       if (data.target.localName === 'body' && this.expandedComicId) {
