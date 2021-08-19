@@ -1281,7 +1281,7 @@ export class AppComponent implements OnInit {
       scrollPositionRight = scrollPositionLeft + window.innerWidth;
       scrollPositionBottom = scrollPositionTop + window.innerHeight;
 
-      const stickyAnchorOffset = $('#scroll-anchor-' + selectedComicId).offset();
+      const stickyAnchorOffset = $('#scroll-anchor-' + expandedComic.idSanitized).offset();
       comicTopPosition    = stickyAnchorOffset.top;
       comicLeftPosition   = stickyAnchorOffset.left;
       comicBottomPosition = comicTopPosition  + $expandedComicPanel.height();

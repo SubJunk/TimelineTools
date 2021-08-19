@@ -30,6 +30,7 @@ function Comic(issue: string, datePublished: string, seriesVolumeId: string, tit
   this.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
   this.date = moment(year + '-' + month + '-' + day);
   this.id = seriesVolumeId + issue;
+  this.idSanitized = (seriesVolumeId + issue).replace(/[\W+]/g, '');
   this.issue = issue;
   this.yearPublished = this.date.year();
   this.monthPublished = this.date.month() + 1;
