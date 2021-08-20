@@ -6945,11 +6945,6 @@ postcss-less@^3.1.4:
   dependencies:
     postcss "^7.0.14"
 
-postcss-less@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-less/-/postcss-less-5.0.0.tgz#3fa361ed8e52a9c3e6e4fdb9bb95fd9032f3c62b"
-  integrity sha512-djK6NlApALJeBnNx7CzLatq64eMF3BCyzBH+faYPxrvNHHM/YCimJ6XQkgWgtim2G89EzdQG4Ed0lGNCXPfD7A==
-
 postcss-loader@6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-6.1.1.tgz#58dd0a3accd9bc87cc52eff75244db578d11301a"
