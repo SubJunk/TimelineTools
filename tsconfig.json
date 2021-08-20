@@ -1,17 +1,51 @@
-/*
-  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
-  It is not intended to be used to perform a compilation.
-
-  To learn more about this file see: https://angular.io/config/solution-tsconfig.
-*/
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-  ]
+  "compileOnSave": false,
+  // this commented chunk is the default for angular-cli
+  // "compilerOptions": {
+  //   "baseUrl": "./",
+  //   "outDir": "./dist/out-tsc",
+  //   "forceConsistentCasingInFileNames": true,
+  //   "strict": true,
+  //   "noImplicitReturns": true,
+  //   "noFallthroughCasesInSwitch": true,
+  //   "sourceMap": true,
+  //   "declaration": false,
+  //   "downlevelIteration": true,
+  //   "experimentalDecorators": true,
+  //   "moduleResolution": "node",
+  //   "importHelpers": true,
+  //   "target": "es2017",
+  //   "module": "es2020",
+  //   "lib": [
+  //     "es2018",
+  //     "dom"
+  //   ]
+  // },
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
 }

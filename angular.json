@@ -75,8 +75,7 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-          },
+          "options": {},
           "configurations": {
             "production": {
               "browserTarget": "timeline-tools:build:production"
@@ -111,15 +110,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
         },
@@ -144,6 +139,7 @@
   "defaultProject": "timeline-tools",
   "cli": {
     "packageManager": "yarn",
-    "analytics": "4548fde3-7ce7-43ba-8fd4-4cc0bf8c4630"
+    "analytics": "4548fde3-7ce7-43ba-8fd4-4cc0bf8c4630",
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }
