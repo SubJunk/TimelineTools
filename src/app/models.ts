@@ -38,6 +38,7 @@ export interface Comic {
   containerClasses?: ComicContainerClasses;
   containerStyles?: ContainerStyles;
   id?: string;
+  idSanitized?: string;
   image?: string;
   issue?: string;
   link?: string;
