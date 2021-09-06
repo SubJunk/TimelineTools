@@ -59,7 +59,7 @@
     "@types/lodash-es": "^4.17.4",
     "@types/node": "16",
     "@typescript-eslint/eslint-plugin": "4.29.3",
-    "@typescript-eslint/parser": "4.29.3",
+    "@typescript-eslint/parser": "4.30.0",
     "eslint": "^7.26.0",
     "jasmine-core": "~3.9.0",
     "jasmine-spec-reporter": "~7.0.0",
