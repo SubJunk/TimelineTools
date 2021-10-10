@@ -6669,8 +6669,6 @@ collections.push(
       'X23Vol317',
       'X23Vol318',
       'X23Vol319',
-      'X23Vol320',
-      'X23Vol321',
     ]
   ),
   new Collection(
@@ -6818,6 +6816,25 @@ collections.push(
       'WolverinetheXMenVol18',
     ]
   ),
+  new Collection(
+    'X-23, Vol. 3: Don\'t Look Back',
+    '2012-12-12',
+    [
+      'X23Vol320',
+      'X23Vol321',
+    ]
+  ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'WolverineVol420',
+      'WolverineVol4300',
+      'WolverineVol4301',
+      'WolverineVol4302',
+      'WolverineVol4303',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
@@ -6955,11 +6972,6 @@ collections.push(
     'Wolverine Goes to Hell Omnibus',
     '208-5-15',
     [
-      'WolverineVol420',
-      'WolverineVol4300',
-      'WolverineVol4301',
-      'WolverineVol4302',
-      'WolverineVol4303',
       'WolverineVol4304',
     ]
   ),
