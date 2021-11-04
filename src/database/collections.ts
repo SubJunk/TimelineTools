@@ -6835,9 +6835,37 @@ collections.push(
       'WolverineVol4303',
     ]
   ),
+  new Collection(
+    'X-Men Legacy: Back to School',
+    '2012-7-11',
+    [
+      'XMenLegacyVol1260.1',
+      'XMenLegacyVol1261',
+      'XMenLegacyVol1262',
+      'XMenLegacyVol1263',
+      'XMenLegacyVol1264',
+      'XMenLegacyVol1265',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Avengers vs. X-Men: X-Men Legacy',
+    '2013-4-28',
+    [
+      'XMenLegacyVol1266',
+      'XMenLegacyVol1267',
+      'XMenLegacyVol1268',
+      'XMenLegacyVol1269',
+      'XMenLegacyVol1270',
+      'XMenLegacyVol1271',
+      'XMenLegacyVol1272',
+      'XMenLegacyVol1273',
+      'XMenLegacyVol1274',
+      'XMenLegacyVol1275',
+    ]
+  ),
   new Collection(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
