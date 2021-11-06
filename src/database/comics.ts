@@ -670,13 +670,13 @@ addComicsInSeriesVolume('ExcaliburVol3', [
   [13, '2005-5-11'],
   [14, '2005-5-25'],
 ]);
+addComicsInSeriesVolume('ExiledVol1', [[1, '2012-5-2']]);
 addComicsInSeriesVolume('FactorXVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
   [3, '1995-5'],
   [4, '1995-6']
 ]);
-
 addComicsInSeriesVolume('FantasticFourVol1', [
   [286, '1986-1-10'],
   [312, '1988-3'],
@@ -873,6 +873,10 @@ addComicsInSeriesVolume('IronManDirectorofSHIELDVol1', [
   [20, '2007-7-25'],
 ]);
 addComicsInSeriesVolume('IrredeemableAntManVol1', [[10, '2007-7-5']]);
+addComicsInSeriesVolume('JourneyintoMysteryVol3', [
+  [637, '2012-5-9'],
+  [638, '2012-5-23'],
+]);
 addComicsInSeriesVolume('KaZarVol1', [
   [2, '1970-12-1'],
   [3, '1971-3-1'],
@@ -1093,6 +1097,19 @@ addComicsInSeriesVolume('NewMutantsVol3', [
   [35, '2011-12-21'],
   [36, '2012-1-18'],
   [37, '2012-2-8'],
+  [38, '2012-2-22'],
+  [39, '2012-3-21'],
+  [40, '2012-4-4'],
+  [41, '2012-4-18'],
+  [42, '2012-5-16'],
+  [43, '2012-5-30'],
+  [44, '2012-6-20'],
+  [45, '2012-7-11'],
+  [46, '2012-7-18'],
+  [47, '2012-8-15'],
+  [48, '2012-8-29'],
+  [49, '2012-9-19'],
+  [50, '2012-10-31'],
 ]);
 addComicsInSeriesVolume('NewMutantsAnnualVol1', [
   [4, '1988-9'],
