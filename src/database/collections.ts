@@ -6857,9 +6857,51 @@ collections.push(
       'XMenVol427',
     ]
   ),
+  new Collection(
+    'New Mutants Vol. 6: De-Animator',
+    '2012-11-14',
+    [
+      'NewMutantsVol338',
+      'NewMutantsVol339',
+      'NewMutantsVol340',
+      'NewMutantsVol341',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol29',
+      'UncannyXMenVol210',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Journey Into Mystery/New Mutants: Exiled',
+    '2012-11-14',
+    [
+      'ExiledVol11',
+      'NewMutantsVol342',
+      'NewMutantsVol343',
+      'JourneyintoMysteryVol3637',
+      'JourneyintoMysteryVol3638',
+    ]
+  ),
+  new Collection(
+    'New Mutants Vol. 7: Fight the Future',
+    '2012-12-19',
+    [
+      'NewMutantsVol344',
+      'NewMutantsVol345',
+      'NewMutantsVol346',
+      'NewMutantsVol347',
+      'NewMutantsVol348',
+      'NewMutantsVol349',
+      'NewMutantsVol350',
+    ]
+  ),
   new Collection(
     'X-Men: The Curse is Broken',
     '2012-11-28',
@@ -7019,8 +7061,6 @@ collections.push(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
-      'UncannyXMenVol29',
-      'UncannyXMenVol210',
       'UncannyXMenVol211',
       'UncannyXMenVol212',
       'UncannyXMenVol213',
