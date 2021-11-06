@@ -6847,9 +6847,51 @@ collections.push(
       'XMenLegacyVol1265',
     ]
   ),
+  new Collection(
+    'X-Men: The Curse is Broken',
+    '2012-11-28',
+    [
+      'XMenVol424',
+      'XMenVol425',
+      'XMenVol426',
+      'XMenVol427',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'X-Men: The Curse is Broken',
+    '2012-11-28',
+    [
+      'XMenVol428',
+      'XMenVol429',
+    ]
+  ),
+  new Collection(
+    'X-Men by Brian Wood Vol. 1: Blank Generation',
+    '2013-2-12',
+    [
+      'XMenVol430',
+      'XMenVol431',
+      'XMenVol432',
+      'XMenVol433',
+    ]
+  ),
+  new Collection(
+    'X-Men by Brian Wood Vol. 2: Reckless Abandonment',
+    '2013-4-30',
+    [
+      'XMenVol434',
+      'XMenVol435',
+      'XMenVol436',
+      'XMenVol437',
+      'XMenVol438',
+      'XMenVol439',
+      'XMenVol440',
+      'XMenVol441',
+    ]
+  ),
   new Collection(
     'Avengers vs. X-Men: X-Men Legacy',
     '2013-4-28',
