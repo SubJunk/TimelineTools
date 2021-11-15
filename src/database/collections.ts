@@ -6735,6 +6735,16 @@ collections.push(
     ]
   ),
   new Collection(
+    'X-Factor: They Keep Killing Jamie Madrox',
+    '2012-6-13',
+    [
+      'XFactorVol3229',
+      'XFactorVol3230',
+      'XFactorVol3231',
+      'XFactorVol3232',
+    ]
+  ),
+  new Collection(
     'Generation Hope: The End of a Generation',
     '2012-5-16',
     [
@@ -6875,18 +6885,98 @@ collections.push(
       'UncannyXMenVol210',
     ]
   ),
-  /**
-   * Gap here, and in general the contents after here need to be reviewed.
-   */
+  new Collection(
+    'X-Factor: Together Again for the First Time (Partial)',
+    '2012-11-7',
+    [
+      'XFactorVol3233',
+      'XFactorVol3234',
+      'XFactorVol3235',
+      'XFactorVol3236',
+    ]
+  ),
+  new Collection(
+    'X-Factor: The Road to Redemption',
+    '2012-11-28',
+    [
+      'XFactorVol3237',
+    ]
+  ),
   new Collection(
     'Journey Into Mystery/New Mutants: Exiled',
     '2012-11-14',
     [
       'ExiledVol11',
-      'NewMutantsVol342',
-      'NewMutantsVol343',
       'JourneyintoMysteryVol3637',
+      'NewMutantsVol342',
       'JourneyintoMysteryVol3638',
+      'NewMutantsVol343',
+    ]
+  ),
+  new Collection(
+    'X-Men: The Curse is Broken',
+    '2012-11-28',
+    [
+      'XMenVol428',
+      'XMenVol429',
+    ]
+  ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
+  new Collection(
+    'X-Factor: The Road to Redemption',
+    '2012-11-28',
+    [
+      'XFactorVol3238',
+      'XFactorVol3239',
+      'XFactorVol3240',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Breaking Points',
+    '2013-2-20',
+    [
+      'XFactorVol3241',
+      'XFactorVol3242',
+      'XFactorVol3243',
+      'XFactorVol3244',
+      'XFactorVol3245',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Short Stories',
+    '2013-3-6',
+    [
+      'XFactorVol3246',
+      'XFactorVol3247',
+      'XFactorVol3248',
+      'XFactorVol3249',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Hell On Earth War',
+    '2013-7-16',
+    [
+      'XFactorVol3250',
+      'XFactorVol3251',
+      'XFactorVol3252',
+      'XFactorVol3253',
+      'XFactorVol3254',
+      'XFactorVol3255',
+      'XFactorVol3256',
+    ]
+  ),
+  new Collection(
+    'X-Factor: The End of X-Factor',
+    '2014-1-7',
+    [
+      'XFactorVol3257',
+      'XFactorVol3258',
+      'XFactorVol3259',
+      'XFactorVol3260',
+      'XFactorVol3261',
+      'XFactorVol3262',
     ]
   ),
   new Collection(
@@ -6900,14 +6990,6 @@ collections.push(
       'NewMutantsVol348',
       'NewMutantsVol349',
       'NewMutantsVol350',
-    ]
-  ),
-  new Collection(
-    'X-Men: The Curse is Broken',
-    '2012-11-28',
-    [
-      'XMenVol428',
-      'XMenVol429',
     ]
   ),
   new Collection(
