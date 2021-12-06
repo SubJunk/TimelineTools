@@ -54,7 +54,7 @@
     "@angular/cli": "^13.0.3",
     "@angular/compiler-cli": "^13.0.2",
     "@angular/language-service": "^13.0.2",
-    "@playwright/test": "^1.16.3",
+    "@playwright/test": "^1.17.1",
     "@types/jquery": "^3.5.9",
     "@types/lodash-es": "^4.17.5",
     "@types/node": "16",
