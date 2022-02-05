@@ -6933,6 +6933,13 @@ collections.push(
       'AgeofApocalypseVol16',
     ]
   ),
+  new Collection(
+    'Wolverine Goes to Hell Omnibus',
+    '208-5-15',
+    [
+      'WolverineVol4304',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
@@ -7183,13 +7190,6 @@ collections.push(
       'AvengersVsXMenConsequencesVol13',
       'AvengersVsXMenConsequencesVol14',
       'AvengersVsXMenConsequencesVol15',
-    ]
-  ),
-  new Collection(
-    'Wolverine Goes to Hell Omnibus',
-    '208-5-15',
-    [
-      'WolverineVol4304',
     ]
   ),
   new Collection(
