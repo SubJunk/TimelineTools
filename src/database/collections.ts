@@ -6921,9 +6921,34 @@ collections.push(
       'XMenVol429',
     ]
   ),
+  new Collection(
+    'Age of Apocalypse, Vol. 1: The X-Terminated (Partial)',
+    '2012-10-3',
+    [
+      'AgeofApocalypseVol11',
+      'AgeofApocalypseVol12',
+      'AgeofApocalypseVol13',
+      'AgeofApocalypseVol14',
+      'AgeofApocalypseVol15',
+      'AgeofApocalypseVol16',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Age of Apocalypse, Vol. 2: Weapon Omega',
+    '2013-4-17',
+    [
+      'AgeofApocalypseVol16',
+      'AgeofApocalypseVol17',
+      'AgeofApocalypseVol18',
+      'AgeofApocalypseVol19',
+      'AgeofApocalypseVol110',
+      'AgeofApocalypseVol111',
+      'AgeofApocalypseVol112',
+    ]
+  ),
   new Collection(
     'X-Factor: The Road to Redemption',
     '2012-11-28',
