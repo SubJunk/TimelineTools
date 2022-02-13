@@ -6199,7 +6199,7 @@ collections.push(
   ),
   new Collection(
     'Wolverine Goes to Hell Omnibus',
-    '2018-5-15',
+    '2018-5-2',
     [
       'WolverineVol41',
       'WolverineVol42',
@@ -6243,7 +6243,7 @@ collections.push(
   ),
   new Collection(
     'Wolverine Goes to Hell Omnibus',
-    '208-5-15',
+    '2018-5-2',
     [
       'AstonishingSpiderManWolverineVol11',
       'AstonishingSpiderManWolverineVol12',
@@ -6571,7 +6571,7 @@ collections.push(
   ),
   new Collection(
     'Wolverine Goes to Hell Omnibus',
-    '208-5-15',
+    '2018-5-2',
     [
       'WolverineVol410',
       'WolverineVol411',
@@ -6594,7 +6594,7 @@ collections.push(
   ),
   new Collection(
     'Wolverine Goes to Hell Omnibus',
-    '208-5-15',
+    '2018-5-2',
     [
       'XMenSchismVol14',
     ]
@@ -6608,7 +6608,7 @@ collections.push(
   ),
   new Collection(
     'Wolverine Goes to Hell Omnibus',
-    '208-5-15',
+    '2018-5-2',
     [
       'XMenSchismVol15',
     ]
@@ -6673,7 +6673,7 @@ collections.push(
   ),
   new Collection(
     'Wolverine Goes to Hell Omnibus',
-    '208-5-15',
+    '2018-5-2',
     [
       'WolverineVol417',
       'WolverineVol418',
@@ -6836,7 +6836,7 @@ collections.push(
   ),
   new Collection(
     'Wolverine Goes to Hell Omnibus',
-    '208-5-15',
+    '2018-5-2',
     [
       'WolverineVol420',
       'WolverineVol4300',
@@ -6935,14 +6935,89 @@ collections.push(
   ),
   new Collection(
     'Wolverine Goes to Hell Omnibus',
-    '208-5-15',
+    '2018-5-2',
     [
       'WolverineVol4304',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Rot',
+    '2012-9-12',
+    [
+      'WolverineVol4305',
+      'WolverineVol4306',
+      'WolverineVol4307',
+      'WolverineVol4308',
+    ]
+  ),
+  new Collection(
+    'New Mutants Vol. 7: Fight the Future',
+    '2012-12-19',
+    [
+      'NewMutantsVol344',
+      'NewMutantsVol345',
+      'NewMutantsVol346',
+    ]
+  ),
+  new Collection(
+    'X-Men by Brian Wood Vol. 1: Blank Generation',
+    '2013-2-12',
+    [
+      'XMenVol430',
+      'XMenVol431',
+      'XMenVol432',
+      'XMenVol433',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Northstar',
+    '2012-9-5',
+    [
+      'AstonishingXMenVol348',
+      'AstonishingXMenVol349',
+      'AstonishingXMenVol350',
+      'AstonishingXMenVol351',
+    ]
+  ),
+  new Collection(
+    'X-Factor: The Road to Redemption',
+    '2012-11-28',
+    [
+      'XFactorVol3238',
+      'XFactorVol3239',
+      'XFactorVol3240',
     ]
   ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new Collection(
+    'Wolverine: Rot',
+    '2012-9-12',
+    [
+      'WolverineVol4309',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Sabretooth Reborn',
+    '2013-2-5',
+    [
+      'WolverineVol4310',
+      'WolverineVol4311',
+      'WolverineVol4312',
+      'WolverineVol4313',
+    ]
+  ),
+  new Collection(
+    'Wolverine: Sabretooth Reborn',
+    '2013-4-28',
+    [
+      'WolverineVol4314',
+      'WolverineVol4315',
+      'WolverineVol4316',
+      'WolverineVol4317',
+    ]
+  ),
   new Collection(
     'Age of Apocalypse, Vol. 2: Weapon Omega',
     '2013-4-17',
@@ -6954,15 +7029,6 @@ collections.push(
       'AgeofApocalypseVol110',
       'AgeofApocalypseVol111',
       'AgeofApocalypseVol112',
-    ]
-  ),
-  new Collection(
-    'X-Factor: The Road to Redemption',
-    '2012-11-28',
-    [
-      'XFactorVol3238',
-      'XFactorVol3239',
-      'XFactorVol3240',
     ]
   ),
   new Collection(
@@ -7015,23 +7081,10 @@ collections.push(
     'New Mutants Vol. 7: Fight the Future',
     '2012-12-19',
     [
-      'NewMutantsVol344',
-      'NewMutantsVol345',
-      'NewMutantsVol346',
       'NewMutantsVol347',
       'NewMutantsVol348',
       'NewMutantsVol349',
       'NewMutantsVol350',
-    ]
-  ),
-  new Collection(
-    'X-Men by Brian Wood Vol. 1: Blank Generation',
-    '2013-2-12',
-    [
-      'XMenVol430',
-      'XMenVol431',
-      'XMenVol432',
-      'XMenVol433',
     ]
   ),
   new Collection(
@@ -7117,16 +7170,6 @@ collections.push(
       'UncannyXMenVol313',
       'WolverinetheXMenVol136',
       'WolverinetheXMenVol137',
-    ]
-  ),
-  new Collection(
-    'Astonishing X-Men: Northstar',
-    '2012-9-5',
-    [
-      'AstonishingXMenVol348',
-      'AstonishingXMenVol349',
-      'AstonishingXMenVol350',
-      'AstonishingXMenVol351',
     ]
   ),
   new Collection(
