@@ -6988,6 +6988,257 @@ collections.push(
       'XFactorVol3240',
     ]
   ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol10',
+      'AvengersVsXMenVol11.5',
+      'AvengersVsXMenVol11',
+    ]
+  ),
+  new Collection(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol19',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol12',
+      'AvengersVsXMenVersusVol11',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol211',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol13',
+    ]
+  ),
+  new Collection(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol110',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men: X-Men Legacy',
+    '2013-4-28',
+    [
+      'XMenLegacyVol1266',
+      'XMenLegacyVol1267',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol14',
+      'AvengersVsXMenVersusVol12',
+    ]
+  ),
+  new Collection(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol111',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVersusVol15',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol212',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol15',
+      'AvengersVsXMenVersusVol13',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol213',
+      'UncannyXMenVol214',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol16',
+      'AvengersVsXMenVol16.5',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men: X-Men Legacy',
+    '2013-4-28',
+    [
+      'XMenLegacyVol1268',
+    ]
+  ),
+  new Collection(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol116',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol215',
+      'UncannyXMenVol216',
+      'UncannyXMenVol217',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol17',
+      'AvengersVsXMenVersusVol14',
+    ]
+  ),
+  new Collection(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol114',
+      'WolverinetheXMenVol115',
+      'WolverinetheXMenVol117',
+      'WolverinetheXMenVol118',
+      'WolverinetheXMenVol119',
+      'WolverinetheXMenVol120',
+      'WolverinetheXMenVol121',
+      'WolverinetheXMenVol122',
+      'WolverinetheXMenVol123',
+      'WolverinetheXMenVol124',
+      'WolverinetheXMenVol125',
+      'WolverinetheXMenVol126',
+      'WolverinetheXMenVol127',
+      'WolverinetheXMenVol128',
+      'WolverinetheXMenVol129',
+      'WolverinetheXMenVol130',
+      'WolverinetheXMenVol131',
+      'WolverinetheXMenVol132',
+      'WolverinetheXMenVol133',
+      'WolverinetheXMenVol134',
+      'WolverinetheXMenVol135',
+      'WolverinetheXMenAnnualVol11',
+      'WolverinetheXMenVol138',
+      'WolverinetheXMenVol139',
+      'WolverinetheXMenVol140',
+      'WolverinetheXMenVol141',
+      'WolverinetheXMenVol142',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol18',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men: X-Men Legacy',
+    '2013-4-28',
+    [
+      'XMenLegacyVol1269',
+      'XMenLegacyVol1270',
+    ]
+  ),
+  new Collection(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol114',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol19',
+      'AvengersVsXMenVol110.5',
+      'AvengersVsXMenVol110',
+    ]
+  ),
+  new Collection(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol115',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol111',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol218',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVol112',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'UncannyXMenVol219',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men Hardcover',
+    '2012-11-21',
+    [
+      'AvengersVsXMenVersusVol16',
+    ]
+  ),
+  new Collection(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol117',
+      'WolverinetheXMenVol118',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
@@ -7105,11 +7356,6 @@ collections.push(
     'Avengers vs. X-Men: X-Men Legacy',
     '2013-4-28',
     [
-      'XMenLegacyVol1266',
-      'XMenLegacyVol1267',
-      'XMenLegacyVol1268',
-      'XMenLegacyVol1269',
-      'XMenLegacyVol1270',
       'XMenLegacyVol1271',
       'XMenLegacyVol1272',
       'XMenLegacyVol1273',
@@ -7121,16 +7367,6 @@ collections.push(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
-      'WolverinetheXMenVol19',
-      'WolverinetheXMenVol110',
-      'WolverinetheXMenVol111',
-      'WolverinetheXMenVol112',
-      'WolverinetheXMenVol113',
-      'WolverinetheXMenVol114',
-      'WolverinetheXMenVol115',
-      'WolverinetheXMenVol116',
-      'WolverinetheXMenVol117',
-      'WolverinetheXMenVol118',
       'WolverinetheXMenVol119',
       'WolverinetheXMenVol120',
       'WolverinetheXMenVol121',
@@ -7218,15 +7454,6 @@ collections.push(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
-      'UncannyXMenVol211',
-      'UncannyXMenVol212',
-      'UncannyXMenVol213',
-      'UncannyXMenVol214',
-      'UncannyXMenVol215',
-      'UncannyXMenVol216',
-      'UncannyXMenVol217',
-      'UncannyXMenVol218',
-      'UncannyXMenVol219',
       'UncannyXMenVol220',
       'AvengersVsXMenConsequencesVol11',
       'AvengersVsXMenConsequencesVol12',
