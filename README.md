@@ -1,5 +1,4 @@
 # TimelineTools
-[![Build Status](https://travis-ci.com/SubJunk/TimelineTools.svg?branch=master)](https://travis-ci.org/UniversalMediaServer/UniversalMediaServer)
 
 ## General
 
