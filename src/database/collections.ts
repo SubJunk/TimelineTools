@@ -6993,7 +6993,6 @@ collections.push(
     '2012-11-21',
     [
       'AvengersVsXMenVol10',
-      'AvengersVsXMenVol11.5',
       'AvengersVsXMenVol11',
     ]
   ),
@@ -7008,6 +7007,7 @@ collections.push(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
+      'AvengersVsXMenVol11.5',
       'AvengersVsXMenVol12',
       'AvengersVsXMenVersusVol11',
     ]
