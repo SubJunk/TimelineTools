@@ -15,7 +15,9 @@ test.describe('Reading Order Comics', () => {
     await page.locator('.floating-menu').click();
     await page.locator('.toggle-display-order-btn').click();
     const firstRearrangedComic = await page.locator('.comic-container:nth-child(24)');
-    await firstRearrangedComic.click();
+    await firstRearrangedComic.click(); // this line scrolls to the element
+    const firstRearrangedComicButton = await firstRearrangedComic.locator('button');
+    await firstRearrangedComicButton.click();
 
     await expect(
       await page.locator('div.series').innerText()
