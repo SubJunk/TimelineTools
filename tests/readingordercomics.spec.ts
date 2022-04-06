@@ -14,7 +14,10 @@ test.describe('Reading Order Comics', () => {
   async function({page}) {
     await page.locator('.floating-menu').click();
     await page.locator('.toggle-display-order-btn').click();
-    const firstRearrangedComic = await page.locator('.comic-container:nth-child(24)');
+    await page.mouse.wheel(500, 0);
+
+    // for some reason this line doesn't scroll by itself like it should, probably timing
+    const firstRearrangedComic = await page.locator('.comic-container:nth-child(24) button#expand-XMenFirstClassVol11');
     await firstRearrangedComic.click();
 
     await expect(
