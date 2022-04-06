@@ -17,5 +17,4 @@ jobs:
       run: |
         yarn
         yarn lint
-        node_modules/.bin/stylelint "**/*.less" --custom-syntax postcss-less
         yarn e2e
