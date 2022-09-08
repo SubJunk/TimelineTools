@@ -18,27 +18,24 @@ import { LimitToPipe } from './limitTo.pipe';
 import { ApiInteractions } from './api-interactions';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FilterPipe,
-    LimitToPipe,
-    InfoModalComponent,
-  ],
-  entryComponents: [
-    InfoModalComponent,
-  ],
-  imports: [
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatIconModule,
-    MatMenuModule,
-  ],
-  providers: [ApiInteractions],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        FilterPipe,
+        LimitToPipe,
+        InfoModalComponent,
+    ],
+    imports: [
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatIconModule,
+        MatMenuModule,
+    ],
+    providers: [ApiInteractions],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
