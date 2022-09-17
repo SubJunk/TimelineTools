@@ -14,5 +14,6 @@ jobs:
 
     - name: Lint and Test
       run: |
+        yarn
         yarn lint
         yarn e2e
