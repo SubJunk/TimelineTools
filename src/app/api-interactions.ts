@@ -18,6 +18,7 @@ export class ApiInteractions {
    */
   public getAPISeriesVolume = (seriesVolume: SeriesVolume) => {
     const params = new HttpParams()
+      .set('creators', seriesVolume.creators)
       .set('title', seriesVolume.title)
       .set('startYear', seriesVolume.startYear)
       .set('apikey', MARVEL_API_KEY_PUBLIC);

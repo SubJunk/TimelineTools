@@ -87,7 +87,8 @@ export interface SeriesVolume {
   id: string;
   marvelId: string;
   title: string;
-  startYear: string;
+  startYear: number;
+  creators?: string;
 }
 
 export interface SeriesVolumeLabel {
