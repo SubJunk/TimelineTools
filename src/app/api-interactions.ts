@@ -18,10 +18,13 @@ export class ApiInteractions {
    */
   public getAPISeriesVolume = (seriesVolume: SeriesVolume) => {
     const params = new HttpParams()
-      .set('creators', seriesVolume.creators)
       .set('title', seriesVolume.title)
       .set('startYear', seriesVolume.startYear)
       .set('apikey', MARVEL_API_KEY_PUBLIC);
+
+      if (seriesVolume.creators) {
+        params.append('creators', seriesVolume.creators);
+      }
 
     return this.http.get(MARVEL_API_BASE_URL + 'series', {params});
   }
