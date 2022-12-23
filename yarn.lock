@@ -2471,17 +2471,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0":
+"@types/node@npm:*, @types/node@npm:18.11.17, @types/node@npm:>=10.0.0":
   version: 18.11.17
   resolution: "@types/node@npm:18.11.17"
   checksum: 1933afd068d5c75c068c6c4df6d10edb3b0b2bb6503d544e2f0496ac007c90596e6a5e284a8ef032451bc16f871b7e46719d7d2bea60e9b25d13a77d52161cac
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:18.11.15":
-  version: 18.11.15
-  resolution: "@types/node@npm:18.11.15"
-  checksum: cae8692a5cee0316f93ee0342237eb921f70c51afb37c661c711a925a4642654ae7e404c5a80899d481c0cfaff3a6891ef04bacd330a2e72734192bfc91dc2d8
   languageName: node
   linkType: hard
 
@@ -9478,7 +9471,7 @@ __metadata:
     "@types/jasmine": 4.3.1
     "@types/jquery": 3.5.14
     "@types/lodash-es": 4.17.6
-    "@types/node": 18.11.15
+    "@types/node": 18.11.17
     "@typescript-eslint/eslint-plugin": 5.46.1
     "@typescript-eslint/parser": 5.46.1
     concurrently: 7.6.0
