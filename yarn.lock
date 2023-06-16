@@ -2519,10 +2519,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jasmine@npm:4.3.2":
-  version: 4.3.2
-  resolution: "@types/jasmine@npm:4.3.2"
-  checksum: cb294f19ba27db20c3ea7172c38366b4eb3e93f186e42237cbe35e95c72342e0a1ce3e5c00fb1b2b40b5ee51d58a9320589556b6f898693a9d04769458d6e238
+"@types/jasmine@npm:4.3.3":
+  version: 4.3.3
+  resolution: "@types/jasmine@npm:4.3.3"
+  checksum: 5a7aa618a25d139f598ccfeb50ff9c667579d3e5cba735455fdc8ffa4e1ffbc4ac299c0a85fbd3fe9bfaaf8999ffb4c6acbc68ea43a8f69facff34915a6ace61
   languageName: node
   linkType: hard
 
@@ -9728,7 +9728,7 @@ __metadata:
     "@angular/platform-browser-dynamic": 14.2.12
     "@angular/router": 14.2.12
     "@playwright/test": 1.35.1
-    "@types/jasmine": 4.3.2
+    "@types/jasmine": 4.3.3
     "@types/jquery": 3.5.16
     "@types/lodash-es": 4.17.7
     "@types/node": 18.16.18
