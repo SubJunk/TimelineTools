@@ -298,7 +298,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/cli@npm:14.2.12":
+"@angular/cli@npm:14":
   version: 14.2.12
   resolution: "@angular/cli@npm:14.2.12"
   dependencies:
@@ -9260,7 +9260,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.3":
+"semver@npm:7.5.3, semver@npm:^7.1.1":
   version: 7.5.3
   resolution: "semver@npm:7.5.3"
   dependencies:
@@ -9289,7 +9289,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.5, semver@npm:^7.3.7":
+"semver@npm:^7.0.0, semver@npm:^7.3.5, semver@npm:^7.3.7":
   version: 7.5.2
   resolution: "semver@npm:7.5.2"
   dependencies:
@@ -9972,7 +9972,7 @@ __metadata:
     "@angular-eslint/template-parser": 14
     "@angular/animations": 14.3.0
     "@angular/cdk": 14.2.7
-    "@angular/cli": 14.2.12
+    "@angular/cli": 14
     "@angular/common": 14.3.0
     "@angular/compiler": 14.3.0
     "@angular/compiler-cli": 14.3.0
