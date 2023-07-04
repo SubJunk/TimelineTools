@@ -15,7 +15,7 @@ import {
   sortBy
 } from 'lodash-es';
 import { Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
 
 import { InfoModalComponent } from './info-modal/info-modal.component';

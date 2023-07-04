@@ -13,7 +13,7 @@ test.describe('Info', () => {
     await page.locator('.toggle-info-btn').click();
 
     await expect(
-      await page.locator('.mat-dialog-title').innerText()
+      await page.locator('.mat-mdc-dialog-title').innerText()
     ).toContain(
       'Info & Credits'
     );
