@@ -35,7 +35,7 @@
         <div class="title">{{collection.title}}</div>
         <div class="date">{{collection.yearPublished}} / {{collection.monthPublished}}</div>
         <div class="collection-comics">
-          <ul>
+          <ol>
             <li *ngFor="let comic of collection.allCollectionComics; trackBy: trackByItemId">
               <div class="popover"><div>{{comic.series}} #{{comic.issue}}</div></div>
               <button (click)="toggleExpandComic(comic, true)" mat-button>
@@ -47,7 +47,7 @@
                 >
               </button>
             </li>
-          </ul>
+          </ol>
         </div>
       </div>
     </div>
