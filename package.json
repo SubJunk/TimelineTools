@@ -54,7 +54,7 @@
     "@angular/cli": "16.2.0",
     "@angular/compiler-cli": "16.2.0",
     "@angular/language-service": "16.2.0",
-    "@playwright/test": "1.36.2",
+    "@playwright/test": "1.37.0",
     "@types/jasmine": "4.3.5",
     "@types/jquery": "3.5.16",
     "@types/lodash-es": "4.17.8",
