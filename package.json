@@ -58,7 +58,7 @@
     "@types/jasmine": "4.3.5",
     "@types/jquery": "3.5.17",
     "@types/lodash-es": "4.17.9",
-    "@types/node": "18.17.11",
+    "@types/node": "18.17.12",
     "@typescript-eslint/eslint-plugin": "6.4.1",
     "@typescript-eslint/parser": "6.4.1",
     "concurrently": "8.2.1",
