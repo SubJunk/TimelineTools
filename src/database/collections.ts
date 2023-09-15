@@ -7214,9 +7214,6 @@ collections.push(
       'WolverinetheXMenVol118',
     ]
   ),
-  /**
-   * Gap here, and in general the contents after here need to be reviewed.
-   */
   new Collection(
     'Wolverine: Rot',
     '2012-9-12',
@@ -7234,6 +7231,123 @@ collections.push(
       'WolverineVol4313',
     ]
   ),
+  new Collection(
+    'X-Men by Brian Wood Vol. 2: Reckless Abandonment',
+    '2013-4-30',
+    [
+      'XMenVol434',
+      'XMenVol435',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men: X-Men Legacy',
+    '2013-4-28',
+    [
+      'XMenLegacyVol1271',
+      'XMenLegacyVol1272',
+      'XMenLegacyVol1273',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Breaking Points',
+    '2013-2-20',
+    [
+      'XFactorVol3241',
+      'XFactorVol3242',
+      'XFactorVol3243',
+      'XFactorVol3244',
+      'XFactorVol3245',
+    ]
+  ),
+  new Collection(
+    'X-Men by Brian Wood Vol. 2: Reckless Abandonment',
+    '2013-4-30',
+    [
+      'XMenVol436',
+      'XMenVol437',
+    ]
+  ),
+  new Collection(
+    'Avengers vs. X-Men: X-Men Legacy',
+    '2013-4-28',
+    [
+      'XMenLegacyVol1274',
+      'XMenLegacyVol1275',
+    ]
+  ),
+  new Collection(
+    'New Mutants Vol. 7: Fight the Future',
+    '2012-12-19',
+    [
+      'NewMutantsVol347',
+      'NewMutantsVol348',
+      'NewMutantsVol349',
+      'NewMutantsVol350',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
+    '2020-2-19',
+    [
+      'AvengersVsXMenConsequencesVol11',
+      'AvengersVsXMenConsequencesVol12',
+      'AvengersVsXMenConsequencesVol13',
+      'AvengersVsXMenConsequencesVol14',
+      'AvengersVsXMenConsequencesVol15',
+      'UncannyXMenVol220',
+    ]
+  ),
+  new Collection(
+    'Uncanny X-Force by Rick Remender Omnibus',
+    '2014-3-25',
+    [
+      'UncannyXForceVol124',
+      'UncannyXForceVol125',
+      'UncannyXForceVol126',
+      'UncannyXForceVol127',
+      'UncannyXForceVol128',
+      'UncannyXForceVol129',
+      'UncannyXForceVol130',
+      'UncannyXForceVol131',
+      'UncannyXForceVol132',
+      'UncannyXForceVol133',
+      'UncannyXForceVol134',
+      'UncannyXForceVol135',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Weaponized',
+    '2013-3-27',
+    [
+      'AstonishingXMenVol352',
+      'AstonishingXMenVol353',
+      'AstonishingXMenVol354',
+      'AstonishingXMenVol355',
+      'AstonishingXMenVol356',
+      'AstonishingXMenAnnualVol11',
+    ]
+  ),
+  new Collection(
+    'Astonishing X-Men: Unmasked',
+    '2013-12-11',
+    [
+      'AstonishingXMenVol357',
+      'AstonishingXMenVol358',
+    ]
+  ),
+  new Collection(
+    'X-Factor: Short Stories',
+    '2013-3-6',
+    [
+      'XFactorVol3246',
+      'XFactorVol3247',
+      'XFactorVol3248',
+      'XFactorVol3249',
+    ]
+  ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
   new Collection(
     'Wolverine: Sabretooth Reborn',
     '2013-4-28',
@@ -7255,27 +7369,6 @@ collections.push(
       'AgeofApocalypseVol110',
       'AgeofApocalypseVol111',
       'AgeofApocalypseVol112',
-    ]
-  ),
-  new Collection(
-    'X-Factor: Breaking Points',
-    '2013-2-20',
-    [
-      'XFactorVol3241',
-      'XFactorVol3242',
-      'XFactorVol3243',
-      'XFactorVol3244',
-      'XFactorVol3245',
-    ]
-  ),
-  new Collection(
-    'X-Factor: Short Stories',
-    '2013-3-6',
-    [
-      'XFactorVol3246',
-      'XFactorVol3247',
-      'XFactorVol3248',
-      'XFactorVol3249',
     ]
   ),
   new Collection(
@@ -7304,38 +7397,13 @@ collections.push(
     ]
   ),
   new Collection(
-    'New Mutants Vol. 7: Fight the Future',
-    '2012-12-19',
-    [
-      'NewMutantsVol347',
-      'NewMutantsVol348',
-      'NewMutantsVol349',
-      'NewMutantsVol350',
-    ]
-  ),
-  new Collection(
     'X-Men by Brian Wood Vol. 2: Reckless Abandonment',
     '2013-4-30',
     [
-      'XMenVol434',
-      'XMenVol435',
-      'XMenVol436',
-      'XMenVol437',
       'XMenVol438',
       'XMenVol439',
       'XMenVol440',
       'XMenVol441',
-    ]
-  ),
-  new Collection(
-    'Avengers vs. X-Men: X-Men Legacy',
-    '2013-4-28',
-    [
-      'XMenLegacyVol1271',
-      'XMenLegacyVol1272',
-      'XMenLegacyVol1273',
-      'XMenLegacyVol1274',
-      'XMenLegacyVol1275',
     ]
   ),
   new Collection(
@@ -7384,23 +7452,9 @@ collections.push(
     ]
   ),
   new Collection(
-    'Astonishing X-Men: Weaponized',
-    '2013-3-27',
-    [
-      'AstonishingXMenVol352',
-      'AstonishingXMenVol353',
-      'AstonishingXMenVol354',
-      'AstonishingXMenVol355',
-      'AstonishingXMenVol356',
-      'AstonishingXMenAnnualVol11',
-    ]
-  ),
-  new Collection(
     'Astonishing X-Men: Unmasked',
     '2013-12-11',
     [
-      'AstonishingXMenVol357',
-      'AstonishingXMenVol358',
       'AstonishingXMenVol359',
       'AstonishingXMenVol362',
       'AstonishingXMenVol363',
@@ -7423,36 +7477,6 @@ collections.push(
       'AgeofApocalypseVol114',
       'XTerminationVol11',
       'XTerminationVol12',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
-    '2020-2-19',
-    [
-      'UncannyXMenVol220',
-      'AvengersVsXMenConsequencesVol11',
-      'AvengersVsXMenConsequencesVol12',
-      'AvengersVsXMenConsequencesVol13',
-      'AvengersVsXMenConsequencesVol14',
-      'AvengersVsXMenConsequencesVol15',
-    ]
-  ),
-  new Collection(
-    'Uncanny X-Force by Rick Remender Omnibus',
-    '2014-3-25',
-    [
-      'UncannyXForceVol124',
-      'UncannyXForceVol125',
-      'UncannyXForceVol126',
-      'UncannyXForceVol127',
-      'UncannyXForceVol128',
-      'UncannyXForceVol129',
-      'UncannyXForceVol130',
-      'UncannyXForceVol131',
-      'UncannyXForceVol132',
-      'UncannyXForceVol133',
-      'UncannyXForceVol134',
-      'UncannyXForceVol135',
     ]
   ),
 );
