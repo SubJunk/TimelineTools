@@ -11109,7 +11109,7 @@ __metadata:
     tsconfig-paths: 4.2.0
     tslib: 2.6.2
     typescript: 5.1.6
-    zone.js: 0.14.1
+    zone.js: 0.14.2
   languageName: unknown
   linkType: soft
 
@@ -12099,11 +12099,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zone.js@npm:0.14.1":
-  version: 0.14.1
-  resolution: "zone.js@npm:0.14.1"
+"zone.js@npm:0.14.2":
+  version: 0.14.2
+  resolution: "zone.js@npm:0.14.2"
   dependencies:
     tslib: ^2.3.0
-  checksum: cdc71ac832efc63c7bf0900389dc7f5054d02991e3dcc31918bf21b6defa893c96117e8d55e97b23759d0e02485f8a270238512f8e3519687f11b25764e59865
+  checksum: 730411ed2afaddf68613c163d2b2c59e1b2336de12ca798266788b3a633dbbeeba9c8a5f557d75b1c429e18bae2781dd5d91092ec2f6d5440b5d516994a60a18
   languageName: node
   linkType: hard
