@@ -3745,12 +3745,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jquery@npm:3.5.25":
-  version: 3.5.25
-  resolution: "@types/jquery@npm:3.5.25"
+"@types/jquery@npm:3.5.27":
+  version: 3.5.27
+  resolution: "@types/jquery@npm:3.5.27"
   dependencies:
     "@types/sizzle": "*"
-  checksum: 912ce4212447a7c640147345c6b46bde5b12bafc2c97e1abc76939174c3109e3dbb361a534af717be2da4e907bc257558a6bc631971fcc47f7e5f044d315183e
+  checksum: a217d3dbf134134e1b1e10bb0a197523eb362d8e2aa2ae2ad909ae8db0d625f5784203a0794a498b7a09e495ae7822512b3112440cc96b8374eda4afc33b0d6e
   languageName: node
   linkType: hard
 
@@ -11083,7 +11083,7 @@ __metadata:
     "@angular/router": 16.2.12
     "@playwright/test": 1.39.0
     "@types/jasmine": 5.1.2
-    "@types/jquery": 3.5.25
+    "@types/jquery": 3.5.27
     "@types/lodash-es": 4.17.10
     "@types/node": 18.18.8
     "@typescript-eslint/eslint-plugin": 6.9.1
