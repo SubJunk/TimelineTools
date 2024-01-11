@@ -512,19 +512,19 @@ addComicsInSeriesVolume('DakenDarkWolverineVol1', [
   [8, '2011-4-13'],
   [9, '2011-5-11'],
 ]);
+addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']]);
 addComicsInSeriesVolume('DaredevilVol1', [
   [238, '1987-1'],
   [252, '1988-3'],
 ]);
+addComicsInSeriesVolume('DarkAvengersUncannyXMenExodusVol1', [[1, '2009-9-10']]);
+addComicsInSeriesVolume('DarkAvengersUncannyXMenUtopiaVol1', [[1, '2009-6-24']]);
 addComicsInSeriesVolume('DarkAvengersVol1', [
   [7, '2009-7-15'],
   [8, '2009-8-26'],
 ]);
-addComicsInSeriesVolume('DarkAvengersUncannyXMenExodusVol1', [[1, '2009-9-10']]);
-addComicsInSeriesVolume('DarkAvengersUncannyXMenUtopiaVol1', [[1, '2009-6-24']]);
 addComicsInSeriesVolume('DarkReignTheCabalVol1', [[1, '2009-4-29']]);
 addComicsInSeriesVolume('DarkReignTheListXMenVol1', [[1, '2009-9-23']]);
-addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']]);
 addComicsInSeriesVolume('DarkXMenVol1', [
   [1, '2009-11-11'],
   [2, '2009-12-9'],

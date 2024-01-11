@@ -6001,7 +6001,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Cable Vol. 4: Homecoming (Partial)',
+    'Cable Vol. 4: Homecoming',
     '2010-5-19',
     [
       'CableVol221',
