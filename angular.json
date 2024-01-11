@@ -77,10 +77,10 @@
           "options": {},
           "configurations": {
             "production": {
-              "browserTarget": "timeline-tools:build:production"
+              "buildTarget": "timeline-tools:build:production"
             },
             "development": {
-              "browserTarget": "timeline-tools:build:development"
+              "buildTarget": "timeline-tools:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "timeline-tools:build"
+            "buildTarget": "timeline-tools:build"
           }
         },
         "test": {
