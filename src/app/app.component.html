@@ -25,9 +25,9 @@
           <img
               *ngIf="collection.visible"
               [srcset]="
-                  '/images/covers/' + collection.image + '.jpg 2x,
-                  /images/covers/' + collection.image + '.jpg 1x'"
-              [src]="'/images/covers/' + collection.image + '.jpg'"
+                  'images/covers/' + collection.image + '.jpg 2x,
+                  images/covers/' + collection.image + '.jpg 1x'"
+              [src]="'images/covers/' + collection.image + '.jpg'"
           >
         </button>
       </div>
@@ -41,9 +41,9 @@
               <button (click)="toggleExpandComic(comic, true)" mat-button>
                 <img
                     [srcset]="
-                        '/images/covers/' + comic.image + '.jpg 2x,
-                        /images/covers/' + comic.image + '.jpg 1x'"
-                    [src]="'/images/covers/' + comic.image + '.jpg'"
+                        'images/covers/' + comic.image + '.jpg 2x,
+                        images/covers/' + comic.image + '.jpg 1x'"
+                    [src]="'images/covers/' + comic.image + '.jpg'"
                 >
               </button>
             </li>
@@ -61,9 +61,9 @@
       <button (click)="search(item)" class="cover-thumbnail">
         <img
           [srcset]="
-              '/images/covers/' + item.image + '.jpg 2x,
-              /images/covers/' + item.image + '.jpg 1x'"
-          [src]="'/images/covers/' + item.image + '.jpg'"
+              'images/covers/' + item.image + '.jpg 2x,
+              images/covers/' + item.image + '.jpg 1x'"
+          [src]="'images/covers/' + item.image + '.jpg'"
         >
         <span class="search-result-text">{{item.displayText}}</span>
       </button>
@@ -88,9 +88,9 @@
           <img
               *ngIf="comic.visible"
               [srcset]="
-                  '/images/covers/' + comic.image + '.jpg 2x,
-                  /images/covers/' + comic.image + '.jpg 1x'"
-              [src]="'/images/covers/' + comic.image + '.jpg'"
+                  'images/covers/' + comic.image + '.jpg 2x,
+                  images/covers/' + comic.image + '.jpg 1x'"
+              [src]="'images/covers/' + comic.image + '.jpg'"
           >
         </button>
       </div>
@@ -108,7 +108,7 @@
       <div class="panel-left">
         <span class="cover-thumbnail">
           <button (click)="toggleFullscreen()" class="toggle-full-screen">
-            <img src="/images/covers/{{expandedComic.image}}.jpg">
+            <img src="images/covers/{{expandedComic.image}}.jpg">
           </button>
         </span>
         <ol class="pagination">
@@ -160,9 +160,9 @@
                 <img
                     [ngClass]="{current: collectionComic.id === expandedComicId}"
                     [srcset]="
-                        '/images/covers/' + collectionComic.image + '.jpg 2x,
-                        /images/covers/' + collectionComic.image + '.jpg 1x'"
-                    [src]="'/images/covers/' + collectionComic.image + '.jpg'"
+                        'images/covers/' + collectionComic.image + '.jpg 2x,
+                        images/covers/' + collectionComic.image + '.jpg 1x'"
+                    [src]="'images/covers/' + collectionComic.image + '.jpg'"
                 >
               </button>
             </li>

@@ -117,7 +117,6 @@ addComicsInSeriesVolume('AskanisonVol1', [
   [3, '1996-5'],
   [4, '1996-6'],
 ]);
-addComicsInSeriesVolume('AstonishingTalesVol1', [[25, '1974-8-1']]);
 addComicsInSeriesVolume('AstonishingSpiderManWolverineVol1', [
   [1, '2010-5-5'],
   [2, '2010-7-14'],
@@ -126,6 +125,7 @@ addComicsInSeriesVolume('AstonishingSpiderManWolverineVol1', [
   [5, '2011-3-23'],
   [6, '2011-5-25'],
 ]);
+addComicsInSeriesVolume('AstonishingTalesVol1', [[25, '1974-8-1']]);
 addComicsInSeriesVolume('AstonishingXMenVol1', [
   [1, '1995-3'],
   [2, '1995-4'],
@@ -234,6 +234,21 @@ addComicsInSeriesVolume('AvengersVol1', [
   [401, '1996-8'],
   [402, '1996-9'],
 ]);
+addComicsInSeriesVolume('AvengersVsXMenConsequencesVol1', [
+  [1, '2012-10-10'],
+  [2, '2012-10-17'],
+  [3, '2012-10-24'],
+  [4, '2012-10-31'],
+  [5, '2012-11-7'],
+]);
+addComicsInSeriesVolume('AvengersVsXMenVersusVol1', [
+  [1, '2012-4-25'],
+  [2, '2012-5-16'],
+  [3, '2012-6-13'],
+  [4, '2012-7-11'],
+  [5, '2012-8-29'],
+  [6, '2012-10-3'],
+]);
 addComicsInSeriesVolume('AvengersVsXMenVol1', [
   [0, '2012-3-28'],
   [1, '2012-4-4'],
@@ -251,21 +266,6 @@ addComicsInSeriesVolume('AvengersVsXMenVol1', [
   [10.5, '2012-8-20'],
   [11, '2012-9-12'],
   [12, '2012-10-3'],
-]);
-addComicsInSeriesVolume('AvengersVsXMenConsequencesVol1', [
-  [1, '2012-10-10'],
-  [2, '2012-10-17'],
-  [3, '2012-10-24'],
-  [4, '2012-10-31'],
-  [5, '2012-11-7'],
-]);
-addComicsInSeriesVolume('AvengersVsXMenVersusVol1', [
-  [1, '2012-4-25'],
-  [2, '2012-5-16'],
-  [3, '2012-6-13'],
-  [4, '2012-7-11'],
-  [5, '2012-8-29'],
-  [6, '2012-10-3'],
 ]);
 addComicsInSeriesVolume('AvengersXSanctionVol1', [
   [1, '2011-12-14'],
