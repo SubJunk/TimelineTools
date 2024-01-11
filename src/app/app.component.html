@@ -24,7 +24,7 @@
         <button (click)="toggleExpandCollection(collection)" class="cover-thumbnail" id="expand-{{collection.id}}">
           <img
             *ngIf="collection.visible"
-            [src]="'images/covers/' + collection.image + '.jpg'"
+            [src]="'assets/covers/' + collection.image + '.jpg'"
           >
         </button>
       </div>
@@ -37,7 +37,7 @@
               <div class="popover"><div>{{comic.series}} #{{comic.issue}}</div></div>
               <button (click)="toggleExpandComic(comic, true)" mat-button>
                 <img
-                  [src]="'images/covers/' + comic.image + '.jpg'"
+                  [src]="'assets/covers/' + comic.image + '.jpg'"
                 >
               </button>
             </li>
@@ -54,7 +54,7 @@
     <li *ngFor="let item of itemsToSearch | filter: searchText | limitTo" class="search-result">
       <button (click)="search(item)" class="cover-thumbnail">
         <img
-          [src]="'images/covers/' + item.image + '.jpg'"
+          [src]="'assets/covers/' + item.image + '.jpg'"
         >
         <span class="search-result-text">{{item.displayText}}</span>
       </button>
@@ -78,7 +78,7 @@
         <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
           <img
             *ngIf="comic.visible"
-            [src]="'images/covers/' + comic.image + '.jpg'"
+            [src]="'assets/covers/' + comic.image + '.jpg'"
           >
         </button>
       </div>
@@ -96,7 +96,7 @@
       <div class="panel-left">
         <span class="cover-thumbnail">
           <button (click)="toggleFullscreen()" class="toggle-full-screen">
-            <img [src]="'images/covers/' + expandedComic.image + '.jpg'">
+            <img [src]="'assets/covers/' + expandedComic.image + '.jpg'">
           </button>
         </span>
         <ol class="pagination">
@@ -147,7 +147,7 @@
               <button (click)="toggleExpandComic(collectionComic)" mat-button>
                 <img
                   [ngClass]="{current: collectionComic.id === expandedComicId}"
-                  [src]="'images/covers/' + collectionComic.image + '.jpg'"
+                  [src]="'assets/covers/' + collectionComic.image + '.jpg'"
                 >
               </button>
             </li>
