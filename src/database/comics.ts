@@ -728,6 +728,12 @@ addComicsInSeriesVolume('FantasticFourvstheXMenVol1', [
   [4, '1987-6'],
 ]);
 addComicsInSeriesVolume('FearItselfTheBookoftheSkullVol1', [[1, '2011-3-16']]);
+addComicsInSeriesVolume('FearItselfTheDeepVol1', [
+  [1, '2011-6-1'],
+  [2, '2011-7-27'],
+  [3, '2011-8-31'],
+  [4, '2011-9-28'],
+]);
 addComicsInSeriesVolume('FearItselfVol1', [
   [1, '2011-4-6'],
   [2, '2011-5-4'],
@@ -736,12 +742,6 @@ addComicsInSeriesVolume('FearItselfVol1', [
   [5, '2011-8-10'],
   [6, '2011-9-14'],
   [7, '2011-10-19'],
-]);
-addComicsInSeriesVolume('FearItselfTheDeepVol1', [
-  [1, '2011-6-1'],
-  [2, '2011-7-27'],
-  [3, '2011-8-31'],
-  [4, '2011-9-28'],
 ]);
 addComicsInSeriesVolume('FearItselfUncannyXForceVol1', [
   [1, '2011-7-6'],
