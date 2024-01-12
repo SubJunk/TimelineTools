@@ -827,6 +827,7 @@ addComicsInSeriesVolume('GenerationNextVol1', [
   [3, '1995-5'],
   [4, '1995-6']
 ]);
+addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']]);
 addComicsInSeriesVolume('GenerationXVol1', [
   [1, '1994-11'],
   [2, '1994-12'],
@@ -859,7 +860,6 @@ addComicsInSeriesVolume('GenerationXVol1', [
   [74, '2001-4'],
   [75, '2001-6'],
 ]);
-addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']]);
 addComicsInSeriesVolume('GhostRiderVol3', [
   [26, '1992-6'],
   [27, '1992-7'],
@@ -884,6 +884,7 @@ addComicsInSeriesVolume('HouseofMVol1', [
   [7, '2005-10-12'],
   [8, '2005-11-2'],
 ]);
+addComicsInSeriesVolume('HulkVol1', [[8, '1999-11']]);
 addComicsInSeriesVolume('IconsCyclopsVol1', [
   [1, '2001-9'],
   [2, '2001-10'],
@@ -900,7 +901,6 @@ addComicsInSeriesVolume('IncredibleHulkVol1', [
   [444, '1996-8-10'],
   [445, '1996-9-10'],
 ]);
-addComicsInSeriesVolume('IncredibleHulkVol2', [[8, '1999-11']]);
 addComicsInSeriesVolume('IronFistVol1', [
   [14, '1977-8', ['Snowfire']],
   [15, '1977-9', ['Enter, the X-Men']]

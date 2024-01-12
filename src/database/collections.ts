@@ -2676,7 +2676,7 @@ collections.push(
       'WolverineVol2141',
       'WolverineVol2142',
       'WolverineVol2143',
-      'IncredibleHulkVol28',
+      'HulkVol18',
       'WolverineVol2144'
     ]
   ),
