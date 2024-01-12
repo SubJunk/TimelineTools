@@ -963,11 +963,11 @@ addComicsInSeriesVolume('MagnetoRexVol1', [
 addComicsInSeriesVolume('MarvelGraphicNovelVol1', [[5, '1983-1']]);
 addComicsInSeriesVolume('MarvelSpotlightVol3', [[41, '2009-5-6']]);
 addComicsInSeriesVolume('MarvelTalesVol2', [[30, '1971-4-1']]);
+addComicsInSeriesVolume('MarvelTeamUpAnnualVol1', [[1, '1976-12', ['The Lords of Light and Darkness!']]]);
 addComicsInSeriesVolume('MarvelTeamUpVol1', [
   [4, '1972-9-10'],
   [23, '1974-7-1'],
   [38, '1975-10-1'],
-  [1976, '1976-12', ['The Lords of Light and Darkness!']],
   [53, '1977-1', ['Nightmare in New Mexico!']],
   [69, '1978-5', ['Night of the Living God!']],
   [70, '1978-6', ['Whom Gods Destroy!']],
