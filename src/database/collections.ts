@@ -1442,7 +1442,7 @@ collections.push(
       'TalesfromtheAgeofApocalypseSinsterBloodlinesVol11',
       'XManVol1-1',
       'XMenChroniclesVol12',
-      'TalesfromtheAgeofApocalypseBytheLightVol11',
+      'TalesfromtheAgeofApocalyspseBytheLightVol11',
       'BlinkVol11',
       'BlinkVol12',
       'BlinkVol13',
@@ -3165,12 +3165,12 @@ collections.push(
     'Wolverine Epic Collection: Blood Debt',
     '2018-3-28',
     [
-      'OriginVol11',
-      'OriginVol12',
-      'OriginVol13',
-      'OriginVol14',
-      'OriginVol15',
-      'OriginVol16',
+      'WolverineTheOriginVol11',
+      'WolverineTheOriginVol12',
+      'WolverineTheOriginVol13',
+      'WolverineTheOriginVol14',
+      'WolverineTheOriginVol15',
+      'WolverineTheOriginVol16',
     ]
   ),
   new Collection(

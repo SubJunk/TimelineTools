@@ -1296,14 +1296,6 @@ addComicsInSeriesVolume('NYXNoWayHomeVol1', [
 addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']]);
 addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']]);
 addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']]);
-addComicsInSeriesVolume('OriginVol1', [
-  [1, '2001-11'],
-  [2, '2001-12'],
-  [3, '2002-1'],
-  [4, '2002-2'],
-  [5, '2002-3'],
-  [6, '2002-4'],
-]);
 addComicsInSeriesVolume('OroroBeforetheStormVol1', [
   [1, '2005-6-1'],
   [2, '2005-7-6'],
@@ -1398,8 +1390,8 @@ addComicsInSeriesVolume('SWORDVol1', [
   [4, '2010-2-10'],
   [5, '2010-3-10'],
 ]);
-addComicsInSeriesVolume('TalesfromtheAgeofApocalypseBytheLightVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']]);
+addComicsInSeriesVolume('TalesfromtheAgeofApocalyspseBytheLightVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('TheAmazingSpiderManVol1', [
   [92, '1971-1-10'],
   [415, '1996-9-10'],
@@ -2054,6 +2046,14 @@ addComicsInSeriesVolume('WolverineOriginsVol1', [
   [28, '2008-9-24'],
   [29, '2008-10-29'],
   [30, '2008-11-26'],
+]);
+addComicsInSeriesVolume('WolverineTheOriginVol1', [
+  [1, '2001-11'],
+  [2, '2001-12'],
+  [3, '2002-1'],
+  [4, '2002-2'],
+  [5, '2002-3'],
+  [6, '2002-4'],
 ]);
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
