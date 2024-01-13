@@ -264,7 +264,7 @@ collections.push(
       'IronFistVol114',
       'IronFistVol115',
       'UncannyXMenVol1109',
-      'MarvelTeamUpVol11976',
+      'MarvelTeamUpAnnualVol11',
       'MarvelTeamUpVol153',
       'UncannyXMenVol1110',
       'MarvelTeamUpVol169',
@@ -2676,7 +2676,7 @@ collections.push(
       'WolverineVol2141',
       'WolverineVol2142',
       'WolverineVol2143',
-      'IncredibleHulkVol28',
+      'HulkVol18',
       'WolverineVol2144'
     ]
   ),
@@ -6001,7 +6001,7 @@ collections.push(
     ]
   ),
   new Collection(
-    'Cable Vol. 4: Homecoming (Partial)',
+    'Cable Vol. 4: Homecoming',
     '2010-5-19',
     [
       'CableVol221',

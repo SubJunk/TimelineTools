@@ -512,19 +512,19 @@ addComicsInSeriesVolume('DakenDarkWolverineVol1', [
   [8, '2011-4-13'],
   [9, '2011-5-11'],
 ]);
+addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']]);
 addComicsInSeriesVolume('DaredevilVol1', [
   [238, '1987-1'],
   [252, '1988-3'],
 ]);
+addComicsInSeriesVolume('DarkAvengersUncannyXMenExodusVol1', [[1, '2009-9-10']]);
+addComicsInSeriesVolume('DarkAvengersUncannyXMenUtopiaVol1', [[1, '2009-6-24']]);
 addComicsInSeriesVolume('DarkAvengersVol1', [
   [7, '2009-7-15'],
   [8, '2009-8-26'],
 ]);
-addComicsInSeriesVolume('DarkAvengersUncannyXMenExodusVol1', [[1, '2009-9-10']]);
-addComicsInSeriesVolume('DarkAvengersUncannyXMenUtopiaVol1', [[1, '2009-6-24']]);
 addComicsInSeriesVolume('DarkReignTheCabalVol1', [[1, '2009-4-29']]);
 addComicsInSeriesVolume('DarkReignTheListXMenVol1', [[1, '2009-9-23']]);
-addComicsInSeriesVolume('DaredevilDeadpoolAnnualVol1', [[1, '1997-9']]);
 addComicsInSeriesVolume('DarkXMenVol1', [
   [1, '2009-11-11'],
   [2, '2009-12-9'],
@@ -728,6 +728,12 @@ addComicsInSeriesVolume('FantasticFourvstheXMenVol1', [
   [4, '1987-6'],
 ]);
 addComicsInSeriesVolume('FearItselfTheBookoftheSkullVol1', [[1, '2011-3-16']]);
+addComicsInSeriesVolume('FearItselfTheDeepVol1', [
+  [1, '2011-6-1'],
+  [2, '2011-7-27'],
+  [3, '2011-8-31'],
+  [4, '2011-9-28'],
+]);
 addComicsInSeriesVolume('FearItselfVol1', [
   [1, '2011-4-6'],
   [2, '2011-5-4'],
@@ -736,12 +742,6 @@ addComicsInSeriesVolume('FearItselfVol1', [
   [5, '2011-8-10'],
   [6, '2011-9-14'],
   [7, '2011-10-19'],
-]);
-addComicsInSeriesVolume('FearItselfTheDeepVol1', [
-  [1, '2011-6-1'],
-  [2, '2011-7-27'],
-  [3, '2011-8-31'],
-  [4, '2011-9-28'],
 ]);
 addComicsInSeriesVolume('FearItselfUncannyXForceVol1', [
   [1, '2011-7-6'],
@@ -827,6 +827,7 @@ addComicsInSeriesVolume('GenerationNextVol1', [
   [3, '1995-5'],
   [4, '1995-6']
 ]);
+addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']]);
 addComicsInSeriesVolume('GenerationXVol1', [
   [1, '1994-11'],
   [2, '1994-12'],
@@ -859,7 +860,6 @@ addComicsInSeriesVolume('GenerationXVol1', [
   [74, '2001-4'],
   [75, '2001-6'],
 ]);
-addComicsInSeriesVolume('GenerationXAnnualVol1', [[1, '1995-11']]);
 addComicsInSeriesVolume('GhostRiderVol3', [
   [26, '1992-6'],
   [27, '1992-7'],
@@ -884,6 +884,7 @@ addComicsInSeriesVolume('HouseofMVol1', [
   [7, '2005-10-12'],
   [8, '2005-11-2'],
 ]);
+addComicsInSeriesVolume('HulkVol1', [[8, '1999-11']]);
 addComicsInSeriesVolume('IconsCyclopsVol1', [
   [1, '2001-9'],
   [2, '2001-10'],
@@ -900,7 +901,6 @@ addComicsInSeriesVolume('IncredibleHulkVol1', [
   [444, '1996-8-10'],
   [445, '1996-9-10'],
 ]);
-addComicsInSeriesVolume('IncredibleHulkVol2', [[8, '1999-11']]);
 addComicsInSeriesVolume('IronFistVol1', [
   [14, '1977-8', ['Snowfire']],
   [15, '1977-9', ['Enter, the X-Men']]
@@ -963,11 +963,11 @@ addComicsInSeriesVolume('MagnetoRexVol1', [
 addComicsInSeriesVolume('MarvelGraphicNovelVol1', [[5, '1983-1']]);
 addComicsInSeriesVolume('MarvelSpotlightVol3', [[41, '2009-5-6']]);
 addComicsInSeriesVolume('MarvelTalesVol2', [[30, '1971-4-1']]);
+addComicsInSeriesVolume('MarvelTeamUpAnnualVol1', [[1, '1976-12', ['The Lords of Light and Darkness!']]]);
 addComicsInSeriesVolume('MarvelTeamUpVol1', [
   [4, '1972-9-10'],
   [23, '1974-7-1'],
   [38, '1975-10-1'],
-  [1976, '1976-12', ['The Lords of Light and Darkness!']],
   [53, '1977-1', ['Nightmare in New Mexico!']],
   [69, '1978-5', ['Night of the Living God!']],
   [70, '1978-6', ['Whom Gods Destroy!']],

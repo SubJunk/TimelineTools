@@ -14,7 +14,7 @@ import {
   last,
   sortBy
 } from 'lodash-es';
-import { Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
 
