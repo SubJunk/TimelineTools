@@ -5,6 +5,10 @@ test.describe('Comics', () => {
     await page.goto('http://localhost:4200/');
 
     await page.locator('#expand-UncannyXMenVol15').click();
+
+    page.on("pageerror", async (err) => {
+      await expect(err.message).toBeEmpty();
+    })
   });
 
   test(

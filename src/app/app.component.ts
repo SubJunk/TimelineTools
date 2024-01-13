@@ -14,7 +14,7 @@ import {
   last,
   sortBy
 } from 'lodash-es';
-import { Component, Injectable, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
 
@@ -990,6 +990,11 @@ export class AppComponent implements OnInit {
           return;
         }
 
+        // Load all images during automated tests to enable error checking
+        if (process.env.NODE_ENV === 'test') {
+          collection.visible = true;
+        }
+
         const $collectionButton = $('#expand-' + collection.id);
         if (!$collectionButton.length) {
           return;
@@ -1043,6 +1048,11 @@ export class AppComponent implements OnInit {
         return;
       }
 
+      // Load all images during automated tests to enable error checking
+      if (process.env.NODE_ENV === 'test') {
+        comic.visible = true;
+      }
+
       isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
       isComicScrolledPastRight  = Boolean(scrollPositionRight < comic.containerStyles['left.px']);
       isComicScrolledPastTop    = Boolean(scrollPositionTopWithOffset > (comic.containerStyles['top.px'] + VISUAL_BLOCK_SIZE));
@@ -1059,6 +1069,11 @@ export class AppComponent implements OnInit {
       // skip this calculation if the comic has been previously displayed
       if (comic.visible === true) {
         return;
+      }
+
+      // Load all images during automated tests to enable error checking
+      if (process.env.NODE_ENV === 'test') {
+        comic.visible = true;
       }
 
       isComicScrolledPastLeft   = Boolean(scrollPositionLeft > (comic.containerStyles['left.px'] + VISUAL_BLOCK_SIZE));
