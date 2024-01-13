@@ -165,6 +165,7 @@ series.push(
   new Series('Marvel Spotlight', {3: { startYear: 2005 }}),
   new Series('Marvel Tales', {2: { startYear: 1964 }}),
   new Series('Marvel Team-Up', {1: { startYear: 1972 }}),
+  new Series('Marvel Team-Up Annual', {1: { startYear: 1976 }}),
   new Series('Mystic Arcana', {1: { startYear: 2007 }}),
   new Series('Mystique', {1: { startYear: 2003 }}),
   new Series('Nation X', {1: { startYear: 2009 }}),

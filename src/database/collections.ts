@@ -264,7 +264,7 @@ collections.push(
       'IronFistVol114',
       'IronFistVol115',
       'UncannyXMenVol1109',
-      'MarvelTeamUpVol11976',
+      'MarvelTeamUpAnnualVol11',
       'MarvelTeamUpVol153',
       'UncannyXMenVol1110',
       'MarvelTeamUpVol169',
