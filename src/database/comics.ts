@@ -1993,16 +1993,12 @@ addComicsInSeriesVolume('UncannyXMenVol3', [
   [12, '2013-9-18'],
   [13, '2013-10-16'],
 ]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
-  [1, '1996-9'],
-  [2, '1997-10'],
-]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol2', [[1, '2000-2']]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol3', [[1, '2002-2']]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol4', [
-  [1, '2006-6-21'],
-  [2, '2009-1-21'],
-]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol2', [[1, '1996-9']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol3', [[1, '1997-10']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol6', [[1, '2000-2']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol7', [[1, '2001-2']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol8', [[1, '2006-6-21']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol9', [[2, '2009-1-21']]);
 addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']]);
 addComicsInSeriesVolume('UncannyXMenTheHeroicAgeVol1', [[1, '2010-7-14']]);
 addComicsInSeriesVolume('WarofKingsSagaVol1', [[1, '2008-12-16']]);

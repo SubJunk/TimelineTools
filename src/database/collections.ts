@@ -1930,7 +1930,7 @@ collections.push(
     'X-Men: Onslaught Aftermath',
     '2019-4-2',
     [
-      'UncannyXMenAnnualVol11',
+      'UncannyXMenAnnualVol21',
     ]
   ),
   new Collection(
@@ -2034,7 +2034,7 @@ collections.push(
     '2019-4-2',
     [
       'UncannyXMenVol1338',
-      'UncannyXMenAnnualVol12',
+      'UncannyXMenAnnualVol31',
       'XMenVol258',
       'UncannyXMenVol1339',
       'XMenVol259',
@@ -2786,7 +2786,7 @@ collections.push(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
-      'UncannyXMenAnnualVol21',
+      'UncannyXMenAnnualVol61',
     ]
   ),
   new Collection(
@@ -3263,7 +3263,7 @@ collections.push(
     [
       'UncannyXMenVol1399',
       'UncannyXMenVol1400',
-      'UncannyXMenAnnualVol31',
+      'UncannyXMenAnnualVol71',
     ]
   ),
   new Collection(
@@ -4609,7 +4609,7 @@ collections.push(
     'Uncanny X-Men - The New Age Vol. 5: First Foursaken',
     '2006-6-21',
     [
-      'UncannyXMenAnnualVol41',
+      'UncannyXMenAnnualVol81',
     ]
   ),
   new Collection(
@@ -5502,7 +5502,7 @@ collections.push(
     [
       'UncannyXMenVol1504',
       'UncannyXMenVol1505',
-      'UncannyXMenAnnualVol42',
+      'UncannyXMenAnnualVol92',
       'UncannyXMenVol1506',
       'UncannyXMenVol1507',
     ]
