@@ -1296,14 +1296,6 @@ addComicsInSeriesVolume('NYXNoWayHomeVol1', [
 addComicsInSeriesVolume('OnslaughtEpilogueVol1', [[1, '1997-2']]);
 addComicsInSeriesVolume('OnslaughtMarvelUniverseVol1', [[1, '1996-10']]);
 addComicsInSeriesVolume('OnslaughtXMenVol1', [[1, '1996-8']]);
-addComicsInSeriesVolume('OriginVol1', [
-  [1, '2001-11'],
-  [2, '2001-12'],
-  [3, '2002-1'],
-  [4, '2002-2'],
-  [5, '2002-3'],
-  [6, '2002-4'],
-]);
 addComicsInSeriesVolume('OroroBeforetheStormVol1', [
   [1, '2005-6-1'],
   [2, '2005-7-6'],
@@ -1398,8 +1390,8 @@ addComicsInSeriesVolume('SWORDVol1', [
   [4, '2010-2-10'],
   [5, '2010-3-10'],
 ]);
-addComicsInSeriesVolume('TalesfromtheAgeofApocalypseBytheLightVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('TalesfromtheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']]);
+addComicsInSeriesVolume('TalesfromtheAgeofApocalyspseBytheLightVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('TheAmazingSpiderManVol1', [
   [92, '1971-1-10'],
   [415, '1996-9-10'],
@@ -2001,16 +1993,12 @@ addComicsInSeriesVolume('UncannyXMenVol3', [
   [12, '2013-9-18'],
   [13, '2013-10-16'],
 ]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol1', [
-  [1, '1996-9'],
-  [2, '1997-10'],
-]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol2', [[1, '2000-2']]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol3', [[1, '2002-2']]);
-addComicsInSeriesVolume('UncannyXMenAnnualVol4', [
-  [1, '2006-6-21'],
-  [2, '2009-1-21'],
-]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol2', [[1, '1996-9']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol3', [[1, '1997-10']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol6', [[1, '2000-2']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol7', [[1, '2001-2']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol8', [[1, '2006-6-21']]);
+addComicsInSeriesVolume('UncannyXMenAnnualVol9', [[2, '2009-1-21']]);
 addComicsInSeriesVolume('UncannyXMenFantasticFourAnnualVol1', [[1, '1998-9']]);
 addComicsInSeriesVolume('UncannyXMenTheHeroicAgeVol1', [[1, '2010-7-14']]);
 addComicsInSeriesVolume('WarofKingsSagaVol1', [[1, '2008-12-16']]);
@@ -2054,6 +2042,14 @@ addComicsInSeriesVolume('WolverineOriginsVol1', [
   [28, '2008-9-24'],
   [29, '2008-10-29'],
   [30, '2008-11-26'],
+]);
+addComicsInSeriesVolume('WolverineTheOriginVol1', [
+  [1, '2001-11'],
+  [2, '2001-12'],
+  [3, '2002-1'],
+  [4, '2002-2'],
+  [5, '2002-3'],
+  [6, '2002-4'],
 ]);
 addComicsInSeriesVolume('WolverineVol1', [
   [1, '1982-9'],
