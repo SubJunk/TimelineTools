@@ -2063,7 +2063,7 @@ collections.push(
     [
       'XMenVol260',
       'XMenVol261',
-      'XMenAnnualVol33',
+      'XMenAnnualVol41',
       'XMenUnlimitedVol114',
     ]
   ),
@@ -2582,7 +2582,7 @@ collections.push(
     '2018-10-23',
     [
       'XMenVol285',
-      'XMENTHEMAGNETOWAR1Vol11',
+      'XMenTheMagnetoWarVol11',
       'UncannyXMenVol1366',
       'XMenVol286',
       'UncannyXMenVol1367',
@@ -2644,7 +2644,7 @@ collections.push(
     [
       'UncannyXMenVol1371',
       'XMenVol291',
-      'XMenAnnualVol41'
+      'XMenAnnualVol51'
     ]
   ),
   new Collection(
@@ -2911,7 +2911,7 @@ collections.push(
     [
       'XMenVol2102',
       'UncannyXMenVol1383',
-      'XMenAnnualVol51',
+      'XMenAnnualVol61',
       'XMenVol2103',
       'XMenUnlimitedVol128',
       'UncannyXMenVol1384',
@@ -3058,10 +3058,10 @@ collections.push(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
-      'XMenSearchforCyclopsVol11',
-      'XMenSearchforCyclopsVol12',
-      'XMenSearchforCyclopsVol13',
-      'XMenSearchforCyclopsVol14',
+      'XMenTheSearchforCyclopsVol11',
+      'XMenTheSearchforCyclopsVol12',
+      'XMenTheSearchforCyclopsVol13',
+      'XMenTheSearchforCyclopsVol14',
     ]
   ),
   new Collection(
@@ -5078,7 +5078,7 @@ collections.push(
     'X-Men: Supernovas',
     '2007-8-8',
     [
-      'XMenAnnualVol61',
+      'XMenAnnualVol71',
       'XMenVol3194',
       'XMenVol3195',
       'XMenVol3196',
