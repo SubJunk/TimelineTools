@@ -2930,7 +2930,7 @@ addComicsInSeriesVolume('XMenVol5', [
   [5, '2013-9-11'],
   [6, '2013-10-9'],
 ]);
-addComicsInSeriesVolume('XMenTheMagnetoWar1Vol1', [[1, '1999-3']]);
+addComicsInSeriesVolume('XMenTheMagnetoWarVol1', [[1, '1999-3']]);
 addComicsInSeriesVolume('XMenBattleoftheAtomVol1', [
   [1, '2013-9-4'],
   [2, '2013-10-30'],
