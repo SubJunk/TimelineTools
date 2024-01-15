@@ -2930,7 +2930,7 @@ addComicsInSeriesVolume('XMenVol5', [
   [5, '2013-9-11'],
   [6, '2013-10-9'],
 ]);
-addComicsInSeriesVolume('XMENTHEMAGNETOWAR1Vol1', [[1, '1999-3']]);
+addComicsInSeriesVolume('XMenTheMagnetoWarVol1', [[1, '1999-3']]);
 addComicsInSeriesVolume('XMenBattleoftheAtomVol1', [
   [1, '2013-9-4'],
   [2, '2013-10-30'],
@@ -3068,13 +3068,11 @@ addComicsInSeriesVolume('XMenAnnualVol2', [
   [2, '1993-10'],
   [5, '1996-11']
 ]);
-addComicsInSeriesVolume('XMenAnnualVol3', [
-  [1, '1995-10'],
-  [3, '1997-5'],
-]);
-addComicsInSeriesVolume('XMenAnnualVol4', [[1, '1999-8']]);
-addComicsInSeriesVolume('XMenAnnualVol5', [[1, '2000-9']]);
-addComicsInSeriesVolume('XMenAnnualVol6', [[1, '2007-2-7']]);
+addComicsInSeriesVolume('XMenAnnualVol3', [[1, '1995-10']]);
+addComicsInSeriesVolume('XMenAnnualVol4', [[1, '1997-5']]);
+addComicsInSeriesVolume('XMenAnnualVol5', [[1, '1999-8']]);
+addComicsInSeriesVolume('XMenAnnualVol6', [[1, '2000-9']]);
+addComicsInSeriesVolume('XMenAnnualVol7', [[1, '2007-2-7']]);
 addComicsInSeriesVolume('XMenBlackSunVol1', [
   [1, '2000-11-1'],
   [2, '2000-11-15'],
@@ -3263,17 +3261,17 @@ addComicsInSeriesVolume('XMenSchismVol1', [
   [4, '2011-9-21'],
   [5, '2011-10-5'],
 ]);
-addComicsInSeriesVolume('XMenSearchforCyclopsVol1', [
-  [1, '2000-12'],
-  [2, '2001-1'],
-  [3, '2001-2'],
-  [4, '2001-3'],
-]);
 addComicsInSeriesVolume('XMenSpiderManVol1', [
   [1, '2008-11-1'],
   [2, '2008-12-10'],
   [3, '2009-1-14'],
   [4, '2009-3-4'],
+]);
+addComicsInSeriesVolume('XMenTheSearchforCyclopsVol1', [
+  [1, '2000-12'],
+  [2, '2001-1'],
+  [3, '2001-2'],
+  [4, '2001-3'],
 ]);
 addComicsInSeriesVolume('XMenSwordoftheBraddocksVol1', [[1, '2009-3-25']]);
 addComicsInSeriesVolume('XMenTheUnlikelySagaofXavierMagnetoandStanVol1', [[1, '2006-9']]);
