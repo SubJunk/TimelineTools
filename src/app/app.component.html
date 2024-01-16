@@ -43,6 +43,10 @@
         </ol>
       </div>
       <div class="expanded-panel" *ngIf="collection.id === expandedCollectionId">
+        <button (click)="toggleExpandCollection()" class="right-aligned-button" mat-mini-fab>
+          <div class="popover"><div>Close this panel</div></div>
+          <mat-icon>close</mat-icon>
+        </button>
         <div class="title">{{collection.title}}</div>
         <div class="date">{{collection.yearPublished}} / {{collection.monthPublished}}</div>
         <div class="collection-comics">
@@ -141,10 +145,14 @@
         </ol>
       </div>
       <div class="expanded-panel">
+        <button (click)="toggleExpandComic()" class="right-aligned-button" mat-mini-fab>
+          <div class="popover"><div>Close this panel</div></div>
+          <mat-icon>close</mat-icon>
+        </button>
         <a [ngClass]="{disabled: !expandedComic.link}" class="marvel-unlimited-link" [href]="expandedComic.link">
           <div class="popover"><div>Open in Marvel Unlimited</div></div>
         </a>
-        <button (click)="scrollToComic(expandedComic.id)" class="scroll-to-comic-button" mat-mini-fab>
+        <button (click)="scrollToComic(expandedComic.id)" class="right-aligned-button" mat-mini-fab>
           <div class="popover"><div>Scroll to this comic</div></div>
           <mat-icon>near_me</mat-icon>
         </button>
