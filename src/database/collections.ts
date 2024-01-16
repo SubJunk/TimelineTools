@@ -1,4 +1,6 @@
-const collections = [];
+import {
+  Collection,
+} from '../app/models';
 
 /**
  * The prototype for collections.
@@ -7,7 +9,7 @@ const collections = [];
  * @param datePublished a string to be converted to a date object
  * @param comicIds      the comics in the collection, in order
  */
-function Collection(title: string, datePublished: string, comicIds: string[]) {
+function CollectionPrototype(title: string, datePublished: string, comicIds: string[]) {
   this.allCollectionComicIds = [];
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
@@ -22,8 +24,8 @@ function Collection(title: string, datePublished: string, comicIds: string[]) {
 }
 
 // These should be in reading order
-collections.push(
-  new Collection(
+const collections: Collection[] = [
+  new CollectionPrototype(
     'X-Men Epic Collection: Children of the Atom',
     '2015-1-6',
     [
@@ -52,7 +54,7 @@ collections.push(
       'UncannyXMenVol123',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: First Class, Vol. 1: Tomorrow\'s Brightest',
     '2007-7-4',
     [
@@ -66,7 +68,7 @@ collections.push(
       'XMenFirstClassVol18',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: First Class - Mutant Mayhem',
     '2008-4-2',
     [
@@ -78,7 +80,7 @@ collections.push(
       'XMenFirstClassSpecialVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: First Class - Band of Brothers',
     '2008-11-26',
     [
@@ -89,7 +91,7 @@ collections.push(
       'XMenFirstClassVol210',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: First Class - The Wonder Years',
     '2009-3-18',
     [
@@ -102,7 +104,7 @@ collections.push(
       'GiantSizeXMenFirstClassVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Epic Collection: Lonely Are the Hunted',
     '2016-12-7',
     [
@@ -131,7 +133,7 @@ collections.push(
       'AvengersVol153',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Epic Collection: The Sentinels Live',
     '2018-11-14',
     [
@@ -161,7 +163,7 @@ collections.push(
       'UncannyXMenVol166',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Hidden Years, Vol. 1',
     '2017-11-2',
     [
@@ -179,7 +181,7 @@ collections.push(
       'XMenTheHiddenYearsVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Hidden Years, Vol. 2',
     '2017-11-9',
     [
@@ -195,7 +197,7 @@ collections.push(
       'XMenTheHiddenYearsVol122',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The X-Men Vol. 7',
     '2008-10-15',
     [
@@ -211,7 +213,7 @@ collections.push(
       'IncredibleHulkVol1161',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The X-Men Vol. 8',
     '2010-3-24',
     [
@@ -231,7 +233,7 @@ collections.push(
       'GiantSizeFantasticFourVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: First Class Finals',
     '2009-8-26',
     [
@@ -241,7 +243,7 @@ collections.push(
       'XMenFirstClassFinalsVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Epic Collection Vol. 5: Second Genesis',
     '2017-4',
     [
@@ -271,7 +273,7 @@ collections.push(
       'MarvelTeamUpVol170',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The Uncanny X-Men Vol. 3',
     '2011-1',
     [
@@ -288,7 +290,7 @@ collections.push(
       'UncannyXMenVol1121',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The Uncanny X-Men Vol. 4',
     '2012-2',
     [
@@ -305,7 +307,7 @@ collections.push(
       'UncannyXMenVol1131'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The Uncanny X-Men Vol. 5',
     '2012-7',
     [
@@ -321,7 +323,7 @@ collections.push(
       'UncannyXMenVol1140'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The Uncanny X-Men Vol. 6',
     '2008-2',
     [
@@ -337,7 +339,7 @@ collections.push(
       'UncannyXMenVol1150',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The Uncanny X-Men Vol. 7',
     '2011-1',
     [
@@ -354,7 +356,7 @@ collections.push(
       'UncannyXMenVol1159'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The Uncanny X-Men Vol. 8',
     '2012-2',
     [
@@ -369,7 +371,7 @@ collections.push(
       'XMenAnnualVol16'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The Uncanny X-Men Vol. 9',
     '2015-1',
     [
@@ -389,7 +391,7 @@ collections.push(
       'XMenAnnualVol17'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Marvel Masterworks: The Uncanny X-Men Vol. 10 (Partial)',
     '2017-2',
     [
@@ -399,7 +401,7 @@ collections.push(
       'MagikVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'The Uncanny X-Men Omnibus Vol. 4',
     '2021-3-2',
     [
@@ -410,7 +412,7 @@ collections.push(
       'UncannyXMenVol1180'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Secret Wars',
     '2011-12-28',
     [
@@ -428,7 +430,7 @@ collections.push(
       'SecretWarsVol112'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'The Uncanny X-Men Omnibus Vol. 4',
     '2021-3-2',
     [
@@ -456,7 +458,7 @@ collections.push(
       'UncannyXMenVol1193'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legion - Shadow King Rising (Partial)',
     '2018-1-17',
     [
@@ -465,7 +467,7 @@ collections.push(
       'NewMutantsVol128'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Epic Collection Vol. 12: The Gift (Partial)',
     '2016-1',
     [
@@ -480,7 +482,7 @@ collections.push(
       'NightcrawlerVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Ghosts',
     '2013-5',
     [
@@ -489,7 +491,7 @@ collections.push(
       'UncannyXMenVol1201'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Phoenix Rising',
     '2011-9-14',
     [
@@ -498,7 +500,7 @@ collections.push(
       'XFactorVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Ghosts',
     '2013-5',
     [
@@ -508,14 +510,14 @@ collections.push(
       'UncannyXMenVol1205'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legion - Shadow King Rising (Partial)',
     '2018-1-17',
     [
       'NewMutantsVol144'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Ghosts',
     '2013-5',
     [
@@ -526,7 +528,7 @@ collections.push(
       'XMenAnnualVol110'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Mutant Massacre Omnibus',
     '2018-11-20',
     [
@@ -568,7 +570,7 @@ collections.push(
       'FantasticFourvstheXMenVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Fall of the Mutants',
     '2011-5-18',
     [
@@ -602,7 +604,7 @@ collections.push(
       'NewMutantsVol161'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Inferno Prologue',
     '2014-12-3',
     [
@@ -637,7 +639,7 @@ collections.push(
       'NewMutantsVol170'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Inferno',
     '2009-5-28',
     [
@@ -664,7 +666,7 @@ collections.push(
       'XFactorVol140'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 1',
     '2011-10-19',
     [
@@ -697,7 +699,7 @@ collections.push(
       'UncannyXMenVol1269'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable and the New Mutants (Partial)',
     '2011-1',
     [
@@ -711,7 +713,7 @@ collections.push(
       'NewMutantsVol194'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: X-Tinction Agenda',
     '1998-12',
     [
@@ -726,7 +728,7 @@ collections.push(
       'XFactorVol162'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
     '2012-1-25',
     [
@@ -748,7 +750,7 @@ collections.push(
       'XFactorVol170'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool vs. X-Force',
     '2014-11-5',
     [
@@ -758,7 +760,7 @@ collections.push(
       'DeadpoolvsXForceVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force Omnibus Vol. 1',
     '2013-2-6',
     [
@@ -775,7 +777,7 @@ collections.push(
       'XForceVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
     '2012-1-25',
     [
@@ -788,7 +790,7 @@ collections.push(
       'XMenVol27'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Bishop\'s Crossing',
     '2016-11-23',
     [
@@ -801,7 +803,7 @@ collections.push(
       'UncannyXMenVol1287'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
     '2012-1-25',
     [
@@ -811,7 +813,7 @@ collections.push(
       'GhostRiderVol327'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Bishop\'s Crossing',
     '2016-11-23',
     [
@@ -820,7 +822,7 @@ collections.push(
       'UncannyXMenVol1290'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force Omnibus Vol. 1',
     '2013-2-6',
     [
@@ -832,7 +834,7 @@ collections.push(
       'XForceVol110',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Shattershot',
     '1992-5',
     [
@@ -842,7 +844,7 @@ collections.push(
       'XForceAnnualVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men by Chris Claremont & Jim Lee Omnibus, Vol. 2',
     '2012-1-25',
     [
@@ -850,7 +852,7 @@ collections.push(
       'XMenVol211'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force Omnibus Vol. 1',
     '2013-2-6',
     [
@@ -863,7 +865,7 @@ collections.push(
       'CableBloodMetalVol12'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Bishop\'s Crossing',
     '2016-11-23',
     [
@@ -874,7 +876,7 @@ collections.push(
       'XMenVol213'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: X-Cutioner\'s Song',
     '2016-12-14',
     [
@@ -894,7 +896,7 @@ collections.push(
       'StryfesStrikeFileVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: A Skinning of Souls',
     '2013-11-20',
     [
@@ -903,7 +905,7 @@ collections.push(
       'XMenVol219'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
@@ -911,7 +913,7 @@ collections.push(
       'XForceVol119'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Fatal Attractions',
     '2016-9-21',
     [
@@ -925,7 +927,7 @@ collections.push(
       'UncannyXMenVol1300'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
@@ -935,7 +937,7 @@ collections.push(
       'XForceVol123'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legacy - Sins of the Father',
     '2009-3-11',
     [
@@ -943,7 +945,7 @@ collections.push(
       'XMenOddMenOutVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Fatal Attractions',
     '2016-9-21',
     [
@@ -951,7 +953,7 @@ collections.push(
       'XMenUnlimitedVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
@@ -962,7 +964,7 @@ collections.push(
       'CableVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: A Skinning of Souls',
     '2013-11-20',
     [
@@ -972,7 +974,7 @@ collections.push(
       'XMenVol223'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Fatal Attractions',
     '2016-9-21',
     [
@@ -982,7 +984,7 @@ collections.push(
       'XFactorVol192'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
@@ -993,14 +995,14 @@ collections.push(
       'XForceVol125'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: A Skinning of Souls',
     '2013-11-20',
     [
       'XMenVol224'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Fatal Attractions',
     '2016-9-21',
     [
@@ -1008,28 +1010,28 @@ collections.push(
       'XMenUnlimitedVol12'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
       'XForceVol126'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Fatal Attractions',
     '2016-9-21',
     [
       'UncannyXMenVol1305'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Phalanx Covenant',
     '2014-2-5',
     [
       'UncannyXMenVol1306'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Gambit Classic, Vol. 1 (Partial)',
     '2009-5',
     [
@@ -1039,7 +1041,7 @@ collections.push(
       'GambitVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
@@ -1050,7 +1052,7 @@ collections.push(
       'NomadVol220'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Fatal Attractions',
     '2016-9-21',
     [
@@ -1059,7 +1061,7 @@ collections.push(
       'ExcaliburVol171'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix HC',
     '2018-5-21',
     [
@@ -1070,14 +1072,14 @@ collections.push(
       'AvengersVol1369'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix (Partial)',
     '2012-9-19',
     [
       'XMenAnnualVol22'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix HC',
     '2018-5-19',
     [
@@ -1086,7 +1088,7 @@ collections.push(
 
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
@@ -1094,7 +1096,7 @@ collections.push(
       'XForceVol130',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix HC',
     '2018-5-19',
     [
@@ -1105,14 +1107,14 @@ collections.push(
       'XMenVol228'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
       'XForceVol131'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix HC',
     '2018-5-19',
     [
@@ -1120,7 +1122,7 @@ collections.push(
       'XMenVol229'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force: Child\'s Play',
     '2016-5-12',
     [
@@ -1131,7 +1133,7 @@ collections.push(
       'XForceVol134'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable Classic: Vol. 2',
     '2009-7-22',
     [
@@ -1140,7 +1142,7 @@ collections.push(
       'CableVol111'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix HC',
     '2018-5-19',
     [
@@ -1153,7 +1155,7 @@ collections.push(
       'XMenVol232'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Phalanx Covenant',
     '2014-2-5',
     [
@@ -1163,7 +1165,7 @@ collections.push(
       'UncannyXMenVol1314'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legionquest',
     '2018-4-17',
     [
@@ -1171,14 +1173,14 @@ collections.push(
       'XMenUnlimitedVol15'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix HC',
     '2018-5-19',
     [
       'XMenVol233'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable Classic: Vol. 2',
     '2009-7-22',
     [
@@ -1187,7 +1189,7 @@ collections.push(
       'CableVol114'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Phalanx Covenant',
     '2014-2-5',
     [
@@ -1196,14 +1198,14 @@ collections.push(
       'ExcaliburVol180'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix HC',
     '2018-5-19',
     [
       'XMenVol234'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force: Child\'s Play',
     '2016-5-12',
     [
@@ -1212,14 +1214,14 @@ collections.push(
       'XForceVol137'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Phalanx Covenant',
     '2014-2-5',
     [
       'ExcaliburVol181'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & X-Force Omnibus',
     '2017-11-1',
     [
@@ -1229,21 +1231,21 @@ collections.push(
       'DeadpoolVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Fatal Attractions',
     '2016-9-21',
     [
       'UncannyXMenVol1315'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable Classic: Vol. 3 (Partial)',
     '2016-9-8',
     [
       'CableVol115'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix HC',
     '2018-5-17',
     [
@@ -1253,14 +1255,14 @@ collections.push(
       'AdventuresofCyclopsPhoenixVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Wedding of Cyclops and Phoenix HC',
     '2018-5-19',
     [
       'XMenVol235'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Phalanx Covenant',
     '2014-2-5',
     [
@@ -1275,35 +1277,35 @@ collections.push(
       'CableVol116'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol287'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
       'XForceVol139'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force: Child\'s Play',
     '2016-5-12',
     [
       'XForceAnnualVol13'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legionquest',
     '2018-4-17',
     [
       'XMenUnlimitedVol16'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Bishop: The Mountjoy Crisis',
     '1996-5',
     [
@@ -1313,14 +1315,14 @@ collections.push(
       'BishopVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legionquest',
     '2018-4-17',
     [
       'XFactorVol1107'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
@@ -1328,21 +1330,21 @@ collections.push(
       'XForceVol141'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legionquest',
     '2018-4-17',
     [
       'XMenUnlimitedVol17'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol288'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable Classic: Vol. 3 (Partial)',
     '2016-9-8',
     [
@@ -1351,7 +1353,7 @@ collections.push(
       'CableVol119'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legionquest',
     '2018-4-17',
     [
@@ -1359,7 +1361,7 @@ collections.push(
       'XMenVol238'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation X Classic: Vol. 1 (Partial)',
     '2010-12-15',
     [
@@ -1368,14 +1370,14 @@ collections.push(
       'GenerationXVol13'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legionquest',
     '2018-4-17',
     [
       'XMenVol239'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Gambit Classic, Volume 2',
     '2013-2-5',
     [
@@ -1385,21 +1387,21 @@ collections.push(
       'RogueVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol289'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
       'XForceVol142'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legionquest',
     '2018-4-17',
     [
@@ -1413,28 +1415,28 @@ collections.push(
       'XMenVol241'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol290'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation X Classic: Vol. 1 (Partial)',
     '2010-12-15',
     [
       'GenerationXVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force: Phalanx Covenant HC (Partial)',
     '2013-8-14',
     [
       'XForceVol143'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse: Dawn',
     '2016-2-10',
     [
@@ -1449,14 +1451,14 @@ collections.push(
       'BlinkVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The New Age of Apocalypse',
     '2006-7-6',
     [
       'XMenAgeofApocalypseOneShotVol10'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse Omnibus (Partial)',
     '2012-2-22',
     [
@@ -1469,14 +1471,14 @@ collections.push(
       'XManVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse: Dawn',
     '2016-2-10',
     [
       'AgeofApocalypseTheChosenVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse Omnibus (Partial)',
     '2012-2-22',
     [
@@ -1494,14 +1496,14 @@ collections.push(
       'FactorXVol13'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse: The Complete Epic Book 3 (Partial)',
     '2006-4-12',
     [
       'XUniverseVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse Omnibus (Partial)',
     '2012-2-22',
     [
@@ -1521,21 +1523,21 @@ collections.push(
       'AmazingXMenVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
     '2006-11-1',
     [
       'XUniverseVol12'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse Omnibus (Partial)',
     '2012-2-22',
     [
       'XMenOmegaVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The New Age of Apocalypse',
     '2006-7-6',
     [
@@ -1547,28 +1549,28 @@ collections.push(
       'XMenAgeofApocalypseVol16'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 1',
     '2014-1-22',
     [
       'XMenPrimeVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
       'XManVol15'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol291'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 1',
     '2014-1-22',
     [
@@ -1578,7 +1580,7 @@ collections.push(
       'XMenVol244'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force Classic Vol. 1',
     '2014-1-22',
     [
@@ -1586,28 +1588,28 @@ collections.push(
       'XForceVol144'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
       'XManVol16'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force Classic Vol. 1',
     '2014-1-22',
     [
       'CableVol122'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineAnnualVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force Classic Vol. 1',
     '2014-1-22',
     [
@@ -1615,7 +1617,7 @@ collections.push(
       'XForceVol146'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 1',
     '2014-1-22',
     [
@@ -1623,14 +1625,14 @@ collections.push(
       'UncannyXMenVol1324'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol292'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation X Classic Vol. 2',
     '2014-1-22',
     [
@@ -1638,42 +1640,42 @@ collections.push(
       'GenerationXVol16'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force Classic Vol. 1',
     '2014-1-22',
     [
       'XForceVol147'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineKnightofTerraVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
       'XManVol17'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 1',
     '2014-1-22',
     [
       'XMenAnnualVol31'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol293'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 1',
     '2014-1-22',
     [
@@ -1683,14 +1685,14 @@ collections.push(
       'XMenUnlimitedVol18'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol294'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
     '2014-9-17',
     [
@@ -1701,7 +1703,7 @@ collections.push(
       'AskanisonVol14'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force Classic Vol. 1',
     '2014-1-22',
     [
@@ -1710,7 +1712,7 @@ collections.push(
       'CableVol125'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
@@ -1719,7 +1721,7 @@ collections.push(
       'XManVol110'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine & Gambit: Victims',
     '2002-6-1',
     [
@@ -1729,7 +1731,7 @@ collections.push(
       'WolverineGambitVictimsVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation X Classic Vol. 2',
     '2014-1-22',
     [
@@ -1738,14 +1740,14 @@ collections.push(
       'GenerationXVol19'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force Classic Vol. 1',
     '2014-1-22',
     [
       'XForceVol148'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 2',
     '2014-11-20',
     [
@@ -1754,14 +1756,14 @@ collections.push(
       'XMenAnnualVol119'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol295'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation X Classic Vol. 2',
     '2014-1-22',
     [
@@ -1770,7 +1772,7 @@ collections.push(
       'GenerationXVol111'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 2',
     '2014-11-20',
     [
@@ -1779,28 +1781,28 @@ collections.push(
       'UncannyXMenVol1327'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
       'XManVol111'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
       'WolverineVol296'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 2',
     '2014-11-20',
     [
       'XMenUnlimitedVol19'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force Classic Vol. 1',
     '2014-1-22',
     [
@@ -1809,21 +1811,21 @@ collections.push(
       'CableVol128'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force: Onslaught Rising (Partial)',
     '2018-2-21',
     [
       'XForceCableAnnualVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
       'XManVol112'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 2',
     '2014-11-20',
     [
@@ -1833,7 +1835,7 @@ collections.push(
       'XMenVol249'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 3',
     '2014-12-24',
     [
@@ -1841,7 +1843,7 @@ collections.push(
       'UncannyXMenVol1330'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force: Onslaught Rising (Partial)',
     '2018-2-21',
     [
@@ -1850,7 +1852,7 @@ collections.push(
       'XForceVol151'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
@@ -1858,7 +1860,7 @@ collections.push(
       'XManVol113'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 3',
     '2014-12-24',
     [
@@ -1870,7 +1872,7 @@ collections.push(
       'UncannyXMenVol1331'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'The Further Adventures of Cyclops and Phoenix',
     '1997-10-15',
     [
@@ -1880,7 +1882,7 @@ collections.push(
       'FurtherAdventuresofCyclopsPhoenixVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force: Onslaught Rising (Partial)',
     '2018-2-21',
     [
@@ -1888,7 +1890,7 @@ collections.push(
       'XForceVol153'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Man: The Man Who Fell to Earth',
     '2012-6-20',
     [
@@ -1898,14 +1900,14 @@ collections.push(
       'CableVol131'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force: Onslaught Rising (Partial)',
     '2018-2-21',
     [
       'XForceVol154'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: The Dying Game',
     '2015-12-2',
     [
@@ -1915,7 +1917,7 @@ collections.push(
       'WolverineVol2100'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Road to Onslaught Vol. 3',
     '2014-12-24',
     [
@@ -1926,14 +1928,14 @@ collections.push(
       'XavierInstituteAlumniYearbookVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Onslaught Aftermath',
     '2019-4-2',
     [
       'UncannyXMenAnnualVol21',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men/Avengers: Onslaught Omnibus',
     '2015-8-19',
     [
@@ -1942,14 +1944,14 @@ collections.push(
       'XForceVol155'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable & X-Force: Onslaught Rising (Partial)',
     '2018-2-21',
     [
       'XForceVol156'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men/Avengers: Onslaught Omnibus',
     '2015-8-19',
     [
@@ -1966,14 +1968,14 @@ collections.push(
       'AvengersVol1401',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Complete Onslaught Epic Book 2 (Partial)',
     '2008-5-21',
     [
       'ExcaliburVol1100'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men/Avengers: Onslaught Omnibus',
     '2015-8-19',
     [
@@ -2003,21 +2005,21 @@ collections.push(
       'XMenVol256'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Onslaught Aftermath',
     '2019-4-2',
     [
       'XMenUnlimitedVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Complete Onslaught Epic Book 4 (Partial)',
     '2008-12-24',
     [
       'XMenRoadtoOnslaughtVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men/Avengers: Onslaught Omnibus',
     '2015-8-19',
     [
@@ -2029,7 +2031,7 @@ collections.push(
       'OnslaughtEpilogueVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Onslaught Aftermath',
     '2019-4-2',
     [
@@ -2043,21 +2045,21 @@ collections.push(
       'XFactorVol1130',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
       'DeadpoolVol20'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 1 (Partial)',
     '2008-4-23',
     [
       'DeadpoolVol21'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Onslaught Aftermath',
     '2019-4-2',
     [
@@ -2067,14 +2069,14 @@ collections.push(
       'XMenUnlimitedVol114',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse: Dawn',
     '2016-2-10',
     [
       'XManAnnualVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Domino',
     '2018-4-25',
     [
@@ -2083,7 +2085,7 @@ collections.push(
       'DominoVol13'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
@@ -2091,7 +2093,7 @@ collections.push(
       'UncannyXMenVol1342'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 2',
     '2009-4-1',
     [
@@ -2099,7 +2101,7 @@ collections.push(
       'DeadpoolVol23'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
@@ -2107,7 +2109,7 @@ collections.push(
       'UncannyXMenVol1344'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 2',
     '2009-4-1',
     [
@@ -2115,7 +2117,7 @@ collections.push(
       'DeadpoolVol25'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
@@ -2123,14 +2125,14 @@ collections.push(
       'GenerationXVol127'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 2',
     '2009-4-1',
     [
       'DeadpoolVol26'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
@@ -2139,7 +2141,7 @@ collections.push(
       'XMenVol263'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
@@ -2149,14 +2151,14 @@ collections.push(
       'XMenVol265'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Hellfire Hunt',
     '2017-11-15',
     [
       'CableVol1-1'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
@@ -2164,7 +2166,7 @@ collections.push(
       'XMenVol2-1'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 2',
     '2009-4-1',
     [
@@ -2174,7 +2176,7 @@ collections.push(
       'DeadpoolVol28'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
@@ -2192,28 +2194,28 @@ collections.push(
       'GenerationXVol131'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
       'UncannyXMenVol1347'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
       'XMenVol267'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
       'UncannyXMenVol1348'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
@@ -2222,21 +2224,21 @@ collections.push(
       'XManVol130'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
       'XForceVol170'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
       'UncannyXMenVol1349'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
@@ -2244,35 +2246,35 @@ collections.push(
       'WolverineVol2118'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
       'DeadpoolVol29'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Trial of Gambit (Partial)',
     '2016-7-20',
     [
       'UncannyXMenVol1350'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
       'DeadpoolVol210'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Operation: Zero Tolerance',
     '2008-8-15',
     [
       'XMenVol270'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
@@ -2280,7 +2282,7 @@ collections.push(
       'DeadpoolVol212'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Hellfire Hunt',
     '2017-11-15',
     [
@@ -2293,14 +2295,14 @@ collections.push(
       'CableVol154'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Blue Vol. 0: Reunion',
     '2018-3-21',
     [
       'XMenUnlimitedVol117'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Not Dead Yet',
     '2013-1-2',
     [
@@ -2310,7 +2312,7 @@ collections.push(
       'WolverineVol2122'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Gambit Classic, Volume 2',
     '2013-2-5',
     [
@@ -2320,7 +2322,7 @@ collections.push(
       'GambitVol24'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Gold Vol. 0: Homecoming (Partial)',
     '2018-3-28',
     [
@@ -2329,14 +2331,14 @@ collections.push(
       'XMenVol272'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
       'DeadpoolVol213'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Blue Vol. 0: Reunion',
     '2018-3-21',
     [
@@ -2344,7 +2346,7 @@ collections.push(
       'UncannyXMenVol1352'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Hellfire Hunt',
     '2017-11-15',
     [
@@ -2352,7 +2354,7 @@ collections.push(
       'MachineManBastionAnnualVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Blue Vol. 0: Reunion',
     '2018-3-21',
     [
@@ -2361,14 +2363,14 @@ collections.push(
       'UncannyXMenVol1355'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Gold Vol. 0: Homecoming (Partial)',
     '2018-3-28',
     [
       'XMenVol273'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
@@ -2376,7 +2378,7 @@ collections.push(
       'DeadpoolVol215'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Hellfire Hunt',
     '2017-11-15',
     [
@@ -2384,7 +2386,7 @@ collections.push(
       'CableVol156'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Gold Vol. 0: Homecoming (Partial)',
     '2018-3-28',
     [
@@ -2393,7 +2395,7 @@ collections.push(
       'XMenVol276'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 3 (Partial)',
     '2009-11-25',
     [
@@ -2401,7 +2403,7 @@ collections.push(
       'DeadpoolVol217'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Blue Vol. 0: Reunion',
     '2018-3-21',
     [
@@ -2409,7 +2411,7 @@ collections.push(
       'UncannyXMenVol1357'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Gold Vol. 0: Homecoming (Partial)',
     '2018-3-28',
     [
@@ -2418,7 +2420,7 @@ collections.push(
       'XMenVol278'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
@@ -2427,7 +2429,7 @@ collections.push(
       'DeadpoolVol219'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Hellfire Hunt',
     '2017-11-15',
     [
@@ -2435,7 +2437,7 @@ collections.push(
       'CableVol158'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Blue Vol. 0: Reunion',
     '2018-3-21',
     [
@@ -2444,7 +2446,7 @@ collections.push(
       'CerebrosGuidetotheXMenVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
@@ -2452,14 +2454,14 @@ collections.push(
       'DeadpoolVol221'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Gold Vol. 0: Homecoming (Partial)',
     '2018-3-28',
     [
       'XMenVol279'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Nemesis Contract',
     '2018-1-10',
     [
@@ -2469,7 +2471,7 @@ collections.push(
       'CableVol162'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
@@ -2477,7 +2479,7 @@ collections.push(
       'DeadpoolVol223'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Hunt for Professor X',
     '2015-6-17',
     [
@@ -2494,14 +2496,14 @@ collections.push(
       'XMenUnlimitedVol122'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Gold Vol. 0: Homecoming (Partial)',
     '2018-3-28',
     [
       'XMenDrDoomAnnualVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 4',
     '2011-1-19',
     [
@@ -2509,7 +2511,7 @@ collections.push(
       'DeadpoolVol225'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
@@ -2521,7 +2523,7 @@ collections.push(
       'WolverineVol2138',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Nemesis Contract',
     '2018-1-10',
     [
@@ -2531,7 +2533,7 @@ collections.push(
       'XManVol147'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 5',
     '2011-6-1',
     [
@@ -2539,21 +2541,21 @@ collections.push(
       'DeadpoolTeamUpVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: Blood Debt',
     '2018-3-28',
     [
       'WolverineAnnualVol21',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
       'WolverineVol2139'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Hunt for Professor X',
     '2015-6-17',
     [
@@ -2561,7 +2563,7 @@ collections.push(
       'XMenVol20.5',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 5',
     '2011-6-1',
     [
@@ -2569,7 +2571,7 @@ collections.push(
       'DeadpoolVol227'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Nemesis Contract',
     '2018-1-10',
     [
@@ -2577,7 +2579,7 @@ collections.push(
       'CableVol165'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Magneto War (Partial)',
     '2018-10-23',
     [
@@ -2589,7 +2591,7 @@ collections.push(
       'XMenVol287'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 5',
     '2011-6-1',
     [
@@ -2597,7 +2599,7 @@ collections.push(
       'DeadpoolVol229'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Nemesis Contract',
     '2018-1-10',
     [
@@ -2608,7 +2610,7 @@ collections.push(
       'CableVol170'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Magneto War (Partial)',
     '2018-10-23',
     [
@@ -2621,7 +2623,7 @@ collections.push(
       'MagnetoRexVol13'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of Apocalypse: The Complete Epic Book 4 (Partial)',
     '2006-11-1',
     [
@@ -2629,7 +2631,7 @@ collections.push(
       'XManVol154'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Magneto War (Partial)',
     '2018-10-23',
     [
@@ -2638,7 +2640,7 @@ collections.push(
       'XMenVol290',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
     '2020-2-18',
     [
@@ -2647,7 +2649,7 @@ collections.push(
       'XMenAnnualVol51'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 5',
     '2011-6-1',
     [
@@ -2655,21 +2657,21 @@ collections.push(
       'DeadpoolVol231'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
       'WolverineVol2140'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
     '2020-2-18',
     [
       'XMenUnlimitedVol124'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: Shadow of Apocalypse (Partial)',
     '2017-2-1',
     [
@@ -2680,14 +2682,14 @@ collections.push(
       'WolverineVol2144'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Nemesis Contract',
     '2018-1-10',
     [
       'CableAnnualVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 5',
     '2011-6-1',
     [
@@ -2695,7 +2697,7 @@ collections.push(
       'DeadpoolVol233'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
     '2020-2-18',
     [
@@ -2715,7 +2717,7 @@ collections.push(
       'XMenVol295'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
     [
@@ -2723,7 +2725,7 @@ collections.push(
       'DeadpoolVol235',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
     '2020-2-18',
     [
@@ -2733,14 +2735,14 @@ collections.push(
       'CableVol174'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: The Hellfire Hunt',
     '2017-11-15',
     [
       'WolverineCableGutsandGloryVol11'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Adventures of Cyclops & Phoenix (Partial)',
     '2014-9-17',
     [
@@ -2749,7 +2751,7 @@ collections.push(
       'XMenPhoenixVol13'
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
     [
@@ -2757,7 +2759,7 @@ collections.push(
       'DeadpoolVol237',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
     '2020-2-18',
     [
@@ -2774,7 +2776,7 @@ collections.push(
       'XMenVol297',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
     [
@@ -2782,14 +2784,14 @@ collections.push(
       'DeadpoolVol239',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
       'UncannyXMenAnnualVol61',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Vs. Apocalypse: The Twelve Omnibus',
     '2020-2-18',
     [
@@ -2807,7 +2809,7 @@ collections.push(
       'UncannyXMenVol1380',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
@@ -2817,7 +2819,7 @@ collections.push(
       'MagnetoDarkSeductionVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
     [
@@ -2825,7 +2827,7 @@ collections.push(
       'DeadpoolVol241',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Counter-X Vol. 2',
     '2008-9-3',
     [
@@ -2839,7 +2841,7 @@ collections.push(
       'GenerationXVol170',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Revolution',
     '2018-4-28',
     [
@@ -2851,7 +2853,7 @@ collections.push(
       'CableVol184',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Counter-X Vol. 1',
     '2008-7-2',
     [
@@ -2865,7 +2867,7 @@ collections.push(
       'XForceVol1109',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Revolution',
     '2018-8-14',
     [
@@ -2877,7 +2879,7 @@ collections.push(
       'XMenBlackSunVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Revolution',
     '2018-8-14',
     [
@@ -2887,7 +2889,7 @@ collections.push(
       'UncannyXMenVol1382',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
     [
@@ -2895,7 +2897,7 @@ collections.push(
       'DeadpoolVol243',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: Blood Debt',
     '2018-3-28',
     [
@@ -2905,7 +2907,7 @@ collections.push(
       'WolverineVol2153',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Revolution',
     '2018-8-14',
     [
@@ -2919,7 +2921,7 @@ collections.push(
       'UncannyXMenVol1385',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
@@ -2932,7 +2934,7 @@ collections.push(
       'XMenDeclassifiedVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Classic Vol. 6',
     '2012-1-18',
     [
@@ -2941,7 +2943,7 @@ collections.push(
       'DeadpoolVol245',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Revolution',
     '2018-8-14',
     [
@@ -2954,7 +2956,7 @@ collections.push(
       'XMenUnlimitedVol129',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Revolution',
     '2018-4-28',
     [
@@ -2962,7 +2964,7 @@ collections.push(
       'CableVol186',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: Blood Debt',
     '2018-3-28',
     [
@@ -2972,7 +2974,7 @@ collections.push(
       'WolverineVol2157',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Counter-X: X-Force - Rage War',
     '2012-8',
     [
@@ -2982,7 +2984,7 @@ collections.push(
       'XForceVol1113',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Revolution',
     '2018-8-14',
     [
@@ -2992,7 +2994,7 @@ collections.push(
       'XMenVol2108',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Counter-X: X-Force - Rage War',
     '2012-8',
     [
@@ -3000,7 +3002,7 @@ collections.push(
       'XForceVol1115',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Counter-X: Generation X - Four Days',
     '2013-2-13',
     [
@@ -3010,35 +3012,35 @@ collections.push(
       'GenerationXVol174',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: Blood Debt',
     '2018-3-28',
     [
       'WolverineVol2158',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Revolution',
     '2018-8-14',
     [
       'UncannyXMenVol1389',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
       'XMenUnlimitedVol133',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Revolution',
     '2018-4-28',
     [
       'CableVol188',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: The Best There Is',
     '2002-9',
     [
@@ -3047,14 +3049,14 @@ collections.push(
       'WolverineVol2161',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Revolution',
     '2018-8-14',
     [
       'XMenVol2109',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
@@ -3064,7 +3066,7 @@ collections.push(
       'XMenTheSearchforCyclopsVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Revolution',
     '2018-4-28',
     [
@@ -3077,7 +3079,7 @@ collections.push(
       'CableVol195',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
@@ -3087,7 +3089,7 @@ collections.push(
       'XMenUnlimitedVol131',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine/Deadpool: Weapon X',
     '1999-11-30',
     [
@@ -3102,7 +3104,7 @@ collections.push(
       'DeadpoolVol260',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: The Best There Is',
     '2002-9',
     [
@@ -3111,21 +3113,21 @@ collections.push(
       'WolverineVol2169',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
       'UncannyXMenVol1391',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Revolution',
     '2018-4-28',
     [
       'CableVol196',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Eve of Destruction',
     '2019-7-9',
     [
@@ -3137,7 +3139,7 @@ collections.push(
       'XMenUnlimitedVol132',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Soldier X',
     '2018-11-6',
     [
@@ -3151,7 +3153,7 @@ collections.push(
       'CableVol1104',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men, Volume 1: Destiny',
     '2003-5-1',
     [
@@ -3161,7 +3163,7 @@ collections.push(
       'XTremeXMenVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Epic Collection: Blood Debt',
     '2018-3-28',
     [
@@ -3173,21 +3175,21 @@ collections.push(
       'WolverineTheOriginVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Counter-X: Generation X - Four Days',
     '2013-2-13',
     [
       'GenerationXVol175',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: X-Corps',
     '2013-11-12',
     [
       'UncannyXMenVol1394',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
@@ -3196,7 +3198,7 @@ collections.push(
       'NewXMenVol1116',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: X-Corps',
     '2013-11-12',
     [
@@ -3206,7 +3208,7 @@ collections.push(
       'UncannyXMenVol1398',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Icons: Cyclops',
     '2004-4-1',
     [
@@ -3216,7 +3218,7 @@ collections.push(
       'IconsCyclopsVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men: Savage Land',
     '2002-4-1',
     [
@@ -3226,7 +3228,7 @@ collections.push(
       'XTremeXMenTheSavageLandVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Soldier X',
     '2018-11-6',
     [
@@ -3235,7 +3237,7 @@ collections.push(
       'CableVol1107',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men, Volume 1: Destiny',
     '2003-5-1',
     [
@@ -3245,7 +3247,7 @@ collections.push(
       'XTremeXMenVol18',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
@@ -3257,7 +3259,7 @@ collections.push(
       'NewXMenVol1121',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: X-Corps',
     '2013-11-12',
     [
@@ -3266,28 +3268,28 @@ collections.push(
       'UncannyXMenAnnualVol71',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
       'NewXMenVol1122',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: X-Corps',
     '2013-11-12',
     [
       'UncannyXMenVol1401',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men, Volume 1: Destiny',
     '2003-5-1',
     [
       'XTremeXMenVol19',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
@@ -3297,7 +3299,7 @@ collections.push(
       'NewXMenVol1126',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: X-Corps',
     '2013-11-12',
     [
@@ -3309,7 +3311,7 @@ collections.push(
       'UncannyXMenVol1407',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: The Mountaintop',
     '2003-6-4',
     [
@@ -3319,14 +3321,14 @@ collections.push(
       'XFactorVol24',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 8: Prisoner of Fire',
     '2004-7-28',
     [
       'XTremeXMenAnnualVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 2: Invasion',
     '2003-1-6',
     [
@@ -3341,14 +3343,14 @@ collections.push(
       'XTremeXMenVol118',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
       'NewXMenVol1127',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: X-Corps',
     '2013-11-12',
     [
@@ -3356,7 +3358,7 @@ collections.push(
       'UncannyXMenVol1409',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
@@ -3364,14 +3366,14 @@ collections.push(
       'XMenUnlimitedVol136',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 3: Schism',
     '2003-5-28',
     [
       'XTremeXMenVol119',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
@@ -3383,7 +3385,7 @@ collections.push(
       'NewXMenVol1133',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 1: Hope',
     '2003-1-20',
     [
@@ -3393,7 +3395,7 @@ collections.push(
       'UncannyXMenVol1413',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 3: Schism',
     '2003-5-28',
     [
@@ -3401,7 +3403,7 @@ collections.push(
       'XTremeXMenXPoseVol12',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Legends Vol. 3: Law of the Jungle',
     '2003-3-19',
     [
@@ -3412,7 +3414,7 @@ collections.push(
       'WolverineVol2185',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 4: Mekanix',
     '2003-6-30',
     [
@@ -3424,7 +3426,7 @@ collections.push(
       'XTremeXMenMekanixVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 1: Hope',
     '2003-1-20',
     [
@@ -3432,7 +3434,7 @@ collections.push(
       'UncannyXMenVol1415',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
@@ -3440,7 +3442,7 @@ collections.push(
       'XMenUnlimitedVol142',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Soldier X',
     '2018-11-6',
     [
@@ -3452,28 +3454,28 @@ collections.push(
       'SoldierXVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 2: Dominant Species',
     '2003-5-21',
     [
       'UncannyXMenVol1416',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
       'NewXMenVol1134',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Legends Vol. 3: Law of the Jungle',
     '2003-3-19',
     [
       'WolverineVol2186',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Soldier X',
     '2018-11-6',
     [
@@ -3481,7 +3483,7 @@ collections.push(
       'SoldierXVol18',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 2: Dominant Species',
     '2003-5-21',
     [
@@ -3491,14 +3493,14 @@ collections.push(
       'UncannyXMenVol1420',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
     [
       'WolverineVol2187',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 3: Schism',
     '2003-5-28',
     [
@@ -3508,7 +3510,7 @@ collections.push(
       'XTremeXMenVol123',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Soldier X',
     '2018-11-6',
     [
@@ -3516,7 +3518,7 @@ collections.push(
       'SoldierXVol110',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 3: Holy War',
     '2003-9-15',
     [
@@ -3526,7 +3528,7 @@ collections.push(
       'UncannyXMenVol1424',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
@@ -3536,7 +3538,7 @@ collections.push(
       'NewXMenVol1138',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
     [
@@ -3544,14 +3546,14 @@ collections.push(
       'WolverineVol2189',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 6: Intifada',
     '2004-3-1',
     [
       'XTremeXMenVol124',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable: Soldier X',
     '2018-11-6',
     [
@@ -3559,7 +3561,7 @@ collections.push(
       'SoldierXVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
@@ -3568,7 +3570,7 @@ collections.push(
       'NewXMenVol1141',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 5: God Loves, Man Kills',
     '2003-10-27',
     [
@@ -3580,7 +3582,7 @@ collections.push(
       'XTremeXMenVol130',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants: Back to School - The Complete Collection',
     '2018-1-24',
     [
@@ -3592,7 +3594,7 @@ collections.push(
       'NewMutantsVol26',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
@@ -3601,7 +3603,7 @@ collections.push(
       'XMenUnlimitedVol148',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Mystique by Brian K. Vaughan Ultimate Collection',
     '2011-5-25',
     [
@@ -3613,7 +3615,7 @@ collections.push(
       'MystiqueVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 3: Holy War',
     '2003-9-15',
     [
@@ -3622,14 +3624,14 @@ collections.push(
       'UncannyXMenVol1427',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legends Vol. IV: Hated & Feared (Partial)',
     '2003-12-3',
     [
       'XMenUnlimitedVol149',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Emma Frost Ultimate Collection',
     '2011-5-25',
     [
@@ -3641,7 +3643,7 @@ collections.push(
       'EmmaFrostVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 4: The Draco',
     '2004-3-1',
     [
@@ -3654,7 +3656,7 @@ collections.push(
       'UncannyXMenVol1434',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Vol. 1: The Brotherhood',
     '2004-2-1',
     [
@@ -3666,7 +3668,7 @@ collections.push(
       'WolverineVol36',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants: Back to School - The Complete Collection',
     '2018-1-24',
     [
@@ -3678,7 +3680,7 @@ collections.push(
       'NewMutantsVol212',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 6: Intifada',
     '2004-3-1',
     [
@@ -3689,7 +3691,7 @@ collections.push(
       'XTremeXMenVol135',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 6: Bright New Mourning',
     '2004-6-23',
     [
@@ -3697,7 +3699,7 @@ collections.push(
       'UncannyXMenVol1436',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 5: She Lies with Angels',
     '2004-5-5',
     [
@@ -3708,7 +3710,7 @@ collections.push(
       'UncannyXMenVol1441',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Mystique by Brian K. Vaughan Ultimate Collection',
     '2011-5-25',
     [
@@ -3721,7 +3723,7 @@ collections.push(
       'MystiqueVol113',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 7: Storm - The Arena',
     '2004-4-1',
     [
@@ -3731,7 +3733,7 @@ collections.push(
       'XTremeXMenVol139',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Vol. 2: Coyote Crossing',
     '2004-4-21',
     [
@@ -3742,14 +3744,14 @@ collections.push(
       'WolverineVol311',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Vol. 3: Return of the Native',
     '2004-10-13',
     [
       'WolverineVol312',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -3761,7 +3763,7 @@ collections.push(
       'CableDeadpoolVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
@@ -3776,7 +3778,7 @@ collections.push(
       'NewXMenVol1150',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 8: Prisoner of Fire',
     '2004-7-28',
     [
@@ -3788,7 +3790,7 @@ collections.push(
       'XTremeXMenVol145',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men Omnibus',
     '2016-9-20',
     [
@@ -3798,7 +3800,7 @@ collections.push(
       'NewXMenVol1154',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men Vol. 6: Bright New Mourning',
     '2004-6-23',
     [
@@ -3808,21 +3810,21 @@ collections.push(
       'UncannyXMenVol1443',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants: Back to School - The Complete Collection',
     '2018-1-24',
     [
       'NewMutantsVol213',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Treme X-Men Volume 8: Prisoner of Fire',
     '2004-7-28',
     [
       'XTremeXMenVol146',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Day of the Atom',
     '2005-3-2',
     [
@@ -3832,7 +3834,7 @@ collections.push(
       'XMenVol3160',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men - The New Age Vol. 1: The End of History',
     '2004-12-15',
     [
@@ -3844,7 +3846,7 @@ collections.push(
       'UncannyXMenVol1449',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men Omnibus',
     '2009-10-7',
     [
@@ -3856,7 +3858,7 @@ collections.push(
       'AstonishingXMenVol36',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
@@ -3868,7 +3870,7 @@ collections.push(
       'NewXMenVol26',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Excalibur Vol. 1: Forging the Sword',
     '2004-10-27',
     [
@@ -3878,7 +3880,7 @@ collections.push(
       'ExcaliburVol34',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'District X Vol. 1: Mr. M',
     '2005-1-12',
     [
@@ -3890,7 +3892,7 @@ collections.push(
       'DistrictXVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Emma Frost Ultimate Collection',
     '2011-5-25',
     [
@@ -3902,7 +3904,7 @@ collections.push(
       'EmmaFrostVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Vol. 3: Return of the Native',
     '2004-10-13',
     [
@@ -3915,7 +3917,7 @@ collections.push(
       'WolverineVol319',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Mystique by Sean Mckeever Ultimate Collection',
     '2011-6-22',
     [
@@ -3926,7 +3928,7 @@ collections.push(
       'MystiqueVol118',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Emma Frost Ultimate Collection',
     '2011-5-25',
     [
@@ -3938,7 +3940,7 @@ collections.push(
       'EmmaFrostVol118',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Rogue: The Complete Collection',
     '2015-9-1',
     [
@@ -3950,7 +3952,7 @@ collections.push(
       'RogueVol36',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Mystique by Sean Mckeever Ultimate Collection',
     '2011-6-22',
     [
@@ -3962,7 +3964,7 @@ collections.push(
       'MystiqueVol124',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 1',
     '2014-2-4',
     [
@@ -3973,7 +3975,7 @@ collections.push(
       'MadroxVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Nightcrawler: The Devil Inside',
     '2005-5-25',
     [
@@ -3983,7 +3985,7 @@ collections.push(
       'NightcrawlerVol34',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
     [
@@ -3993,7 +3995,7 @@ collections.push(
       'SabretoothVol24',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'NYX: Wannabe',
     '2006-5-10',
     [
@@ -4006,7 +4008,7 @@ collections.push(
       'NYXVol17',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men - The New Age Vol. 2: The Cruelest Cut',
     '2005-2-2',
     [
@@ -4014,7 +4016,7 @@ collections.push(
       'UncannyXMenVol1451',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Day of the Atom',
     '2005-3-2',
     [
@@ -4025,7 +4027,7 @@ collections.push(
       'XMenVol3165',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Excalibur Vol. 2: Saturday Night Fever',
     '2005-5-18',
     [
@@ -4034,7 +4036,7 @@ collections.push(
       'ExcaliburVol37',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
@@ -4043,7 +4045,7 @@ collections.push(
       'NewXMenVol29',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'District X Vol. 2: Underground',
     '2005-9-7',
     [
@@ -4055,7 +4057,7 @@ collections.push(
       'DistrictXVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -4065,7 +4067,7 @@ collections.push(
       'CableDeadpoolVol110',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Gambit: House of Cards',
     '2005-3-9',
     [
@@ -4077,7 +4079,7 @@ collections.push(
       'GambitVol46',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Nightcrawler: The Devil Inside',
     '2005-5-25',
     [
@@ -4085,7 +4087,7 @@ collections.push(
       'NightcrawlerVol36',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men - The New Age Vol. 2: The Cruelest Cut',
     '2005-2-2',
     [
@@ -4094,7 +4096,7 @@ collections.push(
       'UncannyXMenVol1454',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Golgotha',
     '2005-7-13',
     [
@@ -4105,7 +4107,7 @@ collections.push(
       'XMenVol3170',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Excalibur Vol. 2: Saturday Night Fever',
     '2005-5-18',
     [
@@ -4114,7 +4116,7 @@ collections.push(
       'ExcaliburVol310',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Gambit: Hath No Fury',
     '2005-9-14',
     [
@@ -4126,7 +4128,7 @@ collections.push(
       'GambitVol412',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
@@ -4135,7 +4137,7 @@ collections.push(
       'NewXMenVol212',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'District X Vol. 2: Underground',
     '2005-9-7',
     [
@@ -4143,7 +4145,7 @@ collections.push(
       'DistrictXVol114',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -4153,7 +4155,7 @@ collections.push(
       'CableDeadpoolVol114',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force & Cable Vol. 1: The Legend Returns',
     '2005-3-30',
     [
@@ -4165,7 +4167,7 @@ collections.push(
       'XForceVol26',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Nightcrawler: The Winding Way',
     '2006-2-22',
     [
@@ -4177,7 +4179,7 @@ collections.push(
       'NightcrawlerVol312',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-23: Innocence Lost',
     '2006-4-12',
     [
@@ -4189,7 +4191,7 @@ collections.push(
       'X23Vol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men - The New Age Vol. 3: On Ice',
     '2005-8-10',
     [
@@ -4200,7 +4202,7 @@ collections.push(
       'UncannyXMenVol1459',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Phoenix - Endsong/Warsong Ultimate Collection',
     '2012-6-13',
     [
@@ -4211,7 +4213,7 @@ collections.push(
       'XMenPhoenixEndsongVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Enemy of the State Ultimate Collection',
     '2008-6-11',
     [
@@ -4229,14 +4231,14 @@ collections.push(
       'WolverineVol331',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
       'NewXMenVol213',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men - The New Age Vol. 3: On Ice',
     '2005-8-10',
     [
@@ -4244,7 +4246,7 @@ collections.push(
       'UncannyXMenVol1461',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men Omnibus',
     '2009-10-7',
     [
@@ -4256,7 +4258,7 @@ collections.push(
       'AstonishingXMenVol312',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Rogue: The Complete Collection',
     '2015-9-1',
     [
@@ -4268,7 +4270,7 @@ collections.push(
       'RogueVol312',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Bizarre Love Triangle',
     '2005-10-12',
     [
@@ -4278,14 +4280,14 @@ collections.push(
       'XMenVol3174',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
       'XMenUnlimitedVol29',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Academy X - Complete Collection',
     '2018-12-31',
     [
@@ -4298,21 +4300,21 @@ collections.push(
       'NewXMenAcademyXYearbookSpecialVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Blood & Sorrow',
     '2007-6-27',
     [
       'XMenUnlimitedVol212',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Enemy of the State Ultimate Collection',
     '2008-6-11',
     [
       'WolverineVol332',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Kitty Pryde - Shadow & Flame',
     '2006-1-18',
     [
@@ -4323,7 +4325,7 @@ collections.push(
       'XMenKittyPrydeShadowFlameVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Colossus Bloodline',
     '2005-6-18',
     [
@@ -4334,7 +4336,7 @@ collections.push(
       'XMenColossusBloodlineVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Ororo: Before the Storm',
     '2005-12-7',
     [
@@ -4344,7 +4346,7 @@ collections.push(
       'OroroBeforetheStormVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men/Black Panther: Wild Kingdom',
     '2006-1-25',
     [
@@ -4354,7 +4356,7 @@ collections.push(
       'BlackPantherVol49',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'House of M: Excalibur - Prelude',
     '2005-7-27',
     [
@@ -4364,7 +4366,7 @@ collections.push(
       'ExcaliburVol314',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'House of M',
     '2006-2-1',
     [
@@ -4375,7 +4377,7 @@ collections.push(
       'HouseofMVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -4385,7 +4387,7 @@ collections.push(
       'CableDeadpoolVol118',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'House of M: Uncanny X-Men',
     '2006-1-25',
     [
@@ -4396,7 +4398,7 @@ collections.push(
       'SecretsoftheHouseofMVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'House of M',
     '2006-2-1',
     [
@@ -4405,7 +4407,7 @@ collections.push(
       'HouseofMVol18',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men and Spider-Man',
     '2009-12-9',
     [
@@ -4415,14 +4417,14 @@ collections.push(
       'XMenSpiderManVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Decimation: X-Men - The Day After',
     '2006-4-26',
     [
       'DecimationHouseofMTheDayAfterVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -4433,7 +4435,7 @@ collections.push(
       'CableDeadpoolVol123',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Decimation: X-Men - The Day After',
     '2006-4-26',
     [
@@ -4442,7 +4444,7 @@ collections.push(
       'XMenVol3179',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Childhood\'s End Vol. 1',
     '2006-4-26',
     [
@@ -4452,7 +4454,7 @@ collections.push(
       'NewXMenVol223',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Decimation: Generation M',
     '2006-6-28',
     [
@@ -4463,7 +4465,7 @@ collections.push(
       'GenerationMVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Decimation: X-Men - The 198',
     '2006-8-30',
     [
@@ -4474,7 +4476,7 @@ collections.push(
       'XMenThe198Vol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 1',
     '2014-2-4',
     [
@@ -4486,7 +4488,7 @@ collections.push(
       'XFactorVol36',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
     [
@@ -4495,7 +4497,7 @@ collections.push(
       'WolverineVol335',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Excalibur Vol. 1: Defenders of the Realm',
     '2006-7-26',
     [
@@ -4504,7 +4506,7 @@ collections.push(
       'NewExcaliburVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men - The New Age Vol. 4: End of Greys',
     '2006-6-21',
     [
@@ -4513,7 +4515,7 @@ collections.push(
       'UncannyXMenVol1468',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Excalibur Vol. 1: Defenders of the Realm',
     '2006-7-26',
     [
@@ -4523,7 +4525,7 @@ collections.push(
       'NewExcaliburVol17',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Childhood\'s End Vol. 2',
     '2006-8-2',
     [
@@ -4533,7 +4535,7 @@ collections.push(
       'NewXMenVol227',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine by Daniel Way: The Complete Collection Vol. 1',
     '2017-1-31',
     [
@@ -4544,7 +4546,7 @@ collections.push(
       'WolverineVol340',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Origins Vol. 1 - Born in Blood',
     '2007-4-4',
     [
@@ -4555,14 +4557,14 @@ collections.push(
       'WolverineOriginsVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Blood & Sorrow',
     '2007-6-27',
     [
       'WolverineVol341',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -4572,7 +4574,7 @@ collections.push(
       'CableDeadpoolVol127',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men - The New Age Vol. 4: End of Greys',
     '2006-6-21',
     [
@@ -4581,7 +4583,7 @@ collections.push(
       'UncannyXMenVol1471',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men - The New Age Vol. 5: First Foursaken',
     '2006-6-21',
     [
@@ -4590,14 +4592,14 @@ collections.push(
       'UncannyXMenVol1474',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Blood & Sorrow',
     '2007-6-27',
     [
       'GiantSizeWolverineVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Excalibur Vol. 2: Last Days of Camelot',
     '2007-3-14',
     [
@@ -4605,14 +4607,14 @@ collections.push(
       'NewExcaliburVol19',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men - The New Age Vol. 5: First Foursaken',
     '2006-6-21',
     [
       'UncannyXMenAnnualVol81',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Decimation: X-Men - The Day After',
     '2006-4-26',
     [
@@ -4620,7 +4622,7 @@ collections.push(
       'XMenVol3181',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Blood of Apocalypse (Partial)',
     '2006-7-12',
     [
@@ -4632,7 +4634,7 @@ collections.push(
       'XMenVol3187',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -4640,7 +4642,7 @@ collections.push(
       'CableDeadpoolVol129',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Excalibur Vol. 2: Last Days of Camelot',
     '2007-3-14',
     [
@@ -4649,7 +4651,7 @@ collections.push(
       'NewExcaliburVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Origins Vol. 2 - Savior',
     '2007-9-19',
     [
@@ -4660,7 +4662,7 @@ collections.push(
       'WolverineOriginsVol110',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Deadly Genesis',
     '2006-12-27',
     [
@@ -4672,14 +4674,14 @@ collections.push(
       'XMenDeadlyGenesisVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 1',
     '2014-2-4',
     [
       'XFactorVol37',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: Rise & Fall of the Shi\'ar Empire',
     '2007-7-25',
     [
@@ -4697,7 +4699,7 @@ collections.push(
       'UncannyXMenVol1486',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Supernovas',
     '2007-8-8',
     [
@@ -4709,7 +4711,7 @@ collections.push(
       'XMenVol3193',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Origins Vol. 3 - Swift and Terrible',
     '2007-11-14',
     [
@@ -4720,7 +4722,7 @@ collections.push(
       'WolverineOriginsVol115',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-23: Target X',
     '2007-8-22',
     [
@@ -4732,49 +4734,49 @@ collections.push(
       'X23TargetXVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Civil War',
     '2007-4-11',
     [
       'CivilWarVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 1',
     '2014-2-4',
     [
       'XFactorVol38',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Civil War',
     '2007-4-11',
     [
       'CivilWarVol12',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
       'CableDeadpoolVol130',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Civil War',
     '2007-4-11',
     [
       'CivilWarVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 1',
     '2014-2-4',
     [
       'XFactorVol39',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Civil War: X-Men',
     '2007-4-25',
     [
@@ -4784,7 +4786,7 @@ collections.push(
       'CivilWarXMenVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Civil War: X-Men',
     '2007-5-2',
     [
@@ -4797,7 +4799,7 @@ collections.push(
       'WolverineVol348',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 1',
     '2014-2-4',
     [
@@ -4806,14 +4808,14 @@ collections.push(
       'XFactorVol312',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Civil War',
     '2007-4-11',
     [
       'CivilWarVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -4821,7 +4823,7 @@ collections.push(
       'CableDeadpoolVol132',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Civil War',
     '2007-4-11',
     [
@@ -4830,7 +4832,7 @@ collections.push(
       'CivilWarVol17',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Childhood\'s End Vol. 3',
     '2006-12-6',
     [
@@ -4840,7 +4842,7 @@ collections.push(
       'NewXMenVol231',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -4849,28 +4851,28 @@ collections.push(
       'CableDeadpoolVol135',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Childhood\'s End Vol. 3',
     '2006-12-6',
     [
       'NewXMenVol232',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Blood & Sorrow',
     '2007-6-27',
     [
       'WolverineVol349',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 2',
     '2014-6-10',
     [
       'XFactorVol313',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Excalibur Vol. 2: Last Days of Camelot',
     '2007-3-14',
     [
@@ -4879,7 +4881,7 @@ collections.push(
       'NewExcaliburVol115',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -4889,7 +4891,7 @@ collections.push(
       'CableDeadpoolVol139',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Phoenix - Endsong/Warsong Ultimate Collection',
     '2012-6-13',
     [
@@ -4900,7 +4902,7 @@ collections.push(
       'XMenPhoenixWarsongVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Childhood\'s End Vol. 4',
     '2007-5-30',
     [
@@ -4910,7 +4912,7 @@ collections.push(
       'NewXMenVol236',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Excalibur Vol. 3: Battle for Eternity',
     '2007-12-5',
     [
@@ -4918,7 +4920,7 @@ collections.push(
       'NewExcaliburVol117',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 2',
     '2014-6-10',
     [
@@ -4928,7 +4930,7 @@ collections.push(
       'XFactorVol317',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Childhood\'s End Vol. 5 (Partial)',
     '2007-12-12',
     [
@@ -4937,7 +4939,7 @@ collections.push(
       'NewXMenVol239',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 2',
     '2014-6-10',
     [
@@ -4946,7 +4948,7 @@ collections.push(
       'XFactorVol320',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Evolution',
     '2008-3-5',
     [
@@ -4958,21 +4960,21 @@ collections.push(
       'WolverineVol355',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Origins Vol. 4 - Our War',
     '2008-6-11',
     [
       'WolverineOriginsAnnualVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: The Death of Wolverine',
     '2008-7-23',
     [
       'WolverineVol356',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'World War Hulk: X-Men',
     '2008-5-14',
     [
@@ -4988,7 +4990,7 @@ collections.push(
       'AvengersTheInitiativeVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Excalibur Vol. 3: Battle for Eternity',
     '2007-12-5',
     [
@@ -5001,7 +5003,7 @@ collections.push(
       'NewExcaliburVol124',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Die by the Sword',
     '2008-3-26',
     [
@@ -5012,7 +5014,7 @@ collections.push(
       'XMenDiebytheSwordVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Origins Vol. 4 - Our War',
     '2008-6-11',
     [
@@ -5023,7 +5025,7 @@ collections.push(
       'WolverineOriginsVol120',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: The Death of Wolverine',
     '2008-7-23',
     [
@@ -5034,7 +5036,7 @@ collections.push(
       'WolverineVol361',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Emperor Vulcan',
     '2008-4-23',
     [
@@ -5045,7 +5047,7 @@ collections.push(
       'XMenEmperorVulcanVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Mystic Arcana',
     '2016-2-18',
     [
@@ -5055,7 +5057,7 @@ collections.push(
       'MysticArcanaVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men Omnibus',
     '2009-10-7',
     [
@@ -5074,7 +5076,7 @@ collections.push(
       'GiantSizeAstonishingXMenVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Supernovas',
     '2007-8-8',
     [
@@ -5086,35 +5088,35 @@ collections.push(
       'XMenVol3198',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
       'CableDeadpoolVol140',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Supernovas',
     '2007-8-8',
     [
       'XMenVol3199',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
       'CableDeadpoolVol141',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Extremists (Partial)',
     '2008-1-9',
     [
       'UncannyXMenVol1487',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Endangered Species',
     '2008-1-9',
     [
@@ -5122,14 +5124,14 @@ collections.push(
       'XMenVol3200',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
       'CableDeadpoolVol142',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Endangered Species',
     '2008-1-9',
     [
@@ -5148,7 +5150,7 @@ collections.push(
       'UncannyXMenVol1491',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -5160,28 +5162,28 @@ collections.push(
       'CableDeadpoolVol148',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
     '2014-6-10',
     [
       'XFactorVol324',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Endangered Species',
     '2008-1-9',
     [
       'XMenVol3204',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New X-Men: Childhood\'s End Vol. 5 (Partial)',
     '2007-12-12',
     [
       'NewXMenVol243',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Magneto Testament',
     '2009-6-10',
     [
@@ -5192,7 +5194,7 @@ collections.push(
       'XMenMagnetoTestamentVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Messiah Complex',
     '2008-10-29',
     [
@@ -5212,7 +5214,7 @@ collections.push(
       'XMenVol3207',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool & Cable Omnibus',
     '2014-11-11',
     [
@@ -5220,7 +5222,7 @@ collections.push(
       'CableDeadpoolVol150',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Get Mystique',
     '2008-8-27',
     [
@@ -5230,7 +5232,7 @@ collections.push(
       'WolverineVol365',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legacy - Divided He Stands',
     '2008-8-27',
     [
@@ -5241,7 +5243,7 @@ collections.push(
       'XMenLegacyVol1212',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legacy - Sins of the Father',
     '2009-3-11',
     [
@@ -5249,7 +5251,7 @@ collections.push(
       'XMenLegacyVol1214',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Young X-Men, Vol. 1: Final Genesis',
     '2008-12-3',
     [
@@ -5260,7 +5262,7 @@ collections.push(
       'YoungXMenVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
     '2014-6-10',
     [
@@ -5271,7 +5273,7 @@ collections.push(
       'XFactorVol332',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force Vol. 1: Angels and Demons',
     '2009-1-28',
     [
@@ -5283,7 +5285,7 @@ collections.push(
       'XForceVol36',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: Divided We Stand',
     '2008-10',
     [
@@ -5294,7 +5296,7 @@ collections.push(
       'UncannyXMenVol1499',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Divided We Stand',
     '2008-9-3',
     [
@@ -5303,7 +5305,7 @@ collections.push(
       'XMenFreeComicBookDayVol20081',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable Vol. 1: Messiah War',
     '2008-10-8',
     [
@@ -5314,7 +5316,7 @@ collections.push(
       'CableVol25',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Logan',
     '2009-4-29',
     [
@@ -5323,7 +5325,7 @@ collections.push(
       'LoganVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Angel - Revelations',
     '2009-1-7',
     [
@@ -5334,7 +5336,7 @@ collections.push(
       'AngelRevelationsVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'War of Kings: Road to War of Kings',
     '2009-6-3',
     [
@@ -5342,7 +5344,7 @@ collections.push(
       'SecretInvasionWarofKingsVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'War of Kings: Road to War of Kings',
     '2009-6-3',
     [
@@ -5352,7 +5354,7 @@ collections.push(
       'XMenKingbreakerVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Manifest Destiny',
     '2009-5-27',
     [
@@ -5368,7 +5370,7 @@ collections.push(
       'WolverineManifestDestinyVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Ghost Box',
     '2009-9-2',
     [
@@ -5382,14 +5384,14 @@ collections.push(
       'AstonishingXMenVol330',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
       'UncannyXMenVol1500',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legacy - Sins of the Father',
     '2009-3-11',
     [
@@ -5397,7 +5399,7 @@ collections.push(
       'XMenLegacyVol1216',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Original Sin',
     '2009-8-5',
     [
@@ -5409,7 +5411,7 @@ collections.push(
       'WolverineOriginsVol130',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
@@ -5418,7 +5420,7 @@ collections.push(
       'UncannyXMenVol1503',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'NYX: No Way Home',
     '2009-9-2',
     [
@@ -5430,7 +5432,7 @@ collections.push(
       'NYXNoWayHomeVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable Vol. 2: Waiting for the End of the World',
     '2009-5-27',
     [
@@ -5442,7 +5444,7 @@ collections.push(
       'KingSizeCableSpectacularVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor Vol. 6: Secret Invasion',
     '2009-5-27',
     [
@@ -5451,7 +5453,7 @@ collections.push(
       'XFactorVol334',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Secret Invasion: X-Men',
     '2009-3-25',
     [
@@ -5461,14 +5463,14 @@ collections.push(
       'SecretInvasionXMenVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor by Peter David: The Complete Collection, Vol. 2 (Partial)',
     '2014-6-10',
     [
       'XFactorTheQuickandtheDeadVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force Vol. 2: Old Ghosts',
     '2014-6-10',
     [
@@ -5479,14 +5481,14 @@ collections.push(
       'XForceVol311',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force Vol. 3: Not Forgotten',
     '2010-4-7',
     [
       'XForceVol312',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Worlds Apart',
     '2009-6-10',
     [
@@ -5496,7 +5498,7 @@ collections.push(
       'XMenWorldsApartVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
@@ -5507,7 +5509,7 @@ collections.push(
       'UncannyXMenVol1507',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Young X-Men - Volume 2: Books of Revelations (Partial)',
     '2009-6-3',
     [
@@ -5520,7 +5522,7 @@ collections.push(
       'YoungXMenVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Infernus (Partial)',
     '2009-7-1',
     [
@@ -5532,7 +5534,7 @@ collections.push(
       'XInfernusVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 1 (Partial)',
     '2013-3-5',
     [
@@ -5542,14 +5544,14 @@ collections.push(
       'UncannyXMenVol1511',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
       'UncannyXMenVol1512',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Eternals: Manifest Destiny',
     '2016-12-29',
     [
@@ -5559,7 +5561,7 @@ collections.push(
       'EternalsAnnualVol21',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor Vol. 6: Secret Invasion',
     '2009-5-27',
     [
@@ -5569,14 +5571,14 @@ collections.push(
       'XFactorVol338',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor Vol. 7: Time and a Half',
     '2009-9-2',
     [
       'XFactorVol339',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants Vol. 1: Return of Legion',
     '2010-5-12',
     [
@@ -5587,7 +5589,7 @@ collections.push(
       'NewMutantsVol34',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men Vol. 6: Exogenetic',
     '2011-3-9',
     [
@@ -5598,7 +5600,7 @@ collections.push(
       'AstonishingXMenVol335',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Xenogenesis',
     '2011-10-5',
     [
@@ -5609,7 +5611,7 @@ collections.push(
       'AstonishingXMenXenogenesisVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force/Cable: Messiah War',
     '2010-1-6',
     [
@@ -5620,14 +5622,14 @@ collections.push(
       'XMenTheLivesandTimesofLucasBishopVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force Vol. 3: Not Forgotten',
     '2010-4-7',
     [
       'XForceVol313',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force/Cable: Messiah War',
     '2010-1-6',
     [
@@ -5641,7 +5643,7 @@ collections.push(
       'XMenFutureHistoryTheMessiahWarSourcebookVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Force Vol. 3: Not Forgotten',
     '2010-4-7',
     [
@@ -5651,7 +5653,7 @@ collections.push(
       'XForceVol320',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Domino',
     '2018-4-25',
     [
@@ -5660,7 +5662,7 @@ collections.push(
       'XForceSexandViolenceVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Dark Reign: Deadpool / Thunderbolts',
     '2009-6-24',
     [
@@ -5670,7 +5672,7 @@ collections.push(
       'ThunderboltsVol2131',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Exiles Vol. 4: Away We Go',
     '2009-5-27',
     [
@@ -5680,7 +5682,7 @@ collections.push(
       'XMenSwordoftheBraddocksVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legacy: Salvage',
     '2009-11-25',
     [
@@ -5693,28 +5695,28 @@ collections.push(
       'XMenLegacyVol1225',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
       'DarkReignTheCabalVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
       'DarkAvengersUncannyXMenUtopiaVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers/X-Men: Utopia (Partial)',
     '2011-12-15',
     [
       'DarkXMenTheBeginningVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
@@ -5722,7 +5724,7 @@ collections.push(
       'DarkAvengersVol17',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers/X-Men: Utopia (Partial)',
     '2011-12-15',
     [
@@ -5732,7 +5734,7 @@ collections.push(
       'DarkXMenTheBeginningVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
@@ -5741,21 +5743,21 @@ collections.push(
       'DarkAvengersUncannyXMenExodusVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers/X-Men: Utopia (Partial)',
     '2011-12-15',
     [
       'DarkXMenTheConfessionVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
       'DarkReignTheListXMenVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Vol. 3: X Marks the Spot',
     '2010-5-19',
     [
@@ -5763,7 +5765,7 @@ collections.push(
       'DeadpoolVol314',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Dark X-Men',
     '2010-11-24',
     [
@@ -5774,7 +5776,7 @@ collections.push(
       'DarkXMenVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor Vol. 7: Time and a Half',
     '2009-9-2',
     [
@@ -5786,7 +5788,7 @@ collections.push(
       'XFactorVol345',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor Vol. 8: Overtime',
     '2010-5-5',
     [
@@ -5798,7 +5800,7 @@ collections.push(
       'XFactorLaylaMillerVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: Invisible Woman Has Vanished',
     '2010-6-2',
     [
@@ -5808,7 +5810,7 @@ collections.push(
       'XFactorVol3203',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Psylocke',
     '2010-6-9',
     [
@@ -5818,98 +5820,98 @@ collections.push(
       'PsylockeVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Vol. 3: X Marks the Spot',
     '2010-5-19',
     [
       'DeadpoolVol315',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legacy - Emplate',
     '2010-7-28',
     [
       'XMenLegacyAnnualVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
       'UncannyXMenVol1515',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Vol. 3: X Marks the Spot',
     '2010-5-19',
     [
       'DeadpoolVol316',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
       'UncannyXMenVol1516',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legacy - Emplate',
     '2010-7-28',
     [
       'XMenLegacyVol1228',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Vol. 3: X Marks the Spot',
     '2010-5-19',
     [
       'DeadpoolVol317',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legacy - Emplate',
     '2010-7-28',
     [
       'XMenLegacyVol1229',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
       'UncannyXMenVol1517',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Nation X (Partial)',
     '2010-10-27',
     [
       'NationXVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Deadpool Vol. 3: X Marks the Spot',
     '2010-5-19',
     [
       'DeadpoolVol318',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Legacy - Emplate',
     '2010-7-28',
     [
       'XMenLegacyVol1230',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants Vol. 1: Return of Legion',
     '2010-5-12',
     [
       'NewMutantsVol35',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Necrosha (Partial)',
     '2010-12-29',
     [
@@ -5928,7 +5930,7 @@ collections.push(
       'XForceVol325',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Complete Collection by Matt Fraction Vol. 2',
     '2013-3-5',
     [
@@ -5936,14 +5938,14 @@ collections.push(
       'UncannyXMenVol1519',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: Second Coming (Partial)',
     '2010-9-1',
     [
       'NationXXFactorVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Nation X (Partial)',
     '2010-10-27',
     [
@@ -5955,21 +5957,21 @@ collections.push(
       'UncannyXMenVol1522',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Necrosha (Partial)',
     '2010-12-29',
     [
       'XForceAnnualVol21',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Necrosha (Partial)',
     '2010-12-29',
     [
       'XMenLegacyVol1234',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants: Necrosha (Partial)',
     '2010-11-24',
     [
@@ -5978,7 +5980,7 @@ collections.push(
       'NewMutantsVol311',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
     [
@@ -5989,7 +5991,7 @@ collections.push(
       'SWORDVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable Vol. 3: Stranded',
     '2010-5-19',
     [
@@ -6000,7 +6002,7 @@ collections.push(
       'CableVol220',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Cable Vol. 4: Homecoming',
     '2010-5-19',
     [
@@ -6011,21 +6013,21 @@ collections.push(
       'DeadpoolCableVol125',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Second Coming',
     '2011-6-22',
     [
       'SecondComingPrepareVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Second Coming Revelations',
     '2011-7-6',
     [
       'XMenHopeVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Second Coming',
     '2011-6-22',
     [
@@ -6045,7 +6047,7 @@ collections.push(
       'XMenSecondComingVol12',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Second Coming Revelations',
     '2011-7-6',
     [
@@ -6058,7 +6060,7 @@ collections.push(
   /**
    * Roughly ordered for flow of crossovers until here.
    */
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Second Coming Revelations',
     '2011-7-6',
     [
@@ -6067,7 +6069,7 @@ collections.push(
       'XFactorVol3206',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Domino',
     '2018-4-25',
     [
@@ -6077,7 +6079,7 @@ collections.push(
       'DominoVol24',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: The Birth of Generation Hope',
     '2010-12',
     [
@@ -6088,7 +6090,7 @@ collections.push(
       'UncannyXMenVol1529',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants: Fall of the New Mutants',
     '2011-10-5',
     [
@@ -6099,7 +6101,7 @@ collections.push(
       'NewMutantsVol319',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation Hope: The Future\'s a Four-Lettered Word',
     '2011-6-22',
     [
@@ -6109,7 +6111,7 @@ collections.push(
       'GenerationHopeVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men: Quarantine',
     '2011-6',
     [
@@ -6120,14 +6122,14 @@ collections.push(
       'UncannyXMenVol1534',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation Hope: The Future\'s a Four-Lettered Word',
     '2011-6-22',
     [
       'GenerationHopeVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Force by Rick Remender Omnibus',
     '2014-3-25',
     [
@@ -6138,7 +6140,7 @@ collections.push(
       'UncannyXForceVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Curse of the Mutants',
     '2011-8-31',
     [
@@ -6150,7 +6152,7 @@ collections.push(
       'XMenVol46',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legacy: Collision',
     '2011-9-7',
     [
@@ -6160,7 +6162,7 @@ collections.push(
       'XMenLegacyVol1241',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor Vol. 11: Happenings in Vegas',
     '2011-7-6',
     [
@@ -6172,7 +6174,7 @@ collections.push(
       'XFactorVol3212',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor Vol. 12: Scar Tissue',
     '2011-7-27',
     [
@@ -6185,7 +6187,7 @@ collections.push(
       'XFactorVol3219',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-23 Vol. 1: The Killing Dream',
     '2011-11-2',
     [
@@ -6197,7 +6199,7 @@ collections.push(
       'X23Vol36',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Goes to Hell Omnibus',
     '2018-5-2',
     [
@@ -6213,7 +6215,7 @@ collections.push(
       'WolverineVol49',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: With Great Power',
     '2011-7-6',
     [
@@ -6224,14 +6226,14 @@ collections.push(
       'XMenVol411',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Force Vol. 2: Deathlok Nation (Partial)',
     '2011-3-16',
     [
       'AstonishingTalesVol125',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Force by Rick Remender Omnibus',
     '2014-3-25',
     [
@@ -6241,7 +6243,7 @@ collections.push(
       'UncannyXForceVol17',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Goes to Hell Omnibus',
     '2018-5-2',
     [
@@ -6253,7 +6255,7 @@ collections.push(
       'AstonishingSpiderManWolverineVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: Hard Labor',
     '2011-11-2',
     [
@@ -6264,7 +6266,7 @@ collections.push(
       'XFactorVol3224',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: First to Last',
     '2012-4-4',
     [
@@ -6275,7 +6277,7 @@ collections.push(
       'XMenVol415',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: FF',
     '2012-8-15',
     [
@@ -6286,7 +6288,7 @@ collections.push(
       'XMenVol419',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Daken/X-23: Collision',
     '2012-2-1',
     [
@@ -6300,7 +6302,7 @@ collections.push(
       'DakenDarkWolverineVol19',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legacy: Aftermath',
     '2012-2-8',
     [
@@ -6309,7 +6311,7 @@ collections.push(
       'XMenLegacyVol1244',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants: Fall of the New Mutants',
     '2011-10-5',
     [
@@ -6317,7 +6319,7 @@ collections.push(
       'NewMutantsVol321',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Age of X',
     '2012-1-11',
     [
@@ -6332,7 +6334,7 @@ collections.push(
       'AgeofXUniverseVol12',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legacy: Aftermath',
     '2012-2-8',
     [
@@ -6340,7 +6342,7 @@ collections.push(
       'XMenLegacyVol1249',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legacy: Lost Legions',
     '2012-4-25',
     [
@@ -6350,7 +6352,7 @@ collections.push(
       'XMenLegacyVol1253',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legacy: Five Miles South of the Universe',
     '2012-3-14',
     [
@@ -6361,7 +6363,7 @@ collections.push(
       'XMenLegacyVol1258',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants: Unfinished Business',
     '2012-4-25',
     [
@@ -6371,7 +6373,7 @@ collections.push(
       'NewMutantsVol328',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation Hope: Schism',
     '2012-1-11',
     [
@@ -6381,7 +6383,7 @@ collections.push(
       'GenerationHopeVol19',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Monstrous',
     '2011-12-14',
     [
@@ -6389,42 +6391,42 @@ collections.push(
       'AstonishingXMenVol337',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Children of the Brood (Partial)',
     '2012-2-22',
     [
       'AstonishingXMenVol338',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Monstrous',
     '2011-12-14',
     [
       'AstonishingXMenVol339',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Children of the Brood (Partial)',
     '2012-2-22',
     [
       'AstonishingXMenVol340',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Monstrous',
     '2011-12-14',
     [
       'AstonishingXMenVol341',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Children of the Brood (Partial)',
     '2012-2-22',
     [
       'AstonishingXMenVol342',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
     [
@@ -6436,7 +6438,7 @@ collections.push(
       'UncannyXMenVol1539',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-23, Vol. 2: Chaos Theory',
     '2012-7-25',
     [
@@ -6449,7 +6451,7 @@ collections.push(
       'X23Vol316',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Prelude to Schism',
     '2012-3-14',
     [
@@ -6459,7 +6461,7 @@ collections.push(
       'XMenPreludetoSchismVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself',
     '2012-9-5',
     [
@@ -6468,7 +6470,7 @@ collections.push(
       'FearItselfVol12',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself: Wolverine / New Mutants',
     '2012-5-9',
     [
@@ -6476,42 +6478,42 @@ collections.push(
       'FearItselfWolverineVol12',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself',
     '2012-9-5',
     [
       'FearItselfVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself: Wolverine / New Mutants',
     '2012-5-9',
     [
       'FearItselfWolverineVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself: Uncanny X-Force / The Deep',
     '2012-5-9',
     [
       'FearItselfUncannyXForceVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself',
     '2012-9-5',
     [
       'FearItselfVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
     [
       'UncannyXMenVol1540',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself: Uncanny X-Force / The Deep',
     '2012-5-9',
     [
@@ -6519,14 +6521,14 @@ collections.push(
       'FearItselfUncannyXForceVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
     [
       'UncannyXMenVol1541',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself: Wolverine / New Mutants',
     '2012-5-9',
     [
@@ -6536,7 +6538,7 @@ collections.push(
       'NewMutantsVol332',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
     [
@@ -6544,14 +6546,14 @@ collections.push(
       'UncannyXMenVol1543',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself',
     '2012-9-5',
     [
       'FearItselfVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself: Uncanny X-Force / The Deep',
     '2012-5-9',
     [
@@ -6561,7 +6563,7 @@ collections.push(
       'FearItselfTheDeepVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Fear Itself',
     '2012-9-5',
     [
@@ -6569,7 +6571,7 @@ collections.push(
       'FearItselfVol17',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Goes to Hell Omnibus',
     '2018-5-2',
     [
@@ -6585,56 +6587,56 @@ collections.push(
       'XMenSchismVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation Hope: Schism',
     '2012-1-11',
     [
       'GenerationHopeVol110',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Goes to Hell Omnibus',
     '2018-5-2',
     [
       'XMenSchismVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation Hope: Schism',
     '2012-1-11',
     [
       'GenerationHopeVol111',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Goes to Hell Omnibus',
     '2018-5-2',
     [
       'XMenSchismVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
     [
       'UncannyXMenVol1544',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation Hope: Schism',
     '2012-1-11',
     [
       'GenerationHopeVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
     [
       'XMenRegenesisVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Force by Rick Remender Omnibus',
     '2014-3-25',
     [
@@ -6651,7 +6653,7 @@ collections.push(
       'UncannyXForceVol118',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: Super Unnatural',
     '2012-2-15',
     [
@@ -6662,7 +6664,7 @@ collections.push(
       'XFactorVol3228',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-23, Vol. 3: Don\'t Look Back',
     '2012-12-12',
     [
@@ -6671,7 +6673,7 @@ collections.push(
       'X23Vol319',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Goes to Hell Omnibus',
     '2018-5-2',
     [
@@ -6680,7 +6682,7 @@ collections.push(
       'WolverineVol419',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men by Kieron Gillen: The Complete Collection, Vol. 1',
     '2019-2-20',
     [
@@ -6689,14 +6691,14 @@ collections.push(
       'UncannyXMenVol23',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
       'UncannyXMenVol24',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
@@ -6705,7 +6707,7 @@ collections.push(
       'WolverinetheXMenVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: War Machines (Partial)',
     '2012-9-26',
     [
@@ -6715,7 +6717,7 @@ collections.push(
       'XMenVol423',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants: A Date with the Devil',
     '2012-9-12',
     [
@@ -6726,7 +6728,7 @@ collections.push(
       'NewMutantsVol337',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legacy: Five Miles South of the Universe',
     '2012-3-14',
     [
@@ -6734,7 +6736,7 @@ collections.push(
       'XMenLegacyVol1260',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: They Keep Killing Jamie Madrox',
     '2012-6-13',
     [
@@ -6744,7 +6746,7 @@ collections.push(
       'XFactorVol3232',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Generation Hope: The End of a Generation',
     '2012-5-16',
     [
@@ -6755,7 +6757,7 @@ collections.push(
       'GenerationHopeVol117',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers: X-Sanction',
     '2012-12-19',
     [
@@ -6765,14 +6767,14 @@ collections.push(
       'AvengersXSanctionVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Children of the Brood (Partial)',
     '2012-2-22',
     [
       'AstonishingXMenVol343',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Exalted',
     '2012-4-25',
     [
@@ -6782,7 +6784,7 @@ collections.push(
       'AstonishingXMenVol347',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men: Alpha & Omega',
     '2013-2-5',
     [
@@ -6793,7 +6795,7 @@ collections.push(
       'WolverinetheXMenAlphaOmegaVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
@@ -6803,7 +6805,7 @@ collections.push(
       'UncannyXMenVol28',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Force by Rick Remender Omnibus',
     '2014-3-25',
     [
@@ -6815,7 +6817,7 @@ collections.push(
       'UncannyXForceVol123',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
@@ -6826,7 +6828,7 @@ collections.push(
       'WolverinetheXMenVol18',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-23, Vol. 3: Don\'t Look Back',
     '2012-12-12',
     [
@@ -6834,7 +6836,7 @@ collections.push(
       'X23Vol321',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Goes to Hell Omnibus',
     '2018-5-2',
     [
@@ -6845,7 +6847,7 @@ collections.push(
       'WolverineVol4303',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men Legacy: Back to School',
     '2012-7-11',
     [
@@ -6857,7 +6859,7 @@ collections.push(
       'XMenLegacyVol1265',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Curse is Broken',
     '2012-11-28',
     [
@@ -6867,7 +6869,7 @@ collections.push(
       'XMenVol427',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants Vol. 6: De-Animator',
     '2012-11-14',
     [
@@ -6877,7 +6879,7 @@ collections.push(
       'NewMutantsVol341',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
@@ -6885,7 +6887,7 @@ collections.push(
       'UncannyXMenVol210',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: Together Again for the First Time (Partial)',
     '2012-11-7',
     [
@@ -6895,14 +6897,14 @@ collections.push(
       'XFactorVol3236',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: The Road to Redemption',
     '2012-11-28',
     [
       'XFactorVol3237',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Journey Into Mystery/New Mutants: Exiled',
     '2012-11-14',
     [
@@ -6913,7 +6915,7 @@ collections.push(
       'NewMutantsVol343',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: The Curse is Broken',
     '2012-11-28',
     [
@@ -6921,7 +6923,7 @@ collections.push(
       'XMenVol429',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Age of Apocalypse, Vol. 1: The X-Terminated (Partial)',
     '2012-10-3',
     [
@@ -6933,14 +6935,14 @@ collections.push(
       'AgeofApocalypseVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine Goes to Hell Omnibus',
     '2018-5-2',
     [
       'WolverineVol4304',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Rot',
     '2012-9-12',
     [
@@ -6950,7 +6952,7 @@ collections.push(
       'WolverineVol4308',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants Vol. 7: Fight the Future',
     '2012-12-19',
     [
@@ -6959,7 +6961,7 @@ collections.push(
       'NewMutantsVol346',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men by Brian Wood Vol. 1: Blank Generation',
     '2013-2-12',
     [
@@ -6969,7 +6971,7 @@ collections.push(
       'XMenVol433',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Northstar',
     '2012-9-5',
     [
@@ -6979,7 +6981,7 @@ collections.push(
       'AstonishingXMenVol351',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: The Road to Redemption',
     '2012-11-28',
     [
@@ -6988,7 +6990,7 @@ collections.push(
       'XFactorVol3240',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
@@ -6996,14 +6998,14 @@ collections.push(
       'AvengersVsXMenVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
       'WolverinetheXMenVol19',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
@@ -7012,28 +7014,28 @@ collections.push(
       'AvengersVsXMenVersusVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
       'UncannyXMenVol211',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
       'WolverinetheXMenVol110',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men: X-Men Legacy',
     '2013-4-28',
     [
@@ -7041,7 +7043,7 @@ collections.push(
       'XMenLegacyVol1267',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
@@ -7049,28 +7051,28 @@ collections.push(
       'AvengersVsXMenVersusVol12',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
       'WolverinetheXMenVol111',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVersusVol15',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
       'UncannyXMenVol212',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
@@ -7078,7 +7080,7 @@ collections.push(
       'AvengersVsXMenVersusVol13',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
@@ -7086,7 +7088,7 @@ collections.push(
       'UncannyXMenVol214',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
@@ -7094,21 +7096,21 @@ collections.push(
       'AvengersVsXMenVol16.5',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men: X-Men Legacy',
     '2013-4-28',
     [
       'XMenLegacyVol1268',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
       'WolverinetheXMenVol116',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
@@ -7117,7 +7119,7 @@ collections.push(
       'UncannyXMenVol217',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
@@ -7125,7 +7127,7 @@ collections.push(
       'AvengersVsXMenVersusVol14',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
@@ -7133,14 +7135,14 @@ collections.push(
       'WolverinetheXMenVol113',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol18',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men: X-Men Legacy',
     '2013-4-28',
     [
@@ -7148,14 +7150,14 @@ collections.push(
       'XMenLegacyVol1270',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
       'WolverinetheXMenVol114',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
@@ -7164,49 +7166,49 @@ collections.push(
       'AvengersVsXMenVol110',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
       'WolverinetheXMenVol115',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol111',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
       'UncannyXMenVol218',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
       'UncannyXMenVol219',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVersusVol16',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
@@ -7214,14 +7216,14 @@ collections.push(
       'WolverinetheXMenVol118',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Rot',
     '2012-9-12',
     [
       'WolverineVol4309',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Sabretooth Reborn',
     '2013-2-5',
     [
@@ -7231,7 +7233,7 @@ collections.push(
       'WolverineVol4313',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men by Brian Wood Vol. 2: Reckless Abandonment',
     '2013-4-30',
     [
@@ -7239,7 +7241,7 @@ collections.push(
       'XMenVol435',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men: X-Men Legacy',
     '2013-4-28',
     [
@@ -7248,7 +7250,7 @@ collections.push(
       'XMenLegacyVol1273',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: Breaking Points',
     '2013-2-20',
     [
@@ -7259,7 +7261,7 @@ collections.push(
       'XFactorVol3245',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men by Brian Wood Vol. 2: Reckless Abandonment',
     '2013-4-30',
     [
@@ -7267,7 +7269,7 @@ collections.push(
       'XMenVol437',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Avengers vs. X-Men: X-Men Legacy',
     '2013-4-28',
     [
@@ -7275,7 +7277,7 @@ collections.push(
       'XMenLegacyVol1275',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'New Mutants Vol. 7: Fight the Future',
     '2012-12-19',
     [
@@ -7285,7 +7287,7 @@ collections.push(
       'NewMutantsVol350',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
@@ -7297,7 +7299,7 @@ collections.push(
       'UncannyXMenVol220',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Uncanny X-Force by Rick Remender Omnibus',
     '2014-3-25',
     [
@@ -7315,7 +7317,7 @@ collections.push(
       'UncannyXForceVol135',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Weaponized',
     '2013-3-27',
     [
@@ -7327,7 +7329,7 @@ collections.push(
       'AstonishingXMenAnnualVol11',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Unmasked',
     '2013-12-11',
     [
@@ -7335,7 +7337,7 @@ collections.push(
       'AstonishingXMenVol358',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: Short Stories',
     '2013-3-6',
     [
@@ -7348,7 +7350,7 @@ collections.push(
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
-  new Collection(
+  new CollectionPrototype(
     'Wolverine: Sabretooth Reborn',
     '2013-4-28',
     [
@@ -7358,7 +7360,7 @@ collections.push(
       'WolverineVol4317',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Age of Apocalypse, Vol. 2: Weapon Omega',
     '2013-4-17',
     [
@@ -7371,7 +7373,7 @@ collections.push(
       'AgeofApocalypseVol112',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: Hell On Earth War',
     '2013-7-16',
     [
@@ -7384,7 +7386,7 @@ collections.push(
       'XFactorVol3256',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Factor: The End of X-Factor',
     '2014-1-7',
     [
@@ -7396,7 +7398,7 @@ collections.push(
       'XFactorVol3262',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men by Brian Wood Vol. 2: Reckless Abandonment',
     '2013-4-30',
     [
@@ -7406,7 +7408,7 @@ collections.push(
       'XMenVol441',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
@@ -7435,7 +7437,7 @@ collections.push(
       'WolverinetheXMenVol142',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: Battle of the Atom',
     '2014-1-21',
     [
@@ -7451,7 +7453,7 @@ collections.push(
       'WolverinetheXMenVol137',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'Astonishing X-Men: Unmasked',
     '2013-12-11',
     [
@@ -7465,7 +7467,7 @@ collections.push(
       'AstonishingXMenVol368',
     ]
   ),
-  new Collection(
+  new CollectionPrototype(
     'X-Men: X-Termination',
     '2013-7-24',
     [
@@ -7479,7 +7481,7 @@ collections.push(
       'XTerminationVol12',
     ]
   ),
-);
+];
 
 export class Collections {
   public static getCollections() {
