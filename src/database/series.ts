@@ -82,7 +82,7 @@ series.push(
   new Series('Avengers West Coast', {2: { startYear: 1985 }}),
   new Series('Bishop', {1: { startYear: 1994 }}),
   new Series('Baby\'s First Deadpool Book', {1: { startYear: 1998 }}),
-  new Series('Bishop: The Last X-Man', {1: { startYear: 1999 }}),
+  new Series('Bishop: the Last X-Man', {1: { startYear: 1999 }}),
   new Series('Black Panther', {3: { startYear: 1998 }, 4: { startYear: 2005 }}),
   new Series('Blink', {1: { startYear: 2001 }}),
   new Series('Cable', {1: { startYear: 1993 }, 2: { startYear: 2008 }}),

@@ -281,7 +281,7 @@ addComicsInSeriesVolume('BishopVol1', [
   [3, '1995-2'],
   [4, '1995-3'],
 ]);
-addComicsInSeriesVolume('BishopTheLastXManVol1', [
+addComicsInSeriesVolume('BishoptheLastXManVol1', [
   [15, '2000-12'],
   [16, '2001-1'],
 ]);
