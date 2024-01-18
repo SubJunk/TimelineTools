@@ -2951,7 +2951,7 @@ const collections: Collection[] = [
       'XMenVol2106',
       'UncannyXMenVol1386',
       'UncannyXMenVol1387',
-      'BishopTheLastXManVol115',
+      'BishoptheLastXManVol115',
       'XMenVol2107',
       'XMenUnlimitedVol129',
     ]
@@ -2990,7 +2990,7 @@ const collections: Collection[] = [
     [
       'UncannyXMenVol1388',
       'CableVol187',
-      'BishopTheLastXManVol116',
+      'BishoptheLastXManVol116',
       'XMenVol2108',
     ]
   ),
