@@ -6870,7 +6870,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'New Mutants Vol. 6: De-Animator',
+    'New Mutants Vol. 6: De-animator',
     '2012-11-14',
     [
       'NewMutantsVol338',
@@ -6905,7 +6905,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Journey Into Mystery/New Mutants: Exiled',
+    'Journey into Mystery/New Mutants: Exiled',
     '2012-11-14',
     [
       'ExiledVol11',
@@ -6991,7 +6991,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol10',
@@ -7006,7 +7006,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol11.5',
@@ -7022,7 +7022,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol13',
@@ -7044,7 +7044,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol14',
@@ -7059,7 +7059,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVersusVol15',
@@ -7073,7 +7073,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol15',
@@ -7089,7 +7089,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol16',
@@ -7120,7 +7120,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol17',
@@ -7136,7 +7136,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol18',
@@ -7158,7 +7158,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol19',
@@ -7174,7 +7174,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol111',
@@ -7188,7 +7188,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVol112',
@@ -7202,7 +7202,7 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
-    'Avengers vs. X-Men Hardcover',
+    'Avengers Vs. X-Men Hardcover',
     '2012-11-21',
     [
       'AvengersVsXMenVersusVol16',
