@@ -72,6 +72,7 @@ test.describe('Comics', () => {
       const currentSeriesVolume = seriesVolumes[findKey(seriesVolumes, { id: comic.seriesVolumeId })];
       const imageUrl = getSanitizedString(true, currentSeriesVolume.title, currentSeriesVolume.volume, comic.issue);
       const response = await request.get(`/assets/covers/${imageUrl}.jpg`)
+      console.log(`looking for ${imageUrl}.jpg`);
       if (!response.ok()) {
         throw new Error(`404 not found for ${imageUrl}.jpg`);
       }
