@@ -3782,12 +3782,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.19.6":
-  version: 18.19.6
-  resolution: "@types/node@npm:18.19.6"
+"@types/node@npm:18.19.8":
+  version: 18.19.8
+  resolution: "@types/node@npm:18.19.8"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 6168abff930fe7666b81a130032b459b72d5de9d254e2b211027d18d9eab80f653f43b7a8f083429a43e0527174ec70bbcd0010abb935d91f2d518b7554b7cab
+  checksum: 3fb90057208d7c3d1750eb9151b7ff2e048c4192ccf9837c9af4e843fbf9c76ead0c5a658187769adcf0b012cd348656c48695dd7a358bd2b3174b1575b1982b
   languageName: node
   linkType: hard
 
@@ -10934,7 +10934,7 @@ __metadata:
     "@types/jasmine": "npm:5.1.4"
     "@types/jquery": "npm:3.5.29"
     "@types/lodash-es": "npm:4.17.12"
-    "@types/node": "npm:18.19.6"
+    "@types/node": "npm:18.19.8"
     "@typescript-eslint/eslint-plugin": "npm:6.18.1"
     "@typescript-eslint/parser": "npm:6.18.1"
     concurrently: "npm:8.2.2"
