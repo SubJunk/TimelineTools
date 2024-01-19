@@ -1441,7 +1441,7 @@ const collections: Collection[] = [
     '2016-2-10',
     [
       'XMenChroniclesVol11',
-      'TalesfromtheAgeofApocalypseSinsterBloodlinesVol11',
+      'TalesFromTheAgeofApocalypseSinsterBloodlinesVol11',
       'XManVol1-1',
       'XMenChroniclesVol12',
       'TalesfromtheAgeofApocalyspseBytheLightVol11',

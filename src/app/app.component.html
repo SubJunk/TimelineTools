@@ -18,7 +18,7 @@
   <mat-icon>more_vert</mat-icon>
 </button>
 <ul class="collections" *ngIf="isShowCollections">
-  <li *ngFor="let collection of uniqueCollections; let i = index" class="collection-container" [ngClass]="{expanded: collection.id === expandedCollectionId}">
+  <li *ngFor="let collection of uniqueCollections; let i = index" class="collection-container {{ 'collection-container-' + collection.id }}" [ngClass]="{ expanded: collection.id === expandedCollectionId }">
     <div class="comic-collection" [ngStyle]="collection.styles" *ngIf="collection.title !== 'Uncollected'">
       <div class="panel-left">
         <button (click)="toggleExpandCollection(collection)" class="cover-thumbnail" id="expand-{{collection.id}}">
@@ -93,7 +93,7 @@
     <div class="popover"><div>#{{comic.issue}}</div></div>
     <div class="comic" [ngStyle]="comic.styles" [ngClass]="getComicClasses(comic)">
       <div class="panel-left">
-        <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
+        <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.idSanitized}}">
           <img
             *ngIf="comic.visible"
             [src]="'assets/covers/' + comic.image + '.jpg'"
