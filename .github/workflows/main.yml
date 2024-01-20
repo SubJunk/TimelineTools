@@ -24,16 +24,10 @@ jobs:
 
     - name: Cache Playwright Browsers for Playwright's Version
       id: cache-playwright-browsers
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/ms-playwright
         key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
-
-    - uses: actions/cache@v4
-      id: playwright-cache
-      with:
-        key: ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.PLAYWRIGHT_VERSION }}
-        path: ${{ env.PLAYWRIGHT_BROWSERS_PATH }}
 
     - run: yarn playwright install
       if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
