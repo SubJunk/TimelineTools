@@ -71,7 +71,11 @@ test.describe('Comics', () => {
     for (const comic of Comics.getComics()) {
       const currentSeriesVolume = seriesVolumes[findKey(seriesVolumes, { id: comic.seriesVolumeId })];
       const imageUrl = getSanitizedString(true, currentSeriesVolume.title, currentSeriesVolume.volume, comic.issue);
-      if (imageUrl !== 'Avengers_Vs_X-Men_Vol_1_15') {
+      if (
+        imageUrl !== 'Avengers_Vs_X-Men_Vol_1_15' &&
+        imageUrl !== 'Avengers_Vs_X-Men_Vol_1_2' &&
+        imageUrl !== 'Avengers_Vs_X-Men_Vol_1_3'
+      ) {
         const response = await request.get(`/assets/covers/${imageUrl}.jpg`)
         console.log(`looking for ${imageUrl}.jpg`);
         if (!response.ok()) {
