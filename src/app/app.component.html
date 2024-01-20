@@ -18,7 +18,7 @@
   <mat-icon>more_vert</mat-icon>
 </button>
 <ul class="collections" *ngIf="isShowCollections">
-  <li *ngFor="let collection of uniqueCollections" class="collection-container" [ngClass]="{expanded: collection.id === expandedCollectionId}">
+  <li *ngFor="let collection of uniqueCollections; let i = index" class="collection-container {{ 'collection-container-' + collection.id }}" [ngClass]="{ expanded: collection.id === expandedCollectionId }">
     <div class="comic-collection" [ngStyle]="collection.styles" *ngIf="collection.title !== 'Uncollected'">
       <div class="panel-left">
         <button (click)="toggleExpandCollection(collection)" class="cover-thumbnail" id="expand-{{collection.id}}">
@@ -27,8 +27,26 @@
             [src]="'assets/covers/' + collection.image + '.jpg'"
           >
         </button>
+        <ol class="pagination">
+          <li>
+            <div class="popover over previous-collection-title" *ngIf="uniqueCollections[i - 1]"><div>{{uniqueCollections[i - 1].title}}</div></div>
+            <button (click)="toggleExpandCollection(uniqueCollections[i - 1])" class="button-previous-collection" mat-button [disabled]="!uniqueCollections[i - 1]">
+              <mat-icon>arrow_backward</mat-icon>
+            </button>
+          </li><!--
+          --><li>
+            <div class="popover over next-collection-title" *ngIf="uniqueCollections[i + 1]"><div>{{uniqueCollections[i + 1].title}}</div></div>
+            <button (click)="toggleExpandCollection(uniqueCollections[i + 1])" class="button-next-collection" mat-button [disabled]="!uniqueCollections[i + 1]">
+              <mat-icon>arrow_forward</mat-icon>
+            </button>
+          </li>
+        </ol>
       </div>
       <div class="expanded-panel" *ngIf="collection.id === expandedCollectionId">
+        <button (click)="toggleExpandCollection()" class="right-aligned-button" mat-mini-fab>
+          <div class="popover"><div>Close this panel</div></div>
+          <mat-icon>close</mat-icon>
+        </button>
         <div class="title">{{collection.title}}</div>
         <div class="date">{{collection.yearPublished}} / {{collection.monthPublished}}</div>
         <div class="collection-comics">
@@ -75,7 +93,7 @@
     <div class="popover"><div>#{{comic.issue}}</div></div>
     <div class="comic" [ngStyle]="comic.styles" [ngClass]="getComicClasses(comic)">
       <div class="panel-left">
-        <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.id}}">
+        <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.idSanitized}}">
           <img
             *ngIf="comic.visible"
             [src]="'assets/covers/' + comic.image + '.jpg'"
@@ -127,10 +145,14 @@
         </ol>
       </div>
       <div class="expanded-panel">
+        <button (click)="toggleExpandComic()" class="right-aligned-button" mat-mini-fab>
+          <div class="popover"><div>Close this panel</div></div>
+          <mat-icon>close</mat-icon>
+        </button>
         <a [ngClass]="{disabled: !expandedComic.link}" class="marvel-unlimited-link" [href]="expandedComic.link">
           <div class="popover"><div>Open in Marvel Unlimited</div></div>
         </a>
-        <button (click)="scrollToComic(expandedComic.id)" class="scroll-to-comic-button" mat-mini-fab>
+        <button (click)="scrollToComic(expandedComic.id)" class="right-aligned-button" mat-mini-fab>
           <div class="popover"><div>Scroll to this comic</div></div>
           <mat-icon>near_me</mat-icon>
         </button>

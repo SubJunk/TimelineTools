@@ -217,8 +217,8 @@ export class AppComponent implements OnInit {
    *                      instead of using a relative one.
    *                      Used when clicking on a comic from the collections view
    */
-  toggleExpandComic = async (currentComic: Comic, isForceScroll?: boolean) => {
-    if (typeof currentComic !== 'object') {
+  toggleExpandComic = async (currentComic?: Comic, isForceScroll?: boolean) => {
+    if (!isEmpty(currentComic) && typeof currentComic !== 'object') {
       return;
     }
 
@@ -230,7 +230,8 @@ export class AppComponent implements OnInit {
       urlTree = this.router.createUrlTree([], {
         queryParams: { id: '' },
         queryParamsHandling: 'merge',
-        preserveFragment: true });
+        preserveFragment: true,
+      });
       this.router.navigateByUrl(urlTree);
 
       return this.clearComicClassesAndStyles();
@@ -962,7 +963,10 @@ export class AppComponent implements OnInit {
     this.postSearchActions();
   }
 
-  public toggleExpandCollection = (collection: Collection) => {
+  public toggleExpandCollection = (collection?: Collection) => {
+    if (!collection) {
+      this.expandedCollectionId = null;
+    }
     this.expandedCollectionId = this.expandedCollectionId === collection.id ? null : collection.id;
 
     /*

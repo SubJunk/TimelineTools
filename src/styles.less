@@ -94,10 +94,21 @@ body.search-is-open {
   line-height: 1.5;
 }
 
+.popover.over {
+  bottom: 90%;
+  top: auto;
+  transition: bottom 0.3s, visibility 0.2s, opacity 0.2s;
+}
+
 *:hover > .popover {
   visibility: visible;
   opacity: 1;
   top: calc(100% + 5px);
+}
+
+*:hover > .popover.over {
+  top: auto;
+  bottom: calc(100% + 15px);
 }
 
 .floating-menu {
@@ -187,9 +198,10 @@ li:hover,
   margin: 0 100px 5px 0;
 }
 
-.comic-container {
+.comic-container,
+.collection-container {
   .marvel-unlimited-link,
-  .scroll-to-comic-button {
+  .right-aligned-button {
     float: right;
     position: relative;
     margin-left: 10px;

@@ -1,5 +1,3 @@
-import { each } from 'lodash-es';
-
 const series        = [];
 const seriesVolumes = [];
 
@@ -18,7 +16,7 @@ function Series(title: string, volumes: { [key: number]: { startYear: number, cr
   this.id = title.replace(/[\W+]/g, '');
   this.title = title;
 
-  each(volumes, (volumeDetails, volume) => {
+  Object.entries(volumes).forEach(([volume, volumeDetails]) => {
     seriesVolumes.push(
       new SeriesVolume(
         this.id,
@@ -82,7 +80,7 @@ series.push(
   new Series('Avengers West Coast', {2: { startYear: 1985 }}),
   new Series('Bishop', {1: { startYear: 1994 }}),
   new Series('Baby\'s First Deadpool Book', {1: { startYear: 1998 }}),
-  new Series('Bishop: The Last X-Man', {1: { startYear: 1999 }}),
+  new Series('Bishop: the Last X-Man', {1: { startYear: 1999 }}),
   new Series('Black Panther', {3: { startYear: 1998 }, 4: { startYear: 2005 }}),
   new Series('Blink', {1: { startYear: 2001 }}),
   new Series('Cable', {1: { startYear: 1993 }, 2: { startYear: 2008 }}),
@@ -205,7 +203,7 @@ series.push(
   new Series('S.W.O.R.D.', {1: { startYear: 2009 }}),
   new Series('The Amazing Spider-Man', {1: { startYear: 1963 }}),
   new Series('Thunderbolts', {2: { startYear: 2006 }}),
-  new Series('Tales from the Age of Apocalypse: Sinster Bloodlines', {1: { startYear: 1997 }}),
+  new Series('Tales From The Age of Apocalypse: Sinster Bloodlines', {1: { startYear: 1997 }}),
   new Series('Tales from the Age of Apocalyspse: By the Light', {1: { startYear: 1996 }}),
   new Series('Thor', {1: { startYear: 1966 }}),
   new Series('Uncanny X-Force', {1: { startYear: 2010 }}),

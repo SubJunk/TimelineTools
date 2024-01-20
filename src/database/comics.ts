@@ -1,11 +1,14 @@
-import { each, isArray, isEmpty } from 'lodash-es';
 import moment from 'moment';
+
+import {
+  Comic,
+} from '../app/models';
 
 /**
  * The prototype for individual comics.
  */
-function Comic(issue: string, datePublished: string, seriesVolumeId: string, titles: string) {
-  if (!isEmpty(titles) && !isArray(titles)) {
+function ComicPrototype(issue: string, datePublished: string, seriesVolumeId: string, titles: string) {
+  if (titles && !Array.isArray(titles)) {
     throw new Error('Expected comic title to be an array, got' + titles);
   }
 
@@ -30,7 +33,7 @@ function Comic(issue: string, datePublished: string, seriesVolumeId: string, tit
   this.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
   this.date = moment(year + '-' + month + '-' + day);
   this.id = seriesVolumeId + issue;
-  this.idSanitized = (seriesVolumeId + issue).replace(/[\W+]/g, '');
+  this.idSanitized = (seriesVolumeId + issue).replace(/[^a-zA-Z0-9-\s]/g, '');
   this.issue = issue;
   this.yearPublished = this.date.year();
   this.monthPublished = this.date.month() + 1;
@@ -39,15 +42,15 @@ function Comic(issue: string, datePublished: string, seriesVolumeId: string, tit
   this.titles = titles ? titles : [];
 }
 
-const comics = [];
+const comics: Comic[] = [];
 
 /**
  * Add multiple comics in a seriesVolume.
  */
-function addComicsInSeriesVolume(seriesVolumeId, comicsInSeriesVolume) {
-  each(comicsInSeriesVolume, (comic) => {
+function addComicsInSeriesVolume(seriesVolumeId: string, comicsInSeriesVolume) {
+  comicsInSeriesVolume.forEach(comic => {
     comics.push(
-      new Comic(
+      new ComicPrototype(
         comic[0],
         comic[1],
         seriesVolumeId,
@@ -281,7 +284,7 @@ addComicsInSeriesVolume('BishopVol1', [
   [3, '1995-2'],
   [4, '1995-3'],
 ]);
-addComicsInSeriesVolume('BishopTheLastXManVol1', [
+addComicsInSeriesVolume('BishoptheLastXManVol1', [
   [15, '2000-12'],
   [16, '2001-1'],
 ]);
@@ -1390,7 +1393,7 @@ addComicsInSeriesVolume('SWORDVol1', [
   [4, '2010-2-10'],
   [5, '2010-3-10'],
 ]);
-addComicsInSeriesVolume('TalesfromtheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']]);
+addComicsInSeriesVolume('TalesFromTheAgeofApocalypseSinsterBloodlinesVol1', [[1, '1997-12']]);
 addComicsInSeriesVolume('TalesfromtheAgeofApocalyspseBytheLightVol1', [[1, '1996-12']]);
 addComicsInSeriesVolume('TheAmazingSpiderManVol1', [
   [92, '1971-1-10'],
