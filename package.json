@@ -12,7 +12,7 @@
     "build": "ng build --configuration production",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "concurrently -k -s first \"npm run serve\" \"npx playwright install && npx playwright test tests/\""
+    "e2e": "concurrently -k -s first \"npm run serve\" \"npx playwright test tests/\""
   },
   "private": true,
   "stylelint": {
