@@ -7606,10 +7606,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jasmine-core@npm:5.1.1":
-  version: 5.1.1
-  resolution: "jasmine-core@npm:5.1.1"
-  checksum: 10/f8236c5f916dc70e2d5af1a229e374f3d3aac7046ef66e4c972c48977f0dce769f8b557fc1dcdc71589d3a9633368a6a682da09bd15672d435172c298e252a84
+"jasmine-core@npm:5.1.2":
+  version: 5.1.2
+  resolution: "jasmine-core@npm:5.1.2"
+  checksum: 10/b885618b040c1ead7d27d954ca32ad77faddf8e722cffcd0883e39dbc3909a1b85316c7ccfa0a2e5b312f2bed02d8d6bd577e835da88d892bb18c354581bee26
   languageName: node
   linkType: hard
 
@@ -10702,7 +10702,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:6.20.0"
     concurrently: "npm:8.2.2"
     eslint: "npm:8.56.0"
-    jasmine-core: "npm:5.1.1"
+    jasmine-core: "npm:5.1.2"
     jasmine-spec-reporter: "npm:7.0.0"
     jquery: "npm:3.7.1"
     karma: "npm:6.4.2"
