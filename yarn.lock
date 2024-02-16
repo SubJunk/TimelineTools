@@ -265,14 +265,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/animations@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/animations@npm:17.1.3"
+"@angular/animations@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/animations@npm:17.2.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/core": 17.1.3
-  checksum: 10/795d0048165be0c0a3c1ab419e8340c256f28b9a422e1a3e7ec6460d99f5272b8c6ef0a5091795e62ddb8a3eda33a239cd51b1d7ee5c8ab725b4680a594173e4
+    "@angular/core": 17.2.1
+  checksum: 10/041bb15a6af2f2bfcb1dcb966dd2454b4d6732f6010b9a4f6200c8b3c961092bead6996fd8d7f93c663ee7ee15c9bb44b493680d4a8521aa3c2ea09c3485f5f1
   languageName: node
   linkType: hard
 
@@ -321,85 +321,85 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/common@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/common@npm:17.1.3"
+"@angular/common@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/common@npm:17.2.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/core": 17.1.3
+    "@angular/core": 17.2.1
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10/a5c48d97b5484bdaf7df5b51cb14ef3b58d006278696f545b64b17f22e7dff213ecb7778da8499def72a5dfeea38a06a93946129dd444fec0d843e5426dbab7d
+  checksum: 10/94d3e1b2d94f68c1cc328c329e2f1c2ab42517382af102bcdc3cf863d1f7fcedbbaeea7e216d8d4e319988ccd40b53454373f7daa8a184cba19046137626d247
   languageName: node
   linkType: hard
 
-"@angular/compiler-cli@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/compiler-cli@npm:17.1.3"
+"@angular/compiler-cli@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/compiler-cli@npm:17.2.1"
   dependencies:
-    "@babel/core": "npm:7.23.2"
+    "@babel/core": "npm:7.23.9"
     "@jridgewell/sourcemap-codec": "npm:^1.4.14"
     chokidar: "npm:^3.0.0"
     convert-source-map: "npm:^1.5.1"
-    reflect-metadata: "npm:^0.1.2"
+    reflect-metadata: "npm:^0.2.0"
     semver: "npm:^7.0.0"
     tslib: "npm:^2.3.0"
     yargs: "npm:^17.2.1"
   peerDependencies:
-    "@angular/compiler": 17.1.3
+    "@angular/compiler": 17.2.1
     typescript: ">=5.2 <5.4"
   bin:
     ng-xi18n: bundles/src/bin/ng_xi18n.js
     ngc: bundles/src/bin/ngc.js
     ngcc: bundles/ngcc/index.js
-  checksum: 10/9d045cd01d042b1ca2c3e20482e3363ed91d9bbc4b83eb2485349ca8ab9c912d80483c716a76ecd7da167a9b90c7a52a5bad0adb3cf9b236b2bebb49a448d8b4
+  checksum: 10/69c4af59402dedae179ee601637f1f2b53d3b7734861aae41e35fa0ce90fbd5ed2df272eae6577916abaac082caecc0c7b2db4546ba4cd6581c067f56eb90289
   languageName: node
   linkType: hard
 
-"@angular/compiler@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/compiler@npm:17.1.3"
+"@angular/compiler@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/compiler@npm:17.2.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/core": 17.1.3
+    "@angular/core": 17.2.1
   peerDependenciesMeta:
     "@angular/core":
       optional: true
-  checksum: 10/b10d647a13ef88c2e24bbc13536e90c12e45dd3cc1d5acc7dcb15dec22be602b48343aa162972969544154e9bb3d7de512ea63b6d10b70b5923f2c1d0c4126e0
+  checksum: 10/70106414732e6903738810a681b51a0bb552cc440f7a46cd285836cc3f6327459988d1dbcaa868b4e9fbb2ac1c3d125e8d2f0fe1a11267b99650e6e199729934
   languageName: node
   linkType: hard
 
-"@angular/core@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/core@npm:17.1.3"
+"@angular/core@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/core@npm:17.2.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
     rxjs: ^6.5.3 || ^7.4.0
     zone.js: ~0.14.0
-  checksum: 10/2f5a2ed2e8d35f8035bd3e85ca2bfb24a1ae9a39f4d3563f7ac2c4f2fafadbc1292e45700ecf95ce93389fb93e9bcd058fe556bf2604fc7a1a3862756567732f
+  checksum: 10/3decfdb3f1a1a48d13bbc5a595f5109cfd1e82a83b2fa098255beeb753116bc2fe97ee522906caf9b0a0c6a025b9b6b30a9186bbf1d05d5673d9c3781b8ed998
   languageName: node
   linkType: hard
 
-"@angular/forms@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/forms@npm:17.1.3"
+"@angular/forms@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/forms@npm:17.2.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/common": 17.1.3
-    "@angular/core": 17.1.3
-    "@angular/platform-browser": 17.1.3
+    "@angular/common": 17.2.1
+    "@angular/core": 17.2.1
+    "@angular/platform-browser": 17.2.1
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10/c94323482328658d47588a0f15695d0dd09a7fdd2447f6e011d0848e25b741c9612e3ed5cc2545230fc74acf485123014baa32f61b1d734c87095cda1dec35e1
+  checksum: 10/48839947292e226765531d024164c7cd15cebf2d552b5de71cfcaff056a35745997fa1e9520bcdf69d1a4e19f981bdec9179e708aabd6200d41be3aabcd716ea
   languageName: node
   linkType: hard
 
-"@angular/language-service@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/language-service@npm:17.1.3"
-  checksum: 10/24db5c2cf3669de0ff64896fafc16b9f6ede6c6daf25091e2536bcc70d50fd411e9cf8ecbcf1b05d99a6aba194066f833a82b52e2a182c350a60fc4e980e6ebc
+"@angular/language-service@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/language-service@npm:17.2.1"
+  checksum: 10/98f94b1b375ce8d5f5b1f996e4e82a17e5d677b1ad73d35f2ab5f1a29066d39c62f725ec074aedb37cdf47b24a4d76ff4d9bbe94c8f43d07c3594a1dbf7b7414
   languageName: node
   linkType: hard
 
@@ -467,51 +467,51 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/platform-browser-dynamic@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/platform-browser-dynamic@npm:17.1.3"
+"@angular/platform-browser-dynamic@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/platform-browser-dynamic@npm:17.2.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/common": 17.1.3
-    "@angular/compiler": 17.1.3
-    "@angular/core": 17.1.3
-    "@angular/platform-browser": 17.1.3
-  checksum: 10/d7663f275060487874a4017e52cc39826e6a0a2e38606b36062faebbaeec9d6845024214111c614c050a7a448ffa5deca6b933508c69fbb5e5859ce9d6fb9b75
+    "@angular/common": 17.2.1
+    "@angular/compiler": 17.2.1
+    "@angular/core": 17.2.1
+    "@angular/platform-browser": 17.2.1
+  checksum: 10/9f12a4ce103f046efb3519172b0731469b4da3fd932d787213096c0e7acbfdd8ad9cd90a123dbe7f688e475c707889bd1962332bcf9ab6e1af3f78994843b274
   languageName: node
   linkType: hard
 
-"@angular/platform-browser@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/platform-browser@npm:17.1.3"
+"@angular/platform-browser@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/platform-browser@npm:17.2.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/animations": 17.1.3
-    "@angular/common": 17.1.3
-    "@angular/core": 17.1.3
+    "@angular/animations": 17.2.1
+    "@angular/common": 17.2.1
+    "@angular/core": 17.2.1
   peerDependenciesMeta:
     "@angular/animations":
       optional: true
-  checksum: 10/ceed6b4dbbec74b8b0dc87d189bfccbde1f4e53da5a94600c6e444fb2da42f831740cb3eb4045bf842c67453ca2076a1c4c6ccb504da67d9d05af985f3c14bd3
+  checksum: 10/0e34226bc7f5ed427dfd5bf1fe5230209170bb51c131b0cd721572f8e8484c5cd43e3fffa32b312d282a718b8ca537586a5be0a81bc61aa1ffad698306e49b19
   languageName: node
   linkType: hard
 
-"@angular/router@npm:17.1.3":
-  version: 17.1.3
-  resolution: "@angular/router@npm:17.1.3"
+"@angular/router@npm:17.2.1":
+  version: 17.2.1
+  resolution: "@angular/router@npm:17.2.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/common": 17.1.3
-    "@angular/core": 17.1.3
-    "@angular/platform-browser": 17.1.3
+    "@angular/common": 17.2.1
+    "@angular/core": 17.2.1
+    "@angular/platform-browser": 17.2.1
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10/67e629ef7ff5e03f627c5381e167d8abde5bd62b96ac64ee10e99b6757a08955eaaacf49f039ed6993934fc4a2eee54f5855f5ae11001bc3beafbe8a7e936f26
+  checksum: 10/628a7e273175a05a44b7a265cfbb7b9b5da5615c2b96cd4b61a2f6806f90c6e710ff9ae94b3a021ec4bc7ec6d32c683265cd13c313b6ba02c9acfc058cd0cac1
   languageName: node
   linkType: hard
 
-"@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.22.13, @babel/code-frame@npm:^7.23.5":
+"@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.23.5":
   version: 7.23.5
   resolution: "@babel/code-frame@npm:7.23.5"
   dependencies:
@@ -525,29 +525,6 @@ __metadata:
   version: 7.23.5
   resolution: "@babel/compat-data@npm:7.23.5"
   checksum: 10/088f14f646ecbddd5ef89f120a60a1b3389a50a9705d44603dca77662707d0175a5e0e0da3943c3298f1907a4ab871468656fbbf74bb7842cd8b0686b2c19736
-  languageName: node
-  linkType: hard
-
-"@babel/core@npm:7.23.2":
-  version: 7.23.2
-  resolution: "@babel/core@npm:7.23.2"
-  dependencies:
-    "@ampproject/remapping": "npm:^2.2.0"
-    "@babel/code-frame": "npm:^7.22.13"
-    "@babel/generator": "npm:^7.23.0"
-    "@babel/helper-compilation-targets": "npm:^7.22.15"
-    "@babel/helper-module-transforms": "npm:^7.23.0"
-    "@babel/helpers": "npm:^7.23.2"
-    "@babel/parser": "npm:^7.23.0"
-    "@babel/template": "npm:^7.22.15"
-    "@babel/traverse": "npm:^7.23.2"
-    "@babel/types": "npm:^7.23.0"
-    convert-source-map: "npm:^2.0.0"
-    debug: "npm:^4.1.0"
-    gensync: "npm:^1.0.0-beta.2"
-    json5: "npm:^2.2.3"
-    semver: "npm:^6.3.1"
-  checksum: 10/b69d7008695b2ac7a3a2db83c5c712fbb79f7031c4480f6351cde327930e38873003d1d021059b729a1d0cb48093f1d384c64269b78f6189f50051fe4f64dc2d
   languageName: node
   linkType: hard
 
@@ -574,7 +551,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/generator@npm:7.23.6, @babel/generator@npm:^7.23.0, @babel/generator@npm:^7.23.6":
+"@babel/generator@npm:7.23.6, @babel/generator@npm:^7.23.6":
   version: 7.23.6
   resolution: "@babel/generator@npm:7.23.6"
   dependencies:
@@ -708,7 +685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-module-transforms@npm:^7.23.0, @babel/helper-module-transforms@npm:^7.23.3":
+"@babel/helper-module-transforms@npm:^7.23.3":
   version: 7.23.3
   resolution: "@babel/helper-module-transforms@npm:7.23.3"
   dependencies:
@@ -824,7 +801,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helpers@npm:^7.23.2, @babel/helpers@npm:^7.23.9":
+"@babel/helpers@npm:^7.23.9":
   version: 7.23.9
   resolution: "@babel/helpers@npm:7.23.9"
   dependencies:
@@ -846,7 +823,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.14.7, @babel/parser@npm:^7.23.0, @babel/parser@npm:^7.23.9":
+"@babel/parser@npm:^7.14.7, @babel/parser@npm:^7.23.9":
   version: 7.23.9
   resolution: "@babel/parser@npm:7.23.9"
   bin:
@@ -1825,7 +1802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.23.2, @babel/traverse@npm:^7.23.9":
+"@babel/traverse@npm:^7.23.9":
   version: 7.23.9
   resolution: "@babel/traverse@npm:7.23.9"
   dependencies:
@@ -9523,10 +9500,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reflect-metadata@npm:^0.1.2":
-  version: 0.1.14
-  resolution: "reflect-metadata@npm:0.1.14"
-  checksum: 10/fcab9c17ec3b9fea0e2f748c2129aceb57c24af6d8d13842b8a77c8c79dde727d7456ce293e76e8d7b267d1dbf93eea4c5b3c9101299a789a075824f2e40f1ee
+"reflect-metadata@npm:^0.2.0":
+  version: 0.2.1
+  resolution: "reflect-metadata@npm:0.2.1"
+  checksum: 10/394b293bd4a538b644ed0e8730c5aeb1e08e78972c915b3d2cf3b302241952cfee8f8bd8a0fdf7d8c7fa78d31d0585489061624692e2577d767abd120cad968c
   languageName: node
   linkType: hard
 
@@ -10617,19 +10594,19 @@ __metadata:
     "@angular-eslint/eslint-plugin": "npm:17.2.1"
     "@angular-eslint/eslint-plugin-template": "npm:17.2.1"
     "@angular-eslint/template-parser": "npm:17.2.1"
-    "@angular/animations": "npm:17.1.3"
+    "@angular/animations": "npm:17.2.1"
     "@angular/cdk": "npm:^17.0.5"
     "@angular/cli": "npm:17.2.0"
-    "@angular/common": "npm:17.1.3"
-    "@angular/compiler": "npm:17.1.3"
-    "@angular/compiler-cli": "npm:17.1.3"
-    "@angular/core": "npm:17.1.3"
-    "@angular/forms": "npm:17.1.3"
-    "@angular/language-service": "npm:17.1.3"
+    "@angular/common": "npm:17.2.1"
+    "@angular/compiler": "npm:17.2.1"
+    "@angular/compiler-cli": "npm:17.2.1"
+    "@angular/core": "npm:17.2.1"
+    "@angular/forms": "npm:17.2.1"
+    "@angular/language-service": "npm:17.2.1"
     "@angular/material": "npm:^17.0.5"
-    "@angular/platform-browser": "npm:17.1.3"
-    "@angular/platform-browser-dynamic": "npm:17.1.3"
-    "@angular/router": "npm:17.1.3"
+    "@angular/platform-browser": "npm:17.2.1"
+    "@angular/platform-browser-dynamic": "npm:17.2.1"
+    "@angular/router": "npm:17.2.1"
     "@playwright/test": "npm:1.41.2"
     "@types/jasmine": "npm:5.1.4"
     "@types/jquery": "npm:3.5.29"
@@ -11474,10 +11451,10 @@ __metadata:
   linkType: hard
 
 "zone.js@npm:^0.14.3":
-  version: 0.14.3
-  resolution: "zone.js@npm:0.14.3"
+  version: 0.14.4
+  resolution: "zone.js@npm:0.14.4"
   dependencies:
     tslib: "npm:^2.3.0"
-  checksum: 10/863a98942d3eb451540c8b7ddd9414433c9de1021675010bdc3b465a094cbf3a7ca061845792e0502b774e6e99bcba448061f338a16d17c6cf53dc81ef41be2b
+  checksum: 10/4a6079d71e4e9c86dd5db4726e01cfe6ceeb9212ff86be3c168fc07f649f0b300f425175aa6b8cee5702d407f18b610b662a854d94cc65de0417e9cafb3e3d82
   languageName: node
   linkType: hard
