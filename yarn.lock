@@ -2294,13 +2294,13 @@ __metadata:
   linkType: hard
 
 "@jridgewell/gen-mapping@npm:^0.3.0, @jridgewell/gen-mapping@npm:^0.3.2":
-  version: 0.3.3
-  resolution: "@jridgewell/gen-mapping@npm:0.3.3"
+  version: 0.3.4
+  resolution: "@jridgewell/gen-mapping@npm:0.3.4"
   dependencies:
     "@jridgewell/set-array": "npm:^1.0.1"
     "@jridgewell/sourcemap-codec": "npm:^1.4.10"
     "@jridgewell/trace-mapping": "npm:^0.3.9"
-  checksum: 10/072ace159c39ab85944bdabe017c3de15c5e046a4a4a772045b00ff05e2ebdcfa3840b88ae27e897d473eb4d4845b37be3c78e28910c779f5aeeeae2fb7f0cc2
+  checksum: 10/c111a3d52fffd63a719035f9a453e0a9b4ba403a559b2f170f81e385ba5ed9cd4549575e166b20d3534e2aad9ea8473b8b17cee11b1c6595323be90d4e4c50d1
   languageName: node
   linkType: hard
 
@@ -2346,12 +2346,12 @@ __metadata:
   linkType: hard
 
 "@jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.20, @jridgewell/trace-mapping@npm:^0.3.9":
-  version: 0.3.22
-  resolution: "@jridgewell/trace-mapping@npm:0.3.22"
+  version: 0.3.23
+  resolution: "@jridgewell/trace-mapping@npm:0.3.23"
   dependencies:
     "@jridgewell/resolve-uri": "npm:^3.1.0"
     "@jridgewell/sourcemap-codec": "npm:^1.4.14"
-  checksum: 10/48d3e3db00dbecb211613649a1849876ba5544a3f41cf5e6b99ea1130272d6cf18591b5b67389bce20f1c871b4ede5900c3b6446a7aab6d0a3b2fe806a834db7
+  checksum: 10/eb8d167f8aeb3ac55e7726eda1bb6240787987fd66d480edbe15fc98ad594ec10cb584289f649e2074b9e117862c82efdec07db13850f3dc4cb242258bb2b67d
   languageName: node
   linkType: hard
 
@@ -3862,9 +3862,9 @@ __metadata:
   linkType: hard
 
 "@types/semver@npm:^7.5.0":
-  version: 7.5.7
-  resolution: "@types/semver@npm:7.5.7"
-  checksum: 10/535d88ec577fe59e38211881f79a1e2ba391e9e1516f8fff74e7196a5ba54315bace9c67a4616c334c830c89027d70a9f473a4ceb634526086a9da39180f2f9a
+  version: 7.5.8
+  resolution: "@types/semver@npm:7.5.8"
+  checksum: 10/3496808818ddb36deabfe4974fd343a78101fa242c4690044ccdc3b95dcf8785b494f5d628f2f47f38a702f8db9c53c67f47d7818f2be1b79f2efb09692e1178
   languageName: node
   linkType: hard
 
@@ -5723,9 +5723,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.668":
-  version: 1.4.680
-  resolution: "electron-to-chromium@npm:1.4.680"
-  checksum: 10/833b78d38408a1846c74798a9d5be07ed17d5d17aae5c48802dd1199a1aa90e2df8b0f4369fdabc12b38be8c6ccce4b2b6f2cae3978ca372c25ee380de9c949c
+  version: 1.4.681
+  resolution: "electron-to-chromium@npm:1.4.681"
+  checksum: 10/92baee495b426a112836c6986736c448ff1178efeaf81e5d58cdd0520716aee5942ff60110c0a6e31e41b81ca320a13759a182597178c90c98daa04d5595d40c
   languageName: node
   linkType: hard
 
