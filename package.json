@@ -53,7 +53,7 @@
     "@angular/cli": "17.2.1",
     "@angular/compiler-cli": "17.2.3",
     "@angular/language-service": "17.2.3",
-    "@playwright/test": "1.41.2",
+    "@playwright/test": "1.42.0",
     "@types/jasmine": "5.1.4",
     "@types/jquery": "3.5.29",
     "@types/lodash-es": "4.17.12",
