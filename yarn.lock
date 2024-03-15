@@ -3888,12 +3888,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20.11.25, @types/node@npm:>=10.0.0":
+"@types/node@npm:*, @types/node@npm:>=10.0.0":
   version: 20.11.25
   resolution: "@types/node@npm:20.11.25"
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10/861265f1bbb151404bd8842b595f027a4ff067c61ecff9a37b9f7f53922c18dd532c8e795e8e7675dd8dba056645623fd2b9848d5ef72863ec3609096cd2923e
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:20.11.27":
+  version: 20.11.27
+  resolution: "@types/node@npm:20.11.27"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10/4be53485d499dd7c7896190e76a0ce1f6c6917d1f4d0b4b240b3670160fcbc548daed32beaac0fc92429b37dbeaa2496fc56f460acaab969bddb77394318a89b
   languageName: node
   linkType: hard
 
@@ -10633,7 +10642,7 @@ __metadata:
     "@types/jasmine": "npm:5.1.4"
     "@types/jquery": "npm:3.5.29"
     "@types/lodash-es": "npm:4.17.12"
-    "@types/node": "npm:20.11.25"
+    "@types/node": "npm:20.11.27"
     "@typescript-eslint/eslint-plugin": "npm:7.1.1"
     "@typescript-eslint/parser": "npm:7.1.1"
     concurrently: "npm:8.2.2"
