@@ -14,6 +14,7 @@ import {
   last,
   sortBy
 } from 'lodash-es';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
@@ -68,13 +69,23 @@ const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_H
 export class AppComponent implements OnInit {
   constructor(
     private apiInteractions: ApiInteractions,
+    private breakpointObserver: BreakpointObserver,
     private changeDetector: ChangeDetectorRef,
     public dialog: MatDialog,
     private route: ActivatedRoute,
     private router: Router,
-  ) { }
+  ) {
+    // detect screen size changes
+    this.breakpointObserver.observe([
+      "(max-width: 768px)"
+    ]).subscribe((result: BreakpointState) => {
+      this.isMobile = result.matches;
+    });
+  }
 
   title = 'timeline-tools';
+
+  isMobile: boolean;
 
   comics: Array<Comic>;
   comicsInReadingOrder: Array<Comic>;
@@ -207,6 +218,10 @@ export class AppComponent implements OnInit {
   clearComicClassesAndStyles = () => {
     this.expandedComicId    = undefined;
     this.expandedCollection = undefined;
+  }
+
+  openMarvelUnlimited = (url: string): void => {
+    window.open(url);
   }
 
   /**
@@ -1288,10 +1303,10 @@ export class AppComponent implements OnInit {
       comicBottomPosition = comicTopPosition  + $expandedComicPanel.height();
       comicRightPosition  = comicLeftPosition + EXPANDED_PANEL_WIDTH;
 
-      isStickyTop    = Boolean(scrollPositionTop  > comicTopPosition);
-      isStickyLeft   = Boolean(scrollPositionLeft > comicLeftPosition);
-      isStickyRight  = Boolean(scrollPositionRight  < comicRightPosition);
-      isStickyBottom = Boolean(scrollPositionBottom < comicBottomPosition);
+      isStickyTop    = !this.isMobile && Boolean(scrollPositionTop  > comicTopPosition);
+      isStickyLeft   = !this.isMobile && Boolean(scrollPositionLeft > comicLeftPosition);
+      isStickyRight  = !this.isMobile && Boolean(scrollPositionRight  < comicRightPosition);
+      isStickyBottom = !this.isMobile && Boolean(scrollPositionBottom < comicBottomPosition);
 
       this.expandedComicCSS.classes = {
         fullScreen: false,
