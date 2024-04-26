@@ -277,8 +277,8 @@ __metadata:
   linkType: hard
 
 "@angular/cdk@npm:^17.0.5":
-  version: 17.3.5
-  resolution: "@angular/cdk@npm:17.3.5"
+  version: 17.3.6
+  resolution: "@angular/cdk@npm:17.3.6"
   dependencies:
     parse5: "npm:^7.1.2"
     tslib: "npm:^2.3.0"
@@ -289,7 +289,7 @@ __metadata:
   dependenciesMeta:
     parse5:
       optional: true
-  checksum: 10/e73748787a1566c9d336033e5d15d48612c85307eceecf4f8aa024b1477637671d99cd7475eb2c9729b4da27f853ea47a6239390573a04fb35b6cb852ac58a21
+  checksum: 10/499b902d7777c4074cbb0271bf6d3bacf45e4866bd62f54ac59ba02895c1bb9d3ae6cead01ace3dc699a71774517c7cd2073d784c3ab1f2527a479c928e5f362
   languageName: node
   linkType: hard
 
@@ -404,8 +404,8 @@ __metadata:
   linkType: hard
 
 "@angular/material@npm:^17.0.5":
-  version: 17.3.5
-  resolution: "@angular/material@npm:17.3.5"
+  version: 17.3.6
+  resolution: "@angular/material@npm:17.3.6"
   dependencies:
     "@material/animation": "npm:15.0.0-canary.7f224ddd4.0"
     "@material/auto-init": "npm:15.0.0-canary.7f224ddd4.0"
@@ -457,13 +457,13 @@ __metadata:
     tslib: "npm:^2.3.0"
   peerDependencies:
     "@angular/animations": ^17.0.0 || ^18.0.0
-    "@angular/cdk": 17.3.5
+    "@angular/cdk": 17.3.6
     "@angular/common": ^17.0.0 || ^18.0.0
     "@angular/core": ^17.0.0 || ^18.0.0
     "@angular/forms": ^17.0.0 || ^18.0.0
     "@angular/platform-browser": ^17.0.0 || ^18.0.0
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10/da5058f395ab03eba9414965dc6b57db0e2422febf64d7dcb64d04bdff8b6b030d509a9df2fb8b6e7de250c40d427c3a82827d43af5fb8552efc686c18e9aaae
+  checksum: 10/da94bfe874bf178432ebba1adc2138f3d698b59fc1b48156daab84ba3630e2e21244c1c7c01c543e50acff652a01672f7d49b8b1290deeb96a7efb7f5289e9d9
   languageName: node
   linkType: hard
 
