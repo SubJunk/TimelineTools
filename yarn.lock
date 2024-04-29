@@ -15,16 +15,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/architect@npm:0.1703.5":
-  version: 0.1703.5
-  resolution: "@angular-devkit/architect@npm:0.1703.5"
-  dependencies:
-    "@angular-devkit/core": "npm:17.3.5"
-    rxjs: "npm:7.8.1"
-  checksum: 10/99eea109d720e6dcef5486cdc42de57c4e2bf64d9c924a4fe4ce0bb6cf3f0e029bf2f7e57312f8ef0e439e2a74641d976bf61cef304f3b4a930decb27752a8f3
-  languageName: node
-  linkType: hard
-
 "@angular-devkit/architect@npm:0.1703.6":
   version: 0.1703.6
   resolution: "@angular-devkit/architect@npm:0.1703.6"
@@ -160,25 +150,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:17.3.5":
-  version: 17.3.5
-  resolution: "@angular-devkit/core@npm:17.3.5"
-  dependencies:
-    ajv: "npm:8.12.0"
-    ajv-formats: "npm:2.1.1"
-    jsonc-parser: "npm:3.2.1"
-    picomatch: "npm:4.0.1"
-    rxjs: "npm:7.8.1"
-    source-map: "npm:0.7.4"
-  peerDependencies:
-    chokidar: ^3.5.2
-  peerDependenciesMeta:
-    chokidar:
-      optional: true
-  checksum: 10/3d97e5cabaa2e1748bdf6813fed1701284ad8f28281947c883ca56cba19e19d76ac51e6ffafaade3f115093bf53c695735ef186e4e7c9af48f69da0dca61f22f
-  languageName: node
-  linkType: hard
-
 "@angular-devkit/core@npm:17.3.6":
   version: 17.3.6
   resolution: "@angular-devkit/core@npm:17.3.6"
@@ -198,16 +169,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/schematics@npm:17.3.5":
-  version: 17.3.5
-  resolution: "@angular-devkit/schematics@npm:17.3.5"
+"@angular-devkit/schematics@npm:17.3.6":
+  version: 17.3.6
+  resolution: "@angular-devkit/schematics@npm:17.3.6"
   dependencies:
-    "@angular-devkit/core": "npm:17.3.5"
+    "@angular-devkit/core": "npm:17.3.6"
     jsonc-parser: "npm:3.2.1"
     magic-string: "npm:0.30.8"
     ora: "npm:5.4.1"
     rxjs: "npm:7.8.1"
-  checksum: 10/1663bbc0a617f8d1b1fd292b4f7a2c61c4d1c013b786f9404cfe65da66b8026ab0f396b54ff9dbab062f3dcf1e283a65d24f9cc2612ebf6af2581bc7032ebb07
+  checksum: 10/e85041db176b0654d1309a772d1db270ddc4a4d5645db8d6eecf15d4f4060b6a2db90c841cb5b7b2149fa071e8d8bf05c89c70ca866c70bf0fcc4da351399c10
   languageName: node
   linkType: hard
 
@@ -315,14 +286,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/cli@npm:17.3.5":
-  version: 17.3.5
-  resolution: "@angular/cli@npm:17.3.5"
+"@angular/cli@npm:17.3.6":
+  version: 17.3.6
+  resolution: "@angular/cli@npm:17.3.6"
   dependencies:
-    "@angular-devkit/architect": "npm:0.1703.5"
-    "@angular-devkit/core": "npm:17.3.5"
-    "@angular-devkit/schematics": "npm:17.3.5"
-    "@schematics/angular": "npm:17.3.5"
+    "@angular-devkit/architect": "npm:0.1703.6"
+    "@angular-devkit/core": "npm:17.3.6"
+    "@angular-devkit/schematics": "npm:17.3.6"
+    "@schematics/angular": "npm:17.3.6"
     "@yarnpkg/lockfile": "npm:1.1.0"
     ansi-colors: "npm:4.1.3"
     ini: "npm:4.1.2"
@@ -339,7 +310,7 @@ __metadata:
     yargs: "npm:17.7.2"
   bin:
     ng: bin/ng.js
-  checksum: 10/40c6e4853de3095f4b5deeebdd03061a2ee38dc1653d805c0d5f03f4544c2ef7d4800146cfff1c80d11a110de573a13f6bb1c9d1116ddf07189d721a9f9a71e7
+  checksum: 10/4ddc30490f96421d0fcb96da8f43a0db5332a36aefceaad2631f1ef18e80e73dd70bdfe480cb69332e31d0a252a2050098cff54bf3706392a8dbfe82fea58cff
   languageName: node
   linkType: hard
 
@@ -3675,14 +3646,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@schematics/angular@npm:17.3.5":
-  version: 17.3.5
-  resolution: "@schematics/angular@npm:17.3.5"
+"@schematics/angular@npm:17.3.6":
+  version: 17.3.6
+  resolution: "@schematics/angular@npm:17.3.6"
   dependencies:
-    "@angular-devkit/core": "npm:17.3.5"
-    "@angular-devkit/schematics": "npm:17.3.5"
+    "@angular-devkit/core": "npm:17.3.6"
+    "@angular-devkit/schematics": "npm:17.3.6"
     jsonc-parser: "npm:3.2.1"
-  checksum: 10/9ae3ceda28a9e32f53fe6f7d30503e2e15185a10f1b0cd17d6c9cd76574c9963d02cf0b0162941ff1fb029f67b1dada12bfb295d555602b79653e15ea3cf88d7
+  checksum: 10/b3244e3aa25d77b2195a9e1b51902bbf12aa62f88a89cdb633fa783155f768f44a4b80e4fd6df9a05bba7c641c3add2734f97b2d361eacad14dea983d342a192
   languageName: node
   linkType: hard
 
@@ -10728,7 +10699,7 @@ __metadata:
     "@angular-eslint/template-parser": "npm:17.3.0"
     "@angular/animations": "npm:17.3.6"
     "@angular/cdk": "npm:^17.0.5"
-    "@angular/cli": "npm:17.3.5"
+    "@angular/cli": "npm:17.3.6"
     "@angular/common": "npm:17.3.6"
     "@angular/compiler": "npm:17.3.6"
     "@angular/compiler-cli": "npm:17.3.6"
