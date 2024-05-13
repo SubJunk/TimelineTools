@@ -3684,9 +3684,9 @@ __metadata:
   linkType: hard
 
 "@sigstore/protobuf-specs@npm:^0.3.0, @sigstore/protobuf-specs@npm:^0.3.1":
-  version: 0.3.1
-  resolution: "@sigstore/protobuf-specs@npm:0.3.1"
-  checksum: 10/0e7ad3d3eca3625eae05127b935bb6cba1649b3d50f2f533f34ed073c00e7d21731ea5ec0b6651fb5926bb83341cbd275734a6ee7ad09abbb0aaaef7aa0377bb
+  version: 0.3.2
+  resolution: "@sigstore/protobuf-specs@npm:0.3.2"
+  checksum: 10/350a6eb834e0f5c50987935c329350ba9df5baedba7c3db6ab6bc55d8730d9e6ff2deb31e770e721b9fef53f1cf6b32f376e28ed72c6e090493bceb820acfb4a
   languageName: node
   linkType: hard
 
@@ -5755,9 +5755,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.668":
-  version: 1.4.762
-  resolution: "electron-to-chromium@npm:1.4.762"
-  checksum: 10/8f14dfe22c8442314e351263c39d07218bc6dfeb2f753787229fdbda56a16bc55431f388aa7a904f3c162dd930e0833c6cfd004cc83cb533971a91f6536122f5
+  version: 1.4.763
+  resolution: "electron-to-chromium@npm:1.4.763"
+  checksum: 10/088c53acfe4723d40077a9fd98cc67e74af2c8d0c5c12e75ffddacfd6e98c009c75fff07e3443a3dc499f599a71b7cf0bcbfb1b0c574355436d297c88979056b
   languageName: node
   linkType: hard
 
@@ -6783,8 +6783,8 @@ __metadata:
   linkType: hard
 
 "glob@npm:^10.2.2, glob@npm:^10.3.10":
-  version: 10.3.14
-  resolution: "glob@npm:10.3.14"
+  version: 10.3.15
+  resolution: "glob@npm:10.3.15"
   dependencies:
     foreground-child: "npm:^3.1.0"
     jackspeak: "npm:^2.3.6"
@@ -6793,7 +6793,7 @@ __metadata:
     path-scurry: "npm:^1.11.0"
   bin:
     glob: dist/esm/bin.mjs
-  checksum: 10/750dae74f2d73350f3b90b775f8b08d7ad3a174ec6f890ce712fe801be408794cc77da9808d45b60f4f15482d604861fe05980aceb3a7af95b539e1f0897187a
+  checksum: 10/b2b1c74309979b34fd6010afb50418a12525def32f1d3758d5827fc75d6143fc3ee5d1f3180a43111f6386c9e297c314f208d9d09955a6c6b69f22e92ee97635
   languageName: node
   linkType: hard
 
@@ -9130,12 +9130,12 @@ __metadata:
   linkType: hard
 
 "path-scurry@npm:^1.11.0":
-  version: 1.11.0
-  resolution: "path-scurry@npm:1.11.0"
+  version: 1.11.1
+  resolution: "path-scurry@npm:1.11.1"
   dependencies:
     lru-cache: "npm:^10.2.0"
     minipass: "npm:^5.0.0 || ^6.0.2 || ^7.0.0"
-  checksum: 10/b97e52746427f37ff8e7dcd00a9ed4562b7ee8b24b87c5c85e47105d48ab408624c943417f22792215b986d71d5d7d855235ee2aec68cbec370eaa78f720bb42
+  checksum: 10/5e8845c159261adda6f09814d7725683257fcc85a18f329880ab4d7cc1d12830967eae5d5894e453f341710d5484b8fdbbd4d75181b4d6e1eb2f4dc7aeadc434
   languageName: node
   linkType: hard
 
