@@ -5299,6 +5299,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"component-emitter@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "component-emitter@npm:2.0.0"
+  checksum: 10/017715272fcf82203932237260451df4c7c27e32a51a4a291faf6f503d6ef9e8583add993850cb5b98cc0c1b0846ff0c68938ad3ef1d544f9b480a290e74fb4f
+  languageName: node
+  linkType: hard
+
 "compressible@npm:~2.0.16":
   version: 2.0.18
   resolution: "compressible@npm:2.0.18"
@@ -5851,13 +5858,6 @@ __metadata:
   version: 1.4.810
   resolution: "electron-to-chromium@npm:1.4.810"
   checksum: 10/425de710336094330fd026cc2cfa0b383bfc9a49a2f575ceec2ac76198663ff95d0109bb45b243a43f0bf0f91a2e9c2768693a136d0968ae59728d5e8eea22ef
-  languageName: node
-  linkType: hard
-
-"emitter-component@npm:^1.1.1":
-  version: 1.1.2
-  resolution: "emitter-component@npm:1.1.2"
-  checksum: 10/d30a241962a7fdc6c84c654576876b4a496bd75cd608dcd4e615f8e61b1cf0a938799d6b20592432155b3a9ab2c7a800df5535de0643d8eae6100e93788c719f
   languageName: node
   linkType: hard
 
@@ -10495,12 +10495,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stream@npm:0.0.2":
-  version: 0.0.2
-  resolution: "stream@npm:0.0.2"
+"stream@npm:0.0.3":
+  version: 0.0.3
+  resolution: "stream@npm:0.0.3"
   dependencies:
-    emitter-component: "npm:^1.1.1"
-  checksum: 10/271dfdd7d25848ff04f644215c0064e38883bcd27239c4a10b3d00e173429949b62b81571862c3eac659c4c93bebdba0f73e0be955a378b1a9280cab2844c6db
+    component-emitter: "npm:^2.0.0"
+  checksum: 10/a40db1ce8def8929c689c98c1644288d4099d34be8e8f72853c7cb8e2bae64e90f5c967f79fd792cdf349d8a3baf38f19d99e7f7ff13c35b4f7c5ae1b78c0115
   languageName: node
   linkType: hard
 
@@ -10807,7 +10807,7 @@ __metadata:
     moment: "npm:2.30.1"
     normalize.css: "npm:8.0.1"
     rxjs: "npm:7.8.1"
-    stream: "npm:0.0.2"
+    stream: "npm:0.0.3"
     timers: "npm:0.1.1"
     ts-md5: "npm:1.3.1"
     ts-node: "npm:10.9.2"
