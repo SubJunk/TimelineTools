@@ -53,10 +53,8 @@
           <ol>
             <li *ngFor="let comic of collection.allCollectionComics; trackBy: trackByItemId">
               <div class="popover"><div>{{comic.series}} #{{comic.issue}}</div></div>
-              <button (click)="toggleExpandComic(comic, true)" mat-button>
-                <img
-                  [src]="'assets/covers/' + comic.image + '.jpg'"
-                >
+              <button (click)="toggleExpandComic(comic, true)">
+                <img [src]="'assets/covers/' + comic.image + '.jpg'">
               </button>
             </li>
           </ol>
@@ -119,26 +117,46 @@
         </span>
         <ol class="pagination" *ngIf="!isMobile">
           <li>
-            <div class="popover previous-collection-title" *ngIf="prevCollectionFirstComic"><div>{{prevCollection.title}}</div></div>
-            <button (click)="toggleExpandComic(prevCollectionFirstComic)" class="button-previous-collection" mat-button [disabled]="!prevCollectionFirstComic">
+            <button
+              (click)="toggleExpandComic(prevCollectionFirstComic)"
+              class="button-previous-collection"
+              mat-mini-fab
+              [disabled]="!prevCollectionFirstComic"
+              matTooltip="{{ prevCollection?.title }}"
+            >
               <mat-icon>arrow_backward</mat-icon>
             </button>
           </li><!--
           --><li>
-            <div class="popover previous-comic-title" *ngIf="prevComic"><div>{{prevComic.series}} #{{prevComic.issue}}</div></div>
-            <button (click)="toggleExpandComic(prevComic)" class="button-previous-comic" mat-button [disabled]="!prevComic">
+            <button
+              (click)="toggleExpandComic(prevComic)"
+              class="button-previous-comic"
+              mat-mini-fab
+              [disabled]="!prevComic"
+              matTooltip="{{prevComic?.series}} #{{prevComic?.issue}}"
+            >
               <mat-icon>chevron_left</mat-icon>
             </button>
           </li><!--
           --><li>
-            <div class="popover next-comic-title" *ngIf="nextComic"><div>{{nextComic.series}} #{{nextComic.issue}}</div></div>
-            <button (click)="toggleExpandComic(nextComic)" class="button-next-comic" mat-button [disabled]="!nextComic">
+            <button
+              (click)="toggleExpandComic(nextComic)"
+              class="button-next-comic"
+              mat-mini-fab
+              [disabled]="!nextComic"
+              matTooltip="{{nextComic?.series}} #{{nextComic?.issue}}"
+            >
               <mat-icon>chevron_right</mat-icon>
             </button>
           </li><!--
           --><li>
-            <div class="popover next-collection-title" *ngIf="nextCollectionFirstComic"><div>{{nextCollection.title}}</div></div>
-            <button (click)="toggleExpandComic(nextCollectionFirstComic)" class="button-next-collection" mat-button [disabled]="!nextCollectionFirstComic">
+            <button
+              (click)="toggleExpandComic(nextCollectionFirstComic)"
+              class="button-next-collection"
+              mat-mini-fab
+              [disabled]="!nextCollectionFirstComic"
+              matTooltip="{{nextCollection?.title}}"
+            >
               <mat-icon>arrow_forward</mat-icon>
             </button>
           </li>
@@ -166,7 +184,7 @@
           <ol>
             <li *ngFor="let collectionComic of expandedComic.collection.allCollectionComics; trackBy: trackByItemId">
               <div class="popover"><div>{{collectionComic.series}} #{{collectionComic.issue}}</div></div>
-              <button (click)="toggleExpandComic(collectionComic)" mat-button>
+              <button (click)="toggleExpandComic(collectionComic)">
                 <img
                   [ngClass]="{current: collectionComic.id === expandedComicId}"
                   [src]="'assets/covers/' + collectionComic.image + '.jpg'"
@@ -182,7 +200,7 @@
           <ol>
             <li *ngFor="let collectionComic of expandedComic.collection.allCollectionComics; trackBy: trackByItemId">
               <div class="popover"><div>{{collectionComic.series}} #{{collectionComic.issue}}</div></div>
-              <button (click)="toggleExpandComic(collectionComic)" mat-button>
+              <button (click)="toggleExpandComic(collectionComic)">
                 <img
                   [ngClass]="{current: collectionComic.id === expandedComicId}"
                   [src]="'assets/covers/' + collectionComic.image + '.jpg'"
@@ -194,38 +212,66 @@
       </div>
       <ol class="pagination mobile" *ngIf="isMobile">
         <li>
-          <div class="popover open-marvel-unlimited"><div>Open in Marvel Unlimited</div></div>
-          <button (click)="openMarvelUnlimited(expandedComic.link)" class="button-open-marvel-unlimited" mat-button [disabled]="!expandedComic.link">
+          <button
+            (click)="openMarvelUnlimited(expandedComic.link)"
+            class="button-open-marvel-unlimited"
+            mat-mini-fab
+            [disabled]="!expandedComic.link"
+            matTooltip="Open in Marvel Unlimited"
+          >
             <mat-icon>library_books</mat-icon>
           </button>
         </li><!--
         --><li>
-          <div class="popover previous-collection-title" *ngIf="prevCollectionFirstComic"><div>{{prevCollection.title}}</div></div>
-          <button (click)="toggleExpandComic(prevCollectionFirstComic)" class="button-previous-collection" mat-button [disabled]="!prevCollectionFirstComic">
+          <button
+            (click)="toggleExpandComic(prevCollectionFirstComic)"
+            class="button-previous-collection"
+            mat-mini-fab
+            [disabled]="!prevCollectionFirstComic"
+            matTooltip="{{ prevCollection?.title }}"
+          >
             <mat-icon>arrow_backward</mat-icon>
           </button>
         </li><!--
         --><li>
-          <div class="popover previous-comic-title" *ngIf="prevComic"><div>{{prevComic.series}} #{{prevComic.issue}}</div></div>
-          <button (click)="toggleExpandComic(prevComic)" class="button-previous-comic" mat-button [disabled]="!prevComic">
+          <button
+            (click)="toggleExpandComic(prevComic)"
+            class="button-previous-comic"
+            mat-mini-fab
+            [disabled]="!prevComic"
+            matTooltip="{{prevComic?.series}} #{{prevComic?.issue}}"
+          >
             <mat-icon>chevron_left</mat-icon>
           </button>
         </li><!--
         --><li>
-          <div class="popover next-comic-title" *ngIf="nextComic"><div>{{nextComic.series}} #{{nextComic.issue}}</div></div>
-          <button (click)="toggleExpandComic(nextComic)" class="button-next-comic" mat-button [disabled]="!nextComic">
+          <button
+            (click)="toggleExpandComic(nextComic)"
+            class="button-next-comic"
+            mat-mini-fab
+            [disabled]="!nextComic"
+            matTooltip="{{nextComic?.series}} #{{nextComic?.issue}}"
+          >
             <mat-icon>chevron_right</mat-icon>
           </button>
         </li><!--
         --><li>
-          <div class="popover next-collection-title" *ngIf="nextCollectionFirstComic"><div>{{nextCollection.title}}</div></div>
-          <button (click)="toggleExpandComic(nextCollectionFirstComic)" class="button-next-collection" mat-button [disabled]="!nextCollectionFirstComic">
+          <button
+            (click)="toggleExpandComic(nextCollectionFirstComic)"
+            class="button-next-collection"
+            mat-mini-fab
+            [disabled]="!nextCollectionFirstComic"
+            matTooltip="{{nextCollection?.title}}"
+          >
             <mat-icon>arrow_forward</mat-icon>
           </button>
         </li><!--
         --><li>
-          <button (click)="toggleExpandComic()" mat-button>
-            <div class="popover"><div>Close this panel</div></div>
+          <button
+            (click)="toggleExpandComic()"
+            mat-mini-fab
+            matTooltip="Close this panel"
+          >
             <mat-icon>close</mat-icon>
           </button>
         </li>

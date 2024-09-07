@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltip } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -30,5 +31,8 @@ import { ApiInteractions } from './api-interactions';
         MatButtonModule,
         MatDialogModule,
         MatIconModule,
-        MatMenuModule], providers: [ApiInteractions, provideHttpClient(withInterceptorsFromDi())] })
+        MatMenuModule,
+        MatTooltip,
+    ],
+    providers: [ApiInteractions, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
