@@ -1,6 +1,9 @@
 {
   "name": "timeline-tools",
   "version": "0.0.0",
+  "engines": {
+    "node": "20"
+  },
   "packageManager": "yarn@4.4.1",
   "scripts": {
     "dev": "ng serve -o",
