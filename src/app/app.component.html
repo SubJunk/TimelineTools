@@ -29,22 +29,36 @@
         </button>
         <ol class="pagination">
           <li>
-            <div class="popover over previous-collection-title" *ngIf="uniqueCollections[i - 1]"><div>{{uniqueCollections[i - 1].title}}</div></div>
-            <button (click)="toggleExpandCollection(uniqueCollections[i - 1])" class="button-previous-collection" mat-button [disabled]="!uniqueCollections[i - 1]">
+            <button
+              (click)="toggleExpandCollection(uniqueCollections[i - 1])"
+              class="button-previous-collection"
+              mat-button
+              [disabled]="!uniqueCollections[i - 1]"
+              matTooltip="{{uniqueCollections[i - 1]?.title}}"
+            >
               <mat-icon>arrow_backward</mat-icon>
             </button>
           </li><!--
           --><li>
-            <div class="popover over next-collection-title" *ngIf="uniqueCollections[i + 1]"><div>{{uniqueCollections[i + 1].title}}</div></div>
-            <button (click)="toggleExpandCollection(uniqueCollections[i + 1])" class="button-next-collection" mat-button [disabled]="!uniqueCollections[i + 1]">
+            <button
+              (click)="toggleExpandCollection(uniqueCollections[i + 1])"
+              class="button-next-collection"
+              mat-button
+              [disabled]="!uniqueCollections[i + 1]"
+              matTooltip="{{uniqueCollections[i + 1]?.title}}"
+            >
               <mat-icon>arrow_forward</mat-icon>
             </button>
           </li>
         </ol>
       </div>
       <div class="expanded-panel" *ngIf="collection.id === expandedCollectionId">
-        <button (click)="toggleExpandCollection()" class="right-aligned-button" mat-mini-fab>
-          <div class="popover"><div>Close this panel</div></div>
+        <button
+          (click)="toggleExpandCollection()"
+          class="right-aligned-button"
+          mat-mini-fab
+          matTooltip="Close this panel"
+        >
           <mat-icon>close</mat-icon>
         </button>
         <div class="title">{{collection.title}}</div>
@@ -52,8 +66,10 @@
         <div class="collection-comics">
           <ol>
             <li *ngFor="let comic of collection.allCollectionComics; trackBy: trackByItemId">
-              <div class="popover"><div>{{comic.series}} #{{comic.issue}}</div></div>
-              <button (click)="toggleExpandComic(comic, true)">
+              <button
+                (click)="toggleExpandComic(comic, true)"
+                matTooltip="{{comic.series}} #{{comic.issue}}"
+              >
                 <img [src]="'assets/covers/' + comic.image + '.jpg'">
               </button>
             </li>
@@ -88,10 +104,9 @@
 <ol class="comics-container">
   <li *ngFor="let comic of (isShowReadingOrder ? comicsInReadingOrder : comics); trackBy: trackByItemId" class="comic-container" [ngStyle]="comic.containerStyles">
     <div class="scroll-anchor" id="scroll-anchor-{{comic.idSanitized}}"></div>
-    <div class="popover"><div>#{{comic.issue}}</div></div>
     <div class="comic" [ngStyle]="comic.styles" [ngClass]="getComicClasses(comic)">
       <div class="panel-left">
-        <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.idSanitized}}">
+        <button (click)="toggleExpandComic(comic)" class="cover-thumbnail" id="expand-{{comic.idSanitized}}" matTooltip="#{{comic.issue}}">
           <img
             *ngIf="comic.visible"
             [src]="'assets/covers/' + comic.image + '.jpg'"
@@ -163,15 +178,11 @@
         </ol>
       </div>
       <div class="expanded-panel">
-        <button *ngIf="!isMobile" (click)="toggleExpandComic()" class="right-aligned-button" mat-mini-fab>
-          <div class="popover"><div>Close this panel</div></div>
+        <button *ngIf="!isMobile" (click)="toggleExpandComic()" class="right-aligned-button" mat-mini-fab matTooltip="Close this panel">
           <mat-icon>close</mat-icon>
         </button>
-        <a *ngIf="!isMobile" [ngClass]="{disabled: !expandedComic.link}" class="marvel-unlimited-link" [href]="expandedComic.link">
-          <div class="popover"><div>Open in Marvel Unlimited</div></div>
-        </a>
-        <button *ngIf="!isMobile" (click)="scrollToComic(expandedComic.id)" class="right-aligned-button" mat-mini-fab>
-          <div class="popover"><div>Scroll to this comic</div></div>
+        <a *ngIf="!isMobile" [ngClass]="{disabled: !expandedComic.link}" class="marvel-unlimited-link" [href]="expandedComic.link" matTooltip="Open in Marvel Unlimited"></a>
+        <button *ngIf="!isMobile" (click)="scrollToComic(expandedComic.id)" class="right-aligned-button" mat-mini-fab matTooltip="Scroll to this comic">
           <mat-icon>near_me</mat-icon>
         </button>
         <div class="series">
@@ -182,8 +193,7 @@
         <div class="collection-comics" *ngIf="!isMobile">
           <div class="collection-title">{{expandedComic.collection.title}}:</div>
           <ol>
-            <li *ngFor="let collectionComic of expandedComic.collection.allCollectionComics; trackBy: trackByItemId">
-              <div class="popover"><div>{{collectionComic.series}} #{{collectionComic.issue}}</div></div>
+            <li *ngFor="let collectionComic of expandedComic.collection.allCollectionComics; trackBy: trackByItemId" matTooltip="{{collectionComic.series}} #{{collectionComic.issue}}">
               <button (click)="toggleExpandComic(collectionComic)">
                 <img
                   [ngClass]="{current: collectionComic.id === expandedComicId}"
@@ -198,8 +208,7 @@
         <div class="collection-comics">
           <div class="collection-title">{{expandedComic.collection.title}}:</div>
           <ol>
-            <li *ngFor="let collectionComic of expandedComic.collection.allCollectionComics; trackBy: trackByItemId">
-              <div class="popover"><div>{{collectionComic.series}} #{{collectionComic.issue}}</div></div>
+            <li *ngFor="let collectionComic of expandedComic.collection.allCollectionComics; trackBy: trackByItemId" matTooltip="{{collectionComic.series}} #{{collectionComic.issue}}">
               <button (click)="toggleExpandComic(collectionComic)">
                 <img
                   [ngClass]="{current: collectionComic.id === expandedComicId}"

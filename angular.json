@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "scss"
         }
       },
       "root": "",
@@ -19,6 +19,7 @@
           "options": {
             "outputPath": "dist/timeline-tools",
             "index": "src/index.html",
+            "inlineStyleLanguage": "scss",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
@@ -27,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/m3-theme.scss",
+              "src/styles.scss"
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
@@ -94,6 +96,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "inlineStyleLanguage": "scss",
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
@@ -103,7 +106,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/m3-theme.scss",
+              "src/styles.scss"
             ],
             "scripts": []
           }
