@@ -1,14 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~normalize.css';
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@use '@angular/material' as mat;
+@use './m3-theme';
+
+@include mat.core();
+
+html {
+  // Apply the light theme by default
+  @include mat.all-component-themes(m3-theme.$dark-theme);
+
+  // Apply the light theme only when the user prefers light themes.
+  @media (prefers-color-scheme: light) {
+    // Use the `-color` mixins to only apply color styles without reapplying the same
+    // typography and density styles.
+    @include mat.all-component-themes(m3-theme.$light-theme);
+  }
+}
 
 :root {
   --month-width: 55px;
   --expanded-width: 900px;
   --expanded-width-panel-left: 200px;
   --cover-aspect-ratio: 1.55;
-  --expanded-cover-height: 310px;
+  --expanded-cover-height: 324px;
   --collection-cover-height: 250px;
   --collection-thumbnails-height: 97px;
   --initial-body-width: 4000px;
@@ -42,7 +56,6 @@ body.search-is-open {
 
 .year {
   display: inline-block;
-  color: #ccc;
 
   &> span {
     position: sticky;
@@ -83,38 +96,6 @@ body.search-is-open {
   pointer-events: none;
 }
 
-.popover {
-  display: inline-block;
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%);
-  overflow: visible;
-  transition: top 0.3s, visibility 0.2s, opacity 0.2s;
-  min-width: 130px;
-  text-align: center;
-  line-height: 1.5;
-}
-
-.popover.over {
-  bottom: 90%;
-  top: auto;
-  transition: bottom 0.3s, visibility 0.2s, opacity 0.2s;
-}
-
-*:hover > .popover {
-  visibility: visible;
-  opacity: 1;
-  top: calc(100% + 5px);
-}
-
-*:hover > .popover.over {
-  top: auto;
-  bottom: calc(100% + 15px);
-}
-
 .floating-menu {
   position: fixed !important;
   right: 20px;
@@ -128,23 +109,12 @@ li:hover,
   z-index: 1;
 }
 
-.expanded > .popover {
-  display: none;
-}
-
-.tooltip-inner,
-.series-volume-label,
-.popover > div {
+.series-volume-label {
   background-color: #222;
   color: #ccc;
   padding: 5px 8px;
   border-radius: 8px;
   font-size: 12px;
-}
-
-.popover > div {
-  max-width: 130px;
-  display: inline-block;
 }
 
 .series-volume-label {
@@ -210,6 +180,10 @@ li:hover,
   width: calc(var(--collection-cover-height) / var(--cover-aspect-ratio));
   transition: width 0.4s;
   margin-right: 10px;
+
+  .pagination {
+    display: none;
+  }
 }
 
 @media (min-width: 769px) {
@@ -231,6 +205,24 @@ li:hover,
 
 .comic-container,
 .collection-container {
+  &.expanded {
+    .pagination {
+      list-style: none;
+      justify-content: space-around;
+      margin: 3px 0 10px 0;
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .pagination {
+        margin: 10px 0;
+      }
+    }
+    
+    .pagination li {
+      display: table-cell;
+    }
+  }
   .marvel-unlimited-link,
   .right-aligned-button {
     float: right;
@@ -285,6 +277,13 @@ a.disabled {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   border: 3px #1A1C1C solid;
+}
+
+.collection-comics li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .cover-thumbnail {
@@ -477,9 +476,10 @@ button.cover-thumbnail {
 @media (min-width: 769px) {
   .expanded-panel {
     left: 0;
-    width: calc(var(--expanded-width) * 0.75);
+    width: calc(var(--expanded-width) * 0.745);
     background: inherit;
     margin-top: 10px;
+    margin-left: 5px;
   }
 }
 .collection-container,
@@ -494,7 +494,7 @@ button.cover-thumbnail {
   .expanded .expanded-panel.bottom {
     display: block;
     overflow-y: scroll;
-    height: calc(100% - 369px);
+    height: calc(100% - 397px);
   }
 }
 
@@ -610,81 +610,6 @@ button.cover-thumbnail {
   100% { transform: rotate(140deg); }
 }
 
-/**
- * Override Bootstrap styles
- */
-.pagination {
-  display: none;
-  cursor: default;
-  @media (min-width: 769px) {
-    margin: 0 0 8px calc(var(--month-width) * 0.05);
-    width: var(--expanded-width-panel-left);
-  }
-  @media (max-width: 768px) {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px 0;
-    margin: 0;
-    position: absolute;
-    width: 100vw;
-    bottom: 0;
-  }
-}
-
-.pagination > li {
-  overflow: visible;
-  display: table-cell;
-  position: relative;
-}
-
-.pagination > li > a,
-.pagination > li > a:hover {
-  background-color: unset;
-  border: none;
-  width: 47px;
-  color: unset;
-}
-
-.pagination > li > a:hover {
-  color: #000;
-}
-
-.expanded .pagination {
-  display: table;
-}
-
-.tooltip.show {
-  opacity: 1;
-}
-
-.tooltip.show .arrow::before {
-  border-bottom-color: #222;
-}
-
-.selected {
-  color: #080 !important;
-}
-
 .unselected {
   display: none !important;
-}
-
-/**
- * Override Angular Material
- */
-
-.collection-comics ol button {
-  min-height: unset;
-  padding: unset;
-  height: 101px !important;
-}
-
-.pagination button {
-  @media (min-width: 769px) {
-    min-width: unset;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    display: table-cell;
-  }
-  padding: 0 13px;
 }
