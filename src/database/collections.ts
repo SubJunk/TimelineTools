@@ -7291,11 +7291,11 @@ const collections: Collection[] = [
     'Uncanny X-Men By Kieron Gillen: The Complete Collection Vol. 2',
     '2020-2-19',
     [
-      'AvengersVsXMenConsequencesVol11',
-      'AvengersVsXMenConsequencesVol12',
-      'AvengersVsXMenConsequencesVol13',
-      'AvengersVsXMenConsequencesVol14',
-      'AvengersVsXMenConsequencesVol15',
+      'AvxConsequencesVol11',
+      'AvxConsequencesVol12',
+      'AvxConsequencesVol13',
+      'AvxConsequencesVol14',
+      'AvxConsequencesVol15',
       'UncannyXMenVol220',
     ]
   ),

@@ -237,13 +237,6 @@ addComicsInSeriesVolume('AvengersVol1', [
   [401, '1996-8'],
   [402, '1996-9'],
 ]);
-addComicsInSeriesVolume('AvengersVsXMenConsequencesVol1', [
-  [1, '2012-10-10'],
-  [2, '2012-10-17'],
-  [3, '2012-10-24'],
-  [4, '2012-10-31'],
-  [5, '2012-11-7'],
-]);
 addComicsInSeriesVolume('AvengersVsXMenVersusVol1', [
   [1, '2012-4-25'],
   [2, '2012-5-16'],
@@ -277,6 +270,13 @@ addComicsInSeriesVolume('AvengersXSanctionVol1', [
   [4, '2012-3-21'],
 ]);
 addComicsInSeriesVolume('AvengersWestCoastVol2', [[101, '1993-12']]);
+addComicsInSeriesVolume('AvxConsequencesVol1', [
+  [1, '2012-10-10'],
+  [2, '2012-10-17'],
+  [3, '2012-10-24'],
+  [4, '2012-10-31'],
+  [5, '2012-11-7'],
+]);
 addComicsInSeriesVolume('BabysFirstDeadpoolBookVol1', [[1, '1998-12']]);
 addComicsInSeriesVolume('BishopVol1', [
   [1, '1994-12'],

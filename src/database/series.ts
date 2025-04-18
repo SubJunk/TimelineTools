@@ -75,7 +75,7 @@ series.push(
   new Series('Avengers: X-Sanction', {1: { startYear: 2011 }}),
   new Series('Avengers Annual', {1: { startYear: 1967 }}),
   new Series('Avengers Vs. X-Men', {1: { startYear: 2012 }}),
-  new Series('Avengers Vs. X-Men: Consequences', {1: { startYear: 2012 }}),
+  new Series('Avx: Consequences', {1: { startYear: 2012 }}),
   new Series('Avengers Vs. X-Men: Versus', {1: { startYear: 2011, creators: '4306' }}),
   new Series('Avengers West Coast', {2: { startYear: 1985 }}),
   new Series('Bishop', {1: { startYear: 1994 }}),
