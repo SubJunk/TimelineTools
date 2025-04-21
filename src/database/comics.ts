@@ -1990,7 +1990,7 @@ addComicsInSeriesVolume('UncannyXMenVol2', [
   [17, '2012-8-22'],
   [18, '2012-9-12'],
   [19, '2012-10-3'],
-  [20, '2012-1-18'],
+  [20, '2012-10-17'],
 ]);
 addComicsInSeriesVolume('UncannyXMenVol3', [
   [12, '2013-9-18'],
