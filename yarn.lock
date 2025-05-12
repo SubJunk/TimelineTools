@@ -30,6 +30,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular-devkit/architect@npm:>= 0.1900.0 < 0.2000.0":
+  version: 0.1902.11
+  resolution: "@angular-devkit/architect@npm:0.1902.11"
+  dependencies:
+    "@angular-devkit/core": "npm:19.2.11"
+    rxjs: "npm:7.8.1"
+  checksum: 10/9e59fa8836f13d48c5279336b5ae90bb0067c481b291c79262c36093d3ae16b6a628341e3ee56b05d72375132c685c4fd5fb40091057c507d30469d9c5b5de10
+  languageName: node
+  linkType: hard
+
 "@angular-devkit/build-angular@npm:^18.2.3":
   version: 18.2.3
   resolution: "@angular-devkit/build-angular@npm:18.2.3"
@@ -186,6 +196,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular-devkit/core@npm:19.2.11, @angular-devkit/core@npm:>= 19.0.0 < 20.0.0":
+  version: 19.2.11
+  resolution: "@angular-devkit/core@npm:19.2.11"
+  dependencies:
+    ajv: "npm:8.17.1"
+    ajv-formats: "npm:3.0.1"
+    jsonc-parser: "npm:3.3.1"
+    picomatch: "npm:4.0.2"
+    rxjs: "npm:7.8.1"
+    source-map: "npm:0.7.4"
+  peerDependencies:
+    chokidar: ^4.0.0
+  peerDependenciesMeta:
+    chokidar:
+      optional: true
+  checksum: 10/28f73b9ad03a318c396e9efdb595378f6d20eecf7f266bfd7ebb664bd57183c96f8686d22b97d89a9ad7e91fea853404343318048bef5a933aa996a17fb08bca
+  languageName: node
+  linkType: hard
+
 "@angular-devkit/schematics@npm:18.2.3":
   version: 18.2.3
   resolution: "@angular-devkit/schematics@npm:18.2.3"
@@ -204,13 +233,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-eslint/builder@npm:^18.3.0":
-  version: 18.3.0
-  resolution: "@angular-eslint/builder@npm:18.3.0"
+"@angular-eslint/builder@npm:^19.4.0":
+  version: 19.4.0
+  resolution: "@angular-eslint/builder@npm:19.4.0"
+  dependencies:
+    "@angular-devkit/architect": "npm:>= 0.1900.0 < 0.2000.0"
+    "@angular-devkit/core": "npm:>= 19.0.0 < 20.0.0"
   peerDependencies:
     eslint: ^8.57.0 || ^9.0.0
     typescript: "*"
-  checksum: 10/6257fdfcac79bfca72eb294c59a7fd6e0a39820f174254ed5698b53ad1ac981819972af8d7080e83520fd6cdd48ddf94d9bc5c163b529d195f81a5e231c8a16a
+  checksum: 10/38a415fa632694bc90526ea3a175275abf2e8b9e56799bbe2642aca4161b8b10cc19a54690190a777cdde088d9c274ca3592f816df8c012ba08027f7effbfaf9
   languageName: node
   linkType: hard
 
@@ -10284,7 +10316,7 @@ __metadata:
   resolution: "timeline-tools@workspace:."
   dependencies:
     "@angular-devkit/build-angular": "npm:^18.2.3"
-    "@angular-eslint/builder": "npm:^18.3.0"
+    "@angular-eslint/builder": "npm:^19.4.0"
     "@angular-eslint/eslint-plugin": "npm:^18.3.0"
     "@angular-eslint/eslint-plugin-template": "npm:^18.3.0"
     "@angular-eslint/schematics": "npm:^18.3.0"
