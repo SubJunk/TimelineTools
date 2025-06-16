@@ -30,6 +30,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular-devkit/architect@npm:>= 0.2000.0 < 0.2100.0":
+  version: 0.2000.2
+  resolution: "@angular-devkit/architect@npm:0.2000.2"
+  dependencies:
+    "@angular-devkit/core": "npm:20.0.2"
+    rxjs: "npm:7.8.2"
+  checksum: 10/8140b9fa073702e3ccc1bb9465cecbf0eaa6470f098d08233ef9a5ae55d99faead611fa53765c9ff2008b955a775653b7f9159ae89c1472d3516accedda960a7
+  languageName: node
+  linkType: hard
+
 "@angular-devkit/build-angular@npm:^18.2.3":
   version: 18.2.3
   resolution: "@angular-devkit/build-angular@npm:18.2.3"
@@ -186,6 +196,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular-devkit/core@npm:20.0.2, @angular-devkit/core@npm:>= 20.0.0 < 21.0.0":
+  version: 20.0.2
+  resolution: "@angular-devkit/core@npm:20.0.2"
+  dependencies:
+    ajv: "npm:8.17.1"
+    ajv-formats: "npm:3.0.1"
+    jsonc-parser: "npm:3.3.1"
+    picomatch: "npm:4.0.2"
+    rxjs: "npm:7.8.2"
+    source-map: "npm:0.7.4"
+  peerDependencies:
+    chokidar: ^4.0.0
+  peerDependenciesMeta:
+    chokidar:
+      optional: true
+  checksum: 10/cad2833b810eafe23b469a8539eb4c7ca391ea39e445ade67d44850090809584961fd9ce309e068ffcaf05b112cb248342cd80b800b6130b5aa3a72fe5279bbc
+  languageName: node
+  linkType: hard
+
 "@angular-devkit/schematics@npm:18.2.3":
   version: 18.2.3
   resolution: "@angular-devkit/schematics@npm:18.2.3"
@@ -204,13 +233,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-eslint/builder@npm:^18.3.0":
-  version: 18.3.0
-  resolution: "@angular-eslint/builder@npm:18.3.0"
+"@angular-eslint/builder@npm:^20.1.0":
+  version: 20.1.0
+  resolution: "@angular-eslint/builder@npm:20.1.0"
+  dependencies:
+    "@angular-devkit/architect": "npm:>= 0.2000.0 < 0.2100.0"
+    "@angular-devkit/core": "npm:>= 20.0.0 < 21.0.0"
   peerDependencies:
     eslint: ^8.57.0 || ^9.0.0
     typescript: "*"
-  checksum: 10/6257fdfcac79bfca72eb294c59a7fd6e0a39820f174254ed5698b53ad1ac981819972af8d7080e83520fd6cdd48ddf94d9bc5c163b529d195f81a5e231c8a16a
+  checksum: 10/2f61cc8cb232e85a351968535c0a672777f86d65a703e878169b482d4bf4727885ae2eeaf2f1c3409de5765b4b6f83b9d3bb88e971ee61b4f3b0e6f57c1cbf98
   languageName: node
   linkType: hard
 
@@ -9485,6 +9517,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rxjs@npm:7.8.2":
+  version: 7.8.2
+  resolution: "rxjs@npm:7.8.2"
+  dependencies:
+    tslib: "npm:^2.1.0"
+  checksum: 10/03dff09191356b2b87d94fbc1e97c4e9eb3c09d4452399dddd451b09c2f1ba8d56925a40af114282d7bc0c6fe7514a2236ca09f903cf70e4bbf156650dddb49d
+  languageName: node
+  linkType: hard
+
 "safe-buffer@npm:5.1.2, safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
   version: 5.1.2
   resolution: "safe-buffer@npm:5.1.2"
@@ -10284,7 +10325,7 @@ __metadata:
   resolution: "timeline-tools@workspace:."
   dependencies:
     "@angular-devkit/build-angular": "npm:^18.2.3"
-    "@angular-eslint/builder": "npm:^18.3.0"
+    "@angular-eslint/builder": "npm:^20.1.0"
     "@angular-eslint/eslint-plugin": "npm:^18.3.0"
     "@angular-eslint/eslint-plugin-template": "npm:^18.3.0"
     "@angular-eslint/schematics": "npm:^18.3.0"
