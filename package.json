@@ -34,7 +34,7 @@
     "@angular/forms": "18.2.3",
     "@angular/material": "^18.2.3",
     "@angular/platform-browser": "18.2.3",
-    "@angular/platform-browser-dynamic": "18.2.3",
+    "@angular/platform-browser-dynamic": "20.0.5",
     "@angular/router": "18.2.3",
     "lodash-es": "4.17.21",
     "moment": "2.30.1",
