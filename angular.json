@@ -140,7 +140,7 @@
     }
   },
   "cli": {
-    "packageManager": "yarn",
+    "packageManager": "npm",
     "analytics": "4548fde3-7ce7-43ba-8fd4-4cc0bf8c4630",
     "schematicCollections": [
       "@angular-eslint/schematics"
