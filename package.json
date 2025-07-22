@@ -2,7 +2,7 @@
   "name": "timeline-tools",
   "version": "0.0.0",
   "engines": {
-    "node": ">18"
+    "node": ">20"
   },
   "scripts": {
     "dev": "ng serve -o",
