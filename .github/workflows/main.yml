@@ -34,5 +34,5 @@ jobs:
 
     - name: Lint and Test
       run: |
-        npm lint
-        npm e2e
+        npm run lint
+        npm run e2e
