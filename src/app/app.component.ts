@@ -62,9 +62,10 @@ const COLLECTIONS_CONTAINER_HEIGHT = 298;
 const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_HEIGHT;
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.less'],
+    standalone: false
 })
 export class AppComponent implements OnInit {
   constructor(

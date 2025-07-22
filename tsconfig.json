@@ -23,10 +23,9 @@
   //   ]
   // },
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
-    "downlevelIteration": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
