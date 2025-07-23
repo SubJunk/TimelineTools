@@ -1,5 +1,3 @@
-import moment from 'moment';
-
 import {
   Comic,
 } from '../app/models';
@@ -31,12 +29,12 @@ function ComicPrototype(issue: string, datePublished: string, seriesVolumeId: st
 
   this.classes = { fullScreen: false, stickyBottom: false, stickyLeft: false, stickyRight: false, stickyTop: false };
   this.containerStyles = { 'left.px': null, 'top.px': null, 'width.px': null };
-  this.date = moment(year + '-' + month + '-' + day);
+  this.date = new Date(year + '-' + month + '-' + day + 'T00:00:00Z');
   this.id = seriesVolumeId + issue;
   this.idSanitized = (seriesVolumeId + issue).replace(/[^a-zA-Z0-9-\s]/g, '');
   this.issue = issue;
-  this.yearPublished = this.date.year();
-  this.monthPublished = this.date.month() + 1;
+  this.yearPublished = this.date.getFullYear();
+  this.monthPublished = this.date.getMonth() + 1;
   this.seriesVolumeId = seriesVolumeId;
   this.styles = { background: null, color: null, 'marginLeft.px': null, 'marginTop.px': null};
   this.titles = titles ? titles : [];
