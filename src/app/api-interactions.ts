@@ -1,16 +1,15 @@
 import { each, isEmpty } from 'lodash-es';
 import { SeriesVolume, Comic, MarvelAPISeriesResponse } from './models';
 import { HttpParams, HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 const MARVEL_API_BASE_URL = 'https://gateway.marvel.com/v1/public/';
 const MARVEL_API_KEY_PUBLIC = '46a863fa31f601aacb87dae9cb8f7c45';
 
 @Injectable()
 export class ApiInteractions {
-  constructor(
-    public http: HttpClient,
-  ) { }
+  http = inject(HttpClient);
+
 
   /**
    * @param seriesVolume the series volume object

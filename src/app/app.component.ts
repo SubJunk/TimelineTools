@@ -15,10 +15,18 @@ import {
   sortBy
 } from 'lodash-es';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit, ChangeDetectorRef, inject } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltip } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
 
+import { FilterPipe } from './filter.pipe';
+import { LimitToPipe } from './limitTo.pipe';
 import { InfoModalComponent } from './info-modal/info-modal.component';
 import { ApiInteractions } from './api-interactions';
 import { Collections } from './../database/collections';
@@ -62,20 +70,34 @@ const COLLECTIONS_CONTAINER_HEIGHT = 298;
 const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_HEIGHT;
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.less'],
-    standalone: false
+  imports: [
+    CommonModule,
+    FilterPipe,
+    FormsModule,
+    LimitToPipe,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatIconModule,
+    MatMenuModule,
+    MatTooltip,
+  ],
+  providers: [
+    ApiInteractions,
+  ],
+  selector: 'app-root',
+  styleUrls: ['./app.component.less'],
+  templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  constructor(
-    private apiInteractions: ApiInteractions,
-    private breakpointObserver: BreakpointObserver,
-    private changeDetector: ChangeDetectorRef,
-    public dialog: MatDialog,
-    private route: ActivatedRoute,
-    private router: Router,
-  ) {
+  private apiInteractions = inject(ApiInteractions);
+  private breakpointObserver = inject(BreakpointObserver);
+  private changeDetector = inject(ChangeDetectorRef);
+  dialog = inject(MatDialog);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+
+  constructor() {
     // detect screen size changes
     this.breakpointObserver.observe([
       "(max-width: 768px)"
