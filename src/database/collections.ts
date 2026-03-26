@@ -7366,6 +7366,17 @@ const collections: Collection[] = [
       'DeadpoolVol46',
     ]
   ),
+  new CollectionPrototype(
+    'Wolverine and the X-Men by Jason Aaron Omnibus',
+    '2014-6-17',
+    [
+      'WolverinetheXMenVol119',
+      'WolverinetheXMenVol120',
+      'WolverinetheXMenVol121',
+      'WolverinetheXMenVol122',
+      'WolverinetheXMenVol123',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
@@ -7447,11 +7458,6 @@ const collections: Collection[] = [
     'Wolverine and the X-Men by Jason Aaron Omnibus',
     '2014-6-17',
     [
-      'WolverinetheXMenVol119',
-      'WolverinetheXMenVol120',
-      'WolverinetheXMenVol121',
-      'WolverinetheXMenVol122',
-      'WolverinetheXMenVol123',
       'WolverinetheXMenVol124',
       'WolverinetheXMenVol125',
       'WolverinetheXMenVol126',
