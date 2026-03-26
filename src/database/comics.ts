@@ -611,6 +611,24 @@ addComicsInSeriesVolume('DeadpoolVol3', [
   [17, '2009-11-11'],
   [18, '2009-12-9'],
 ]);
+addComicsInSeriesVolume('DeadpoolVol4', [
+  [1, '2012-11-7'],
+  [2, '2012-11-21'],
+  [3, '2012-12-5'],
+  [4, '2013-1-23'],
+  [5, '2013-2-20'],
+  [6, '2013-3-20'],
+  [7, '2013-4-3'],
+  [8, '2013-4-24'],
+  [9, '2013-5-8'],
+  [10, '2013-5-22'],
+  [11, '2013-6-12'],
+  [12, '2013-6-26'],
+  [13, '2013-7-17'],
+  [14, '2013-8-14'],
+  [20, '2013-12-4'],
+  [26, '2014-3-26'],
+]);
 addComicsInSeriesVolume('DeadpoolandDeathAnnualVol1', [[1, '1998-7']]);
 addComicsInSeriesVolume('DeadpoolTeamUpVol1', [[1, '1998-12']]);
 addComicsInSeriesVolume('DeadpoolTheCircleChaseVol1', [

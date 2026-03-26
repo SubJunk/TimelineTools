@@ -102,7 +102,7 @@ series.push(
   new Series('Dark X-Men', {1: { startYear: 2009 }}),
   new Series('Dark X-Men: The Beginning', {1: { startYear: 2009 }}),
   new Series('Dark X-Men: The Confession', {1: { startYear: 2009 }}),
-  new Series('Deadpool', {1: { startYear: 1994 }, 2: { startYear: 1997 }, 3: { startYear: 2008 }}),
+  new Series('Deadpool', {1: { startYear: 1994 }, 2: { startYear: 1997 }, 3: { startYear: 2008 }, 4: { startYear: 2012 }}),
   new Series('Deadpool & Cable', {1: { startYear: 2010 }}),
   new Series('Deadpool Team-Up', {1: { startYear: 1998 }}),
   new Series('Defenders', {1: { startYear: 1972 }}),

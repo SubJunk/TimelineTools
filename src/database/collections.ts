@@ -7338,6 +7338,13 @@ const collections: Collection[] = [
     ]
   ),
   new CollectionPrototype(
+    'Astonishing X-Men: Unmasked',
+    '2013-12-11',
+    [
+      'AstonishingXMenVol359',
+    ]
+  ),
+  new CollectionPrototype(
     'X-Factor: Short Stories',
     '2013-3-6',
     [
@@ -7347,9 +7354,37 @@ const collections: Collection[] = [
       'XFactorVol3249',
     ]
   ),
+  new CollectionPrototype(
+    'Deadpool by Posehn & Duggan: The Complete Collection Vol. 1',
+    '2018-1-23',
+    [
+      'DeadpoolVol41',
+      'DeadpoolVol42',
+      'DeadpoolVol43',
+      'DeadpoolVol44',
+      'DeadpoolVol45',
+      'DeadpoolVol46',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new CollectionPrototype(
+    'Deadpool by Posehn & Duggan: The Complete Collection Vol. 1',
+    '2018-1-23',
+    [
+      'DeadpoolVol47',
+      'DeadpoolVol48',
+      'DeadpoolVol49',
+      'DeadpoolVol410',
+      'DeadpoolVol411',
+      'DeadpoolVol412',
+      'DeadpoolVol413',
+      'DeadpoolVol414',
+      'DeadpoolVol420',
+      'DeadpoolVol426',
+    ]
+  ),
   new CollectionPrototype(
     'Wolverine: Sabretooth Reborn',
     '2013-4-28',
@@ -7457,7 +7492,6 @@ const collections: Collection[] = [
     'Astonishing X-Men: Unmasked',
     '2013-12-11',
     [
-      'AstonishingXMenVol359',
       'AstonishingXMenVol362',
       'AstonishingXMenVol363',
       'AstonishingXMenVol364',
