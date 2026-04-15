@@ -11,6 +11,5 @@ updates:
       angular:
         patterns:
         - "@angular*"
-        - "typescript"
     schedule:
       interval: "weekly"
