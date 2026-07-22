@@ -7385,6 +7385,15 @@ const collections: Collection[] = [
       'XMenLegacyVol22',
       'XMenLegacyVol23',
       'XMenLegacyVol24',
+    ]
+  ),
+  /**
+   * Gap here, and in general the contents after here need to be reviewed.
+   */
+  new CollectionPrototype(
+    'X-Men Legacy: Legion Omnibus',
+    '2017-05-16',
+    [
       'XMenLegacyVol25',
       'XMenLegacyVol26',
       'XMenLegacyVol27',
@@ -7407,9 +7416,6 @@ const collections: Collection[] = [
       'XMenLegacyVol224',
     ]
   ),
-  /**
-   * Gap here, and in general the contents after here need to be reviewed.
-   */
   new CollectionPrototype(
     'Deadpool by Posehn & Duggan: The Complete Collection Vol. 1',
     '2018-1-23',
