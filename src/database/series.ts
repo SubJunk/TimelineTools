@@ -271,7 +271,7 @@ series.push(
   new Series('X-Men Free Comic Book Day', {2008: { startYear: 2008 }}),
   new Series('X-Men Forever', {1: { startYear: 2001 }}),
   new Series('X-Men Giant-Size', {1: { startYear: 2011 }}),
-  new Series('X-Men Legacy', {1: { startYear: 2008 }}),
+  new Series('X-Men Legacy', {1: { startYear: 2008 }, 2: { startYear: 2012 }}),
   new Series('X-Men Unlimited', {1: { startYear: 1993 }, 2: { startYear: 2004 }}),
   new Series('X-Men vs. Brood', {1: { startYear: 1996 }}),
   new Series('X-Men vs. the Avengers', {1: { startYear: 1987 }}),

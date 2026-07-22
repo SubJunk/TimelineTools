@@ -7377,6 +7377,36 @@ const collections: Collection[] = [
       'WolverinetheXMenVol123',
     ]
   ),
+  new CollectionPrototype(
+    'X-Men Legacy: Legion Omnibus',
+    '2017-05-16',
+    [
+      'XMenLegacyVol21',
+      'XMenLegacyVol22',
+      'XMenLegacyVol23',
+      'XMenLegacyVol24',
+      'XMenLegacyVol25',
+      'XMenLegacyVol26',
+      'XMenLegacyVol27',
+      'XMenLegacyVol28',
+      'XMenLegacyVol29',
+      'XMenLegacyVol210',
+      'XMenLegacyVol211',
+      'XMenLegacyVol212',
+      'XMenLegacyVol213',
+      'XMenLegacyVol214',
+      'XMenLegacyVol215',
+      'XMenLegacyVol216',
+      'XMenLegacyVol217',
+      'XMenLegacyVol218',
+      'XMenLegacyVol219',
+      'XMenLegacyVol220',
+      'XMenLegacyVol221',
+      'XMenLegacyVol222',
+      'XMenLegacyVol223',
+      'XMenLegacyVol224',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
