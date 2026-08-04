@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
@@ -6,6 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/materia
     MatDialogModule,
   ],
   selector: 'app-info-modal',
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: 'info-modal.component.html',
 })
 export class InfoModalComponent {

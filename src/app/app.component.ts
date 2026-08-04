@@ -15,7 +15,7 @@ import {
   sortBy
 } from 'lodash-es';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Component, OnInit, ChangeDetectorRef, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -87,6 +87,7 @@ const DEFAULT_COMIC_THUMBNAILS_OFFSET_TOP = BODY_PADDING_TOP + DATES_CONTAINER_H
   ],
   selector: 'app-root',
   styleUrls: ['./app.component.less'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
