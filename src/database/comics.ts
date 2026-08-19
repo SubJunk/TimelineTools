@@ -5,7 +5,7 @@ import {
 /**
  * The prototype for individual comics.
  */
-function ComicPrototype(issue: string, datePublished: string, seriesVolumeId: string, titles: string) {
+function ComicPrototype(issue: string, datePublished: string, seriesVolumeId: string, titles: string, marvelUnlimitedId: number) {
   if (titles && !Array.isArray(titles)) {
     throw new Error('Expected comic title to be an array, got' + titles);
   }
@@ -33,6 +33,7 @@ function ComicPrototype(issue: string, datePublished: string, seriesVolumeId: st
   this.id = seriesVolumeId + issue;
   this.idSanitized = (seriesVolumeId + issue).replace(/[^a-zA-Z0-9-\s]/g, '');
   this.issue = issue;
+  this.marvelUnlimitedId = marvelUnlimitedId;
   this.yearPublished = this.date.getFullYear();
   this.monthPublished = this.date.getMonth() + 1;
   this.seriesVolumeId = seriesVolumeId;
@@ -52,7 +53,8 @@ function addComicsInSeriesVolume(seriesVolumeId: string, comicsInSeriesVolume) {
         comic[0],
         comic[1],
         seriesVolumeId,
-        comic[2]
+        comic[2],
+        comic[3],
       )
     );
   });
@@ -1425,6 +1427,37 @@ addComicsInSeriesVolume('ThorVol1', [
 addComicsInSeriesVolume('ThunderboltsVol2', [
   [130, '2009-3-25'],
   [131, '2009-4-29'],
+]);
+addComicsInSeriesVolume('UncannyAvengersAnnualVol1', [
+  [1, '2014-4-30', , 46968],
+]);
+addComicsInSeriesVolume('UncannyAvengersVol1', [
+  [1, '2012-10-10', , 43339],
+  [2, '2012-11-28', , 43338],
+  [3, '2012-12-15', , 43337],
+  [4, '2013-2-27', , 43336],
+  [5, '2013-3-27', , 43335],
+  [6, '2013-4-10', , 43334],
+  [7, '2013-4-24', , 43333],
+  [8, '2013-5-8', , 43332],
+  [8.5, '2013-5-22', , 47343],
+  [9, '2013-6-19', , 43331],
+  [10, '2013-7-24', , 43330],
+  [11, '2013-8-28', , 43329],
+  [12, '2013-9-25', , 43328],
+  [13, '2013-10-23', , 49216],
+  [14, '2013-11-27', , 49217],
+  [15, '2013-12-18', , 49218],
+  [16, '2014-1-29', , 49219],
+  [17, '2014-2-26', , 49220],
+  [18, '2014-3-26', , 49221],
+  [19, '2014-4-23', , 49222],
+  [20, '2014-5-28', , 49223],
+  [21, '2014-6-25', , 49224],
+  [22, '2014-7-30', , 49225],
+  [23, '2014-8-27', , 49226],
+  [24, '2014-9-17', , 49227],
+  [25, '2014-10-1', , 49228],
 ]);
 addComicsInSeriesVolume('UncannyXForceVol1', [
   [1, '2010-10-6'],
@@ -3221,30 +3254,30 @@ addComicsInSeriesVolume('XMenLegacyVol1', [
   [275, '2012-10-31'],
 ]);
 addComicsInSeriesVolume('XMenLegacyVol2', [
-  [1, '2012-11-14'],
-  [2, '2012-11-28'],
-  [3, '2012-12-19'],
-  [4, '2013-1-9'],
-  [5, '2013-1-30'],
-  [6, '2013-2-27'],
-  [7, '2013-3-13'],
-  [8, '2013-3-27'],
-  [9, '2013-4-17'],
-  [10, '2013-5-1'],
-  [11, '2013-5-22'],
-  [12, '2013-6-19'],
-  [13, '2013-7-3'],
-  [14, '2013-7-31'],
-  [15, '2013-8-21'],
-  [16, '2013-9-4'],
-  [17, '2013-9-18'],
-  [18, '2013-10-16'],
-  [19, '2013-11-6'],
-  [20, '2013-11-20'],
-  [21, '2013-12-4'],
-  [22, '2014-1-15'],
-  [23, '2014-1-29'],
-  [24, '2014-2-12'],
+  [1, '2012-11-14', , 44451],
+  [2, '2012-11-28', , 44455],
+  [3, '2012-12-19', , 45686],
+  [4, '2013-1-9', , 46799],
+  [5, '2013-1-30', , 46801],
+  [6, '2013-2-27', , 46803],
+  [7, '2013-3-13', , 46804],
+  [8, '2013-3-27', , 46805],
+  [9, '2013-4-17', , 46806],
+  [10, '2013-5-1', , 46807],
+  [11, '2013-5-22', , 46808],
+  [12, '2013-6-19', , 46809],
+  [13, '2013-7-3', , 46810],
+  [14, '2013-7-31', , 46811],
+  [15, '2013-8-21', , 46812],
+  [16, '2013-9-4', , 468013],
+  [17, '2013-9-18', , 468014],
+  [18, '2013-10-16', , 48925],
+  [19, '2013-11-6', , 48926],
+  [20, '2013-11-20', , 48927],
+  [21, '2013-12-4', , 49280],
+  [22, '2014-1-15', , 49281],
+  [23, '2014-1-29', , 49282],
+  [24, '2014-2-12', , 49283],
 ]);
 addComicsInSeriesVolume('XMenMagnetoTestamentVol1', [
   [1, '2008-9-10'],

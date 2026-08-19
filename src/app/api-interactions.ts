@@ -36,6 +36,11 @@ export class ApiInteractions {
    * @param seriesVolumeMarvelID the series ID in the Marvel API
    */
   public setAPIComicData = (comic: Comic, seriesVolumeMarvelID: string) => {
+    if (comic.marvelUnlimitedId) {
+      comic.link = 'https://www.marvel.com/comics/issue/' + comic.marvelUnlimitedId + '/read';
+      return;
+    }
+
     const params = new HttpParams()
       .set('issueNumber', comic.issue)
       .set('series', seriesVolumeMarvelID)

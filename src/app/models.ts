@@ -42,6 +42,7 @@ export interface Comic {
   image?: string;
   issue?: string;
   link?: string;
+  marvelUnlimitedId?: number;
   monthPublished?: number;
   yearPublished?: number;
   series?: string;
