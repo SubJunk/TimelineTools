@@ -7385,17 +7385,56 @@ const collections: Collection[] = [
       'XMenLegacyVol22',
       'XMenLegacyVol23',
       'XMenLegacyVol24',
+      'XMenLegacyVol25',
+      'XMenLegacyVol26',
+    ]
+  ),
+  new CollectionPrototype(
+    'Uncanny Avengers Omnibus',
+    '2015-3-3',
+    [
+      'UncannyAvengersVol11',
+      'UncannyAvengersVol12',
+      'UncannyAvengersVol13',
+      'UncannyAvengersVol14',
     ]
   ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
   new CollectionPrototype(
+    'Uncanny Avengers Omnibus',
+    '2015-3-3',
+    [
+      'UncannyAvengersVol15',
+      'UncannyAvengersVol16',
+      'UncannyAvengersVol17',
+      'UncannyAvengersVol18',
+      'UncannyAvengersVol18.5',
+      'UncannyAvengersVol19',
+      'UncannyAvengersVol110',
+      'UncannyAvengersVol111',
+      'UncannyAvengersVol112',
+      'UncannyAvengersVol113',
+      'UncannyAvengersVol114',
+      'UncannyAvengersVol115',
+      'UncannyAvengersVol116',
+      'UncannyAvengersVol117',
+      'UncannyAvengersVol118',
+      'UncannyAvengersVol119',
+      'UncannyAvengersVol120',
+      'UncannyAvengersVol121',
+      'UncannyAvengersVol122',
+      'UncannyAvengersVol123',
+      'UncannyAvengersVol124',
+      'UncannyAvengersVol125',
+      'UncannyAvengersAnnualVol11',
+    ]
+  ),
+  new CollectionPrototype(
     'X-Men Legacy: Legion Omnibus',
     '2017-05-16',
     [
-      'XMenLegacyVol25',
-      'XMenLegacyVol26',
       'XMenLegacyVol27',
       'XMenLegacyVol28',
       'XMenLegacyVol29',

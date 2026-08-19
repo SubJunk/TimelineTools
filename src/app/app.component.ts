@@ -387,18 +387,21 @@ export class AppComponent implements OnInit {
       preserveFragment: true });
     this.router.navigateByUrl(urlTree);
 
-    // Get the series volume containing this comic
-    const expandedSeriesVolume = find(this.seriesVolumes, ['id', currentComic.seriesVolumeId]);
-    if (!expandedSeriesVolume) {
-      return console.error('The expanded series volume could not be found', currentComic.seriesVolumeId);
+    let expandedSeriesVolume;
+    // Get the series volume containing this comic, if we don't already have the Marvel Unlimited comic ID
+    if (!currentComic.marvelUnlimitedId) {
+      expandedSeriesVolume = find(this.seriesVolumes, ['id', currentComic.seriesVolumeId]);
+      if (!expandedSeriesVolume) {
+        return console.error('The expanded series volume could not be found', currentComic.seriesVolumeId);
+      }
+
+      if (!expandedSeriesVolume.marvelId) {
+        // We await this because setAPIComicData depends on having a marvel ID set
+        expandedSeriesVolume.marvelId = await this.getMarvelSeriesVolumeId(expandedSeriesVolume);
+      }
     }
 
-    if (!expandedSeriesVolume.marvelId) {
-      // We await this because setAPIComicData depends on having a marvel ID set
-      expandedSeriesVolume.marvelId = await this.getMarvelSeriesVolumeId(expandedSeriesVolume);
-    }
-
-    this.apiInteractions.setAPIComicData(currentComic, expandedSeriesVolume.marvelId);
+    this.apiInteractions.setAPIComicData(currentComic, expandedSeriesVolume?.marvelId);
   }
 
   /*
