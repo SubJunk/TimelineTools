@@ -10,6 +10,9 @@ function ComicPrototype(issue: string, datePublished: string, seriesVolumeId: st
     throw new Error('Expected comic title to be an array, got' + titles);
   }
 
+  // remove invalid chars from seriesVolumeId
+  seriesVolumeId = seriesVolumeId.replace(/[\+]/g, '');
+
   let year: string;
   let month: string;
   let day: string;
@@ -60,11 +63,20 @@ function addComicsInSeriesVolume(seriesVolumeId: string, comicsInSeriesVolume) {
   });
 }
 
+addComicsInSeriesVolume('A+XVol1', [
+  [1, '2012-10-31', , 43488],
+  [2, '2012-11-28', , 43495],
+  [3, '2012-12-19', , 43498],
+  [4, '2013-1-23', , 43501],
+  [5, '2013-3-6', , 43504],
+  [6, '2013-3-27', , 43505],
+  
+]);
 addComicsInSeriesVolume('AdventuresofCyclopsPhoenixVol1', [
   [1, '1994-5'],
   [2, '1994-6'],
   [3, '1994-7'],
-  [4, '1994-8']
+  [4, '1994-8'],
 ]);
 addComicsInSeriesVolume('AgeofXAlphaVol1', [[1, '2011-1-26']]);
 addComicsInSeriesVolume('AgeofXUniverseVol1', [

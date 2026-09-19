@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   Collection,
 } from '../app/models';
@@ -17,9 +18,15 @@ function CollectionPrototype(title: string, datePublished: string, comicIds: str
   // Create a Date object from the datePublished string
   this.date = new Date(datePublished);
 
+  // remove invalid chars from comicIds
+  const sanitizedComicIds = [];
+  _.each(comicIds, (comicId) => {
+    sanitizedComicIds.push(comicId.replace(/[\+]/g, ''));
+  });
+
   this.yearPublished = this.date.getFullYear();
   this.monthPublished = this.date.getMonth() + 1;
-  this.comicIds = comicIds;
+  this.comicIds = sanitizedComicIds;
   this.visible = false;
 }
 
@@ -7399,9 +7406,27 @@ const collections: Collection[] = [
       'UncannyAvengersVol14',
     ]
   ),
+  new CollectionPrototype(
+    'A+X, Vol. 1: A+X=Awesome',
+    '2013-6-4',
+    [
+      'A+XVol11',
+      'A+XVol12',
+      'A+XVol13',
+      'A+XVol14',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new CollectionPrototype(
+    'A+X, Vol. 1: A+X=Awesome',
+    '2013-6-4',
+    [
+      'A+XVol15',
+      'A+XVol16',
+    ]
+  ),
   new CollectionPrototype(
     'Uncanny Avengers Omnibus',
     '2015-3-3',
