@@ -53,6 +53,7 @@ function SeriesVolume(seriesId: string, volume: string, startYear: number, title
 }
 
 series.push(
+  new Series('A+X', {1: { startYear: 2012 }}),
   new Series('Adventures of Cyclops & Phoenix', {1: { startYear: 1994 }}),
   new Series('Age of Apocalypse', {1: { startYear: 2011 }}),
   new Series('Age of Apocalypse: The Chosen', {1: { startYear: 1995 }}),

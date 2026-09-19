@@ -7399,9 +7399,27 @@ const collections: Collection[] = [
       'UncannyAvengersVol14',
     ]
   ),
+  new CollectionPrototype(
+    'A+X, Vol. 1: A+X=Awesome',
+    '2013-6-4',
+    [
+      'A+XVol11',
+      'A+XVol12',
+      'A+XVol13',
+      'A+XVol14',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new CollectionPrototype(
+    'A+X, Vol. 1: A+X=Awesome',
+    '2013-6-4',
+    [
+      'A+XVol15',
+      'A+XVol16',
+    ]
+  ),
   new CollectionPrototype(
     'Uncanny Avengers Omnibus',
     '2015-3-3',
