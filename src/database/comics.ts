@@ -10,6 +10,9 @@ function ComicPrototype(issue: string, datePublished: string, seriesVolumeId: st
     throw new Error('Expected comic title to be an array, got' + titles);
   }
 
+  // remove invalid chars from seriesVolumeId
+  seriesVolumeId = seriesVolumeId.replace(/[\+]/g, '');
+
   let year: string;
   let month: string;
   let day: string;

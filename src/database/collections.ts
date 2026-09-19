@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   Collection,
 } from '../app/models';
@@ -17,9 +18,15 @@ function CollectionPrototype(title: string, datePublished: string, comicIds: str
   // Create a Date object from the datePublished string
   this.date = new Date(datePublished);
 
+  // remove invalid chars from comicIds
+  const sanitizedComicIds = [];
+  _.each(comicIds, (comicId) => {
+    sanitizedComicIds.push(comicId.replace(/[\+]/g, ''));
+  });
+
   this.yearPublished = this.date.getFullYear();
   this.monthPublished = this.date.getMonth() + 1;
-  this.comicIds = comicIds;
+  this.comicIds = sanitizedComicIds;
   this.visible = false;
 }
 
