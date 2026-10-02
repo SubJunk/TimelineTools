@@ -7,15 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v7
+    - uses: actions/setup-node@v7
       with:
-        node-version: '24'
+        node-version: 24
         cache: 'npm'
-
-    - name: Install dependencies
-      run: npm i
-
+    - run: npm ci
     - name: Store Playwright's Version
       run: |
         PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
@@ -24,7 +21,7 @@ jobs:
 
     - name: Cache Playwright Browsers for Playwright's Version
       id: cache-playwright-browsers
-      uses: actions/cache@v4
+      uses: actions/cache@v7
       with:
         path: ~/.cache/ms-playwright
         key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}

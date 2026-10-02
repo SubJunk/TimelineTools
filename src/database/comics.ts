@@ -946,7 +946,7 @@ addComicsInSeriesVolume('GiantSizeWolverineVol1', [[1, '2006-10-4']]);
 addComicsInSeriesVolume('GiantSizeXMenVol1', [[1, '1975-5']]);
 addComicsInSeriesVolume('GiantSizeXMenFirstClassVol1', [[1, '2008-10-29', ]]);
 addComicsInSeriesVolume('GreenGoblinVol1', [[12, '1996-9']]);
-addComicsInSeriesVolume('GuardiansOfTheGalaxyVol3', [
+addComicsInSeriesVolume('GuardiansoftheGalaxyVol3', [
   [11, '2014-1-29', , 43295],
   [12, '2014-2-26', , 43294],
   [13, '2014-3-26', , 48632],

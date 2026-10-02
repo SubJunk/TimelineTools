@@ -7468,9 +7468,9 @@ const collections: Collection[] = [
       'AllNewXMenVol139',
       'AllNewXMenVol140',
       'AllNewXMenVol141',
-      'GuardiansOfTheGalaxyVol311',
-      'GuardiansOfTheGalaxyVol312',
-      'GuardiansOfTheGalaxyVol313',
+      'GuardiansoftheGalaxyVol311',
+      'GuardiansoftheGalaxyVol312',
+      'GuardiansoftheGalaxyVol313',
     ]
   ),
   new CollectionPrototype(
