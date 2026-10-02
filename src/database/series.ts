@@ -142,6 +142,7 @@ series.push(
   new Series('Giant Size X-Men', {1: { startYear: 1975 }}),
   new Series('Giant-Size X-Men: First Class', {1: { startYear: 2008 }}),
   new Series('Green Goblin', {1: { startYear: 1995 }}),
+  new Series('Guardians of the Galaxy', {3: { startYear: 2013 }}),
   new Series('House of M', {1: { startYear: 2005 }}),
   new Series('Hulk', {1: { startYear: 1999 }}),
   new Series('Icons: Cyclops', {1: { startYear: 2001 }}),
