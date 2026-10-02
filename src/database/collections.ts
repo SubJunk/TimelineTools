@@ -7416,9 +7416,63 @@ const collections: Collection[] = [
       'A+XVol14',
     ]
   ),
+  new CollectionPrototype(
+    'All-New X-Men by Brian Michael Bendis',
+    '2025-8-12',
+    [
+      'AllNewXMenVol11',
+      'AllNewXMenVol12',
+      'AllNewXMenVol13',
+      'AllNewXMenVol14',
+      'AllNewXMenVol15',
+      'AllNewXMenVol16',
+      'AllNewXMenVol17',
+      'AllNewXMenVol18',
+    ]
+  ),
   /**
    * Gap here, and in general the contents after here need to be reviewed.
    */
+  new CollectionPrototype(
+    'All-New X-Men by Brian Michael Bendis',
+    '2025-8-12',
+    [
+      'AllNewXMenVol19',
+      'AllNewXMenVol110',
+      'AllNewXMenVol111',
+      'AllNewXMenVol112',
+      'AllNewXMenVol113',
+      'AllNewXMenVol114',
+      'AllNewXMenVol115',
+      'AllNewXMenVol118',
+      'AllNewXMenVol119',
+      'AllNewXMenVol120',
+      'AllNewXMenVol121',
+      'AllNewXMenVol122',
+      'AllNewXMenVol123',
+      'AllNewXMenVol124',
+      'AllNewXMenVol125',
+      'AllNewXMenVol126',
+      'AllNewXMenVol127',
+      'AllNewXMenVol128',
+      'AllNewXMenVol129',
+      'AllNewXMenVol130',
+      'AllNewXMenVol131',
+      'AllNewXMenVol132',
+      'AllNewXMenVol133',
+      'AllNewXMenVol134',
+      'AllNewXMenVol135',
+      'AllNewXMenVol136',
+      'AllNewXMenVol137',
+      'AllNewXMenVol138',
+      'AllNewXMenVol139',
+      'AllNewXMenVol140',
+      'AllNewXMenVol141',
+      'GuardiansOfTheGalaxyVol311',
+      'GuardiansOfTheGalaxyVol312',
+      'GuardiansOfTheGalaxyVol313',
+    ]
+  ),
   new CollectionPrototype(
     'A+X, Vol. 1: A+X=Awesome',
     '2013-6-4',
