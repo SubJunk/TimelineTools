@@ -55,7 +55,7 @@
     "@typescript-eslint/parser": "^8.59.0",
     "concurrently": "10.0.6",
     "eslint": "9.31.0",
-    "jasmine-core": "6.3.0",
+    "jasmine-core": "7.0.2",
     "jasmine-spec-reporter": "7.0.0",
     "jquery": "3.7.1",
     "karma": "6.4.4",
