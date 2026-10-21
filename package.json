@@ -43,7 +43,7 @@
     "@angular-eslint/eslint-plugin-template": "20.1.1",
     "@angular-eslint/schematics": "20.1.1",
     "@angular-eslint/template-parser": "20.1.1",
-    "@angular/cli": "21.2.26",
+    "@angular/cli": "22.2.3",
     "@angular/compiler-cli": "21.2.23",
     "@angular/language-service": "21.2.23",
     "@playwright/test": "1.59.1",
